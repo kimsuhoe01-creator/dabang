@@ -1,6 +1,9 @@
 name: CUKCUK menu sync
 
 on:
+  push:
+    paths:
+      - data/sync-trigger.txt
   workflow_dispatch:
   schedule:
     - cron: "*/30 * * * *"
