@@ -18,6 +18,12 @@ jobs:
     steps:
       - name: Check out menu repository
         uses: actions/checkout@v4
+        with:
+          ref: main
+
+      - name: Start from the latest main branch
+        shell: bash
+        run: git pull --rebase origin main
 
       - name: Import customer menu from CUKCUK
         env:
@@ -67,5 +73,4 @@ jobs:
             exit 0
           fi
           git commit -m "Update CUKCUK menu data"
-          git pull --rebase
           git push
