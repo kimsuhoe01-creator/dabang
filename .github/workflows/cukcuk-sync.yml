@@ -45,6 +45,8 @@ jobs:
           fi
 
       - name: Publish latest menu data for GitHub Pages
+        env:
+          CUKCUK_SECRET_KEY: ${{ secrets.CUKCUK_SECRET_KEY }}
         shell: bash
         run: |
           mkdir -p data
@@ -52,9 +54,14 @@ jobs:
             --output data/cukcuk-menu.json \
             "https://dabang-tablet-admin.kimsuhoe.chatgpt.site/api/cukcuk/menu"
           jq -e '.ok == true and .synced == true' data/cukcuk-menu.json >/dev/null
+          curl --silent --show-error --fail \
+            --header "X-CUKCUK-Secret: $CUKCUK_SECRET_KEY" \
+            --output data/cukcuk-tables.json \
+            "https://dabang-tablet-admin.kimsuhoe.chatgpt.site/api/cukcuk/tables"
+          jq -e '(.tables // .data.tables // .data // .items // .) | type == "array" and length > 0' data/cukcuk-tables.json >/dev/null
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add data/cukcuk-menu.json
+          git add data/cukcuk-menu.json data/cukcuk-tables.json
           if git diff --cached --quiet; then
             echo "Menu data is already up to date."
             exit 0
