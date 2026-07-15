@@ -1,0 +1,42 @@
+name: CUKCUK menu sync
+
+on:
+  workflow_dispatch:
+  schedule:
+    - cron: "*/30 * * * *"
+
+concurrency:
+  group: cukcuk-menu-sync
+  cancel-in-progress: false
+
+jobs:
+  sync:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    permissions:
+      contents: read
+    steps:
+      - name: Import customer menu from CUKCUK
+        env:
+          CUKCUK_SECRET_KEY: ${{ secrets.CUKCUK_SECRET_KEY }}
+        shell: bash
+        run: |
+          if [ -z "$CUKCUK_SECRET_KEY" ]; then
+            echo "CUKCUK_SECRET_KEY is not configured yet."
+            exit 0
+          fi
+
+          response_file="$(mktemp)"
+          status="$(curl --silent --show-error \
+            --output "$response_file" \
+            --write-out "%{http_code}" \
+            --request POST \
+            --header "Content-Type: application/json" \
+            --header "X-CUKCUK-Secret: $CUKCUK_SECRET_KEY" \
+            "https://dabang-tablet-admin.kimsuhoe.chatgpt.site/api/cukcuk/sync")"
+
+          cat "$response_file"
+          if [ "$status" -lt 200 ] || [ "$status" -ge 300 ]; then
+            echo "CUKCUK sync failed with HTTP $status."
+            exit 1
+          fi
