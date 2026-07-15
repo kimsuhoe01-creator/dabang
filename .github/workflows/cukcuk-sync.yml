@@ -53,18 +53,27 @@ jobs:
       - name: Publish latest menu data for GitHub Pages
         env:
           CUKCUK_SECRET_KEY: ${{ secrets.CUKCUK_SECRET_KEY }}
+          CUKCUK_COMPANY_CODE: ${{ secrets.CUKCUK_COMPANY_CODE }}
+          CUKCUK_ACCESS_TOKEN: ${{ secrets.CUKCUK_ACCESS_TOKEN }}
+          CUKCUK_BRANCH_ID: ${{ secrets.CUKCUK_BRANCH_ID }}
         shell: bash
         run: |
+          if [ -z "$CUKCUK_COMPANY_CODE" ] || [ -z "$CUKCUK_ACCESS_TOKEN" ] || [ -z "$CUKCUK_BRANCH_ID" ]; then
+            echo "CUKCUK_COMPANY_CODE, CUKCUK_ACCESS_TOKEN, and CUKCUK_BRANCH_ID must be configured."
+            exit 1
+          fi
           mkdir -p data
           curl --silent --show-error --fail \
             --output data/cukcuk-menu.json \
             "https://dabang-tablet-admin.kimsuhoe.chatgpt.site/api/cukcuk/menu"
           jq -e '.ok == true and .synced == true' data/cukcuk-menu.json >/dev/null
           curl --silent --show-error --fail \
-            --header "X-CUKCUK-Secret: $CUKCUK_SECRET_KEY" \
+            --header "Authorization: Bearer $CUKCUK_ACCESS_TOKEN" \
+            --header "CompanyCode: $CUKCUK_COMPANY_CODE" \
+            --header "Content-Type: application/json" \
             --output data/cukcuk-tables.json \
-            "https://dabang-tablet-admin.kimsuhoe.chatgpt.site/api/cukcuk/tables"
-          jq -e '(.tables // .data.tables // .data // .items // .) | type == "array" and length > 0' data/cukcuk-tables.json >/dev/null
+            "https://graphapi.cukcuk.vn/api/v1/tables/$CUKCUK_BRANCH_ID"
+          jq -e '.Success == true and .Data.ListTable != null and (.Data.ListTable | type == "array" and length > 0)' data/cukcuk-tables.json >/dev/null
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/cukcuk-menu.json data/cukcuk-tables.json
