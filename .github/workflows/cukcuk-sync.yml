@@ -2,6 +2,10 @@ name: CUKCUK menu sync
 
 on:
   workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/cukcuk-sync.yml"
   schedule:
     - cron: "*/30 * * * *"
 
