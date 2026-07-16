@@ -1,0 +1,402 @@
+{
+  "Code": 200,
+  "Data": {
+    "ListTable": [
+      {
+        "MapObjectID": "63776a52-9078-4576-9142-06b67f118afe",
+        "MapObjectName": "B-02",
+        "AreaID": "c60addae-088a-49b5-ab5e-f4d0ce6195bf",
+        "AreaName": "B-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "1281eb93-23c2-40fa-b592-12c42353d24e",
+        "MapObjectName": "B-12",
+        "AreaID": "c60addae-088a-49b5-ab5e-f4d0ce6195bf",
+        "AreaName": "B-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "1b4cdb3b-d115-47ad-8a18-14ed834cb0d5",
+        "MapObjectName": "take01",
+        "AreaID": "20fb3f9d-e2d5-43f7-8e2d-e9506c3c4e15",
+        "AreaName": "배달",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "d0ded861-6c36-4651-a34b-2879eeb880bb",
+        "MapObjectName": "take02",
+        "AreaID": "20fb3f9d-e2d5-43f7-8e2d-e9506c3c4e15",
+        "AreaName": "배달",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "0490f9c0-917f-45dc-a697-2c3151e4749f",
+        "MapObjectName": "A-5",
+        "AreaID": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
+        "AreaName": "A-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "a7c94545-534d-400e-a21e-3e4ac824323c",
+        "MapObjectName": "A-1",
+        "AreaID": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
+        "AreaName": "A-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "f621fd08-5e76-4bc5-903c-4456731f72e6",
+        "MapObjectName": "C-3",
+        "AreaID": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
+        "AreaName": "A-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "9d047120-151f-4af6-a8ec-4d00303e0c03",
+        "MapObjectName": "B-13",
+        "AreaID": "c60addae-088a-49b5-ab5e-f4d0ce6195bf",
+        "AreaName": "B-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "1dc82102-e8fa-4522-b31c-526a34e02695",
+        "MapObjectName": "C-9",
+        "AreaID": "e69f4221-ddc6-4fc2-8cf6-defac8dd4c3c",
+        "AreaName": "C-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "63bab802-ee85-482a-b079-52b77d41e46d",
+        "MapObjectName": "B-03",
+        "AreaID": "c60addae-088a-49b5-ab5e-f4d0ce6195bf",
+        "AreaName": "B-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "9ecf02b8-abef-4f40-88da-53b605958ed9",
+        "MapObjectName": "B-05",
+        "AreaID": "c60addae-088a-49b5-ab5e-f4d0ce6195bf",
+        "AreaName": "B-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "ad36fb25-4088-43d6-9a8f-5a6a1f7c5fa0",
+        "MapObjectName": "C-5",
+        "AreaID": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
+        "AreaName": "A-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "cfa19d54-26ce-4339-8726-5e666319badc",
+        "MapObjectName": "ship04",
+        "AreaID": "20fb3f9d-e2d5-43f7-8e2d-e9506c3c4e15",
+        "AreaName": "배달",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "d14aacea-3362-4e80-88b8-5ef7c9a1ac84",
+        "MapObjectName": "D-3",
+        "AreaID": "e69f4221-ddc6-4fc2-8cf6-defac8dd4c3c",
+        "AreaName": "C-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "7b437f85-4c1e-455d-9360-5fd38b1025d2",
+        "MapObjectName": "A-4",
+        "AreaID": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
+        "AreaName": "A-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "5f5f637d-f141-46da-b47f-60bc5a99e7dd",
+        "MapObjectName": "B-07",
+        "AreaID": "c60addae-088a-49b5-ab5e-f4d0ce6195bf",
+        "AreaName": "B-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "b907b4c1-18b0-4d8a-b3e3-6833ac61b021",
+        "MapObjectName": "B-09",
+        "AreaID": "c60addae-088a-49b5-ab5e-f4d0ce6195bf",
+        "AreaName": "B-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "692573da-1ec5-4652-aa69-69fe9b2b5612",
+        "MapObjectName": "take03",
+        "AreaID": "20fb3f9d-e2d5-43f7-8e2d-e9506c3c4e15",
+        "AreaName": "배달",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "435b06ac-fe70-491b-87b3-73bac7164ed2",
+        "MapObjectName": "D-2",
+        "AreaID": "e69f4221-ddc6-4fc2-8cf6-defac8dd4c3c",
+        "AreaName": "C-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "6c4e236f-5a0d-42a8-add9-7b91a91f4498",
+        "MapObjectName": "B-06",
+        "AreaID": "c60addae-088a-49b5-ab5e-f4d0ce6195bf",
+        "AreaName": "B-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "8551c3e4-55c2-4974-8d1a-7c4d395d9219",
+        "MapObjectName": "B-04",
+        "AreaID": "c60addae-088a-49b5-ab5e-f4d0ce6195bf",
+        "AreaName": "B-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "d9b18b44-f7fa-4dad-8a86-7ddb765b910f",
+        "MapObjectName": "ship02",
+        "AreaID": "20fb3f9d-e2d5-43f7-8e2d-e9506c3c4e15",
+        "AreaName": "배달",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "f77fbeac-50e7-43f1-83ee-80aed3523f19",
+        "MapObjectName": "take05",
+        "AreaID": "20fb3f9d-e2d5-43f7-8e2d-e9506c3c4e15",
+        "AreaName": "배달",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "a9f7a149-a69b-40e5-a1de-881739f6c3c9",
+        "MapObjectName": "take04",
+        "AreaID": "20fb3f9d-e2d5-43f7-8e2d-e9506c3c4e15",
+        "AreaName": "배달",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "327b88a8-5e16-40c3-96e5-8b0c613546ef",
+        "MapObjectName": "B-11",
+        "AreaID": "c60addae-088a-49b5-ab5e-f4d0ce6195bf",
+        "AreaName": "B-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "80c2b7d2-bb6f-4f65-a043-8c0da261ff3b",
+        "MapObjectName": "ship03",
+        "AreaID": "20fb3f9d-e2d5-43f7-8e2d-e9506c3c4e15",
+        "AreaName": "배달",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "49496b79-4f57-4d1f-bb4c-93bcf78dd053",
+        "MapObjectName": "B-08",
+        "AreaID": "c60addae-088a-49b5-ab5e-f4d0ce6195bf",
+        "AreaName": "B-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "3c143efb-0939-41c6-9a8d-952bd111b46d",
+        "MapObjectName": "A-2",
+        "AreaID": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
+        "AreaName": "A-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "98e2f55f-10b7-4562-aaac-9af6973ade71",
+        "MapObjectName": "PC2",
+        "AreaID": "e2952a67-7e4d-4d09-a7ec-cc22fa24aa25",
+        "AreaName": "Z",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "34159941-91e1-4d76-b063-9af719378525",
+        "MapObjectName": "C-6",
+        "AreaID": "e69f4221-ddc6-4fc2-8cf6-defac8dd4c3c",
+        "AreaName": "C-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "32171723-ea51-4204-8b9d-9f117fc94240",
+        "MapObjectName": "ship05",
+        "AreaID": "20fb3f9d-e2d5-43f7-8e2d-e9506c3c4e15",
+        "AreaName": "배달",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "407d429f-88ed-4c15-bad9-a0aa9cc44035",
+        "MapObjectName": "D-5",
+        "AreaID": "e69f4221-ddc6-4fc2-8cf6-defac8dd4c3c",
+        "AreaName": "C-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "2e3ea699-0aa2-48de-845d-af907aaa1fb5",
+        "MapObjectName": "PC4",
+        "AreaID": "e2952a67-7e4d-4d09-a7ec-cc22fa24aa25",
+        "AreaName": "Z",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "a8a3bca3-e086-4e48-a3f7-b1260211d900",
+        "MapObjectName": "D-1",
+        "AreaID": "e69f4221-ddc6-4fc2-8cf6-defac8dd4c3c",
+        "AreaName": "C-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "4dc6be72-ed54-4c93-83e8-b7c088387cd8",
+        "MapObjectName": "PC1",
+        "AreaID": "e2952a67-7e4d-4d09-a7ec-cc22fa24aa25",
+        "AreaName": "Z",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "cefb55ba-8b5e-4df8-a6d6-bd051568a994",
+        "MapObjectName": "PC3",
+        "AreaID": "e2952a67-7e4d-4d09-a7ec-cc22fa24aa25",
+        "AreaName": "Z",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "ff91da68-2aa3-4a63-a2c1-c0a2e2a49231",
+        "MapObjectName": "C-4",
+        "AreaID": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
+        "AreaName": "A-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "f10c9fdf-c490-4dad-a706-c23a59c08c71",
+        "MapObjectName": "D-6",
+        "AreaID": "e69f4221-ddc6-4fc2-8cf6-defac8dd4c3c",
+        "AreaName": "C-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "c7a4fe72-764a-4751-a3d5-c2525d29c5f8",
+        "MapObjectName": "ship01",
+        "AreaID": "20fb3f9d-e2d5-43f7-8e2d-e9506c3c4e15",
+        "AreaName": "배달",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "9f1ead01-8afa-4143-9521-d0b6e400f208",
+        "MapObjectName": "PC5",
+        "AreaID": "e2952a67-7e4d-4d09-a7ec-cc22fa24aa25",
+        "AreaName": "Z",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "b3bbdf67-d125-40c1-89a8-de0ba5ed7fe8",
+        "MapObjectName": "B-10",
+        "AreaID": "c60addae-088a-49b5-ab5e-f4d0ce6195bf",
+        "AreaName": "B-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "a7e14bfa-46a2-496a-bd50-e2737e01373c",
+        "MapObjectName": "C-1",
+        "AreaID": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
+        "AreaName": "A-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "3bbe61c8-f244-4a53-b59d-e6e07a15aa8a",
+        "MapObjectName": "C-7",
+        "AreaID": "e69f4221-ddc6-4fc2-8cf6-defac8dd4c3c",
+        "AreaName": "C-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "6022817a-13bf-49ab-8ae5-e7b26d4e26a9",
+        "MapObjectName": "C-8",
+        "AreaID": "e69f4221-ddc6-4fc2-8cf6-defac8dd4c3c",
+        "AreaName": "C-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "61f08200-3fa0-4dda-9293-e8578fa165e8",
+        "MapObjectName": "C-2",
+        "AreaID": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
+        "AreaName": "A-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "94843c33-e8d6-495a-8e36-eaf905ff331d",
+        "MapObjectName": "B-01",
+        "AreaID": "c60addae-088a-49b5-ab5e-f4d0ce6195bf",
+        "AreaName": "B-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "78cff09b-85d7-4166-abd1-ef41264e4021",
+        "MapObjectName": "D-4",
+        "AreaID": "e69f4221-ddc6-4fc2-8cf6-defac8dd4c3c",
+        "AreaName": "C-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "b1ddf0a5-96d3-45c1-bdc7-f2aa5e4eb338",
+        "MapObjectName": "A-6",
+        "AreaID": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
+        "AreaName": "A-",
+        "IsAvailable": true,
+        "Status": 2
+      },
+      {
+        "MapObjectID": "439d2c20-9259-46d1-aca8-f99cc0cc52f1",
+        "MapObjectName": "A-3",
+        "AreaID": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
+        "AreaName": "A-",
+        "IsAvailable": true,
+        "Status": 2
+      }
+    ],
+    "AllowMergeTable": 0
+  },
+  "Total": 0,
+  "Success": true
+}
