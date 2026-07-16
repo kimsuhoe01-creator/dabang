@@ -2,6 +2,11 @@ name: CUKCUK menu sync
 
 on:
   workflow_dispatch:
+  push:
+    branches:
+      - main
+    paths:
+      - ".github/workflows/cukcuk-sync.yml"
   schedule:
     - cron: "*/30 * * * *"
 
@@ -125,7 +130,7 @@ jobs:
               const categoryResult = await categoryResponse.json().catch(() => null);
               if (!categoryResponse.ok || !categoryResult?.Success || !Array.isArray(categoryResult.Data)) throw new Error('category list unavailable');
 
-              const alcoholPattern = /주류|맥주|소주|막걸리|와인|위스키|보드카|beer|bia|rượu|ruou|alcohol|wine|whisky|vodka|啤酒|烧酒|酒類|酒类/i;
+              const alcoholPattern = /주류|술|맥주|소주|막걸리|하이볼|와인|위스키|보드카|카스|테라|참이슬|진로|새로|하이트|켈리|beer|bia|rượu|ruou|alcohol|soju|highball|wine|whisky|vodka|cass|terra|tiger|heineken|saigon|sapporo|budweiser|corona|hoegaarden|啤酒|烧酒|酒類|酒类/i;
               const alcoholCategoryIds = new Set(categoryResult.Data.filter(category => alcoholPattern.test(`${category.Code || ''} ${category.Name || ''} ${category.Description || ''}`)).map(category => String(category.Id)));
               const inventory = [];
               for (let page = 1; page <= 10; page++) {
@@ -145,12 +150,17 @@ jobs:
                 const published = JSON.parse(fs.readFileSync('data/cukcuk-menu.json', 'utf8'));
                 const categoryId = 'cukcuk-alcohol';
                 if (!published.categories.some(category => category.id === categoryId)) published.categories.push({ id: categoryId, sourceName: '주류 | Đồ uống có cồn | 酒类 | Alcohol', names: { ko: '주류', vi: 'Đồ uống có cồn', zh: '酒类', en: 'Alcohol' }, visible: true, sortOrder: published.categories.length });
-                const existing = new Set(published.menus.map(menu => String(menu.id)));
+                const existing = new Map(published.menus.map(menu => [String(menu.id), menu]));
                 for (const item of alcoholItems) {
                   const id = String(item.Id);
-                  if (existing.has(id)) continue;
+                  if (existing.has(id)) {
+                    const menu = existing.get(id);
+                    menu.categoryId = categoryId;
+                    menu.categoryName = '주류';
+                    continue;
+                  }
                   published.menus.push({ id, cukcukId: id, categoryId, categoryName: '주류', sourceName: String(item.Name || item.Code || '주류'), names: { ko: String(item.Name || item.Code || '주류'), vi: '', zh: '', en: '' }, price: Number(item.SellingPrice ?? item.Price ?? 0), available: !item.Inactive, optionGroups: 0, optionTemplateIds: [], sortOrder: published.menus.length });
-                  existing.add(id);
+                  existing.set(id, published.menus[published.menus.length - 1]);
                 }
                 published.categoryCount = published.categories.length;
                 published.menuCount = published.menus.length;
@@ -179,3 +189,4 @@ jobs:
           fi
           git commit -m "Update CUKCUK published data"
           git push
+
