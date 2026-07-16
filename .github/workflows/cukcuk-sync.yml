@@ -51,6 +51,8 @@ jobs:
           fi
 
       - name: Publish latest menu data for GitHub Pages
+        env:
+          CUKCUK_SECRET_KEY: ${{ secrets.CUKCUK_SECRET_KEY }}
         shell: bash
         run: |
           mkdir -p data
@@ -59,12 +61,73 @@ jobs:
             "https://dabang-tablet-admin.kimsuhoe.chatgpt.site/api/cukcuk/menu"
           jq -e '.ok == true and .synced == true' data/cukcuk-menu.json >/dev/null
 
+          node <<'NODE'
+          const crypto = require('node:crypto');
+          const fs = require('node:fs');
+
+          const secret = process.env.CUKCUK_SECRET_KEY;
+          const appId = 'CUKCUKOpenPlatform';
+          const domain = 'dabang';
+          const branchId = '430a00af-29db-4f30-b8f8-e87bdb793ab0';
+
+          async function syncTables() {
+            if (!secret) throw new Error('CUKCUK_SECRET_KEY is not configured.');
+
+            const loginTime = new Date().toISOString();
+            const loginShapes = [
+              { Domain: domain, AppID: appId, LoginTime: loginTime },
+              { AppID: appId, Domain: domain, LoginTime: loginTime }
+            ];
+            const signatures = [];
+            for (const loginData of loginShapes) {
+              const json = JSON.stringify(loginData);
+              const hmac = encoding => crypto.createHmac('sha256', secret).update(json, 'utf8').digest(encoding);
+              signatures.push([loginData, hmac('base64')], [loginData, hmac('hex')]);
+            }
+
+            let login = null;
+            for (const [loginData, signature] of signatures) {
+              const response = await fetch('https://graphapi.cukcuk.vn/api/Account/Login', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({ ...loginData, SignatureInfo: signature })
+              });
+              const result = await response.json().catch(() => null);
+              if (response.ok && result?.Success && result.Data?.AccessToken && result.Data?.CompanyCode) {
+                login = result.Data;
+                break;
+              }
+            }
+            if (!login) throw new Error('CUKCUK automatic login did not return a token.');
+
+            const tableResponse = await fetch(`https://graphapi.cukcuk.vn/api/v1/tables/${branchId}`, {
+              headers: {
+                Authorization: `Bearer ${login.AccessToken}`,
+                CompanyCode: login.CompanyCode,
+                'Content-Type': 'application/json'
+              }
+            });
+            const tables = await tableResponse.json().catch(() => null);
+            const list = tables?.Data?.ListTable;
+            if (!tableResponse.ok || !tables?.Success || !Array.isArray(list) || !list.length) {
+              throw new Error('CUKCUK table API did not return a table list.');
+            }
+            fs.writeFileSync('data/cukcuk-tables.json', JSON.stringify(tables, null, 2) + '\n');
+            console.log(`CUKCUK table sync completed: ${list.length} tables.`);
+          }
+
+          syncTables().catch(error => console.log(`::warning::Table sync skipped: ${error.message}`));
+          NODE
+
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/cukcuk-menu.json
+          if [ -f data/cukcuk-tables.json ]; then
+            git add data/cukcuk-tables.json
+          fi
           if git diff --cached --quiet; then
             echo "Published data is already up to date."
             exit 0
           fi
-          git commit -m "Update CUKCUK menu data"
+          git commit -m "Update CUKCUK published data"
           git push

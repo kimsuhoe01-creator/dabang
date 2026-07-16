@@ -337,9 +337,8 @@ async function fakeSync(quiet=false){
  buttons.forEach(b=>{b.disabled=true;b.dataset.oldText=b.textContent;b.textContent='가져오는 중…'});
  document.getElementById('lastSync').textContent='서버에서 최신 메뉴를 읽는 중';
  try{
-  const response=await fetch('./data/cukcuk-menu.json?v='+Date.now(),{cache:'no-store'});
-  const result=await response.json();
-  if(!response.ok||!result.ok)throw new Error(result.message||'저장된 메뉴를 가져오지 못했습니다.');
+  const result=await fetchPublishedJson('data/cukcuk-menu.json');
+  if(!result.ok)throw new Error(result.message||'저장된 메뉴를 가져오지 못했습니다.');
   if(!result.synced||!result.menus?.length)throw new Error('첫 자동 동기화가 아직 완료되지 않았습니다.');
   const oldCategoryOrder=new Map(categories.map((c,index)=>[c.id,index]));
   const oldCategories=new Map(categories.map(c=>[c.id,c]));
@@ -368,10 +367,10 @@ async function fakeSync(quiet=false){
 }
 async function checkCukCukStatus(){
  try{
-  const response=await fetch('./data/cukcuk-menu.json?v='+Date.now(),{cache:'no-store'}),status=await response.json();
-  if(!response.ok||!status.menuCount)throw new Error('menu unavailable');
+  const status=await fetchPublishedJson('data/cukcuk-menu.json');
+  if(!status.menuCount)throw new Error('menu unavailable');
   let tableCount=0;
-  try{const tableResponse=await fetch('./data/cukcuk-tables.json?v='+Date.now(),{cache:'no-store'});if(tableResponse.ok)tableCount=normalizeAdminTables(await tableResponse.json()).length}catch{}
+  try{tableCount=normalizeAdminTables(await fetchPublishedJson('data/cukcuk-tables.json')).length}catch{}
   const optionCount=(status.optionTemplates||[]).reduce((sum,t)=>sum+(t.values||[]).length,0);
   document.getElementById('sidebarConnection').innerHTML='<i></i>'+(tableCount?'메뉴·테이블 동기화 정상':'메뉴 정상 · 테이블 설정 필요');
   document.getElementById('sidebarCounts').textContent='저장 메뉴 '+status.menuCount+'개';
@@ -388,6 +387,11 @@ async function checkCukCukStatus(){
   document.getElementById('connectionTitle').textContent='CUKCUK 메뉴 확인 필요';
   document.getElementById('connectionDetail').textContent='저장된 메뉴 파일을 불러오지 못했습니다.';
  }
+}
+async function fetchPublishedJson(path){
+ const suffix=path+'?v='+Date.now(),urls=[suffix,'https://kimsuhoe01-creator.github.io/dabang/'+suffix];
+ for(const url of [...new Set(urls)]){try{const response=await fetch(url,{cache:'no-store'});if(response.ok)return await response.json()}catch{}}
+ throw new Error('최신 메뉴를 불러오지 못했습니다. 인터넷 연결 후 다시 시도해주세요.');
 }
 function normalizeAdminTables(payload){const source=payload?.Data?.ListTable||payload?.tables||payload?.data?.tables||payload?.data||payload?.items||payload;return Array.isArray(source)?source:[]}
 function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window._to);window._to=setTimeout(()=>t.classList.remove('show'),2400)}
