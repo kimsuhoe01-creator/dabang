@@ -55,15 +55,40 @@ const FALLBACK={
  {id:'pizza',cat:'스페이스 피자',price:388800,available:true,n:{ko:'불고기 컴비네이션',vi:'Pizza thập cẩm bulgogi',zh:'牛肉综合披萨',en:'Bulgogi Combination Pizza'}},
  {id:'rice',cat:'다방분식',price:85320,available:true,n:{ko:'김치볶음밥',vi:'Cơm rang kim chi',zh:'泡菜炒饭',en:'Kimchi Fried Rice'}}]
 };
-let state;try{state=JSON.parse(localStorage.getItem('dabangTabletPreview'))||FALLBACK}catch(e){state=FALLBACK}
+let storedState=null;try{storedState=JSON.parse(localStorage.getItem('dabangTabletPreview'))}catch(e){}
+let state=storedState||FALLBACK;
 state.menus.forEach((menu,index)=>{if(menu.recommended===undefined)menu.recommended=index<6});
 let lang=state.lang||'ko',active='featured',cart=0;
 const words={ko:{featured:'추천',all:'전체',title:'지금 가장 맛있는 다방 메뉴',text:'사진 등록 전에도 메뉴가 깔끔하게 보이는 가로형 태블릿 화면입니다.',section:'추천 메뉴'},vi:{featured:'Đề xuất',all:'Tất cả',title:'Món Dabang ngon nhất hôm nay',text:'Giao diện menu máy tính bảng ngang, rõ ràng và dễ chọn.',section:'Món đề xuất'},zh:{featured:'推荐',all:'全部',title:'今日达邦精选菜单',text:'清晰易用的横屏平板菜单。',section:'推荐菜单'},en:{featured:'Featured',all:'All',title:'Dabang favorites right now',text:'A clear landscape tablet menu designed for easy ordering.',section:'Featured menu'}};
 function money(v){return new Intl.NumberFormat('vi-VN').format(v)+' ₫'}
 function renderLangs(){document.getElementById('langs').innerHTML=[['ko','KO'],['vi','VI'],['zh','ZH'],['en','EN']].map(([v,t])=>`<button class="${v===lang?'active':''}" onclick="setLang('${v}')">${t}</button>`).join('')}
-function renderCats(){const visible=state.categories.filter(c=>c.visible);document.getElementById('cats').innerHTML=`<button class="cat ${active==='featured'?'active':''}" onclick="setCat('featured')">★ ${words[lang].featured}</button><button class="cat ${active==='all'?'active':''}" onclick="setCat('all')">${words[lang].all}</button>`+visible.map(c=>`<button class="cat ${active===c.name?'active':''}" onclick="setCat('${c.name}')">${c.name}</button>`).join('')}
-function render(){renderLangs();renderCats();document.getElementById('heroTitle').textContent=words[lang].title;document.getElementById('heroText').textContent=words[lang].text;document.getElementById('sectionTitle').textContent=active==='featured'?words[lang].section:(active==='all'?words[lang].all:active);const list=state.menus.filter(m=>active==='featured'?m.recommended:(active==='all'||m.cat===active));document.getElementById('count').textContent=list.length+' MENU';document.getElementById('grid').innerHTML=list.length?list.map(m=>{const image=menuImage(m.id);return `<article class="card">${m.available?'':'<div class="sold">품절</div>'}<div class="visual">${image?`<img class="menu-photo" src="${image}" alt="">`:'<div class="placeholder"><span class="photo-icon">▧</span><span>PHOTO COMING SOON</span></div>'}</div><div class="info"><span class="category">${m.cat}</span><div class="name">${m.n[lang]||m.n.ko}</div><div class="foot"><strong class="price">${money(m.price)}</strong><button class="add" onclick="addItem('${m.id}')" ${m.available?'':'disabled'}>+</button></div></div></article>`}).join(''):'<div class="empty">이 카테고리에 표시할 메뉴가 없습니다.</div>'}
-function setLang(v){lang=v;render()}function setCat(v){active=v;render()}function addItem(id){const m=state.menus.find(x=>x.id===id);if(!m||!m.available)return;cart++;document.getElementById('cartCount').textContent=cart;showToast((m.n[lang]||m.n.ko)+' 주문함에 담았어요.')}function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window._t);window._t=setTimeout(()=>t.classList.remove('show'),2000)}
+function renderCats(){const visible=state.categories.filter(c=>c.visible);document.getElementById('cats').innerHTML=`<button class="cat ${active==='featured'?'active':''}" onclick="setCat('featured')">★ ${words[lang].featured}</button><button class="cat ${active==='all'?'active':''}" onclick="setCat('all')">${words[lang].all}</button>`+visible.map((c,index)=>`<button class="cat ${active===c.name?'active':''}" onclick="setVisibleCat(${index})">${escapeHtml(c.name)}</button>`).join('')}
+function render(){renderLangs();renderCats();document.getElementById('heroTitle').textContent=words[lang].title;document.getElementById('heroText').textContent=words[lang].text;document.getElementById('sectionTitle').textContent=active==='featured'?words[lang].section:(active==='all'?words[lang].all:active);const list=state.menus.filter(m=>active==='featured'?m.recommended:(active==='all'||m.cat===active));document.getElementById('count').textContent=list.length+' MENU';document.getElementById('grid').innerHTML=list.length?list.map(m=>{const image=menuImage(m.id),name=m.n?.[lang]||m.n?.ko||m.sourceName||'';return `<article class="card">${m.available?'':'<div class="sold">품절</div>'}<div class="visual">${image?`<img class="menu-photo" src="${image}" alt="">`:'<div class="placeholder"><span class="photo-icon">▧</span><span>PHOTO COMING SOON</span></div>'}</div><div class="info"><span class="category">${escapeHtml(m.cat)}</span><div class="name">${escapeHtml(name)}</div><div class="foot"><strong class="price">${money(m.price)}</strong><button class="add" onclick="addItem('${m.id}')" ${m.available?'':'disabled'}>+</button></div></div></article>`}).join(''):'<div class="empty">이 카테고리에 표시할 메뉴가 없습니다.</div>'}
+function setLang(v){lang=v;render()}function setCat(v){active=v;render()}function setVisibleCat(index){const visible=state.categories.filter(c=>c.visible);if(visible[index])setCat(visible[index].name)}function addItem(id){const m=state.menus.find(x=>x.id===id);if(!m||!m.available)return;cart++;document.getElementById('cartCount').textContent=cart;showToast((m.n[lang]||m.n.ko)+' 주문함에 담았어요.')}function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window._t);window._t=setTimeout(()=>t.classList.remove('show'),2000)}
+function publishedNames(item){
+ const result={ko:'',vi:'',zh:'',en:''},source=String(item.sourceName||item.names?.ko||'').trim();
+ for(const code of ['ko','vi','zh','en']){const value=String(item.names?.[code]||'').trim();if(value&&value!==source)result[code]=value}
+ const parts=source.split(/\s*[|/]\s*/).map(x=>x.trim()).filter(Boolean);
+ for(const part of parts){
+  if(/[가-힣]/.test(part)&&!result.ko){result.ko=part;continue}
+  if(/[㐀-鿿]/.test(part)&&!/[가-힣]/.test(part)&&!result.zh){result.zh=part;continue}
+  if(/[À-ỹĂăÂâĐđÊêÔôƠơƯư]/.test(part)&&!result.vi){result.vi=part;continue}
+  if(/[A-Za-z]/.test(part)&&!result.en)result.en=part
+ }
+ result.ko=result.ko||source;result.vi=result.vi||result.ko;result.zh=result.zh||result.ko;result.en=result.en||result.ko;
+ return result;
+}
+async function loadPublishedMenu(){
+ try{
+  const response=await fetch('data/cukcuk-menu.json?v='+Date.now(),{cache:'no-store'}),result=await response.json();
+  if(!response.ok||!result.ok||!Array.isArray(result.menus)||!result.menus.length)throw new Error('menu unavailable');
+  const savedCategories=new Map((storedState?.categories||[]).filter(c=>c.id).map(c=>[c.id,c]));
+  const categories=(result.categories||[]).map(c=>{const saved=savedCategories.get(c.id);return{id:c.id,name:saved?.name||c.names?.ko||c.sourceName,visible:saved?.visible??c.visible??true}});
+  const categoryNames=new Map(categories.map(c=>[c.id,c.name])),savedMenus=new Map((storedState?.menus||[]).map(m=>[m.id,m]));
+  const menus=result.menus.map((item,index)=>{const saved=savedMenus.get(item.id),savedCategory=saved?.categoryEdited&&categories.some(c=>c.name===saved.cat)?saved.cat:null;return{id:item.id,sourceName:item.sourceName,cat:savedCategory||categoryNames.get(item.categoryId)||item.categoryName||'',price:Number(item.price)||0,available:saved?.availabilityEdited?saved.available:item.available!==false,recommended:saved?.recommended??index<6,n:(saved?.nameEdited||saved?.languageOrganized)?saved.n:publishedNames(item)}});
+  state={lang:storedState?.lang||lang,categories,menus};lang=state.lang||'ko';active='featured';render();
+ }catch(error){if(!storedState){state=FALLBACK;render()}}
+}
 const startCopy={ko:{title:'테이블을 선택해 주세요',sub:'CUKCUK에 등록된 테이블과 동일하게 표시됩니다.',change:'← 언어 변경',loading:'CUKCUK 테이블을 불러오는 중입니다.',error:'테이블 목록을 불러오지 못했습니다.',retry:'다시 불러오기',area:'구역'},vi:{title:'Vui lòng chọn bàn',sub:'Danh sách bàn được tải trực tiếp từ CUKCUK.',change:'← Đổi ngôn ngữ',loading:'Đang tải danh sách bàn từ CUKCUK.',error:'Không thể tải danh sách bàn.',retry:'Thử lại',area:'Khu vực'},zh:{title:'请选择桌位',sub:'桌位列表与 CUKCUK 中登记的内容一致。',change:'← 更改语言',loading:'正在从 CUKCUK 加载桌位。',error:'无法加载桌位列表。',retry:'重新加载',area:'区域'},en:{title:'Select your table',sub:'Tables are shown exactly as registered in CUKCUK.',change:'← Change language',loading:'Loading tables from CUKCUK.',error:'Could not load the table list.',retry:'Try again',area:'Area'}};
 const languageOptions=[['ko','한국어','Korean'],['vi','Tiếng Việt','Vietnamese'],['zh','中文','Chinese'],['en','English','English']];
 let selectedTable=null,availableTables=[];
@@ -76,6 +101,7 @@ function escapeHtml(value){return String(value).replace(/[&<>"']/g,c=>({'&':'&am
 function selectTable(index){selectedTable=availableTables[index];if(!selectedTable)return;sessionStorage.setItem('dabangSelectedTable',JSON.stringify(selectedTable));document.querySelector('.store-name').innerHTML=`DABANG CHICKEN · TABLE ORDER <span class="selected-table">${escapeHtml(selectedTable.name)}</span>`;document.getElementById('startFlow').classList.add('hidden')}
 document.getElementById('logo').src=CUTOUT_LOGO_DATA;render();
 renderLanguageCards();
+loadPublishedMenu();
 </script>
 </body>
 </html>
