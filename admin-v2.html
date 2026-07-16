@@ -361,7 +361,7 @@ async function fakeSync(quiet=false){
   if(!result.synced||!result.menus?.length)throw new Error('첫 자동 동기화가 아직 완료되지 않았습니다.');
   const oldCategoryOrder=new Map(categories.map((c,index)=>[c.id,index]));
   const oldCategories=new Map(categories.map(c=>[c.id,c]));
-  categories=(result.categories||[]).map(c=>{const old=oldCategories.get(c.id);return{id:c.id,source:c.sourceName,name:old?.name||c.names.ko||c.sourceName,visible:old?.visible??true}}).sort((a,b)=>(oldCategoryOrder.get(a.id)??9999)-(oldCategoryOrder.get(b.id)??9999));
+  categories=(result.categories||[]).map(c=>{const old=oldCategories.get(c.id);return{id:c.id,source:c.sourceName,name:old?.name||c.names.ko||c.sourceName,names:{ko:c.names?.ko||'',vi:c.names?.vi||'',zh:c.names?.zh||'',en:c.names?.en||''},visible:old?.visible??true}}).sort((a,b)=>(oldCategoryOrder.get(a.id)??9999)-(oldCategoryOrder.get(b.id)??9999));
   const oldMenuOrder=new Map(menus.map((m,index)=>[m.id,index]));
   const oldMenus=new Map(menus.map(m=>[m.id,m]));
   const categoryNames=new Map(categories.map(c=>[c.id,c.name]));
