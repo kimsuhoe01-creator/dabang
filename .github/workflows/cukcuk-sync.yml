@@ -51,10 +51,6 @@ jobs:
           fi
 
       - name: Publish latest menu data for GitHub Pages
-        env:
-          CUKCUK_COMPANY_CODE: ${{ secrets.CUKCUK_COMPANY_CODE }}
-          CUKCUK_ACCESS_TOKEN: ${{ secrets.CUKCUK_ACCESS_TOKEN }}
-          CUKCUK_BRANCH_ID: ${{ secrets.CUKCUK_BRANCH_ID }}
         shell: bash
         run: |
           mkdir -p data
@@ -63,38 +59,12 @@ jobs:
             "https://dabang-tablet-admin.kimsuhoe.chatgpt.site/api/cukcuk/menu"
           jq -e '.ok == true and .synced == true' data/cukcuk-menu.json >/dev/null
 
-          # The branch ID is stable for DABANG CHICKEN and was returned by the
-          # authenticated CUKCUK sync response. A secret can still override it.
-          CUKCUK_BRANCH_ID="${CUKCUK_BRANCH_ID:-430a00af-29db-4f30-b8f8-e87bdb793ab0}"
-          table_synced=false
-          if [ -z "$CUKCUK_COMPANY_CODE" ] || [ -z "$CUKCUK_ACCESS_TOKEN" ]; then
-            echo "::warning::Table sync skipped. Configure CUKCUK_COMPANY_CODE and CUKCUK_ACCESS_TOKEN."
-          else
-            table_file="$(mktemp)"
-            curl --silent --show-error --fail-with-body \
-              --header "Authorization: Bearer $CUKCUK_ACCESS_TOKEN" \
-              --header "CompanyCode: $CUKCUK_COMPANY_CODE" \
-              --header "Content-Type: application/json" \
-              --output "$table_file" \
-              "https://graphapi.cukcuk.vn/api/v1/tables/$CUKCUK_BRANCH_ID"
-            jq -e '.Success == true and .Data.ListTable != null and (.Data.ListTable | type == "array" and length > 0)' "$table_file" >/dev/null
-            mv "$table_file" data/cukcuk-tables.json
-            table_synced=true
-          fi
-
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
           git add data/cukcuk-menu.json
-          if [ -f data/cukcuk-tables.json ]; then
-            git add data/cukcuk-tables.json
-          fi
           if git diff --cached --quiet; then
             echo "Published data is already up to date."
             exit 0
           fi
-          if [ "$table_synced" = true ]; then
-            git commit -m "Update CUKCUK menu and table data"
-          else
-            git commit -m "Update CUKCUK menu data"
-          fi
+          git commit -m "Update CUKCUK menu data"
           git push

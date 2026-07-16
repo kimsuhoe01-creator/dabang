@@ -377,7 +377,7 @@ async function checkCukCukStatus(){
   document.getElementById('sidebarCounts').textContent='저장 메뉴 '+status.menuCount+'개';
   document.getElementById('connectionCheck').textContent=tableCount?'✓':'!';
   document.getElementById('connectionTitle').textContent=tableCount?'메뉴·테이블 연결 정상':'메뉴 정상 · 테이블 연결 대기';
-  document.getElementById('connectionDetail').textContent=tableCount?'최신 CUKCUK 메뉴와 테이블 파일을 확인했습니다.':'메뉴는 정상입니다. GitHub에 CUKCUK CompanyCode와 Access Token을 등록하면 테이블이 연결됩니다.';
+  document.getElementById('connectionDetail').textContent=tableCount?'최신 CUKCUK 메뉴와 테이블 파일을 확인했습니다.':'메뉴는 정상입니다. 테이블은 서버의 CUKCUK 자동 인증 연결을 추가한 뒤 표시됩니다.';
   document.getElementById('connectionTableCount').textContent=tableCount||'—';
   document.getElementById('connectionCategoryCount').textContent=status.categoryCount||0;
   document.getElementById('connectionMenuCount').textContent=status.menuCount||0;
