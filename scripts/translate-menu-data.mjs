@@ -88,7 +88,7 @@ async function translateBatch(batch) {
       input: [
         {
           role: 'system',
-          content: 'You translate restaurant menu labels for a Korean chicken restaurant in Vietnam. Return concise, natural customer-facing names in Korean, Vietnamese, Simplified Chinese, and English. The source may already mix several languages; extract useful existing translations, correct spacing and awkward phrasing, and translate anything missing. Preserve brand names, product codes, sizes, numbers, and proper nouns. Do not add explanations, prices, or marketing claims. Use common restaurant wording in each language.'
+          content: 'You translate restaurant menu labels for a Korean chicken restaurant in Vietnam. Return exactly one translation object for every input id, keeping each id unchanged. Return concise, natural customer-facing names in Korean, Vietnamese, Simplified Chinese, and English. The source may already mix several languages; extract useful existing translations, correct spacing and awkward phrasing, and translate anything missing. Preserve brand names, product codes, sizes, numbers, and proper nouns. Do not add explanations, prices, or marketing claims. Use common restaurant wording in each language.'
         },
         {
           role: 'user',
