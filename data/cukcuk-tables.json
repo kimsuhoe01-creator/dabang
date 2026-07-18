@@ -39,16 +39,16 @@
         "MapObjectName": "A-5",
         "AreaID": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
         "AreaName": "A-",
-        "IsAvailable": true,
-        "Status": 2
+        "IsAvailable": false,
+        "Status": 1
       },
       {
         "MapObjectID": "a7c94545-534d-400e-a21e-3e4ac824323c",
         "MapObjectName": "A-1",
         "AreaID": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
         "AreaName": "A-",
-        "IsAvailable": true,
-        "Status": 2
+        "IsAvailable": false,
+        "Status": 1
       },
       {
         "MapObjectID": "f621fd08-5e76-4bc5-903c-4456731f72e6",
@@ -63,8 +63,8 @@
         "MapObjectName": "B-13",
         "AreaID": "c60addae-088a-49b5-ab5e-f4d0ce6195bf",
         "AreaName": "B-",
-        "IsAvailable": false,
-        "Status": 1
+        "IsAvailable": true,
+        "Status": 2
       },
       {
         "MapObjectID": "1dc82102-e8fa-4522-b31c-526a34e02695",
@@ -111,8 +111,8 @@
         "MapObjectName": "D-3",
         "AreaID": "e69f4221-ddc6-4fc2-8cf6-defac8dd4c3c",
         "AreaName": "C-",
-        "IsAvailable": true,
-        "Status": 2
+        "IsAvailable": false,
+        "Status": 1
       },
       {
         "MapObjectID": "7b437f85-4c1e-455d-9360-5fd38b1025d2",
@@ -151,8 +151,8 @@
         "MapObjectName": "D-2",
         "AreaID": "e69f4221-ddc6-4fc2-8cf6-defac8dd4c3c",
         "AreaName": "C-",
-        "IsAvailable": false,
-        "Status": 1
+        "IsAvailable": true,
+        "Status": 2
       },
       {
         "MapObjectID": "6c4e236f-5a0d-42a8-add9-7b91a91f4498",
@@ -239,8 +239,8 @@
         "MapObjectName": "C-6",
         "AreaID": "e69f4221-ddc6-4fc2-8cf6-defac8dd4c3c",
         "AreaName": "C-",
-        "IsAvailable": false,
-        "Status": 1
+        "IsAvailable": true,
+        "Status": 2
       },
       {
         "MapObjectID": "32171723-ea51-4204-8b9d-9f117fc94240",
@@ -271,8 +271,8 @@
         "MapObjectName": "D-1",
         "AreaID": "e69f4221-ddc6-4fc2-8cf6-defac8dd4c3c",
         "AreaName": "C-",
-        "IsAvailable": true,
-        "Status": 2
+        "IsAvailable": false,
+        "Status": 1
       },
       {
         "MapObjectID": "4dc6be72-ed54-4c93-83e8-b7c088387cd8",
@@ -303,8 +303,8 @@
         "MapObjectName": "D-6",
         "AreaID": "e69f4221-ddc6-4fc2-8cf6-defac8dd4c3c",
         "AreaName": "C-",
-        "IsAvailable": false,
-        "Status": 1
+        "IsAvailable": true,
+        "Status": 2
       },
       {
         "MapObjectID": "c7a4fe72-764a-4751-a3d5-c2525d29c5f8",
