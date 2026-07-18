@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-07-18 13:23:04",
-    "finished_at": "2026-07-18 13:23:35",
+    "started_at": "2026-07-18 13:46:34",
+    "finished_at": "2026-07-18 13:46:44",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다."
@@ -29,9 +29,9 @@
       "sourceName": "세트|Combo/Phầnăn|套餐|Set/Combo",
       "names": {
         "ko": "세트",
-        "vi": "Combo/Phầnăn",
+        "vi": "Combo",
         "zh": "套餐",
-        "en": "Set/Combo"
+        "en": "Set Combo"
       },
       "visible": true,
       "sortOrder": 1
@@ -41,9 +41,9 @@
       "sourceName": "다방치킨 | Dabang Chicken",
       "names": {
         "ko": "다방치킨",
-        "vi": "Dabang Chicken",
-        "zh": "",
-        "en": ""
+        "vi": "Gà Dabang",
+        "zh": "Dabang 炸鸡",
+        "en": "Dabang Chicken"
       },
       "visible": true,
       "sortOrder": 2
@@ -53,9 +53,9 @@
       "sourceName": "통닭|Gànguyê-conchiên|整只炸鸡|WholeFriedChicken  ",
       "names": {
         "ko": "통닭",
-        "vi": "Gànguyê-conchiên",
+        "vi": "Gà nguyên con chiên",
         "zh": "整只炸鸡",
-        "en": "WholeFriedChicken"
+        "en": "Whole Fried Chicken"
       },
       "visible": true,
       "sortOrder": 3
@@ -65,9 +65,9 @@
       "sourceName": "날개치킨|Gàcánhchiên|炸鸡翅|WingChicken  ",
       "names": {
         "ko": "날개치킨",
-        "vi": "Gàcánhchiên",
+        "vi": "Gà cánh chiên",
         "zh": "炸鸡翅",
-        "en": "WingChicken"
+        "en": "Chicken Wings"
       },
       "visible": true,
       "sortOrder": 4
@@ -77,9 +77,9 @@
       "sourceName": "스페이스 피자|Bánhpizza|披萨|Pizza  ",
       "names": {
         "ko": "스페이스 피자",
-        "vi": "Bánhpizza",
-        "zh": "披萨",
-        "en": "Pizza"
+        "vi": "Pizza Space",
+        "zh": "Space 披萨",
+        "en": "Space Pizza"
       },
       "visible": true,
       "sortOrder": 5
@@ -89,9 +89,9 @@
       "sourceName": "스페이스 버거|Bánhmìkẹpthịt|汉堡|Hamburger  ",
       "names": {
         "ko": "스페이스 버거",
-        "vi": "Bánhmìkẹpthịt",
-        "zh": "汉堡",
-        "en": "Hamburger"
+        "vi": "Burger Space",
+        "zh": "Space 汉堡",
+        "en": "Space Burger"
       },
       "visible": true,
       "sortOrder": 6
@@ -101,9 +101,9 @@
       "sourceName": "다방분식|Mónănvặt|小吃|KoreanSnacks  ",
       "names": {
         "ko": "다방분식",
-        "vi": "Mónănvặt",
-        "zh": "小吃",
-        "en": "KoreanSnacks"
+        "vi": "Món ăn vặt Dabang",
+        "zh": "Dabang 小吃",
+        "en": "Dabang Snacks"
       },
       "visible": true,
       "sortOrder": 7
@@ -113,9 +113,9 @@
       "sourceName": "안주|Mónnhậu|下酒菜|SideDish/BarSnacks  ",
       "names": {
         "ko": "안주",
-        "vi": "Mónnhậu",
+        "vi": "Món nhậu",
         "zh": "下酒菜",
-        "en": "SideDish/BarSnacks"
+        "en": "Bar Snacks"
       },
       "visible": true,
       "sortOrder": 8
@@ -125,7 +125,7 @@
       "sourceName": "음료|Nướcuống|饮料|Beverages  ",
       "names": {
         "ko": "음료",
-        "vi": "Nướcuống",
+        "vi": "Nước uống",
         "zh": "饮料",
         "en": "Beverages"
       },
@@ -137,9 +137,9 @@
       "sourceName": "멕시칸|MónMexico|墨西哥菜|MexicanFood  ",
       "names": {
         "ko": "멕시칸",
-        "vi": "MónMexico",
+        "vi": "Món Mexico",
         "zh": "墨西哥菜",
-        "en": "MexicanFood"
+        "en": "Mexican Food"
       },
       "visible": true,
       "sortOrder": 10
@@ -165,10 +165,10 @@
       "categoryName": "다방치킨",
       "sourceName": "후라이드  Fried Chicken  无骨炸鸡腿 Má đùi rút xương",
       "names": {
-        "ko": "후라이드  Fried Chicken  无骨炸鸡腿 Má đùi rút xương",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "후라이드 치킨",
+        "vi": "Gà rán má đùi rút xương",
+        "zh": "无骨炸鸡腿",
+        "en": "Boneless Fried Chicken Thigh"
       },
       "price": 399600,
       "available": true,
@@ -185,10 +185,10 @@
       "categoryName": "날개치킨",
       "sourceName": "허니 윙봉 Honey Wings 蜜汁鸡翅 Cánh gà mật ong",
       "names": {
-        "ko": "허니 윙봉 Honey Wings 蜜汁鸡翅 Cánh gà mật ong",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "허니 윙봉",
+        "vi": "Cánh gà mật ong",
+        "zh": "蜜汁鸡翅",
+        "en": "Honey Wings"
       },
       "price": 399600,
       "available": true,
@@ -203,10 +203,10 @@
       "categoryName": "신메뉴",
       "sourceName": "핫후라이드ver3.0 | Gà rán cay | 辣味炸鸡 | Hot Fried Chicken",
       "names": {
-        "ko": "핫후라이드ver3.0 | Gà rán cay | 辣味炸鸡 | Hot Fried Chicken",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "핫후라이드 ver3.0",
+        "vi": "Gà rán cay ver3.0",
+        "zh": "辣味炸鸡 ver3.0",
+        "en": "Hot Fried Chicken ver3.0"
       },
       "price": 399600,
       "available": true,
@@ -223,10 +223,10 @@
       "categoryName": "세트",
       "sourceName": "한신포차세트 | nguyên con & chân gà | 鸡爪鸡套餐",
       "names": {
-        "ko": "한신포차세트 | nguyên con & chân gà | 鸡爪鸡套餐",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "한신포차 세트",
+        "vi": "Combo gà nguyên con và chân gà",
+        "zh": "鸡爪鸡套餐",
+        "en": "Hanshin Pocha Set"
       },
       "price": 540000,
       "available": true,
@@ -243,10 +243,10 @@
       "categoryName": "음료",
       "sourceName": "펩시제로 | Pepsi Zero | 百事可乐无糖 | Pepsi không đường",
       "names": {
-        "ko": "펩시제로 | Pepsi Zero | 百事可乐无糖 | Pepsi không đường",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "펩시 제로",
+        "vi": "Pepsi không đường",
+        "zh": "百事可乐无糖",
+        "en": "Pepsi Zero"
       },
       "price": 33000,
       "available": true,
@@ -261,10 +261,10 @@
       "categoryName": "기타",
       "sourceName": "페퍼로니/ (SP02) Pepperoni/  意大利香肠披萨/  Pizza pepperoni solo",
       "names": {
-        "ko": "페퍼로니/ (SP02) Pepperoni/  意大利香肠披萨/  Pizza pepperoni solo",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "페퍼로니 (SP02)",
+        "vi": "Pizza pepperoni (SP02)",
+        "zh": "意大利香肠披萨 (SP02)",
+        "en": "Pepperoni Pizza (SP02)"
       },
       "price": 139968,
       "available": true,
@@ -279,10 +279,10 @@
       "categoryName": "스페이스 피자",
       "sourceName": "파마산 치즈가루 | Phô mai bột Parmesan",
       "names": {
-        "ko": "파마산 치즈가루 | Phô mai bột Parmesan",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "파마산 치즈가루",
+        "vi": "Bột phô mai Parmesan",
+        "zh": "帕玛森芝士粉",
+        "en": "Parmesan Cheese Powder"
       },
       "price": 5400,
       "available": true,
@@ -297,10 +297,10 @@
       "categoryName": "다방치킨",
       "sourceName": "파닭  Green Onion Chicken 葱香炸鸡（芥末酱 Gà hành lá (sốt mù tạt)",
       "names": {
-        "ko": "파닭  Green Onion Chicken 葱香炸鸡（芥末酱 Gà hành lá (sốt mù tạt)",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "파닭",
+        "vi": "Gà hành lá sốt mù tạt",
+        "zh": "葱香炸鸡（芥末酱）",
+        "en": "Green Onion Chicken with Mustard Sauce"
       },
       "price": 399600,
       "available": true,
@@ -317,10 +317,10 @@
       "categoryName": "세트",
       "sourceName": "통떡 SET  Whole Chicken & Tteok Set 整只炸鸡 + 辣炒年糕Gà nguyên con + Tokbokki",
       "names": {
-        "ko": "통떡 SET  Whole Chicken & Tteok Set 整只炸鸡 + 辣炒年糕Gà nguyên con + Tokbokki",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "통떡 세트",
+        "vi": "Combo gà nguyên con và tokbokki",
+        "zh": "整只炸鸡配辣炒年糕",
+        "en": "Whole Chicken & Tteokbokki Set"
       },
       "price": 378000,
       "available": true,
@@ -339,10 +339,10 @@
       "categoryName": "안주",
       "sourceName": "클래식 쥐포 Thin Grilled Filefish  烤鳞头鱼片 / 薄片鱿鱼干 Cá chỉ vàng nướng lát mỏng",
       "names": {
-        "ko": "클래식 쥐포 Thin Grilled Filefish  烤鳞头鱼片 / 薄片鱿鱼干 Cá chỉ vàng nướng lát mỏng",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "클래식 쥐포",
+        "vi": "Cá chỉ vàng nướng lát mỏng",
+        "zh": "烤鳞头鱼片",
+        "en": "Thin Grilled Filefish"
       },
       "price": 108000,
       "available": true,
@@ -357,10 +357,10 @@
       "categoryName": "날개치킨",
       "sourceName": "크리스피 윙봉Crispy Wings 炸鸡翅 Cánh chiên giòn",
       "names": {
-        "ko": "크리스피 윙봉Crispy Wings 炸鸡翅 Cánh chiên giòn",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "크리스피 윙봉",
+        "vi": "Cánh gà chiên giòn",
+        "zh": "香脆炸鸡翅",
+        "en": "Crispy Wings"
       },
       "price": 399600,
       "available": true,
@@ -375,10 +375,10 @@
       "categoryName": "음료",
       "sourceName": "코카콜라 Coca-Cola可口可乐  Coca-Cola",
       "names": {
-        "ko": "코카콜라 Coca-Cola可口可乐  Coca-Cola",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "코카콜라",
+        "vi": "Coca-Cola",
+        "zh": "可口可乐",
+        "en": "Coca-Cola"
       },
       "price": 22000,
       "available": true,
@@ -393,10 +393,10 @@
       "categoryName": "세트",
       "sourceName": "치피 SET (M)  Chicken Pizza Set (M)",
       "names": {
-        "ko": "치피 SET (M)  Chicken Pizza Set (M)",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "치피 세트 (M)",
+        "vi": "Combo Gà & Pizza (M)",
+        "zh": "炸鸡披萨套餐 (M)",
+        "en": "Chicken Pizza Set (M)"
       },
       "price": 518400,
       "available": true,
@@ -415,10 +415,10 @@
       "categoryName": "세트",
       "sourceName": "치피 SET (L) | Chicken Pizza Set (L)",
       "names": {
-        "ko": "치피 SET (L) | Chicken Pizza Set (L)",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "치피 세트 (L)",
+        "vi": "Combo Gà & Pizza (L)",
+        "zh": "炸鸡披萨套餐 (L)",
+        "en": "Chicken Pizza Set (L)"
       },
       "price": 734400,
       "available": true,
@@ -437,10 +437,10 @@
       "categoryName": "신메뉴",
       "sourceName": "치킨 시즈닝 | Gia vị gà rán | 炸鸡调味粉 | Chicken seasoning",
       "names": {
-        "ko": "치킨 시즈닝 | Gia vị gà rán | 炸鸡调味粉 | Chicken seasoning",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "치킨 시즈닝",
+        "vi": "Gia vị gà rán",
+        "zh": "炸鸡调味粉",
+        "en": "Chicken Seasoning"
       },
       "price": 27000,
       "available": true,
@@ -457,10 +457,10 @@
       "categoryName": "스페이스 피자",
       "sourceName": "치즈크러스트 반반피자 / Cheese Crust Half & Half Pizza / 芝士边半半披萨 / Pizza nửa nửa viền phô mai",
       "names": {
-        "ko": "치즈크러스트 반반피자 / Cheese Crust Half & Half Pizza / 芝士边半半披萨 / Pizza nửa nửa viền phô mai",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "치즈크러스트 반반피자",
+        "vi": "Pizza nửa nửa viền phô mai",
+        "zh": "芝士边半半披萨",
+        "en": "Cheese Crust Half & Half Pizza"
       },
       "price": 432000,
       "available": true,
@@ -477,10 +477,10 @@
       "categoryName": "스페이스 피자",
       "sourceName": "치즈오븐스파게티 Cheese Oven-Baked Spaghetti 芝士焗意大利面Mì Ý đút lò phô mai",
       "names": {
-        "ko": "치즈오븐스파게티 Cheese Oven-Baked Spaghetti 芝士焗意大利面Mì Ý đút lò phô mai",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "치즈 오븐 스파게티",
+        "vi": "Mì Ý đút lò phô mai",
+        "zh": "芝士焗意大利面",
+        "en": "Cheese Oven-Baked Spaghetti"
       },
       "price": 172800,
       "available": true,
@@ -495,10 +495,10 @@
       "categoryName": "스페이스 피자",
       "sourceName": "치즈바이트 반반피자 / Cheese Bite Half & Half Pizza / 芝士球边半半披萨 / Pizza nửa nửa viên phô mai",
       "names": {
-        "ko": "치즈바이트 반반피자 / Cheese Bite Half & Half Pizza / 芝士球边半半披萨 / Pizza nửa nửa viên phô mai",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "치즈바이트 반반피자",
+        "vi": "Pizza nửa nửa viên phô mai",
+        "zh": "芝士球边半半披萨",
+        "en": "Cheese Bite Half & Half Pizza"
       },
       "price": 453600,
       "available": true,
@@ -515,10 +515,10 @@
       "categoryName": "신메뉴",
       "sourceName": "치밥키트(밥+실비김치) | Combo cơm + kim chi cay(250g)",
       "names": {
-        "ko": "치밥키트(밥+실비김치) | Combo cơm + kim chi cay(250g)",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "치밥 키트 (밥+실비김치)",
+        "vi": "Combo cơm + kim chi cay (250g)",
+        "zh": "炸鸡拌饭套餐（米饭+辣泡菜）（250g）",
+        "en": "Chicken Rice Kit (Rice + Spicy Kimchi) (250g)"
       },
       "price": 54000,
       "available": true,
@@ -535,10 +535,10 @@
       "categoryName": "세트",
       "sourceName": "치떡 SET | Chicken & Tteok Set | 无骨炸鸡 + 辣炒年糕 | Gà không xương + Tokbokki",
       "names": {
-        "ko": "치떡 SET | Chicken & Tteok Set | 无骨炸鸡 + 辣炒年糕 | Gà không xương + Tokbokki",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "치떡 세트",
+        "vi": "Combo gà không xương + tokbokki",
+        "zh": "无骨炸鸡+辣炒年糕套餐",
+        "en": "Chicken & Tteok Set"
       },
       "price": 324000,
       "available": true,
@@ -558,10 +558,10 @@
       "categoryName": "안주",
       "sourceName": "촉촉 반건조 오징어 | Mực một nắng | 半干鱿鱼 | Semi-dried squid",
       "names": {
-        "ko": "촉촉 반건조 오징어 | Mực một nắng | 半干鱿鱼 | Semi-dried squid",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "촉촉 반건조 오징어",
+        "vi": "Mực một nắng",
+        "zh": "半干鱿鱼",
+        "en": "Semi-Dried Squid"
       },
       "price": 226800,
       "available": true,
@@ -576,10 +576,10 @@
       "categoryName": "스페이스 피자",
       "sourceName": "체다치즈 반반피자 / Cheddar Cheese Half & Half Pizza / 车打芝士半半披萨 / Pizza nửa nửa phô mai Cheddar",
       "names": {
-        "ko": "체다치즈 반반피자 / Cheddar Cheese Half & Half Pizza / 车打芝士半半披萨 / Pizza nửa nửa phô mai Cheddar",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "체다치즈 반반피자",
+        "vi": "Pizza nửa nửa phô mai Cheddar",
+        "zh": "车打芝士半半披萨",
+        "en": "Cheddar Cheese Half & Half Pizza"
       },
       "price": 367200,
       "available": true,
@@ -596,10 +596,10 @@
       "categoryName": "다방분식",
       "sourceName": "쫄면Spicy Chewy Noodles辣拌劲道面  Mì trộn cay dai",
       "names": {
-        "ko": "쫄면Spicy Chewy Noodles辣拌劲道面  Mì trộn cay dai",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "쫄면",
+        "vi": "Mì trộn cay dai",
+        "zh": "辣拌劲道面",
+        "en": "Spicy Chewy Noodles"
       },
       "price": 97200,
       "available": true,
@@ -614,10 +614,10 @@
       "categoryName": "다방치킨",
       "sourceName": "짭코바|Spicy BBQ Chicken| BBQ烤鸡 |Gà nướng BBQ",
       "names": {
-        "ko": "짭코바|Spicy BBQ Chicken| BBQ烤鸡 |Gà nướng BBQ",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "짭코바",
+        "vi": "Gà nướng BBQ cay",
+        "zh": "香辣BBQ烤鸡",
+        "en": "Spicy BBQ Chicken"
       },
       "price": 399600,
       "available": true,
@@ -635,10 +635,10 @@
       "categoryName": "다방치킨",
       "sourceName": "짭코바 반마리|BBQ cay nửa con|辣烤鸡半只|Spicy Grilled Chicken (Half)",
       "names": {
-        "ko": "짭코바 반마리|BBQ cay nửa con|辣烤鸡半只|Spicy Grilled Chicken (Half)",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "짭코바 반마리",
+        "vi": "Gà nướng BBQ cay nửa con",
+        "zh": "辣烤鸡半只",
+        "en": "Spicy Grilled Chicken (Half)"
       },
       "price": 216000,
       "available": true,
@@ -656,10 +656,10 @@
       "categoryName": "음료",
       "sourceName": "쥬시큘 | Cool C",
       "names": {
-        "ko": "쥬시큘 | Cool C",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "쥬시큘",
+        "vi": "Cool C",
+        "zh": "Cool C",
+        "en": "Cool C"
       },
       "price": 44000,
       "available": true,
@@ -676,10 +676,10 @@
       "categoryName": "다방분식",
       "sourceName": "주먹밥Rice Ball  饭团  Cơm nắm",
       "names": {
-        "ko": "주먹밥Rice Ball  饭团  Cơm nắm",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "주먹밥",
+        "vi": "Cơm nắm",
+        "zh": "饭团",
+        "en": "Rice Ball"
       },
       "price": 54000,
       "available": true,
@@ -694,10 +694,10 @@
       "categoryName": "안주",
       "sourceName": "조미오징어|Mực tẩmgia|调味鱿鱼|Seasonedsquid",
       "names": {
-        "ko": "조미오징어|Mực tẩmgia|调味鱿鱼|Seasonedsquid",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "조미 오징어",
+        "vi": "Mực tẩm gia vị",
+        "zh": "调味鱿鱼",
+        "en": "Seasoned Squid"
       },
       "price": 172800,
       "available": true,
@@ -712,10 +712,10 @@
       "categoryName": "스페이스 피자",
       "sourceName": "일반도우 반반피자 / Regular Dough Half & Half Pizza / 普通饼底半半披萨 / Pizza nửa nửa đế thường",
       "names": {
-        "ko": "일반도우 반반피자 / Regular Dough Half & Half Pizza / 普通饼底半半披萨 / Pizza nửa nửa đế thường",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "일반도우 반반피자",
+        "vi": "Pizza nửa nửa đế thường",
+        "zh": "普通饼底半半披萨",
+        "en": "Regular Dough Half & Half Pizza"
       },
       "price": 324000,
       "available": true,
@@ -732,10 +732,10 @@
       "categoryName": "신메뉴",
       "sourceName": "유린기 | Gà chiên sốt chua ngọt kiểu Hoa | 油淋鸡",
       "names": {
-        "ko": "유린기 | Gà chiên sốt chua ngọt kiểu Hoa | 油淋鸡",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "유린기",
+        "vi": "Gà chiên sốt chua ngọt kiểu Hoa",
+        "zh": "油淋鸡",
+        "en": "Chinese-Style Fried Chicken with Sweet and Sour Sauce"
       },
       "price": 205200,
       "available": true,
@@ -750,10 +750,10 @@
       "categoryName": "날개치킨",
       "sourceName": "윙봉반 | Gà cánh chiên nửa con | 半只炸鸡翅 | Half Fried Chicken Wings",
       "names": {
-        "ko": "윙봉반 | Gà cánh chiên nửa con | 半只炸鸡翅 | Half Fried Chicken Wings",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "윙봉 반마리",
+        "vi": "Cánh gà chiên nửa phần",
+        "zh": "半只炸鸡翅",
+        "en": "Half Fried Chicken Wings"
       },
       "price": 216000,
       "available": true,
@@ -770,10 +770,10 @@
       "categoryName": "세트",
       "sourceName": "윙봉떠까  Sauced Chicken Wings  四味鸡翅  Cánh gà 4 vị",
       "names": {
-        "ko": "윙봉떠까  Sauced Chicken Wings  四味鸡翅  Cánh gà 4 vị",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "윙봉 떠까",
+        "vi": "Cánh gà 4 vị",
+        "zh": "四味鸡翅",
+        "en": "Four-Flavor Chicken Wings"
       },
       "price": 421200,
       "available": true,
@@ -788,10 +788,10 @@
       "categoryName": "세트",
       "sourceName": "윙떡 SET  Wings & Tteok Set鸡翅 + 辣炒年糕 Cánh gà + Tokbokki",
       "names": {
-        "ko": "윙떡 SET  Wings & Tteok Set鸡翅 + 辣炒年糕 Cánh gà + Tokbokki",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "윙떡 세트",
+        "vi": "Combo cánh gà + tokbokki",
+        "zh": "鸡翅+辣炒年糕套餐",
+        "en": "Wings & Tteok Set"
       },
       "price": 324000,
       "available": true,
@@ -812,10 +812,10 @@
       "categoryName": "통닭",
       "sourceName": "옛날 통닭  Old-School Whole Fried Chicken  整只炸鸡 Gà chiên nguyên con",
       "names": {
-        "ko": "옛날 통닭  Old-School Whole Fried Chicken  整只炸鸡 Gà chiên nguyên con",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "옛날 통닭",
+        "vi": "Gà chiên nguyên con kiểu truyền thống",
+        "zh": "传统整只炸鸡",
+        "en": "Old-School Whole Fried Chicken"
       },
       "price": 291600,
       "available": true,
@@ -830,10 +830,10 @@
       "categoryName": "다방분식",
       "sourceName": "얼큰김치우동 Spicy Kimchi Udon  泡菜辣乌冬面 Udon kimchi cay",
       "names": {
-        "ko": "얼큰김치우동 Spicy Kimchi Udon  泡菜辣乌冬面 Udon kimchi cay",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "얼큰 김치우동",
+        "vi": "Udon kim chi cay",
+        "zh": "泡菜辣乌冬面",
+        "en": "Spicy Kimchi Udon"
       },
       "price": 97200,
       "available": true,
@@ -848,10 +848,10 @@
       "categoryName": "안주",
       "sourceName": "어묵탕 | Lẩu chả cá | 鱼饼汤 | Fish cake soup",
       "names": {
-        "ko": "어묵탕 | Lẩu chả cá | 鱼饼汤 | Fish cake soup",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "어묵탕",
+        "vi": "Lẩu chả cá",
+        "zh": "鱼饼汤",
+        "en": "Fish Cake Soup"
       },
       "price": 248400,
       "available": true,
@@ -868,10 +868,10 @@
       "categoryName": "다방분식",
       "sourceName": "어묵꼬치우동  Udon with Fish Cake Skewers关东煮乌冬面 Udon xiên chả cá",
       "names": {
-        "ko": "어묵꼬치우동  Udon with Fish Cake Skewers关东煮乌冬面 Udon xiên chả cá",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "어묵꼬치 우동",
+        "vi": "Udon xiên chả cá",
+        "zh": "关东煮乌冬面",
+        "en": "Udon with Fish Cake Skewers"
       },
       "price": 97200,
       "available": true,
@@ -886,10 +886,10 @@
       "categoryName": "다방치킨",
       "sourceName": "양념  Sweet & Spicy Chicken  韩式甜酱炸鸡 Gà sốt ngọt HQ",
       "names": {
-        "ko": "양념  Sweet & Spicy Chicken  韩式甜酱炸鸡 Gà sốt ngọt HQ",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "양념치킨",
+        "vi": "Gà sốt ngọt Hàn Quốc",
+        "zh": "韩式甜酱炸鸡",
+        "en": "Sweet & Spicy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -906,10 +906,10 @@
       "categoryName": "신메뉴",
       "sourceName": "아이스크림 500ml | Kem 500ml | 冰淇淋 500ml | Ice Cream 500ml",
       "names": {
-        "ko": "아이스크림 500ml | Kem 500ml | 冰淇淋 500ml | Ice Cream 500ml",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "아이스크림 500ml",
+        "vi": "Kem 500ml",
+        "zh": "冰淇淋 500ml",
+        "en": "Ice Cream 500ml"
       },
       "price": 129600,
       "available": true,
@@ -926,10 +926,10 @@
       "categoryName": "신메뉴",
       "sourceName": "아이스크림 110ml | Kem 110ml | 冰淇淋 110ml | Ice Cream 110ml",
       "names": {
-        "ko": "아이스크림 110ml | Kem 110ml | 冰淇淋 110ml | Ice Cream 110ml",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "아이스크림 110ml",
+        "vi": "Kem 110ml",
+        "zh": "冰淇淋 110ml",
+        "en": "Ice Cream 110ml"
       },
       "price": 32400,
       "available": true,
@@ -946,10 +946,10 @@
       "categoryName": "음료",
       "sourceName": "스프라이트 Sprite雪碧 Sprite",
       "names": {
-        "ko": "스프라이트 Sprite雪碧 Sprite",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "스프라이트",
+        "vi": "Sprite",
+        "zh": "雪碧",
+        "en": "Sprite"
       },
       "price": 33000,
       "available": true,
@@ -964,10 +964,10 @@
       "categoryName": "다방치킨",
       "sourceName": "스리라차 어니언  Sriracha Onion Chicken洋葱奶酱炸鸡 Gà sốt kem hành",
       "names": {
-        "ko": "스리라차 어니언  Sriracha Onion Chicken洋葱奶酱炸鸡 Gà sốt kem hành",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "스리라차 어니언 치킨",
+        "vi": "Gà sốt kem hành Sriracha",
+        "zh": "是拉差洋葱奶油炸鸡",
+        "en": "Sriracha Onion Chicken"
       },
       "price": 399600,
       "available": true,
@@ -984,10 +984,10 @@
       "categoryName": "신메뉴",
       "sourceName": "스노윙치킨 / Gà phủ bột phô mai / 雪花芝士粉炸鸡 / Snowing Cheese Powder Chicken",
       "names": {
-        "ko": "스노윙치킨 / Gà phủ bột phô mai / 雪花芝士粉炸鸡 / Snowing Cheese Powder Chicken",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "스노윙치킨",
+        "vi": "Gà phủ bột phô mai",
+        "zh": "雪花芝士粉炸鸡",
+        "en": "Snowing Cheese Powder Chicken"
       },
       "price": 410400,
       "available": true,
@@ -1002,10 +1002,10 @@
       "categoryName": "다방치킨",
       "sourceName": "슈프림치킨 | Gà Supreme | 至尊炸鸡 | Supreme Chicken",
       "names": {
-        "ko": "슈프림치킨 | Gà Supreme | 至尊炸鸡 | Supreme Chicken",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "슈프림치킨",
+        "vi": "Gà Supreme",
+        "zh": "至尊炸鸡",
+        "en": "Supreme Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1020,10 +1020,10 @@
       "categoryName": "기타",
       "sourceName": "쉬림프 Shrimp虾仁披萨 Pizza tôm solo",
       "names": {
-        "ko": "쉬림프 Shrimp虾仁披萨 Pizza tôm solo",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "쉬림프 피자",
+        "vi": "Pizza tôm solo",
+        "zh": "虾仁披萨",
+        "en": "Shrimp Pizza"
       },
       "price": 163296,
       "available": true,
@@ -1038,10 +1038,10 @@
       "categoryName": "세트",
       "sourceName": "순살떠까  Boneless Chicken Tossed in Sauce 五味无骨炸鸡 Gà không xương 5 vị",
       "names": {
-        "ko": "순살떠까  Boneless Chicken Tossed in Sauce 五味无骨炸鸡 Gà không xương 5 vị",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "순살 떠까",
+        "vi": "Gà không xương 5 vị",
+        "zh": "五味无骨炸鸡",
+        "en": "Boneless Chicken Tossed in Sauce"
       },
       "price": 421200,
       "available": true,
@@ -1056,10 +1056,10 @@
       "categoryName": "안주",
       "sourceName": "수박 | dưa hấu | 西瓜刨冰 |",
       "names": {
-        "ko": "수박 | dưa hấu | 西瓜刨冰 |",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "수박 빙수",
+        "vi": "Đá bào dưa hấu",
+        "zh": "西瓜刨冰",
+        "en": "Watermelon Shaved Ice"
       },
       "price": 97200,
       "available": true,
@@ -1074,10 +1074,10 @@
       "categoryName": "스페이스 버거",
       "sourceName": "새우버거 세트 Shrimp Burger Set 套餐：虾汉堡 Combo bánh mì tôm",
       "names": {
-        "ko": "새우버거 세트 Shrimp Burger Set 套餐：虾汉堡 Combo bánh mì tôm",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "새우버거 세트",
+        "vi": "Combo bánh mì tôm",
+        "zh": "虾汉堡套餐",
+        "en": "Shrimp Burger Set"
       },
       "price": 172800,
       "available": true,
@@ -1092,10 +1092,10 @@
       "categoryName": "다방분식",
       "sourceName": "비빔만두 Spicy Mixed Dumplings  辣拌煎饺 / 拌饺子 Há cảo chiên trộn cay",
       "names": {
-        "ko": "비빔만두 Spicy Mixed Dumplings  辣拌煎饺 / 拌饺子 Há cảo chiên trộn cay",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "비빔만두",
+        "vi": "Há cảo chiên trộn cay",
+        "zh": "辣拌煎饺",
+        "en": "Spicy Mixed Dumplings"
       },
       "price": 216000,
       "available": true,
@@ -1110,10 +1110,10 @@
       "categoryName": "스페이스 버거",
       "sourceName": "불고기버거 세트Bulgogi Burger Set 套餐：韩式烤肉汉堡Combo bánh mì bulgogi",
       "names": {
-        "ko": "불고기버거 세트Bulgogi Burger Set 套餐：韩式烤肉汉堡Combo bánh mì bulgogi",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "불고기버거 세트",
+        "vi": "Combo bánh mì bulgogi",
+        "zh": "韩式烤肉汉堡套餐",
+        "en": "Bulgogi Burger Set"
       },
       "price": 172800,
       "available": true,
@@ -1128,10 +1128,10 @@
       "categoryName": "기타",
       "sourceName": "불고기 Bulgogi韩式烤肉披萨 Pizza bulgogi solo",
       "names": {
-        "ko": "불고기 Bulgogi韩式烤肉披萨 Pizza bulgogi solo",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "불고기 피자",
+        "vi": "Pizza bulgogi solo",
+        "zh": "韩式烤肉披萨",
+        "en": "Bulgogi Pizza"
       },
       "price": 151632,
       "available": true,
@@ -1146,10 +1146,10 @@
       "categoryName": "안주",
       "sourceName": "버터 먹태구이 Grilled Pollack with Butter 黄花鱼干奶油烤  Cá chỉ vàng lớn nướng bơ",
       "names": {
-        "ko": "버터 먹태구이 Grilled Pollack with Butter 黄花鱼干奶油烤  Cá chỉ vàng lớn nướng bơ",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "버터 먹태구이",
+        "vi": "Cá chỉ vàng lớn nướng bơ",
+        "zh": "奶油烤黄花鱼干",
+        "en": "Grilled Dried Pollack with Butter"
       },
       "price": 216000,
       "available": true,
@@ -1164,10 +1164,10 @@
       "categoryName": "다방치킨",
       "sourceName": "반반치킨  Half & Half Chicken  半半无骨炸鸡  Gà vị đôi (뼈 순살)",
       "names": {
-        "ko": "반반치킨  Half & Half Chicken  半半无骨炸鸡  Gà vị đôi (뼈 순살)",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "반반치킨",
+        "vi": "Gà vị đôi (có xương hoặc không xương)",
+        "zh": "半半炸鸡",
+        "en": "Half & Half Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1185,10 +1185,10 @@
       "categoryName": "날개치킨",
       "sourceName": "반반윙봉 | Gà cánh & đùi half-half | 半半鸡翅棒 | Half & half wing & drumstick",
       "names": {
-        "ko": "반반윙봉 | Gà cánh & đùi half-half | 半半鸡翅棒 | Half & half wing & drumstick",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "반반 윙봉",
+        "vi": "Gà cánh và đùi half-half",
+        "zh": "半半鸡翅棒",
+        "en": "Half & Half Wings & Drumettes"
       },
       "price": 399600,
       "available": true,
@@ -1205,10 +1205,10 @@
       "categoryName": "다방치킨",
       "sourceName": "반마리치킨|Half Chicken |半只鸡|Nửa con gà (뼈 순살)",
       "names": {
-        "ko": "반마리치킨|Half Chicken |半只鸡|Nửa con gà (뼈 순살)",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "반마리치킨",
+        "vi": "Nửa con gà (có xương hoặc không xương)",
+        "zh": "半只炸鸡",
+        "en": "Half Chicken"
       },
       "price": 216000,
       "available": true,
@@ -1226,10 +1226,10 @@
       "categoryName": "안주",
       "sourceName": "반건조 노가리  半干黄花鱼仔 Cá pollack non khô (nửa khô)",
       "names": {
-        "ko": "반건조 노가리  半干黄花鱼仔 Cá pollack non khô (nửa khô)",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "반건조 노가리",
+        "vi": "Cá pollack non nửa khô",
+        "zh": "半干黄花鱼仔",
+        "en": "Semi-Dried Young Pollack"
       },
       "price": 291600,
       "available": true,
@@ -1244,10 +1244,10 @@
       "categoryName": "세트",
       "sourceName": "무뼈닭발세트|Combo chân gà rút xương|无骨鸡爪套餐",
       "names": {
-        "ko": "무뼈닭발세트|Combo chân gà rút xương|无骨鸡爪套餐",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "무뼈닭발 세트",
+        "vi": "Combo chân gà rút xương",
+        "zh": "无骨鸡爪套餐",
+        "en": "Boneless Chicken Feet Set"
       },
       "price": 378000,
       "available": true,
@@ -1262,10 +1262,10 @@
       "categoryName": "신메뉴",
       "sourceName": "무뼈닭발|Chân gà rút xương|无骨鸡爪|Boneless Chicken Feet",
       "names": {
-        "ko": "무뼈닭발|Chân gà rút xương|无骨鸡爪|Boneless Chicken Feet",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "무뼈닭발",
+        "vi": "Chân gà rút xương",
+        "zh": "无骨鸡爪",
+        "en": "Boneless Chicken Feet"
       },
       "price": 291600,
       "available": true,
@@ -1280,10 +1280,10 @@
       "categoryName": "다방치킨",
       "sourceName": "매운양념  Hot & Spicy Chicken韩式辣酱炸鸡  Gà sốt cay HQ",
       "names": {
-        "ko": "매운양념  Hot & Spicy Chicken韩式辣酱炸鸡  Gà sốt cay HQ",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "매운 양념치킨",
+        "vi": "Gà sốt cay Hàn Quốc",
+        "zh": "韩式辣酱炸鸡",
+        "en": "Hot & Spicy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1300,10 +1300,10 @@
       "categoryName": "음료",
       "sourceName": "망고 에이드 | Nước xoài | 芒果汽水 | Mango Ade",
       "names": {
-        "ko": "망고 에이드 | Nước xoài | 芒果汽水 | Mango Ade",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "망고 에이드",
+        "vi": "Nước xoài",
+        "zh": "芒果汽水",
+        "en": "Mango Ade"
       },
       "price": 55000,
       "available": true,
@@ -1318,10 +1318,10 @@
       "categoryName": "안주",
       "sourceName": "마라감자|麻辣薯角|Khoai tây tẩm sốt Mala|Mala Potato Wedges",
       "names": {
-        "ko": "마라감자|麻辣薯角|Khoai tây tẩm sốt Mala|Mala Potato Wedges",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "마라 감자 웨지",
+        "vi": "Khoai tây múi cau sốt Mala",
+        "zh": "麻辣薯角",
+        "en": "Mala Potato Wedges"
       },
       "price": 97200,
       "available": true,
@@ -1336,10 +1336,10 @@
       "categoryName": "스페이스 피자",
       "sourceName": "리치골드 반반피자 / Rich Gold Half & Half Pizza / Rich Gold 边半半披萨 / Pizza nửa nửa viền Rich Gold",
       "names": {
-        "ko": "리치골드 반반피자 / Rich Gold Half & Half Pizza / Rich Gold 边半半披萨 / Pizza nửa nửa viền Rich Gold",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "리치골드 반반 피자",
+        "vi": "Pizza nửa nửa viền Rich Gold",
+        "zh": "Rich Gold 双拼披萨",
+        "en": "Rich Gold Half & Half Pizza"
       },
       "price": 475200,
       "available": true,
@@ -1356,10 +1356,10 @@
       "categoryName": "다방치킨",
       "sourceName": "로제짭코바|Rosé Spicy BBQ Chicken|罗西BBQ烤鸡|Gà nướng BBQ sốt rosé",
       "names": {
-        "ko": "로제짭코바|Rosé Spicy BBQ Chicken|罗西BBQ烤鸡|Gà nướng BBQ sốt rosé",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "로제 짭코바",
+        "vi": "Gà nướng BBQ sốt Rosé",
+        "zh": "罗西BBQ烤鸡",
+        "en": "Rosé Spicy BBQ Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1374,10 +1374,10 @@
       "categoryName": "다방분식",
       "sourceName": "로제떡볶이  Rosé Tteokbokki 奶油辣酱年糕（Rosé酱） Tokbokki sốt kem cay (Rosé)",
       "names": {
-        "ko": "로제떡볶이  Rosé Tteokbokki 奶油辣酱年糕（Rosé酱） Tokbokki sốt kem cay (Rosé)",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "로제 떡볶이",
+        "vi": "Tokbokki sốt kem cay Rosé",
+        "zh": "奶油辣酱年糕",
+        "en": "Rosé Tteokbokki"
       },
       "price": 172800,
       "available": true,
@@ -1394,10 +1394,10 @@
       "categoryName": "날개치킨",
       "sourceName": "레드 윙봉 Spicy Red Wings 辣鸡翅Cánh gà cay",
       "names": {
-        "ko": "레드 윙봉 Spicy Red Wings 辣鸡翅Cánh gà cay",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "레드 윙봉",
+        "vi": "Cánh gà cay Red",
+        "zh": "辣鸡翅",
+        "en": "Spicy Red Wings"
       },
       "price": 399600,
       "available": true,
@@ -1412,10 +1412,10 @@
       "categoryName": "다방분식",
       "sourceName": "라볶이  Rabokki  炒年糕拉面  Mì Tokbokki",
       "names": {
-        "ko": "라볶이  Rabokki  炒年糕拉面  Mì Tokbokki",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "라볶이",
+        "vi": "Mì Tokbokki",
+        "zh": "炒年糕拉面",
+        "en": "Rabokki"
       },
       "price": 151200,
       "available": true,
@@ -1433,10 +1433,10 @@
       "categoryName": "멕시칸",
       "sourceName": "딥치즈&나쵸칩Deep Cheese & Nacho Chips 芝士酱蘸玉米片Bánh nacho chấm phô mai đậm đà",
       "names": {
-        "ko": "딥치즈&나쵸칩Deep Cheese & Nacho Chips 芝士酱蘸玉米片Bánh nacho chấm phô mai đậm đà",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "딥치즈 & 나초칩",
+        "vi": "Bánh nacho chấm phô mai đậm đà",
+        "zh": "芝士酱蘸玉米片",
+        "en": "Deep Cheese & Nacho Chips"
       },
       "price": 194400,
       "available": true,
@@ -1451,10 +1451,10 @@
       "categoryName": "신메뉴",
       "sourceName": "디진다 돈까스 | Tonkatsu DJINDA | 地狱辣炸猪排",
       "names": {
-        "ko": "디진다 돈까스 | Tonkatsu DJINDA | 地狱辣炸猪排",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "디진다 돈까스",
+        "vi": "Tonkatsu DJINDA",
+        "zh": "地狱辣炸猪排",
+        "en": "Tonkatsu DJINDA"
       },
       "price": 313200,
       "available": true,
@@ -1471,10 +1471,10 @@
       "categoryName": "신메뉴",
       "sourceName": "돈까스 플레이트 Pork Cutlet Plate 炸猪排拼盘 Đĩa Thịt Heo Chiên Xù",
       "names": {
-        "ko": "돈까스 플레이트 Pork Cutlet Plate 炸猪排拼盘 Đĩa Thịt Heo Chiên Xù",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "돈까스 플레이트",
+        "vi": "Đĩa thịt heo chiên xù",
+        "zh": "炸猪排拼盘",
+        "en": "Pork Cutlet Plate"
       },
       "price": 313200,
       "available": true,
@@ -1489,10 +1489,10 @@
       "categoryName": "신메뉴",
       "sourceName": "다방콤보 | DABANG COMBO | 达邦组合",
       "names": {
-        "ko": "다방콤보 | DABANG COMBO | 达邦组合",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "다방 콤보",
+        "vi": "Combo DABANG",
+        "zh": "达邦组合",
+        "en": "DABANG Combo"
       },
       "price": 421200,
       "available": true,
@@ -1507,10 +1507,10 @@
       "categoryName": "다방분식",
       "sourceName": "다방 떡볶이 Classic Tteokbokki韩式辣烧年糕（有点辣）Tokbokki cay nhẹ",
       "names": {
-        "ko": "다방 떡볶이 Classic Tteokbokki韩式辣烧年糕（有点辣）Tokbokki cay nhẹ",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "다방 떡볶이",
+        "vi": "Tokbokki cay nhẹ",
+        "zh": "韩式辣炒年糕（微辣）",
+        "en": "Classic Tteokbokki"
       },
       "price": 129600,
       "available": true,
@@ -1528,10 +1528,10 @@
       "categoryName": "음료",
       "sourceName": "나랑드 제로 | Narangd Cider Zero (500ml)",
       "names": {
-        "ko": "나랑드 제로 | Narangd Cider Zero (500ml)",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "나랑드 사이다 제로 (500ml)",
+        "vi": "Narangd Cider Zero (500ml)",
+        "zh": "Narangd 无糖汽水（500ml）",
+        "en": "Narangd Cider Zero (500ml)"
       },
       "price": 55000,
       "available": true,
@@ -1546,10 +1546,10 @@
       "categoryName": "세트",
       "sourceName": "국물닭발 세트| Set chân gà hầm cay | 辣汤鸡爪套餐",
       "names": {
-        "ko": "국물닭발 세트| Set chân gà hầm cay | 辣汤鸡爪套餐",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "국물닭발 세트",
+        "vi": "Set chân gà hầm cay",
+        "zh": "辣汤鸡爪套餐",
+        "en": "Spicy Chicken Feet Stew Set"
       },
       "price": 378000,
       "available": true,
@@ -1566,10 +1566,10 @@
       "categoryName": "안주",
       "sourceName": "국물닭발 Spicy Chicken Feet Stew  辣炖鸡爪 Chân gà hầm cay",
       "names": {
-        "ko": "국물닭발 Spicy Chicken Feet Stew  辣炖鸡爪 Chân gà hầm cay",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "국물닭발",
+        "vi": "Chân gà hầm cay",
+        "zh": "辣炖鸡爪",
+        "en": "Spicy Chicken Feet Stew"
       },
       "price": 291600,
       "available": true,
@@ -1587,10 +1587,10 @@
       "categoryName": "다방치킨",
       "sourceName": "고추마늘간장Garlic Soy Chicken/ 辣椒蒜酱鸡 /Gà sốt xì dầu tỏi ớt",
       "names": {
-        "ko": "고추마늘간장Garlic Soy Chicken/ 辣椒蒜酱鸡 /Gà sốt xì dầu tỏi ớt",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "고추마늘간장 치킨",
+        "vi": "Gà sốt xì dầu tỏi ớt",
+        "zh": "辣椒蒜酱鸡",
+        "en": "Garlic Soy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1607,10 +1607,10 @@
       "categoryName": "스페이스 피자",
       "sourceName": "고르곤졸라피자|Gorgonzola Pizza| Pizza phô mai Gorgonzola| 戈贡佐拉奶酪披萨",
       "names": {
-        "ko": "고르곤졸라피자|Gorgonzola Pizza| Pizza phô mai Gorgonzola| 戈贡佐拉奶酪披萨",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "고르곤졸라 피자",
+        "vi": "Pizza phô mai Gorgonzola",
+        "zh": "戈贡佐拉奶酪披萨",
+        "en": "Gorgonzola Pizza"
       },
       "price": 237600,
       "available": true,
@@ -1625,10 +1625,10 @@
       "categoryName": "기타",
       "sourceName": "고구마베이컨 Sweet Potato Bacon地瓜培根披萨 Pizza khoai lang thịt xông khói solo",
       "names": {
-        "ko": "고구마베이컨 Sweet Potato Bacon地瓜培根披萨 Pizza khoai lang thịt xông khói solo",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "고구마 베이컨 피자",
+        "vi": "Pizza khoai lang thịt xông khói",
+        "zh": "地瓜培根披萨",
+        "en": "Sweet Potato Bacon Pizza"
       },
       "price": 163296,
       "available": true,
@@ -1643,10 +1643,10 @@
       "categoryName": "기타",
       "sourceName": "고구마 Sweet Potato 地瓜披萨 Pizza khoai lang solo",
       "names": {
-        "ko": "고구마 Sweet Potato 地瓜披萨 Pizza khoai lang solo",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "고구마 피자",
+        "vi": "Pizza khoai lang",
+        "zh": "地瓜披萨",
+        "en": "Sweet Potato Pizza"
       },
       "price": 139968,
       "available": true,
@@ -1661,10 +1661,10 @@
       "categoryName": "다방분식",
       "sourceName": "계란찜 | Trứng hấp | 蒸蛋 (Zhēng dàn) | Steamed egg",
       "names": {
-        "ko": "계란찜 | Trứng hấp | 蒸蛋 (Zhēng dàn) | Steamed egg",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "계란찜",
+        "vi": "Trứng hấp",
+        "zh": "蒸蛋",
+        "en": "Steamed Egg"
       },
       "price": 43200,
       "available": true,
@@ -1679,10 +1679,10 @@
       "categoryName": "안주",
       "sourceName": "건어물떠까 Mixed Dried Seafood Snacks 韩式什锦干货拼盘  Đồ khô tổng hợp kiểu Hàn",
       "names": {
-        "ko": "건어물떠까 Mixed Dried Seafood Snacks 韩式什锦干货拼盘  Đồ khô tổng hợp kiểu Hàn",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "건어물 떠까",
+        "vi": "Đồ khô tổng hợp kiểu Hàn",
+        "zh": "韩式什锦干货拼盘",
+        "en": "Mixed Dried Seafood Snacks"
       },
       "price": 345600,
       "available": true,
@@ -1697,10 +1697,10 @@
       "categoryName": "다방분식",
       "sourceName": "간장계란밥 | Cơm trứng xì dầu | 酱油鸡蛋饭 | Soy sauce egg rice",
       "names": {
-        "ko": "간장계란밥 | Cơm trứng xì dầu | 酱油鸡蛋饭 | Soy sauce egg rice",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "간장계란밥",
+        "vi": "Cơm trứng xì dầu",
+        "zh": "酱油鸡蛋饭",
+        "en": "Soy Sauce Egg Rice"
       },
       "price": 54000,
       "available": true,
@@ -1715,10 +1715,10 @@
       "categoryName": "날개치킨",
       "sourceName": "간장 윙봉 Soy Sauce Wings 酱油鸡翅 Cánh gà xì dầu",
       "names": {
-        "ko": "간장 윙봉 Soy Sauce Wings 酱油鸡翅 Cánh gà xì dầu",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "간장 윙봉",
+        "vi": "Cánh gà xì dầu",
+        "zh": "酱油鸡翅",
+        "en": "Soy Sauce Wings"
       },
       "price": 399600,
       "available": true,
@@ -1733,10 +1733,10 @@
       "categoryName": "다방분식",
       "sourceName": "가래떡 떡볶이| Garaetteok Tteokbokki |粗年糕炒年糕 |Tokbokki bánh gạo to",
       "names": {
-        "ko": "가래떡 떡볶이| Garaetteok Tteokbokki |粗年糕炒年糕 |Tokbokki bánh gạo to",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "가래떡 떡볶이",
+        "vi": "Tokbokki bánh gạo to",
+        "zh": "粗年糕炒年糕",
+        "en": "Garaetteok Tteokbokki"
       },
       "price": 172800,
       "available": true,
@@ -1755,10 +1755,10 @@
       "categoryName": "다방치킨",
       "sourceName": "½ 오리지널 로스트 | Gà quay truyền thống½ | 原味烤鸡 | Original Roast",
       "names": {
-        "ko": "½ 오리지널 로스트 | Gà quay truyền thống½ | 原味烤鸡 | Original Roast",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "½ 오리지널 로스트",
+        "vi": "½ Gà quay truyền thống",
+        "zh": "½ 原味烤鸡",
+        "en": "½ Original Roast"
       },
       "price": 183600,
       "available": true,
@@ -1775,10 +1775,10 @@
       "categoryName": "다방치킨",
       "sourceName": "½ 고추바삭 로스트|Gà quay giòn cay½|香辣脆皮烤鸡|Crispy Spicy Roast",
       "names": {
-        "ko": "½ 고추바삭 로스트|Gà quay giòn cay½|香辣脆皮烤鸡|Crispy Spicy Roast",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "½ 고추바삭 로스트",
+        "vi": "½ Gà quay giòn cay",
+        "zh": "半只香辣脆皮烤鸡",
+        "en": "½ Crispy Spicy Roast Chicken"
       },
       "price": 237600,
       "available": true,
@@ -1795,10 +1795,10 @@
       "categoryName": "주류",
       "sourceName": "하롱베이 캔맥주 Ha Long Bay Beer (Can)  下龙湾罐装啤酒Bia lon Hạ Long Bay",
       "names": {
-        "ko": "하롱베이 캔맥주 Ha Long Bay Beer (Can)  下龙湾罐装啤酒Bia lon Hạ Long Bay",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "하롱베이 캔맥주",
+        "vi": "Bia lon Hạ Long Bay",
+        "zh": "下龙湾罐装啤酒",
+        "en": "Ha Long Bay Beer (Can)"
       },
       "price": 38500,
       "available": true,
@@ -1813,10 +1813,10 @@
       "categoryName": "주류",
       "sourceName": "하노이 캔맥주 | Bia lon Hà Nội | 河内罐装啤酒 | Hanoi canned beer",
       "names": {
-        "ko": "하노이 캔맥주 | Bia lon Hà Nội | 河内罐装啤酒 | Hanoi canned beer",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "하노이 캔맥주",
+        "vi": "Bia lon Hà Nội",
+        "zh": "河内罐装啤酒",
+        "en": "Hanoi Beer (Can)"
       },
       "price": 38500,
       "available": true,
@@ -1831,10 +1831,10 @@
       "categoryName": "주류",
       "sourceName": "하노이 생맥주 1L | Bia tươi Hà Nội 1L | 河内生啤 1升 | Hanoi Draft Beer 1L",
       "names": {
-        "ko": "하노이 생맥주 1L | Bia tươi Hà Nội 1L | 河内生啤 1升 | Hanoi Draft Beer 1L",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "하노이 생맥주 1L",
+        "vi": "Bia tươi Hà Nội 1L",
+        "zh": "河内生啤 1升",
+        "en": "Hanoi Draft Beer 1L"
       },
       "price": 110000,
       "available": true,
@@ -1849,10 +1849,10 @@
       "categoryName": "주류",
       "sourceName": "하노이 생맥주 1L | Bia tươi Hà Nội 1L | 河内生啤 1升 | Hanoi Draft Beer 1L",
       "names": {
-        "ko": "하노이 생맥주 1L | Bia tươi Hà Nội 1L | 河内生啤 1升 | Hanoi Draft Beer 1L",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "하노이 생맥주 1L",
+        "vi": "Bia tươi Hà Nội 1L",
+        "zh": "河内生啤 1升",
+        "en": "Hanoi Draft Beer 1L"
       },
       "price": 110000,
       "available": true,
@@ -1867,10 +1867,10 @@
       "categoryName": "주류",
       "sourceName": "하노이 병맥주 Hanoi Beer (Bottle) 河内瓶装啤酒 Bia chai Hà Nội",
       "names": {
-        "ko": "하노이 병맥주 Hanoi Beer (Bottle) 河内瓶装啤酒 Bia chai Hà Nội",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "하노이 병맥주",
+        "vi": "Bia chai Hà Nội",
+        "zh": "河内瓶装啤酒",
+        "en": "Hanoi Beer (Bottle)"
       },
       "price": 49500,
       "available": true,
@@ -1885,10 +1885,10 @@
       "categoryName": "주류",
       "sourceName": "타이거 크리스탈 병맥주 | Bia Tiger Crystal chai | 虎牌水晶啤酒（瓶装） | Tiger Crystal (Bottle)",
       "names": {
-        "ko": "타이거 크리스탈 병맥주 | Bia Tiger Crystal chai | 虎牌水晶啤酒（瓶装） | Tiger Crystal (Bottle)",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "타이거 크리스탈 병맥주",
+        "vi": "Bia Tiger Crystal chai",
+        "zh": "虎牌水晶啤酒（瓶装）",
+        "en": "Tiger Crystal Beer (Bottle)"
       },
       "price": 55000,
       "available": true,
@@ -1903,10 +1903,10 @@
       "categoryName": "주류",
       "sourceName": "타이거 병맥주 Tiger Beer (Bottle) 虎牌瓶装啤酒 Bia chai Tiger",
       "names": {
-        "ko": "타이거 병맥주 Tiger Beer (Bottle) 虎牌瓶装啤酒 Bia chai Tiger",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "타이거 병맥주",
+        "vi": "Bia chai Tiger",
+        "zh": "虎牌瓶装啤酒",
+        "en": "Tiger Beer (Bottle)"
       },
       "price": 49500,
       "available": true,
@@ -1921,10 +1921,10 @@
       "categoryName": "주류",
       "sourceName": "코로나 병맥주  Corona Beer (Bottle)科罗娜瓶装啤酒Bia chai Corona",
       "names": {
-        "ko": "코로나 병맥주  Corona Beer (Bottle)科罗娜瓶装啤酒Bia chai Corona",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "코로나 병맥주",
+        "vi": "Bia chai Corona",
+        "zh": "科罗娜瓶装啤酒",
+        "en": "Corona Beer (Bottle)"
       },
       "price": 71500,
       "available": true,
@@ -1939,10 +1939,10 @@
       "categoryName": "주류",
       "sourceName": "코로나 5병 세트  Corona 5-Bottle Set 科罗娜5瓶套餐  Set 5 chai bia Corona",
       "names": {
-        "ko": "코로나 5병 세트  Corona 5-Bottle Set 科罗娜5瓶套餐  Set 5 chai bia Corona",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "코로나 5병 세트",
+        "vi": "Set 5 chai bia Corona",
+        "zh": "科罗娜5瓶套餐",
+        "en": "Corona 5-Bottle Set"
       },
       "price": 319000,
       "available": true,
@@ -1957,10 +1957,10 @@
       "categoryName": "주류",
       "sourceName": "처음처럼  Chum Churum Soju 初饮初乐  Rượu soju Chum Churum",
       "names": {
-        "ko": "처음처럼  Chum Churum Soju 初饮初乐  Rượu soju Chum Churum",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "처음처럼 소주",
+        "vi": "Rượu soju Chum Churum",
+        "zh": "初饮初乐烧酒",
+        "en": "Chum Churum Soju"
       },
       "price": 154000,
       "available": true,
@@ -1975,10 +1975,10 @@
       "categoryName": "주류",
       "sourceName": "참이슬 | Chamisul | 眞露 (Zhēnlù) | Chamisul",
       "names": {
-        "ko": "참이슬 | Chamisul | 眞露 (Zhēnlù) | Chamisul",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "참이슬",
+        "vi": "Rượu soju Chamisul",
+        "zh": "真露",
+        "en": "Chamisul Soju"
       },
       "price": 154000,
       "available": true,
@@ -1993,10 +1993,10 @@
       "categoryName": "주류",
       "sourceName": "짐빔허니 하이볼 | Jim Beam Honey Highball",
       "names": {
-        "ko": "짐빔허니 하이볼 | Jim Beam Honey Highball",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "짐빔 허니 하이볼",
+        "vi": "Jim Beam Honey Highball",
+        "zh": "金宾蜂蜜高球",
+        "en": "Jim Beam Honey Highball"
       },
       "price": 99000,
       "available": true,
@@ -2011,10 +2011,10 @@
       "categoryName": "주류",
       "sourceName": "짐빔애플 하이볼 | Jim Beam Apple Highball",
       "names": {
-        "ko": "짐빔애플 하이볼 | Jim Beam Apple Highball",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "짐빔 애플 하이볼",
+        "vi": "Jim Beam Apple Highball",
+        "zh": "金宾苹果高球",
+        "en": "Jim Beam Apple Highball"
       },
       "price": 99000,
       "available": true,
@@ -2029,10 +2029,10 @@
       "categoryName": "주류",
       "sourceName": "짐빔블랙 하이볼 | Jim Beam Black Extra-Aged Highball",
       "names": {
-        "ko": "짐빔블랙 하이볼 | Jim Beam Black Extra-Aged Highball",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "짐빔 블랙 엑스트라 에이지드 하이볼",
+        "vi": "Jim Beam Black Extra-Aged Highball",
+        "zh": "金宾黑牌特酿高球",
+        "en": "Jim Beam Black Extra-Aged Highball"
       },
       "price": 99000,
       "available": true,
@@ -2047,10 +2047,10 @@
       "categoryName": "주류",
       "sourceName": "짐빔 하이볼 | Jim Beam Highball",
       "names": {
-        "ko": "짐빔 하이볼 | Jim Beam Highball",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "짐빔 하이볼",
+        "vi": "Jim Beam Highball",
+        "zh": "金宾高球",
+        "en": "Jim Beam Highball"
       },
       "price": 99000,
       "available": true,
@@ -2065,10 +2065,10 @@
       "categoryName": "주류",
       "sourceName": "진로 Jinro Soju 真露（淡口） Rượu soju Jinro",
       "names": {
-        "ko": "진로 Jinro Soju 真露（淡口） Rượu soju Jinro",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "진로 소주",
+        "vi": "Rượu soju Jinro",
+        "zh": "真露淡口烧酒",
+        "en": "Jinro Soju"
       },
       "price": 154000,
       "available": true,
@@ -2083,10 +2083,10 @@
       "categoryName": "주류",
       "sourceName": "제임슨 하이볼 | Jameson Highball",
       "names": {
-        "ko": "제임슨 하이볼 | Jameson Highball",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "제임슨 하이볼",
+        "vi": "Jameson Highball",
+        "zh": "尊美醇高球",
+        "en": "Jameson Highball"
       },
       "price": 99000,
       "available": true,
@@ -2101,10 +2101,10 @@
       "categoryName": "주류",
       "sourceName": "선양오크 | Sunyang Soju Oak | 鲜洋橡木烧酒",
       "names": {
-        "ko": "선양오크 | Sunyang Soju Oak | 鲜洋橡木烧酒",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "선양 오크 소주",
+        "vi": "Rượu soju Sunyang Oak",
+        "zh": "鲜洋橡木烧酒",
+        "en": "Sunyang Soju Oak"
       },
       "price": 174900,
       "available": true,
@@ -2119,10 +2119,10 @@
       "categoryName": "주류",
       "sourceName": "선양소주 | Sunyang Soju | 鲜洋烧酒 |",
       "names": {
-        "ko": "선양소주 | Sunyang Soju | 鲜洋烧酒 |",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "선양 소주",
+        "vi": "Rượu soju Sunyang",
+        "zh": "鲜洋烧酒",
+        "en": "Sunyang Soju"
       },
       "price": 154000,
       "available": true,
@@ -2137,10 +2137,10 @@
       "categoryName": "주류",
       "sourceName": "새로/ Saero Soju Saero烧酒 Rượu soju Saero",
       "names": {
-        "ko": "새로/ Saero Soju Saero烧酒 Rượu soju Saero",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "새로 소주",
+        "vi": "Rượu soju Saero",
+        "zh": "Saero烧酒",
+        "en": "Saero Soju"
       },
       "price": 165000,
       "available": true,
@@ -2155,10 +2155,10 @@
       "categoryName": "주류",
       "sourceName": "산토리 하이볼 | Suntory Kakubin Highball",
       "names": {
-        "ko": "산토리 하이볼 | Suntory Kakubin Highball",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "산토리 가쿠빈 하이볼",
+        "vi": "Suntory Kakubin Highball",
+        "zh": "三得利角瓶高球",
+        "en": "Suntory Kakubin Highball"
       },
       "price": 99000,
       "available": true,
@@ -2173,10 +2173,10 @@
       "categoryName": "주류",
       "sourceName": "사포로 생맥주 Sapporo Draft Beer 三宝乐生啤酒  Bia tươi Sapporo",
       "names": {
-        "ko": "사포로 생맥주 Sapporo Draft Beer 三宝乐生啤酒  Bia tươi Sapporo",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "사포로 생맥주",
+        "vi": "Bia tươi Sapporo",
+        "zh": "三宝乐生啤酒",
+        "en": "Sapporo Draft Beer"
       },
       "price": 0,
       "available": true,
@@ -2191,10 +2191,10 @@
       "categoryName": "주류",
       "sourceName": "사포로 블랙 생맥주/Sapporo Black Draft Beer 三宝乐黑啤 Bia đen tươi Sapporo",
       "names": {
-        "ko": "사포로 블랙 생맥주/Sapporo Black Draft Beer 三宝乐黑啤 Bia đen tươi Sapporo",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "사포로 블랙 생맥주",
+        "vi": "Bia đen tươi Sapporo",
+        "zh": "三宝乐黑生啤酒",
+        "en": "Sapporo Black Draft Beer"
       },
       "price": 66000,
       "available": true,
@@ -2209,10 +2209,10 @@
       "categoryName": "주류",
       "sourceName": "사포로 1+1 (640cc) Sapporo 1+1 (640ml) 三宝乐1+1（640毫升 Sapporo 1 tặng 1 (640ml)",
       "names": {
-        "ko": "사포로 1+1 (640cc) Sapporo 1+1 (640ml) 三宝乐1+1（640毫升 Sapporo 1 tặng 1 (640ml)",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "사포로 1+1 (640cc)",
+        "vi": "Sapporo 1 tặng 1 (640ml)",
+        "zh": "三宝乐1+1（640毫升）",
+        "en": "Sapporo Buy 1 Get 1 (640ml)"
       },
       "price": 165000,
       "available": true,
@@ -2227,10 +2227,10 @@
       "categoryName": "주류",
       "sourceName": "사이공캔맥주|BialonSàiGòn|西贡罐装啤酒|Saigoncannedbeer",
       "names": {
-        "ko": "사이공캔맥주|BialonSàiGòn|西贡罐装啤酒|Saigoncannedbeer",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "사이공 캔맥주",
+        "vi": "Bia lon Sài Gòn",
+        "zh": "西贡罐装啤酒",
+        "en": "Saigon Canned Beer"
       },
       "price": 38500,
       "available": true,
@@ -2245,10 +2245,10 @@
       "categoryName": "주류",
       "sourceName": "보드카MEN Vodka MEN MEN伏特加 Rượu Vodka MEN",
       "names": {
-        "ko": "보드카MEN Vodka MEN MEN伏特加 Rượu Vodka MEN",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "보드카 MEN",
+        "vi": "Rượu Vodka MEN",
+        "zh": "MEN伏特加",
+        "en": "MEN Vodka"
       },
       "price": 165000,
       "available": true,
@@ -2263,10 +2263,10 @@
       "categoryName": "주류",
       "sourceName": "배달)참이슬",
       "names": {
-        "ko": "배달)참이슬",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "배달) 참이슬",
+        "vi": "Chamisul (giao hàng)",
+        "zh": "真露（外送）",
+        "en": "Chamisul (Delivery)"
       },
       "price": 121000,
       "available": true,
@@ -2281,10 +2281,10 @@
       "categoryName": "주류",
       "sourceName": "배달)진로",
       "names": {
-        "ko": "배달)진로",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "배달) 진로",
+        "vi": "Jinro (giao hàng)",
+        "zh": "真露（外送）",
+        "en": "Jinro (Delivery)"
       },
       "price": 121000,
       "available": true,
@@ -2299,10 +2299,10 @@
       "categoryName": "주류",
       "sourceName": "배달)새로",
       "names": {
-        "ko": "배달)새로",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "배달) 새로",
+        "vi": "Saero (giao hàng)",
+        "zh": "Saero烧酒（外送）",
+        "en": "Saero (Delivery)"
       },
       "price": 121000,
       "available": true,
@@ -2317,10 +2317,10 @@
       "categoryName": "주류",
       "sourceName": "배달)  사포로 생맥주 | Bia tươi Sapporo",
       "names": {
-        "ko": "배달)  사포로 생맥주 | Bia tươi Sapporo",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "배달) 사포로 생맥주",
+        "vi": "Bia tươi Sapporo (giao hàng)",
+        "zh": "三宝乐生啤（外送）",
+        "en": "Sapporo Draft Beer (Delivery)"
       },
       "price": 220000,
       "available": true,
@@ -2335,10 +2335,10 @@
       "categoryName": "주류",
       "sourceName": "막걸리1",
       "names": {
-        "ko": "막걸리1",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "막걸리 1",
+        "vi": "Makgeolli 1",
+        "zh": "马格利米酒1",
+        "en": "Makgeolli 1"
       },
       "price": 110000,
       "available": true,
@@ -2354,9 +2354,9 @@
       "sourceName": "막걸리",
       "names": {
         "ko": "막걸리",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "vi": "Makgeolli",
+        "zh": "马格利米酒",
+        "en": "Makgeolli"
       },
       "price": 110000,
       "available": true,
@@ -2371,10 +2371,10 @@
       "categoryName": "주류",
       "sourceName": "데킬라 실버 하이볼 | Jose Cuervo Silver Tequila Highball",
       "names": {
-        "ko": "데킬라 실버 하이볼 | Jose Cuervo Silver Tequila Highball",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "호세 쿠에르보 실버 데킬라 하이볼",
+        "vi": "Highball Tequila Jose Cuervo Silver",
+        "zh": "豪帅银龙舌兰高球",
+        "en": "Jose Cuervo Silver Tequila Highball"
       },
       "price": 99000,
       "available": true,
@@ -2389,10 +2389,10 @@
       "categoryName": "주류",
       "sourceName": "데킬라 샷 Tequila Shot 龙舌兰一杯  Shot Tequila",
       "names": {
-        "ko": "데킬라 샷 Tequila Shot 龙舌兰一杯  Shot Tequila",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "데킬라 샷",
+        "vi": "Shot Tequila",
+        "zh": "龙舌兰一杯",
+        "en": "Tequila Shot"
       },
       "price": 77000,
       "available": true,
@@ -2407,10 +2407,10 @@
       "categoryName": "주류",
       "sourceName": "데킬라 골드&실버 | Tequila Gold & Silver",
       "names": {
-        "ko": "데킬라 골드&실버 | Tequila Gold & Silver",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "데킬라 골드 & 실버",
+        "vi": "Tequila Gold & Silver",
+        "zh": "金银龙舌兰",
+        "en": "Tequila Gold & Silver"
       },
       "price": 1089000,
       "available": true,
@@ -2425,10 +2425,10 @@
       "categoryName": "주류",
       "sourceName": "데킬라 골드 하이볼 | Jose Cuervo Gold Tequila Highball",
       "names": {
-        "ko": "데킬라 골드 하이볼 | Jose Cuervo Gold Tequila Highball",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "호세 쿠에르보 골드 데킬라 하이볼",
+        "vi": "Highball Tequila Jose Cuervo Gold",
+        "zh": "豪帅金龙舌兰高球",
+        "en": "Jose Cuervo Gold Tequila Highball"
       },
       "price": 99000,
       "available": true,
@@ -2443,10 +2443,10 @@
       "categoryName": "주류",
       "sourceName": "Bia lon Saigon (dịch vụ tặng kèm) | 사이공 캔맥주 서비스",
       "names": {
-        "ko": "Bia lon Saigon (dịch vụ tặng kèm) | 사이공 캔맥주 서비스",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "사이공 캔맥주 서비스",
+        "vi": "Bia lon Sài Gòn tặng kèm",
+        "zh": "赠送西贡罐装啤酒",
+        "en": "Complimentary Saigon Canned Beer"
       },
       "price": 0,
       "available": true,
@@ -2461,10 +2461,10 @@
       "categoryName": "주류",
       "sourceName": "Bia lon | 캔맥주",
       "names": {
-        "ko": "Bia lon | 캔맥주",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "캔맥주",
+        "vi": "Bia lon",
+        "zh": "罐装啤酒",
+        "en": "Canned Beer"
       },
       "price": 33000,
       "available": true,
@@ -2479,10 +2479,10 @@
       "categoryName": "주류",
       "sourceName": "(배달) 선양소주",
       "names": {
-        "ko": "(배달) 선양소주",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "배달) 선양소주",
+        "vi": "Soju Sunyang (giao hàng)",
+        "zh": "善酿烧酒（外送）",
+        "en": "Sunyang Soju (Delivery)"
       },
       "price": 121000,
       "available": true,
@@ -2495,10 +2495,10 @@
     {
       "id": "bd39cbae-c175-43f4-80fa-6f5517eb1939",
       "names": {
-        "ko": "Chicken seasoning",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "치킨 시즈닝",
+        "vi": "Gia vị gà",
+        "zh": "鸡肉调味粉",
+        "en": "Chicken Seasoning"
       },
       "required": false,
       "minSelections": 0,
@@ -2511,7 +2511,7 @@
             "ko": "어니언 시즈닝",
             "vi": "Gia vị hành tây",
             "zh": "洋葱调味粉",
-            "en": "Onion seasoning"
+            "en": "Onion Seasoning"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -2523,7 +2523,7 @@
             "ko": "콘소메 시즈닝",
             "vi": "Gia vị bắp ngọt",
             "zh": "玉米调味粉",
-            "en": "Corn seasoning"
+            "en": "Corn Seasoning"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -2535,7 +2535,7 @@
             "ko": "핫치즈 시즈닝",
             "vi": "Gia vị phô mai cay",
             "zh": "辣味芝士调味粉",
-            "en": "Hot cheese seasoning"
+            "en": "Hot Cheese Seasoning"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -2547,7 +2547,7 @@
             "ko": "치즈 시즈닝",
             "vi": "Gia vị phô mai",
             "zh": "芝士调味粉",
-            "en": "Cheese seasoning"
+            "en": "Cheese Seasoning"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -2559,7 +2559,7 @@
             "ko": "허니버터 시즈닝",
             "vi": "Gia vị bơ mật ong",
             "zh": "蜂蜜黄油调味粉",
-            "en": "Honey butter seasoning"
+            "en": "Honey Butter Seasoning"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -2573,10 +2573,10 @@
     {
       "id": "7524baa2-2174-4d16-988e-8904ce1192db",
       "names": {
-        "ko": "cool c",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "쿨C",
+        "vi": "Cool C",
+        "zh": "Cool C",
+        "en": "Cool C"
       },
       "required": false,
       "minSelections": 0,
@@ -2586,10 +2586,10 @@
         {
           "id": "f6c46a72-e93c-4590-9967-8e0074560074",
           "names": {
-            "ko": "얼린것",
+            "ko": "얼린 것",
             "vi": "Đồ đông lạnh",
-            "zh": "",
-            "en": ""
+            "zh": "冷冻",
+            "en": "Frozen"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -2598,10 +2598,10 @@
         {
           "id": "380e128e-dc20-4942-8ba8-b3b937a80831",
           "names": {
-            "ko": "안얼린것",
-            "vi": "Đồ tươi",
-            "zh": "",
-            "en": ""
+            "ko": "냉동하지 않은 것",
+            "vi": "Không đông lạnh",
+            "zh": "非冷冻",
+            "en": "Non-frozen"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -2616,9 +2616,9 @@
       "id": "5197c337-535f-4e91-b7d1-26029a4b9222",
       "names": {
         "ko": "가래떡",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "vi": "Bánh gạo dài",
+        "zh": "条状年糕",
+        "en": "Garaetteok"
       },
       "required": false,
       "minSelections": 0,
@@ -2628,10 +2628,10 @@
         {
           "id": "46629e10-3368-48e5-b1b0-2322b55c73cc",
           "names": {
-            "ko": "안잘라",
+            "ko": "자르지 않음",
             "vi": "Không cắt",
-            "zh": "",
-            "en": ""
+            "zh": "不切",
+            "en": "Uncut"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -2640,10 +2640,10 @@
         {
           "id": "dcbfb96c-d5bc-460d-9abc-7c07205d9828",
           "names": {
-            "ko": "잘라",
+            "ko": "자르기",
             "vi": "Cắt",
-            "zh": "",
-            "en": ""
+            "zh": "切开",
+            "en": "Cut"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -2663,7 +2663,7 @@
         "ko": "떡볶이 매운맛 선택",
         "vi": "Chọn độ cay tokbokki",
         "zh": "选择炒年糕辣度",
-        "en": "Choose tteokbokki spiciness"
+        "en": "Choose Tteokbokki Spiciness"
       },
       "required": false,
       "minSelections": 0,
@@ -2673,10 +2673,10 @@
         {
           "id": "c5299733-7b6c-4b30-b30c-03b98ab2788d",
           "names": {
-            "ko": "달달한맛/Sweet /甜味 /Vị ngọt",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "달달한 맛",
+            "vi": "Vị ngọt",
+            "zh": "甜味",
+            "en": "Sweet"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -2685,10 +2685,10 @@
         {
           "id": "34dc3da9-429e-4768-ad16-e707b3ee53f7",
           "names": {
-            "ko": "매운맛/Spicy /辣味 /Vị cay",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "매운맛",
+            "vi": "Vị cay",
+            "zh": "辣味",
+            "en": "Spicy"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -2707,7 +2707,7 @@
         "ko": "떡볶이 선택",
         "vi": "Chọn tokbokki",
         "zh": "选择炒年糕",
-        "en": "Choose tteokbokki"
+        "en": "Choose Tteokbokki"
       },
       "required": false,
       "minSelections": 0,
@@ -2717,10 +2717,10 @@
         {
           "id": "9216a4e8-c9cc-4edd-a798-2d43ea86cfc9",
           "names": {
-            "ko": "라볶이(매운)/Spicy Rabokki /辣味辣炒年糕拉面 /Mì Tokbokki vị cay",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "매운 라볶이",
+            "vi": "Rabokki cay",
+            "zh": "辣味拉面炒年糕",
+            "en": "Spicy Rabokki"
           },
           "additionalPrice": 32400,
           "visible": true,
@@ -2729,10 +2729,10 @@
         {
           "id": "0000a2d5-0343-4560-b3c6-3c2cd356c326",
           "names": {
-            "ko": "가래떡 떡볶이(매운)./Spicy Garaetteok Tteokbokki/辣味粗年糕炒年糕  /Tokbokki bánh gạo to vị cay",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "매운 가래떡 떡볶이",
+            "vi": "Tokbokki bánh gạo dài cay",
+            "zh": "辣味条状年糕炒年糕",
+            "en": "Spicy Garaetteok Tteokbokki"
           },
           "additionalPrice": 32400,
           "visible": true,
@@ -2741,10 +2741,10 @@
         {
           "id": "8a128245-102f-426d-8aed-47bf5684da06",
           "names": {
-            "ko": "로제Rosé Tteokbokki /奶油辣酱年糕（Rosé酱/Tokbokki sốt kem cay (sốt Rosé)",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "로제 떡볶이",
+            "vi": "Tokbokki sốt Rosé",
+            "zh": "玫瑰奶油炒年糕",
+            "en": "Rosé Tteokbokki"
           },
           "additionalPrice": 32400,
           "visible": true,
@@ -2753,10 +2753,10 @@
         {
           "id": "7f58814c-27d6-4462-92ee-5524ac83139f",
           "names": {
-            "ko": "라볶이(달달)/Sweet Rabokki /甜味辣炒年糕拉面 /Mì Tokbokki vị ngọt",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "달달한 라볶이",
+            "vi": "Rabokki vị ngọt",
+            "zh": "甜味拉面炒年糕",
+            "en": "Sweet Rabokki"
           },
           "additionalPrice": 32400,
           "visible": true,
@@ -2765,10 +2765,10 @@
         {
           "id": "7500e3bf-03c9-486c-b995-60375ac1b40e",
           "names": {
-            "ko": "매운떡볶이/Spicy Tteokbokki /辣味辣炒年糕 /Tokbokki vị cay",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "매운 떡볶이",
+            "vi": "Tokbokki cay",
+            "zh": "辣味炒年糕",
+            "en": "Spicy Tteokbokki"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -2777,10 +2777,10 @@
         {
           "id": "2c0c5c37-3b68-45ca-a389-85263b98b4a1",
           "names": {
-            "ko": "가래떡 떡볶이(달달) /Sweet Garaetteok Tteokbokki /甜味粗年糕炒年糕 /(T09KC)Tokbokki bánh gạo to vị ngọt",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "달달한 가래떡 떡볶이",
+            "vi": "(T09KC) Tokbokki bánh gạo dài vị ngọt",
+            "zh": "甜味条状年糕炒年糕",
+            "en": "Sweet Garaetteok Tteokbokki"
           },
           "additionalPrice": 32400,
           "visible": true,
@@ -2789,10 +2789,10 @@
         {
           "id": "4ebaf633-328d-4d41-af17-da9d3db10800",
           "names": {
-            "ko": "달달떡볶이/Sweet Tteokbokki  /甜味辣炒年糕 /Tokbokki vị ngọt",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "달달한 떡볶이",
+            "vi": "Tokbokki vị ngọt",
+            "zh": "甜味炒年糕",
+            "en": "Sweet Tteokbokki"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -2808,10 +2808,10 @@
     {
       "id": "d7fcbd85-9fb6-40db-872a-8275dce401ed",
       "names": {
-        "ko": "떡볶이토핑",
-        "vi": "Topping cho tokbokki",
+        "ko": "떡볶이 토핑",
+        "vi": "Topping tokbokki",
         "zh": "炒年糕配料",
-        "en": "Tteokbokki Topping"
+        "en": "Tteokbokki Toppings"
       },
       "required": false,
       "minSelections": 0,
@@ -2822,7 +2822,7 @@
           "id": "a651b4f7-9a3c-49f1-972e-1e1b9be74ba9",
           "names": {
             "ko": "체다치즈",
-            "vi": "Phô mai cheddar",
+            "vi": "Phô mai Cheddar",
             "zh": "切达奶酪",
             "en": "Cheddar Cheese"
           },
@@ -2833,10 +2833,10 @@
         {
           "id": "ea48c49b-bc23-4c78-a36c-253268eeca3c",
           "names": {
-            "ko": "삶은계란1개 추가",
-            "vi": "Thêm (1) trứng luộc",
-            "zh": "",
-            "en": ""
+            "ko": "삶은 계란 1개 추가",
+            "vi": "Thêm 1 trứng luộc",
+            "zh": "加1个煮鸡蛋",
+            "en": "Add 1 Boiled Egg"
           },
           "additionalPrice": 10800,
           "visible": true,
@@ -2848,7 +2848,7 @@
             "ko": "모짜렐라 치즈",
             "vi": "Phô mai Mozzarella",
             "zh": "马苏里拉奶酪",
-            "en": "Mozzarella cheese"
+            "en": "Mozzarella Cheese"
           },
           "additionalPrice": 54000,
           "visible": true,
@@ -2868,10 +2868,10 @@
     {
       "id": "f035ccfc-db83-4ba0-ac18-bd38af8b0437",
       "names": {
-        "ko": "로스트순살옵션",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "로스트 순살 옵션",
+        "vi": "Tùy chọn gà nướng không xương",
+        "zh": "烤鸡去骨选项",
+        "en": "Roasted Boneless Chicken Option"
       },
       "required": false,
       "minSelections": 0,
@@ -2883,8 +2883,8 @@
           "names": {
             "ko": "순살로 변경",
             "vi": "Đổi sang gà không xương",
-            "zh": "",
-            "en": ""
+            "zh": "换成无骨鸡",
+            "en": "Change to Boneless Chicken"
           },
           "additionalPrice": 43200,
           "visible": true,
@@ -2899,10 +2899,10 @@
     {
       "id": "a18f98eb-3772-4af6-a8cc-4dee966884bc",
       "names": {
-        "ko": "매운단계",
+        "ko": "매운 단계",
         "vi": "Cấp độ cay",
         "zh": "辣度等级",
-        "en": "Spicy level"
+        "en": "Spice Level"
       },
       "required": false,
       "minSelections": 0,
@@ -2912,10 +2912,10 @@
         {
           "id": "b4ff5c57-e25c-4275-a6a9-4a25ba70e497",
           "names": {
-            "ko": "2단계/Level 2   /2级 – 中辣 /Cấp 2 – Cay vừa\u0001",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "2단계 - 중간 매운맛",
+            "vi": "Cấp 2 - Cay vừa",
+            "zh": "2级 - 中辣",
+            "en": "Level 2 - Medium Spicy"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -2924,10 +2924,10 @@
         {
           "id": "3b59138e-b848-41aa-a45d-9fa1b915fbcf",
           "names": {
-            "ko": "1단계/(C1)Level 1/1级 – 微辣 /Cấp 1 – Cay nhẹ",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "1단계 - 약간 매운맛",
+            "vi": "Cấp 1 - Cay nhẹ",
+            "zh": "1级 - 微辣",
+            "en": "Level 1 - Mild Spicy"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -2946,7 +2946,7 @@
         "ko": "매운맛 선택",
         "vi": "Chọn độ cay",
         "zh": "选择辣度",
-        "en": ""
+        "en": "Choose Spice Level"
       },
       "required": false,
       "minSelections": 0,
@@ -2957,9 +2957,9 @@
           "id": "211f023a-1148-41df-8fac-6049201b41ee",
           "names": {
             "ko": "기본 매운맛",
-            "vi": "Cay",
+            "vi": "Cay tiêu chuẩn",
             "zh": "中辣",
-            "en": ""
+            "en": "Regular Spicy"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -2969,9 +2969,9 @@
           "id": "5d793729-79d4-401c-ba38-6462d221165e",
           "names": {
             "ko": "덜 매운맛",
-            "vi": "Cay vừa",
+            "vi": "Ít cay",
             "zh": "微辣",
-            "en": ""
+            "en": "Less Spicy"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -2983,7 +2983,7 @@
             "ko": "더 매운맛",
             "vi": "Cay hơn",
             "zh": "更辣",
-            "en": ""
+            "en": "Extra Spicy"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -2999,10 +2999,10 @@
     {
       "id": "25d39e7d-a94b-40fb-b610-1db368947c95",
       "names": {
-        "ko": "사리추가",
-        "vi": "Thêm mì thêm",
+        "ko": "사리 추가",
+        "vi": "Thêm mì và topping",
         "zh": "加配料",
-        "en": "Add Extra Noodles"
+        "en": "Add Extras"
       },
       "required": false,
       "minSelections": 0,
@@ -3012,10 +3012,10 @@
         {
           "id": "c8150ed7-3cdc-4693-9ea3-045fead5a6a9",
           "names": {
-            "ko": "라면사리",
+            "ko": "라면 사리",
             "vi": "Thêm mì gói",
-            "zh": "加泡面",
-            "en": "Add instant noodles"
+            "zh": "加拉面",
+            "en": "Add Ramen Noodles"
           },
           "additionalPrice": 32400,
           "visible": true,
@@ -3024,10 +3024,10 @@
         {
           "id": "8dd99f36-7c4a-4952-87b7-0d08943f406d",
           "names": {
-            "ko": "쫄면사리",
-            "vi": "Thêm mì trộn cay",
-            "zh": "加韩式拌面",
-            "en": "Add spicy chewy noodles"
+            "ko": "쫄면 사리",
+            "vi": "Thêm mì dai cay",
+            "zh": "加劲道面",
+            "en": "Add Chewy Noodles"
           },
           "additionalPrice": 43200,
           "visible": true,
@@ -3036,10 +3036,10 @@
         {
           "id": "daef3402-17a1-4c2a-992b-4580e2334a5f",
           "names": {
-            "ko": "수제비사리",
+            "ko": "수제비 사리",
             "vi": "Thêm bánh bột xé",
-            "zh": "加手擀面片",
-            "en": "Add hand-torn dough pieces"
+            "zh": "加面片",
+            "en": "Add Hand-Torn Dough"
           },
           "additionalPrice": 43200,
           "visible": true,
@@ -3048,7 +3048,7 @@
         {
           "id": "7f7cd94d-de0d-4ef2-8cee-c6d2bced92c3",
           "names": {
-            "ko": "우동사리 추가",
+            "ko": "우동 사리 추가",
             "vi": "Thêm mì udon",
             "zh": "加乌冬面",
             "en": "Add Udon Noodles"
@@ -3060,10 +3060,10 @@
         {
           "id": "c4c55e38-59f1-4564-9d7a-ef11a6ccaa75",
           "names": {
-            "ko": "물만두사리",
-            "vi": "Thêm há cảo nước",
+            "ko": "물만두 사리",
+            "vi": "Thêm há cảo luộc",
             "zh": "加水饺",
-            "en": "Add boiled dumplings"
+            "en": "Add Boiled Dumplings"
           },
           "additionalPrice": 54000,
           "visible": true,
@@ -3072,10 +3072,10 @@
         {
           "id": "ec159ded-1789-4789-9db7-f98bb2ee44c9",
           "names": {
-            "ko": "떡사리/ thêm tok",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "떡 사리",
+            "vi": "Thêm bánh gạo",
+            "zh": "加年糕",
+            "en": "Add Rice Cakes"
           },
           "additionalPrice": 32400,
           "visible": true,
@@ -3092,7 +3092,7 @@
         "ko": "순살/뼈 선택",
         "vi": "Chọn gà không xương / có xương",
         "zh": "选择无骨/带骨鸡",
-        "en": "Choose boneless / bone-in chicken"
+        "en": "Choose Boneless or Bone-In"
       },
       "required": false,
       "minSelections": 0,
@@ -3102,10 +3102,10 @@
         {
           "id": "31da79cc-8224-40a1-80f0-8985ecc89e1b",
           "names": {
-            "ko": "뼈치킨",
+            "ko": "뼈 치킨",
             "vi": "Gà có xương",
-            "zh": "有骨鸡",
-            "en": "Bone-in chicken"
+            "zh": "带骨鸡",
+            "en": "Bone-In Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3114,10 +3114,10 @@
         {
           "id": "7a4bbb82-eaa6-48dd-9127-cd5f2fa03daa",
           "names": {
-            "ko": "순살치킨",
+            "ko": "순살 치킨",
             "vi": "Gà không xương",
             "zh": "无骨鸡",
-            "en": "Boneless chicken"
+            "en": "Boneless Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3139,9 +3139,9 @@
       "id": "8491b574-2973-47f0-8d46-5c489fd9bba8",
       "names": {
         "ko": "아이스크림 110ml",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "vi": "Kem 110ml",
+        "zh": "冰淇淋 110ml",
+        "en": "Ice Cream 110ml"
       },
       "required": false,
       "minSelections": 0,
@@ -3152,7 +3152,7 @@
           "id": "01704313-b0bc-4943-baee-03b5eaddabe2",
           "names": {
             "ko": "녹차 아이스크림 110ml",
-            "vi": "Kem Trà Xanh 110ml",
+            "vi": "Kem trà xanh 110ml",
             "zh": "抹茶冰淇淋 110ml",
             "en": "Matcha Ice Cream 110ml"
           },
@@ -3164,9 +3164,9 @@
           "id": "dd07e6e2-2473-47df-b612-7ce8e8f11700",
           "names": {
             "ko": "민트초코칩 아이스크림 110ml",
-            "vi": "Kem Bạc Hà Chip Socola 110ml",
+            "vi": "Kem bạc hà sô-cô-la chip 110ml",
             "zh": "薄荷巧克力碎冰淇淋 110ml",
-            "en": "Mint Choco Chip Ice Cream 110ml"
+            "en": "Mint Chocolate Chip Ice Cream 110ml"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3176,7 +3176,7 @@
           "id": "9e752268-59ad-4bf1-ac4a-ddd46e2ed6e1",
           "names": {
             "ko": "패션후르츠 아이스크림 110ml",
-            "vi": "Kem Chanh Leo 110ml",
+            "vi": "Kem chanh leo 110ml",
             "zh": "百香果冰淇淋 110ml",
             "en": "Passion Fruit Ice Cream 110ml"
           },
@@ -3188,8 +3188,8 @@
           "id": "3a27c7cd-91c8-4dae-905c-e9abddb56b2c",
           "names": {
             "ko": "초코 아이스크림 110ml",
-            "vi": "Kem Socola 110ml",
-            "zh": "力冰 110ml",
+            "vi": "Kem sô-cô-la 110ml",
+            "zh": "巧克力冰淇淋 110ml",
             "en": "Chocolate Ice Cream 110ml"
           },
           "additionalPrice": 0,
@@ -3205,9 +3205,9 @@
       "id": "f7e12072-8edf-4485-b897-6a440704d521",
       "names": {
         "ko": "아이스크림 500ml",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "vi": "Kem 500ml",
+        "zh": "冰淇淋 500ml",
+        "en": "Ice Cream 500ml"
       },
       "required": false,
       "minSelections": 0,
@@ -3218,7 +3218,7 @@
           "id": "0154e536-5388-4d42-a6dc-b2ba2ea3852c",
           "names": {
             "ko": "바닐라 아이스크림 500ml",
-            "vi": "Kem Vani 500ml",
+            "vi": "Kem vani 500ml",
             "zh": "香草冰淇淋 500ml",
             "en": "Vanilla Ice Cream 500ml"
           },
@@ -3230,9 +3230,9 @@
           "id": "1c864def-1ec3-4cb7-8bac-c889b3377375",
           "names": {
             "ko": "민트초코칩 아이스크림 500ml",
-            "vi": "Kem Bạc Hà Chip Socola 500ml",
+            "vi": "Kem bạc hà sô-cô-la chip 500ml",
             "zh": "薄荷巧克力碎冰淇淋 500ml",
-            "en": "Mint Choco Chip Ice Cream 500ml"
+            "en": "Mint Chocolate Chip Ice Cream 500ml"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3242,7 +3242,7 @@
           "id": "ced68de0-4cf2-496c-a56b-e72f02877e4a",
           "names": {
             "ko": "패션후르츠 아이스크림 500ml",
-            "vi": "Kem Chanh Leo 500ml",
+            "vi": "Kem chanh leo 500ml",
             "zh": "百香果冰淇淋 500ml",
             "en": "Passion Fruit Ice Cream 500ml"
           },
@@ -3271,9 +3271,9 @@
       "id": "2fb4a046-da1a-4e98-a7fa-40703f938de2",
       "names": {
         "ko": "어묵탕 옵션",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "vi": "Tùy chọn canh chả cá",
+        "zh": "鱼饼汤选项",
+        "en": "Fish Cake Soup Options"
       },
       "required": false,
       "minSelections": 0,
@@ -3283,10 +3283,10 @@
         {
           "id": "92987c76-3de9-4491-98f9-508013c0fe9e",
           "names": {
-            "ko": "얼큰어묵탕",
-            "vi": "Lẩu chả cá cay",
+            "ko": "얼큰 어묵탕",
+            "vi": "Canh chả cá cay",
             "zh": "辣鱼饼汤",
-            "en": "Spicy fish cake soup"
+            "en": "Spicy Fish Cake Soup"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3300,10 +3300,10 @@
     {
       "id": "2be54a6c-ab0d-40d7-a080-0c50e0d228dc",
       "names": {
-        "ko": "윙봉치킨선택",
-        "vi": "Chọn gà cánh & đùi",
-        "zh": "选择鸡翅和鸡棒",
-        "en": "Choose wing & drumstick chicken"
+        "ko": "윙봉 치킨 선택",
+        "vi": "Chọn gà cánh và đùi",
+        "zh": "选择鸡翅和鸡腿",
+        "en": "Choose Wings & Drumsticks"
       },
       "required": false,
       "minSelections": 0,
@@ -3313,10 +3313,10 @@
         {
           "id": "08e23927-330b-4a0d-ae1d-0f9e7a8dcefb",
           "names": {
-            "ko": "핫후라이드 윙봉/Hot Fried Wings/辣味炸鸡翅/Cánh gà chiên cay",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "핫후라이드 윙봉",
+            "vi": "Cánh và đùi gà chiên cay",
+            "zh": "辣味炸鸡翅鸡腿",
+            "en": "Hot Fried Wings & Drumsticks"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3325,10 +3325,10 @@
         {
           "id": "4ff6ab3c-6c59-452c-808a-205a83ea6368",
           "names": {
-            "ko": "간장 윙봉/Soy Sauce Wings /酱油鸡翅 /Cánh gà xì dầu.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "간장 윙봉",
+            "vi": "Cánh và đùi gà sốt xì dầu",
+            "zh": "酱油鸡翅鸡腿",
+            "en": "Soy Sauce Wings & Drumsticks"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3337,10 +3337,10 @@
         {
           "id": "9aec3e3c-57f7-441b-83ae-2aff79348608",
           "names": {
-            "ko": "허니 윙봉/Honey Wings/(W05) 蜜汁鸡翅 /Cánh gà mật ong.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "허니 윙봉",
+            "vi": "Cánh và đùi gà mật ong",
+            "zh": "蜜汁鸡翅鸡腿",
+            "en": "Honey Wings & Drumsticks"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3349,10 +3349,10 @@
         {
           "id": "dbd02bf2-43c8-49f4-9f2f-69c030e4621f",
           "names": {
-            "ko": "매운간장윙봉",
-            "vi": "Cánh gà sốt xì dầu cay",
-            "zh": "辣酱油鸡翅中",
-            "en": "Spicy Soy Sauce Chicken Wings"
+            "ko": "매운 간장 윙봉",
+            "vi": "Cánh và đùi gà sốt xì dầu cay",
+            "zh": "辣酱油鸡翅鸡腿",
+            "en": "Spicy Soy Sauce Wings & Drumsticks"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3361,10 +3361,10 @@
         {
           "id": "f276a28f-4dd4-4ee3-93eb-9f0e94941689",
           "names": {
-            "ko": "스노윙치킨 / Gà phủ bột phô mai / 雪花芝士粉炸鸡 / Snowing Chicken",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "스노윙 윙봉",
+            "vi": "Cánh và đùi gà phủ bột phô mai",
+            "zh": "芝士粉鸡翅鸡腿",
+            "en": "Cheese Powder Wings & Drumsticks"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3373,10 +3373,10 @@
         {
           "id": "096e9442-2079-4c5e-aaa5-c3ceb187bd72",
           "names": {
-            "ko": "후라이드윙봉",
-            "vi": "Cánh gà chiên giòn",
-            "zh": "炸鸡翅中",
-            "en": "Fried Chicken Wings"
+            "ko": "후라이드 윙봉",
+            "vi": "Cánh và đùi gà chiên giòn",
+            "zh": "炸鸡翅鸡腿",
+            "en": "Fried Wings & Drumsticks"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3385,10 +3385,10 @@
         {
           "id": "a6c767fa-5abc-4e31-acb3-c840184971f1",
           "names": {
-            "ko": "레드 윙봉/Spicy Red Wings / 辣鸡翅 / Cánh gà cay.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "레드 윙봉",
+            "vi": "Cánh và đùi gà sốt cay",
+            "zh": "辣味鸡翅鸡腿",
+            "en": "Spicy Red Wings & Drumsticks"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3405,9 +3405,9 @@
       "id": "80ff7a38-11c2-4942-a403-b5e3921ef3e2",
       "names": {
         "ko": "짭코바 옵션",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "vi": "Tùy chọn Jjap Koba",
+        "zh": "Jjap Koba选项",
+        "en": "Jjap Koba Options"
       },
       "required": false,
       "minSelections": 0,
@@ -3419,8 +3419,8 @@
           "names": {
             "ko": "모짜렐라 치즈 추가",
             "vi": "Thêm phô mai mozzarella",
-            "zh": "",
-            "en": ""
+            "zh": "加马苏里拉奶酪",
+            "en": "Add Mozzarella Cheese"
           },
           "additionalPrice": 54000,
           "visible": true,
@@ -3430,9 +3430,9 @@
           "id": "4a2a7a67-d229-4d97-b89b-40d5136a9b61",
           "names": {
             "ko": "짭코바 우동",
-            "vi": "bbq udon",
-            "zh": "",
-            "en": ""
+            "vi": "Udon Jjap Koba",
+            "zh": "Jjap Koba乌冬面",
+            "en": "Jjap Koba Udon"
           },
           "additionalPrice": 64800,
           "visible": true,
@@ -3441,10 +3441,10 @@
         {
           "id": "752786d0-1a0f-43b2-b204-5bf8241e2712",
           "names": {
-            "ko": "BBQ NỬA THÊM",
-            "vi": "짭코바 반마리 추가",
-            "zh": "",
-            "en": ""
+            "ko": "짭코바 반마리 추가",
+            "vi": "Thêm nửa con gà BBQ",
+            "zh": "加半只BBQ鸡",
+            "en": "Add Half BBQ Chicken"
           },
           "additionalPrice": 183600,
           "visible": true,
@@ -3453,10 +3453,10 @@
         {
           "id": "24d048ab-f235-4825-9cc9-9b5a386d4254",
           "names": {
-            "ko": "BBQ NỮA 반마리",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "BBQ 반마리",
+            "vi": "Nửa con gà BBQ",
+            "zh": "半只BBQ鸡",
+            "en": "Half BBQ Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3465,10 +3465,10 @@
         {
           "id": "1e883121-c3ea-478a-8c5d-c114ae89dfa1",
           "names": {
-            "ko": "밥 Cơm",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "밥",
+            "vi": "Cơm",
+            "zh": "米饭",
+            "en": "Rice"
           },
           "additionalPrice": 21600,
           "visible": true,
@@ -3479,8 +3479,8 @@
           "names": {
             "ko": "통마늘 추가",
             "vi": "Thêm tỏi nguyên tép",
-            "zh": "",
-            "en": ""
+            "zh": "加整瓣大蒜",
+            "en": "Add Whole Garlic"
           },
           "additionalPrice": 32400,
           "visible": true,
@@ -3489,10 +3489,10 @@
         {
           "id": "eb14789e-3dfe-40b9-bc3c-f58e897128f1",
           "names": {
-            "ko": "Rosé Spicy BBQ",
-            "vi": "로제짭코바",
-            "zh": "",
-            "en": ""
+            "ko": "로제 짭코바",
+            "vi": "Jjap Koba sốt rosé cay",
+            "zh": "辣味玫瑰Jjap Koba",
+            "en": "Rosé Spicy Jjap Koba"
           },
           "additionalPrice": 21600,
           "visible": true,
@@ -3508,10 +3508,10 @@
     {
       "id": "9bba9fb9-e294-4a63-b9db-a5e43df5012f",
       "names": {
-        "ko": "치킨선택",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "치킨 선택",
+        "vi": "Chọn gà",
+        "zh": "选择炸鸡",
+        "en": "Choose Chicken"
       },
       "required": false,
       "minSelections": 0,
@@ -3521,10 +3521,10 @@
         {
           "id": "a4eb6972-30d0-4b33-bb74-34140ec3c70f",
           "names": {
-            "ko": "파닭/Green Onion Chicken /葱香炸鸡（芥末酱)/Gà hành lá (sốt mù tạt).",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "파닭",
+            "vi": "Gà hành lá sốt mù tạt",
+            "zh": "葱香炸鸡（芥末酱）",
+            "en": "Green Onion Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3533,10 +3533,10 @@
         {
           "id": "45fd300a-5e33-4808-b672-467a591fbd2c",
           "names": {
-            "ko": "스노윙치킨 / Gà phủ bột phô mai / 雪花芝士粉炸鸡 / Snowing Cheese Powder Chicken.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "스노윙치킨",
+            "vi": "Gà phủ bột phô mai",
+            "zh": "芝士粉炸鸡",
+            "en": "Cheese Powder Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3545,10 +3545,10 @@
         {
           "id": "a1692666-805d-4b50-bc70-494e596d5079",
           "names": {
-            "ko": "슈프림/Supreme Sauce Chicken /至尊酱鸡 /Gà sốt supreme.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "슈프림 치킨",
+            "vi": "Gà sốt Supreme",
+            "zh": "至尊酱鸡",
+            "en": "Supreme Sauce Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3557,10 +3557,10 @@
         {
           "id": "9451c3d2-1ec7-4e62-8c6b-52684a5b205f",
           "names": {
-            "ko": "매운양념/Hot & Spicy Chicken/韩式辣酱炸鸡/Gà sốt cay HQ.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "매운 양념치킨",
+            "vi": "Gà sốt cay Hàn Quốc",
+            "zh": "韩式辣酱炸鸡",
+            "en": "Hot & Spicy Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3569,10 +3569,10 @@
         {
           "id": "364f50ef-8710-41ac-9e4c-73209d7a4c89",
           "names": {
-            "ko": "고추마늘간장./Garlic Soy Chicken/辣椒蒜酱鸡 /Gà sốt xì dầu tỏi ớt",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "고추마늘간장치킨",
+            "vi": "Gà sốt xì dầu tỏi ớt",
+            "zh": "辣椒蒜酱鸡",
+            "en": "Garlic Soy Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3581,10 +3581,10 @@
         {
           "id": "9b8f3856-60ff-4d08-b111-9e87ea20e22e",
           "names": {
-            "ko": "후라이드/Fried Chicken /无骨炸鸡腿 /không sốt",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "후라이드 치킨",
+            "vi": "Gà rán không sốt",
+            "zh": "原味炸鸡",
+            "en": "Fried Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3593,10 +3593,10 @@
         {
           "id": "641303df-1c29-4e1d-bc2b-de7ce53a43db",
           "names": {
-            "ko": "스리라차 어니언/ Sriracha Onion Chicken/ 洋葱奶酱炸鸡 /Gà sốt kem hành",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "스리라차 어니언 치킨",
+            "vi": "Gà sốt kem hành Sriracha",
+            "zh": "斯里拉差洋葱奶油炸鸡",
+            "en": "Sriracha Onion Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3605,10 +3605,10 @@
         {
           "id": "2fa8c6f6-67da-4899-9c03-df65847fa67b",
           "names": {
-            "ko": "양념/Sweet & Spicy Chicken /韩式甜酱炸鸡 /Gà sốt ngọt HQ",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "양념 치킨",
+            "vi": "Gà sốt ngọt kiểu Hàn",
+            "zh": "韩式甜酱炸鸡",
+            "en": "Sweet & Spicy Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3617,10 +3617,10 @@
         {
           "id": "a6629165-2c6e-4717-945f-efa07046c100",
           "names": {
-            "ko": "핫후라이드",
+            "ko": "핫후라이드 치킨",
             "vi": "Gà rán cay",
             "zh": "辣味炸鸡",
-            "en": "Hot Fried Chicken."
+            "en": "Hot Fried Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3634,10 +3634,10 @@
     {
       "id": "b69b854b-5607-4f8c-a795-c775e55bacb7",
       "names": {
-        "ko": "치킨선택",
+        "ko": "치킨 선택",
         "vi": "Chọn gà",
         "zh": "选择鸡肉",
-        "en": "Choose chicken"
+        "en": "Choose Chicken"
       },
       "required": false,
       "minSelections": 0,
@@ -3647,10 +3647,10 @@
         {
           "id": "ff24d8d1-a4ab-4820-951c-12a82aeeefc1",
           "names": {
-            "ko": "레드 윙봉/Spicy Red Wings/辣鸡翅/Cánh gà cay",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "레드 윙봉",
+            "vi": "Cánh gà sốt đỏ cay",
+            "zh": "香辣红酱鸡翅",
+            "en": "Spicy Red Wings"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3659,10 +3659,10 @@
         {
           "id": "2e5c382c-2fd7-4f8d-8fa5-2d4bc83c719d",
           "names": {
-            "ko": "간장 윙봉/Soy Sauce Wings /酱油鸡翅 /Cánh gà xì dầu",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "간장 윙봉",
+            "vi": "Cánh gà xì dầu",
+            "zh": "酱油鸡翅",
+            "en": "Soy Sauce Wings"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3671,10 +3671,10 @@
         {
           "id": "561e7390-5e64-4a61-9ddd-2f12cb678256",
           "names": {
-            "ko": "슈프림/Supreme Sauce Chicken/至尊酱鸡 /Gà sốt supreme",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "슈프림 치킨",
+            "vi": "Gà sốt Supreme",
+            "zh": "至尊酱炸鸡",
+            "en": "Supreme Sauce Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3683,7 +3683,7 @@
         {
           "id": "28ae400d-930a-48ca-89f5-3113b1e3036e",
           "names": {
-            "ko": "핫후라이드",
+            "ko": "핫후라이드 치킨",
             "vi": "Gà rán cay",
             "zh": "辣味炸鸡",
             "en": "Hot Fried Chicken"
@@ -3695,10 +3695,10 @@
         {
           "id": "ec9e8a2a-6cb7-4e3a-8e3d-430cdadd0eb6",
           "names": {
-            "ko": "핫후라이드 윙봉./Hot Fried Wings/辣味炸鸡翅/Cánh gà chiên cay",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "핫후라이드 윙봉",
+            "vi": "Cánh gà rán cay",
+            "zh": "辣味炸鸡翅",
+            "en": "Hot Fried Wings"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3707,10 +3707,10 @@
         {
           "id": "5e24c7b7-ee67-487a-8f74-49a15c62b6df",
           "names": {
-            "ko": "스리라차 어니언/Sriracha Onion Chicken/洋葱奶酱炸鸡/Gà sốt kem hành",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "스리라차 어니언 치킨",
+            "vi": "Gà sốt kem hành Sriracha",
+            "zh": "斯里拉差洋葱奶油炸鸡",
+            "en": "Sriracha Onion Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3719,10 +3719,10 @@
         {
           "id": "61700135-8977-4d4b-b1e7-854fc14bb2e7",
           "names": {
-            "ko": "후라이드/Fried Chicken/无骨炸鸡腿 /không sốt",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "후라이드 치킨",
+            "vi": "Gà rán không sốt",
+            "zh": "原味炸鸡",
+            "en": "Fried Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3731,10 +3731,10 @@
         {
           "id": "5355f9a9-8d4c-4009-8d4f-9cf6521699aa",
           "names": {
-            "ko": "고추마늘간장/Garlic Soy Chicken/ 辣椒蒜酱鸡/Gà sốt xì dầu tỏi ớt",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "고추마늘간장 치킨",
+            "vi": "Gà sốt xì dầu tỏi ớt",
+            "zh": "辣椒蒜香酱油鸡",
+            "en": "Garlic Soy Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3743,10 +3743,10 @@
         {
           "id": "a4540023-7b3c-496b-baab-b821705d6e68",
           "names": {
-            "ko": "매운양념/Hot & Spicy Chicken/韩式辣酱炸鸡/Gà sốt cay HQ",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "매운양념 치킨",
+            "vi": "Gà sốt cay kiểu Hàn",
+            "zh": "韩式辣酱炸鸡",
+            "en": "Hot & Spicy Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3755,10 +3755,10 @@
         {
           "id": "9c0e3927-132b-48b8-8d76-c5ab46ac7499",
           "names": {
-            "ko": "짭코바/(Spicy BBQ Chicken (Jjabkoba)/BBQ烤鸡 /Gà nướng BBQ",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "짭코바",
+            "vi": "Gà nướng BBQ cay Jjabkoba",
+            "zh": "Jjabkoba香辣BBQ烤鸡",
+            "en": "Spicy BBQ Chicken (Jjabkoba)"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3767,10 +3767,10 @@
         {
           "id": "9aae2cff-aaed-46e8-9171-cce934fde0d6",
           "names": {
-            "ko": "파닭/Green Onion Chicken/葱香炸鸡（芥末酱/Gà hành lá (sốt mù tạt)",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "파닭",
+            "vi": "Gà hành lá sốt mù tạt",
+            "zh": "葱香炸鸡配芥末酱",
+            "en": "Green Onion Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3779,10 +3779,10 @@
         {
           "id": "eec46594-8cc8-4f8e-97c0-dbe766a33806",
           "names": {
-            "ko": "양념/Sweet & Spicy Chicken/韩式甜酱炸鸡/Gà sốt ngọt HQ",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "양념 치킨",
+            "vi": "Gà sốt ngọt kiểu Hàn",
+            "zh": "韩式甜酱炸鸡",
+            "en": "Sweet & Spicy Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3791,10 +3791,10 @@
         {
           "id": "18f452ad-9d20-4f39-8d17-f0fc555b3b9e",
           "names": {
-            "ko": "허니 윙봉/Honey Wings/蜜汁鸡翅 /Cánh gà mật ong",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "허니 윙봉",
+            "vi": "Cánh gà mật ong",
+            "zh": "蜜汁鸡翅",
+            "en": "Honey Wings"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3809,10 +3809,10 @@
     {
       "id": "74421c35-8f8e-469d-b25a-cbd7fb77d8c3",
       "names": {
-        "ko": "치킨선택(TOK3)",
+        "ko": "치킨 선택 (TOK3)",
         "vi": "Chọn gà (TOK3)",
-        "zh": "选择鸡肉 (TOK3)",
-        "en": "Choose chicken (TOK3)"
+        "zh": "选择鸡肉（TOK3）",
+        "en": "Choose Chicken (TOK3)"
       },
       "required": false,
       "minSelections": 0,
@@ -3822,10 +3822,10 @@
         {
           "id": "7d7ed51b-8257-4e81-a0df-78f4f73adbe0",
           "names": {
-            "ko": "O5 허니 윙봉/Honey Wings/ 蜜汁鸡翅 /Cánh gà mật ong",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "O5 허니 윙봉",
+            "vi": "O5 Cánh gà mật ong",
+            "zh": "O5 蜜汁鸡翅",
+            "en": "O5 Honey Wings"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3834,10 +3834,10 @@
         {
           "id": "37697e59-2987-4b3d-a1c0-a2c7d54c0205",
           "names": {
-            "ko": "O5 간장 윙봉/Soy Sauce Wings /酱油鸡翅 /Cánh gà xì dầu",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "O5 간장 윙봉",
+            "vi": "O5 Cánh gà xì dầu",
+            "zh": "O5 酱油鸡翅",
+            "en": "O5 Soy Sauce Wings"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3851,10 +3851,10 @@
     {
       "id": "b2fbfcca-55f5-4718-87d4-96627091764a",
       "names": {
-        "ko": "치킨선택(반마리)",
+        "ko": "치킨 선택 (반마리)",
         "vi": "Chọn gà (nửa con)",
-        "zh": "选择鸡肉 (半只)",
-        "en": "Choose chicken (half)"
+        "zh": "选择鸡肉（半只）",
+        "en": "Choose Chicken (Half)"
       },
       "required": false,
       "minSelections": 0,
@@ -3864,10 +3864,10 @@
         {
           "id": "5b311b20-6191-403f-8612-08cf8648b49d",
           "names": {
-            "ko": "양념/Sweet & Spicy Chicken / 韩式甜酱炸鸡 /Gà sốt ngọt HQ",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "양념 치킨",
+            "vi": "Gà sốt ngọt kiểu Hàn",
+            "zh": "韩式甜酱炸鸡",
+            "en": "Sweet & Spicy Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3876,10 +3876,10 @@
         {
           "id": "29a63a17-2438-4370-a4ef-1529d2007a23",
           "names": {
-            "ko": "후라이드/Fried Chicken/ 无骨炸鸡腿 /không sốt",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "후라이드 치킨",
+            "vi": "Gà rán không sốt",
+            "zh": "原味炸鸡",
+            "en": "Fried Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3888,10 +3888,10 @@
         {
           "id": "de514282-5410-45a5-9de4-50e2964886ea",
           "names": {
-            "ko": "핫 후라이드",
-            "vi": "Hot Fried Chicken (Spicy)",
+            "ko": "핫 후라이드 치킨",
+            "vi": "Gà rán cay",
             "zh": "辣味炸鸡",
-            "en": "Gà rán cay"
+            "en": "Hot Fried Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3900,10 +3900,10 @@
         {
           "id": "9a54adba-98c2-41ac-a060-57d64379c4bb",
           "names": {
-            "ko": "고추마늘간장/Garlic Soy Chicken/ 辣椒蒜酱鸡 /Gà sốt xì dầu tỏi ớt",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "고추마늘간장 치킨",
+            "vi": "Gà sốt xì dầu tỏi ớt",
+            "zh": "辣椒蒜香酱油鸡",
+            "en": "Chili Garlic Soy Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3912,10 +3912,10 @@
         {
           "id": "2dfd957a-1061-4e7d-a1ca-5ec27dfc1da0",
           "names": {
-            "ko": "파닭/Green Onion Chicken /葱香炸鸡（芥末酱)/Gà hành lá (sốt mù tạt)",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "파닭",
+            "vi": "Gà hành lá sốt mù tạt",
+            "zh": "葱香炸鸡（芥末酱）",
+            "en": "Green Onion Chicken with Mustard Sauce"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3924,10 +3924,10 @@
         {
           "id": "a8da2a14-4ec6-40a9-926c-9b41755b2de5",
           "names": {
-            "ko": "스노윙치킨 / Gà phủ bột phô mai / 雪花芝士粉炸鸡 / Snowing Cheese Powder Chicken",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "스노윙 치킨",
+            "vi": "Gà phủ bột phô mai",
+            "zh": "雪花芝士粉炸鸡",
+            "en": "Snowing Cheese Powder Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3936,10 +3936,10 @@
         {
           "id": "fd21b308-6f37-443b-a50c-a35c5a604106",
           "names": {
-            "ko": "슈프림/Supreme Sauce Chicken /至尊酱鸡 /Gà sốt supreme",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "슈프림 소스 치킨",
+            "vi": "Gà sốt Supreme",
+            "zh": "至尊酱鸡",
+            "en": "Supreme Sauce Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3948,10 +3948,10 @@
         {
           "id": "69fa9032-47e8-4c12-9a76-ac9b53e53039",
           "names": {
-            "ko": "매운양념/Hot & Spicy Chicken/韩式辣酱炸鸡 /Gà sốt cay HQ",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "매운 양념치킨",
+            "vi": "Gà sốt cay Hàn Quốc",
+            "zh": "韩式辣酱炸鸡",
+            "en": "Hot & Spicy Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3960,10 +3960,10 @@
         {
           "id": "8113cf6b-beb4-4180-bbf8-ada62b3cef54",
           "names": {
-            "ko": "스리라차 어니언/Sriracha Onion Chicken /洋葱奶酱炸鸡 /Gà sốt kem hành",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "스리라차 어니언 치킨",
+            "vi": "Gà sốt kem hành Sriracha",
+            "zh": "是拉差洋葱奶油酱炸鸡",
+            "en": "Sriracha Onion Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3978,10 +3978,10 @@
     {
       "id": "4a947b5f-0eb9-4c88-87b2-94debe05a41d",
       "names": {
-        "ko": "피자 선택 / Pizza Choice / 披萨选择 / Lựa chọn Pizza",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "피자 선택",
+        "vi": "Chọn pizza",
+        "zh": "选择披萨",
+        "en": "Pizza Selection"
       },
       "required": false,
       "minSelections": 0,
@@ -3991,10 +3991,10 @@
         {
           "id": "3745c71f-47e0-406b-b911-6baf319caf1c",
           "names": {
-            "ko": "불고기 컴비네이션/Bulgogi Combination Pizza/ 牛肉综合披萨/Pizza thập cẩm bulgogi.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "불고기 컴비네이션 피자",
+            "vi": "Pizza thập cẩm bulgogi",
+            "zh": "牛肉综合披萨",
+            "en": "Bulgogi Combination Pizza"
           },
           "additionalPrice": 10800,
           "visible": true,
@@ -4003,10 +4003,10 @@
         {
           "id": "1a42eee7-878c-45d7-9a35-746e6a22f56c",
           "names": {
-            "ko": "고구마 피자/Sweet Potato Pizza / 地瓜披萨/Pizza khoai lang.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "고구마 피자",
+            "vi": "Pizza khoai lang",
+            "zh": "红薯披萨",
+            "en": "Sweet Potato Pizza"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -4015,10 +4015,10 @@
         {
           "id": "cd7ad83a-4505-47c5-9d60-7717a78a7b88",
           "names": {
-            "ko": "쉬림프 피자/ Shrimp Pizza/虾仁披萨 /Pizza tôm.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "쉬림프 피자",
+            "vi": "Pizza tôm",
+            "zh": "虾仁披萨",
+            "en": "Shrimp Pizza"
           },
           "additionalPrice": 10800,
           "visible": true,
@@ -4027,10 +4027,10 @@
         {
           "id": "a8a8e35a-e326-4451-b5b0-91dfec56f869",
           "names": {
-            "ko": "페퍼로니 체다 피자/Pepperoni Cheddar Pizza/切达芝士意大利香肠披萨 /Pizza pepperoni phô mai cheddar.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "페퍼로니 체다 피자",
+            "vi": "Pizza pepperoni phô mai cheddar",
+            "zh": "切达芝士意大利香肠披萨",
+            "en": "Pepperoni Cheddar Pizza"
           },
           "additionalPrice": 10800,
           "visible": true,
@@ -4039,10 +4039,10 @@
         {
           "id": "76bab82f-fb7e-4dd1-b1d9-9c444adb3d08",
           "names": {
-            "ko": "불닭피자/Spicy Chicken (Buldak) Pizza/火辣鸡肉披萨/Pizza gà cay.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "불닭 피자",
+            "vi": "Pizza gà cay",
+            "zh": "火辣鸡肉披萨",
+            "en": "Spicy Chicken (Buldak) Pizza"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -4051,10 +4051,10 @@
         {
           "id": "b7ed5732-ba72-42c6-bc25-bdf470409d4c",
           "names": {
-            "ko": "옥수수피자/Corn Pizza/玉米披萨 /Pizza bắp.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "옥수수 피자",
+            "vi": "Pizza bắp",
+            "zh": "玉米披萨",
+            "en": "Corn Pizza"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -4063,10 +4063,10 @@
         {
           "id": "a04a549c-d272-4e05-97f5-ce51e49caa91",
           "names": {
-            "ko": "하와이안 피자/Hawaiian Pizza/夏威夷披萨 /Pizza Hawaii.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "하와이안 피자",
+            "vi": "Pizza Hawaii",
+            "zh": "夏威夷披萨",
+            "en": "Hawaiian Pizza"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -4075,10 +4075,10 @@
         {
           "id": "dc13d57d-b4ab-4d77-9c77-d1406e59e736",
           "names": {
-            "ko": "베이컨 포테이토 피자/Bacon Potato Pizza/培根土豆披萨/Pizza khoai tây thịt xông khói.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "베이컨 포테이토 피자",
+            "vi": "Pizza khoai tây thịt xông khói",
+            "zh": "培根土豆披萨",
+            "en": "Bacon Potato Pizza"
           },
           "additionalPrice": 10800,
           "visible": true,
@@ -4087,10 +4087,10 @@
         {
           "id": "52a00d26-8c3c-474b-83a0-daa65b26c33a",
           "names": {
-            "ko": "치킨 데리야끼 피자/ Chicken Teriyaki Pizza/ 照烧鸡肉披萨/Pizza gà sốt teriyaki.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "치킨 데리야끼 피자",
+            "vi": "Pizza gà sốt teriyaki",
+            "zh": "照烧鸡肉披萨",
+            "en": "Chicken Teriyaki Pizza"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -4108,10 +4108,10 @@
     {
       "id": "4fdd345d-483e-4f95-a0c4-73faf37ffd0c",
       "names": {
-        "ko": "피자엣지 변경",
+        "ko": "피자 엣지 변경",
         "vi": "Thay đổi viền pizza",
-        "zh": "更改比萨边",
-        "en": "Change pizza edge"
+        "zh": "更改披萨边",
+        "en": "Change Pizza Crust"
       },
       "required": false,
       "minSelections": 0,
@@ -4121,10 +4121,10 @@
         {
           "id": "6487fbeb-3650-488a-b13c-14c4f64d7d41",
           "names": {
-            "ko": "크림치즈 크러스트 / Cream Cheese Crust / 奶油芝士边 / Viền phô mai kem",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "크림치즈 크러스트",
+            "vi": "Viền phô mai kem",
+            "zh": "奶油芝士边",
+            "en": "Cream Cheese Crust"
           },
           "additionalPrice": 86400,
           "visible": true,
@@ -4133,10 +4133,10 @@
         {
           "id": "3378efb5-2f7f-4bb2-887b-2db3a76ef0a6",
           "names": {
-            "ko": "치즈크러스트/Cheese Crust /芝心边 / 芝士边 /Viền phô mai.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "치즈 크러스트",
+            "vi": "Viền phô mai",
+            "zh": "芝心边",
+            "en": "Cheese Crust"
           },
           "additionalPrice": 64800,
           "visible": true,
@@ -4145,10 +4145,10 @@
         {
           "id": "fcb6956f-c11e-4e08-83fb-9249b9e938b4",
           "names": {
-            "ko": "치즈바이트/Cheese Bites Edge /芝士小球边 / 芝士咬边 / Viên phô mai",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "치즈 바이트",
+            "vi": "Viền viên phô mai",
+            "zh": "芝士小球边",
+            "en": "Cheese Bites Crust"
           },
           "additionalPrice": 86400,
           "visible": true,
@@ -4157,10 +4157,10 @@
         {
           "id": "7b862bfc-fac4-4195-a9cd-c3959fa71f82",
           "names": {
-            "ko": "체다엣지/Cheddar Cheese Edge /切达芝士外沿 /Viền bánh rắc phô mai cheddar.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "체다 엣지",
+            "vi": "Viền phô mai cheddar",
+            "zh": "切达芝士边",
+            "en": "Cheddar Cheese Crust"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -4175,10 +4175,10 @@
     {
       "id": "bd5ba827-b64d-4910-a24a-86fa7a8e29cd",
       "names": {
-        "ko": "피자옵션",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "ko": "피자 옵션",
+        "vi": "Tùy chọn pizza",
+        "zh": "披萨选项",
+        "en": "Pizza Options"
       },
       "required": false,
       "minSelections": 0,
@@ -4188,10 +4188,10 @@
         {
           "id": "4146e08c-e39b-48f7-932f-14b67c082573",
           "names": {
-            "ko": "불고기 컴비네이션/Bulgogi Combination Pizza/牛肉综合披萨/thập cẩm bulgogi.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "불고기 컴비네이션 피자",
+            "vi": "Pizza thập cẩm bulgogi",
+            "zh": "牛肉综合披萨",
+            "en": "Bulgogi Combination Pizza"
           },
           "additionalPrice": 21600,
           "visible": true,
@@ -4200,10 +4200,10 @@
         {
           "id": "39acdb4e-7231-478d-845c-20e9600a5879",
           "names": {
-            "ko": "옥수수피자/Corn Pizza /玉米披萨/Pizza bắp",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "옥수수 피자",
+            "vi": "Pizza bắp",
+            "zh": "玉米披萨",
+            "en": "Corn Pizza"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -4212,10 +4212,10 @@
         {
           "id": "b865b334-9203-4d79-bb19-39ae47400d62",
           "names": {
-            "ko": "하와이안 피자/Hawaiian Pizza/夏威夷披萨/Pizza Hawaii",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "하와이안 피자",
+            "vi": "Pizza Hawaii",
+            "zh": "夏威夷披萨",
+            "en": "Hawaiian Pizza"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -4224,10 +4224,10 @@
         {
           "id": "333a8be1-fd83-41e1-b92a-45a16306df09",
           "names": {
-            "ko": "쉬림프 피자/Shrimp Pizza/虾仁披萨/Pizza tôm.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "쉬림프 피자",
+            "vi": "Pizza tôm",
+            "zh": "虾仁披萨",
+            "en": "Shrimp Pizza"
           },
           "additionalPrice": 21600,
           "visible": true,
@@ -4236,10 +4236,10 @@
         {
           "id": "b98042d3-d24f-465f-af43-4b2685767936",
           "names": {
-            "ko": "불닭피자/Spicy Chicken Pizza/火辣鸡肉披萨/Pizza gà cay.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "불닭 피자",
+            "vi": "Pizza gà cay",
+            "zh": "火辣鸡肉披萨",
+            "en": "Spicy Chicken Pizza"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -4248,10 +4248,10 @@
         {
           "id": "38ee07d3-f641-4713-b136-8cef26d57e26",
           "names": {
-            "ko": "치킨 데리야끼 피자/Chicken Teriyaki Pizza/照烧鸡肉披萨/gà sốt teriyaki.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "치킨 데리야끼 피자",
+            "vi": "Pizza gà sốt teriyaki",
+            "zh": "照烧鸡肉披萨",
+            "en": "Chicken Teriyaki Pizza"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -4260,10 +4260,10 @@
         {
           "id": "77d4ca58-ed42-473d-be65-a494039ffdf5",
           "names": {
-            "ko": "베이컨 포테이토 피자/Bacon Potato Pizza/培根土豆披萨/Pizza khoai tây thịt xông khói.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "베이컨 포테이토 피자",
+            "vi": "Pizza khoai tây thịt xông khói",
+            "zh": "培根土豆披萨",
+            "en": "Bacon Potato Pizza"
           },
           "additionalPrice": 21600,
           "visible": true,
@@ -4272,10 +4272,10 @@
         {
           "id": "c53ec157-0322-4e2c-b2e7-afd039459f10",
           "names": {
-            "ko": "페퍼로니 체다 피자Pepperoni Cheddar Pizza/切达芝士意大利香肠披萨 /Pizza pepperoni cheddar.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "페퍼로니 체다 피자",
+            "vi": "Pizza pepperoni phô mai cheddar",
+            "zh": "切达芝士意大利香肠披萨",
+            "en": "Pepperoni Cheddar Pizza"
           },
           "additionalPrice": 21600,
           "visible": true,
@@ -4284,10 +4284,10 @@
         {
           "id": "569f318e-7298-4103-b8b6-ca3a61264757",
           "names": {
-            "ko": "고구마 피자/Sweet Potato Pizza/地瓜披萨/Pizza khoai lang",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "고구마 피자",
+            "vi": "Pizza khoai lang",
+            "zh": "地瓜披萨",
+            "en": "Sweet Potato Pizza"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -4303,9 +4303,9 @@
       "id": "6274f44c-9256-418a-a59d-20e04e651fa1",
       "names": {
         "ko": "핫 후라이드 옵션",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "vi": "Tùy chọn gà rán cay",
+        "zh": "香辣炸鸡选项",
+        "en": "Hot Fried Chicken Options"
       },
       "required": false,
       "minSelections": 0,
@@ -4345,11 +4345,11 @@
   "translation": {
     "provider": "openai",
     "model": "gpt-5.6-terra",
-    "status": "not_configured",
+    "status": "ready",
     "entityCount": 275,
     "cacheHits": 0,
-    "translated": 0,
-    "pendingCount": 264,
-    "updatedAt": "2026-07-18T13:23:40.368Z"
+    "translated": 275,
+    "pendingCount": 0,
+    "updatedAt": "2026-07-18T13:48:30.735Z"
   }
 }

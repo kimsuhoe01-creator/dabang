@@ -1,4 +1,3030 @@
 {
   "version": 1,
-  "items": {}
+  "items": {
+    "category:f60b3e05-f21f-4905-9207-0e494ff2b464": {
+      "fingerprint": "32e6855408d1952688af98ce23920dc91b83fd77bdfa36905fcae57a45766447",
+      "sourceName": "신메뉴 | Món mới | 新菜单 | New Menu",
+      "names": {
+        "ko": "신메뉴",
+        "vi": "Món mới",
+        "zh": "新菜单",
+        "en": "New Menu"
+      },
+      "updatedAt": "2026-07-18T13:46:57.736Z"
+    },
+    "category:6a144c27-c7ba-43f6-b6e1-4be8b008b433": {
+      "fingerprint": "54f8070de5c236791f4ddd0c1140973eb72555e3bb8472e3927e9c9405fb7a90",
+      "sourceName": "세트|Combo/Phầnăn|套餐|Set/Combo",
+      "names": {
+        "ko": "세트",
+        "vi": "Combo",
+        "zh": "套餐",
+        "en": "Set Combo"
+      },
+      "updatedAt": "2026-07-18T13:46:57.736Z"
+    },
+    "category:0afd5056-2ad2-46d3-9122-6886fedc4d3a": {
+      "fingerprint": "96b6af2a3e8376c70bc6a4525eefca0475e0ed8455562047add8e1665cb3843f",
+      "sourceName": "다방치킨 | Dabang Chicken",
+      "names": {
+        "ko": "다방치킨",
+        "vi": "Gà Dabang",
+        "zh": "Dabang 炸鸡",
+        "en": "Dabang Chicken"
+      },
+      "updatedAt": "2026-07-18T13:46:57.736Z"
+    },
+    "category:52c66f7a-c2df-4713-a319-65e3963eb912": {
+      "fingerprint": "72bbaf2eae70da337481854ec43d4ba29a102a3285c1413dfbe9d46e3e449ade",
+      "sourceName": "통닭|Gànguyê-conchiên|整只炸鸡|WholeFriedChicken",
+      "names": {
+        "ko": "통닭",
+        "vi": "Gà nguyên con chiên",
+        "zh": "整只炸鸡",
+        "en": "Whole Fried Chicken"
+      },
+      "updatedAt": "2026-07-18T13:46:57.736Z"
+    },
+    "category:2424e567-8845-48c6-a4af-91c51a4d3aaa": {
+      "fingerprint": "11024e8d48ddbe9f25e9b3ea6607882b5da70acad0d72f2dbf4e02261a8535f8",
+      "sourceName": "날개치킨|Gàcánhchiên|炸鸡翅|WingChicken",
+      "names": {
+        "ko": "날개치킨",
+        "vi": "Gà cánh chiên",
+        "zh": "炸鸡翅",
+        "en": "Chicken Wings"
+      },
+      "updatedAt": "2026-07-18T13:46:57.736Z"
+    },
+    "category:0ac81743-8d00-47bd-af8c-e102b44f4247": {
+      "fingerprint": "8128141a14bb4c8ad34f8cf5028f2e7d5ee6ecda84664cf6c0f6676d7386ed14",
+      "sourceName": "스페이스 피자|Bánhpizza|披萨|Pizza",
+      "names": {
+        "ko": "스페이스 피자",
+        "vi": "Pizza Space",
+        "zh": "Space 披萨",
+        "en": "Space Pizza"
+      },
+      "updatedAt": "2026-07-18T13:46:57.736Z"
+    },
+    "category:6abec948-8c84-4476-b8c8-95d7903b4015": {
+      "fingerprint": "9691a2e10b56d9b1f06811cb1a2ee589fdb98e2a0874d80d6e8ee8d2ca5ff198",
+      "sourceName": "스페이스 버거|Bánhmìkẹpthịt|汉堡|Hamburger",
+      "names": {
+        "ko": "스페이스 버거",
+        "vi": "Burger Space",
+        "zh": "Space 汉堡",
+        "en": "Space Burger"
+      },
+      "updatedAt": "2026-07-18T13:46:57.736Z"
+    },
+    "category:5181465e-2d7d-4f9f-bdc1-de466348cd7f": {
+      "fingerprint": "e4eb86fb0a99f74f230ae93b41c13082b4ffcc883c92057e81eb36289dcbab6a",
+      "sourceName": "다방분식|Mónănvặt|小吃|KoreanSnacks",
+      "names": {
+        "ko": "다방분식",
+        "vi": "Món ăn vặt Dabang",
+        "zh": "Dabang 小吃",
+        "en": "Dabang Snacks"
+      },
+      "updatedAt": "2026-07-18T13:46:57.736Z"
+    },
+    "category:601b353e-0f17-46db-bd64-d64140a70d27": {
+      "fingerprint": "a8f60d74099c081ad681b786fcd7d9ddf9e7705cf2a9b7d488d3a17b8b2bd0ab",
+      "sourceName": "안주|Mónnhậu|下酒菜|SideDish/BarSnacks",
+      "names": {
+        "ko": "안주",
+        "vi": "Món nhậu",
+        "zh": "下酒菜",
+        "en": "Bar Snacks"
+      },
+      "updatedAt": "2026-07-18T13:46:57.736Z"
+    },
+    "category:4ae5f7a4-9b6d-4c73-a895-af5d60c8fd87": {
+      "fingerprint": "9ef8af264e82d71d44249630f79b2b9cd75c1f11eb2288fae1a19933205150dc",
+      "sourceName": "음료|Nướcuống|饮料|Beverages",
+      "names": {
+        "ko": "음료",
+        "vi": "Nước uống",
+        "zh": "饮料",
+        "en": "Beverages"
+      },
+      "updatedAt": "2026-07-18T13:46:57.736Z"
+    },
+    "category:b4606019-4a6b-4923-8a87-7f02012c1044": {
+      "fingerprint": "4fafe87e1c5dc08bc3cf1eb7adad84585764579dfbf043ad0be8702d7dbfc0d7",
+      "sourceName": "멕시칸|MónMexico|墨西哥菜|MexicanFood",
+      "names": {
+        "ko": "멕시칸",
+        "vi": "Món Mexico",
+        "zh": "墨西哥菜",
+        "en": "Mexican Food"
+      },
+      "updatedAt": "2026-07-18T13:46:57.736Z"
+    },
+    "category:cukcuk-alcohol": {
+      "fingerprint": "b8e8f8f12518b6e256379cfc32a2b500697b4d2d49a57627e4b094bab0000dc2",
+      "sourceName": "주류 | Đồ uống có cồn | 酒类 | Alcohol",
+      "names": {
+        "ko": "주류",
+        "vi": "Đồ uống có cồn",
+        "zh": "酒类",
+        "en": "Alcohol"
+      },
+      "updatedAt": "2026-07-18T13:46:57.736Z"
+    },
+    "menu:7c92814f-40ee-4742-8e2b-004a659bcb97": {
+      "fingerprint": "7b64bf052e06c80e9dc0a0a9bbc9675fbcdbf2584cb73f6bdd5a81daf36d7641",
+      "sourceName": "후라이드 Fried Chicken 无骨炸鸡腿 Má đùi rút xương",
+      "names": {
+        "ko": "후라이드 치킨",
+        "vi": "Gà rán má đùi rút xương",
+        "zh": "无骨炸鸡腿",
+        "en": "Boneless Fried Chicken Thigh"
+      },
+      "updatedAt": "2026-07-18T13:46:57.736Z"
+    },
+    "menu:84eca397-5e7f-4f5e-8e39-e62981936afe": {
+      "fingerprint": "185bb09794e4378d5facdaa4461b6d400e8b65f0a0fdf518b665f373279569e3",
+      "sourceName": "허니 윙봉 Honey Wings 蜜汁鸡翅 Cánh gà mật ong",
+      "names": {
+        "ko": "허니 윙봉",
+        "vi": "Cánh gà mật ong",
+        "zh": "蜜汁鸡翅",
+        "en": "Honey Wings"
+      },
+      "updatedAt": "2026-07-18T13:46:57.736Z"
+    },
+    "menu:0cb6c0d0-0b9d-4813-96d5-606287423eb8": {
+      "fingerprint": "04c0821a02983bf4cb599259cdde22ca8db918bd9f4120dc9ee1f832c04ff311",
+      "sourceName": "핫후라이드ver3.0 | Gà rán cay | 辣味炸鸡 | Hot Fried Chicken",
+      "names": {
+        "ko": "핫후라이드 ver3.0",
+        "vi": "Gà rán cay ver3.0",
+        "zh": "辣味炸鸡 ver3.0",
+        "en": "Hot Fried Chicken ver3.0"
+      },
+      "updatedAt": "2026-07-18T13:46:57.736Z"
+    },
+    "menu:899a8524-b720-4828-b7fc-1f2472ce962a": {
+      "fingerprint": "324bd60981d6a8ba9c1f6ebd31dd9c3183be0ea1ab50ada9dc750afa55dfe64b",
+      "sourceName": "한신포차세트 | nguyên con & chân gà | 鸡爪鸡套餐",
+      "names": {
+        "ko": "한신포차 세트",
+        "vi": "Combo gà nguyên con và chân gà",
+        "zh": "鸡爪鸡套餐",
+        "en": "Hanshin Pocha Set"
+      },
+      "updatedAt": "2026-07-18T13:46:57.736Z"
+    },
+    "menu:e9e75a8d-cb9d-442b-8f57-08c06421f56f": {
+      "fingerprint": "187f69ecbbe72346ddc005225718ddfdf84d39d1eb4ad0f89878762d79769411",
+      "sourceName": "펩시제로 | Pepsi Zero | 百事可乐无糖 | Pepsi không đường",
+      "names": {
+        "ko": "펩시 제로",
+        "vi": "Pepsi không đường",
+        "zh": "百事可乐无糖",
+        "en": "Pepsi Zero"
+      },
+      "updatedAt": "2026-07-18T13:46:57.736Z"
+    },
+    "menu:1034a04e-2d2b-41ae-897c-a8dbe9eaf21c": {
+      "fingerprint": "cc9083145eeb0c209f7e417b46c73045a86ca07b5d2905ee45dc56c2b0df5a6b",
+      "sourceName": "페퍼로니/ (SP02) Pepperoni/ 意大利香肠披萨/ Pizza pepperoni solo",
+      "names": {
+        "ko": "페퍼로니 (SP02)",
+        "vi": "Pizza pepperoni (SP02)",
+        "zh": "意大利香肠披萨 (SP02)",
+        "en": "Pepperoni Pizza (SP02)"
+      },
+      "updatedAt": "2026-07-18T13:46:57.736Z"
+    },
+    "menu:18c2eb1b-5a99-459e-98b2-8c630036442a": {
+      "fingerprint": "32a4cba75339a73e19ca510790be26bf4867aba8c956b1188fb2237312091461",
+      "sourceName": "파마산 치즈가루 | Phô mai bột Parmesan",
+      "names": {
+        "ko": "파마산 치즈가루",
+        "vi": "Bột phô mai Parmesan",
+        "zh": "帕玛森芝士粉",
+        "en": "Parmesan Cheese Powder"
+      },
+      "updatedAt": "2026-07-18T13:46:57.736Z"
+    },
+    "menu:08e44de3-df20-4b82-aa28-b26a7d2d69f9": {
+      "fingerprint": "b51bfd2b718afb658e94203e286335794b6ce4896c13e838923bef2ebb9778d0",
+      "sourceName": "파닭 Green Onion Chicken 葱香炸鸡（芥末酱 Gà hành lá (sốt mù tạt)",
+      "names": {
+        "ko": "파닭",
+        "vi": "Gà hành lá sốt mù tạt",
+        "zh": "葱香炸鸡（芥末酱）",
+        "en": "Green Onion Chicken with Mustard Sauce"
+      },
+      "updatedAt": "2026-07-18T13:46:57.736Z"
+    },
+    "menu:930eadf4-1572-4fda-83c2-428092e0eb24": {
+      "fingerprint": "6f696fe07a164481f57cf3cb51d9c00c3e31c3fb56deee2a028cff73d185d03f",
+      "sourceName": "통떡 SET Whole Chicken & Tteok Set 整只炸鸡 + 辣炒年糕Gà nguyên con + Tokbokki",
+      "names": {
+        "ko": "통떡 세트",
+        "vi": "Combo gà nguyên con và tokbokki",
+        "zh": "整只炸鸡配辣炒年糕",
+        "en": "Whole Chicken & Tteokbokki Set"
+      },
+      "updatedAt": "2026-07-18T13:46:57.736Z"
+    },
+    "menu:69570173-d7e8-4f3b-81cc-bc498f66351a": {
+      "fingerprint": "b668e70f238e9a6984f406fdf1606329c5f2d1b085c76171199a160ef3d8b696",
+      "sourceName": "클래식 쥐포 Thin Grilled Filefish 烤鳞头鱼片 / 薄片鱿鱼干 Cá chỉ vàng nướng lát mỏng",
+      "names": {
+        "ko": "클래식 쥐포",
+        "vi": "Cá chỉ vàng nướng lát mỏng",
+        "zh": "烤鳞头鱼片",
+        "en": "Thin Grilled Filefish"
+      },
+      "updatedAt": "2026-07-18T13:46:57.736Z"
+    },
+    "menu:a0d375e8-a3f7-456d-8713-7b3c148e83fc": {
+      "fingerprint": "36e051c89cff18196475fc81581e444081ac0c2832e96591226f1108352560de",
+      "sourceName": "크리스피 윙봉Crispy Wings 炸鸡翅 Cánh chiên giòn",
+      "names": {
+        "ko": "크리스피 윙봉",
+        "vi": "Cánh gà chiên giòn",
+        "zh": "香脆炸鸡翅",
+        "en": "Crispy Wings"
+      },
+      "updatedAt": "2026-07-18T13:46:57.736Z"
+    },
+    "menu:586cac45-0ec8-4fab-a5a6-393846ca53fd": {
+      "fingerprint": "f7f8e305a1383797067375d718d88d5352ed87ca8dc5b51af8a370d5270b0565",
+      "sourceName": "코카콜라 Coca-Cola可口可乐 Coca-Cola",
+      "names": {
+        "ko": "코카콜라",
+        "vi": "Coca-Cola",
+        "zh": "可口可乐",
+        "en": "Coca-Cola"
+      },
+      "updatedAt": "2026-07-18T13:46:57.736Z"
+    },
+    "menu:e1cf1187-b643-4b90-9f6f-9a7458eaf037": {
+      "fingerprint": "eb4ecf0f757b3456e30504099940e1aea29a0d92fa0cfdd84e88180517786620",
+      "sourceName": "치피 SET (M) Chicken Pizza Set (M)",
+      "names": {
+        "ko": "치피 세트 (M)",
+        "vi": "Combo Gà & Pizza (M)",
+        "zh": "炸鸡披萨套餐 (M)",
+        "en": "Chicken Pizza Set (M)"
+      },
+      "updatedAt": "2026-07-18T13:47:05.538Z"
+    },
+    "menu:1ffd639e-dd8f-4185-9ab9-4b187835b21c": {
+      "fingerprint": "e27edae88a0a6551da6894c46e552a002138d5c1d81a35f9e9c6bbc608c10846",
+      "sourceName": "치피 SET (L) | Chicken Pizza Set (L)",
+      "names": {
+        "ko": "치피 세트 (L)",
+        "vi": "Combo Gà & Pizza (L)",
+        "zh": "炸鸡披萨套餐 (L)",
+        "en": "Chicken Pizza Set (L)"
+      },
+      "updatedAt": "2026-07-18T13:47:05.538Z"
+    },
+    "menu:c8e70456-c3da-4adf-bfdb-2f3ec3b78e96": {
+      "fingerprint": "06928ddb1c088e9fcb0ce75790e8d20039bb3d6646fa19a5d4d7f1f47cb9952a",
+      "sourceName": "치킨 시즈닝 | Gia vị gà rán | 炸鸡调味粉 | Chicken seasoning",
+      "names": {
+        "ko": "치킨 시즈닝",
+        "vi": "Gia vị gà rán",
+        "zh": "炸鸡调味粉",
+        "en": "Chicken Seasoning"
+      },
+      "updatedAt": "2026-07-18T13:47:05.538Z"
+    },
+    "menu:433a6207-b8cf-4333-aa33-f344d6bfeb31": {
+      "fingerprint": "2234ce49c0ad91d1c9838424ff667c52a0519a78387101b05aa228b0f9450f8d",
+      "sourceName": "치즈크러스트 반반피자 / Cheese Crust Half & Half Pizza / 芝士边半半披萨 / Pizza nửa nửa viền phô mai",
+      "names": {
+        "ko": "치즈크러스트 반반피자",
+        "vi": "Pizza nửa nửa viền phô mai",
+        "zh": "芝士边半半披萨",
+        "en": "Cheese Crust Half & Half Pizza"
+      },
+      "updatedAt": "2026-07-18T13:47:05.538Z"
+    },
+    "menu:89116940-5e7e-4e1e-b808-a0a2fdb5798e": {
+      "fingerprint": "678ac82bb74b308deb76b1f37508e13d40fb21fc3d059d0be26e402d84901ef4",
+      "sourceName": "치즈오븐스파게티 Cheese Oven-Baked Spaghetti 芝士焗意大利面Mì Ý đút lò phô mai",
+      "names": {
+        "ko": "치즈 오븐 스파게티",
+        "vi": "Mì Ý đút lò phô mai",
+        "zh": "芝士焗意大利面",
+        "en": "Cheese Oven-Baked Spaghetti"
+      },
+      "updatedAt": "2026-07-18T13:47:05.538Z"
+    },
+    "menu:a84fa28e-bac3-45c2-9e00-5138b660ecd7": {
+      "fingerprint": "1c9c088df476c1e32ce260e4a0597bf813631d155ceb500e08588967aab9fdf6",
+      "sourceName": "치즈바이트 반반피자 / Cheese Bite Half & Half Pizza / 芝士球边半半披萨 / Pizza nửa nửa viên phô mai",
+      "names": {
+        "ko": "치즈바이트 반반피자",
+        "vi": "Pizza nửa nửa viên phô mai",
+        "zh": "芝士球边半半披萨",
+        "en": "Cheese Bite Half & Half Pizza"
+      },
+      "updatedAt": "2026-07-18T13:47:05.538Z"
+    },
+    "menu:718a9af3-056b-44ee-b833-04cab90d1e9f": {
+      "fingerprint": "c7e9dcb9edae5d1008e7ac4b06065967d5bba996564f11d3a5e6bb075f9fdb66",
+      "sourceName": "치밥키트(밥+실비김치) | Combo cơm + kim chi cay(250g)",
+      "names": {
+        "ko": "치밥 키트 (밥+실비김치)",
+        "vi": "Combo cơm + kim chi cay (250g)",
+        "zh": "炸鸡拌饭套餐（米饭+辣泡菜）（250g）",
+        "en": "Chicken Rice Kit (Rice + Spicy Kimchi) (250g)"
+      },
+      "updatedAt": "2026-07-18T13:47:05.538Z"
+    },
+    "menu:57ef6bb8-37f3-4296-b1c5-3e24412c2af9": {
+      "fingerprint": "9efaeb9de6747c879db08301b6a1c81c6dbdaf1727bda8e018f5e4712eca1a5a",
+      "sourceName": "치떡 SET | Chicken & Tteok Set | 无骨炸鸡 + 辣炒年糕 | Gà không xương + Tokbokki",
+      "names": {
+        "ko": "치떡 세트",
+        "vi": "Combo gà không xương + tokbokki",
+        "zh": "无骨炸鸡+辣炒年糕套餐",
+        "en": "Chicken & Tteok Set"
+      },
+      "updatedAt": "2026-07-18T13:47:05.538Z"
+    },
+    "menu:036876df-cb82-4686-8ace-3734480320cc": {
+      "fingerprint": "312d7fa70af3dad6f7eab928811506b48fce7dc2ec9fd68286acb498c17ef04c",
+      "sourceName": "촉촉 반건조 오징어 | Mực một nắng | 半干鱿鱼 | Semi-dried squid",
+      "names": {
+        "ko": "촉촉 반건조 오징어",
+        "vi": "Mực một nắng",
+        "zh": "半干鱿鱼",
+        "en": "Semi-Dried Squid"
+      },
+      "updatedAt": "2026-07-18T13:47:05.538Z"
+    },
+    "menu:d902dc7b-b6b7-402d-aa90-4edb1e5cfbc2": {
+      "fingerprint": "98f3baf67df67625816057651b61abf7cd148babb40e2aef14b5d58176426a3b",
+      "sourceName": "체다치즈 반반피자 / Cheddar Cheese Half & Half Pizza / 车打芝士半半披萨 / Pizza nửa nửa phô mai Cheddar",
+      "names": {
+        "ko": "체다치즈 반반피자",
+        "vi": "Pizza nửa nửa phô mai Cheddar",
+        "zh": "车打芝士半半披萨",
+        "en": "Cheddar Cheese Half & Half Pizza"
+      },
+      "updatedAt": "2026-07-18T13:47:05.538Z"
+    },
+    "menu:aae21703-075e-4c63-8a75-925ae150ec78": {
+      "fingerprint": "e83e2533291cda37c9083b0268c1f8b081b4fe370cd51839a353f0abab465707",
+      "sourceName": "쫄면Spicy Chewy Noodles辣拌劲道面 Mì trộn cay dai",
+      "names": {
+        "ko": "쫄면",
+        "vi": "Mì trộn cay dai",
+        "zh": "辣拌劲道面",
+        "en": "Spicy Chewy Noodles"
+      },
+      "updatedAt": "2026-07-18T13:47:05.538Z"
+    },
+    "menu:42257f0b-e1f2-4b69-b7ce-d59d43a69f87": {
+      "fingerprint": "1c1cb0471e9c7837c13edad589764a482e9682792870b49f295bcab9c9adbbb9",
+      "sourceName": "짭코바|Spicy BBQ Chicken| BBQ烤鸡 |Gà nướng BBQ",
+      "names": {
+        "ko": "짭코바",
+        "vi": "Gà nướng BBQ cay",
+        "zh": "香辣BBQ烤鸡",
+        "en": "Spicy BBQ Chicken"
+      },
+      "updatedAt": "2026-07-18T13:47:05.538Z"
+    },
+    "menu:2813d1e7-250b-49ae-9f76-e5b40f451492": {
+      "fingerprint": "2f396a52a64ced2e597246854eafbf6027dd9953dbc0b95bc088bc17231fb03d",
+      "sourceName": "짭코바 반마리|BBQ cay nửa con|辣烤鸡半只|Spicy Grilled Chicken (Half)",
+      "names": {
+        "ko": "짭코바 반마리",
+        "vi": "Gà nướng BBQ cay nửa con",
+        "zh": "辣烤鸡半只",
+        "en": "Spicy Grilled Chicken (Half)"
+      },
+      "updatedAt": "2026-07-18T13:47:05.538Z"
+    },
+    "menu:68446222-f136-4648-9977-3c82107a02b7": {
+      "fingerprint": "09b6c74b50beee5c7fb30bf84dc7c536e8fe4c18c2546b2f5989e3cdd971430c",
+      "sourceName": "쥬시큘 | Cool C",
+      "names": {
+        "ko": "쥬시큘",
+        "vi": "Cool C",
+        "zh": "Cool C",
+        "en": "Cool C"
+      },
+      "updatedAt": "2026-07-18T13:47:05.538Z"
+    },
+    "menu:b482b42a-a6bc-4b48-bfd0-c1acaa9089b2": {
+      "fingerprint": "23681e136383a024d7c48382a67f01b739e75724b2469925c4027f965e89706e",
+      "sourceName": "주먹밥Rice Ball 饭团 Cơm nắm",
+      "names": {
+        "ko": "주먹밥",
+        "vi": "Cơm nắm",
+        "zh": "饭团",
+        "en": "Rice Ball"
+      },
+      "updatedAt": "2026-07-18T13:47:05.538Z"
+    },
+    "menu:353812e8-9360-4594-8561-e3ba133c999b": {
+      "fingerprint": "335c0c23e73ae3a9a14d33e99ac1b0c400a019d0071a8c0fdca4ebdf661e526c",
+      "sourceName": "조미오징어|Mực tẩmgia|调味鱿鱼|Seasonedsquid",
+      "names": {
+        "ko": "조미 오징어",
+        "vi": "Mực tẩm gia vị",
+        "zh": "调味鱿鱼",
+        "en": "Seasoned Squid"
+      },
+      "updatedAt": "2026-07-18T13:47:05.538Z"
+    },
+    "menu:c0f16b37-ff76-4d8e-a5a8-3ead5fd7b0a5": {
+      "fingerprint": "05eba772d01583aa3289c501a480bf9d6cab51197ef2dd42f12a5afda59bade7",
+      "sourceName": "일반도우 반반피자 / Regular Dough Half & Half Pizza / 普通饼底半半披萨 / Pizza nửa nửa đế thường",
+      "names": {
+        "ko": "일반도우 반반피자",
+        "vi": "Pizza nửa nửa đế thường",
+        "zh": "普通饼底半半披萨",
+        "en": "Regular Dough Half & Half Pizza"
+      },
+      "updatedAt": "2026-07-18T13:47:05.538Z"
+    },
+    "menu:d2dfd961-40ae-401b-8b3a-530963b32741": {
+      "fingerprint": "5e8e927b063701002f2803c48de4a5c1968c9206a7a1358111c6641c3ab6b901",
+      "sourceName": "유린기 | Gà chiên sốt chua ngọt kiểu Hoa | 油淋鸡",
+      "names": {
+        "ko": "유린기",
+        "vi": "Gà chiên sốt chua ngọt kiểu Hoa",
+        "zh": "油淋鸡",
+        "en": "Chinese-Style Fried Chicken with Sweet and Sour Sauce"
+      },
+      "updatedAt": "2026-07-18T13:47:05.538Z"
+    },
+    "menu:b2bf24a7-1018-4953-86ce-baacae6fe06c": {
+      "fingerprint": "33270ce5bdec6e5ee7b7df53aa162dd5ef55aa5f6eb8f92c4dd2522c80d3f3d1",
+      "sourceName": "윙봉반 | Gà cánh chiên nửa con | 半只炸鸡翅 | Half Fried Chicken Wings",
+      "names": {
+        "ko": "윙봉 반마리",
+        "vi": "Cánh gà chiên nửa phần",
+        "zh": "半只炸鸡翅",
+        "en": "Half Fried Chicken Wings"
+      },
+      "updatedAt": "2026-07-18T13:47:05.538Z"
+    },
+    "menu:88d856ff-e35d-4c21-893b-3f60e2fa71fa": {
+      "fingerprint": "1f907191a1dafa986d15775d3dacfddaaa27d24e786f3e7c56b3f7438ca8515b",
+      "sourceName": "윙봉떠까 Sauced Chicken Wings 四味鸡翅 Cánh gà 4 vị",
+      "names": {
+        "ko": "윙봉 떠까",
+        "vi": "Cánh gà 4 vị",
+        "zh": "四味鸡翅",
+        "en": "Four-Flavor Chicken Wings"
+      },
+      "updatedAt": "2026-07-18T13:47:05.538Z"
+    },
+    "menu:27ab97f7-0ddf-495a-b475-4533e945da85": {
+      "fingerprint": "2aebe8959e4917cd2a6352812e51138f509d53f139ae4492236a8d823a5f30af",
+      "sourceName": "윙떡 SET Wings & Tteok Set鸡翅 + 辣炒年糕 Cánh gà + Tokbokki",
+      "names": {
+        "ko": "윙떡 세트",
+        "vi": "Combo cánh gà + tokbokki",
+        "zh": "鸡翅+辣炒年糕套餐",
+        "en": "Wings & Tteok Set"
+      },
+      "updatedAt": "2026-07-18T13:47:05.538Z"
+    },
+    "menu:4ab44b18-16b3-4deb-8dcc-a37cf505d041": {
+      "fingerprint": "a4fc1cf513e32d36056051d69a874b5ee00dd60e8ea0c4ffd6c45dd40cfbfae0",
+      "sourceName": "옛날 통닭 Old-School Whole Fried Chicken 整只炸鸡 Gà chiên nguyên con",
+      "names": {
+        "ko": "옛날 통닭",
+        "vi": "Gà chiên nguyên con kiểu truyền thống",
+        "zh": "传统整只炸鸡",
+        "en": "Old-School Whole Fried Chicken"
+      },
+      "updatedAt": "2026-07-18T13:47:05.538Z"
+    },
+    "menu:22c91b97-70b4-4761-9f89-43fc0dbd97bb": {
+      "fingerprint": "45150b2a4eb2a2b50e495687118f5d6d7095ad99e56927c9effb90d255797c3b",
+      "sourceName": "얼큰김치우동 Spicy Kimchi Udon 泡菜辣乌冬面 Udon kimchi cay",
+      "names": {
+        "ko": "얼큰 김치우동",
+        "vi": "Udon kim chi cay",
+        "zh": "泡菜辣乌冬面",
+        "en": "Spicy Kimchi Udon"
+      },
+      "updatedAt": "2026-07-18T13:47:05.538Z"
+    },
+    "menu:2e30dd59-0f0e-471f-af86-5dff225f1c5e": {
+      "fingerprint": "a02ca866d30a4a0a0400f14d2a7ba776f3b3d57da6985e810dcc4015ddb2217c",
+      "sourceName": "어묵탕 | Lẩu chả cá | 鱼饼汤 | Fish cake soup",
+      "names": {
+        "ko": "어묵탕",
+        "vi": "Lẩu chả cá",
+        "zh": "鱼饼汤",
+        "en": "Fish Cake Soup"
+      },
+      "updatedAt": "2026-07-18T13:47:05.538Z"
+    },
+    "menu:5c59fa23-1c6d-40db-bc54-cd70fdabfaa7": {
+      "fingerprint": "2a9a7c9b679f2679885f78792f6b1f7845fe722a8ab204f619532183a2f4958b",
+      "sourceName": "어묵꼬치우동 Udon with Fish Cake Skewers关东煮乌冬面 Udon xiên chả cá",
+      "names": {
+        "ko": "어묵꼬치 우동",
+        "vi": "Udon xiên chả cá",
+        "zh": "关东煮乌冬面",
+        "en": "Udon with Fish Cake Skewers"
+      },
+      "updatedAt": "2026-07-18T13:47:13.845Z"
+    },
+    "menu:d939174b-8266-4b40-ac1b-8314d3ea647b": {
+      "fingerprint": "070c83464755d0434981e1a49480f10f05443749d037028f6b407006ea5507e9",
+      "sourceName": "양념 Sweet & Spicy Chicken 韩式甜酱炸鸡 Gà sốt ngọt HQ",
+      "names": {
+        "ko": "양념치킨",
+        "vi": "Gà sốt ngọt Hàn Quốc",
+        "zh": "韩式甜酱炸鸡",
+        "en": "Sweet & Spicy Chicken"
+      },
+      "updatedAt": "2026-07-18T13:47:13.845Z"
+    },
+    "menu:0738f65b-7561-4467-8ba9-a814587a9b59": {
+      "fingerprint": "f6f4b6ce7aa75964454405afb31a0b6c39591feb729dfcd93a0c349181bb9a73",
+      "sourceName": "아이스크림 500ml | Kem 500ml | 冰淇淋 500ml | Ice Cream 500ml",
+      "names": {
+        "ko": "아이스크림 500ml",
+        "vi": "Kem 500ml",
+        "zh": "冰淇淋 500ml",
+        "en": "Ice Cream 500ml"
+      },
+      "updatedAt": "2026-07-18T13:47:13.845Z"
+    },
+    "menu:04c7d4b2-d155-4dbf-aa30-4e4a4c03aa1a": {
+      "fingerprint": "6d50c79b0a080c8e60b376a57d8b16d82b37c8ae94e0d4b55d6a50b844faba44",
+      "sourceName": "아이스크림 110ml | Kem 110ml | 冰淇淋 110ml | Ice Cream 110ml",
+      "names": {
+        "ko": "아이스크림 110ml",
+        "vi": "Kem 110ml",
+        "zh": "冰淇淋 110ml",
+        "en": "Ice Cream 110ml"
+      },
+      "updatedAt": "2026-07-18T13:47:13.845Z"
+    },
+    "menu:24622452-bb43-42c8-966e-815dcf2316db": {
+      "fingerprint": "d6c838ce8f105b1f544fd67cd970b24f28ba372ea2bf4aee7b6b8d60a17a3b3f",
+      "sourceName": "스프라이트 Sprite雪碧 Sprite",
+      "names": {
+        "ko": "스프라이트",
+        "vi": "Sprite",
+        "zh": "雪碧",
+        "en": "Sprite"
+      },
+      "updatedAt": "2026-07-18T13:47:13.845Z"
+    },
+    "menu:9dc365e6-11a7-4308-9899-b69cfdce6132": {
+      "fingerprint": "e8cd7b7d8a9394706059b4d1c37b43a4e2545e18adc67723c7f995157a7c6051",
+      "sourceName": "스리라차 어니언 Sriracha Onion Chicken洋葱奶酱炸鸡 Gà sốt kem hành",
+      "names": {
+        "ko": "스리라차 어니언 치킨",
+        "vi": "Gà sốt kem hành Sriracha",
+        "zh": "是拉差洋葱奶油炸鸡",
+        "en": "Sriracha Onion Chicken"
+      },
+      "updatedAt": "2026-07-18T13:47:13.845Z"
+    },
+    "menu:7fc37f94-fa7a-4206-ac56-e46984856488": {
+      "fingerprint": "febebb11e1f063202b5ffc468f060411b8135aea0a0de66a2b8a296c0a453583",
+      "sourceName": "스노윙치킨 / Gà phủ bột phô mai / 雪花芝士粉炸鸡 / Snowing Cheese Powder Chicken",
+      "names": {
+        "ko": "스노윙치킨",
+        "vi": "Gà phủ bột phô mai",
+        "zh": "雪花芝士粉炸鸡",
+        "en": "Snowing Cheese Powder Chicken"
+      },
+      "updatedAt": "2026-07-18T13:47:13.845Z"
+    },
+    "menu:28c23af3-2b38-43c5-b053-477d65f8c70c": {
+      "fingerprint": "5955491bc85e02d10500972e0169c78917bf9461fa03a5c693d2c512bff5e5a9",
+      "sourceName": "슈프림치킨 | Gà Supreme | 至尊炸鸡 | Supreme Chicken",
+      "names": {
+        "ko": "슈프림치킨",
+        "vi": "Gà Supreme",
+        "zh": "至尊炸鸡",
+        "en": "Supreme Chicken"
+      },
+      "updatedAt": "2026-07-18T13:47:13.845Z"
+    },
+    "menu:a17dee58-c85e-49ea-8d0b-c80016b2b3ab": {
+      "fingerprint": "ff2bb775d27f6b0dc858757a3f046af1d7881b00c89f79b7a97f323aa23c2859",
+      "sourceName": "쉬림프 Shrimp虾仁披萨 Pizza tôm solo",
+      "names": {
+        "ko": "쉬림프 피자",
+        "vi": "Pizza tôm solo",
+        "zh": "虾仁披萨",
+        "en": "Shrimp Pizza"
+      },
+      "updatedAt": "2026-07-18T13:47:13.845Z"
+    },
+    "menu:b1b2c7bb-da45-433f-bc86-fb5feead0be7": {
+      "fingerprint": "518f0e1b6802915d994b9cd782c77b131c0394d144cabd90396a510a56927c46",
+      "sourceName": "순살떠까 Boneless Chicken Tossed in Sauce 五味无骨炸鸡 Gà không xương 5 vị",
+      "names": {
+        "ko": "순살 떠까",
+        "vi": "Gà không xương 5 vị",
+        "zh": "五味无骨炸鸡",
+        "en": "Boneless Chicken Tossed in Sauce"
+      },
+      "updatedAt": "2026-07-18T13:47:13.845Z"
+    },
+    "menu:1644c776-3499-42d0-a911-ab8152608195": {
+      "fingerprint": "477c74fde16fc8e26e62fff88dcfc4c6c4ae166d52ab64fcdc072a4032e5b42c",
+      "sourceName": "수박 | dưa hấu | 西瓜刨冰 |",
+      "names": {
+        "ko": "수박 빙수",
+        "vi": "Đá bào dưa hấu",
+        "zh": "西瓜刨冰",
+        "en": "Watermelon Shaved Ice"
+      },
+      "updatedAt": "2026-07-18T13:47:13.845Z"
+    },
+    "menu:26003bff-2c2b-4c10-9a3b-606f0af46041": {
+      "fingerprint": "b39050b4737d154599477120a5bfa5ef7cf6d69b57fa6d6a803a27817b1bd05f",
+      "sourceName": "새우버거 세트 Shrimp Burger Set 套餐：虾汉堡 Combo bánh mì tôm",
+      "names": {
+        "ko": "새우버거 세트",
+        "vi": "Combo bánh mì tôm",
+        "zh": "虾汉堡套餐",
+        "en": "Shrimp Burger Set"
+      },
+      "updatedAt": "2026-07-18T13:47:13.845Z"
+    },
+    "menu:5d0d6320-e487-4049-baf7-60132ad6b50e": {
+      "fingerprint": "5329cb37a50922540a6325170146a2cb7d1d20eb84f91e16aeffbb0075d5185d",
+      "sourceName": "비빔만두 Spicy Mixed Dumplings 辣拌煎饺 / 拌饺子 Há cảo chiên trộn cay",
+      "names": {
+        "ko": "비빔만두",
+        "vi": "Há cảo chiên trộn cay",
+        "zh": "辣拌煎饺",
+        "en": "Spicy Mixed Dumplings"
+      },
+      "updatedAt": "2026-07-18T13:47:13.845Z"
+    },
+    "menu:7906fe8b-d5af-4f42-940f-c72f9581b64d": {
+      "fingerprint": "17b9cdc627be563dba4fefcc00a248afa41db138d377746bf2f8c5d15f0ab800",
+      "sourceName": "불고기버거 세트Bulgogi Burger Set 套餐：韩式烤肉汉堡Combo bánh mì bulgogi",
+      "names": {
+        "ko": "불고기버거 세트",
+        "vi": "Combo bánh mì bulgogi",
+        "zh": "韩式烤肉汉堡套餐",
+        "en": "Bulgogi Burger Set"
+      },
+      "updatedAt": "2026-07-18T13:47:13.845Z"
+    },
+    "menu:ddd7debf-a211-477d-a36f-4e02a549ce0f": {
+      "fingerprint": "815b33e6a8b9342e3fc7c0ba9af8c830afb280dcf43a063331e80ef525b82a19",
+      "sourceName": "불고기 Bulgogi韩式烤肉披萨 Pizza bulgogi solo",
+      "names": {
+        "ko": "불고기 피자",
+        "vi": "Pizza bulgogi solo",
+        "zh": "韩式烤肉披萨",
+        "en": "Bulgogi Pizza"
+      },
+      "updatedAt": "2026-07-18T13:47:13.845Z"
+    },
+    "menu:88cbf763-9271-490a-9b3c-4e43297bf1fa": {
+      "fingerprint": "85c764c7826d933a513263736a584e8a94295def00467907d5e378514a246f58",
+      "sourceName": "버터 먹태구이 Grilled Pollack with Butter 黄花鱼干奶油烤 Cá chỉ vàng lớn nướng bơ",
+      "names": {
+        "ko": "버터 먹태구이",
+        "vi": "Cá chỉ vàng lớn nướng bơ",
+        "zh": "奶油烤黄花鱼干",
+        "en": "Grilled Dried Pollack with Butter"
+      },
+      "updatedAt": "2026-07-18T13:47:13.845Z"
+    },
+    "menu:c2beac10-4cdb-4d1b-b83b-ebac299eb44e": {
+      "fingerprint": "b16b5f17d0d1a574010471e6bab2f00f035beb586d4e0eaf5bc7b5bfc1468991",
+      "sourceName": "반반치킨 Half & Half Chicken 半半无骨炸鸡 Gà vị đôi (뼈 순살)",
+      "names": {
+        "ko": "반반치킨",
+        "vi": "Gà vị đôi (có xương hoặc không xương)",
+        "zh": "半半炸鸡",
+        "en": "Half & Half Chicken"
+      },
+      "updatedAt": "2026-07-18T13:47:13.845Z"
+    },
+    "menu:2ce328a0-8d0c-481e-883f-2e35684b900d": {
+      "fingerprint": "3b0aa082d970e9c51bb818f5cbfb938e1442c22fd6d18056932a591c8edf3425",
+      "sourceName": "반반윙봉 | Gà cánh & đùi half-half | 半半鸡翅棒 | Half & half wing & drumstick",
+      "names": {
+        "ko": "반반 윙봉",
+        "vi": "Gà cánh và đùi half-half",
+        "zh": "半半鸡翅棒",
+        "en": "Half & Half Wings & Drumettes"
+      },
+      "updatedAt": "2026-07-18T13:47:13.845Z"
+    },
+    "menu:f0e8b2b9-eaf9-4b48-b711-ccfd158e3d81": {
+      "fingerprint": "630404796f32340010e1f141239989a48cdf942368f65c2f2e9ccbf78021030b",
+      "sourceName": "반마리치킨|Half Chicken |半只鸡|Nửa con gà (뼈 순살)",
+      "names": {
+        "ko": "반마리치킨",
+        "vi": "Nửa con gà (có xương hoặc không xương)",
+        "zh": "半只炸鸡",
+        "en": "Half Chicken"
+      },
+      "updatedAt": "2026-07-18T13:47:13.845Z"
+    },
+    "menu:1df5eaef-5f0d-44dc-9536-2b6ce6e27381": {
+      "fingerprint": "3713ae78d2f3b5f18b8759c045a0f12ba77fc50a69cc75eda0c2dd5d9feb7bab",
+      "sourceName": "반건조 노가리 半干黄花鱼仔 Cá pollack non khô (nửa khô)",
+      "names": {
+        "ko": "반건조 노가리",
+        "vi": "Cá pollack non nửa khô",
+        "zh": "半干黄花鱼仔",
+        "en": "Semi-Dried Young Pollack"
+      },
+      "updatedAt": "2026-07-18T13:47:13.845Z"
+    },
+    "menu:19fcb4e2-19d3-42ec-aac8-13f6cdbb9c87": {
+      "fingerprint": "dd933dd2961ceb30602769cb6cb7c63ea3baf6b4db21be497c8da9a8eda99405",
+      "sourceName": "무뼈닭발세트|Combo chân gà rút xương|无骨鸡爪套餐",
+      "names": {
+        "ko": "무뼈닭발 세트",
+        "vi": "Combo chân gà rút xương",
+        "zh": "无骨鸡爪套餐",
+        "en": "Boneless Chicken Feet Set"
+      },
+      "updatedAt": "2026-07-18T13:47:13.845Z"
+    },
+    "menu:395e98e6-9062-40cc-872d-563ee5cf49ab": {
+      "fingerprint": "e0b5f8c65005767b26773e2f6d5300d76ee6f82efa26c933b1b7a3e0e6f6110f",
+      "sourceName": "무뼈닭발|Chân gà rút xương|无骨鸡爪|Boneless Chicken Feet",
+      "names": {
+        "ko": "무뼈닭발",
+        "vi": "Chân gà rút xương",
+        "zh": "无骨鸡爪",
+        "en": "Boneless Chicken Feet"
+      },
+      "updatedAt": "2026-07-18T13:47:13.845Z"
+    },
+    "menu:b2c769d6-83b0-4c07-a942-ae7113fabd31": {
+      "fingerprint": "d51a9243720d5cc9fda5fe9b4c084cfef0d305f81981305fb156653e63d46f35",
+      "sourceName": "매운양념 Hot & Spicy Chicken韩式辣酱炸鸡 Gà sốt cay HQ",
+      "names": {
+        "ko": "매운 양념치킨",
+        "vi": "Gà sốt cay Hàn Quốc",
+        "zh": "韩式辣酱炸鸡",
+        "en": "Hot & Spicy Chicken"
+      },
+      "updatedAt": "2026-07-18T13:47:13.845Z"
+    },
+    "menu:4283f6a7-e57f-42d5-b377-5ab73413146e": {
+      "fingerprint": "cee4dfc4583aafe6216c2cdc5b9cadeff9bde7d586355af8a5e726cc8321a0d7",
+      "sourceName": "망고 에이드 | Nước xoài | 芒果汽水 | Mango Ade",
+      "names": {
+        "ko": "망고 에이드",
+        "vi": "Nước xoài",
+        "zh": "芒果汽水",
+        "en": "Mango Ade"
+      },
+      "updatedAt": "2026-07-18T13:47:13.845Z"
+    },
+    "menu:407d574c-2027-45eb-8a73-12677fae78ee": {
+      "fingerprint": "a59801e2f837277317a7fdec9bfae90bb7091d71abd6efa39810ca932d810ee2",
+      "sourceName": "마라감자|麻辣薯角|Khoai tây tẩm sốt Mala|Mala Potato Wedges",
+      "names": {
+        "ko": "마라 감자 웨지",
+        "vi": "Khoai tây múi cau sốt Mala",
+        "zh": "麻辣薯角",
+        "en": "Mala Potato Wedges"
+      },
+      "updatedAt": "2026-07-18T13:47:21.808Z"
+    },
+    "menu:646d2461-e692-4275-97a0-0ba277913e92": {
+      "fingerprint": "4a8637581ac3d14ef3780a522ac7ad2ac5c72a2666946f53477364aa90b5ed34",
+      "sourceName": "리치골드 반반피자 / Rich Gold Half & Half Pizza / Rich Gold 边半半披萨 / Pizza nửa nửa viền Rich Gold",
+      "names": {
+        "ko": "리치골드 반반 피자",
+        "vi": "Pizza nửa nửa viền Rich Gold",
+        "zh": "Rich Gold 双拼披萨",
+        "en": "Rich Gold Half & Half Pizza"
+      },
+      "updatedAt": "2026-07-18T13:47:21.808Z"
+    },
+    "menu:7f78a64e-bba9-43fb-8c37-5f8413cf4644": {
+      "fingerprint": "68290c4f53bea7d00ab79a0ec7b4d30f33806eddbae175e564844a5caf75d112",
+      "sourceName": "로제짭코바|Rosé Spicy BBQ Chicken|罗西BBQ烤鸡|Gà nướng BBQ sốt rosé",
+      "names": {
+        "ko": "로제 짭코바",
+        "vi": "Gà nướng BBQ sốt Rosé",
+        "zh": "罗西BBQ烤鸡",
+        "en": "Rosé Spicy BBQ Chicken"
+      },
+      "updatedAt": "2026-07-18T13:47:21.808Z"
+    },
+    "menu:bcaaa810-6f02-41dc-ae7d-d1bcf7e1acad": {
+      "fingerprint": "16e01645a271b23cf84c88ca7514c04935ca61a2c1c3aff5b7ad245dee868741",
+      "sourceName": "로제떡볶이 Rosé Tteokbokki 奶油辣酱年糕（Rosé酱） Tokbokki sốt kem cay (Rosé)",
+      "names": {
+        "ko": "로제 떡볶이",
+        "vi": "Tokbokki sốt kem cay Rosé",
+        "zh": "奶油辣酱年糕",
+        "en": "Rosé Tteokbokki"
+      },
+      "updatedAt": "2026-07-18T13:47:21.808Z"
+    },
+    "menu:da30295f-f6b9-43d0-aa5f-db944140645e": {
+      "fingerprint": "3a4efd07716a21f2d1e19559971632e7215dde7df38bdddb05fb1b2bc7e70e63",
+      "sourceName": "레드 윙봉 Spicy Red Wings 辣鸡翅Cánh gà cay",
+      "names": {
+        "ko": "레드 윙봉",
+        "vi": "Cánh gà cay Red",
+        "zh": "辣鸡翅",
+        "en": "Spicy Red Wings"
+      },
+      "updatedAt": "2026-07-18T13:47:21.808Z"
+    },
+    "menu:5936b951-be35-4ac7-9b33-abf50c40f7d3": {
+      "fingerprint": "8f0b7f728ad101c83eee0329576aeab9a8c5d2bbb8b3e5b8c3cbd5e8569ca2ad",
+      "sourceName": "라볶이 Rabokki 炒年糕拉面 Mì Tokbokki",
+      "names": {
+        "ko": "라볶이",
+        "vi": "Mì Tokbokki",
+        "zh": "炒年糕拉面",
+        "en": "Rabokki"
+      },
+      "updatedAt": "2026-07-18T13:47:21.808Z"
+    },
+    "menu:a1681f58-51f1-48eb-b38b-5d7189e4b236": {
+      "fingerprint": "153009991e6597ae3a0ed6ca602d60cc43ab004dd1d19aa6bb2dbd852d2d35fb",
+      "sourceName": "딥치즈&나쵸칩Deep Cheese & Nacho Chips 芝士酱蘸玉米片Bánh nacho chấm phô mai đậm đà",
+      "names": {
+        "ko": "딥치즈 & 나초칩",
+        "vi": "Bánh nacho chấm phô mai đậm đà",
+        "zh": "芝士酱蘸玉米片",
+        "en": "Deep Cheese & Nacho Chips"
+      },
+      "updatedAt": "2026-07-18T13:47:21.808Z"
+    },
+    "menu:7bd7dad2-ef46-4ca2-a260-1b786e4066be": {
+      "fingerprint": "b82c70fcc41fbdbb59899628dbba11da3143fb2f322c18064656be4e97da8ff9",
+      "sourceName": "디진다 돈까스 | Tonkatsu DJINDA | 地狱辣炸猪排",
+      "names": {
+        "ko": "디진다 돈까스",
+        "vi": "Tonkatsu DJINDA",
+        "zh": "地狱辣炸猪排",
+        "en": "Tonkatsu DJINDA"
+      },
+      "updatedAt": "2026-07-18T13:47:21.808Z"
+    },
+    "menu:d301f64f-16fa-4c8f-86bb-62318205039a": {
+      "fingerprint": "cd83ebac1d3e943b430df858ee4fe1985b712f17b73c38d41363b4f3a8fbe57c",
+      "sourceName": "돈까스 플레이트 Pork Cutlet Plate 炸猪排拼盘 Đĩa Thịt Heo Chiên Xù",
+      "names": {
+        "ko": "돈까스 플레이트",
+        "vi": "Đĩa thịt heo chiên xù",
+        "zh": "炸猪排拼盘",
+        "en": "Pork Cutlet Plate"
+      },
+      "updatedAt": "2026-07-18T13:47:21.808Z"
+    },
+    "menu:2e18bb28-3e48-4155-8802-b47876d60c89": {
+      "fingerprint": "a8fde1f5a3020a9f87f532c4a74ebcdbaf5c480cbf34d00a62c0e679fe5b1373",
+      "sourceName": "다방콤보 | DABANG COMBO | 达邦组合",
+      "names": {
+        "ko": "다방 콤보",
+        "vi": "Combo DABANG",
+        "zh": "达邦组合",
+        "en": "DABANG Combo"
+      },
+      "updatedAt": "2026-07-18T13:47:21.808Z"
+    },
+    "menu:cf78e938-ff9f-441f-a3a3-c7375f393dfa": {
+      "fingerprint": "f0e60fec36eda06aa7741707d69e4e80fb20a5762c183473af53365448ac08c7",
+      "sourceName": "다방 떡볶이 Classic Tteokbokki韩式辣烧年糕（有点辣）Tokbokki cay nhẹ",
+      "names": {
+        "ko": "다방 떡볶이",
+        "vi": "Tokbokki cay nhẹ",
+        "zh": "韩式辣炒年糕（微辣）",
+        "en": "Classic Tteokbokki"
+      },
+      "updatedAt": "2026-07-18T13:47:21.808Z"
+    },
+    "menu:73cc6234-ebbd-444e-9802-8ce328ef1400": {
+      "fingerprint": "a7d9cec952eb64918299e99440f212b23fe57eb0122905abe89f6d66a3fe8942",
+      "sourceName": "나랑드 제로 | Narangd Cider Zero (500ml)",
+      "names": {
+        "ko": "나랑드 사이다 제로 (500ml)",
+        "vi": "Narangd Cider Zero (500ml)",
+        "zh": "Narangd 无糖汽水（500ml）",
+        "en": "Narangd Cider Zero (500ml)"
+      },
+      "updatedAt": "2026-07-18T13:47:21.808Z"
+    },
+    "menu:dfd26114-45e6-48f0-a0b3-4afc283eb847": {
+      "fingerprint": "a5ffb6ae3c6e9150e8cd2960d23979a6c2850355190e6e64fe676ba770a15cda",
+      "sourceName": "국물닭발 세트| Set chân gà hầm cay | 辣汤鸡爪套餐",
+      "names": {
+        "ko": "국물닭발 세트",
+        "vi": "Set chân gà hầm cay",
+        "zh": "辣汤鸡爪套餐",
+        "en": "Spicy Chicken Feet Stew Set"
+      },
+      "updatedAt": "2026-07-18T13:47:21.808Z"
+    },
+    "menu:64d34508-2c75-4242-b63e-f8a4a475968c": {
+      "fingerprint": "3b13bbb96e0a0999cba23679e2c2ef4e8a593c788e5eca3640de35a737f49da9",
+      "sourceName": "국물닭발 Spicy Chicken Feet Stew 辣炖鸡爪 Chân gà hầm cay",
+      "names": {
+        "ko": "국물닭발",
+        "vi": "Chân gà hầm cay",
+        "zh": "辣炖鸡爪",
+        "en": "Spicy Chicken Feet Stew"
+      },
+      "updatedAt": "2026-07-18T13:47:21.808Z"
+    },
+    "menu:316a67e3-b913-4b86-81fa-79c053604819": {
+      "fingerprint": "946237a43ef2403cbb9f53ed2f618892b73230c89f839171517dba79d46dfaf7",
+      "sourceName": "고추마늘간장Garlic Soy Chicken/ 辣椒蒜酱鸡 /Gà sốt xì dầu tỏi ớt",
+      "names": {
+        "ko": "고추마늘간장 치킨",
+        "vi": "Gà sốt xì dầu tỏi ớt",
+        "zh": "辣椒蒜酱鸡",
+        "en": "Garlic Soy Chicken"
+      },
+      "updatedAt": "2026-07-18T13:47:21.809Z"
+    },
+    "menu:5e53f8d3-3b1e-4c08-82d0-136726552c5b": {
+      "fingerprint": "fde3259df3c89bcbb76bd95b57771475a0e13f613107f5a7f1ec66bac4188d06",
+      "sourceName": "고르곤졸라피자|Gorgonzola Pizza| Pizza phô mai Gorgonzola| 戈贡佐拉奶酪披萨",
+      "names": {
+        "ko": "고르곤졸라 피자",
+        "vi": "Pizza phô mai Gorgonzola",
+        "zh": "戈贡佐拉奶酪披萨",
+        "en": "Gorgonzola Pizza"
+      },
+      "updatedAt": "2026-07-18T13:47:21.809Z"
+    },
+    "menu:e0357b69-f456-4582-89f0-c6d264586bc8": {
+      "fingerprint": "c132cc0feab342fb4a7ed3a3295bd150f191248b6a5c07f859f79ace321c48b0",
+      "sourceName": "고구마베이컨 Sweet Potato Bacon地瓜培根披萨 Pizza khoai lang thịt xông khói solo",
+      "names": {
+        "ko": "고구마 베이컨 피자",
+        "vi": "Pizza khoai lang thịt xông khói",
+        "zh": "地瓜培根披萨",
+        "en": "Sweet Potato Bacon Pizza"
+      },
+      "updatedAt": "2026-07-18T13:47:21.809Z"
+    },
+    "menu:11469526-2c19-4023-921e-b1f0c43d3c7d": {
+      "fingerprint": "6775423fe5dac7bee65ec726488bbc752916959d8e523dae918128fe11647d59",
+      "sourceName": "고구마 Sweet Potato 地瓜披萨 Pizza khoai lang solo",
+      "names": {
+        "ko": "고구마 피자",
+        "vi": "Pizza khoai lang",
+        "zh": "地瓜披萨",
+        "en": "Sweet Potato Pizza"
+      },
+      "updatedAt": "2026-07-18T13:47:21.809Z"
+    },
+    "menu:3f44985c-1595-4217-be83-50255d57e4de": {
+      "fingerprint": "3c00add2be4b451eacc78c017a24d53a3dfeddf9b463c6681eb375e79ca3816c",
+      "sourceName": "계란찜 | Trứng hấp | 蒸蛋 (Zhēng dàn) | Steamed egg",
+      "names": {
+        "ko": "계란찜",
+        "vi": "Trứng hấp",
+        "zh": "蒸蛋",
+        "en": "Steamed Egg"
+      },
+      "updatedAt": "2026-07-18T13:47:21.809Z"
+    },
+    "menu:2e9b612e-df88-49f7-ab7d-7feb08e64bcc": {
+      "fingerprint": "11086f5ac5603af3131cf611f54a169f240f65bbab3089d2ff2cf3ed6e45eeba",
+      "sourceName": "건어물떠까 Mixed Dried Seafood Snacks 韩式什锦干货拼盘 Đồ khô tổng hợp kiểu Hàn",
+      "names": {
+        "ko": "건어물 떠까",
+        "vi": "Đồ khô tổng hợp kiểu Hàn",
+        "zh": "韩式什锦干货拼盘",
+        "en": "Mixed Dried Seafood Snacks"
+      },
+      "updatedAt": "2026-07-18T13:47:21.809Z"
+    },
+    "menu:c7bb95c0-8e0f-4980-93ea-1714a997e669": {
+      "fingerprint": "e7b850ce7af41d81322f5170eba9b9f86984b94227f65ab76cb0d4b6b9d954a2",
+      "sourceName": "간장계란밥 | Cơm trứng xì dầu | 酱油鸡蛋饭 | Soy sauce egg rice",
+      "names": {
+        "ko": "간장계란밥",
+        "vi": "Cơm trứng xì dầu",
+        "zh": "酱油鸡蛋饭",
+        "en": "Soy Sauce Egg Rice"
+      },
+      "updatedAt": "2026-07-18T13:47:21.809Z"
+    },
+    "menu:8ea56264-b4dd-46dd-a4f8-70329e31d2c7": {
+      "fingerprint": "d291eda678886bcadc6d9de67af259f17a1f39a9cb901bff130c1898b0edd59c",
+      "sourceName": "간장 윙봉 Soy Sauce Wings 酱油鸡翅 Cánh gà xì dầu",
+      "names": {
+        "ko": "간장 윙봉",
+        "vi": "Cánh gà xì dầu",
+        "zh": "酱油鸡翅",
+        "en": "Soy Sauce Wings"
+      },
+      "updatedAt": "2026-07-18T13:47:21.809Z"
+    },
+    "menu:69b57fd4-2b15-4c79-80da-e7f3eba63b67": {
+      "fingerprint": "a55815fab906d739a37212f0c65966b1b742ec830b8c75e3951fbbc691b54d23",
+      "sourceName": "가래떡 떡볶이| Garaetteok Tteokbokki |粗年糕炒年糕 |Tokbokki bánh gạo to",
+      "names": {
+        "ko": "가래떡 떡볶이",
+        "vi": "Tokbokki bánh gạo to",
+        "zh": "粗年糕炒年糕",
+        "en": "Garaetteok Tteokbokki"
+      },
+      "updatedAt": "2026-07-18T13:47:21.809Z"
+    },
+    "menu:c92bb30f-12ac-4c63-84cd-5040166c3833": {
+      "fingerprint": "7d88ff951d097da4600fa38d7ded76f6dfac453071ae0d31a52fb46355c80a23",
+      "sourceName": "½ 오리지널 로스트 | Gà quay truyền thống½ | 原味烤鸡 | Original Roast",
+      "names": {
+        "ko": "½ 오리지널 로스트",
+        "vi": "½ Gà quay truyền thống",
+        "zh": "½ 原味烤鸡",
+        "en": "½ Original Roast"
+      },
+      "updatedAt": "2026-07-18T13:47:21.809Z"
+    },
+    "menu:b7a6075c-130d-42ea-a474-386dc480ae3a": {
+      "fingerprint": "ec681d9d15c9493f7dcf504556507e3c4ee7ba47ca8a30e52c511aec3d135ce2",
+      "sourceName": "½ 고추바삭 로스트|Gà quay giòn cay½|香辣脆皮烤鸡|Crispy Spicy Roast",
+      "names": {
+        "ko": "½ 고추바삭 로스트",
+        "vi": "½ Gà quay giòn cay",
+        "zh": "半只香辣脆皮烤鸡",
+        "en": "½ Crispy Spicy Roast Chicken"
+      },
+      "updatedAt": "2026-07-18T13:47:29.910Z"
+    },
+    "menu:1932a5e2-f7c9-4b04-bea8-b5508b6f66b2": {
+      "fingerprint": "bf9209b9340905cbfc74e24732a20345156a5f2f1453672086e4bb5f28df33a4",
+      "sourceName": "하롱베이 캔맥주 Ha Long Bay Beer (Can) 下龙湾罐装啤酒Bia lon Hạ Long Bay",
+      "names": {
+        "ko": "하롱베이 캔맥주",
+        "vi": "Bia lon Hạ Long Bay",
+        "zh": "下龙湾罐装啤酒",
+        "en": "Ha Long Bay Beer (Can)"
+      },
+      "updatedAt": "2026-07-18T13:47:29.910Z"
+    },
+    "menu:d06cd3a9-3f5a-4c35-9b5e-1a034992a966": {
+      "fingerprint": "13c397ecc380df286eaa93acfddafc49d8cb71fc3f7a1c4ec5be8ba36c8ec7b3",
+      "sourceName": "하노이 캔맥주 | Bia lon Hà Nội | 河内罐装啤酒 | Hanoi canned beer",
+      "names": {
+        "ko": "하노이 캔맥주",
+        "vi": "Bia lon Hà Nội",
+        "zh": "河内罐装啤酒",
+        "en": "Hanoi Beer (Can)"
+      },
+      "updatedAt": "2026-07-18T13:47:29.910Z"
+    },
+    "menu:87b45d34-14f6-46d3-a272-493cbd4276c7": {
+      "fingerprint": "3e701222de075a9ca8dec776bb6ce0e2e20a5522d4a91ba05609d07e53c7db3c",
+      "sourceName": "하노이 생맥주 1L | Bia tươi Hà Nội 1L | 河内生啤 1升 | Hanoi Draft Beer 1L",
+      "names": {
+        "ko": "하노이 생맥주 1L",
+        "vi": "Bia tươi Hà Nội 1L",
+        "zh": "河内生啤 1升",
+        "en": "Hanoi Draft Beer 1L"
+      },
+      "updatedAt": "2026-07-18T13:47:29.910Z"
+    },
+    "menu:cf5bd09b-42ca-41c1-a7f9-87dcbaf49f69": {
+      "fingerprint": "3e701222de075a9ca8dec776bb6ce0e2e20a5522d4a91ba05609d07e53c7db3c",
+      "sourceName": "하노이 생맥주 1L | Bia tươi Hà Nội 1L | 河内生啤 1升 | Hanoi Draft Beer 1L",
+      "names": {
+        "ko": "하노이 생맥주 1L",
+        "vi": "Bia tươi Hà Nội 1L",
+        "zh": "河内生啤 1升",
+        "en": "Hanoi Draft Beer 1L"
+      },
+      "updatedAt": "2026-07-18T13:47:29.910Z"
+    },
+    "menu:70e447f4-8b00-404e-af5a-93ac3ac3b8a8": {
+      "fingerprint": "998110b4a8ec4a266c8b25dc7d1408b34c5858c401d219cf258e75500b4055b4",
+      "sourceName": "하노이 병맥주 Hanoi Beer (Bottle) 河内瓶装啤酒 Bia chai Hà Nội",
+      "names": {
+        "ko": "하노이 병맥주",
+        "vi": "Bia chai Hà Nội",
+        "zh": "河内瓶装啤酒",
+        "en": "Hanoi Beer (Bottle)"
+      },
+      "updatedAt": "2026-07-18T13:47:29.910Z"
+    },
+    "menu:9086861a-9c6c-48f1-a2bf-c20cc3c38a80": {
+      "fingerprint": "6aa49792666c95a6e488e1d3898b300635d81951b026f0d5df274404b4d70b86",
+      "sourceName": "타이거 크리스탈 병맥주 | Bia Tiger Crystal chai | 虎牌水晶啤酒（瓶装） | Tiger Crystal (Bottle)",
+      "names": {
+        "ko": "타이거 크리스탈 병맥주",
+        "vi": "Bia Tiger Crystal chai",
+        "zh": "虎牌水晶啤酒（瓶装）",
+        "en": "Tiger Crystal Beer (Bottle)"
+      },
+      "updatedAt": "2026-07-18T13:47:29.910Z"
+    },
+    "menu:addccbaa-223e-4456-a73a-98b2e0d7e9ae": {
+      "fingerprint": "af071fdff2f418a73fa98fefa1e21edd5182fed2b2e613256a7a304ffa941337",
+      "sourceName": "타이거 병맥주 Tiger Beer (Bottle) 虎牌瓶装啤酒 Bia chai Tiger",
+      "names": {
+        "ko": "타이거 병맥주",
+        "vi": "Bia chai Tiger",
+        "zh": "虎牌瓶装啤酒",
+        "en": "Tiger Beer (Bottle)"
+      },
+      "updatedAt": "2026-07-18T13:47:29.910Z"
+    },
+    "menu:b3ff9a43-637b-436f-ab7e-d3e0b3f2826f": {
+      "fingerprint": "418f2c91ce8ac1d6b982ac0db221c029355442b508ca804e4ef3eec575598f30",
+      "sourceName": "코로나 병맥주 Corona Beer (Bottle)科罗娜瓶装啤酒Bia chai Corona",
+      "names": {
+        "ko": "코로나 병맥주",
+        "vi": "Bia chai Corona",
+        "zh": "科罗娜瓶装啤酒",
+        "en": "Corona Beer (Bottle)"
+      },
+      "updatedAt": "2026-07-18T13:47:29.910Z"
+    },
+    "menu:5d41c81c-7a68-4726-a8df-1a6315788b1c": {
+      "fingerprint": "fc4039384db9767d7e327e3a21a2e3654583dcd3faa1be424482e1fe91c50596",
+      "sourceName": "코로나 5병 세트 Corona 5-Bottle Set 科罗娜5瓶套餐 Set 5 chai bia Corona",
+      "names": {
+        "ko": "코로나 5병 세트",
+        "vi": "Set 5 chai bia Corona",
+        "zh": "科罗娜5瓶套餐",
+        "en": "Corona 5-Bottle Set"
+      },
+      "updatedAt": "2026-07-18T13:47:29.910Z"
+    },
+    "menu:867b2e98-da89-4688-bcfa-0433c48ba7a8": {
+      "fingerprint": "e87cd65e80b5454bb618512016ffc87887871943db6d0eebfdef3584eaaafaad",
+      "sourceName": "처음처럼 Chum Churum Soju 初饮初乐 Rượu soju Chum Churum",
+      "names": {
+        "ko": "처음처럼 소주",
+        "vi": "Rượu soju Chum Churum",
+        "zh": "初饮初乐烧酒",
+        "en": "Chum Churum Soju"
+      },
+      "updatedAt": "2026-07-18T13:47:29.910Z"
+    },
+    "menu:5e9db310-b4ff-4c6a-8c9f-8706a78065f9": {
+      "fingerprint": "52be33f1afb28bb2bdaaa00e441c8202328ea9e0c8acd8ee3f7b93c8ea01b2e0",
+      "sourceName": "참이슬 | Chamisul | 眞露 (Zhēnlù) | Chamisul",
+      "names": {
+        "ko": "참이슬",
+        "vi": "Rượu soju Chamisul",
+        "zh": "真露",
+        "en": "Chamisul Soju"
+      },
+      "updatedAt": "2026-07-18T13:47:29.910Z"
+    },
+    "menu:292433d8-bef9-450d-814d-f2cb60aebb6b": {
+      "fingerprint": "f61be3ceff1f0ba4bd7ce575584e239153ec29aa5667ed7bf711bfcfbceb970b",
+      "sourceName": "짐빔허니 하이볼 | Jim Beam Honey Highball",
+      "names": {
+        "ko": "짐빔 허니 하이볼",
+        "vi": "Jim Beam Honey Highball",
+        "zh": "金宾蜂蜜高球",
+        "en": "Jim Beam Honey Highball"
+      },
+      "updatedAt": "2026-07-18T13:47:29.910Z"
+    },
+    "menu:65df8aff-db47-4441-8215-e60ff8229e99": {
+      "fingerprint": "aa6131633d4367bbf65aeff96f2754b41bc1b3bcf9a0c35462b0a65cb4c624a8",
+      "sourceName": "짐빔애플 하이볼 | Jim Beam Apple Highball",
+      "names": {
+        "ko": "짐빔 애플 하이볼",
+        "vi": "Jim Beam Apple Highball",
+        "zh": "金宾苹果高球",
+        "en": "Jim Beam Apple Highball"
+      },
+      "updatedAt": "2026-07-18T13:47:29.910Z"
+    },
+    "menu:b0562531-0db8-4602-bc6d-661b06645147": {
+      "fingerprint": "d2c0598021f43d6b9cb5e028aede4bcfbf10b4ae04ed0c1ec702a5973eb81430",
+      "sourceName": "짐빔블랙 하이볼 | Jim Beam Black Extra-Aged Highball",
+      "names": {
+        "ko": "짐빔 블랙 엑스트라 에이지드 하이볼",
+        "vi": "Jim Beam Black Extra-Aged Highball",
+        "zh": "金宾黑牌特酿高球",
+        "en": "Jim Beam Black Extra-Aged Highball"
+      },
+      "updatedAt": "2026-07-18T13:47:29.910Z"
+    },
+    "menu:23343ff7-8a2a-4b96-bb0e-25b133195e53": {
+      "fingerprint": "365a8a22ba304f52e47bb44078db34f6cdac54b42cfd1080946ea601c7500676",
+      "sourceName": "짐빔 하이볼 | Jim Beam Highball",
+      "names": {
+        "ko": "짐빔 하이볼",
+        "vi": "Jim Beam Highball",
+        "zh": "金宾高球",
+        "en": "Jim Beam Highball"
+      },
+      "updatedAt": "2026-07-18T13:47:29.910Z"
+    },
+    "menu:ebe0706f-a35f-4ec6-a7a3-dca6d4a47edf": {
+      "fingerprint": "d893d227f53c16c2f050dea6c1589272f803e9b71937a0ca7606622586e649de",
+      "sourceName": "진로 Jinro Soju 真露（淡口） Rượu soju Jinro",
+      "names": {
+        "ko": "진로 소주",
+        "vi": "Rượu soju Jinro",
+        "zh": "真露淡口烧酒",
+        "en": "Jinro Soju"
+      },
+      "updatedAt": "2026-07-18T13:47:29.910Z"
+    },
+    "menu:a0f42985-3dee-4257-9683-c70fef7992e6": {
+      "fingerprint": "1c76e77a567ee1fd0198ed095d29eadeede990659d20dea5c9335c2e3b1f5618",
+      "sourceName": "제임슨 하이볼 | Jameson Highball",
+      "names": {
+        "ko": "제임슨 하이볼",
+        "vi": "Jameson Highball",
+        "zh": "尊美醇高球",
+        "en": "Jameson Highball"
+      },
+      "updatedAt": "2026-07-18T13:47:29.910Z"
+    },
+    "menu:5e6c1f83-2f15-432a-b497-6d4747393196": {
+      "fingerprint": "bc09d921f10af0776961256eb25bf2846b5a149521fc689ede42e2b98971ffc1",
+      "sourceName": "선양오크 | Sunyang Soju Oak | 鲜洋橡木烧酒",
+      "names": {
+        "ko": "선양 오크 소주",
+        "vi": "Rượu soju Sunyang Oak",
+        "zh": "鲜洋橡木烧酒",
+        "en": "Sunyang Soju Oak"
+      },
+      "updatedAt": "2026-07-18T13:47:29.910Z"
+    },
+    "menu:2d93c37e-8f59-4f39-a06d-cbaa6dab47f6": {
+      "fingerprint": "cbdca1f50c8bce1ea4b3228f0127383b4a74589bbf60125ae7dcbbb40e4200d3",
+      "sourceName": "선양소주 | Sunyang Soju | 鲜洋烧酒 |",
+      "names": {
+        "ko": "선양 소주",
+        "vi": "Rượu soju Sunyang",
+        "zh": "鲜洋烧酒",
+        "en": "Sunyang Soju"
+      },
+      "updatedAt": "2026-07-18T13:47:29.910Z"
+    },
+    "menu:0f40c0ed-06d2-433b-a19d-6983b0c4e014": {
+      "fingerprint": "0b2d68a5cdee9f0cd6705517cbf8c3f65fb3449aee5784278368946efd052e87",
+      "sourceName": "새로/ Saero Soju Saero烧酒 Rượu soju Saero",
+      "names": {
+        "ko": "새로 소주",
+        "vi": "Rượu soju Saero",
+        "zh": "Saero烧酒",
+        "en": "Saero Soju"
+      },
+      "updatedAt": "2026-07-18T13:47:29.910Z"
+    },
+    "menu:db099bd8-4ac3-45cf-a4be-eb9de43aff68": {
+      "fingerprint": "dd98e6231961f2712164691e7b0a0eefb36dc9ebf6ba22462b4608df992a5f55",
+      "sourceName": "산토리 하이볼 | Suntory Kakubin Highball",
+      "names": {
+        "ko": "산토리 가쿠빈 하이볼",
+        "vi": "Suntory Kakubin Highball",
+        "zh": "三得利角瓶高球",
+        "en": "Suntory Kakubin Highball"
+      },
+      "updatedAt": "2026-07-18T13:47:29.910Z"
+    },
+    "menu:57b1fe70-fe33-4654-9d58-575f277749be": {
+      "fingerprint": "972939e8f74697976c7884b187d37329f19908f0d8f014de10e96a6594c79651",
+      "sourceName": "사포로 생맥주 Sapporo Draft Beer 三宝乐生啤酒 Bia tươi Sapporo",
+      "names": {
+        "ko": "사포로 생맥주",
+        "vi": "Bia tươi Sapporo",
+        "zh": "三宝乐生啤酒",
+        "en": "Sapporo Draft Beer"
+      },
+      "updatedAt": "2026-07-18T13:47:29.910Z"
+    },
+    "menu:4182ba40-0603-49ac-9b7a-e2438229f7b8": {
+      "fingerprint": "48f832a4770449c4ef5dd5c2421b404cc9f3c5a7128180090d7bc0b676954af2",
+      "sourceName": "사포로 블랙 생맥주/Sapporo Black Draft Beer 三宝乐黑啤 Bia đen tươi Sapporo",
+      "names": {
+        "ko": "사포로 블랙 생맥주",
+        "vi": "Bia đen tươi Sapporo",
+        "zh": "三宝乐黑生啤酒",
+        "en": "Sapporo Black Draft Beer"
+      },
+      "updatedAt": "2026-07-18T13:47:29.910Z"
+    },
+    "menu:52c29562-ac31-42c7-9f24-956d348de02a": {
+      "fingerprint": "0759ce4246a9fce5f13bf16c481e518636076b04460735cb3fc5a6767fa9508a",
+      "sourceName": "사포로 1+1 (640cc) Sapporo 1+1 (640ml) 三宝乐1+1（640毫升 Sapporo 1 tặng 1 (640ml)",
+      "names": {
+        "ko": "사포로 1+1 (640cc)",
+        "vi": "Sapporo 1 tặng 1 (640ml)",
+        "zh": "三宝乐1+1（640毫升）",
+        "en": "Sapporo Buy 1 Get 1 (640ml)"
+      },
+      "updatedAt": "2026-07-18T13:47:38.335Z"
+    },
+    "menu:572fec3a-832d-474f-8232-0d441e08cade": {
+      "fingerprint": "97be4609f9dde55d1af49585f487628ca892194f644a91e0fb7afe96d968dbdd",
+      "sourceName": "사이공캔맥주|BialonSàiGòn|西贡罐装啤酒|Saigoncannedbeer",
+      "names": {
+        "ko": "사이공 캔맥주",
+        "vi": "Bia lon Sài Gòn",
+        "zh": "西贡罐装啤酒",
+        "en": "Saigon Canned Beer"
+      },
+      "updatedAt": "2026-07-18T13:47:38.335Z"
+    },
+    "menu:9675de2a-b48c-486f-9e07-cf9c40004c8e": {
+      "fingerprint": "63c14a1c16a7c119fd60609b38c127f8579979681c543be41821a2b0751686ee",
+      "sourceName": "보드카MEN Vodka MEN MEN伏特加 Rượu Vodka MEN",
+      "names": {
+        "ko": "보드카 MEN",
+        "vi": "Rượu Vodka MEN",
+        "zh": "MEN伏特加",
+        "en": "MEN Vodka"
+      },
+      "updatedAt": "2026-07-18T13:47:38.335Z"
+    },
+    "menu:d9c74a29-714a-469b-a89c-429dc0b4e400": {
+      "fingerprint": "845d1920b043600efdf974b5392c2ab12f02ca7aa1015adc534c88f1ee760e1f",
+      "sourceName": "배달)참이슬",
+      "names": {
+        "ko": "배달) 참이슬",
+        "vi": "Chamisul (giao hàng)",
+        "zh": "真露（外送）",
+        "en": "Chamisul (Delivery)"
+      },
+      "updatedAt": "2026-07-18T13:47:38.336Z"
+    },
+    "menu:3b08e86b-afc7-496f-8ace-66278d350d79": {
+      "fingerprint": "d74af5e4d48393a3e2517dddb84fc6a30a796d3ba553d5874d6422d5f9fa0393",
+      "sourceName": "배달)진로",
+      "names": {
+        "ko": "배달) 진로",
+        "vi": "Jinro (giao hàng)",
+        "zh": "真露（外送）",
+        "en": "Jinro (Delivery)"
+      },
+      "updatedAt": "2026-07-18T13:47:38.336Z"
+    },
+    "menu:024d2d25-60c2-4e0f-8962-382092fd952e": {
+      "fingerprint": "12e41447046a4151cd5780da28003861b099996d67730255a38cfe5aa5826f1a",
+      "sourceName": "배달)새로",
+      "names": {
+        "ko": "배달) 새로",
+        "vi": "Saero (giao hàng)",
+        "zh": "Saero烧酒（外送）",
+        "en": "Saero (Delivery)"
+      },
+      "updatedAt": "2026-07-18T13:47:38.336Z"
+    },
+    "menu:2bdbb87d-9f83-4a7f-97bb-0bb21fb91209": {
+      "fingerprint": "8aadbba559765a9e0158b02fd648850926f390ef70923d983758ec29baf34469",
+      "sourceName": "배달) 사포로 생맥주 | Bia tươi Sapporo",
+      "names": {
+        "ko": "배달) 사포로 생맥주",
+        "vi": "Bia tươi Sapporo (giao hàng)",
+        "zh": "三宝乐生啤（外送）",
+        "en": "Sapporo Draft Beer (Delivery)"
+      },
+      "updatedAt": "2026-07-18T13:47:38.336Z"
+    },
+    "menu:903c3f3c-b971-4a83-8ecb-a3f5c401eb49": {
+      "fingerprint": "a80c01672fe0d32ae44ebadb850675ef9defbbdb60ffe55d6bf81ed4b23afcc4",
+      "sourceName": "막걸리1",
+      "names": {
+        "ko": "막걸리 1",
+        "vi": "Makgeolli 1",
+        "zh": "马格利米酒1",
+        "en": "Makgeolli 1"
+      },
+      "updatedAt": "2026-07-18T13:47:38.336Z"
+    },
+    "menu:6bec7160-294b-42b0-b3a9-b2e1da24f7f5": {
+      "fingerprint": "9b3cecbad898ed74b421cd756dac53b66a1611397b1590b8416e9094ab14dc15",
+      "sourceName": "막걸리",
+      "names": {
+        "ko": "막걸리",
+        "vi": "Makgeolli",
+        "zh": "马格利米酒",
+        "en": "Makgeolli"
+      },
+      "updatedAt": "2026-07-18T13:47:38.336Z"
+    },
+    "menu:853e043d-fe9f-49f4-9d31-c86b38262204": {
+      "fingerprint": "58b7bf21d9bbf4486d6ee0a45fe4b77da6f63ce332b16d6c3fe77b1f923e5c69",
+      "sourceName": "데킬라 실버 하이볼 | Jose Cuervo Silver Tequila Highball",
+      "names": {
+        "ko": "호세 쿠에르보 실버 데킬라 하이볼",
+        "vi": "Highball Tequila Jose Cuervo Silver",
+        "zh": "豪帅银龙舌兰高球",
+        "en": "Jose Cuervo Silver Tequila Highball"
+      },
+      "updatedAt": "2026-07-18T13:47:38.336Z"
+    },
+    "menu:ced98733-4073-4314-bd8b-6a4461f62ef4": {
+      "fingerprint": "d8983aa96cb44f390a609314fc9df3eae0b3098113dfd967b41f94281c6ca24b",
+      "sourceName": "데킬라 샷 Tequila Shot 龙舌兰一杯 Shot Tequila",
+      "names": {
+        "ko": "데킬라 샷",
+        "vi": "Shot Tequila",
+        "zh": "龙舌兰一杯",
+        "en": "Tequila Shot"
+      },
+      "updatedAt": "2026-07-18T13:47:38.336Z"
+    },
+    "menu:225f2ecd-94d2-4970-bb7d-acb313837cb9": {
+      "fingerprint": "0c54bc6dc385b8dce3488490980503f644992de60d27c724a9d859da5614273d",
+      "sourceName": "데킬라 골드&실버 | Tequila Gold & Silver",
+      "names": {
+        "ko": "데킬라 골드 & 실버",
+        "vi": "Tequila Gold & Silver",
+        "zh": "金银龙舌兰",
+        "en": "Tequila Gold & Silver"
+      },
+      "updatedAt": "2026-07-18T13:47:38.336Z"
+    },
+    "menu:50f90120-5773-4bdf-b9bc-71a7e99c7a6f": {
+      "fingerprint": "fb24860b19fa82fd4d43e9d3048449a4b186384d2887d8c9976bc592a5621b5f",
+      "sourceName": "데킬라 골드 하이볼 | Jose Cuervo Gold Tequila Highball",
+      "names": {
+        "ko": "호세 쿠에르보 골드 데킬라 하이볼",
+        "vi": "Highball Tequila Jose Cuervo Gold",
+        "zh": "豪帅金龙舌兰高球",
+        "en": "Jose Cuervo Gold Tequila Highball"
+      },
+      "updatedAt": "2026-07-18T13:47:38.336Z"
+    },
+    "menu:52b2391e-4a86-4fae-be55-6286ad556b7e": {
+      "fingerprint": "6905a21183dd52da4d6af9caf554ff6ca6bafa34c8b8c8a50d15e55630566a04",
+      "sourceName": "Bia lon Saigon (dịch vụ tặng kèm) | 사이공 캔맥주 서비스",
+      "names": {
+        "ko": "사이공 캔맥주 서비스",
+        "vi": "Bia lon Sài Gòn tặng kèm",
+        "zh": "赠送西贡罐装啤酒",
+        "en": "Complimentary Saigon Canned Beer"
+      },
+      "updatedAt": "2026-07-18T13:47:38.336Z"
+    },
+    "menu:086df955-7b2b-4543-810c-a52ab02eab12": {
+      "fingerprint": "0b3b5e92cc4f7191409445e85afdd735ebdeabe20236e56b57b81a479bc15933",
+      "sourceName": "Bia lon | 캔맥주",
+      "names": {
+        "ko": "캔맥주",
+        "vi": "Bia lon",
+        "zh": "罐装啤酒",
+        "en": "Canned Beer"
+      },
+      "updatedAt": "2026-07-18T13:47:38.336Z"
+    },
+    "menu:8f399e3a-8161-4335-8a61-ec82a1d27917": {
+      "fingerprint": "2f5e1eb7b4e88d0146afffc9efd0309d8e1349759c1bc33fe68d72b256438c9c",
+      "sourceName": "(배달) 선양소주",
+      "names": {
+        "ko": "배달) 선양소주",
+        "vi": "Soju Sunyang (giao hàng)",
+        "zh": "善酿烧酒（外送）",
+        "en": "Sunyang Soju (Delivery)"
+      },
+      "updatedAt": "2026-07-18T13:47:38.336Z"
+    },
+    "option-group:bd39cbae-c175-43f4-80fa-6f5517eb1939": {
+      "fingerprint": "78702cff5b3c850260efc95034942bbe703ae682293f44da3872147d3f9350e0",
+      "sourceName": "Chicken seasoning",
+      "names": {
+        "ko": "치킨 시즈닝",
+        "vi": "Gia vị gà",
+        "zh": "鸡肉调味粉",
+        "en": "Chicken Seasoning"
+      },
+      "updatedAt": "2026-07-18T13:47:38.336Z"
+    },
+    "option-value:bd39cbae-c175-43f4-80fa-6f5517eb1939:be046f33-adff-4349-b9b7-002f3de3caec": {
+      "fingerprint": "9f28abf9c0c0287470ab4f472076c95596a5b29955cfd14479a591cb40cb9c34",
+      "sourceName": "어니언 시즈닝",
+      "names": {
+        "ko": "어니언 시즈닝",
+        "vi": "Gia vị hành tây",
+        "zh": "洋葱调味粉",
+        "en": "Onion Seasoning"
+      },
+      "updatedAt": "2026-07-18T13:47:38.336Z"
+    },
+    "option-value:bd39cbae-c175-43f4-80fa-6f5517eb1939:cdb47f6d-a5dd-4906-aedc-0a77047cb30b": {
+      "fingerprint": "107a9b60f40516c41a6a03f564cd4a83a87f60ab3b12be2d37e5e50b38605d9d",
+      "sourceName": "콘소메 시즈닝",
+      "names": {
+        "ko": "콘소메 시즈닝",
+        "vi": "Gia vị bắp ngọt",
+        "zh": "玉米调味粉",
+        "en": "Corn Seasoning"
+      },
+      "updatedAt": "2026-07-18T13:47:38.336Z"
+    },
+    "option-value:bd39cbae-c175-43f4-80fa-6f5517eb1939:bd8fc1bc-bdc7-4e68-863c-2a3eee829584": {
+      "fingerprint": "78ebe24f4a2902faad7aed71069dd7c5909496659e32a67bfef5736fe56ad993",
+      "sourceName": "핫치즈 시즈닝",
+      "names": {
+        "ko": "핫치즈 시즈닝",
+        "vi": "Gia vị phô mai cay",
+        "zh": "辣味芝士调味粉",
+        "en": "Hot Cheese Seasoning"
+      },
+      "updatedAt": "2026-07-18T13:47:38.336Z"
+    },
+    "option-value:bd39cbae-c175-43f4-80fa-6f5517eb1939:98da7c72-ca5f-4ea2-9c52-d606470d07e8": {
+      "fingerprint": "7d2dac5ba204d02160607af58251bfbf5ef04e478c2a20f857a6c93e613009e2",
+      "sourceName": "치즈 시즈닝",
+      "names": {
+        "ko": "치즈 시즈닝",
+        "vi": "Gia vị phô mai",
+        "zh": "芝士调味粉",
+        "en": "Cheese Seasoning"
+      },
+      "updatedAt": "2026-07-18T13:47:38.336Z"
+    },
+    "option-value:bd39cbae-c175-43f4-80fa-6f5517eb1939:21ebf897-2853-4594-8cbb-feb7f2f570be": {
+      "fingerprint": "cdf13933705d6325a7d26a222b826b9f6b06fb14a53e983451b00936e098b2b7",
+      "sourceName": "허니버터 시즈닝",
+      "names": {
+        "ko": "허니버터 시즈닝",
+        "vi": "Gia vị bơ mật ong",
+        "zh": "蜂蜜黄油调味粉",
+        "en": "Honey Butter Seasoning"
+      },
+      "updatedAt": "2026-07-18T13:47:38.336Z"
+    },
+    "option-group:7524baa2-2174-4d16-988e-8904ce1192db": {
+      "fingerprint": "9e937585a62a61dd8778495bdb00738f3c6cbc476d4c5d798209268a9700a14e",
+      "sourceName": "cool c",
+      "names": {
+        "ko": "쿨C",
+        "vi": "Cool C",
+        "zh": "Cool C",
+        "en": "Cool C"
+      },
+      "updatedAt": "2026-07-18T13:47:38.336Z"
+    },
+    "option-value:7524baa2-2174-4d16-988e-8904ce1192db:f6c46a72-e93c-4590-9967-8e0074560074": {
+      "fingerprint": "0ef833be2d76a6535b9729f8d2d0d5d92c5f27acfa49479e544cebb0d4ac910e",
+      "sourceName": "얼린것",
+      "names": {
+        "ko": "얼린 것",
+        "vi": "Đồ đông lạnh",
+        "zh": "冷冻",
+        "en": "Frozen"
+      },
+      "updatedAt": "2026-07-18T13:47:38.336Z"
+    },
+    "option-value:7524baa2-2174-4d16-988e-8904ce1192db:380e128e-dc20-4942-8ba8-b3b937a80831": {
+      "fingerprint": "ecb8bc78d9c4168a3e279bf272321374a18543c476d503fb24e5dc668ecdab81",
+      "sourceName": "안얼린것",
+      "names": {
+        "ko": "냉동하지 않은 것",
+        "vi": "Không đông lạnh",
+        "zh": "非冷冻",
+        "en": "Non-frozen"
+      },
+      "updatedAt": "2026-07-18T13:47:47.488Z"
+    },
+    "option-group:5197c337-535f-4e91-b7d1-26029a4b9222": {
+      "fingerprint": "6f409e7897473fb1983eb1e524e96256e85edf93ba64aa5f446dc2b8172df4d5",
+      "sourceName": "가래떡",
+      "names": {
+        "ko": "가래떡",
+        "vi": "Bánh gạo dài",
+        "zh": "条状年糕",
+        "en": "Garaetteok"
+      },
+      "updatedAt": "2026-07-18T13:47:47.488Z"
+    },
+    "option-value:5197c337-535f-4e91-b7d1-26029a4b9222:46629e10-3368-48e5-b1b0-2322b55c73cc": {
+      "fingerprint": "616f39726cac5070ca76f4aec03f6137fdde8806a3eedf3e5e6b801b17a5b09b",
+      "sourceName": "안잘라",
+      "names": {
+        "ko": "자르지 않음",
+        "vi": "Không cắt",
+        "zh": "不切",
+        "en": "Uncut"
+      },
+      "updatedAt": "2026-07-18T13:47:47.488Z"
+    },
+    "option-value:5197c337-535f-4e91-b7d1-26029a4b9222:dcbfb96c-d5bc-460d-9abc-7c07205d9828": {
+      "fingerprint": "1fc03de1eed65f60687e5cd377c5aaf5610d4c648473f04c441732acf8e7d745",
+      "sourceName": "잘라",
+      "names": {
+        "ko": "자르기",
+        "vi": "Cắt",
+        "zh": "切开",
+        "en": "Cut"
+      },
+      "updatedAt": "2026-07-18T13:47:47.488Z"
+    },
+    "option-group:21b53642-cba7-4ef9-b877-bab92f845c25": {
+      "fingerprint": "5c3c34c4a715b2512e5a8802233b1e3d0317a2b42987539ecd6dc0eb52bfa18a",
+      "sourceName": "떡볶이 매운맛 선택",
+      "names": {
+        "ko": "떡볶이 매운맛 선택",
+        "vi": "Chọn độ cay tokbokki",
+        "zh": "选择炒年糕辣度",
+        "en": "Choose Tteokbokki Spiciness"
+      },
+      "updatedAt": "2026-07-18T13:47:47.488Z"
+    },
+    "option-value:21b53642-cba7-4ef9-b877-bab92f845c25:c5299733-7b6c-4b30-b30c-03b98ab2788d": {
+      "fingerprint": "96d70799d709f0f00e62654975a43486a060f175d7021ac5cdce6cb949f7e2d0",
+      "sourceName": "달달한맛/Sweet /甜味 /Vị ngọt",
+      "names": {
+        "ko": "달달한 맛",
+        "vi": "Vị ngọt",
+        "zh": "甜味",
+        "en": "Sweet"
+      },
+      "updatedAt": "2026-07-18T13:47:47.488Z"
+    },
+    "option-value:21b53642-cba7-4ef9-b877-bab92f845c25:34dc3da9-429e-4768-ad16-e707b3ee53f7": {
+      "fingerprint": "e832e25b84c98db9dd31a0c63df344a868d356367261ddf3e9655ebe532647eb",
+      "sourceName": "매운맛/Spicy /辣味 /Vị cay",
+      "names": {
+        "ko": "매운맛",
+        "vi": "Vị cay",
+        "zh": "辣味",
+        "en": "Spicy"
+      },
+      "updatedAt": "2026-07-18T13:47:47.488Z"
+    },
+    "option-group:4c90727b-0406-4177-a8c6-42394fa69f56": {
+      "fingerprint": "998ff65ee6703cc11c8b9e3dd6b4f81f45838f6f1878541caacb4bf4887ad321",
+      "sourceName": "떡볶이 선택",
+      "names": {
+        "ko": "떡볶이 선택",
+        "vi": "Chọn tokbokki",
+        "zh": "选择炒年糕",
+        "en": "Choose Tteokbokki"
+      },
+      "updatedAt": "2026-07-18T13:47:47.488Z"
+    },
+    "option-value:4c90727b-0406-4177-a8c6-42394fa69f56:9216a4e8-c9cc-4edd-a798-2d43ea86cfc9": {
+      "fingerprint": "7df264b97994fee0bf4fce567885428b964c9e6a2135ee7751abe132f35524d7",
+      "sourceName": "라볶이(매운)/Spicy Rabokki /辣味辣炒年糕拉面 /Mì Tokbokki vị cay",
+      "names": {
+        "ko": "매운 라볶이",
+        "vi": "Rabokki cay",
+        "zh": "辣味拉面炒年糕",
+        "en": "Spicy Rabokki"
+      },
+      "updatedAt": "2026-07-18T13:47:47.488Z"
+    },
+    "option-value:4c90727b-0406-4177-a8c6-42394fa69f56:0000a2d5-0343-4560-b3c6-3c2cd356c326": {
+      "fingerprint": "6abc8b09dbc4e58adb87707b38d0d07ffceaa2ae6aaeeef08012c29e55941aaa",
+      "sourceName": "가래떡 떡볶이(매운)./Spicy Garaetteok Tteokbokki/辣味粗年糕炒年糕 /Tokbokki bánh gạo to vị cay",
+      "names": {
+        "ko": "매운 가래떡 떡볶이",
+        "vi": "Tokbokki bánh gạo dài cay",
+        "zh": "辣味条状年糕炒年糕",
+        "en": "Spicy Garaetteok Tteokbokki"
+      },
+      "updatedAt": "2026-07-18T13:47:47.488Z"
+    },
+    "option-value:4c90727b-0406-4177-a8c6-42394fa69f56:8a128245-102f-426d-8aed-47bf5684da06": {
+      "fingerprint": "2ffedafa76b502c4769287c20b4acd98bced2ba787df4416ccfd0331fe527b1f",
+      "sourceName": "로제Rosé Tteokbokki /奶油辣酱年糕（Rosé酱/Tokbokki sốt kem cay (sốt Rosé)",
+      "names": {
+        "ko": "로제 떡볶이",
+        "vi": "Tokbokki sốt Rosé",
+        "zh": "玫瑰奶油炒年糕",
+        "en": "Rosé Tteokbokki"
+      },
+      "updatedAt": "2026-07-18T13:47:47.488Z"
+    },
+    "option-value:4c90727b-0406-4177-a8c6-42394fa69f56:7f58814c-27d6-4462-92ee-5524ac83139f": {
+      "fingerprint": "69cdf2d6da1f7f11ac09fb503ed316f5dd1f623a3b3544690b7b2f397b6014e2",
+      "sourceName": "라볶이(달달)/Sweet Rabokki /甜味辣炒年糕拉面 /Mì Tokbokki vị ngọt",
+      "names": {
+        "ko": "달달한 라볶이",
+        "vi": "Rabokki vị ngọt",
+        "zh": "甜味拉面炒年糕",
+        "en": "Sweet Rabokki"
+      },
+      "updatedAt": "2026-07-18T13:47:47.488Z"
+    },
+    "option-value:4c90727b-0406-4177-a8c6-42394fa69f56:7500e3bf-03c9-486c-b995-60375ac1b40e": {
+      "fingerprint": "b98dfac2f97d7a8eee42509912f8b8ee8cb89ad70743dc5fa375eec3b097cadd",
+      "sourceName": "매운떡볶이/Spicy Tteokbokki /辣味辣炒年糕 /Tokbokki vị cay",
+      "names": {
+        "ko": "매운 떡볶이",
+        "vi": "Tokbokki cay",
+        "zh": "辣味炒年糕",
+        "en": "Spicy Tteokbokki"
+      },
+      "updatedAt": "2026-07-18T13:47:47.488Z"
+    },
+    "option-value:4c90727b-0406-4177-a8c6-42394fa69f56:2c0c5c37-3b68-45ca-a389-85263b98b4a1": {
+      "fingerprint": "5a6f3327c89fb2fb65fabc54f66e8a97de0f72a2d2175bb46985f70b68e1df40",
+      "sourceName": "가래떡 떡볶이(달달) /Sweet Garaetteok Tteokbokki /甜味粗年糕炒年糕 /(T09KC)Tokbokki bánh gạo to vị ngọt",
+      "names": {
+        "ko": "달달한 가래떡 떡볶이",
+        "vi": "(T09KC) Tokbokki bánh gạo dài vị ngọt",
+        "zh": "甜味条状年糕炒年糕",
+        "en": "Sweet Garaetteok Tteokbokki"
+      },
+      "updatedAt": "2026-07-18T13:47:47.488Z"
+    },
+    "option-value:4c90727b-0406-4177-a8c6-42394fa69f56:4ebaf633-328d-4d41-af17-da9d3db10800": {
+      "fingerprint": "a6ef25e36608f8b9beba13d2366dad0f443e6cfeaea5b2576bceafed11a3e64e",
+      "sourceName": "달달떡볶이/Sweet Tteokbokki /甜味辣炒年糕 /Tokbokki vị ngọt",
+      "names": {
+        "ko": "달달한 떡볶이",
+        "vi": "Tokbokki vị ngọt",
+        "zh": "甜味炒年糕",
+        "en": "Sweet Tteokbokki"
+      },
+      "updatedAt": "2026-07-18T13:47:47.488Z"
+    },
+    "option-group:d7fcbd85-9fb6-40db-872a-8275dce401ed": {
+      "fingerprint": "785fb4618e3caa0ffa4d47439243f24e20de77f3ff41ad13d9b45fc7680486f7",
+      "sourceName": "떡볶이토핑",
+      "names": {
+        "ko": "떡볶이 토핑",
+        "vi": "Topping tokbokki",
+        "zh": "炒年糕配料",
+        "en": "Tteokbokki Toppings"
+      },
+      "updatedAt": "2026-07-18T13:47:47.488Z"
+    },
+    "option-value:d7fcbd85-9fb6-40db-872a-8275dce401ed:a651b4f7-9a3c-49f1-972e-1e1b9be74ba9": {
+      "fingerprint": "ff6a805842c97f11a2629f5fea42222ff615cf8b7c13a494cc8e56dd6e67ee69",
+      "sourceName": "체다치즈",
+      "names": {
+        "ko": "체다치즈",
+        "vi": "Phô mai Cheddar",
+        "zh": "切达奶酪",
+        "en": "Cheddar Cheese"
+      },
+      "updatedAt": "2026-07-18T13:47:47.488Z"
+    },
+    "option-value:d7fcbd85-9fb6-40db-872a-8275dce401ed:ea48c49b-bc23-4c78-a36c-253268eeca3c": {
+      "fingerprint": "26ffa10cf67d614e0fc91b1de0d4765f30c7cd21626a08ba3a177f403e93ff02",
+      "sourceName": "삶은계란1개 추가",
+      "names": {
+        "ko": "삶은 계란 1개 추가",
+        "vi": "Thêm 1 trứng luộc",
+        "zh": "加1个煮鸡蛋",
+        "en": "Add 1 Boiled Egg"
+      },
+      "updatedAt": "2026-07-18T13:47:47.488Z"
+    },
+    "option-value:d7fcbd85-9fb6-40db-872a-8275dce401ed:c9892d57-fe28-488e-8f58-9cfb0ddf046f": {
+      "fingerprint": "b38c1299b89c61636eda7b7e85f9f5c8e39d62498d4bd191c4da100c199ffd9f",
+      "sourceName": "모짜렐라 치즈",
+      "names": {
+        "ko": "모짜렐라 치즈",
+        "vi": "Phô mai Mozzarella",
+        "zh": "马苏里拉奶酪",
+        "en": "Mozzarella Cheese"
+      },
+      "updatedAt": "2026-07-18T13:47:47.488Z"
+    },
+    "option-group:f035ccfc-db83-4ba0-ac18-bd38af8b0437": {
+      "fingerprint": "31e03f68706e6a8cbd6b7cb26f0bf30299a93ed4b202e6cbbb88e201d2e99dd1",
+      "sourceName": "로스트순살옵션",
+      "names": {
+        "ko": "로스트 순살 옵션",
+        "vi": "Tùy chọn gà nướng không xương",
+        "zh": "烤鸡去骨选项",
+        "en": "Roasted Boneless Chicken Option"
+      },
+      "updatedAt": "2026-07-18T13:47:47.488Z"
+    },
+    "option-value:f035ccfc-db83-4ba0-ac18-bd38af8b0437:20ad5505-cce4-42d3-a086-7616f38f5b05": {
+      "fingerprint": "fdc323bc095f2767be14598605718d62b84756510fe36da27d6b32d1d513bcfc",
+      "sourceName": "순살로 변경",
+      "names": {
+        "ko": "순살로 변경",
+        "vi": "Đổi sang gà không xương",
+        "zh": "换成无骨鸡",
+        "en": "Change to Boneless Chicken"
+      },
+      "updatedAt": "2026-07-18T13:47:47.488Z"
+    },
+    "option-group:a18f98eb-3772-4af6-a8cc-4dee966884bc": {
+      "fingerprint": "2bee08ed957c67c4aa43330e3828dcf80c6089e7e5c34cc7763fdcdbcd11c3c1",
+      "sourceName": "매운단계",
+      "names": {
+        "ko": "매운 단계",
+        "vi": "Cấp độ cay",
+        "zh": "辣度等级",
+        "en": "Spice Level"
+      },
+      "updatedAt": "2026-07-18T13:47:47.488Z"
+    },
+    "option-value:a18f98eb-3772-4af6-a8cc-4dee966884bc:b4ff5c57-e25c-4275-a6a9-4a25ba70e497": {
+      "fingerprint": "5be1579cfa6eeb60cfd434b447f79a12fc6d8880c2e0a467af55b23b8ffeeb2d",
+      "sourceName": "2단계/Level 2 /2级 – 中辣 /Cấp 2 – Cay vừa\u0001",
+      "names": {
+        "ko": "2단계 - 중간 매운맛",
+        "vi": "Cấp 2 - Cay vừa",
+        "zh": "2级 - 中辣",
+        "en": "Level 2 - Medium Spicy"
+      },
+      "updatedAt": "2026-07-18T13:47:47.488Z"
+    },
+    "option-value:a18f98eb-3772-4af6-a8cc-4dee966884bc:3b59138e-b848-41aa-a45d-9fa1b915fbcf": {
+      "fingerprint": "e8f475739474e1e60d9b0f65fdd2d0a5f1a31acf64f0fb265ea6e35a68e2836d",
+      "sourceName": "1단계/(C1)Level 1/1级 – 微辣 /Cấp 1 – Cay nhẹ",
+      "names": {
+        "ko": "1단계 - 약간 매운맛",
+        "vi": "Cấp 1 - Cay nhẹ",
+        "zh": "1级 - 微辣",
+        "en": "Level 1 - Mild Spicy"
+      },
+      "updatedAt": "2026-07-18T13:47:47.488Z"
+    },
+    "option-group:3bd1519c-f24f-4aaf-9776-0579d374738f": {
+      "fingerprint": "b9d81c90747e65eba3965ca53e1ba1099b330958bea5fc3d49eddec3feb9e8f0",
+      "sourceName": "매운맛 선택",
+      "names": {
+        "ko": "매운맛 선택",
+        "vi": "Chọn độ cay",
+        "zh": "选择辣度",
+        "en": "Choose Spice Level"
+      },
+      "updatedAt": "2026-07-18T13:47:57.054Z"
+    },
+    "option-value:3bd1519c-f24f-4aaf-9776-0579d374738f:211f023a-1148-41df-8fac-6049201b41ee": {
+      "fingerprint": "42b5baddbb6d9a6ff3b7254ecdeb6e74853a18194a32a02c2cc465d77daa9845",
+      "sourceName": "기본 매운맛",
+      "names": {
+        "ko": "기본 매운맛",
+        "vi": "Cay tiêu chuẩn",
+        "zh": "中辣",
+        "en": "Regular Spicy"
+      },
+      "updatedAt": "2026-07-18T13:47:57.054Z"
+    },
+    "option-value:3bd1519c-f24f-4aaf-9776-0579d374738f:5d793729-79d4-401c-ba38-6462d221165e": {
+      "fingerprint": "751cef2ffafc02ac55fcfafeb2476bb0abe203c02cf76bcfeb35be77e9686a52",
+      "sourceName": "덜 매운맛",
+      "names": {
+        "ko": "덜 매운맛",
+        "vi": "Ít cay",
+        "zh": "微辣",
+        "en": "Less Spicy"
+      },
+      "updatedAt": "2026-07-18T13:47:57.054Z"
+    },
+    "option-value:3bd1519c-f24f-4aaf-9776-0579d374738f:5a83cbb5-a804-4590-9a73-b1aeb17ccc80": {
+      "fingerprint": "835a9e7e5f10d1aed35d7cebbc9d649ef1354f9a0a13817d46d3ae89f5879089",
+      "sourceName": "더 매운맛",
+      "names": {
+        "ko": "더 매운맛",
+        "vi": "Cay hơn",
+        "zh": "更辣",
+        "en": "Extra Spicy"
+      },
+      "updatedAt": "2026-07-18T13:47:57.054Z"
+    },
+    "option-group:25d39e7d-a94b-40fb-b610-1db368947c95": {
+      "fingerprint": "2fc4cc63d57d87cbe2b0fbea684e08604ae6b267fd7040681f6e6310a7305ef3",
+      "sourceName": "사리추가",
+      "names": {
+        "ko": "사리 추가",
+        "vi": "Thêm mì và topping",
+        "zh": "加配料",
+        "en": "Add Extras"
+      },
+      "updatedAt": "2026-07-18T13:47:57.054Z"
+    },
+    "option-value:25d39e7d-a94b-40fb-b610-1db368947c95:c8150ed7-3cdc-4693-9ea3-045fead5a6a9": {
+      "fingerprint": "55c422beb2ea7baa4775a568a1635c4695dd71ae1e764f3bdea9b5998f06207e",
+      "sourceName": "라면사리",
+      "names": {
+        "ko": "라면 사리",
+        "vi": "Thêm mì gói",
+        "zh": "加拉面",
+        "en": "Add Ramen Noodles"
+      },
+      "updatedAt": "2026-07-18T13:47:57.054Z"
+    },
+    "option-value:25d39e7d-a94b-40fb-b610-1db368947c95:8dd99f36-7c4a-4952-87b7-0d08943f406d": {
+      "fingerprint": "c616e1cc9240d64faa2352eb214f2e38ab396c3613b550604881c035b8e0326a",
+      "sourceName": "쫄면사리",
+      "names": {
+        "ko": "쫄면 사리",
+        "vi": "Thêm mì dai cay",
+        "zh": "加劲道面",
+        "en": "Add Chewy Noodles"
+      },
+      "updatedAt": "2026-07-18T13:47:57.054Z"
+    },
+    "option-value:25d39e7d-a94b-40fb-b610-1db368947c95:daef3402-17a1-4c2a-992b-4580e2334a5f": {
+      "fingerprint": "a822e95a8cc2c02e672ec446123d6b084fbf409972b7016b69b87a1234011794",
+      "sourceName": "수제비사리",
+      "names": {
+        "ko": "수제비 사리",
+        "vi": "Thêm bánh bột xé",
+        "zh": "加面片",
+        "en": "Add Hand-Torn Dough"
+      },
+      "updatedAt": "2026-07-18T13:47:57.054Z"
+    },
+    "option-value:25d39e7d-a94b-40fb-b610-1db368947c95:7f7cd94d-de0d-4ef2-8cee-c6d2bced92c3": {
+      "fingerprint": "29f191aef04ab71e5401b06629a1e146026ea0de38711d61f59bcb8a1a337c05",
+      "sourceName": "우동사리 추가",
+      "names": {
+        "ko": "우동 사리 추가",
+        "vi": "Thêm mì udon",
+        "zh": "加乌冬面",
+        "en": "Add Udon Noodles"
+      },
+      "updatedAt": "2026-07-18T13:47:57.054Z"
+    },
+    "option-value:25d39e7d-a94b-40fb-b610-1db368947c95:c4c55e38-59f1-4564-9d7a-ef11a6ccaa75": {
+      "fingerprint": "d972ecb0498b698e7320cd8140d2805c533f5cb6d53bd5f6b1f875f4bee52eb2",
+      "sourceName": "물만두사리",
+      "names": {
+        "ko": "물만두 사리",
+        "vi": "Thêm há cảo luộc",
+        "zh": "加水饺",
+        "en": "Add Boiled Dumplings"
+      },
+      "updatedAt": "2026-07-18T13:47:57.054Z"
+    },
+    "option-value:25d39e7d-a94b-40fb-b610-1db368947c95:ec159ded-1789-4789-9db7-f98bb2ee44c9": {
+      "fingerprint": "34483410a59fe03096ffbf485d0e6fc1393cc040b0aee97208d9859ef1308bbc",
+      "sourceName": "떡사리/ thêm tok",
+      "names": {
+        "ko": "떡 사리",
+        "vi": "Thêm bánh gạo",
+        "zh": "加年糕",
+        "en": "Add Rice Cakes"
+      },
+      "updatedAt": "2026-07-18T13:47:57.054Z"
+    },
+    "option-group:85cead19-7d83-4c61-8199-b7fab35fb672": {
+      "fingerprint": "c61f3656ff502de9cb676a7d2612966c552f8c4a4e57f0e6d04667099b3485f8",
+      "sourceName": "순살/뼈 선택",
+      "names": {
+        "ko": "순살/뼈 선택",
+        "vi": "Chọn gà không xương / có xương",
+        "zh": "选择无骨/带骨鸡",
+        "en": "Choose Boneless or Bone-In"
+      },
+      "updatedAt": "2026-07-18T13:47:57.054Z"
+    },
+    "option-value:85cead19-7d83-4c61-8199-b7fab35fb672:31da79cc-8224-40a1-80f0-8985ecc89e1b": {
+      "fingerprint": "b2193531232c2c864b4c260e94ea014ae92b5370bd7afdb7aa3c28994563af16",
+      "sourceName": "뼈치킨",
+      "names": {
+        "ko": "뼈 치킨",
+        "vi": "Gà có xương",
+        "zh": "带骨鸡",
+        "en": "Bone-In Chicken"
+      },
+      "updatedAt": "2026-07-18T13:47:57.054Z"
+    },
+    "option-value:85cead19-7d83-4c61-8199-b7fab35fb672:7a4bbb82-eaa6-48dd-9127-cd5f2fa03daa": {
+      "fingerprint": "6e97848e30015c3d2efe42b3e2f76969a3a5433247d84ac92affed84daa76836",
+      "sourceName": "순살치킨",
+      "names": {
+        "ko": "순살 치킨",
+        "vi": "Gà không xương",
+        "zh": "无骨鸡",
+        "en": "Boneless Chicken"
+      },
+      "updatedAt": "2026-07-18T13:47:57.054Z"
+    },
+    "option-group:8491b574-2973-47f0-8d46-5c489fd9bba8": {
+      "fingerprint": "0819c272c14253071026a21926f03dbdf2d30e1191aeee19f0e3f4f81e5dc6c0",
+      "sourceName": "아이스크림 110ml",
+      "names": {
+        "ko": "아이스크림 110ml",
+        "vi": "Kem 110ml",
+        "zh": "冰淇淋 110ml",
+        "en": "Ice Cream 110ml"
+      },
+      "updatedAt": "2026-07-18T13:47:57.054Z"
+    },
+    "option-value:8491b574-2973-47f0-8d46-5c489fd9bba8:01704313-b0bc-4943-baee-03b5eaddabe2": {
+      "fingerprint": "3b1db966732bd174de383ba1d7986a4ba9cdf3e6ece128069e6462fd7ddbb801",
+      "sourceName": "녹차 아이스크림 110ml",
+      "names": {
+        "ko": "녹차 아이스크림 110ml",
+        "vi": "Kem trà xanh 110ml",
+        "zh": "抹茶冰淇淋 110ml",
+        "en": "Matcha Ice Cream 110ml"
+      },
+      "updatedAt": "2026-07-18T13:47:57.054Z"
+    },
+    "option-value:8491b574-2973-47f0-8d46-5c489fd9bba8:dd07e6e2-2473-47df-b612-7ce8e8f11700": {
+      "fingerprint": "0b220129f9e902013aa7e6f5c22545155a67b2e2841ca74ddbd416188bfa83f8",
+      "sourceName": "민트초코칩 아이스크림 110ml",
+      "names": {
+        "ko": "민트초코칩 아이스크림 110ml",
+        "vi": "Kem bạc hà sô-cô-la chip 110ml",
+        "zh": "薄荷巧克力碎冰淇淋 110ml",
+        "en": "Mint Chocolate Chip Ice Cream 110ml"
+      },
+      "updatedAt": "2026-07-18T13:47:57.054Z"
+    },
+    "option-value:8491b574-2973-47f0-8d46-5c489fd9bba8:9e752268-59ad-4bf1-ac4a-ddd46e2ed6e1": {
+      "fingerprint": "ebbb4c354662e79187fc065653939ebcd281f7296a3d1cfbc5eeb1eae99f3fd3",
+      "sourceName": "패션후르츠 아이스크림 110ml",
+      "names": {
+        "ko": "패션후르츠 아이스크림 110ml",
+        "vi": "Kem chanh leo 110ml",
+        "zh": "百香果冰淇淋 110ml",
+        "en": "Passion Fruit Ice Cream 110ml"
+      },
+      "updatedAt": "2026-07-18T13:47:57.054Z"
+    },
+    "option-value:8491b574-2973-47f0-8d46-5c489fd9bba8:3a27c7cd-91c8-4dae-905c-e9abddb56b2c": {
+      "fingerprint": "cef7b7c81e58287a39fd6e9c03de0c81a378ffe5c15f3e0a6704af54c041a965",
+      "sourceName": "초코 아이스크림 110ml",
+      "names": {
+        "ko": "초코 아이스크림 110ml",
+        "vi": "Kem sô-cô-la 110ml",
+        "zh": "巧克力冰淇淋 110ml",
+        "en": "Chocolate Ice Cream 110ml"
+      },
+      "updatedAt": "2026-07-18T13:47:57.054Z"
+    },
+    "option-group:f7e12072-8edf-4485-b897-6a440704d521": {
+      "fingerprint": "c93083f21b9f38331d8b509f44eb17d14482ff942261517cce6095c37e89336f",
+      "sourceName": "아이스크림 500ml",
+      "names": {
+        "ko": "아이스크림 500ml",
+        "vi": "Kem 500ml",
+        "zh": "冰淇淋 500ml",
+        "en": "Ice Cream 500ml"
+      },
+      "updatedAt": "2026-07-18T13:47:57.054Z"
+    },
+    "option-value:f7e12072-8edf-4485-b897-6a440704d521:0154e536-5388-4d42-a6dc-b2ba2ea3852c": {
+      "fingerprint": "1850f8546e7a0e92dee48a3bf176e68feefb60be9e1a96ef08b475953bbb8b8d",
+      "sourceName": "바닐라 아이스크림 500ml",
+      "names": {
+        "ko": "바닐라 아이스크림 500ml",
+        "vi": "Kem vani 500ml",
+        "zh": "香草冰淇淋 500ml",
+        "en": "Vanilla Ice Cream 500ml"
+      },
+      "updatedAt": "2026-07-18T13:47:57.054Z"
+    },
+    "option-value:f7e12072-8edf-4485-b897-6a440704d521:1c864def-1ec3-4cb7-8bac-c889b3377375": {
+      "fingerprint": "9a6b67a613cb248f4a4d314d05e287dfcbcebf2c543f9f6d8255ea2c96c7b0a5",
+      "sourceName": "민트초코칩 아이스크림 500ml",
+      "names": {
+        "ko": "민트초코칩 아이스크림 500ml",
+        "vi": "Kem bạc hà sô-cô-la chip 500ml",
+        "zh": "薄荷巧克力碎冰淇淋 500ml",
+        "en": "Mint Chocolate Chip Ice Cream 500ml"
+      },
+      "updatedAt": "2026-07-18T13:47:57.054Z"
+    },
+    "option-value:f7e12072-8edf-4485-b897-6a440704d521:ced68de0-4cf2-496c-a56b-e72f02877e4a": {
+      "fingerprint": "e06cc489ec54b95dd92a6b3dad5f83fa0e6c89708efac220de0168d7b310d4f4",
+      "sourceName": "패션후르츠 아이스크림 500ml",
+      "names": {
+        "ko": "패션후르츠 아이스크림 500ml",
+        "vi": "Kem chanh leo 500ml",
+        "zh": "百香果冰淇淋 500ml",
+        "en": "Passion Fruit Ice Cream 500ml"
+      },
+      "updatedAt": "2026-07-18T13:47:57.054Z"
+    },
+    "option-value:f7e12072-8edf-4485-b897-6a440704d521:a85eea55-e764-4613-a0fc-f60c4150c2e4": {
+      "fingerprint": "02249ebf6e1d7bc121c5b489922ce51353855bee42bdb1dfad394e8c193ab293",
+      "sourceName": "오레오 아이스크림 500ml",
+      "names": {
+        "ko": "오레오 아이스크림 500ml",
+        "vi": "Kem Oreo 500ml",
+        "zh": "奥利奥冰淇淋 500ml",
+        "en": "Oreo Ice Cream 500ml"
+      },
+      "updatedAt": "2026-07-18T13:47:57.054Z"
+    },
+    "option-group:2fb4a046-da1a-4e98-a7fa-40703f938de2": {
+      "fingerprint": "19ddbe87f57cd3c35094c8723e7f9abb74ecba0e1d1f9e9b796cc9ed800bdd69",
+      "sourceName": "어묵탕 옵션",
+      "names": {
+        "ko": "어묵탕 옵션",
+        "vi": "Tùy chọn canh chả cá",
+        "zh": "鱼饼汤选项",
+        "en": "Fish Cake Soup Options"
+      },
+      "updatedAt": "2026-07-18T13:48:07.511Z"
+    },
+    "option-value:2fb4a046-da1a-4e98-a7fa-40703f938de2:92987c76-3de9-4491-98f9-508013c0fe9e": {
+      "fingerprint": "c0cf14be9d159415de936265872c08d762d6e25651d2007c12a5a9437211b87d",
+      "sourceName": "얼큰어묵탕",
+      "names": {
+        "ko": "얼큰 어묵탕",
+        "vi": "Canh chả cá cay",
+        "zh": "辣鱼饼汤",
+        "en": "Spicy Fish Cake Soup"
+      },
+      "updatedAt": "2026-07-18T13:48:07.512Z"
+    },
+    "option-group:2be54a6c-ab0d-40d7-a080-0c50e0d228dc": {
+      "fingerprint": "4ff4905887f6ff93e2cb6292d0fc5f9ebb3232414739cf9afd727e5415d2a275",
+      "sourceName": "윙봉치킨선택",
+      "names": {
+        "ko": "윙봉 치킨 선택",
+        "vi": "Chọn gà cánh và đùi",
+        "zh": "选择鸡翅和鸡腿",
+        "en": "Choose Wings & Drumsticks"
+      },
+      "updatedAt": "2026-07-18T13:48:07.512Z"
+    },
+    "option-value:2be54a6c-ab0d-40d7-a080-0c50e0d228dc:08e23927-330b-4a0d-ae1d-0f9e7a8dcefb": {
+      "fingerprint": "c273c246bd47904240c86cd309871da871947fa59c2f6358a1420348d4d4fc44",
+      "sourceName": "핫후라이드 윙봉/Hot Fried Wings/辣味炸鸡翅/Cánh gà chiên cay",
+      "names": {
+        "ko": "핫후라이드 윙봉",
+        "vi": "Cánh và đùi gà chiên cay",
+        "zh": "辣味炸鸡翅鸡腿",
+        "en": "Hot Fried Wings & Drumsticks"
+      },
+      "updatedAt": "2026-07-18T13:48:07.512Z"
+    },
+    "option-value:2be54a6c-ab0d-40d7-a080-0c50e0d228dc:4ff6ab3c-6c59-452c-808a-205a83ea6368": {
+      "fingerprint": "a01305c805648e051d6be10577a2ea4fb6ce41a28284634bf10b11f9e6a44934",
+      "sourceName": "간장 윙봉/Soy Sauce Wings /酱油鸡翅 /Cánh gà xì dầu.",
+      "names": {
+        "ko": "간장 윙봉",
+        "vi": "Cánh và đùi gà sốt xì dầu",
+        "zh": "酱油鸡翅鸡腿",
+        "en": "Soy Sauce Wings & Drumsticks"
+      },
+      "updatedAt": "2026-07-18T13:48:07.512Z"
+    },
+    "option-value:2be54a6c-ab0d-40d7-a080-0c50e0d228dc:9aec3e3c-57f7-441b-83ae-2aff79348608": {
+      "fingerprint": "5c7120b576e8c621178a29029603ec40652c126f2d77c58259840da077eb2ffd",
+      "sourceName": "허니 윙봉/Honey Wings/(W05) 蜜汁鸡翅 /Cánh gà mật ong.",
+      "names": {
+        "ko": "허니 윙봉",
+        "vi": "Cánh và đùi gà mật ong",
+        "zh": "蜜汁鸡翅鸡腿",
+        "en": "Honey Wings & Drumsticks"
+      },
+      "updatedAt": "2026-07-18T13:48:07.512Z"
+    },
+    "option-value:2be54a6c-ab0d-40d7-a080-0c50e0d228dc:dbd02bf2-43c8-49f4-9f2f-69c030e4621f": {
+      "fingerprint": "7e8285c56420d2807a7aa145e38260fc42a6d3dcf0649eba2bafb9213c4da40c",
+      "sourceName": "매운간장윙봉",
+      "names": {
+        "ko": "매운 간장 윙봉",
+        "vi": "Cánh và đùi gà sốt xì dầu cay",
+        "zh": "辣酱油鸡翅鸡腿",
+        "en": "Spicy Soy Sauce Wings & Drumsticks"
+      },
+      "updatedAt": "2026-07-18T13:48:07.512Z"
+    },
+    "option-value:2be54a6c-ab0d-40d7-a080-0c50e0d228dc:f276a28f-4dd4-4ee3-93eb-9f0e94941689": {
+      "fingerprint": "5a7489b5f4510b6a59afc4a10bc1cbbb70eae5ad1799f4e891ee0547e48a08c8",
+      "sourceName": "스노윙치킨 / Gà phủ bột phô mai / 雪花芝士粉炸鸡 / Snowing Chicken",
+      "names": {
+        "ko": "스노윙 윙봉",
+        "vi": "Cánh và đùi gà phủ bột phô mai",
+        "zh": "芝士粉鸡翅鸡腿",
+        "en": "Cheese Powder Wings & Drumsticks"
+      },
+      "updatedAt": "2026-07-18T13:48:07.512Z"
+    },
+    "option-value:2be54a6c-ab0d-40d7-a080-0c50e0d228dc:096e9442-2079-4c5e-aaa5-c3ceb187bd72": {
+      "fingerprint": "a3ca4f15759b96e14cd0408bd1f486f8e12a8abac834a373a37fe878f07c7712",
+      "sourceName": "후라이드윙봉",
+      "names": {
+        "ko": "후라이드 윙봉",
+        "vi": "Cánh và đùi gà chiên giòn",
+        "zh": "炸鸡翅鸡腿",
+        "en": "Fried Wings & Drumsticks"
+      },
+      "updatedAt": "2026-07-18T13:48:07.512Z"
+    },
+    "option-value:2be54a6c-ab0d-40d7-a080-0c50e0d228dc:a6c767fa-5abc-4e31-acb3-c840184971f1": {
+      "fingerprint": "0bfd8024b890fdd9532613a45f8b53a0b1efaa2135aceb1e0c25d9df1743372e",
+      "sourceName": "레드 윙봉/Spicy Red Wings / 辣鸡翅 / Cánh gà cay.",
+      "names": {
+        "ko": "레드 윙봉",
+        "vi": "Cánh và đùi gà sốt cay",
+        "zh": "辣味鸡翅鸡腿",
+        "en": "Spicy Red Wings & Drumsticks"
+      },
+      "updatedAt": "2026-07-18T13:48:07.512Z"
+    },
+    "option-group:80ff7a38-11c2-4942-a403-b5e3921ef3e2": {
+      "fingerprint": "c514a398c3b664b54f9fb24026c45a03bed17af6911af539fd411bb21871ee2e",
+      "sourceName": "짭코바 옵션",
+      "names": {
+        "ko": "짭코바 옵션",
+        "vi": "Tùy chọn Jjap Koba",
+        "zh": "Jjap Koba选项",
+        "en": "Jjap Koba Options"
+      },
+      "updatedAt": "2026-07-18T13:48:07.512Z"
+    },
+    "option-value:80ff7a38-11c2-4942-a403-b5e3921ef3e2:6edb778c-e1bf-4bbd-ab5f-338b0b8bd41a": {
+      "fingerprint": "7e0a2dcdd7767e49dcbd450a45494e61f4c62ccadf975275cb596ab081b5a6ed",
+      "sourceName": "모짜렐라 치즈 추가",
+      "names": {
+        "ko": "모짜렐라 치즈 추가",
+        "vi": "Thêm phô mai mozzarella",
+        "zh": "加马苏里拉奶酪",
+        "en": "Add Mozzarella Cheese"
+      },
+      "updatedAt": "2026-07-18T13:48:07.512Z"
+    },
+    "option-value:80ff7a38-11c2-4942-a403-b5e3921ef3e2:4a2a7a67-d229-4d97-b89b-40d5136a9b61": {
+      "fingerprint": "b4daa30b61469f91d96f750de93de807817770d0e41ea97930dfb29b947dab96",
+      "sourceName": "짭코바 우동",
+      "names": {
+        "ko": "짭코바 우동",
+        "vi": "Udon Jjap Koba",
+        "zh": "Jjap Koba乌冬面",
+        "en": "Jjap Koba Udon"
+      },
+      "updatedAt": "2026-07-18T13:48:07.512Z"
+    },
+    "option-value:80ff7a38-11c2-4942-a403-b5e3921ef3e2:752786d0-1a0f-43b2-b204-5bf8241e2712": {
+      "fingerprint": "9716f118a854b3d3609d5a6e2ad5d39f45a28210c103900c05193f7d721c5d09",
+      "sourceName": "BBQ NỬA THÊM",
+      "names": {
+        "ko": "짭코바 반마리 추가",
+        "vi": "Thêm nửa con gà BBQ",
+        "zh": "加半只BBQ鸡",
+        "en": "Add Half BBQ Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:07.512Z"
+    },
+    "option-value:80ff7a38-11c2-4942-a403-b5e3921ef3e2:24d048ab-f235-4825-9cc9-9b5a386d4254": {
+      "fingerprint": "81f764b65393b6bec00cfd63e99a5147d51d5042e73bc0ff6cdac710b45de244",
+      "sourceName": "BBQ NỮA 반마리",
+      "names": {
+        "ko": "BBQ 반마리",
+        "vi": "Nửa con gà BBQ",
+        "zh": "半只BBQ鸡",
+        "en": "Half BBQ Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:07.512Z"
+    },
+    "option-value:80ff7a38-11c2-4942-a403-b5e3921ef3e2:1e883121-c3ea-478a-8c5d-c114ae89dfa1": {
+      "fingerprint": "5caa5ee775d4b2323cc1121a551e577423673653f6c32e32f0e3491bb578e9ab",
+      "sourceName": "밥 Cơm",
+      "names": {
+        "ko": "밥",
+        "vi": "Cơm",
+        "zh": "米饭",
+        "en": "Rice"
+      },
+      "updatedAt": "2026-07-18T13:48:07.512Z"
+    },
+    "option-value:80ff7a38-11c2-4942-a403-b5e3921ef3e2:c790a8cf-a7e7-4b67-9c7b-f09ce819bcf5": {
+      "fingerprint": "911cead2949f133d3727762b1e7be13e2482205ab2c50bb214db49192ce7d127",
+      "sourceName": "통마늘 추가",
+      "names": {
+        "ko": "통마늘 추가",
+        "vi": "Thêm tỏi nguyên tép",
+        "zh": "加整瓣大蒜",
+        "en": "Add Whole Garlic"
+      },
+      "updatedAt": "2026-07-18T13:48:07.512Z"
+    },
+    "option-value:80ff7a38-11c2-4942-a403-b5e3921ef3e2:eb14789e-3dfe-40b9-bc3c-f58e897128f1": {
+      "fingerprint": "1bc6474b97b34606ee2645ecc970d87cec40f0ec18aeb979dbcd8472c98a6595",
+      "sourceName": "Rosé Spicy BBQ",
+      "names": {
+        "ko": "로제 짭코바",
+        "vi": "Jjap Koba sốt rosé cay",
+        "zh": "辣味玫瑰Jjap Koba",
+        "en": "Rosé Spicy Jjap Koba"
+      },
+      "updatedAt": "2026-07-18T13:48:07.512Z"
+    },
+    "option-group:9bba9fb9-e294-4a63-b9db-a5e43df5012f": {
+      "fingerprint": "0457ba5ba4879f68ca06e1644d8b8773e9cf96d58db3970c43657f3805523b30",
+      "sourceName": "치킨선택",
+      "names": {
+        "ko": "치킨 선택",
+        "vi": "Chọn gà",
+        "zh": "选择炸鸡",
+        "en": "Choose Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:07.512Z"
+    },
+    "option-value:9bba9fb9-e294-4a63-b9db-a5e43df5012f:a4eb6972-30d0-4b33-bb74-34140ec3c70f": {
+      "fingerprint": "eba3affd44377a9ed4de1b7a52d07d78ca41305d262a0fa55fbddc5a63ade478",
+      "sourceName": "파닭/Green Onion Chicken /葱香炸鸡（芥末酱)/Gà hành lá (sốt mù tạt).",
+      "names": {
+        "ko": "파닭",
+        "vi": "Gà hành lá sốt mù tạt",
+        "zh": "葱香炸鸡（芥末酱）",
+        "en": "Green Onion Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:07.512Z"
+    },
+    "option-value:9bba9fb9-e294-4a63-b9db-a5e43df5012f:45fd300a-5e33-4808-b672-467a591fbd2c": {
+      "fingerprint": "151128900e1228ffef91c89f7f7e7a938e6445157238534ddde05b602bc9a674",
+      "sourceName": "스노윙치킨 / Gà phủ bột phô mai / 雪花芝士粉炸鸡 / Snowing Cheese Powder Chicken.",
+      "names": {
+        "ko": "스노윙치킨",
+        "vi": "Gà phủ bột phô mai",
+        "zh": "芝士粉炸鸡",
+        "en": "Cheese Powder Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:07.512Z"
+    },
+    "option-value:9bba9fb9-e294-4a63-b9db-a5e43df5012f:a1692666-805d-4b50-bc70-494e596d5079": {
+      "fingerprint": "a21755471d7fc641e3496c8036b18da116464ab1621f3ee662804b03848e197a",
+      "sourceName": "슈프림/Supreme Sauce Chicken /至尊酱鸡 /Gà sốt supreme.",
+      "names": {
+        "ko": "슈프림 치킨",
+        "vi": "Gà sốt Supreme",
+        "zh": "至尊酱鸡",
+        "en": "Supreme Sauce Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:07.512Z"
+    },
+    "option-value:9bba9fb9-e294-4a63-b9db-a5e43df5012f:9451c3d2-1ec7-4e62-8c6b-52684a5b205f": {
+      "fingerprint": "58abf9c7b5526335bc8cef04cdc527adf0413521c377d4adbe594f46d4f5d766",
+      "sourceName": "매운양념/Hot & Spicy Chicken/韩式辣酱炸鸡/Gà sốt cay HQ.",
+      "names": {
+        "ko": "매운 양념치킨",
+        "vi": "Gà sốt cay Hàn Quốc",
+        "zh": "韩式辣酱炸鸡",
+        "en": "Hot & Spicy Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:07.512Z"
+    },
+    "option-value:9bba9fb9-e294-4a63-b9db-a5e43df5012f:364f50ef-8710-41ac-9e4c-73209d7a4c89": {
+      "fingerprint": "187bfb946d29bec83a3224fa8473dab398935fbfd42baeab9670c2cb63a0fde2",
+      "sourceName": "고추마늘간장./Garlic Soy Chicken/辣椒蒜酱鸡 /Gà sốt xì dầu tỏi ớt",
+      "names": {
+        "ko": "고추마늘간장치킨",
+        "vi": "Gà sốt xì dầu tỏi ớt",
+        "zh": "辣椒蒜酱鸡",
+        "en": "Garlic Soy Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:07.512Z"
+    },
+    "option-value:9bba9fb9-e294-4a63-b9db-a5e43df5012f:9b8f3856-60ff-4d08-b111-9e87ea20e22e": {
+      "fingerprint": "0eba3d888276e70a8bb62131c67962a43ea40dfca5964ce2f22ea3c5c79bac66",
+      "sourceName": "후라이드/Fried Chicken /无骨炸鸡腿 /không sốt",
+      "names": {
+        "ko": "후라이드 치킨",
+        "vi": "Gà rán không sốt",
+        "zh": "原味炸鸡",
+        "en": "Fried Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:16.936Z"
+    },
+    "option-value:9bba9fb9-e294-4a63-b9db-a5e43df5012f:641303df-1c29-4e1d-bc2b-de7ce53a43db": {
+      "fingerprint": "9c5ab574cf88f3e4fea518bc5c19008776b38ad9b62fff08af06907f15f5e991",
+      "sourceName": "스리라차 어니언/ Sriracha Onion Chicken/ 洋葱奶酱炸鸡 /Gà sốt kem hành",
+      "names": {
+        "ko": "스리라차 어니언 치킨",
+        "vi": "Gà sốt kem hành Sriracha",
+        "zh": "斯里拉差洋葱奶油炸鸡",
+        "en": "Sriracha Onion Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:16.936Z"
+    },
+    "option-value:9bba9fb9-e294-4a63-b9db-a5e43df5012f:2fa8c6f6-67da-4899-9c03-df65847fa67b": {
+      "fingerprint": "ee0e5d7e635fb9224a5865ea2e3b79126de317b2ead06987952caa8e6666c7f4",
+      "sourceName": "양념/Sweet & Spicy Chicken /韩式甜酱炸鸡 /Gà sốt ngọt HQ",
+      "names": {
+        "ko": "양념 치킨",
+        "vi": "Gà sốt ngọt kiểu Hàn",
+        "zh": "韩式甜酱炸鸡",
+        "en": "Sweet & Spicy Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:16.936Z"
+    },
+    "option-value:9bba9fb9-e294-4a63-b9db-a5e43df5012f:a6629165-2c6e-4717-945f-efa07046c100": {
+      "fingerprint": "2fe9505b28ab25e5cc6d579244ef8ead60874b369a1f2ed11b27992a5e660dc7",
+      "sourceName": "핫후라이드",
+      "names": {
+        "ko": "핫후라이드 치킨",
+        "vi": "Gà rán cay",
+        "zh": "辣味炸鸡",
+        "en": "Hot Fried Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:16.936Z"
+    },
+    "option-group:b69b854b-5607-4f8c-a795-c775e55bacb7": {
+      "fingerprint": "18c5eb3885bd0d8c78ba0f42b15ddf2ff6b2c50a7fa19fa7739b2c8efcf3a8bd",
+      "sourceName": "치킨선택",
+      "names": {
+        "ko": "치킨 선택",
+        "vi": "Chọn gà",
+        "zh": "选择鸡肉",
+        "en": "Choose Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:16.936Z"
+    },
+    "option-value:b69b854b-5607-4f8c-a795-c775e55bacb7:ff24d8d1-a4ab-4820-951c-12a82aeeefc1": {
+      "fingerprint": "0fd891ae2965b5c922f22696b684a0b732dd8d10887b3b0c80a6ed646ff236af",
+      "sourceName": "레드 윙봉/Spicy Red Wings/辣鸡翅/Cánh gà cay",
+      "names": {
+        "ko": "레드 윙봉",
+        "vi": "Cánh gà sốt đỏ cay",
+        "zh": "香辣红酱鸡翅",
+        "en": "Spicy Red Wings"
+      },
+      "updatedAt": "2026-07-18T13:48:16.936Z"
+    },
+    "option-value:b69b854b-5607-4f8c-a795-c775e55bacb7:2e5c382c-2fd7-4f8d-8fa5-2d4bc83c719d": {
+      "fingerprint": "cf9c112cb619e736507db2b84cf877492441a0438a2042c36e9f13105b0b24c4",
+      "sourceName": "간장 윙봉/Soy Sauce Wings /酱油鸡翅 /Cánh gà xì dầu",
+      "names": {
+        "ko": "간장 윙봉",
+        "vi": "Cánh gà xì dầu",
+        "zh": "酱油鸡翅",
+        "en": "Soy Sauce Wings"
+      },
+      "updatedAt": "2026-07-18T13:48:16.936Z"
+    },
+    "option-value:b69b854b-5607-4f8c-a795-c775e55bacb7:561e7390-5e64-4a61-9ddd-2f12cb678256": {
+      "fingerprint": "5449b14a47a5a59bf5fd04ef385462a2fddebbef690b53d5efc7e5a887dead79",
+      "sourceName": "슈프림/Supreme Sauce Chicken/至尊酱鸡 /Gà sốt supreme",
+      "names": {
+        "ko": "슈프림 치킨",
+        "vi": "Gà sốt Supreme",
+        "zh": "至尊酱炸鸡",
+        "en": "Supreme Sauce Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:16.936Z"
+    },
+    "option-value:b69b854b-5607-4f8c-a795-c775e55bacb7:28ae400d-930a-48ca-89f5-3113b1e3036e": {
+      "fingerprint": "6c2426a3d2b48814c0d0ac4a61a777ebfc87dfe126c57b1b41e9092b9fcd6c0d",
+      "sourceName": "핫후라이드",
+      "names": {
+        "ko": "핫후라이드 치킨",
+        "vi": "Gà rán cay",
+        "zh": "辣味炸鸡",
+        "en": "Hot Fried Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:16.936Z"
+    },
+    "option-value:b69b854b-5607-4f8c-a795-c775e55bacb7:ec9e8a2a-6cb7-4e3a-8e3d-430cdadd0eb6": {
+      "fingerprint": "6d950717c4858a8d00713a48dc4e8e1535228522afa5a1d39d983ca8f536903d",
+      "sourceName": "핫후라이드 윙봉./Hot Fried Wings/辣味炸鸡翅/Cánh gà chiên cay",
+      "names": {
+        "ko": "핫후라이드 윙봉",
+        "vi": "Cánh gà rán cay",
+        "zh": "辣味炸鸡翅",
+        "en": "Hot Fried Wings"
+      },
+      "updatedAt": "2026-07-18T13:48:16.936Z"
+    },
+    "option-value:b69b854b-5607-4f8c-a795-c775e55bacb7:5e24c7b7-ee67-487a-8f74-49a15c62b6df": {
+      "fingerprint": "2cf3dc8fe911a3ec50dd04c6a99c828dff926e679d67d3aa6b2f5be5d8866e57",
+      "sourceName": "스리라차 어니언/Sriracha Onion Chicken/洋葱奶酱炸鸡/Gà sốt kem hành",
+      "names": {
+        "ko": "스리라차 어니언 치킨",
+        "vi": "Gà sốt kem hành Sriracha",
+        "zh": "斯里拉差洋葱奶油炸鸡",
+        "en": "Sriracha Onion Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:16.936Z"
+    },
+    "option-value:b69b854b-5607-4f8c-a795-c775e55bacb7:61700135-8977-4d4b-b1e7-854fc14bb2e7": {
+      "fingerprint": "737160c4a30e14f5f8f03b5792e158e36bd1034e4bbed3bf268821043a622dda",
+      "sourceName": "후라이드/Fried Chicken/无骨炸鸡腿 /không sốt",
+      "names": {
+        "ko": "후라이드 치킨",
+        "vi": "Gà rán không sốt",
+        "zh": "原味炸鸡",
+        "en": "Fried Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:16.936Z"
+    },
+    "option-value:b69b854b-5607-4f8c-a795-c775e55bacb7:5355f9a9-8d4c-4009-8d4f-9cf6521699aa": {
+      "fingerprint": "5a8bf494f21184c24dad8e2ed4e39bb3f912ac846e21d12295e1dc2e9573254a",
+      "sourceName": "고추마늘간장/Garlic Soy Chicken/ 辣椒蒜酱鸡/Gà sốt xì dầu tỏi ớt",
+      "names": {
+        "ko": "고추마늘간장 치킨",
+        "vi": "Gà sốt xì dầu tỏi ớt",
+        "zh": "辣椒蒜香酱油鸡",
+        "en": "Garlic Soy Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:16.936Z"
+    },
+    "option-value:b69b854b-5607-4f8c-a795-c775e55bacb7:a4540023-7b3c-496b-baab-b821705d6e68": {
+      "fingerprint": "3f2eb63e18ad187df57429ca50125aaa8180985b9eb0ee006cf9c827eda7040d",
+      "sourceName": "매운양념/Hot & Spicy Chicken/韩式辣酱炸鸡/Gà sốt cay HQ",
+      "names": {
+        "ko": "매운양념 치킨",
+        "vi": "Gà sốt cay kiểu Hàn",
+        "zh": "韩式辣酱炸鸡",
+        "en": "Hot & Spicy Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:16.936Z"
+    },
+    "option-value:b69b854b-5607-4f8c-a795-c775e55bacb7:9c0e3927-132b-48b8-8d76-c5ab46ac7499": {
+      "fingerprint": "7d61806ad9808a4a7169bca3b6847bc1f98f0c0772e33ee7996e2e407b6ee447",
+      "sourceName": "짭코바/(Spicy BBQ Chicken (Jjabkoba)/BBQ烤鸡 /Gà nướng BBQ",
+      "names": {
+        "ko": "짭코바",
+        "vi": "Gà nướng BBQ cay Jjabkoba",
+        "zh": "Jjabkoba香辣BBQ烤鸡",
+        "en": "Spicy BBQ Chicken (Jjabkoba)"
+      },
+      "updatedAt": "2026-07-18T13:48:16.936Z"
+    },
+    "option-value:b69b854b-5607-4f8c-a795-c775e55bacb7:9aae2cff-aaed-46e8-9171-cce934fde0d6": {
+      "fingerprint": "91d3352911e85276cc0052d5a08b4d9ea6f7c12e25577dc1c770804053c15589",
+      "sourceName": "파닭/Green Onion Chicken/葱香炸鸡（芥末酱/Gà hành lá (sốt mù tạt)",
+      "names": {
+        "ko": "파닭",
+        "vi": "Gà hành lá sốt mù tạt",
+        "zh": "葱香炸鸡配芥末酱",
+        "en": "Green Onion Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:16.936Z"
+    },
+    "option-value:b69b854b-5607-4f8c-a795-c775e55bacb7:eec46594-8cc8-4f8e-97c0-dbe766a33806": {
+      "fingerprint": "60027119417ddafa0e7f01201bf633c29ef935200299c4882a17c4a4d3177b61",
+      "sourceName": "양념/Sweet & Spicy Chicken/韩式甜酱炸鸡/Gà sốt ngọt HQ",
+      "names": {
+        "ko": "양념 치킨",
+        "vi": "Gà sốt ngọt kiểu Hàn",
+        "zh": "韩式甜酱炸鸡",
+        "en": "Sweet & Spicy Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:16.936Z"
+    },
+    "option-value:b69b854b-5607-4f8c-a795-c775e55bacb7:18f452ad-9d20-4f39-8d17-f0fc555b3b9e": {
+      "fingerprint": "bc649ea425297f3984d55b0698b0b73eeec4eb9ee6e881b5a8b07229fa4aef2e",
+      "sourceName": "허니 윙봉/Honey Wings/蜜汁鸡翅 /Cánh gà mật ong",
+      "names": {
+        "ko": "허니 윙봉",
+        "vi": "Cánh gà mật ong",
+        "zh": "蜜汁鸡翅",
+        "en": "Honey Wings"
+      },
+      "updatedAt": "2026-07-18T13:48:16.936Z"
+    },
+    "option-group:74421c35-8f8e-469d-b25a-cbd7fb77d8c3": {
+      "fingerprint": "e996b03a2e3814e0acf81a4d1841204d3ece55695682481a8cee6fd9d4ea7f90",
+      "sourceName": "치킨선택(TOK3)",
+      "names": {
+        "ko": "치킨 선택 (TOK3)",
+        "vi": "Chọn gà (TOK3)",
+        "zh": "选择鸡肉（TOK3）",
+        "en": "Choose Chicken (TOK3)"
+      },
+      "updatedAt": "2026-07-18T13:48:16.936Z"
+    },
+    "option-value:74421c35-8f8e-469d-b25a-cbd7fb77d8c3:7d7ed51b-8257-4e81-a0df-78f4f73adbe0": {
+      "fingerprint": "d10342acec749b4ef4b100d7dd9006a1486c93d150680cb32ec3f950e98ab6ac",
+      "sourceName": "O5 허니 윙봉/Honey Wings/ 蜜汁鸡翅 /Cánh gà mật ong",
+      "names": {
+        "ko": "O5 허니 윙봉",
+        "vi": "O5 Cánh gà mật ong",
+        "zh": "O5 蜜汁鸡翅",
+        "en": "O5 Honey Wings"
+      },
+      "updatedAt": "2026-07-18T13:48:16.936Z"
+    },
+    "option-value:74421c35-8f8e-469d-b25a-cbd7fb77d8c3:37697e59-2987-4b3d-a1c0-a2c7d54c0205": {
+      "fingerprint": "3b8b449a7644905a36fc861884a460c60629f9ccbde6e3dd3583ab9821be7a10",
+      "sourceName": "O5 간장 윙봉/Soy Sauce Wings /酱油鸡翅 /Cánh gà xì dầu",
+      "names": {
+        "ko": "O5 간장 윙봉",
+        "vi": "O5 Cánh gà xì dầu",
+        "zh": "O5 酱油鸡翅",
+        "en": "O5 Soy Sauce Wings"
+      },
+      "updatedAt": "2026-07-18T13:48:16.936Z"
+    },
+    "option-group:b2fbfcca-55f5-4718-87d4-96627091764a": {
+      "fingerprint": "e431e6bf850eabb9c7073e5878df516965c31dfa08b4a022a22ffc6c3a905c70",
+      "sourceName": "치킨선택(반마리)",
+      "names": {
+        "ko": "치킨 선택 (반마리)",
+        "vi": "Chọn gà (nửa con)",
+        "zh": "选择鸡肉（半只）",
+        "en": "Choose Chicken (Half)"
+      },
+      "updatedAt": "2026-07-18T13:48:16.936Z"
+    },
+    "option-value:b2fbfcca-55f5-4718-87d4-96627091764a:5b311b20-6191-403f-8612-08cf8648b49d": {
+      "fingerprint": "3542f40d5e7e3968d529fdce049b62c7a19eef76ac52d9449d2869d4fcd87f77",
+      "sourceName": "양념/Sweet & Spicy Chicken / 韩式甜酱炸鸡 /Gà sốt ngọt HQ",
+      "names": {
+        "ko": "양념 치킨",
+        "vi": "Gà sốt ngọt kiểu Hàn",
+        "zh": "韩式甜酱炸鸡",
+        "en": "Sweet & Spicy Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:16.936Z"
+    },
+    "option-value:b2fbfcca-55f5-4718-87d4-96627091764a:29a63a17-2438-4370-a4ef-1529d2007a23": {
+      "fingerprint": "80d7bc265c94233ef261ebcc710275daac0a5536a03f3f8bc0581f84502e3ae5",
+      "sourceName": "후라이드/Fried Chicken/ 无骨炸鸡腿 /không sốt",
+      "names": {
+        "ko": "후라이드 치킨",
+        "vi": "Gà rán không sốt",
+        "zh": "原味炸鸡",
+        "en": "Fried Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:16.936Z"
+    },
+    "option-value:b2fbfcca-55f5-4718-87d4-96627091764a:de514282-5410-45a5-9de4-50e2964886ea": {
+      "fingerprint": "7ca44c7b203c918dfac58a43cc2c29979e816982364bdb97dd7fa7d26d795468",
+      "sourceName": "핫 후라이드",
+      "names": {
+        "ko": "핫 후라이드 치킨",
+        "vi": "Gà rán cay",
+        "zh": "辣味炸鸡",
+        "en": "Hot Fried Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:26.402Z"
+    },
+    "option-value:b2fbfcca-55f5-4718-87d4-96627091764a:9a54adba-98c2-41ac-a060-57d64379c4bb": {
+      "fingerprint": "9d1236d9df667ac156027269ed88735cf412c71a4e3f51d8e96d9c490073b642",
+      "sourceName": "고추마늘간장/Garlic Soy Chicken/ 辣椒蒜酱鸡 /Gà sốt xì dầu tỏi ớt",
+      "names": {
+        "ko": "고추마늘간장 치킨",
+        "vi": "Gà sốt xì dầu tỏi ớt",
+        "zh": "辣椒蒜香酱油鸡",
+        "en": "Chili Garlic Soy Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:26.402Z"
+    },
+    "option-value:b2fbfcca-55f5-4718-87d4-96627091764a:2dfd957a-1061-4e7d-a1ca-5ec27dfc1da0": {
+      "fingerprint": "541f21a38aea4c89ca893f84ffae467d512d6c6bc72c5a85d17e4977593860d0",
+      "sourceName": "파닭/Green Onion Chicken /葱香炸鸡（芥末酱)/Gà hành lá (sốt mù tạt)",
+      "names": {
+        "ko": "파닭",
+        "vi": "Gà hành lá sốt mù tạt",
+        "zh": "葱香炸鸡（芥末酱）",
+        "en": "Green Onion Chicken with Mustard Sauce"
+      },
+      "updatedAt": "2026-07-18T13:48:26.402Z"
+    },
+    "option-value:b2fbfcca-55f5-4718-87d4-96627091764a:a8da2a14-4ec6-40a9-926c-9b41755b2de5": {
+      "fingerprint": "febebb11e1f063202b5ffc468f060411b8135aea0a0de66a2b8a296c0a453583",
+      "sourceName": "스노윙치킨 / Gà phủ bột phô mai / 雪花芝士粉炸鸡 / Snowing Cheese Powder Chicken",
+      "names": {
+        "ko": "스노윙 치킨",
+        "vi": "Gà phủ bột phô mai",
+        "zh": "雪花芝士粉炸鸡",
+        "en": "Snowing Cheese Powder Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:26.402Z"
+    },
+    "option-value:b2fbfcca-55f5-4718-87d4-96627091764a:fd21b308-6f37-443b-a50c-a35c5a604106": {
+      "fingerprint": "c3289cf2a884a260073b94eaaf7d026737c35f1010da9cb8f1b896193b3495d1",
+      "sourceName": "슈프림/Supreme Sauce Chicken /至尊酱鸡 /Gà sốt supreme",
+      "names": {
+        "ko": "슈프림 소스 치킨",
+        "vi": "Gà sốt Supreme",
+        "zh": "至尊酱鸡",
+        "en": "Supreme Sauce Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:26.402Z"
+    },
+    "option-value:b2fbfcca-55f5-4718-87d4-96627091764a:69fa9032-47e8-4c12-9a76-ac9b53e53039": {
+      "fingerprint": "43066a9989df3e2433a33900844085b7cd2725be57cc11fccada4ac237cbdb2c",
+      "sourceName": "매운양념/Hot & Spicy Chicken/韩式辣酱炸鸡 /Gà sốt cay HQ",
+      "names": {
+        "ko": "매운 양념치킨",
+        "vi": "Gà sốt cay Hàn Quốc",
+        "zh": "韩式辣酱炸鸡",
+        "en": "Hot & Spicy Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:26.402Z"
+    },
+    "option-value:b2fbfcca-55f5-4718-87d4-96627091764a:8113cf6b-beb4-4180-bbf8-ada62b3cef54": {
+      "fingerprint": "4ea34251cd172003bb79ad10442d0da3aba114de2d02e313b14599db2b0a3552",
+      "sourceName": "스리라차 어니언/Sriracha Onion Chicken /洋葱奶酱炸鸡 /Gà sốt kem hành",
+      "names": {
+        "ko": "스리라차 어니언 치킨",
+        "vi": "Gà sốt kem hành Sriracha",
+        "zh": "是拉差洋葱奶油酱炸鸡",
+        "en": "Sriracha Onion Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:26.402Z"
+    },
+    "option-group:4a947b5f-0eb9-4c88-87b2-94debe05a41d": {
+      "fingerprint": "fd56be3d4506871d1c71186c166e16b09b23b9f2c0cb73ec1647402818d2f1cf",
+      "sourceName": "피자 선택 / Pizza Choice / 披萨选择 / Lựa chọn Pizza",
+      "names": {
+        "ko": "피자 선택",
+        "vi": "Chọn pizza",
+        "zh": "选择披萨",
+        "en": "Pizza Selection"
+      },
+      "updatedAt": "2026-07-18T13:48:26.402Z"
+    },
+    "option-value:4a947b5f-0eb9-4c88-87b2-94debe05a41d:3745c71f-47e0-406b-b911-6baf319caf1c": {
+      "fingerprint": "f2c870b55fb5efd288e2b8686b139c950cb298e70382f196e956a159a3d37112",
+      "sourceName": "불고기 컴비네이션/Bulgogi Combination Pizza/ 牛肉综合披萨/Pizza thập cẩm bulgogi.",
+      "names": {
+        "ko": "불고기 컴비네이션 피자",
+        "vi": "Pizza thập cẩm bulgogi",
+        "zh": "牛肉综合披萨",
+        "en": "Bulgogi Combination Pizza"
+      },
+      "updatedAt": "2026-07-18T13:48:26.402Z"
+    },
+    "option-value:4a947b5f-0eb9-4c88-87b2-94debe05a41d:1a42eee7-878c-45d7-9a35-746e6a22f56c": {
+      "fingerprint": "3f9ce01e33be76fa127b4c1f6e39a30da1b74bb200fb12f6cc729f5ff48ab03e",
+      "sourceName": "고구마 피자/Sweet Potato Pizza / 地瓜披萨/Pizza khoai lang.",
+      "names": {
+        "ko": "고구마 피자",
+        "vi": "Pizza khoai lang",
+        "zh": "红薯披萨",
+        "en": "Sweet Potato Pizza"
+      },
+      "updatedAt": "2026-07-18T13:48:26.402Z"
+    },
+    "option-value:4a947b5f-0eb9-4c88-87b2-94debe05a41d:cd7ad83a-4505-47c5-9d60-7717a78a7b88": {
+      "fingerprint": "2b8dbb26e49268cc5f37e9d597f80b34001e72df21e6af2b834288a4c949e9d7",
+      "sourceName": "쉬림프 피자/ Shrimp Pizza/虾仁披萨 /Pizza tôm.",
+      "names": {
+        "ko": "쉬림프 피자",
+        "vi": "Pizza tôm",
+        "zh": "虾仁披萨",
+        "en": "Shrimp Pizza"
+      },
+      "updatedAt": "2026-07-18T13:48:26.402Z"
+    },
+    "option-value:4a947b5f-0eb9-4c88-87b2-94debe05a41d:a8a8e35a-e326-4451-b5b0-91dfec56f869": {
+      "fingerprint": "d8eaa25b73f31c1788db2ecf22b26b2c1b1bc45d8ebcdc5769ae969f2163fe8a",
+      "sourceName": "페퍼로니 체다 피자/Pepperoni Cheddar Pizza/切达芝士意大利香肠披萨 /Pizza pepperoni phô mai cheddar.",
+      "names": {
+        "ko": "페퍼로니 체다 피자",
+        "vi": "Pizza pepperoni phô mai cheddar",
+        "zh": "切达芝士意大利香肠披萨",
+        "en": "Pepperoni Cheddar Pizza"
+      },
+      "updatedAt": "2026-07-18T13:48:26.402Z"
+    },
+    "option-value:4a947b5f-0eb9-4c88-87b2-94debe05a41d:76bab82f-fb7e-4dd1-b1d9-9c444adb3d08": {
+      "fingerprint": "96328b4c8764915bb82987faa536855174dcb31e1f73f5de680ac88213a32efc",
+      "sourceName": "불닭피자/Spicy Chicken (Buldak) Pizza/火辣鸡肉披萨/Pizza gà cay.",
+      "names": {
+        "ko": "불닭 피자",
+        "vi": "Pizza gà cay",
+        "zh": "火辣鸡肉披萨",
+        "en": "Spicy Chicken (Buldak) Pizza"
+      },
+      "updatedAt": "2026-07-18T13:48:26.402Z"
+    },
+    "option-value:4a947b5f-0eb9-4c88-87b2-94debe05a41d:b7ed5732-ba72-42c6-bc25-bdf470409d4c": {
+      "fingerprint": "521f049a42ff8fa7eed7a15e4029ae4f30b903b114775203983781ad0704847a",
+      "sourceName": "옥수수피자/Corn Pizza/玉米披萨 /Pizza bắp.",
+      "names": {
+        "ko": "옥수수 피자",
+        "vi": "Pizza bắp",
+        "zh": "玉米披萨",
+        "en": "Corn Pizza"
+      },
+      "updatedAt": "2026-07-18T13:48:26.402Z"
+    },
+    "option-value:4a947b5f-0eb9-4c88-87b2-94debe05a41d:a04a549c-d272-4e05-97f5-ce51e49caa91": {
+      "fingerprint": "7c6b887ca82c43b5d542af01c3a9c0b629d153ff5a6bd2092ba6ef90b430c575",
+      "sourceName": "하와이안 피자/Hawaiian Pizza/夏威夷披萨 /Pizza Hawaii.",
+      "names": {
+        "ko": "하와이안 피자",
+        "vi": "Pizza Hawaii",
+        "zh": "夏威夷披萨",
+        "en": "Hawaiian Pizza"
+      },
+      "updatedAt": "2026-07-18T13:48:26.402Z"
+    },
+    "option-value:4a947b5f-0eb9-4c88-87b2-94debe05a41d:dc13d57d-b4ab-4d77-9c77-d1406e59e736": {
+      "fingerprint": "a3559af851c2a1441ff600fc22267beee7f2e998ecf21cc4309eb4504f4c62a3",
+      "sourceName": "베이컨 포테이토 피자/Bacon Potato Pizza/培根土豆披萨/Pizza khoai tây thịt xông khói.",
+      "names": {
+        "ko": "베이컨 포테이토 피자",
+        "vi": "Pizza khoai tây thịt xông khói",
+        "zh": "培根土豆披萨",
+        "en": "Bacon Potato Pizza"
+      },
+      "updatedAt": "2026-07-18T13:48:26.402Z"
+    },
+    "option-value:4a947b5f-0eb9-4c88-87b2-94debe05a41d:52a00d26-8c3c-474b-83a0-daa65b26c33a": {
+      "fingerprint": "95c348ae967f157b5973b768d58374be981eb40e2a0e807bb7ed9a310cab3681",
+      "sourceName": "치킨 데리야끼 피자/ Chicken Teriyaki Pizza/ 照烧鸡肉披萨/Pizza gà sốt teriyaki.",
+      "names": {
+        "ko": "치킨 데리야끼 피자",
+        "vi": "Pizza gà sốt teriyaki",
+        "zh": "照烧鸡肉披萨",
+        "en": "Chicken Teriyaki Pizza"
+      },
+      "updatedAt": "2026-07-18T13:48:26.402Z"
+    },
+    "option-group:4fdd345d-483e-4f95-a0c4-73faf37ffd0c": {
+      "fingerprint": "c027b46947705c9c2fd451db9e7d5b1de20b1597e9ac583fbb41695806d5b16d",
+      "sourceName": "피자엣지 변경",
+      "names": {
+        "ko": "피자 엣지 변경",
+        "vi": "Thay đổi viền pizza",
+        "zh": "更改披萨边",
+        "en": "Change Pizza Crust"
+      },
+      "updatedAt": "2026-07-18T13:48:26.402Z"
+    },
+    "option-value:4fdd345d-483e-4f95-a0c4-73faf37ffd0c:6487fbeb-3650-488a-b13c-14c4f64d7d41": {
+      "fingerprint": "0ff21a78b08d876846d3076c5a5aed63e14ea49e2a8e722ab51043d322f134db",
+      "sourceName": "크림치즈 크러스트 / Cream Cheese Crust / 奶油芝士边 / Viền phô mai kem",
+      "names": {
+        "ko": "크림치즈 크러스트",
+        "vi": "Viền phô mai kem",
+        "zh": "奶油芝士边",
+        "en": "Cream Cheese Crust"
+      },
+      "updatedAt": "2026-07-18T13:48:26.402Z"
+    },
+    "option-value:4fdd345d-483e-4f95-a0c4-73faf37ffd0c:3378efb5-2f7f-4bb2-887b-2db3a76ef0a6": {
+      "fingerprint": "0f34d3a405a377a1b1c144ecea1cad6e5e6f4c820bbdd3ae70711b5164b18a60",
+      "sourceName": "치즈크러스트/Cheese Crust /芝心边 / 芝士边 /Viền phô mai.",
+      "names": {
+        "ko": "치즈 크러스트",
+        "vi": "Viền phô mai",
+        "zh": "芝心边",
+        "en": "Cheese Crust"
+      },
+      "updatedAt": "2026-07-18T13:48:26.402Z"
+    },
+    "option-value:4fdd345d-483e-4f95-a0c4-73faf37ffd0c:fcb6956f-c11e-4e08-83fb-9249b9e938b4": {
+      "fingerprint": "05fff753bbdc330f4666952d82c2d2a1bf3a6231a10c2ad3f93fcacf277baca0",
+      "sourceName": "치즈바이트/Cheese Bites Edge /芝士小球边 / 芝士咬边 / Viên phô mai",
+      "names": {
+        "ko": "치즈 바이트",
+        "vi": "Viền viên phô mai",
+        "zh": "芝士小球边",
+        "en": "Cheese Bites Crust"
+      },
+      "updatedAt": "2026-07-18T13:48:26.402Z"
+    },
+    "option-value:4fdd345d-483e-4f95-a0c4-73faf37ffd0c:7b862bfc-fac4-4195-a9cd-c3959fa71f82": {
+      "fingerprint": "ac813fcf4c6d85b3a2510dfad91ae85260f58a0a53b297f9638fd8c758b7d117",
+      "sourceName": "체다엣지/Cheddar Cheese Edge /切达芝士外沿 /Viền bánh rắc phô mai cheddar.",
+      "names": {
+        "ko": "체다 엣지",
+        "vi": "Viền phô mai cheddar",
+        "zh": "切达芝士边",
+        "en": "Cheddar Cheese Crust"
+      },
+      "updatedAt": "2026-07-18T13:48:26.402Z"
+    },
+    "option-group:bd5ba827-b64d-4910-a24a-86fa7a8e29cd": {
+      "fingerprint": "2708418dd179807bf2a58a5dd6a3bce3397d2cdde63df8d513f2e5f48e970292",
+      "sourceName": "피자옵션",
+      "names": {
+        "ko": "피자 옵션",
+        "vi": "Tùy chọn pizza",
+        "zh": "披萨选项",
+        "en": "Pizza Options"
+      },
+      "updatedAt": "2026-07-18T13:48:26.402Z"
+    },
+    "option-value:bd5ba827-b64d-4910-a24a-86fa7a8e29cd:4146e08c-e39b-48f7-932f-14b67c082573": {
+      "fingerprint": "1d61f023d2842bdbca9177b3f0d7f1006de7c821bb400c8d0f3e9a90a8ac85ef",
+      "sourceName": "불고기 컴비네이션/Bulgogi Combination Pizza/牛肉综合披萨/thập cẩm bulgogi.",
+      "names": {
+        "ko": "불고기 컴비네이션 피자",
+        "vi": "Pizza thập cẩm bulgogi",
+        "zh": "牛肉综合披萨",
+        "en": "Bulgogi Combination Pizza"
+      },
+      "updatedAt": "2026-07-18T13:48:26.402Z"
+    },
+    "option-value:bd5ba827-b64d-4910-a24a-86fa7a8e29cd:39acdb4e-7231-478d-845c-20e9600a5879": {
+      "fingerprint": "f71c4c2c15d3544234f927531fadcd9aedc3f22bd5e0ed6f6fbfdc5d65d4452a",
+      "sourceName": "옥수수피자/Corn Pizza /玉米披萨/Pizza bắp",
+      "names": {
+        "ko": "옥수수 피자",
+        "vi": "Pizza bắp",
+        "zh": "玉米披萨",
+        "en": "Corn Pizza"
+      },
+      "updatedAt": "2026-07-18T13:48:30.734Z"
+    },
+    "option-value:bd5ba827-b64d-4910-a24a-86fa7a8e29cd:b865b334-9203-4d79-bb19-39ae47400d62": {
+      "fingerprint": "764bdaf42e5697d04351f887bd74a55222bd62c04c4feaa3bd0a9ea9bbf523e6",
+      "sourceName": "하와이안 피자/Hawaiian Pizza/夏威夷披萨/Pizza Hawaii",
+      "names": {
+        "ko": "하와이안 피자",
+        "vi": "Pizza Hawaii",
+        "zh": "夏威夷披萨",
+        "en": "Hawaiian Pizza"
+      },
+      "updatedAt": "2026-07-18T13:48:30.734Z"
+    },
+    "option-value:bd5ba827-b64d-4910-a24a-86fa7a8e29cd:333a8be1-fd83-41e1-b92a-45a16306df09": {
+      "fingerprint": "a7f3d98985501fc67fc70add51d827600f8fb572a3bd76fbd0977669f0e0fe83",
+      "sourceName": "쉬림프 피자/Shrimp Pizza/虾仁披萨/Pizza tôm.",
+      "names": {
+        "ko": "쉬림프 피자",
+        "vi": "Pizza tôm",
+        "zh": "虾仁披萨",
+        "en": "Shrimp Pizza"
+      },
+      "updatedAt": "2026-07-18T13:48:30.734Z"
+    },
+    "option-value:bd5ba827-b64d-4910-a24a-86fa7a8e29cd:b98042d3-d24f-465f-af43-4b2685767936": {
+      "fingerprint": "ed459fefa1f1d8b6e38bd40a54eac1ea97ce18259644734849ba46127c6d9cea",
+      "sourceName": "불닭피자/Spicy Chicken Pizza/火辣鸡肉披萨/Pizza gà cay.",
+      "names": {
+        "ko": "불닭 피자",
+        "vi": "Pizza gà cay",
+        "zh": "火辣鸡肉披萨",
+        "en": "Spicy Chicken Pizza"
+      },
+      "updatedAt": "2026-07-18T13:48:30.734Z"
+    },
+    "option-value:bd5ba827-b64d-4910-a24a-86fa7a8e29cd:38ee07d3-f641-4713-b136-8cef26d57e26": {
+      "fingerprint": "d050fd62bd51ac6a5e7fffcc6a841704b90d87d65d0ce83fa7be5e2242ce9e9d",
+      "sourceName": "치킨 데리야끼 피자/Chicken Teriyaki Pizza/照烧鸡肉披萨/gà sốt teriyaki.",
+      "names": {
+        "ko": "치킨 데리야끼 피자",
+        "vi": "Pizza gà sốt teriyaki",
+        "zh": "照烧鸡肉披萨",
+        "en": "Chicken Teriyaki Pizza"
+      },
+      "updatedAt": "2026-07-18T13:48:30.734Z"
+    },
+    "option-value:bd5ba827-b64d-4910-a24a-86fa7a8e29cd:77d4ca58-ed42-473d-be65-a494039ffdf5": {
+      "fingerprint": "a3559af851c2a1441ff600fc22267beee7f2e998ecf21cc4309eb4504f4c62a3",
+      "sourceName": "베이컨 포테이토 피자/Bacon Potato Pizza/培根土豆披萨/Pizza khoai tây thịt xông khói.",
+      "names": {
+        "ko": "베이컨 포테이토 피자",
+        "vi": "Pizza khoai tây thịt xông khói",
+        "zh": "培根土豆披萨",
+        "en": "Bacon Potato Pizza"
+      },
+      "updatedAt": "2026-07-18T13:48:30.734Z"
+    },
+    "option-value:bd5ba827-b64d-4910-a24a-86fa7a8e29cd:c53ec157-0322-4e2c-b2e7-afd039459f10": {
+      "fingerprint": "df455f4a36bbfaf8e0cf8e8fccf697fba33392b2f6555e684fe70d795a119016",
+      "sourceName": "페퍼로니 체다 피자Pepperoni Cheddar Pizza/切达芝士意大利香肠披萨 /Pizza pepperoni cheddar.",
+      "names": {
+        "ko": "페퍼로니 체다 피자",
+        "vi": "Pizza pepperoni phô mai cheddar",
+        "zh": "切达芝士意大利香肠披萨",
+        "en": "Pepperoni Cheddar Pizza"
+      },
+      "updatedAt": "2026-07-18T13:48:30.734Z"
+    },
+    "option-value:bd5ba827-b64d-4910-a24a-86fa7a8e29cd:569f318e-7298-4103-b8b6-ca3a61264757": {
+      "fingerprint": "6ca162cff3f3bc70dbc6e218076620b4a9db702c7c9f95c44d291d97a1de19bb",
+      "sourceName": "고구마 피자/Sweet Potato Pizza/地瓜披萨/Pizza khoai lang",
+      "names": {
+        "ko": "고구마 피자",
+        "vi": "Pizza khoai lang",
+        "zh": "地瓜披萨",
+        "en": "Sweet Potato Pizza"
+      },
+      "updatedAt": "2026-07-18T13:48:30.734Z"
+    },
+    "option-group:6274f44c-9256-418a-a59d-20e04e651fa1": {
+      "fingerprint": "57f8c46a0cb177b3db131ec513c85603629014db2dc40c762d5dc6ea197a9b76",
+      "sourceName": "핫 후라이드 옵션",
+      "names": {
+        "ko": "핫 후라이드 옵션",
+        "vi": "Tùy chọn gà rán cay",
+        "zh": "香辣炸鸡选项",
+        "en": "Hot Fried Chicken Options"
+      },
+      "updatedAt": "2026-07-18T13:48:30.734Z"
+    },
+    "option-value:6274f44c-9256-418a-a59d-20e04e651fa1:16b9b984-3e8c-47a8-818a-20831efab38f": {
+      "fingerprint": "a26c1c5c336598720889ba288e70154cc2086dccf21bf2722c8532a1d051211e",
+      "sourceName": "순살치킨",
+      "names": {
+        "ko": "순살치킨",
+        "vi": "Gà không xương",
+        "zh": "无骨炸鸡",
+        "en": "Boneless Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:30.734Z"
+    },
+    "option-value:6274f44c-9256-418a-a59d-20e04e651fa1:234ab6b8-1567-43f7-a177-7dc2cdcb9f9d": {
+      "fingerprint": "7ab6c3599f272bc3b73ea6fcb839794fd600c81f41ec32d694f6bdba46e862a7",
+      "sourceName": "뼈치킨",
+      "names": {
+        "ko": "뼈치킨",
+        "vi": "Gà có xương",
+        "zh": "带骨炸鸡",
+        "en": "Bone-in Chicken"
+      },
+      "updatedAt": "2026-07-18T13:48:30.734Z"
+    }
+  }
 }
