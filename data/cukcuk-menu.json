@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-07-18 11:18:46",
-    "finished_at": "2026-07-18 11:18:57",
+    "started_at": "2026-07-18 13:23:04",
+    "finished_at": "2026-07-18 13:23:35",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다."
@@ -3519,18 +3519,6 @@
       "revision": 1,
       "values": [
         {
-          "id": "8c678825-c2fb-49d6-b69a-29bec1aebfda",
-          "names": {
-            "ko": "핫후라이드",
-            "vi": "Gà rán cay",
-            "zh": "辣味炸鸡",
-            "en": "Hot Fried Chicken"
-          },
-          "additionalPrice": 21600,
-          "visible": true,
-          "sortOrder": 0
-        },
-        {
           "id": "a4eb6972-30d0-4b33-bb74-34140ec3c70f",
           "names": {
             "ko": "파닭/Green Onion Chicken /葱香炸鸡（芥末酱)/Gà hành lá (sốt mù tạt).",
@@ -3540,7 +3528,7 @@
           },
           "additionalPrice": 0,
           "visible": true,
-          "sortOrder": 1
+          "sortOrder": 0
         },
         {
           "id": "45fd300a-5e33-4808-b672-467a591fbd2c",
@@ -3552,7 +3540,7 @@
           },
           "additionalPrice": 0,
           "visible": true,
-          "sortOrder": 2
+          "sortOrder": 1
         },
         {
           "id": "a1692666-805d-4b50-bc70-494e596d5079",
@@ -3564,7 +3552,7 @@
           },
           "additionalPrice": 0,
           "visible": true,
-          "sortOrder": 3
+          "sortOrder": 2
         },
         {
           "id": "9451c3d2-1ec7-4e62-8c6b-52684a5b205f",
@@ -3576,7 +3564,7 @@
           },
           "additionalPrice": 0,
           "visible": true,
-          "sortOrder": 4
+          "sortOrder": 3
         },
         {
           "id": "364f50ef-8710-41ac-9e4c-73209d7a4c89",
@@ -3588,19 +3576,7 @@
           },
           "additionalPrice": 0,
           "visible": true,
-          "sortOrder": 5
-        },
-        {
-          "id": "3cdcdc85-9cd5-4992-a117-80a05e10b5c4",
-          "names": {
-            "ko": "매운양념/Hot & Spicy Chicken/韩式辣酱炸鸡/Gà sốt cay HQ",
-            "vi": "",
-            "zh": "",
-            "en": ""
-          },
-          "additionalPrice": 21600,
-          "visible": true,
-          "sortOrder": 6
+          "sortOrder": 4
         },
         {
           "id": "9b8f3856-60ff-4d08-b111-9e87ea20e22e",
@@ -3612,19 +3588,7 @@
           },
           "additionalPrice": 0,
           "visible": true,
-          "sortOrder": 7
-        },
-        {
-          "id": "422a688d-f0ef-421d-ada4-a1a744efff08",
-          "names": {
-            "ko": "파닭/Green Onion Chicken /葱香炸鸡（芥末酱)/Gà hành lá (sốt mù tạt)",
-            "vi": "",
-            "zh": "",
-            "en": ""
-          },
-          "additionalPrice": 21600,
-          "visible": true,
-          "sortOrder": 8
+          "sortOrder": 5
         },
         {
           "id": "641303df-1c29-4e1d-bc2b-de7ce53a43db",
@@ -3636,7 +3600,7 @@
           },
           "additionalPrice": 0,
           "visible": true,
-          "sortOrder": 9
+          "sortOrder": 6
         },
         {
           "id": "2fa8c6f6-67da-4899-9c03-df65847fa67b",
@@ -3648,7 +3612,7 @@
           },
           "additionalPrice": 0,
           "visible": true,
-          "sortOrder": 10
+          "sortOrder": 7
         },
         {
           "id": "a6629165-2c6e-4717-945f-efa07046c100",
@@ -3660,19 +3624,7 @@
           },
           "additionalPrice": 0,
           "visible": true,
-          "sortOrder": 11
-        },
-        {
-          "id": "11c89f26-5064-4a1e-afce-fcc3a1d2e945",
-          "names": {
-            "ko": "스노윙치킨 / Gà phủ bột phô mai / 雪花芝士粉炸鸡 / Snowing Cheese Powder Chicken",
-            "vi": "",
-            "zh": "",
-            "en": ""
-          },
-          "additionalPrice": 21600,
-          "visible": true,
-          "sortOrder": 12
+          "sortOrder": 8
         }
       ],
       "menuIds": [
@@ -4389,5 +4341,15 @@
         "0cb6c0d0-0b9d-4813-96d5-606287423eb8"
       ]
     }
-  ]
+  ],
+  "translation": {
+    "provider": "openai",
+    "model": "gpt-5.6-terra",
+    "status": "not_configured",
+    "entityCount": 275,
+    "cacheHits": 0,
+    "translated": 0,
+    "pendingCount": 264,
+    "updatedAt": "2026-07-18T13:23:40.368Z"
+  }
 }
