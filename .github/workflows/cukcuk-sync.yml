@@ -9,7 +9,7 @@ on:
       - ".github/workflows/cukcuk-sync.yml"
       - "scripts/translate-menu-data.mjs"
   schedule:
-    - cron: "*/30 * * * *"
+    - cron: "*/5 * * * *"
 
 concurrency:
   group: cukcuk-menu-sync
