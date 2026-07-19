@@ -1,0 +1,16 @@
+{
+  "$schema": "node_modules/wrangler/config-schema.json",
+  "name": "dabang-cukcuk-order-api",
+  "main": "src/index.js",
+  "compatibility_date": "2026-07-19",
+  "workers_dev": true,
+  "vars": {
+    "CUKCUK_DOMAIN": "dabang",
+    "CUKCUK_APP_ID": "CUKCUKOpenPlatform",
+    "CUKCUK_BRANCH_ID": "430a00af-29db-4f30-b8f8-e87bdb793ab0",
+    "MENU_DATA_URL": "https://raw.githubusercontent.com/kimsuhoe01-creator/dabang/main/data/cukcuk-menu.json"
+  },
+  "secrets": {
+    "required": ["CUKCUK_SECRET_KEY"]
+  }
+}

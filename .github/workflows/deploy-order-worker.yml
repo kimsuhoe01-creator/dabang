@@ -1,0 +1,32 @@
+name: Deploy CUKCUK order worker
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [main]
+    paths:
+      - "cloudflare-order-worker/**"
+      - ".github/workflows/deploy-order-worker.yml"
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v6
+      - uses: actions/setup-node@v6
+        with:
+          node-version: 24
+      - name: Test order worker
+        working-directory: cloudflare-order-worker
+        run: npm test
+      - name: Deploy order worker
+        uses: cloudflare/wrangler-action@v3
+        with:
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
+          workingDirectory: cloudflare-order-worker
+          secrets: |
+            CUKCUK_SECRET_KEY
+        env:
+          CUKCUK_SECRET_KEY: ${{ secrets.CUKCUK_SECRET_KEY }}
