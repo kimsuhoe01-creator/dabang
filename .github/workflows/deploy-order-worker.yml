@@ -26,6 +26,7 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           workingDirectory: cloudflare-order-worker
+          wranglerVersion: "4.112.0"
           secrets: |
             CUKCUK_SECRET_KEY
         env:
