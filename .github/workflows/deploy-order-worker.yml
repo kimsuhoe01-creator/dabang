@@ -27,7 +27,12 @@ jobs:
           accountId: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           workingDirectory: cloudflare-order-worker
           wranglerVersion: "4.112.0"
-          secrets: |
-            CUKCUK_SECRET_KEY
+          command: deploy
+      - name: Upload CUKCUK secret
+        working-directory: cloudflare-order-worker
         env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}
           CUKCUK_SECRET_KEY: ${{ secrets.CUKCUK_SECRET_KEY }}
+        shell: bash
+        run: printf '%s' "$CUKCUK_SECRET_KEY" | npx --yes wrangler@4.112.0 secret put CUKCUK_SECRET_KEY
