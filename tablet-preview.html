@@ -3,6 +3,14 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#171717">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="DABANG Order">
+<link rel="manifest" href="manifest.webmanifest">
+<link rel="icon" type="image/png" sizes="32x32" href="assets/pwa/icon-32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="assets/pwa/icon-180.png">
 <title>DABANG Chicken Tablet Menu</title>
 <style>
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,"Noto Sans KR","Noto Sans SC","Microsoft YaHei","PingFang SC","Segoe UI",sans-serif;color:#1d1b18;background:#f3eee5}button{font:inherit;cursor:pointer}:root{--red:#ff3344;--yellow:#ffdf00;--black:#111;--cream:#f3eee5;--white:#fff}
@@ -34,6 +42,8 @@ html[lang="zh"] body,html[lang="zh"] button,html[lang="zh"] input{font-family:"M
 .option-dialog{width:min(980px,calc(100vw - 48px));max-height:calc(100vh - 36px);border-radius:26px}.option-dialog .dialog-head{padding:23px 27px 18px}.option-dialog .dialog-head h2{font-size:27px}.option-dialog .dialog-body{padding:20px 25px 25px;background:#f6f3ee}.option-dialog .option-group{margin:0 0 18px;padding:18px;border:1px solid #e2ddd5;border-radius:19px;background:#fff;box-shadow:0 5px 18px #2c1b0c0a}.option-dialog .option-group:last-child{margin-bottom:0}.option-dialog .option-group.invalid{margin-left:0;margin-right:0;padding:18px;background:#fff4f5;border-color:#ec9099;box-shadow:0 0 0 2px #ef7b86}.option-dialog .option-group-head{margin-bottom:13px}.option-dialog .option-group-head h3{font-size:18px;letter-spacing:-.25px}.option-dialog .option-values{grid-template-columns:repeat(2,minmax(0,1fr));gap:11px}.option-dialog .option-value{position:relative;min-height:84px;align-items:flex-start;padding:15px 45px 14px 15px;border-color:#ddd7ce;border-radius:15px;background:linear-gradient(145deg,#fff,#fbfaf8);box-shadow:0 3px 10px #3b24100a}.option-dialog .option-value:hover{border-color:#aaa197;transform:translateY(-1px);box-shadow:0 6px 14px #3b241012}.option-dialog .option-value:has(input:checked){border-color:var(--ui-red);background:linear-gradient(145deg,#fffafa,#fff1f2);box-shadow:0 0 0 1px var(--ui-red),0 6px 14px #df2c4014}.option-dialog .option-value input{margin-top:2px}.option-value-copy{display:flex;min-width:0;flex:1;flex-direction:column;align-self:stretch;justify-content:space-between;gap:9px}.option-dialog .option-value-name{font-size:16px;line-height:1.35;word-break:keep-all}.option-dialog .option-value-price{align-self:flex-start;padding:4px 7px;border-radius:7px;background:#fff0f1;font-size:12px}.option-dialog .option-value-price.free{background:#f0ede8}.option-check{position:absolute;right:14px;top:14px;display:grid;place-items:center;width:25px;height:25px;border:1px solid #dcd6ce;border-radius:50%;background:#fff;color:transparent;font-size:13px;font-weight:900}.option-value:has(input:checked) .option-check{border-color:var(--ui-red);background:var(--ui-red);color:#fff}.option-dialog .dialog-foot{padding:17px 27px 21px}.option-dialog .dialog-actions button{min-height:56px;font-size:15px}
 .start-brand{position:relative;isolation:isolate;overflow:hidden;padding:44px 32px;background:linear-gradient(155deg,#111 0%,#181818 58%,#101010 100%)}.start-brand:before{content:"";position:absolute;z-index:-1;width:210px;height:210px;right:-118px;top:-85px;border:1px solid #ffffff12;border-radius:50%;box-shadow:0 0 0 38px #ffffff06,0 0 0 76px #ffffff03}.start-brand:after{content:"";position:absolute;z-index:-1;width:120px;height:4px;left:32px;top:0;border-radius:0 0 5px 5px;background:linear-gradient(90deg,var(--ui-red) 0 38%,var(--ui-yellow) 38% 100%)}.start-brand-lockup{position:relative}.start-brand-eyebrow{display:flex;align-items:center;gap:9px;color:#d5d5d5;font-size:10px;font-weight:800;letter-spacing:2.3px}.start-brand-dot{width:8px;height:8px;border-radius:3px;background:var(--ui-red);box-shadow:11px 0 0 var(--ui-yellow)}.start-brand-title{display:flex!important;flex-direction:column;margin-top:25px;color:#fff!important;font-size:42px!important;font-weight:900!important;line-height:.88!important;letter-spacing:-2px}.start-brand-title span,.start-brand-title em{display:block}.start-brand-title em{margin-top:8px;color:var(--ui-yellow);font-style:normal}.start-brand-subtitle{margin:18px 0 0;padding-top:15px;border-top:1px solid #333;color:#858585;font-size:9px;font-weight:800;letter-spacing:1.8px}.start-brand-guide{position:relative;padding-top:20px;border-top:1px solid #303030}.start-step-pill{display:inline-flex;align-items:center;min-height:28px;padding:0 10px;border:1px solid #3b3b3b;border-radius:999px;background:#1d1d1d;color:#d1d1d1!important;font-size:9px!important;font-weight:900;letter-spacing:1.4px!important}.start-brand-guide>p{max-width:180px;margin:14px 0 18px;color:#fff;font-size:14px;font-weight:750;line-height:1.55;word-break:keep-all}.start-guide-line{display:flex;align-items:center;gap:9px;color:#707070;font-size:8px;font-weight:800;letter-spacing:1.1px}.start-guide-line i{width:24px;height:2px;border-radius:2px;background:var(--ui-red);box-shadow:13px 0 0 -0.5px var(--ui-yellow)}
 .option-dialog .option-value input{position:absolute;width:1px;height:1px;margin:0;opacity:0;pointer-events:none}
+.start-panel{position:relative}.install-app-button{position:absolute;right:22px;top:22px;z-index:3;min-height:43px;padding:0 15px;border:1px solid #d6d0c7;border-radius:12px;background:#fff;color:#171717;font-size:13px;font-weight:850;box-shadow:0 5px 16px #2c1b0c12}.install-app-button:hover{border-color:var(--ui-red);color:var(--ui-red)}
+.app-update-bar{position:fixed;left:50%;bottom:22px;z-index:100;display:flex;align-items:center;gap:16px;width:min(560px,calc(100vw - 40px));padding:13px 14px 13px 18px;border:1px solid #343434;border-radius:15px;background:#171717;color:#fff;box-shadow:0 18px 45px #0006;transform:translateX(-50%)}.app-update-bar span{flex:1;font-size:13px;font-weight:700;line-height:1.45}.app-update-bar button{flex:0 0 auto;min-height:42px;padding:0 15px;border:0;border-radius:10px;background:var(--ui-yellow);color:#171717;font-size:13px;font-weight:900}.app-update-bar[hidden]{display:none}
 @media(max-width:1040px){.rail-heading{padding-left:10px}.rail-heading strong{font-size:18px}.dialog-panel{width:min(680px,calc(100vw - 32px));max-height:calc(100vh - 32px)}.option-dialog{width:min(900px,calc(100vw - 32px))}.dialog-layer{padding:16px}.cart-line{grid-template-columns:66px minmax(0,1fr) auto}.cart-line-photo{width:66px}}
 @media(max-width:760px){.option-dialog .option-values{grid-template-columns:1fr}.option-dialog .dialog-body{padding:15px}.option-dialog .option-group{padding:14px}.option-dialog .dialog-head,.option-dialog .dialog-foot{padding-left:18px;padding-right:18px}}
 </style>
@@ -41,6 +51,7 @@ html[lang="zh"] body,html[lang="zh"] button,html[lang="zh"] input{font-family:"M
 <body>
 <div class="start-flow" id="startFlow" role="dialog" aria-modal="true">
  <div class="start-panel">
+  <button class="install-app-button" id="installAppButton" type="button" hidden onclick="installTabletApp()">앱 설치</button>
   <aside class="start-brand"><div class="start-brand-lockup"><div class="start-brand-eyebrow"><span class="start-brand-dot" aria-hidden="true"></span><span>DABANG CHICKEN</span></div><strong class="start-brand-title"><span>TABLE</span><em>ORDER</em></strong><p class="start-brand-subtitle">SMART TABLE SERVICE</p></div><div class="start-brand-guide"><small class="start-step-pill" id="startProgress">STEP 1 / 2</small><p id="startHint">직원이 테이블을 선택해 주세요.</p><div class="start-guide-line" aria-hidden="true"><i></i><span>SELECT · ORDER · ENJOY</span></div></div></aside>
   <section class="start-step" id="tableStep"><span class="start-kicker">STAFF · SELECT TABLE</span><h1 id="tableTitle">테이블을 선택해 주세요</h1><p id="tableSubtitle">직원이 먼저 테이블을 선택한 뒤 손님에게 태블릿을 전달합니다.</p><div class="table-list" id="tableList"></div></section>
   <section class="start-step hidden" id="languageStep"><div class="start-top"><span class="start-kicker">WELCOME</span><button class="back-button" onclick="showTableStep()">← 테이블 변경</button></div><h1>언어를 선택해 주세요</h1><p>Please select your language · Vui lòng chọn ngôn ngữ · 请选择语言</p><div class="language-cards" id="languageCards"></div></section>
@@ -59,6 +70,7 @@ html[lang="zh"] body,html[lang="zh"] button,html[lang="zh"] input{font-family:"M
  </div>
 </div>
 <div class="toast" id="toast"></div>
+<div class="app-update-bar" id="appUpdateBar" role="status" hidden><span>새 버전이 준비됐습니다. 주문이 끝난 뒤 업데이트해 주세요.</span><button type="button" onclick="applyAppUpdate()">지금 업데이트</button></div>
 <div class="dialog-layer" id="optionModal" aria-hidden="true" onclick="if(event.target===this)closeOptionModal()">
  <section class="dialog-panel option-dialog" role="dialog" aria-modal="true" aria-labelledby="optionMenuName">
   <header class="dialog-head"><div><span class="dialog-kicker" id="optionKicker">옵션 선택</span><h2 id="optionMenuName"></h2><p id="optionBasePrice"></p></div><button class="dialog-close" type="button" aria-label="닫기" onclick="closeOptionModal()">×</button></header>
@@ -484,8 +496,67 @@ function restartForNextGuest(force=false){
  cartItems=[];cart=0;cartTotal=0;optionDraft=null;selectedTable=null;active='featured';dialogOpener=null;
  deactivateDialogLayer(document.getElementById('optionModal'),false);deactivateDialogLayer(document.getElementById('cartModal'),false);deactivateDialogLayer(document.getElementById('successModal'),false);sessionStorage.removeItem('dabangSelectedTable');document.getElementById('tableName').textContent='-';
  const app=document.getElementById('tabletApp');app.setAttribute('inert','');app.setAttribute('aria-hidden','true');start.classList.remove('hidden');start.removeAttribute('aria-hidden');showTableStep();render({preserveScroll:false});document.getElementById('menuContent').scrollTop=0;
+ if(typeof appUpdatePending!=='undefined'&&appUpdatePending)setTimeout(applyAppUpdate,0);
 }
 document.addEventListener('keydown',event=>{if(event.key==='Tab'){trapDialogFocus(event);return}if(event.key!=='Escape')return;if(document.getElementById('optionModal').classList.contains('open'))closeOptionModal();else if(document.getElementById('cartModal').classList.contains('open'))closeCart()});
+
+let deferredInstallPrompt=null,pwaRegistration=null,pwaReloading=false,appUpdatePending=false,appDocumentVersion='';
+const hadServiceWorkerController={value:Boolean(navigator.serviceWorker?.controller)};
+function pwaCanReloadNow(){return !orderSending&&!cartItems.length&&!document.querySelector('.dialog-layer.open')}
+function showAppUpdate(){document.getElementById('appUpdateBar').hidden=false}
+function queueAppRefresh(){
+ appUpdatePending=true;
+ if(pwaCanReloadNow()){pwaReloading=true;window.location.reload()}else showAppUpdate();
+}
+function applyAppUpdate(){
+ document.getElementById('appUpdateBar').hidden=true;pwaReloading=true;
+ if(pwaRegistration?.waiting)pwaRegistration.waiting.postMessage({type:'SKIP_WAITING'});
+ else window.location.reload();
+}
+async function installTabletApp(){
+ if(!deferredInstallPrompt)return;
+ deferredInstallPrompt.prompt();
+ await deferredInstallPrompt.userChoice;
+ deferredInstallPrompt=null;document.getElementById('installAppButton').hidden=true;
+}
+window.addEventListener('beforeinstallprompt',event=>{
+ event.preventDefault();deferredInstallPrompt=event;
+ if(!window.matchMedia('(display-mode: standalone)').matches)document.getElementById('installAppButton').hidden=false;
+});
+window.addEventListener('appinstalled',()=>{deferredInstallPrompt=null;document.getElementById('installAppButton').hidden=true;showToast('앱 설치가 완료됐습니다.')});
+async function checkAppDocumentUpdate(initial=false){
+ try{
+  const url=new URL('./tablet-preview.html',location.href);url.searchParams.set('update-check',Date.now());
+  const response=await fetch(url,{method:'HEAD',cache:'no-store'});if(!response.ok)return;
+  const version=response.headers.get('etag')||[response.headers.get('last-modified'),response.headers.get('content-length')].filter(Boolean).join(':');
+  if(!version)return;
+  if(initial||!appDocumentVersion){appDocumentVersion=version;return}
+  if(version!==appDocumentVersion){appDocumentVersion=version;queueAppRefresh()}
+ }catch(error){}
+}
+async function registerTabletApp(){
+ if(!('serviceWorker'in navigator))return;
+ const secureOrigin=location.protocol==='https:'||['localhost','127.0.0.1','[::1]'].includes(location.hostname);if(!secureOrigin)return;
+ try{
+  const registration=await navigator.serviceWorker.register('./service-worker.js',{scope:'./',updateViaCache:'none'});pwaRegistration=registration;
+  if(registration.waiting)registration.waiting.postMessage({type:'SKIP_WAITING'});
+  registration.addEventListener('updatefound',()=>{
+   const worker=registration.installing;if(!worker)return;
+   worker.addEventListener('statechange',()=>{if(worker.state==='installed'&&navigator.serviceWorker.controller&&registration.waiting)registration.waiting.postMessage({type:'SKIP_WAITING'})});
+  });
+  await checkAppDocumentUpdate(true);
+  setInterval(()=>{registration.update().catch(()=>{});checkAppDocumentUpdate()},5*60*1000);
+  document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible'){registration.update().catch(()=>{});checkAppDocumentUpdate()}});
+ }catch(error){console.warn('PWA registration failed',error)}
+}
+if('serviceWorker'in navigator){
+ navigator.serviceWorker.addEventListener('controllerchange',()=>{
+  if(!hadServiceWorkerController.value){hadServiceWorkerController.value=true;return}
+  if(pwaReloading){window.location.reload();return}
+  queueAppRefresh();
+ });
+ window.addEventListener('load',registerTabletApp,{once:true});
+}
 
 document.documentElement.lang=lang;render();
 renderLanguageCards();
