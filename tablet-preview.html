@@ -188,7 +188,7 @@ Object.assign(words.zh,{orderReady:'可以点餐',continueOrder:'继续选菜',s
 Object.assign(words.en,{orderReady:'Ready to order',continueOrder:'Add more items',sendOrder:'Send order',sending:'Sending…',orderNote:'Your order will be sent to the selected table. Check items and quantities first.',orderEmpty:'Add an item before ordering.',orderFailed:'Could not send the order. Please call a staff member.',previewOrder:'Preview order checked successfully.',orderSuccess:'Order sent',orderSuccessMessage:'The kitchen is checking your order.',table:'Table',orderTotal:'Order total',done:'Done'});
 const STORE_NAMES={ko:'다방치킨',vi:'Gà Dabang',zh:'Dabang 炸鸡',en:'Dabang Chicken'};
 const OTHER_CATEGORY_NAMES={ko:'기타',vi:'Món khác',zh:'其他',en:'Other'};
-const ORDER_ENDPOINT='https://dabang-tablet-admin.kimsuhoe.chatgpt.site/api/cukcuk/order';
+const ORDER_ENDPOINT='https://dabang-cukcuk-order-api.kimsuhoe01.workers.dev/api/cukcuk/order';
 let cartItems=[],optionDraft=null,cartLineSequence=0,categoryScrollFrame=0,dialogOpener=null,orderSending=false;
 
 function activateDialogLayer(modal,opener){
