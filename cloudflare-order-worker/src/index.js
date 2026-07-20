@@ -1,4 +1,4 @@
-import { createCukCukOrder, validateAndBuildOrder } from "./order.js";
+import { createOrAppendCukCukOrder, validateAndBuildOrder } from "./order.js";
 
 const ALLOWED_ORIGINS = new Set([
   "https://kimsuhoe01-creator.github.io",
@@ -26,15 +26,32 @@ export default {
         headers: { Accept: "application/json" },
         cf: { cacheTtl: 60, cacheEverything: true },
       });
-      if (!menuResponse.ok) throw new ServiceError("메뉴 기준 정보를 불러오지 못했습니다.", 503);
+      if (!menuResponse.ok) throw new ServiceError("메뉴 기준 정보를 불러오지 못했습니다.", 503, "MENU_DATA_UNAVAILABLE");
       const menuData = await menuResponse.json();
       const order = validateAndBuildOrder(payload, menuData, env.CUKCUK_BRANCH_ID);
-      const result = await createCukCukOrder(env, order);
+      const tableId = order.ListTableID[0];
+      const tableName = String(payload.table.name);
+      const coordinator = env.TABLE_ORDERS.getByName(tableId);
+      const coordinatorResponse = await coordinator.fetch("https://table-order.internal/submit", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ order, tableName }),
+      });
+      const coordinatorResult = await coordinatorResponse.json();
+      if (!coordinatorResponse.ok || coordinatorResult.ok === false) {
+        throw new ServiceError(
+          coordinatorResult.message || "CUKCUK 주문을 처리하지 못했습니다.",
+          coordinatorResponse.status,
+          coordinatorResult.code || "ORDER_ERROR",
+        );
+      }
+      const result = coordinatorResult.data || {};
       return cors(request, json({
         ok: true,
         orderId: result.Id || order.Id,
         orderNo: result.No || null,
         status: result.Status ?? null,
+        action: result.action || "created",
       }));
     } catch (error) {
       const status = Number.isInteger(error?.status) ? error.status : 502;
@@ -46,6 +63,47 @@ export default {
     }
   },
 };
+
+export class TableOrderCoordinator {
+  constructor(ctx, env) {
+    this.ctx = ctx;
+    this.env = env;
+    this.queue = Promise.resolve();
+  }
+
+  async fetch(request) {
+    if (request.method !== "POST") return json({ ok: false, message: "Method not allowed" }, 405);
+    const payload = await request.json();
+    const task = this.queue.then(() => this.submit(payload));
+    this.queue = task.catch(() => undefined);
+    return task;
+  }
+
+  async submit({ order, tableName }) {
+    try {
+      const activeOrder = await this.ctx.storage.get("activeOrder");
+      const result = await createOrAppendCukCukOrder(
+        this.env,
+        order,
+        tableName,
+        activeOrder?.orderId || null,
+      );
+      await this.ctx.storage.put("activeOrder", {
+        orderId: result.Id || order.Id,
+        orderNo: result.No || null,
+        updatedAt: new Date().toISOString(),
+      });
+      return json({ ok: true, data: result });
+    } catch (error) {
+      const status = Number.isInteger(error?.status) ? error.status : 502;
+      return json({
+        ok: false,
+        code: typeof error?.code === "string" ? error.code : "ORDER_ERROR",
+        message: error instanceof Error ? error.message : "주문 처리 중 오류가 발생했습니다.",
+      }, status);
+    }
+  }
+}
 
 export class ServiceError extends Error {
   constructor(message, status = 400, code = "INVALID_ORDER") {
