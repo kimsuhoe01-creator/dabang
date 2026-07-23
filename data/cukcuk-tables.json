@@ -15,8 +15,8 @@
         "MapObjectName": "B-12",
         "AreaID": "c60addae-088a-49b5-ab5e-f4d0ce6195bf",
         "AreaName": "B-",
-        "IsAvailable": false,
-        "Status": 1
+        "IsAvailable": true,
+        "Status": 2
       },
       {
         "MapObjectID": "1b4cdb3b-d115-47ad-8a18-14ed834cb0d5",
@@ -199,8 +199,8 @@
         "MapObjectName": "B-11",
         "AreaID": "c60addae-088a-49b5-ab5e-f4d0ce6195bf",
         "AreaName": "B-",
-        "IsAvailable": false,
-        "Status": 1
+        "IsAvailable": true,
+        "Status": 2
       },
       {
         "MapObjectID": "80c2b7d2-bb6f-4f65-a043-8c0da261ff3b",
