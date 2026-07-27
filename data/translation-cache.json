@@ -3025,6 +3025,28 @@
         "en": "Bone-in Chicken"
       },
       "updatedAt": "2026-07-18T13:48:30.734Z"
+    },
+    "option-value:9bba9fb9-e294-4a63-b9db-a5e43df5012f:5da7b878-3bf7-4557-ba06-32020a39ffd1": {
+      "fingerprint": "c34aacfe6e42e4ec90a7b0344f7d4199d3d605d4f52141bc6ff2c4d481aa8082",
+      "sourceName": "마니치 치킨",
+      "names": {
+        "ko": "마니치 치킨",
+        "vi": "Gà MANICHI",
+        "zh": "蒜香MANICHI炸鸡",
+        "en": "MANICHI Garlic Chicken"
+      },
+      "updatedAt": "2026-07-27T17:59:56.769Z"
+    },
+    "option-value:b2fbfcca-55f5-4718-87d4-96627091764a:b3a7e4ce-1840-4d17-9636-6e91cd32fd36": {
+      "fingerprint": "ac273a3dfb2915d0aaa10599b095df6cb0a88275c491f85ca41a73c6806ff395",
+      "sourceName": "마니치 치킨",
+      "names": {
+        "ko": "마니치 치킨",
+        "vi": "Gà MANICHI",
+        "zh": "蒜香MANICHI炸鸡",
+        "en": "MANICHI Garlic Chicken"
+      },
+      "updatedAt": "2026-07-27T17:59:56.770Z"
     }
   }
 }
