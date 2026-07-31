@@ -3047,6 +3047,17 @@
         "en": "MANICHI Garlic Chicken"
       },
       "updatedAt": "2026-07-27T17:59:56.770Z"
+    },
+    "option-value:8491b574-2973-47f0-8d46-5c489fd9bba8:6cb14b6d-442e-4e32-9139-a713a2a374e7": {
+      "fingerprint": "0ec32b21e4b0796cd454b9d9f19e2a0d84dea05ebbf2de9915c387a66a9cf25c",
+      "sourceName": "바닐라 아이스크림 110ml",
+      "names": {
+        "ko": "바닐라 아이스크림 110ml",
+        "vi": "Kem vani 110ml",
+        "zh": "香草冰淇淋 110ml",
+        "en": "Vanilla Ice Cream 110ml"
+      },
+      "updatedAt": "2026-07-31T14:30:00.630Z"
     }
   }
 }
