@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-08-01 15:15:04",
-    "finished_at": "2026-08-01 15:15:12",
+    "started_at": "2026-08-01 16:13:13",
+    "finished_at": "2026-08-01 16:13:22",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다."
@@ -989,7 +989,7 @@
         "zh": "雪花芝士粉炸鸡",
         "en": "Snowing Cheese Powder Chicken"
       },
-      "price": 410400,
+      "price": 399600,
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
@@ -4374,6 +4374,6 @@
     "cacheHits": 277,
     "translated": 0,
     "pendingCount": 0,
-    "updatedAt": "2026-08-01T15:15:17.758Z"
+    "updatedAt": "2026-08-01T16:13:27.210Z"
   }
 }
