@@ -31,8 +31,8 @@
         "MapObjectName": "take02",
         "AreaID": "20fb3f9d-e2d5-43f7-8e2d-e9506c3c4e15",
         "AreaName": "배달",
-        "IsAvailable": false,
-        "Status": 1
+        "IsAvailable": true,
+        "Status": 2
       },
       {
         "MapObjectID": "0490f9c0-917f-45dc-a697-2c3151e4749f",
@@ -63,8 +63,8 @@
         "MapObjectName": "B-13",
         "AreaID": "c60addae-088a-49b5-ab5e-f4d0ce6195bf",
         "AreaName": "B-",
-        "IsAvailable": true,
-        "Status": 2
+        "IsAvailable": false,
+        "Status": 1
       },
       {
         "MapObjectID": "1dc82102-e8fa-4522-b31c-526a34e02695",
@@ -135,8 +135,8 @@
         "MapObjectName": "B-09",
         "AreaID": "c60addae-088a-49b5-ab5e-f4d0ce6195bf",
         "AreaName": "B-",
-        "IsAvailable": true,
-        "Status": 2
+        "IsAvailable": false,
+        "Status": 1
       },
       {
         "MapObjectID": "692573da-1ec5-4652-aa69-69fe9b2b5612",
