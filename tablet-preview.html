@@ -117,8 +117,7 @@ const words={
  zh:{featured:'推荐',section:'推荐菜单',reset:'重新选桌',table:'当前桌号',cart:'购物车',itemSuffix:'件',menuSuffix:'道菜',add:'加入',sold:'售罄',photoSoon:'图片准备中',empty:'此分类暂无菜单。',added:' 已加入购物车。',cartEmpty:'购物车是空的。',resetConfirm:'清空购物车并返回选桌页面吗？'},
  en:{featured:'Featured',section:'Featured menu',reset:'Select table again',table:'Current table',cart:'Cart',itemSuffix:'items',menuSuffix:'items',add:'Add',sold:'Sold out',photoSoon:'Photo coming soon',empty:'There are no items in this category.',added:' was added to the cart.',cartEmpty:'Your cart is empty.',resetConfirm:'Clear the cart and return to table selection?'}
 };
-const BLOCKED_TABLET_IMAGE_IDS=new Set(['b2bf24a7-1018-4953-86ce-baacae6fe06c','f0e8b2b9-eaf9-4b48-b711-ccfd158e3d81']);
-function displayMenuImage(id){return BLOCKED_TABLET_IMAGE_IDS.has(id)?'':menuImage(id)}
+function displayMenuImage(id){return menuImage(id)}
 function money(v){return new Intl.NumberFormat('vi-VN').format(v)+' ₫'}
 function renderLangs(){document.getElementById('langs').innerHTML=[['ko','KO'],['vi','VI'],['zh','ZH'],['en','EN']].map(([v,t])=>`<button type="button" class="${v===lang?'active':''}" aria-pressed="${v===lang}" onclick="setLang('${v}')">${t}</button>`).join('')}
 function categoryLabel(category){return category?.names?.[lang]||category?.names?.ko||category?.name||''}
