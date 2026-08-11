@@ -76,16 +76,16 @@
       <div class="ai-settings-layout">
         <article class="ai-settings-card ai-settings-primary">
           <div class="ai-settings-heading"><div class="ai-settings-icon">✦</div><div><span>OPENAI IMAGE EDITING</span><h3>OpenAI API 키</h3></div></div>
-          <p class="ai-settings-description">여기에서 한 번 적용하면 이 관리자 탭을 사용하는 동안 모든 메뉴 사진 편집에 공통으로 사용됩니다. 메뉴를 바꿀 때마다 다시 입력할 필요가 없습니다.</p>
+          <p class="ai-settings-description">여기에서 한 번 저장하면 이 PC의 현재 브라우저에만 보관됩니다. 관리자 페이지를 새로고침하거나 다시 열어도 자동으로 적용되며, 메뉴를 바꿀 때마다 다시 입력할 필요가 없습니다.</p>
           <label class="ai-settings-label" for="globalOpenAiApiKey">API 키 입력</label>
-          <div class="ai-settings-input-row"><input id="globalOpenAiApiKey" type="password" autocomplete="off" spellcheck="false" placeholder="sk-..."><button class="btn dark" type="button" onclick="applyOpenAIKeyFromSettings()">키 적용</button></div>
-          <div class="ai-settings-state" id="aiSettingsState"><i></i><div><strong id="aiSettingsStateTitle">키가 적용되지 않았습니다</strong><span id="aiSettingsStateDetail">OpenAI API 키를 입력하고 ‘키 적용’을 눌러주세요.</span></div></div>
-          <div class="ai-settings-actions"><button class="btn" type="button" onclick="clearOpenAIKey()">현재 탭에서 키 지우기</button><button class="btn primary" type="button" onclick="showPage('menus')">메뉴 사진 편집하러 가기</button></div>
+          <div class="ai-settings-input-row"><input id="globalOpenAiApiKey" type="password" autocomplete="off" spellcheck="false" placeholder="sk-..."><button class="btn dark" type="button" onclick="applyOpenAIKeyFromSettings()">키 저장·적용</button></div>
+          <div class="ai-settings-state" id="aiSettingsState"><i></i><div><strong id="aiSettingsStateTitle">키가 적용되지 않았습니다</strong><span id="aiSettingsStateDetail">OpenAI API 키를 입력하고 ‘키 저장·적용’을 눌러주세요.</span></div></div>
+          <div class="ai-settings-actions"><button class="btn" type="button" onclick="clearOpenAIKey()">이 브라우저에서 키 삭제</button><button class="btn primary" type="button" onclick="showPage('menus')">메뉴 사진 편집하러 가기</button></div>
         </article>
         <aside class="ai-settings-card ai-settings-security">
           <h3>키 보관 방식</h3>
-          <ul><li><strong>현재 관리자 탭에서만 유지</strong><span>다른 메뉴를 열어도 다시 입력하지 않습니다.</span></li><li><strong>파일·브라우저 저장소에 저장 안 함</strong><span>홈페이지 소스, localStorage, sessionStorage에 남기지 않습니다.</span></li><li><strong>새로고침·탭 종료 시 자동 삭제</strong><span>다시 접속했을 때는 키를 새로 적용해야 합니다.</span></li></ul>
-          <p>공개 관리자 주소이므로 매장 관리자 PC에서만 입력하고, 작업이 끝나면 키를 지우거나 탭을 닫아주세요.</p>
+          <ul><li><strong>이 PC의 현재 브라우저에만 저장</strong><span>다른 PC·휴대폰·다른 브라우저에는 키가 전달되지 않습니다.</span></li><li><strong>다시 열어도 자동 적용</strong><span>새로고침하거나 브라우저를 닫았다 열어도 같은 브라우저에서는 계속 사용할 수 있습니다.</span></li><li><strong>홈페이지 파일·GitHub에는 저장 안 함</strong><span>키는 메뉴 사진 AI 편집을 요청할 때만 주문 서버로 전달됩니다.</span></li></ul>
+          <p>이 브라우저를 함께 사용하는 사람이 있으면 저장된 키를 사용할 수 있습니다. 매장 관리자 전용 PC에서만 저장하고, 필요하면 위의 ‘이 브라우저에서 키 삭제’를 눌러주세요.</p>
         </aside>
       </div>
     </section>
@@ -580,6 +580,6 @@ function normalizeAdminTables(payload){const source=payload?.Data?.ListTable||pa
 function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window._to);window._to=setTimeout(()=>t.classList.remove('show'),2400)}
 readSavedState();document.getElementById('adminLogo').src=LOGO_DATA;document.getElementById('deviceLogo').src=LOGO_DATA;document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>showPage(b.dataset.page));document.getElementById('search').oninput=renderMenus;document.getElementById('category').onchange=renderMenus;document.getElementById('photoStatus').onchange=renderMenus;document.getElementById('featuredSearch').oninput=renderFeaturedList;langButtons('adminLangs',lang,'setLang');langButtons('templateLangs',lang,'setLang');menus.forEach(m=>{if(m.recommended===undefined)m.recommended=false});renderCategorySelect();renderMenus();renderTemplates();renderCategories();loadTableManager();fakeSync(true);
 </script>
-<script src="assets/admin-image-editor-v2.js"></script>
+<script src="assets/admin-image-editor-v3.js"></script>
 </body>
 </html>
