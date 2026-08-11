@@ -18,6 +18,7 @@
     bindEditorEvents();
     const originalOpenEdit=window.openEdit;
     window.openEdit=function(id){originalOpenEdit(id);refreshEditPhotoPanel()};
+    syncOpenAIKeyUI();
   }
 
   function editorModalMarkup(){return `
@@ -35,7 +36,7 @@
           <aside class="image-editor-controls">
             <section class="image-editor-card"><h4>1. 사진 선택</h4><p>휴대폰 사진도 가능하며 결과는 1024 × 1024로 저장됩니다.</p><div class="image-editor-toolbar" style="margin-top:11px"><button class="primary" type="button" onclick="chooseEditorImage()">사진 불러오기</button><button type="button" onclick="restoreOriginalEditorImage()">원본으로</button></div><input class="hidden" id="imageEditorFile" type="file" accept="image/jpeg,image/png,image/webp" onchange="loadEditorFile(event)"><div class="image-quality" id="imageQuality"><i></i><div><strong>사진을 선택해주세요.</strong><span>700px 미만 사진은 화질 경고를 표시합니다.</span></div></div></section>
             <section class="image-editor-card"><h4>2. 맞춤 방식</h4><p>잘라내기는 화면을 꽉 채우고, 블러 여백은 원본 전체를 살립니다.</p><div class="image-mode"><button id="imageModeCover" class="active" type="button" onclick="setEditorMode('cover')">꽉 채워 자르기</button><button id="imageModeBlur" type="button" onclick="setEditorMode('blur')">전체 보기 + 블러</button></div><div class="image-slider"><label for="imageZoom">확대</label><input id="imageZoom" type="range" min="100" max="220" value="100"><output id="imageZoomValue">100%</output></div><div class="image-slider"><label for="imageOffsetX">좌우</label><input id="imageOffsetX" type="range" min="-100" max="100" value="0"><output id="imageOffsetXValue">0</output></div><div class="image-slider"><label for="imageOffsetY">상하</label><input id="imageOffsetY" type="range" min="-100" max="100" value="0"><output id="imageOffsetYValue">0</output></div><div class="image-slider" id="blurSliderRow"><label for="imageBlur">블러</label><input id="imageBlur" type="range" min="8" max="46" value="26"><output id="imageBlurValue">26</output></div><div class="image-editor-toolbar" style="margin-top:12px"><button type="button" onclick="autoFitEditorImage()">자동으로 맞추기</button><button type="button" onclick="resetEditorAdjustments()">조절 초기화</button></div></section>
-            <section class="image-editor-card ai-image-card"><h4>✨ AI 여백 채우기</h4><p>원본을 가운데 보존하고 부족한 바깥 공간만 자연스럽게 확장합니다.</p><label class="ai-key-label" for="openAiApiKey">OpenAI API 키</label><input id="openAiApiKey" type="password" autocomplete="off" spellcheck="false" placeholder="sk-..."><div class="ai-key-actions"><button type="button" onclick="applyOpenAIKey()">키 적용</button><button class="secondary" type="button" onclick="clearOpenAIKey()">지우기</button></div><button id="aiExpandButton" type="button" onclick="expandEditorImageWithAI()">AI로 빈 공간 채우기</button><p class="ai-image-note">키는 파일이나 브라우저 저장소에 저장하지 않고 현재 탭 메모리에서만 사용합니다. 새로고침하거나 탭을 닫으면 자동으로 지워집니다. 매장 관리자 PC에서만 사용하세요.</p><div class="ai-image-status" id="aiImageStatus"></div></section>
+            <section class="image-editor-card ai-image-card"><h4>✨ AI 여백 채우기</h4><p>원본을 가운데 보존하고 부족한 바깥 공간만 자연스럽게 확장합니다.</p><div class="ai-editor-key-row"><span id="imageEditorKeyState">API 키 미적용</span><button class="secondary" type="button" onclick="openAISettingsPage()">AI 설정 열기</button></div><button id="aiExpandButton" type="button" onclick="expandEditorImageWithAI()">AI로 빈 공간 채우기</button><p class="ai-image-note">왼쪽의 ‘AI 설정’에서 키를 한 번 적용하면 모든 메뉴 사진에서 공통으로 사용할 수 있습니다.</p><div class="ai-image-status" id="aiImageStatus"></div></section>
             <div class="image-editor-save-note">가장 쉬운 저장 방법은 <strong>assets 폴더에 바로 저장</strong>입니다. 저장 후 GitHub Desktop에서 변경 파일을 커밋하고 Push하면 태블릿에 반영됩니다.</div>
           </aside>
         </div>
@@ -72,6 +73,7 @@
     document.getElementById('imageEditorModal').classList.add('open');
     document.getElementById('imageEditorModal').setAttribute('aria-hidden','false');
     setAIStatus('');
+    syncOpenAIKeyUI();
     const src=photoPreviewOverrides.get(state.menuId)||menuImage(state.menuId);
     if(!src){clearEditorImage();return}
     try{
@@ -173,7 +175,7 @@
 
   async function expandEditorImageWithAI(){
     if(!state.image){toast('먼저 원본 사진을 선택해주세요.');return}
-    if(!runtimeOpenAIKey){setAIStatus('OpenAI API 키를 입력한 뒤 ‘키 적용’을 눌러주세요.',true);document.getElementById('openAiApiKey').focus();return}
+    if(!runtimeOpenAIKey){setAIStatus('왼쪽 ‘AI 설정’에서 OpenAI API 키를 먼저 적용해주세요.',true);return}
     const button=document.getElementById('aiExpandButton');button.disabled=true;button.textContent='AI가 여백을 만드는 중…';setAIStatus('원본 중앙은 유지하고 바깥 여백만 생성하고 있습니다.');
     try{
       const {imageBlob,maskBlob}=await buildAIInput();
@@ -195,19 +197,35 @@
     return{imageBlob:await canvasBlob(input,'image/png'),maskBlob:await canvasBlob(mask,'image/png')};
   }
 
-  function applyOpenAIKey(){
-    const input=document.getElementById('openAiApiKey'),value=input.value.trim();
-    if(value.length<20){setAIStatus('올바른 OpenAI API 키를 입력해주세요.',true);input.focus();return}
+  function applyOpenAIKeyFromSettings(){
+    const input=document.getElementById('globalOpenAiApiKey'),value=input.value.trim();
+    if(value.length<20){toast('올바른 OpenAI API 키를 입력해주세요.');input.focus();return}
     runtimeOpenAIKey=value;
     input.value='';
-    input.placeholder='키 적용됨 · 새로고침하면 지워집니다';
-    setAIStatus('OpenAI API 키가 현재 탭에 적용됐습니다. 이제 AI 여백 채우기를 사용할 수 있습니다.');
+    syncOpenAIKeyUI('이 관리자 탭의 모든 메뉴 사진에서 사용할 수 있습니다.');
+    toast('OpenAI API 키가 현재 관리자 탭에 적용됐습니다.');
   }
   function clearOpenAIKey(){
     runtimeOpenAIKey='';
-    const input=document.getElementById('openAiApiKey');
-    input.value='';input.placeholder='sk-...';
+    const input=document.getElementById('globalOpenAiApiKey');
+    if(input)input.value='';
+    syncOpenAIKeyUI('키를 다시 사용하려면 새로 입력하고 적용해주세요.');
     setAIStatus('OpenAI API 키를 현재 탭에서 지웠습니다.');
+    toast('OpenAI API 키를 현재 탭에서 지웠습니다.');
+  }
+  function syncOpenAIKeyUI(detailMessage=''){
+    const ready=Boolean(runtimeOpenAIKey),stateBox=document.getElementById('aiSettingsState'),title=document.getElementById('aiSettingsStateTitle'),detail=document.getElementById('aiSettingsStateDetail'),input=document.getElementById('globalOpenAiApiKey'),editorState=document.getElementById('imageEditorKeyState');
+    if(stateBox)stateBox.classList.toggle('ready',ready);
+    if(title)title.textContent=ready?'키가 현재 탭에 적용됐습니다':'키가 적용되지 않았습니다';
+    if(detail)detail.textContent=detailMessage||(ready?'메뉴를 바꿔도 다시 입력할 필요가 없습니다.':'OpenAI API 키를 입력하고 ‘키 적용’을 눌러주세요.');
+    if(input)input.placeholder=ready?'키 적용됨 · 새로고침하면 지워집니다':'sk-...';
+    if(editorState){editorState.textContent=ready?'API 키 적용됨':'API 키 미적용';editorState.classList.toggle('ready',ready)}
+  }
+  function openAISettingsPage(){
+    closeImageEditor();
+    if(typeof closeModal==='function')closeModal();
+    if(typeof showPage==='function')showPage('ai');
+    setTimeout(()=>document.getElementById('globalOpenAiApiKey')?.focus(),50);
   }
   function aiErrorMessage(result,status){if(status===401)return'OpenAI API 키가 올바르지 않거나 사용할 수 없습니다. 키를 다시 입력하고 적용해주세요.';if(status===429)return'OpenAI 사용 한도 또는 요청 한도에 도달했습니다. 결제 상태를 확인하거나 잠시 후 다시 시도해주세요.';return result.message||'AI 이미지 편집 요청에 실패했습니다.'}
   function setAIStatus(message,error=false){const box=document.getElementById('aiImageStatus');box.textContent=message;box.className='ai-image-status'+(message?' show':'')+(error?' error':'')}
@@ -236,8 +254,9 @@
   window.downloadCurrentMenuPhoto=downloadCurrentMenuPhoto;
   window.downloadEditedImage=downloadEditedImage;
   window.saveEditedImageToFolder=saveEditedImageToFolder;
-  window.applyOpenAIKey=applyOpenAIKey;
+  window.applyOpenAIKeyFromSettings=applyOpenAIKeyFromSettings;
   window.clearOpenAIKey=clearOpenAIKey;
+  window.openAISettingsPage=openAISettingsPage;
   window.expandEditorImageWithAI=expandEditorImageWithAI;
 
   install();
