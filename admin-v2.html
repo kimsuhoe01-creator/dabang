@@ -43,6 +43,7 @@
   .translate-callout-actions{display:flex;flex:0 0 auto;gap:8px;flex-wrap:wrap;justify-content:flex-end}.translate-callout-actions .btn{white-space:nowrap}.ai-translate-status{display:inline-flex;align-items:center;gap:6px;margin-top:7px;color:#655c2c;font-size:11px;font-weight:800}.ai-translate-status:before{content:"";width:7px;height:7px;border-radius:50%;background:#28a761}
   @media(max-width:900px){.template-rule-grid{grid-template-columns:1fr 1fr}.required-toggle{grid-column:1/-1}.option-editor-grid{grid-template-columns:1fr 1fr}.option-editor-grid label:last-child{grid-column:1/-1}}
 </style>
+<link rel="stylesheet" href="assets/admin-image-editor.css">
 </head>
 <body>
 <div class="app">
@@ -560,5 +561,6 @@ function normalizeAdminTables(payload){const source=payload?.Data?.ListTable||pa
 function toast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window._to);window._to=setTimeout(()=>t.classList.remove('show'),2400)}
 readSavedState();document.getElementById('adminLogo').src=LOGO_DATA;document.getElementById('deviceLogo').src=LOGO_DATA;document.querySelectorAll('.nav button').forEach(b=>b.onclick=()=>showPage(b.dataset.page));document.getElementById('search').oninput=renderMenus;document.getElementById('category').onchange=renderMenus;document.getElementById('photoStatus').onchange=renderMenus;document.getElementById('featuredSearch').oninput=renderFeaturedList;langButtons('adminLangs',lang,'setLang');langButtons('templateLangs',lang,'setLang');menus.forEach(m=>{if(m.recommended===undefined)m.recommended=false});renderCategorySelect();renderMenus();renderTemplates();renderCategories();loadTableManager();fakeSync(true);
 </script>
+<script src="assets/admin-image-editor.js"></script>
 </body>
 </html>

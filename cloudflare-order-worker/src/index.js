@@ -1,4 +1,5 @@
 import { createOrAppendCukCukOrder, validateAndBuildOrder } from "./order.js";
+import { expandMenuImage } from "./image-edit.js";
 
 const ALLOWED_ORIGINS = new Set([
   "https://kimsuhoe01-creator.github.io",
@@ -11,6 +12,13 @@ export default {
 
     if (url.pathname === "/health" && request.method === "GET") {
       return cors(request, json({ ok: true, service: "dabang-cukcuk-order-api" }));
+    }
+
+    if (url.pathname === "/api/admin/image-expand" && request.method === "POST") {
+      if (!ALLOWED_ORIGINS.has(request.headers.get("Origin") || "")) {
+        return cors(request, json({ ok: false, code: "ORIGIN_NOT_ALLOWED", message: "허용되지 않은 관리자 요청입니다." }, 403));
+      }
+      return cors(request, await expandMenuImage(request, env));
     }
 
     if (url.pathname !== "/api/cukcuk/order" || request.method !== "POST") {
@@ -126,7 +134,7 @@ function cors(request, response) {
     response.headers.set("Access-Control-Allow-Origin", origin);
     response.headers.set("Vary", "Origin");
     response.headers.set("Access-Control-Allow-Methods", "POST, OPTIONS");
-    response.headers.set("Access-Control-Allow-Headers", "Content-Type");
+    response.headers.set("Access-Control-Allow-Headers", "Authorization, Content-Type");
   }
   return response;
 }
