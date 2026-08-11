@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-08-10 23:53:26",
-    "finished_at": "2026-08-10 23:53:34",
+    "started_at": "2026-08-11 00:39:26",
+    "finished_at": "2026-08-11 00:39:36",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다."
@@ -1789,222 +1789,6 @@
       "sortOrder": 84
     },
     {
-      "id": "9086861a-9c6c-48f1-a2bf-c20cc3c38a80",
-      "cukcukId": "9086861a-9c6c-48f1-a2bf-c20cc3c38a80",
-      "categoryId": "cukcuk-alcohol",
-      "categoryName": "주류",
-      "sourceName": "타이거 크리스탈 병맥주 | Bia Tiger Crystal chai | 虎牌水晶啤酒（瓶装） | Tiger Crystal (Bottle)",
-      "names": {
-        "ko": "타이거 크리스탈 병맥주",
-        "vi": "Bia Tiger Crystal chai",
-        "zh": "虎牌水晶啤酒（瓶装）",
-        "en": "Tiger Crystal Beer (Bottle)"
-      },
-      "price": 55000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 85
-    },
-    {
-      "id": "addccbaa-223e-4456-a73a-98b2e0d7e9ae",
-      "cukcukId": "addccbaa-223e-4456-a73a-98b2e0d7e9ae",
-      "categoryId": "cukcuk-alcohol",
-      "categoryName": "주류",
-      "sourceName": "타이거 병맥주 Tiger Beer (Bottle) 虎牌瓶装啤酒 Bia chai Tiger",
-      "names": {
-        "ko": "타이거 병맥주",
-        "vi": "Bia chai Tiger",
-        "zh": "虎牌瓶装啤酒",
-        "en": "Tiger Beer (Bottle)"
-      },
-      "price": 49500,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 86
-    },
-    {
-      "id": "b3ff9a43-637b-436f-ab7e-d3e0b3f2826f",
-      "cukcukId": "b3ff9a43-637b-436f-ab7e-d3e0b3f2826f",
-      "categoryId": "cukcuk-alcohol",
-      "categoryName": "주류",
-      "sourceName": "코로나 병맥주  Corona Beer (Bottle)科罗娜瓶装啤酒Bia chai Corona",
-      "names": {
-        "ko": "코로나 병맥주",
-        "vi": "Bia chai Corona",
-        "zh": "科罗娜瓶装啤酒",
-        "en": "Corona Beer (Bottle)"
-      },
-      "price": 71500,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 87
-    },
-    {
-      "id": "5d41c81c-7a68-4726-a8df-1a6315788b1c",
-      "cukcukId": "5d41c81c-7a68-4726-a8df-1a6315788b1c",
-      "categoryId": "cukcuk-alcohol",
-      "categoryName": "주류",
-      "sourceName": "코로나 5병 세트  Corona 5-Bottle Set 科罗娜5瓶套餐  Set 5 chai bia Corona",
-      "names": {
-        "ko": "코로나 5병 세트",
-        "vi": "Set 5 chai bia Corona",
-        "zh": "科罗娜5瓶套餐",
-        "en": "Corona 5-Bottle Set"
-      },
-      "price": 319000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 88
-    },
-    {
-      "id": "867b2e98-da89-4688-bcfa-0433c48ba7a8",
-      "cukcukId": "867b2e98-da89-4688-bcfa-0433c48ba7a8",
-      "categoryId": "cukcuk-alcohol",
-      "categoryName": "주류",
-      "sourceName": "처음처럼  Chum Churum Soju 初饮初乐  Rượu soju Chum Churum",
-      "names": {
-        "ko": "처음처럼 소주",
-        "vi": "Rượu soju Chum Churum",
-        "zh": "初饮初乐烧酒",
-        "en": "Chum Churum Soju"
-      },
-      "price": 154000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 89
-    },
-    {
-      "id": "5e9db310-b4ff-4c6a-8c9f-8706a78065f9",
-      "cukcukId": "5e9db310-b4ff-4c6a-8c9f-8706a78065f9",
-      "categoryId": "cukcuk-alcohol",
-      "categoryName": "주류",
-      "sourceName": "참이슬 | Chamisul | 眞露 (Zhēnlù) | Chamisul",
-      "names": {
-        "ko": "참이슬",
-        "vi": "Rượu soju Chamisul",
-        "zh": "真露",
-        "en": "Chamisul Soju"
-      },
-      "price": 154000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 90
-    },
-    {
-      "id": "292433d8-bef9-450d-814d-f2cb60aebb6b",
-      "cukcukId": "292433d8-bef9-450d-814d-f2cb60aebb6b",
-      "categoryId": "cukcuk-alcohol",
-      "categoryName": "주류",
-      "sourceName": "짐빔허니 하이볼 | Jim Beam Honey Highball",
-      "names": {
-        "ko": "짐빔 허니 하이볼",
-        "vi": "Jim Beam Honey Highball",
-        "zh": "金宾蜂蜜高球",
-        "en": "Jim Beam Honey Highball"
-      },
-      "price": 99000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 91
-    },
-    {
-      "id": "65df8aff-db47-4441-8215-e60ff8229e99",
-      "cukcukId": "65df8aff-db47-4441-8215-e60ff8229e99",
-      "categoryId": "cukcuk-alcohol",
-      "categoryName": "주류",
-      "sourceName": "짐빔애플 하이볼 | Jim Beam Apple Highball",
-      "names": {
-        "ko": "짐빔 애플 하이볼",
-        "vi": "Jim Beam Apple Highball",
-        "zh": "金宾苹果高球",
-        "en": "Jim Beam Apple Highball"
-      },
-      "price": 99000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 92
-    },
-    {
-      "id": "b0562531-0db8-4602-bc6d-661b06645147",
-      "cukcukId": "b0562531-0db8-4602-bc6d-661b06645147",
-      "categoryId": "cukcuk-alcohol",
-      "categoryName": "주류",
-      "sourceName": "짐빔블랙 하이볼 | Jim Beam Black Extra-Aged Highball",
-      "names": {
-        "ko": "짐빔 블랙 엑스트라 에이지드 하이볼",
-        "vi": "Jim Beam Black Extra-Aged Highball",
-        "zh": "金宾黑牌特酿高球",
-        "en": "Jim Beam Black Extra-Aged Highball"
-      },
-      "price": 99000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 93
-    },
-    {
-      "id": "23343ff7-8a2a-4b96-bb0e-25b133195e53",
-      "cukcukId": "23343ff7-8a2a-4b96-bb0e-25b133195e53",
-      "categoryId": "cukcuk-alcohol",
-      "categoryName": "주류",
-      "sourceName": "짐빔 하이볼 | Jim Beam Highball",
-      "names": {
-        "ko": "짐빔 하이볼",
-        "vi": "Jim Beam Highball",
-        "zh": "金宾高球",
-        "en": "Jim Beam Highball"
-      },
-      "price": 99000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 94
-    },
-    {
-      "id": "ebe0706f-a35f-4ec6-a7a3-dca6d4a47edf",
-      "cukcukId": "ebe0706f-a35f-4ec6-a7a3-dca6d4a47edf",
-      "categoryId": "cukcuk-alcohol",
-      "categoryName": "주류",
-      "sourceName": "진로 Jinro Soju 真露（淡口） Rượu soju Jinro",
-      "names": {
-        "ko": "진로 소주",
-        "vi": "Rượu soju Jinro",
-        "zh": "真露淡口烧酒",
-        "en": "Jinro Soju"
-      },
-      "price": 154000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 95
-    },
-    {
-      "id": "a0f42985-3dee-4257-9683-c70fef7992e6",
-      "cukcukId": "a0f42985-3dee-4257-9683-c70fef7992e6",
-      "categoryId": "cukcuk-alcohol",
-      "categoryName": "주류",
-      "sourceName": "제임슨 하이볼 | Jameson Highball",
-      "names": {
-        "ko": "제임슨 하이볼",
-        "vi": "Jameson Highball",
-        "zh": "尊美醇高球",
-        "en": "Jameson Highball"
-      },
-      "price": 99000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 96
-    },
-    {
       "id": "1932a5e2-f7c9-4b04-bea8-b5508b6f66b2",
       "cukcukId": "1932a5e2-f7c9-4b04-bea8-b5508b6f66b2",
       "categoryId": "cukcuk-alcohol",
@@ -2020,7 +1804,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 97
+      "sortOrder": 85
     },
     {
       "id": "d06cd3a9-3f5a-4c35-9b5e-1a034992a966",
@@ -2038,7 +1822,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 98
+      "sortOrder": 86
     },
     {
       "id": "87b45d34-14f6-46d3-a272-493cbd4276c7",
@@ -2056,7 +1840,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 99
+      "sortOrder": 87
     },
     {
       "id": "cf5bd09b-42ca-41c1-a7f9-87dcbaf49f69",
@@ -2074,7 +1858,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 100
+      "sortOrder": 88
     },
     {
       "id": "70e447f4-8b00-404e-af5a-93ac3ac3b8a8",
@@ -2089,6 +1873,222 @@
         "en": "Hanoi Beer (Bottle)"
       },
       "price": 49500,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 89
+    },
+    {
+      "id": "9086861a-9c6c-48f1-a2bf-c20cc3c38a80",
+      "cukcukId": "9086861a-9c6c-48f1-a2bf-c20cc3c38a80",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "타이거 크리스탈 병맥주 | Bia Tiger Crystal chai | 虎牌水晶啤酒（瓶装） | Tiger Crystal (Bottle)",
+      "names": {
+        "ko": "타이거 크리스탈 병맥주",
+        "vi": "Bia Tiger Crystal chai",
+        "zh": "虎牌水晶啤酒（瓶装）",
+        "en": "Tiger Crystal Beer (Bottle)"
+      },
+      "price": 55000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 90
+    },
+    {
+      "id": "addccbaa-223e-4456-a73a-98b2e0d7e9ae",
+      "cukcukId": "addccbaa-223e-4456-a73a-98b2e0d7e9ae",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "타이거 병맥주 Tiger Beer (Bottle) 虎牌瓶装啤酒 Bia chai Tiger",
+      "names": {
+        "ko": "타이거 병맥주",
+        "vi": "Bia chai Tiger",
+        "zh": "虎牌瓶装啤酒",
+        "en": "Tiger Beer (Bottle)"
+      },
+      "price": 49500,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 91
+    },
+    {
+      "id": "b3ff9a43-637b-436f-ab7e-d3e0b3f2826f",
+      "cukcukId": "b3ff9a43-637b-436f-ab7e-d3e0b3f2826f",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "코로나 병맥주  Corona Beer (Bottle)科罗娜瓶装啤酒Bia chai Corona",
+      "names": {
+        "ko": "코로나 병맥주",
+        "vi": "Bia chai Corona",
+        "zh": "科罗娜瓶装啤酒",
+        "en": "Corona Beer (Bottle)"
+      },
+      "price": 71500,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 92
+    },
+    {
+      "id": "5d41c81c-7a68-4726-a8df-1a6315788b1c",
+      "cukcukId": "5d41c81c-7a68-4726-a8df-1a6315788b1c",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "코로나 5병 세트  Corona 5-Bottle Set 科罗娜5瓶套餐  Set 5 chai bia Corona",
+      "names": {
+        "ko": "코로나 5병 세트",
+        "vi": "Set 5 chai bia Corona",
+        "zh": "科罗娜5瓶套餐",
+        "en": "Corona 5-Bottle Set"
+      },
+      "price": 319000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 93
+    },
+    {
+      "id": "867b2e98-da89-4688-bcfa-0433c48ba7a8",
+      "cukcukId": "867b2e98-da89-4688-bcfa-0433c48ba7a8",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "처음처럼  Chum Churum Soju 初饮初乐  Rượu soju Chum Churum",
+      "names": {
+        "ko": "처음처럼 소주",
+        "vi": "Rượu soju Chum Churum",
+        "zh": "初饮初乐烧酒",
+        "en": "Chum Churum Soju"
+      },
+      "price": 154000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 94
+    },
+    {
+      "id": "5e9db310-b4ff-4c6a-8c9f-8706a78065f9",
+      "cukcukId": "5e9db310-b4ff-4c6a-8c9f-8706a78065f9",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "참이슬 | Chamisul | 眞露 (Zhēnlù) | Chamisul",
+      "names": {
+        "ko": "참이슬",
+        "vi": "Rượu soju Chamisul",
+        "zh": "真露",
+        "en": "Chamisul Soju"
+      },
+      "price": 154000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 95
+    },
+    {
+      "id": "292433d8-bef9-450d-814d-f2cb60aebb6b",
+      "cukcukId": "292433d8-bef9-450d-814d-f2cb60aebb6b",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "짐빔허니 하이볼 | Jim Beam Honey Highball",
+      "names": {
+        "ko": "짐빔 허니 하이볼",
+        "vi": "Jim Beam Honey Highball",
+        "zh": "金宾蜂蜜高球",
+        "en": "Jim Beam Honey Highball"
+      },
+      "price": 99000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 96
+    },
+    {
+      "id": "65df8aff-db47-4441-8215-e60ff8229e99",
+      "cukcukId": "65df8aff-db47-4441-8215-e60ff8229e99",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "짐빔애플 하이볼 | Jim Beam Apple Highball",
+      "names": {
+        "ko": "짐빔 애플 하이볼",
+        "vi": "Jim Beam Apple Highball",
+        "zh": "金宾苹果高球",
+        "en": "Jim Beam Apple Highball"
+      },
+      "price": 99000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 97
+    },
+    {
+      "id": "b0562531-0db8-4602-bc6d-661b06645147",
+      "cukcukId": "b0562531-0db8-4602-bc6d-661b06645147",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "짐빔블랙 하이볼 | Jim Beam Black Extra-Aged Highball",
+      "names": {
+        "ko": "짐빔 블랙 엑스트라 에이지드 하이볼",
+        "vi": "Jim Beam Black Extra-Aged Highball",
+        "zh": "金宾黑牌特酿高球",
+        "en": "Jim Beam Black Extra-Aged Highball"
+      },
+      "price": 99000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 98
+    },
+    {
+      "id": "23343ff7-8a2a-4b96-bb0e-25b133195e53",
+      "cukcukId": "23343ff7-8a2a-4b96-bb0e-25b133195e53",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "짐빔 하이볼 | Jim Beam Highball",
+      "names": {
+        "ko": "짐빔 하이볼",
+        "vi": "Jim Beam Highball",
+        "zh": "金宾高球",
+        "en": "Jim Beam Highball"
+      },
+      "price": 99000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 99
+    },
+    {
+      "id": "ebe0706f-a35f-4ec6-a7a3-dca6d4a47edf",
+      "cukcukId": "ebe0706f-a35f-4ec6-a7a3-dca6d4a47edf",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "진로 Jinro Soju 真露（淡口） Rượu soju Jinro",
+      "names": {
+        "ko": "진로 소주",
+        "vi": "Rượu soju Jinro",
+        "zh": "真露淡口烧酒",
+        "en": "Jinro Soju"
+      },
+      "price": 154000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 100
+    },
+    {
+      "id": "a0f42985-3dee-4257-9683-c70fef7992e6",
+      "cukcukId": "a0f42985-3dee-4257-9683-c70fef7992e6",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "제임슨 하이볼 | Jameson Highball",
+      "names": {
+        "ko": "제임슨 하이볼",
+        "vi": "Jameson Highball",
+        "zh": "尊美醇高球",
+        "en": "Jameson Highball"
+      },
+      "price": 99000,
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
@@ -4374,6 +4374,6 @@
     "cacheHits": 277,
     "translated": 0,
     "pendingCount": 0,
-    "updatedAt": "2026-08-10T23:53:38.794Z"
+    "updatedAt": "2026-08-11T00:39:42.965Z"
   }
 }
