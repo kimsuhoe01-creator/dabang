@@ -2,14 +2,14 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-08-14 12:02:30",
-    "finished_at": "2026-08-14 12:02:44",
+    "started_at": "2026-08-14 13:23:18",
+    "finished_at": "2026-08-14 13:23:26",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다."
   },
-  "categoryCount": 11,
-  "menuCount": 85,
+  "categoryCount": 12,
+  "menuCount": 124,
   "optionTemplateCount": 24,
   "categories": [
     {
@@ -143,6 +143,18 @@
       },
       "visible": true,
       "sortOrder": 10
+    },
+    {
+      "id": "cukcuk-alcohol",
+      "sourceName": "주류 | Đồ uống có cồn | 酒类 | Alcohol",
+      "names": {
+        "ko": "주류",
+        "vi": "Đồ uống có cồn",
+        "zh": "酒类",
+        "en": "Alcohol"
+      },
+      "visible": true,
+      "sortOrder": 11
     }
   ],
   "menus": [
@@ -1775,6 +1787,708 @@
         "f035ccfc-db83-4ba0-ac18-bd38af8b0437"
       ],
       "sortOrder": 84
+    },
+    {
+      "id": "1932a5e2-f7c9-4b04-bea8-b5508b6f66b2",
+      "cukcukId": "1932a5e2-f7c9-4b04-bea8-b5508b6f66b2",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "하롱베이 캔맥주 Ha Long Bay Beer (Can)  下龙湾罐装啤酒Bia lon Hạ Long Bay",
+      "names": {
+        "ko": "하롱베이 캔맥주",
+        "vi": "Bia lon Hạ Long Bay",
+        "zh": "下龙湾罐装啤酒",
+        "en": "Ha Long Bay Beer (Can)"
+      },
+      "price": 38500,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 85
+    },
+    {
+      "id": "d06cd3a9-3f5a-4c35-9b5e-1a034992a966",
+      "cukcukId": "d06cd3a9-3f5a-4c35-9b5e-1a034992a966",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "하노이 캔맥주 | Bia lon Hà Nội | 河内罐装啤酒 | Hanoi canned beer",
+      "names": {
+        "ko": "하노이 캔맥주",
+        "vi": "Bia lon Hà Nội",
+        "zh": "河内罐装啤酒",
+        "en": "Hanoi Beer (Can)"
+      },
+      "price": 38500,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 86
+    },
+    {
+      "id": "87b45d34-14f6-46d3-a272-493cbd4276c7",
+      "cukcukId": "87b45d34-14f6-46d3-a272-493cbd4276c7",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "하노이 생맥주 1L | Bia tươi Hà Nội 1L | 河内生啤 1升 | Hanoi Draft Beer 1L",
+      "names": {
+        "ko": "하노이 생맥주 1L",
+        "vi": "Bia tươi Hà Nội 1L",
+        "zh": "河内生啤 1升",
+        "en": "Hanoi Draft Beer 1L"
+      },
+      "price": 110000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 87
+    },
+    {
+      "id": "cf5bd09b-42ca-41c1-a7f9-87dcbaf49f69",
+      "cukcukId": "cf5bd09b-42ca-41c1-a7f9-87dcbaf49f69",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "하노이 생맥주 1L | Bia tươi Hà Nội 1L | 河内生啤 1升 | Hanoi Draft Beer 1L",
+      "names": {
+        "ko": "하노이 생맥주 1L",
+        "vi": "Bia tươi Hà Nội 1L",
+        "zh": "河内生啤 1升",
+        "en": "Hanoi Draft Beer 1L"
+      },
+      "price": 110000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 88
+    },
+    {
+      "id": "70e447f4-8b00-404e-af5a-93ac3ac3b8a8",
+      "cukcukId": "70e447f4-8b00-404e-af5a-93ac3ac3b8a8",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "하노이 병맥주 Hanoi Beer (Bottle) 河内瓶装啤酒 Bia chai Hà Nội",
+      "names": {
+        "ko": "하노이 병맥주",
+        "vi": "Bia chai Hà Nội",
+        "zh": "河内瓶装啤酒",
+        "en": "Hanoi Beer (Bottle)"
+      },
+      "price": 49500,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 89
+    },
+    {
+      "id": "9086861a-9c6c-48f1-a2bf-c20cc3c38a80",
+      "cukcukId": "9086861a-9c6c-48f1-a2bf-c20cc3c38a80",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "타이거 크리스탈 병맥주 | Bia Tiger Crystal chai | 虎牌水晶啤酒（瓶装） | Tiger Crystal (Bottle)",
+      "names": {
+        "ko": "타이거 크리스탈 병맥주",
+        "vi": "Bia Tiger Crystal chai",
+        "zh": "虎牌水晶啤酒（瓶装）",
+        "en": "Tiger Crystal Beer (Bottle)"
+      },
+      "price": 55000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 90
+    },
+    {
+      "id": "addccbaa-223e-4456-a73a-98b2e0d7e9ae",
+      "cukcukId": "addccbaa-223e-4456-a73a-98b2e0d7e9ae",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "타이거 병맥주 Tiger Beer (Bottle) 虎牌瓶装啤酒 Bia chai Tiger",
+      "names": {
+        "ko": "타이거 병맥주",
+        "vi": "Bia chai Tiger",
+        "zh": "虎牌瓶装啤酒",
+        "en": "Tiger Beer (Bottle)"
+      },
+      "price": 49500,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 91
+    },
+    {
+      "id": "b3ff9a43-637b-436f-ab7e-d3e0b3f2826f",
+      "cukcukId": "b3ff9a43-637b-436f-ab7e-d3e0b3f2826f",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "코로나 병맥주  Corona Beer (Bottle)科罗娜瓶装啤酒Bia chai Corona",
+      "names": {
+        "ko": "코로나 병맥주",
+        "vi": "Bia chai Corona",
+        "zh": "科罗娜瓶装啤酒",
+        "en": "Corona Beer (Bottle)"
+      },
+      "price": 71500,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 92
+    },
+    {
+      "id": "5d41c81c-7a68-4726-a8df-1a6315788b1c",
+      "cukcukId": "5d41c81c-7a68-4726-a8df-1a6315788b1c",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "코로나 5병 세트  Corona 5-Bottle Set 科罗娜5瓶套餐  Set 5 chai bia Corona",
+      "names": {
+        "ko": "코로나 5병 세트",
+        "vi": "Set 5 chai bia Corona",
+        "zh": "科罗娜5瓶套餐",
+        "en": "Corona 5-Bottle Set"
+      },
+      "price": 319000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 93
+    },
+    {
+      "id": "867b2e98-da89-4688-bcfa-0433c48ba7a8",
+      "cukcukId": "867b2e98-da89-4688-bcfa-0433c48ba7a8",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "처음처럼  Chum Churum Soju 初饮初乐  Rượu soju Chum Churum",
+      "names": {
+        "ko": "처음처럼 소주",
+        "vi": "Rượu soju Chum Churum",
+        "zh": "初饮初乐烧酒",
+        "en": "Chum Churum Soju"
+      },
+      "price": 154000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 94
+    },
+    {
+      "id": "5e9db310-b4ff-4c6a-8c9f-8706a78065f9",
+      "cukcukId": "5e9db310-b4ff-4c6a-8c9f-8706a78065f9",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "참이슬 | Chamisul | 眞露 (Zhēnlù) | Chamisul",
+      "names": {
+        "ko": "참이슬",
+        "vi": "Rượu soju Chamisul",
+        "zh": "真露",
+        "en": "Chamisul Soju"
+      },
+      "price": 154000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 95
+    },
+    {
+      "id": "292433d8-bef9-450d-814d-f2cb60aebb6b",
+      "cukcukId": "292433d8-bef9-450d-814d-f2cb60aebb6b",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "짐빔허니 하이볼 | Jim Beam Honey Highball",
+      "names": {
+        "ko": "짐빔 허니 하이볼",
+        "vi": "Jim Beam Honey Highball",
+        "zh": "金宾蜂蜜高球",
+        "en": "Jim Beam Honey Highball"
+      },
+      "price": 99000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 96
+    },
+    {
+      "id": "65df8aff-db47-4441-8215-e60ff8229e99",
+      "cukcukId": "65df8aff-db47-4441-8215-e60ff8229e99",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "짐빔애플 하이볼 | Jim Beam Apple Highball",
+      "names": {
+        "ko": "짐빔 애플 하이볼",
+        "vi": "Jim Beam Apple Highball",
+        "zh": "金宾苹果高球",
+        "en": "Jim Beam Apple Highball"
+      },
+      "price": 99000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 97
+    },
+    {
+      "id": "b0562531-0db8-4602-bc6d-661b06645147",
+      "cukcukId": "b0562531-0db8-4602-bc6d-661b06645147",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "짐빔블랙 하이볼 | Jim Beam Black Extra-Aged Highball",
+      "names": {
+        "ko": "짐빔 블랙 엑스트라 에이지드 하이볼",
+        "vi": "Jim Beam Black Extra-Aged Highball",
+        "zh": "金宾黑牌特酿高球",
+        "en": "Jim Beam Black Extra-Aged Highball"
+      },
+      "price": 99000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 98
+    },
+    {
+      "id": "23343ff7-8a2a-4b96-bb0e-25b133195e53",
+      "cukcukId": "23343ff7-8a2a-4b96-bb0e-25b133195e53",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "짐빔 하이볼 | Jim Beam Highball",
+      "names": {
+        "ko": "짐빔 하이볼",
+        "vi": "Jim Beam Highball",
+        "zh": "金宾高球",
+        "en": "Jim Beam Highball"
+      },
+      "price": 99000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 99
+    },
+    {
+      "id": "ebe0706f-a35f-4ec6-a7a3-dca6d4a47edf",
+      "cukcukId": "ebe0706f-a35f-4ec6-a7a3-dca6d4a47edf",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "진로 Jinro Soju 真露（淡口） Rượu soju Jinro",
+      "names": {
+        "ko": "진로 소주",
+        "vi": "Rượu soju Jinro",
+        "zh": "真露淡口烧酒",
+        "en": "Jinro Soju"
+      },
+      "price": 154000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 100
+    },
+    {
+      "id": "a0f42985-3dee-4257-9683-c70fef7992e6",
+      "cukcukId": "a0f42985-3dee-4257-9683-c70fef7992e6",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "제임슨 하이볼 | Jameson Highball",
+      "names": {
+        "ko": "제임슨 하이볼",
+        "vi": "Jameson Highball",
+        "zh": "尊美醇高球",
+        "en": "Jameson Highball"
+      },
+      "price": 99000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 101
+    },
+    {
+      "id": "5e6c1f83-2f15-432a-b497-6d4747393196",
+      "cukcukId": "5e6c1f83-2f15-432a-b497-6d4747393196",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "선양오크 | Sunyang Soju Oak | 鲜洋橡木烧酒",
+      "names": {
+        "ko": "선양 오크 소주",
+        "vi": "Rượu soju Sunyang Oak",
+        "zh": "鲜洋橡木烧酒",
+        "en": "Sunyang Soju Oak"
+      },
+      "price": 174900,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 102
+    },
+    {
+      "id": "2d93c37e-8f59-4f39-a06d-cbaa6dab47f6",
+      "cukcukId": "2d93c37e-8f59-4f39-a06d-cbaa6dab47f6",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "선양소주 | Sunyang Soju | 鲜洋烧酒 |",
+      "names": {
+        "ko": "선양 소주",
+        "vi": "Rượu soju Sunyang",
+        "zh": "鲜洋烧酒",
+        "en": "Sunyang Soju"
+      },
+      "price": 154000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 103
+    },
+    {
+      "id": "0f40c0ed-06d2-433b-a19d-6983b0c4e014",
+      "cukcukId": "0f40c0ed-06d2-433b-a19d-6983b0c4e014",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "새로/ Saero Soju Saero烧酒 Rượu soju Saero",
+      "names": {
+        "ko": "새로 소주",
+        "vi": "Rượu soju Saero",
+        "zh": "Saero烧酒",
+        "en": "Saero Soju"
+      },
+      "price": 165000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 104
+    },
+    {
+      "id": "db099bd8-4ac3-45cf-a4be-eb9de43aff68",
+      "cukcukId": "db099bd8-4ac3-45cf-a4be-eb9de43aff68",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "산토리 하이볼 | Suntory Kakubin Highball",
+      "names": {
+        "ko": "산토리 가쿠빈 하이볼",
+        "vi": "Suntory Kakubin Highball",
+        "zh": "三得利角瓶高球",
+        "en": "Suntory Kakubin Highball"
+      },
+      "price": 99000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 105
+    },
+    {
+      "id": "57b1fe70-fe33-4654-9d58-575f277749be",
+      "cukcukId": "57b1fe70-fe33-4654-9d58-575f277749be",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "사포로 생맥주 Sapporo Draft Beer 三宝乐生啤酒  Bia tươi Sapporo",
+      "names": {
+        "ko": "사포로 생맥주",
+        "vi": "Bia tươi Sapporo",
+        "zh": "三宝乐生啤酒",
+        "en": "Sapporo Draft Beer"
+      },
+      "price": 0,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 106
+    },
+    {
+      "id": "4182ba40-0603-49ac-9b7a-e2438229f7b8",
+      "cukcukId": "4182ba40-0603-49ac-9b7a-e2438229f7b8",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "사포로 블랙 생맥주/Sapporo Black Draft Beer 三宝乐黑啤 Bia đen tươi Sapporo",
+      "names": {
+        "ko": "사포로 블랙 생맥주",
+        "vi": "Bia đen tươi Sapporo",
+        "zh": "三宝乐黑生啤酒",
+        "en": "Sapporo Black Draft Beer"
+      },
+      "price": 66000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 107
+    },
+    {
+      "id": "52c29562-ac31-42c7-9f24-956d348de02a",
+      "cukcukId": "52c29562-ac31-42c7-9f24-956d348de02a",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "사포로 1+1 (640cc) Sapporo 1+1 (640ml) 三宝乐1+1（640毫升 Sapporo 1 tặng 1 (640ml)",
+      "names": {
+        "ko": "사포로 1+1 (640cc)",
+        "vi": "Sapporo 1 tặng 1 (640ml)",
+        "zh": "三宝乐1+1（640毫升）",
+        "en": "Sapporo Buy 1 Get 1 (640ml)"
+      },
+      "price": 165000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 108
+    },
+    {
+      "id": "572fec3a-832d-474f-8232-0d441e08cade",
+      "cukcukId": "572fec3a-832d-474f-8232-0d441e08cade",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "사이공캔맥주|BialonSàiGòn|西贡罐装啤酒|Saigoncannedbeer",
+      "names": {
+        "ko": "사이공 캔맥주",
+        "vi": "Bia lon Sài Gòn",
+        "zh": "西贡罐装啤酒",
+        "en": "Saigon Canned Beer"
+      },
+      "price": 38500,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 109
+    },
+    {
+      "id": "9675de2a-b48c-486f-9e07-cf9c40004c8e",
+      "cukcukId": "9675de2a-b48c-486f-9e07-cf9c40004c8e",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "보드카MEN Vodka MEN MEN伏特加 Rượu Vodka MEN",
+      "names": {
+        "ko": "보드카 MEN",
+        "vi": "Rượu Vodka MEN",
+        "zh": "MEN伏特加",
+        "en": "MEN Vodka"
+      },
+      "price": 165000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 110
+    },
+    {
+      "id": "d9c74a29-714a-469b-a89c-429dc0b4e400",
+      "cukcukId": "d9c74a29-714a-469b-a89c-429dc0b4e400",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "배달)참이슬",
+      "names": {
+        "ko": "배달) 참이슬",
+        "vi": "Chamisul (giao hàng)",
+        "zh": "真露（外送）",
+        "en": "Chamisul (Delivery)"
+      },
+      "price": 121000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 111
+    },
+    {
+      "id": "3b08e86b-afc7-496f-8ace-66278d350d79",
+      "cukcukId": "3b08e86b-afc7-496f-8ace-66278d350d79",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "배달)진로",
+      "names": {
+        "ko": "배달) 진로",
+        "vi": "Jinro (giao hàng)",
+        "zh": "真露（外送）",
+        "en": "Jinro (Delivery)"
+      },
+      "price": 121000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 112
+    },
+    {
+      "id": "024d2d25-60c2-4e0f-8962-382092fd952e",
+      "cukcukId": "024d2d25-60c2-4e0f-8962-382092fd952e",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "배달)새로",
+      "names": {
+        "ko": "배달) 새로",
+        "vi": "Saero (giao hàng)",
+        "zh": "Saero烧酒（外送）",
+        "en": "Saero (Delivery)"
+      },
+      "price": 121000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 113
+    },
+    {
+      "id": "2bdbb87d-9f83-4a7f-97bb-0bb21fb91209",
+      "cukcukId": "2bdbb87d-9f83-4a7f-97bb-0bb21fb91209",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "배달)  사포로 생맥주 | Bia tươi Sapporo",
+      "names": {
+        "ko": "배달) 사포로 생맥주",
+        "vi": "Bia tươi Sapporo (giao hàng)",
+        "zh": "三宝乐生啤（外送）",
+        "en": "Sapporo Draft Beer (Delivery)"
+      },
+      "price": 220000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 114
+    },
+    {
+      "id": "903c3f3c-b971-4a83-8ecb-a3f5c401eb49",
+      "cukcukId": "903c3f3c-b971-4a83-8ecb-a3f5c401eb49",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "막걸리1",
+      "names": {
+        "ko": "막걸리 1",
+        "vi": "Makgeolli 1",
+        "zh": "马格利米酒1",
+        "en": "Makgeolli 1"
+      },
+      "price": 110000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 115
+    },
+    {
+      "id": "6bec7160-294b-42b0-b3a9-b2e1da24f7f5",
+      "cukcukId": "6bec7160-294b-42b0-b3a9-b2e1da24f7f5",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "막걸리",
+      "names": {
+        "ko": "막걸리",
+        "vi": "Makgeolli",
+        "zh": "马格利米酒",
+        "en": "Makgeolli"
+      },
+      "price": 110000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 116
+    },
+    {
+      "id": "853e043d-fe9f-49f4-9d31-c86b38262204",
+      "cukcukId": "853e043d-fe9f-49f4-9d31-c86b38262204",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "데킬라 실버 하이볼 | Jose Cuervo Silver Tequila Highball",
+      "names": {
+        "ko": "호세 쿠에르보 실버 데킬라 하이볼",
+        "vi": "Highball Tequila Jose Cuervo Silver",
+        "zh": "豪帅银龙舌兰高球",
+        "en": "Jose Cuervo Silver Tequila Highball"
+      },
+      "price": 99000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 117
+    },
+    {
+      "id": "ced98733-4073-4314-bd8b-6a4461f62ef4",
+      "cukcukId": "ced98733-4073-4314-bd8b-6a4461f62ef4",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "데킬라 샷 Tequila Shot 龙舌兰一杯  Shot Tequila",
+      "names": {
+        "ko": "데킬라 샷",
+        "vi": "Shot Tequila",
+        "zh": "龙舌兰一杯",
+        "en": "Tequila Shot"
+      },
+      "price": 77000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 118
+    },
+    {
+      "id": "225f2ecd-94d2-4970-bb7d-acb313837cb9",
+      "cukcukId": "225f2ecd-94d2-4970-bb7d-acb313837cb9",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "데킬라 골드&실버 | Tequila Gold & Silver",
+      "names": {
+        "ko": "데킬라 골드 & 실버",
+        "vi": "Tequila Gold & Silver",
+        "zh": "金银龙舌兰",
+        "en": "Tequila Gold & Silver"
+      },
+      "price": 1089000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 119
+    },
+    {
+      "id": "50f90120-5773-4bdf-b9bc-71a7e99c7a6f",
+      "cukcukId": "50f90120-5773-4bdf-b9bc-71a7e99c7a6f",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "데킬라 골드 하이볼 | Jose Cuervo Gold Tequila Highball",
+      "names": {
+        "ko": "호세 쿠에르보 골드 데킬라 하이볼",
+        "vi": "Highball Tequila Jose Cuervo Gold",
+        "zh": "豪帅金龙舌兰高球",
+        "en": "Jose Cuervo Gold Tequila Highball"
+      },
+      "price": 99000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 120
+    },
+    {
+      "id": "52b2391e-4a86-4fae-be55-6286ad556b7e",
+      "cukcukId": "52b2391e-4a86-4fae-be55-6286ad556b7e",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "Bia lon Saigon (dịch vụ tặng kèm) | 사이공 캔맥주 서비스",
+      "names": {
+        "ko": "사이공 캔맥주 서비스",
+        "vi": "Bia lon Sài Gòn tặng kèm",
+        "zh": "赠送西贡罐装啤酒",
+        "en": "Complimentary Saigon Canned Beer"
+      },
+      "price": 0,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 121
+    },
+    {
+      "id": "086df955-7b2b-4543-810c-a52ab02eab12",
+      "cukcukId": "086df955-7b2b-4543-810c-a52ab02eab12",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "Bia lon | 캔맥주",
+      "names": {
+        "ko": "캔맥주",
+        "vi": "Bia lon",
+        "zh": "罐装啤酒",
+        "en": "Canned Beer"
+      },
+      "price": 33000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 122
+    },
+    {
+      "id": "8f399e3a-8161-4335-8a61-ec82a1d27917",
+      "cukcukId": "8f399e3a-8161-4335-8a61-ec82a1d27917",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "(배달) 선양소주",
+      "names": {
+        "ko": "배달) 선양소주",
+        "vi": "Soju Sunyang (giao hàng)",
+        "zh": "善酿烧酒（外送）",
+        "en": "Sunyang Soju (Delivery)"
+      },
+      "price": 121000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 123
     }
   ],
   "optionTemplates": [
@@ -3656,10 +4370,10 @@
     "provider": "openai",
     "model": "gpt-5.6-terra",
     "status": "ready",
-    "entityCount": 237,
-    "cacheHits": 237,
+    "entityCount": 277,
+    "cacheHits": 277,
     "translated": 0,
     "pendingCount": 0,
-    "updatedAt": "2026-08-14T12:02:47.600Z"
+    "updatedAt": "2026-08-14T13:23:32.556Z"
   }
 }
