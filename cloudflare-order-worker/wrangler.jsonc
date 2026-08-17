@@ -22,6 +22,7 @@
     "CUKCUK_DOMAIN": "dabang",
     "CUKCUK_APP_ID": "CUKCUKOpenPlatform",
     "CUKCUK_BRANCH_ID": "430a00af-29db-4f30-b8f8-e87bdb793ab0",
-    "MENU_DATA_URL": "https://raw.githubusercontent.com/kimsuhoe01-creator/dabang/main/data/cukcuk-menu.json"
+    "MENU_DATA_URL": "https://raw.githubusercontent.com/kimsuhoe01-creator/dabang/main/data/cukcuk-menu.json",
+    "STORE_GPT_TOKEN_SHA256": "0a01aa7bf04f5788997fe7cf12ad44dc8f3bed368f7dca414e35c957d4208c67"
   }
 }
