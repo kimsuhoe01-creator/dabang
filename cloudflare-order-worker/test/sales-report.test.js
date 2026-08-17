@@ -1,6 +1,6 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { buildStoreReport, verifyStoreToken } from "./sales.js";
+import { buildStoreReport, verifyStoreToken } from "../src/sales.js";
 
 test("builds paid sales and item summary", async () => {
   const fetcher = async (url, init) => {
