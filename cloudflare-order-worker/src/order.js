@@ -176,7 +176,7 @@ function matchesTable(cukcukTableName, expectedTableName) {
   return cukcukTableName.split(",").map((name) => name.trim()).includes(expectedTableName.trim());
 }
 
-async function login(env, fetcher) {
+export async function login(env, fetcher) {
   const modes = ["base64-app-first", "hex-lower", "hex-upper", "base64-domain-first"];
   let lastError = new OrderError("CUKCUK 로그인에 실패했습니다.", 502, "CUKCUK_LOGIN_FAILED");
   for (const mode of modes) {
