@@ -1,5 +1,6 @@
 import { createOrAppendCukCukOrder, validateAndBuildOrder } from "./order.js";
 import { expandMenuImage } from "./image-edit.js";
+import { handleStoreApi } from "./gpt-api.js";
 
 const ALLOWED_ORIGINS = new Set([
   "https://kimsuhoe01-creator.github.io",
@@ -9,6 +10,8 @@ export default {
   async fetch(request, env) {
     if (request.method === "OPTIONS") return cors(request, new Response(null, { status: 204 }));
     const url = new URL(request.url);
+    const storeResponse = await handleStoreApi(request, env);
+    if (storeResponse) return cors(request, storeResponse);
 
     if (url.pathname === "/health" && request.method === "GET") {
       return cors(request, json({ ok: true, service: "dabang-cukcuk-order-api" }));
