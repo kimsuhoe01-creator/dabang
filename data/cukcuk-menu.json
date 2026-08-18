@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-08-18 04:04:07",
-    "finished_at": "2026-08-18 04:04:17",
+    "started_at": "2026-08-18 04:44:26",
+    "finished_at": "2026-08-18 04:44:39",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다."
@@ -4374,6 +4374,6 @@
     "cacheHits": 277,
     "translated": 0,
     "pendingCount": 0,
-    "updatedAt": "2026-08-18T04:04:23.099Z"
+    "updatedAt": "2026-08-18T04:44:47.000Z"
   }
 }
