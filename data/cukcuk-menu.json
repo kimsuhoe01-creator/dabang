@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-08-18 21:09:09",
-    "finished_at": "2026-08-18 21:09:17",
+    "started_at": "2026-08-18 21:34:47",
+    "finished_at": "2026-08-18 21:34:58",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다."
@@ -159,6 +159,180 @@
   ],
   "menus": [
     {
+      "id": "7c92814f-40ee-4742-8e2b-004a659bcb97",
+      "cukcukId": "7c92814f-40ee-4742-8e2b-004a659bcb97",
+      "categoryId": "0afd5056-2ad2-46d3-9122-6886fedc4d3a",
+      "categoryName": "다방치킨",
+      "sourceName": "후라이드  Fried Chicken  无骨炸鸡腿 Má đùi rút xương",
+      "names": {
+        "ko": "후라이드 치킨",
+        "vi": "Gà rán má đùi rút xương",
+        "zh": "无骨炸鸡腿",
+        "en": "Boneless Fried Chicken Thigh"
+      },
+      "price": 399600,
+      "available": true,
+      "optionGroups": 1,
+      "optionTemplateIds": [
+        "85cead19-7d83-4c61-8199-b7fab35fb672"
+      ],
+      "sortOrder": 0
+    },
+    {
+      "id": "84eca397-5e7f-4f5e-8e39-e62981936afe",
+      "cukcukId": "84eca397-5e7f-4f5e-8e39-e62981936afe",
+      "categoryId": "2424e567-8845-48c6-a4af-91c51a4d3aaa",
+      "categoryName": "날개치킨",
+      "sourceName": "허니 윙봉 Honey Wings 蜜汁鸡翅 Cánh gà mật ong",
+      "names": {
+        "ko": "허니 윙봉",
+        "vi": "Cánh gà mật ong",
+        "zh": "蜜汁鸡翅",
+        "en": "Honey Wings"
+      },
+      "price": 399600,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 1
+    },
+    {
+      "id": "0cb6c0d0-0b9d-4813-96d5-606287423eb8",
+      "cukcukId": "0cb6c0d0-0b9d-4813-96d5-606287423eb8",
+      "categoryId": "f60b3e05-f21f-4905-9207-0e494ff2b464",
+      "categoryName": "신메뉴",
+      "sourceName": "핫후라이드ver3.0 | Gà rán cay | 辣味炸鸡 | Hot Fried Chicken",
+      "names": {
+        "ko": "핫후라이드 ver3.0",
+        "vi": "Gà rán cay ver3.0",
+        "zh": "辣味炸鸡 ver3.0",
+        "en": "Hot Fried Chicken ver3.0"
+      },
+      "price": 399600,
+      "available": true,
+      "optionGroups": 1,
+      "optionTemplateIds": [
+        "6274f44c-9256-418a-a59d-20e04e651fa1"
+      ],
+      "sortOrder": 2
+    },
+    {
+      "id": "899a8524-b720-4828-b7fc-1f2472ce962a",
+      "cukcukId": "899a8524-b720-4828-b7fc-1f2472ce962a",
+      "categoryId": "6a144c27-c7ba-43f6-b6e1-4be8b008b433",
+      "categoryName": "세트",
+      "sourceName": "한신포차세트 | nguyên con & chân gà | 鸡爪鸡套餐",
+      "names": {
+        "ko": "한신포차 세트",
+        "vi": "Combo gà nguyên con và chân gà",
+        "zh": "鸡爪鸡套餐",
+        "en": "Hanshin Pocha Set"
+      },
+      "price": 540000,
+      "available": true,
+      "optionGroups": 1,
+      "optionTemplateIds": [
+        "3bd1519c-f24f-4aaf-9776-0579d374738f"
+      ],
+      "sortOrder": 3
+    },
+    {
+      "id": "e9e75a8d-cb9d-442b-8f57-08c06421f56f",
+      "cukcukId": "e9e75a8d-cb9d-442b-8f57-08c06421f56f",
+      "categoryId": "4ae5f7a4-9b6d-4c73-a895-af5d60c8fd87",
+      "categoryName": "음료",
+      "sourceName": "펩시제로 | Pepsi Zero | 百事可乐无糖 | Pepsi không đường",
+      "names": {
+        "ko": "펩시 제로",
+        "vi": "Pepsi không đường",
+        "zh": "百事可乐无糖",
+        "en": "Pepsi Zero"
+      },
+      "price": 33000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 4
+    },
+    {
+      "id": "1034a04e-2d2b-41ae-897c-a8dbe9eaf21c",
+      "cukcukId": "1034a04e-2d2b-41ae-897c-a8dbe9eaf21c",
+      "categoryId": "f5b16a17-ba22-4689-aa33-83f888a31f55",
+      "categoryName": "기타",
+      "sourceName": "페퍼로니/ (SP02) Pepperoni/  意大利香肠披萨/  Pizza pepperoni solo",
+      "names": {
+        "ko": "페퍼로니 (SP02)",
+        "vi": "Pizza pepperoni (SP02)",
+        "zh": "意大利香肠披萨 (SP02)",
+        "en": "Pepperoni Pizza (SP02)"
+      },
+      "price": 139968,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 5
+    },
+    {
+      "id": "18c2eb1b-5a99-459e-98b2-8c630036442a",
+      "cukcukId": "18c2eb1b-5a99-459e-98b2-8c630036442a",
+      "categoryId": "0ac81743-8d00-47bd-af8c-e102b44f4247",
+      "categoryName": "스페이스 피자",
+      "sourceName": "파마산 치즈가루 | Phô mai bột Parmesan",
+      "names": {
+        "ko": "파마산 치즈가루",
+        "vi": "Bột phô mai Parmesan",
+        "zh": "帕玛森芝士粉",
+        "en": "Parmesan Cheese Powder"
+      },
+      "price": 5400,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 6
+    },
+    {
+      "id": "08e44de3-df20-4b82-aa28-b26a7d2d69f9",
+      "cukcukId": "08e44de3-df20-4b82-aa28-b26a7d2d69f9",
+      "categoryId": "0afd5056-2ad2-46d3-9122-6886fedc4d3a",
+      "categoryName": "다방치킨",
+      "sourceName": "파닭  Green Onion Chicken 葱香炸鸡（芥末酱 Gà hành lá (sốt mù tạt)",
+      "names": {
+        "ko": "파닭",
+        "vi": "Gà hành lá sốt mù tạt",
+        "zh": "葱香炸鸡（芥末酱）",
+        "en": "Green Onion Chicken with Mustard Sauce"
+      },
+      "price": 399600,
+      "available": true,
+      "optionGroups": 1,
+      "optionTemplateIds": [
+        "85cead19-7d83-4c61-8199-b7fab35fb672"
+      ],
+      "sortOrder": 7
+    },
+    {
+      "id": "930eadf4-1572-4fda-83c2-428092e0eb24",
+      "cukcukId": "930eadf4-1572-4fda-83c2-428092e0eb24",
+      "categoryId": "6a144c27-c7ba-43f6-b6e1-4be8b008b433",
+      "categoryName": "세트",
+      "sourceName": "통떡 SET  Whole Chicken & Tteok Set 整只炸鸡 + 辣炒年糕Gà nguyên con + Tokbokki",
+      "names": {
+        "ko": "통떡 세트",
+        "vi": "Combo gà nguyên con và tokbokki",
+        "zh": "整只炸鸡配辣炒年糕",
+        "en": "Whole Chicken & Tteokbokki Set"
+      },
+      "price": 378000,
+      "available": true,
+      "optionGroups": 3,
+      "optionTemplateIds": [
+        "5197c337-535f-4e91-b7d1-26029a4b9222",
+        "4c90727b-0406-4177-a8c6-42394fa69f56",
+        "d7fcbd85-9fb6-40db-872a-8275dce401ed"
+      ],
+      "sortOrder": 8
+    },
+    {
       "id": "69570173-d7e8-4f3b-81cc-bc498f66351a",
       "cukcukId": "69570173-d7e8-4f3b-81cc-bc498f66351a",
       "categoryId": "601b353e-0f17-46db-bd64-d64140a70d27",
@@ -174,7 +348,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 0
+      "sortOrder": 9
     },
     {
       "id": "a0d375e8-a3f7-456d-8713-7b3c148e83fc",
@@ -192,7 +366,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 1
+      "sortOrder": 10
     },
     {
       "id": "586cac45-0ec8-4fab-a5a6-393846ca53fd",
@@ -210,7 +384,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 2
+      "sortOrder": 11
     },
     {
       "id": "e1cf1187-b643-4b90-9f6f-9a7458eaf037",
@@ -232,7 +406,7 @@
         "bd5ba827-b64d-4910-a24a-86fa7a8e29cd",
         "b69b854b-5607-4f8c-a795-c775e55bacb7"
       ],
-      "sortOrder": 3
+      "sortOrder": 12
     },
     {
       "id": "1ffd639e-dd8f-4185-9ab9-4b187835b21c",
@@ -254,7 +428,7 @@
         "bd5ba827-b64d-4910-a24a-86fa7a8e29cd",
         "b69b854b-5607-4f8c-a795-c775e55bacb7"
       ],
-      "sortOrder": 4
+      "sortOrder": 13
     },
     {
       "id": "c8e70456-c3da-4adf-bfdb-2f3ec3b78e96",
@@ -274,7 +448,7 @@
       "optionTemplateIds": [
         "bd39cbae-c175-43f4-80fa-6f5517eb1939"
       ],
-      "sortOrder": 5
+      "sortOrder": 14
     },
     {
       "id": "433a6207-b8cf-4333-aa33-f344d6bfeb31",
@@ -294,7 +468,7 @@
       "optionTemplateIds": [
         "4a947b5f-0eb9-4c88-87b2-94debe05a41d"
       ],
-      "sortOrder": 6
+      "sortOrder": 15
     },
     {
       "id": "89116940-5e7e-4e1e-b808-a0a2fdb5798e",
@@ -312,7 +486,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 7
+      "sortOrder": 16
     },
     {
       "id": "a84fa28e-bac3-45c2-9e00-5138b660ecd7",
@@ -332,7 +506,7 @@
       "optionTemplateIds": [
         "4a947b5f-0eb9-4c88-87b2-94debe05a41d"
       ],
-      "sortOrder": 8
+      "sortOrder": 17
     },
     {
       "id": "718a9af3-056b-44ee-b833-04cab90d1e9f",
@@ -352,7 +526,7 @@
       "optionTemplateIds": [
         "80ff7a38-11c2-4942-a403-b5e3921ef3e2"
       ],
-      "sortOrder": 9
+      "sortOrder": 18
     },
     {
       "id": "57ef6bb8-37f3-4296-b1c5-3e24412c2af9",
@@ -375,7 +549,7 @@
         "d7fcbd85-9fb6-40db-872a-8275dce401ed",
         "9bba9fb9-e294-4a63-b9db-a5e43df5012f"
       ],
-      "sortOrder": 10
+      "sortOrder": 19
     },
     {
       "id": "036876df-cb82-4686-8ace-3734480320cc",
@@ -393,7 +567,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 11
+      "sortOrder": 20
     },
     {
       "id": "d902dc7b-b6b7-402d-aa90-4edb1e5cfbc2",
@@ -413,7 +587,7 @@
       "optionTemplateIds": [
         "4a947b5f-0eb9-4c88-87b2-94debe05a41d"
       ],
-      "sortOrder": 12
+      "sortOrder": 21
     },
     {
       "id": "aae21703-075e-4c63-8a75-925ae150ec78",
@@ -431,7 +605,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 13
+      "sortOrder": 22
     },
     {
       "id": "42257f0b-e1f2-4b69-b7ce-d59d43a69f87",
@@ -452,7 +626,7 @@
         "a18f98eb-3772-4af6-a8cc-4dee966884bc",
         "80ff7a38-11c2-4942-a403-b5e3921ef3e2"
       ],
-      "sortOrder": 14
+      "sortOrder": 23
     },
     {
       "id": "2813d1e7-250b-49ae-9f76-e5b40f451492",
@@ -473,7 +647,7 @@
         "a18f98eb-3772-4af6-a8cc-4dee966884bc",
         "80ff7a38-11c2-4942-a403-b5e3921ef3e2"
       ],
-      "sortOrder": 15
+      "sortOrder": 24
     },
     {
       "id": "68446222-f136-4648-9977-3c82107a02b7",
@@ -493,7 +667,7 @@
       "optionTemplateIds": [
         "7524baa2-2174-4d16-988e-8904ce1192db"
       ],
-      "sortOrder": 16
+      "sortOrder": 25
     },
     {
       "id": "b482b42a-a6bc-4b48-bfd0-c1acaa9089b2",
@@ -511,7 +685,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 17
+      "sortOrder": 26
     },
     {
       "id": "353812e8-9360-4594-8561-e3ba133c999b",
@@ -529,7 +703,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 18
+      "sortOrder": 27
     },
     {
       "id": "c0f16b37-ff76-4d8e-a5a8-3ead5fd7b0a5",
@@ -549,7 +723,7 @@
       "optionTemplateIds": [
         "4a947b5f-0eb9-4c88-87b2-94debe05a41d"
       ],
-      "sortOrder": 19
+      "sortOrder": 28
     },
     {
       "id": "d2dfd961-40ae-401b-8b3a-530963b32741",
@@ -567,7 +741,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 20
+      "sortOrder": 29
     },
     {
       "id": "b2bf24a7-1018-4953-86ce-baacae6fe06c",
@@ -587,7 +761,7 @@
       "optionTemplateIds": [
         "2be54a6c-ab0d-40d7-a080-0c50e0d228dc"
       ],
-      "sortOrder": 21
+      "sortOrder": 30
     },
     {
       "id": "88d856ff-e35d-4c21-893b-3f60e2fa71fa",
@@ -605,7 +779,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 22
+      "sortOrder": 31
     },
     {
       "id": "27ab97f7-0ddf-495a-b475-4533e945da85",
@@ -629,7 +803,7 @@
         "d7fcbd85-9fb6-40db-872a-8275dce401ed",
         "74421c35-8f8e-469d-b25a-cbd7fb77d8c3"
       ],
-      "sortOrder": 23
+      "sortOrder": 32
     },
     {
       "id": "4ab44b18-16b3-4deb-8dcc-a37cf505d041",
@@ -647,7 +821,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 24
+      "sortOrder": 33
     },
     {
       "id": "22c91b97-70b4-4761-9f89-43fc0dbd97bb",
@@ -665,7 +839,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 25
+      "sortOrder": 34
     },
     {
       "id": "2e30dd59-0f0e-471f-af86-5dff225f1c5e",
@@ -685,7 +859,7 @@
       "optionTemplateIds": [
         "2fb4a046-da1a-4e98-a7fa-40703f938de2"
       ],
-      "sortOrder": 26
+      "sortOrder": 35
     },
     {
       "id": "5c59fa23-1c6d-40db-bc54-cd70fdabfaa7",
@@ -703,7 +877,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 27
+      "sortOrder": 36
     },
     {
       "id": "d939174b-8266-4b40-ac1b-8314d3ea647b",
@@ -723,7 +897,7 @@
       "optionTemplateIds": [
         "85cead19-7d83-4c61-8199-b7fab35fb672"
       ],
-      "sortOrder": 28
+      "sortOrder": 37
     },
     {
       "id": "0738f65b-7561-4467-8ba9-a814587a9b59",
@@ -743,7 +917,7 @@
       "optionTemplateIds": [
         "f7e12072-8edf-4485-b897-6a440704d521"
       ],
-      "sortOrder": 29
+      "sortOrder": 38
     },
     {
       "id": "04c7d4b2-d155-4dbf-aa30-4e4a4c03aa1a",
@@ -763,7 +937,7 @@
       "optionTemplateIds": [
         "8491b574-2973-47f0-8d46-5c489fd9bba8"
       ],
-      "sortOrder": 30
+      "sortOrder": 39
     },
     {
       "id": "24622452-bb43-42c8-966e-815dcf2316db",
@@ -781,7 +955,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 31
+      "sortOrder": 40
     },
     {
       "id": "9dc365e6-11a7-4308-9899-b69cfdce6132",
@@ -801,7 +975,7 @@
       "optionTemplateIds": [
         "85cead19-7d83-4c61-8199-b7fab35fb672"
       ],
-      "sortOrder": 32
+      "sortOrder": 41
     },
     {
       "id": "7fc37f94-fa7a-4206-ac56-e46984856488",
@@ -819,7 +993,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 33
+      "sortOrder": 42
     },
     {
       "id": "28c23af3-2b38-43c5-b053-477d65f8c70c",
@@ -837,180 +1011,6 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 34
-    },
-    {
-      "id": "7c92814f-40ee-4742-8e2b-004a659bcb97",
-      "cukcukId": "7c92814f-40ee-4742-8e2b-004a659bcb97",
-      "categoryId": "0afd5056-2ad2-46d3-9122-6886fedc4d3a",
-      "categoryName": "다방치킨",
-      "sourceName": "후라이드  Fried Chicken  无骨炸鸡腿 Má đùi rút xương",
-      "names": {
-        "ko": "후라이드 치킨",
-        "vi": "Gà rán má đùi rút xương",
-        "zh": "无骨炸鸡腿",
-        "en": "Boneless Fried Chicken Thigh"
-      },
-      "price": 399600,
-      "available": true,
-      "optionGroups": 1,
-      "optionTemplateIds": [
-        "85cead19-7d83-4c61-8199-b7fab35fb672"
-      ],
-      "sortOrder": 35
-    },
-    {
-      "id": "84eca397-5e7f-4f5e-8e39-e62981936afe",
-      "cukcukId": "84eca397-5e7f-4f5e-8e39-e62981936afe",
-      "categoryId": "2424e567-8845-48c6-a4af-91c51a4d3aaa",
-      "categoryName": "날개치킨",
-      "sourceName": "허니 윙봉 Honey Wings 蜜汁鸡翅 Cánh gà mật ong",
-      "names": {
-        "ko": "허니 윙봉",
-        "vi": "Cánh gà mật ong",
-        "zh": "蜜汁鸡翅",
-        "en": "Honey Wings"
-      },
-      "price": 399600,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 36
-    },
-    {
-      "id": "0cb6c0d0-0b9d-4813-96d5-606287423eb8",
-      "cukcukId": "0cb6c0d0-0b9d-4813-96d5-606287423eb8",
-      "categoryId": "f60b3e05-f21f-4905-9207-0e494ff2b464",
-      "categoryName": "신메뉴",
-      "sourceName": "핫후라이드ver3.0 | Gà rán cay | 辣味炸鸡 | Hot Fried Chicken",
-      "names": {
-        "ko": "핫후라이드 ver3.0",
-        "vi": "Gà rán cay ver3.0",
-        "zh": "辣味炸鸡 ver3.0",
-        "en": "Hot Fried Chicken ver3.0"
-      },
-      "price": 399600,
-      "available": true,
-      "optionGroups": 1,
-      "optionTemplateIds": [
-        "6274f44c-9256-418a-a59d-20e04e651fa1"
-      ],
-      "sortOrder": 37
-    },
-    {
-      "id": "899a8524-b720-4828-b7fc-1f2472ce962a",
-      "cukcukId": "899a8524-b720-4828-b7fc-1f2472ce962a",
-      "categoryId": "6a144c27-c7ba-43f6-b6e1-4be8b008b433",
-      "categoryName": "세트",
-      "sourceName": "한신포차세트 | nguyên con & chân gà | 鸡爪鸡套餐",
-      "names": {
-        "ko": "한신포차 세트",
-        "vi": "Combo gà nguyên con và chân gà",
-        "zh": "鸡爪鸡套餐",
-        "en": "Hanshin Pocha Set"
-      },
-      "price": 540000,
-      "available": true,
-      "optionGroups": 1,
-      "optionTemplateIds": [
-        "3bd1519c-f24f-4aaf-9776-0579d374738f"
-      ],
-      "sortOrder": 38
-    },
-    {
-      "id": "e9e75a8d-cb9d-442b-8f57-08c06421f56f",
-      "cukcukId": "e9e75a8d-cb9d-442b-8f57-08c06421f56f",
-      "categoryId": "4ae5f7a4-9b6d-4c73-a895-af5d60c8fd87",
-      "categoryName": "음료",
-      "sourceName": "펩시제로 | Pepsi Zero | 百事可乐无糖 | Pepsi không đường",
-      "names": {
-        "ko": "펩시 제로",
-        "vi": "Pepsi không đường",
-        "zh": "百事可乐无糖",
-        "en": "Pepsi Zero"
-      },
-      "price": 33000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 39
-    },
-    {
-      "id": "1034a04e-2d2b-41ae-897c-a8dbe9eaf21c",
-      "cukcukId": "1034a04e-2d2b-41ae-897c-a8dbe9eaf21c",
-      "categoryId": "f5b16a17-ba22-4689-aa33-83f888a31f55",
-      "categoryName": "기타",
-      "sourceName": "페퍼로니/ (SP02) Pepperoni/  意大利香肠披萨/  Pizza pepperoni solo",
-      "names": {
-        "ko": "페퍼로니 (SP02)",
-        "vi": "Pizza pepperoni (SP02)",
-        "zh": "意大利香肠披萨 (SP02)",
-        "en": "Pepperoni Pizza (SP02)"
-      },
-      "price": 139968,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 40
-    },
-    {
-      "id": "18c2eb1b-5a99-459e-98b2-8c630036442a",
-      "cukcukId": "18c2eb1b-5a99-459e-98b2-8c630036442a",
-      "categoryId": "0ac81743-8d00-47bd-af8c-e102b44f4247",
-      "categoryName": "스페이스 피자",
-      "sourceName": "파마산 치즈가루 | Phô mai bột Parmesan",
-      "names": {
-        "ko": "파마산 치즈가루",
-        "vi": "Bột phô mai Parmesan",
-        "zh": "帕玛森芝士粉",
-        "en": "Parmesan Cheese Powder"
-      },
-      "price": 5400,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 41
-    },
-    {
-      "id": "08e44de3-df20-4b82-aa28-b26a7d2d69f9",
-      "cukcukId": "08e44de3-df20-4b82-aa28-b26a7d2d69f9",
-      "categoryId": "0afd5056-2ad2-46d3-9122-6886fedc4d3a",
-      "categoryName": "다방치킨",
-      "sourceName": "파닭  Green Onion Chicken 葱香炸鸡（芥末酱 Gà hành lá (sốt mù tạt)",
-      "names": {
-        "ko": "파닭",
-        "vi": "Gà hành lá sốt mù tạt",
-        "zh": "葱香炸鸡（芥末酱）",
-        "en": "Green Onion Chicken with Mustard Sauce"
-      },
-      "price": 399600,
-      "available": true,
-      "optionGroups": 1,
-      "optionTemplateIds": [
-        "85cead19-7d83-4c61-8199-b7fab35fb672"
-      ],
-      "sortOrder": 42
-    },
-    {
-      "id": "930eadf4-1572-4fda-83c2-428092e0eb24",
-      "cukcukId": "930eadf4-1572-4fda-83c2-428092e0eb24",
-      "categoryId": "6a144c27-c7ba-43f6-b6e1-4be8b008b433",
-      "categoryName": "세트",
-      "sourceName": "통떡 SET  Whole Chicken & Tteok Set 整只炸鸡 + 辣炒年糕Gà nguyên con + Tokbokki",
-      "names": {
-        "ko": "통떡 세트",
-        "vi": "Combo gà nguyên con và tokbokki",
-        "zh": "整只炸鸡配辣炒年糕",
-        "en": "Whole Chicken & Tteokbokki Set"
-      },
-      "price": 378000,
-      "available": true,
-      "optionGroups": 3,
-      "optionTemplateIds": [
-        "5197c337-535f-4e91-b7d1-26029a4b9222",
-        "4c90727b-0406-4177-a8c6-42394fa69f56",
-        "d7fcbd85-9fb6-40db-872a-8275dce401ed"
-      ],
       "sortOrder": 43
     },
     {
@@ -4374,6 +4374,6 @@
     "cacheHits": 277,
     "translated": 0,
     "pendingCount": 0,
-    "updatedAt": "2026-08-18T21:09:24.104Z"
+    "updatedAt": "2026-08-18T21:35:03.811Z"
   }
 }
