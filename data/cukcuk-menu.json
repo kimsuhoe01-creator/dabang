@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-08-19 00:01:18",
-    "finished_at": "2026-08-19 00:01:25",
+    "started_at": "2026-08-19 01:32:05",
+    "finished_at": "2026-08-19 01:32:14",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다."
@@ -1789,96 +1789,6 @@
       "sortOrder": 84
     },
     {
-      "id": "1932a5e2-f7c9-4b04-bea8-b5508b6f66b2",
-      "cukcukId": "1932a5e2-f7c9-4b04-bea8-b5508b6f66b2",
-      "categoryId": "cukcuk-alcohol",
-      "categoryName": "주류",
-      "sourceName": "하롱베이 캔맥주 Ha Long Bay Beer (Can)  下龙湾罐装啤酒Bia lon Hạ Long Bay",
-      "names": {
-        "ko": "하롱베이 캔맥주",
-        "vi": "Bia lon Hạ Long Bay",
-        "zh": "下龙湾罐装啤酒",
-        "en": "Ha Long Bay Beer (Can)"
-      },
-      "price": 38500,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 85
-    },
-    {
-      "id": "d06cd3a9-3f5a-4c35-9b5e-1a034992a966",
-      "cukcukId": "d06cd3a9-3f5a-4c35-9b5e-1a034992a966",
-      "categoryId": "cukcuk-alcohol",
-      "categoryName": "주류",
-      "sourceName": "하노이 캔맥주 | Bia lon Hà Nội | 河内罐装啤酒 | Hanoi canned beer",
-      "names": {
-        "ko": "하노이 캔맥주",
-        "vi": "Bia lon Hà Nội",
-        "zh": "河内罐装啤酒",
-        "en": "Hanoi Beer (Can)"
-      },
-      "price": 38500,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 86
-    },
-    {
-      "id": "87b45d34-14f6-46d3-a272-493cbd4276c7",
-      "cukcukId": "87b45d34-14f6-46d3-a272-493cbd4276c7",
-      "categoryId": "cukcuk-alcohol",
-      "categoryName": "주류",
-      "sourceName": "하노이 생맥주 1L | Bia tươi Hà Nội 1L | 河内生啤 1升 | Hanoi Draft Beer 1L",
-      "names": {
-        "ko": "하노이 생맥주 1L",
-        "vi": "Bia tươi Hà Nội 1L",
-        "zh": "河内生啤 1升",
-        "en": "Hanoi Draft Beer 1L"
-      },
-      "price": 110000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 87
-    },
-    {
-      "id": "cf5bd09b-42ca-41c1-a7f9-87dcbaf49f69",
-      "cukcukId": "cf5bd09b-42ca-41c1-a7f9-87dcbaf49f69",
-      "categoryId": "cukcuk-alcohol",
-      "categoryName": "주류",
-      "sourceName": "하노이 생맥주 1L | Bia tươi Hà Nội 1L | 河内生啤 1升 | Hanoi Draft Beer 1L",
-      "names": {
-        "ko": "하노이 생맥주 1L",
-        "vi": "Bia tươi Hà Nội 1L",
-        "zh": "河内生啤 1升",
-        "en": "Hanoi Draft Beer 1L"
-      },
-      "price": 110000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 88
-    },
-    {
-      "id": "70e447f4-8b00-404e-af5a-93ac3ac3b8a8",
-      "cukcukId": "70e447f4-8b00-404e-af5a-93ac3ac3b8a8",
-      "categoryId": "cukcuk-alcohol",
-      "categoryName": "주류",
-      "sourceName": "하노이 병맥주 Hanoi Beer (Bottle) 河内瓶装啤酒 Bia chai Hà Nội",
-      "names": {
-        "ko": "하노이 병맥주",
-        "vi": "Bia chai Hà Nội",
-        "zh": "河内瓶装啤酒",
-        "en": "Hanoi Beer (Bottle)"
-      },
-      "price": 49500,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 89
-    },
-    {
       "id": "9086861a-9c6c-48f1-a2bf-c20cc3c38a80",
       "cukcukId": "9086861a-9c6c-48f1-a2bf-c20cc3c38a80",
       "categoryId": "cukcuk-alcohol",
@@ -1894,7 +1804,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 90
+      "sortOrder": 85
     },
     {
       "id": "addccbaa-223e-4456-a73a-98b2e0d7e9ae",
@@ -1912,7 +1822,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 91
+      "sortOrder": 86
     },
     {
       "id": "b3ff9a43-637b-436f-ab7e-d3e0b3f2826f",
@@ -1930,7 +1840,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 92
+      "sortOrder": 87
     },
     {
       "id": "5d41c81c-7a68-4726-a8df-1a6315788b1c",
@@ -1948,7 +1858,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 93
+      "sortOrder": 88
     },
     {
       "id": "867b2e98-da89-4688-bcfa-0433c48ba7a8",
@@ -1966,7 +1876,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 94
+      "sortOrder": 89
     },
     {
       "id": "5e9db310-b4ff-4c6a-8c9f-8706a78065f9",
@@ -1984,7 +1894,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 95
+      "sortOrder": 90
     },
     {
       "id": "292433d8-bef9-450d-814d-f2cb60aebb6b",
@@ -2002,7 +1912,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 96
+      "sortOrder": 91
     },
     {
       "id": "65df8aff-db47-4441-8215-e60ff8229e99",
@@ -2020,7 +1930,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 97
+      "sortOrder": 92
     },
     {
       "id": "b0562531-0db8-4602-bc6d-661b06645147",
@@ -2038,7 +1948,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 98
+      "sortOrder": 93
     },
     {
       "id": "23343ff7-8a2a-4b96-bb0e-25b133195e53",
@@ -2056,7 +1966,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 99
+      "sortOrder": 94
     },
     {
       "id": "ebe0706f-a35f-4ec6-a7a3-dca6d4a47edf",
@@ -2074,7 +1984,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 100
+      "sortOrder": 95
     },
     {
       "id": "a0f42985-3dee-4257-9683-c70fef7992e6",
@@ -2089,6 +1999,96 @@
         "en": "Jameson Highball"
       },
       "price": 99000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 96
+    },
+    {
+      "id": "1932a5e2-f7c9-4b04-bea8-b5508b6f66b2",
+      "cukcukId": "1932a5e2-f7c9-4b04-bea8-b5508b6f66b2",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "하롱베이 캔맥주 Ha Long Bay Beer (Can)  下龙湾罐装啤酒Bia lon Hạ Long Bay",
+      "names": {
+        "ko": "하롱베이 캔맥주",
+        "vi": "Bia lon Hạ Long Bay",
+        "zh": "下龙湾罐装啤酒",
+        "en": "Ha Long Bay Beer (Can)"
+      },
+      "price": 38500,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 97
+    },
+    {
+      "id": "d06cd3a9-3f5a-4c35-9b5e-1a034992a966",
+      "cukcukId": "d06cd3a9-3f5a-4c35-9b5e-1a034992a966",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "하노이 캔맥주 | Bia lon Hà Nội | 河内罐装啤酒 | Hanoi canned beer",
+      "names": {
+        "ko": "하노이 캔맥주",
+        "vi": "Bia lon Hà Nội",
+        "zh": "河内罐装啤酒",
+        "en": "Hanoi Beer (Can)"
+      },
+      "price": 38500,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 98
+    },
+    {
+      "id": "87b45d34-14f6-46d3-a272-493cbd4276c7",
+      "cukcukId": "87b45d34-14f6-46d3-a272-493cbd4276c7",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "하노이 생맥주 1L | Bia tươi Hà Nội 1L | 河内生啤 1升 | Hanoi Draft Beer 1L",
+      "names": {
+        "ko": "하노이 생맥주 1L",
+        "vi": "Bia tươi Hà Nội 1L",
+        "zh": "河内生啤 1升",
+        "en": "Hanoi Draft Beer 1L"
+      },
+      "price": 110000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 99
+    },
+    {
+      "id": "cf5bd09b-42ca-41c1-a7f9-87dcbaf49f69",
+      "cukcukId": "cf5bd09b-42ca-41c1-a7f9-87dcbaf49f69",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "하노이 생맥주 1L | Bia tươi Hà Nội 1L | 河内生啤 1升 | Hanoi Draft Beer 1L",
+      "names": {
+        "ko": "하노이 생맥주 1L",
+        "vi": "Bia tươi Hà Nội 1L",
+        "zh": "河内生啤 1升",
+        "en": "Hanoi Draft Beer 1L"
+      },
+      "price": 110000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 100
+    },
+    {
+      "id": "70e447f4-8b00-404e-af5a-93ac3ac3b8a8",
+      "cukcukId": "70e447f4-8b00-404e-af5a-93ac3ac3b8a8",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "하노이 병맥주 Hanoi Beer (Bottle) 河内瓶装啤酒 Bia chai Hà Nội",
+      "names": {
+        "ko": "하노이 병맥주",
+        "vi": "Bia chai Hà Nội",
+        "zh": "河内瓶装啤酒",
+        "en": "Hanoi Beer (Bottle)"
+      },
+      "price": 49500,
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
@@ -4374,6 +4374,6 @@
     "cacheHits": 277,
     "translated": 0,
     "pendingCount": 0,
-    "updatedAt": "2026-08-19T00:01:30.263Z"
+    "updatedAt": "2026-08-19T01:32:19.653Z"
   }
 }
