@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-08-21 03:11:40",
-    "finished_at": "2026-08-21 03:11:48",
+    "started_at": "2026-08-21 03:58:49",
+    "finished_at": "2026-08-21 03:58:58",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다."
@@ -990,8 +990,10 @@
       },
       "price": 399600,
       "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
+      "optionGroups": 1,
+      "optionTemplateIds": [
+        "85cead19-7d83-4c61-8199-b7fab35fb672"
+      ],
       "sortOrder": 42
     },
     {
@@ -3127,6 +3129,7 @@
         "08e44de3-df20-4b82-aa28-b26a7d2d69f9",
         "316a67e3-b913-4b86-81fa-79c053604819",
         "7c92814f-40ee-4742-8e2b-004a659bcb97",
+        "7fc37f94-fa7a-4206-ac56-e46984856488",
         "9dc365e6-11a7-4308-9899-b69cfdce6132",
         "b2c769d6-83b0-4c07-a942-ae7113fabd31",
         "c2beac10-4cdb-4d1b-b83b-ebac299eb44e",
@@ -4331,6 +4334,6 @@
     "cacheHits": 274,
     "translated": 0,
     "pendingCount": 0,
-    "updatedAt": "2026-08-21T03:11:53.037Z"
+    "updatedAt": "2026-08-21T03:59:03.403Z"
   }
 }
