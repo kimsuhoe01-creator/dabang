@@ -2,13 +2,13 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-08-21 03:58:49",
-    "finished_at": "2026-08-21 03:58:58",
+    "started_at": "2026-08-21 04:35:02",
+    "finished_at": "2026-08-21 04:35:12",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다."
   },
-  "categoryCount": 12,
+  "categoryCount": 11,
   "menuCount": 124,
   "optionTemplateCount": 23,
   "categories": [
@@ -133,18 +133,6 @@
       "sortOrder": 9
     },
     {
-      "id": "b4606019-4a6b-4923-8a87-7f02012c1044",
-      "sourceName": "멕시칸|MónMexico|墨西哥菜|MexicanFood  ",
-      "names": {
-        "ko": "멕시칸",
-        "vi": "Món Mexico",
-        "zh": "墨西哥菜",
-        "en": "Mexican Food"
-      },
-      "visible": true,
-      "sortOrder": 10
-    },
-    {
       "id": "cukcuk-alcohol",
       "sourceName": "주류 | Đồ uống có cồn | 酒类 | Alcohol",
       "names": {
@@ -154,7 +142,7 @@
         "en": "Alcohol"
       },
       "visible": true,
-      "sortOrder": 11
+      "sortOrder": 10
     }
   ],
   "menus": [
@@ -1430,8 +1418,8 @@
     {
       "id": "a1681f58-51f1-48eb-b38b-5d7189e4b236",
       "cukcukId": "a1681f58-51f1-48eb-b38b-5d7189e4b236",
-      "categoryId": "b4606019-4a6b-4923-8a87-7f02012c1044",
-      "categoryName": "멕시칸",
+      "categoryId": "601b353e-0f17-46db-bd64-d64140a70d27",
+      "categoryName": "안주",
       "sourceName": "딥치즈&나쵸칩Deep Cheese & Nacho Chips 芝士酱蘸玉米片Bánh nacho chấm phô mai đậm đà",
       "names": {
         "ko": "딥치즈 & 나초칩",
@@ -4330,10 +4318,10 @@
     "provider": "openai",
     "model": "gpt-5.6-terra",
     "status": "ready",
-    "entityCount": 274,
-    "cacheHits": 274,
+    "entityCount": 273,
+    "cacheHits": 273,
     "translated": 0,
     "pendingCount": 0,
-    "updatedAt": "2026-08-21T03:59:03.403Z"
+    "updatedAt": "2026-08-21T04:35:17.676Z"
   }
 }
