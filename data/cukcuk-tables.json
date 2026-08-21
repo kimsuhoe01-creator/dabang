@@ -175,8 +175,8 @@
         "MapObjectName": "ship02",
         "AreaID": "20fb3f9d-e2d5-43f7-8e2d-e9506c3c4e15",
         "AreaName": "배달",
-        "IsAvailable": false,
-        "Status": 1
+        "IsAvailable": true,
+        "Status": 2
       },
       {
         "MapObjectID": "f77fbeac-50e7-43f1-83ee-80aed3523f19",
@@ -199,16 +199,16 @@
         "MapObjectName": "B-11",
         "AreaID": "c60addae-088a-49b5-ab5e-f4d0ce6195bf",
         "AreaName": "B-",
-        "IsAvailable": true,
-        "Status": 2
+        "IsAvailable": false,
+        "Status": 1
       },
       {
         "MapObjectID": "80c2b7d2-bb6f-4f65-a043-8c0da261ff3b",
         "MapObjectName": "ship03",
         "AreaID": "20fb3f9d-e2d5-43f7-8e2d-e9506c3c4e15",
         "AreaName": "배달",
-        "IsAvailable": false,
-        "Status": 1
+        "IsAvailable": true,
+        "Status": 2
       },
       {
         "MapObjectID": "49496b79-4f57-4d1f-bb4c-93bcf78dd053",
@@ -327,8 +327,8 @@
         "MapObjectName": "B-10",
         "AreaID": "c60addae-088a-49b5-ab5e-f4d0ce6195bf",
         "AreaName": "B-",
-        "IsAvailable": true,
-        "Status": 2
+        "IsAvailable": false,
+        "Status": 1
       },
       {
         "MapObjectID": "a7e14bfa-46a2-496a-bd50-e2737e01373c",
