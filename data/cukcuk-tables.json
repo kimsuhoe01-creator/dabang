@@ -231,8 +231,8 @@
         "MapObjectName": "PC2",
         "AreaID": "e2952a67-7e4d-4d09-a7ec-cc22fa24aa25",
         "AreaName": "Z",
-        "IsAvailable": false,
-        "Status": 1
+        "IsAvailable": true,
+        "Status": 2
       },
       {
         "MapObjectID": "34159941-91e1-4d76-b063-9af719378525",
