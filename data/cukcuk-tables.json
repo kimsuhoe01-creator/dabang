@@ -343,8 +343,8 @@
         "MapObjectName": "C-7",
         "AreaID": "e69f4221-ddc6-4fc2-8cf6-defac8dd4c3c",
         "AreaName": "C-",
-        "IsAvailable": false,
-        "Status": 1
+        "IsAvailable": true,
+        "Status": 2
       },
       {
         "MapObjectID": "6022817a-13bf-49ab-8ae5-e7b26d4e26a9",
