@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-08-25 09:48:19",
-    "finished_at": "2026-08-25 09:48:26",
+    "started_at": "2026-08-25 10:14:34",
+    "finished_at": "2026-08-25 10:14:42",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다."
@@ -1958,24 +1958,6 @@
       "sortOrder": 94
     },
     {
-      "id": "5e9db310-b4ff-4c6a-8c9f-8706a78065f9",
-      "cukcukId": "5e9db310-b4ff-4c6a-8c9f-8706a78065f9",
-      "categoryId": "cukcuk-alcohol",
-      "categoryName": "주류",
-      "sourceName": "참이슬 | Chamisul | 眞露 (Zhēnlù) | Chamisul",
-      "names": {
-        "ko": "참이슬",
-        "vi": "Rượu soju Chamisul",
-        "zh": "真露",
-        "en": "Chamisul Soju"
-      },
-      "price": 154000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 95
-    },
-    {
       "id": "292433d8-bef9-450d-814d-f2cb60aebb6b",
       "cukcukId": "292433d8-bef9-450d-814d-f2cb60aebb6b",
       "categoryId": "cukcuk-alcohol",
@@ -1991,7 +1973,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 96
+      "sortOrder": 95
     },
     {
       "id": "65df8aff-db47-4441-8215-e60ff8229e99",
@@ -2009,7 +1991,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 97
+      "sortOrder": 96
     },
     {
       "id": "b0562531-0db8-4602-bc6d-661b06645147",
@@ -2027,7 +2009,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 98
+      "sortOrder": 97
     },
     {
       "id": "23343ff7-8a2a-4b96-bb0e-25b133195e53",
@@ -2045,7 +2027,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 99
+      "sortOrder": 98
     },
     {
       "id": "ebe0706f-a35f-4ec6-a7a3-dca6d4a47edf",
@@ -2063,7 +2045,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 100
+      "sortOrder": 99
     },
     {
       "id": "a0f42985-3dee-4257-9683-c70fef7992e6",
@@ -2081,7 +2063,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 101
+      "sortOrder": 100
     },
     {
       "id": "5e6c1f83-2f15-432a-b497-6d4747393196",
@@ -2099,7 +2081,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 102
+      "sortOrder": 101
     },
     {
       "id": "2d93c37e-8f59-4f39-a06d-cbaa6dab47f6",
@@ -2117,7 +2099,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 103
+      "sortOrder": 102
     },
     {
       "id": "0f40c0ed-06d2-433b-a19d-6983b0c4e014",
@@ -2135,7 +2117,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 104
+      "sortOrder": 103
     },
     {
       "id": "db099bd8-4ac3-45cf-a4be-eb9de43aff68",
@@ -2153,7 +2135,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 105
+      "sortOrder": 104
     },
     {
       "id": "57b1fe70-fe33-4654-9d58-575f277749be",
@@ -2171,7 +2153,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 106
+      "sortOrder": 105
     },
     {
       "id": "4182ba40-0603-49ac-9b7a-e2438229f7b8",
@@ -2189,7 +2171,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 107
+      "sortOrder": 106
     },
     {
       "id": "52c29562-ac31-42c7-9f24-956d348de02a",
@@ -2207,7 +2189,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 108
+      "sortOrder": 107
     },
     {
       "id": "572fec3a-832d-474f-8232-0d441e08cade",
@@ -2225,7 +2207,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 109
+      "sortOrder": 108
     },
     {
       "id": "9675de2a-b48c-486f-9e07-cf9c40004c8e",
@@ -2243,7 +2225,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 110
+      "sortOrder": 109
     },
     {
       "id": "d9c74a29-714a-469b-a89c-429dc0b4e400",
@@ -2261,7 +2243,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 111
+      "sortOrder": 110
     },
     {
       "id": "3b08e86b-afc7-496f-8ace-66278d350d79",
@@ -2279,7 +2261,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 112
+      "sortOrder": 111
     },
     {
       "id": "024d2d25-60c2-4e0f-8962-382092fd952e",
@@ -2297,7 +2279,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 113
+      "sortOrder": 112
     },
     {
       "id": "2bdbb87d-9f83-4a7f-97bb-0bb21fb91209",
@@ -2315,7 +2297,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 114
+      "sortOrder": 113
     },
     {
       "id": "903c3f3c-b971-4a83-8ecb-a3f5c401eb49",
@@ -2333,7 +2315,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 115
+      "sortOrder": 114
     },
     {
       "id": "6bec7160-294b-42b0-b3a9-b2e1da24f7f5",
@@ -2351,7 +2333,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 116
+      "sortOrder": 115
     },
     {
       "id": "853e043d-fe9f-49f4-9d31-c86b38262204",
@@ -2369,7 +2351,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 117
+      "sortOrder": 116
     },
     {
       "id": "ced98733-4073-4314-bd8b-6a4461f62ef4",
@@ -2387,7 +2369,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 118
+      "sortOrder": 117
     },
     {
       "id": "225f2ecd-94d2-4970-bb7d-acb313837cb9",
@@ -2405,7 +2387,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 119
+      "sortOrder": 118
     },
     {
       "id": "50f90120-5773-4bdf-b9bc-71a7e99c7a6f",
@@ -2420,6 +2402,24 @@
         "en": "Jose Cuervo Gold Tequila Highball"
       },
       "price": 99000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 119
+    },
+    {
+      "id": "5e9db310-b4ff-4c6a-8c9f-8706a78065f9",
+      "cukcukId": "5e9db310-b4ff-4c6a-8c9f-8706a78065f9",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "Fresh 참이슬 | Chamisul fresh | 眞露 (Zhēnlù) | Chamisul fresh",
+      "names": {
+        "ko": "참이슬 프레시",
+        "vi": "Chamisul Fresh",
+        "zh": "真露清爽",
+        "en": "Chamisul Fresh"
+      },
+      "price": 154000,
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
@@ -4319,9 +4319,9 @@
     "model": "gpt-5.6-terra",
     "status": "ready",
     "entityCount": 273,
-    "cacheHits": 273,
-    "translated": 0,
+    "cacheHits": 272,
+    "translated": 1,
     "pendingCount": 0,
-    "updatedAt": "2026-08-25T09:48:31.587Z"
+    "updatedAt": "2026-08-25T10:14:51.959Z"
   }
 }
