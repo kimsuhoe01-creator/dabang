@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-08-29 11:28:34",
-    "finished_at": "2026-08-29 11:28:42",
+    "started_at": "2026-08-29 12:33:25",
+    "finished_at": "2026-08-29 12:33:34",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -140,7 +140,7 @@
         "ko": "주류",
         "vi": "Đồ uống có cồn",
         "zh": "酒类",
-        "en": "Alcohol"
+        "en": "Alcoholic Drinks"
       },
       "visible": true,
       "sortOrder": 10
@@ -150,7 +150,7 @@
       "sourceName": "하이볼|RượuHighball|高球酒|Highball",
       "names": {
         "ko": "하이볼",
-        "vi": "Rượu Highball",
+        "vi": "Highball",
         "zh": "高球酒",
         "en": "Highball"
       },
@@ -4273,9 +4273,9 @@
     "model": "gpt-5.6-terra",
     "status": "ready",
     "entityCount": 256,
-    "cacheHits": 236,
-    "translated": 20,
+    "cacheHits": 256,
+    "translated": 0,
     "pendingCount": 0,
-    "updatedAt": "2026-08-29T11:28:57.479Z"
+    "updatedAt": "2026-08-29T12:33:41.133Z"
   }
 }
