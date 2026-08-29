@@ -7,6 +7,8 @@ on:
       - main
     paths:
       - ".github/workflows/cukcuk-sync.yml"
+      - "data/cukcuk-table-qr-layout.json"
+      - "scripts/apply-table-qr-layout.mjs"
       - "scripts/translate-menu-data.mjs"
   schedule:
     - cron: "*/5 * * * *"
@@ -123,63 +125,82 @@ jobs:
             fs.writeFileSync('data/cukcuk-tables.json', JSON.stringify(tables, null, 2) + '\n');
             console.log(`CUKCUK table sync completed: ${list.length} tables.`);
 
-            try {
-              const headers = {
-                Authorization: `Bearer ${login.AccessToken}`,
-                CompanyCode: login.CompanyCode,
-                'Content-Type': 'application/json'
-              };
-              const categoryResponse = await fetch('https://graphapi.cukcuk.vn/api/v1/categories/list?includeInactive=false', { headers });
-              const categoryResult = await categoryResponse.json().catch(() => null);
-              if (!categoryResponse.ok || !categoryResult?.Success || !Array.isArray(categoryResult.Data)) throw new Error('category list unavailable');
-
-              const alcoholPattern = /주류|술|맥주|소주|막걸리|하이볼|와인|위스키|보드카|카스|테라|참이슬|진로|새로|하이트|켈리|beer|bia|rượu|ruou|alcohol|soju|highball|wine|whisky|vodka|cass|terra|tiger|heineken|saigon|sapporo|budweiser|corona|hoegaarden|啤酒|烧酒|酒類|酒类/i;
-              const alcoholCategoryIds = new Set(categoryResult.Data.filter(category => alcoholPattern.test(`${category.Code || ''} ${category.Name || ''} ${category.Description || ''}`)).map(category => String(category.Id)));
-              const inventory = [];
-              for (let page = 1; page <= 10; page++) {
-                const response = await fetch('https://graphapi.cukcuk.vn/api/v1/inventoryitems/paging', {
-                  method: 'POST',
-                  headers,
-                  body: JSON.stringify({ Page: page, Limit: 100, BranchId: branchId, CategoryId: '', KeySearch: '', IncludeInactive: false })
-                });
-                const result = await response.json().catch(() => null);
-                if (!response.ok || !result?.Success || !Array.isArray(result.Data)) throw new Error(`inventory page ${page} unavailable`);
-                inventory.push(...result.Data);
-                if (inventory.length >= Number(result.Total || 0) || result.Data.length < 100) break;
-              }
-
-              const alcoholItems = inventory.filter(item => !item.Inactive && (alcoholCategoryIds.has(String(item.CategoryID ?? item.CategoryId ?? '')) || alcoholPattern.test(`${item.Code || ''} ${item.Name || ''} ${item.CategoryName || ''}`)));
-              if (alcoholItems.length) {
-                const published = JSON.parse(fs.readFileSync('data/cukcuk-menu.json', 'utf8'));
-                const categoryId = 'cukcuk-alcohol';
-                if (!published.categories.some(category => category.id === categoryId)) published.categories.push({ id: categoryId, sourceName: '주류 | Đồ uống có cồn | 酒类 | Alcohol', names: { ko: '주류', vi: 'Đồ uống có cồn', zh: '酒类', en: 'Alcohol' }, visible: true, sortOrder: published.categories.length });
-                const existing = new Map(published.menus.map(menu => [String(menu.id), menu]));
-                for (const item of alcoholItems) {
-                  const id = String(item.Id);
-                  if (existing.has(id)) {
-                    const menu = existing.get(id);
-                    menu.categoryId = categoryId;
-                    menu.categoryName = '주류';
-                    continue;
-                  }
-                  published.menus.push({ id, cukcukId: id, categoryId, categoryName: '주류', sourceName: String(item.Name || item.Code || '주류'), names: { ko: String(item.Name || item.Code || '주류'), vi: '', zh: '', en: '' }, price: Number(item.SellingPrice ?? item.Price ?? 0), available: !item.Inactive, optionGroups: 0, optionTemplateIds: [], sortOrder: published.menus.length });
-                  existing.set(id, published.menus[published.menus.length - 1]);
-                }
-                published.categoryCount = published.categories.length;
-                published.menuCount = published.menus.length;
-                fs.writeFileSync('data/cukcuk-menu.json', JSON.stringify(published, null, 2) + '\n');
-                console.log(`CUKCUK alcohol menu sync completed: ${alcoholItems.length} items.`);
-              } else {
-                console.log('::warning::No active alcohol items were found in CUKCUK inventory.');
-              }
-            } catch (error) {
-              console.log(`::warning::Alcohol menu sync skipped: ${error.message}`);
+            const headers = {
+              Authorization: `Bearer ${login.AccessToken}`,
+              CompanyCode: login.CompanyCode,
+              'Content-Type': 'application/json'
+            };
+            const inventory = [];
+            for (let page = 1; page <= 10; page++) {
+              const response = await fetch('https://graphapi.cukcuk.vn/api/v1/inventoryitems/paging', {
+                method: 'POST',
+                headers,
+                body: JSON.stringify({ Page: page, Limit: 100, BranchId: branchId, CategoryId: '', KeySearch: '', IncludeInactive: false })
+              });
+              const result = await response.json().catch(() => null);
+              if (!response.ok || !result?.Success || !Array.isArray(result.Data)) throw new Error(`inventory page ${page} unavailable`);
+              inventory.push(...result.Data);
+              if (inventory.length >= Number(result.Total || 0) || result.Data.length < 100) break;
             }
+            if (!inventory.length) throw new Error('CUKCUK inventory API did not return any active products.');
+
+            const published = JSON.parse(fs.readFileSync('data/cukcuk-menu.json', 'utf8'));
+            const existing = new Map();
+            for (const menu of published.menus || []) {
+              for (const value of [menu.id, menu.cukcukId]) {
+                const key = String(value || '');
+                if (key) existing.set(key, menu);
+              }
+            }
+
+            let appended = 0;
+            let annotated = 0;
+            for (const item of inventory) {
+              if (item.Inactive === true || item.IsInactive === true) continue;
+              const id = String(item.Id ?? item.ID ?? item.InventoryItemId ?? item.InventoryItemID ?? '');
+              const code = String(item.Code ?? item.InventoryItemCode ?? '').trim();
+              if (!id || !code) continue;
+              const name = String(item.Name ?? item.InventoryItemName ?? code).trim() || code;
+              const price = Number(item.SellingPrice ?? item.Price ?? item.UnitPrice);
+              if (!Number.isFinite(price) || price < 0) throw new Error(`inventory product ${code} has an invalid price`);
+              const explicitlyUnavailable = item.OutOfStock === true || item.IsOutOfStock === true || item.IsAvailable === false || item.Available === false;
+              const menu = existing.get(id);
+              if (menu) {
+                menu.cukcukId = String(menu.cukcukId || id);
+                menu.cukcukCode = code;
+                annotated++;
+                continue;
+              }
+              const candidate = {
+                id,
+                cukcukId: id,
+                cukcukCode: code,
+                categoryId: '',
+                categoryName: '',
+                sourceName: name,
+                names: { ko: name, vi: '', zh: '', en: '' },
+                price,
+                available: !explicitlyUnavailable,
+                optionGroups: 0,
+                optionTemplateIds: [],
+                sortOrder: published.menus.length
+              };
+              published.menus.push(candidate);
+              existing.set(id, candidate);
+              appended++;
+            }
+            published.inventoryCandidateCount = published.menus.length;
+            fs.writeFileSync('data/cukcuk-menu.json', JSON.stringify(published, null, 2) + '\n');
+            console.log(`CUKCUK inventory candidates ready: ${inventory.length} active rows, ${annotated} matched customer rows, ${appended} appended candidates.`);
           }
 
-          syncTables().catch(error => console.log(`::warning::Table sync skipped: ${error.message}`));
+          syncTables().catch(error => {
+            console.error(`CUKCUK table/inventory sync failed: ${error.message}`);
+            process.exitCode = 1;
+          });
           NODE
 
+          node scripts/apply-table-qr-layout.mjs
           node scripts/translate-menu-data.mjs
 
           git config user.name "github-actions[bot]"

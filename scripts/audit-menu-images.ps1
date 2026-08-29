@@ -32,14 +32,15 @@ $missingMappings = @($menuData.menus | Where-Object { $mappedIds -notcontains $_
 $staleMappings = @($mappedIds | Where-Object { $menuIds -notcontains $_ })
 $missingFiles = @()
 
-foreach ($menu in $menuData.menus) {
-    $extension = if ($jpgIds -contains $menu.id) { 'jpg' } else { 'png' }
-    $expectedPath = Join-Path $imageDirectory "$($menu.id).$extension"
+foreach ($mappedId in $mappedIds) {
+    $extension = if ($jpgIds -contains $mappedId) { 'jpg' } else { 'png' }
+    $expectedPath = Join-Path $imageDirectory "$mappedId.$extension"
     if (-not (Test-Path -LiteralPath $expectedPath)) {
+        $menu = $menuData.menus | Where-Object { $_.id -eq $mappedId } | Select-Object -First 1
         $missingFiles += [pscustomobject]@{
-            Category = $menu.categoryName
-            Menu = $menu.names.ko
-            Id = $menu.id
+            Category = if ($menu) { $menu.categoryName } else { '(보관 이미지)' }
+            Menu = if ($menu) { $menu.names.ko } else { '(현재 미노출)' }
+            Id = $mappedId
             ExpectedPath = $expectedPath
         }
     }
@@ -47,7 +48,7 @@ foreach ($menu in $menuData.menus) {
 
 $orphanFiles = @(
     Get-ChildItem -LiteralPath $imageDirectory -File |
-        Where-Object { $menuIds -notcontains $_.BaseName }
+        Where-Object { $mappedIds -notcontains $_.BaseName }
 )
 
 Write-Host "Menus: $($menuIds.Count)"
@@ -55,7 +56,7 @@ Write-Host "Mapped IDs: $($mappedIds.Count)"
 Write-Host "Image files: $((Get-ChildItem -LiteralPath $imageDirectory -File).Count)"
 Write-Host "Missing mappings: $($missingMappings.Count)"
 Write-Host "Missing files: $($missingFiles.Count)"
-Write-Host "Stale mappings: $($staleMappings.Count)"
+Write-Host "Retained inactive mappings: $($staleMappings.Count)"
 Write-Host "Orphan files: $($orphanFiles.Count)"
 
 if ($missingMappings.Count) {
@@ -68,7 +69,7 @@ if ($missingFiles.Count) {
     $missingFiles | Format-Table Category, Menu, Id, ExpectedPath -AutoSize
 }
 
-if ($missingMappings.Count -or $missingFiles.Count -or $staleMappings.Count -or $orphanFiles.Count) {
+if ($missingMappings.Count -or $missingFiles.Count -or $orphanFiles.Count) {
     exit 1
 }
 

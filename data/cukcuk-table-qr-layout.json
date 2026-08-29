@@ -1,0 +1,984 @@
+{
+  "version": 1,
+  "revision": "cukcuk-table-qr-2026-08-29-95357aa1ca69",
+  "capturedAt": "2026-08-29T11:04:37.313Z",
+  "timezone": "Asia/Ho_Chi_Minh",
+  "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
+  "includeUnlisted": false,
+  "featuredVisible": false,
+  "tableDefaults": {
+    "groupOrder": [
+      "A",
+      "B",
+      "C"
+    ],
+    "withinGroup": "numeric-by-table-name"
+  },
+  "categoryCount": 12,
+  "menuCount": 112,
+  "categories": [
+    {
+      "id": "f60b3e05-f21f-4905-9207-0e494ff2b464",
+      "code": "New Menu",
+      "sourceName": "신메뉴 | Món mới | 新菜单 | New Menu",
+      "names": {
+        "ko": "신메뉴",
+        "vi": "Món mới",
+        "zh": "新菜单",
+        "en": "New Menu"
+      },
+      "visible": true,
+      "sortOrder": 0,
+      "menus": [
+        {
+          "code": "ᄃᄃᄎ TTTD",
+          "displayName": "디진다 돈까스 챌린지 | Thử thách Tonkatsu DIZINDA",
+          "price": 540000,
+          "outOfStock": false,
+          "sortOrder": 0
+        },
+        {
+          "code": "ᄃᄃ TD 地",
+          "displayName": "디진다 돈까스 | Tonkatsu DJINDA | 地狱辣炸猪排",
+          "price": 313200,
+          "outOfStock": false,
+          "sortOrder": 1
+        },
+        {
+          "code": "ᄃ DC 达",
+          "displayName": "다방콤보 | DABANG COMBO | 达邦组合",
+          "price": 421200,
+          "outOfStock": false,
+          "sortOrder": 2
+        },
+        {
+          "code": "ᄎ GNTC 炭 CSC",
+          "displayName": "참숯불닭 | Gà nướng than cay | 炭火辣鸡 | Charcoal Spicy Chicken",
+          "price": 367200,
+          "outOfStock": false,
+          "sortOrder": 3
+        },
+        {
+          "code": "ᄋ GCSCNKH 油",
+          "displayName": "유린기 | Gà chiên sốt chua ngọt kiểu Hoa | 油淋鸡",
+          "price": 205200,
+          "outOfStock": false,
+          "sortOrder": 4
+        },
+        {
+          "code": "(T02) Gà nướng củi",
+          "displayName": "화덕통닭 | 烤炉柴鸡 | Gà nướng lò củi | Oven Whole Chicken",
+          "price": 291600,
+          "outOfStock": false,
+          "sortOrder": 5
+        },
+        {
+          "code": "hot",
+          "displayName": "핫후라이드ver3.0 | Gà rán cay | 辣味炸鸡 | Hot Fried Chicken",
+          "price": 399600,
+          "outOfStock": false,
+          "sortOrder": 6
+        },
+        {
+          "code": "ᄉ GPBPM 雪 SCPC",
+          "displayName": "스노윙치킨 / Gà phủ bột phô mai / 雪花芝士粉炸鸡 / Snowing Cheese Powder Chicken",
+          "price": 399600,
+          "outOfStock": false,
+          "sortOrder": 7
+        },
+        {
+          "code": "ᄆGRXCF",
+          "displayName": "무뼈닭발|Chân gà rút xương|无骨鸡爪|Boneless Chicken Feet",
+          "price": 291600,
+          "outOfStock": false,
+          "sortOrder": 8
+        },
+        {
+          "code": "ᄎ CC KCC",
+          "displayName": "치밥키트(밥+실비김치) | Combo cơm + kim chi cay(250g)",
+          "price": 54000,
+          "outOfStock": false,
+          "sortOrder": 9
+        },
+        {
+          "code": "HCX",
+          "displayName": "돈까스 플레이트 Pork Cutlet Plate 炸猪排拼盘 Đĩa Thịt Heo Chiên Xù",
+          "price": 313200,
+          "outOfStock": false,
+          "sortOrder": 10
+        },
+        {
+          "code": "ᄆGMGC",
+          "displayName": "마니치 |Gà MANICHI|蒜香MANICHI炸鸡|MANICHI Garlic Chicken",
+          "price": 399600,
+          "outOfStock": false,
+          "sortOrder": 11
+        },
+        {
+          "code": "ᄇ MTCSC ESCN 超",
+          "displayName": "불쫄면 | Mì trộn cay siêu cay | Extra Spicy Chewy Noodles | 超辣劲道拌面",
+          "price": 97200,
+          "outOfStock": false,
+          "sortOrder": 12
+        },
+        {
+          "code": "ᄋ1 K1 冰1 IC1",
+          "displayName": "아이스크림 110ml | Kem 110ml | 冰淇淋 110ml | Ice Cream 110ml",
+          "price": 32400,
+          "outOfStock": false,
+          "sortOrder": 13
+        },
+        {
+          "code": "ᄋ5 K5 冰5 IC5",
+          "displayName": "아이스크림 500ml | Kem 500ml | 冰淇淋 500ml | Ice Cream 500ml",
+          "price": 129600,
+          "outOfStock": false,
+          "sortOrder": 14
+        }
+      ]
+    },
+    {
+      "id": "cukcuk-qr-daily-discounts",
+      "code": "Daily Discounts",
+      "sourceName": "요일별 할인 | Giảm giá theo ngày trong tuần | 每日優惠 | Daily Discounts",
+      "names": {
+        "ko": "요일별 할인",
+        "vi": "Ưu đãi theo ngày",
+        "zh": "每日优惠",
+        "en": "Daily Discounts"
+      },
+      "visible": true,
+      "sortOrder": 1,
+      "menus": []
+    },
+    {
+      "id": "6a144c27-c7ba-43f6-b6e1-4be8b008b433",
+      "code": "세트메뉴 | Combo món ăn",
+      "sourceName": "세트|Combo/Phầnăn|套餐|Set/Combo",
+      "names": {
+        "ko": "세트",
+        "vi": "Combo",
+        "zh": "套餐",
+        "en": "Set Combo"
+      },
+      "visible": true,
+      "sortOrder": 2,
+      "menus": [
+        {
+          "code": "(S03) Gà k xương + Tok",
+          "displayName": "치떡 SET | Chicken & Tteok Set | 无骨炸鸡 + 辣炒年糕 | Gà không xương + Tokbokki",
+          "price": 324000,
+          "outOfStock": false,
+          "sortOrder": 0
+        },
+        {
+          "code": "(S04) Gà nguyên con + Tok",
+          "displayName": "통떡 SET Whole Chicken & Tteok Set 整只炸鸡 + 辣炒年糕Gà nguyên con + Tokbokki",
+          "price": 378000,
+          "outOfStock": false,
+          "sortOrder": 1
+        },
+        {
+          "code": "(S05) Cánh gà + Tok",
+          "displayName": "윙떡 SET Wings & Tteok Set鸡翅 + 辣炒年糕 Cánh gà + Tokbokki",
+          "price": 324000,
+          "outOfStock": false,
+          "sortOrder": 2
+        },
+        {
+          "code": "(S06) Gà k xương 5 vị",
+          "displayName": "순살떠까 Boneless Chicken Tossed in Sauce 五味无骨炸鸡 Gà không xương 5 vị",
+          "price": 421200,
+          "outOfStock": false,
+          "sortOrder": 3
+        },
+        {
+          "code": "(S08) Cánh gà 4 vị",
+          "displayName": "윙봉떠까 Sauced Chicken Wings 四味鸡翅 Cánh gà 4 vị",
+          "price": 421200,
+          "outOfStock": false,
+          "sortOrder": 4
+        },
+        {
+          "code": "SCGHC",
+          "displayName": "국물닭발 세트| Set chân gà hầm cay | 辣汤鸡爪套餐",
+          "price": 378000,
+          "outOfStock": false,
+          "sortOrder": 5
+        },
+        {
+          "code": "ᄆCGRX",
+          "displayName": "무뼈닭발세트|Combo chân gà rút xương|无骨鸡爪套餐",
+          "price": 378000,
+          "outOfStock": false,
+          "sortOrder": 6
+        },
+        {
+          "code": "ᄃᄐᄌᄉGNNCVCG CNS",
+          "displayName": "한신포차세트 | nguyên con & chân gà | 鸡爪鸡套餐",
+          "price": 540000,
+          "outOfStock": false,
+          "sortOrder": 7
+        },
+        {
+          "code": "SPACE35",
+          "displayName": "치피 SET (M) Chicken Pizza Set (M)",
+          "price": 518400,
+          "outOfStock": false,
+          "sortOrder": 8
+        },
+        {
+          "code": "SPACE36",
+          "displayName": "치피 SET (L) | Chicken Pizza Set (L)",
+          "price": 734400,
+          "outOfStock": false,
+          "sortOrder": 9
+        }
+      ]
+    },
+    {
+      "id": "0afd5056-2ad2-46d3-9122-6886fedc4d3a",
+      "code": "다방치킨 | Dabang Chicken",
+      "sourceName": "다방치킨 | Dabang Chicken",
+      "names": {
+        "ko": "다방치킨",
+        "vi": "Gà Dabang",
+        "zh": "Dabang 炸鸡",
+        "en": "Dabang Chicken"
+      },
+      "visible": true,
+      "sortOrder": 3,
+      "menus": [
+        {
+          "code": "(KX13)",
+          "displayName": "반마리치킨|Half Chicken |半只鸡|Nửa con gà (뼈 순살)",
+          "price": 216000,
+          "outOfStock": false,
+          "sortOrder": 0
+        },
+        {
+          "code": "(KX14)",
+          "displayName": "짭코바 반마리|BBQ cay nửa con|辣烤鸡半只|Spicy Grilled Chicken (Half)",
+          "price": 216000,
+          "outOfStock": false,
+          "sortOrder": 1
+        },
+        {
+          "code": "Original Roast",
+          "displayName": "½ 오리지널 로스트 | Gà quay truyền thống½ | 原味烤鸡 | Original Roast",
+          "price": 183600,
+          "outOfStock": false,
+          "sortOrder": 2
+        },
+        {
+          "code": "Crispy Spicy Roast",
+          "displayName": "½ 고추바삭 로스트|Gà quay giòn cay½|香辣脆皮烤鸡|Crispy Spicy Roast",
+          "price": 237600,
+          "outOfStock": false,
+          "sortOrder": 3
+        },
+        {
+          "code": "(KX02)",
+          "displayName": "짭코바|Spicy BBQ Chicken| BBQ烤鸡 |Gà nướng BBQ",
+          "price": 399600,
+          "outOfStock": false,
+          "sortOrder": 4
+        },
+        {
+          "code": "rose bbq",
+          "displayName": "로제짭코바|Rosé Spicy BBQ Chicken|罗西BBQ烤鸡|Gà nướng BBQ sốt rosé",
+          "price": 399600,
+          "outOfStock": false,
+          "sortOrder": 5
+        },
+        {
+          "code": "(KX01)",
+          "displayName": "반반치킨 Half & Half Chicken 半半无骨炸鸡 Gà vị đôi (뼈 순살)",
+          "price": 399600,
+          "outOfStock": false,
+          "sortOrder": 6
+        },
+        {
+          "code": "(KX04)",
+          "displayName": "후라이드 Fried Chicken 无骨炸鸡腿 Má đùi rút xương",
+          "price": 399600,
+          "outOfStock": false,
+          "sortOrder": 7
+        },
+        {
+          "code": "(KX05)",
+          "displayName": "양념 Sweet & Spicy Chicken 韩式甜酱炸鸡 Gà sốt ngọt HQ",
+          "price": 399600,
+          "outOfStock": false,
+          "sortOrder": 8
+        },
+        {
+          "code": "(KX06)",
+          "displayName": "매운양념 Hot & Spicy Chicken韩式辣酱炸鸡 Gà sốt cay HQ",
+          "price": 399600,
+          "outOfStock": false,
+          "sortOrder": 9
+        },
+        {
+          "code": "(KX08)",
+          "displayName": "파닭 Green Onion Chicken 葱香炸鸡（芥末酱 Gà hành lá (sốt mù tạt)",
+          "price": 399600,
+          "outOfStock": false,
+          "sortOrder": 10
+        },
+        {
+          "code": "(KX10)",
+          "displayName": "고추마늘간장Garlic Soy Chicken/ 辣椒蒜酱鸡 /Gà sốt xì dầu tỏi ớt",
+          "price": 399600,
+          "outOfStock": false,
+          "sortOrder": 11
+        },
+        {
+          "code": "(KX07)",
+          "displayName": "스리라차 어니언 Sriracha Onion Chicken洋葱奶酱炸鸡 Gà sốt kem hành",
+          "price": 399600,
+          "outOfStock": false,
+          "sortOrder": 12
+        },
+        {
+          "code": "ᄉ GS 至 SC",
+          "displayName": "슈프림치킨 | Gà Supreme | 至尊炸鸡 | Supreme Chicken",
+          "price": 399600,
+          "outOfStock": false,
+          "sortOrder": 13
+        }
+      ]
+    },
+    {
+      "id": "52c66f7a-c2df-4713-a319-65e3963eb912",
+      "code": "통닭 | Gà nguyên con",
+      "sourceName": "통닭|Gànguyê-conchiên|整只炸鸡|WholeFriedChicken",
+      "names": {
+        "ko": "통닭",
+        "vi": "Gà nguyên con chiên",
+        "zh": "整只炸鸡",
+        "en": "Whole Fried Chicken"
+      },
+      "visible": true,
+      "sortOrder": 4,
+      "menus": [
+        {
+          "code": "(T01) Gà chiên nguyên con",
+          "displayName": "옛날 통닭 Old-School Whole Fried Chicken 整只炸鸡 Gà chiên nguyên con",
+          "price": 291600,
+          "outOfStock": false,
+          "sortOrder": 0
+        }
+      ]
+    },
+    {
+      "id": "2424e567-8845-48c6-a4af-91c51a4d3aaa",
+      "code": "날개치킨 | Cánh gà sốt",
+      "sourceName": "날개치킨|Gàcánhchiên|炸鸡翅|WingChicken",
+      "names": {
+        "ko": "날개치킨",
+        "vi": "Gà cánh chiên",
+        "zh": "炸鸡翅",
+        "en": "Chicken Wings"
+      },
+      "visible": true,
+      "sortOrder": 5,
+      "menus": [
+        {
+          "code": "(W06) Nửa con gà",
+          "displayName": "윙봉반 | Gà cánh chiên nửa con | 半只炸鸡翅 | Half Fried Chicken Wings",
+          "price": 216000,
+          "outOfStock": false,
+          "sortOrder": 0
+        },
+        {
+          "code": "(W01) Cánh gà vị đôi",
+          "displayName": "반반윙봉 | Gà cánh & đùi half-half | 半半鸡翅棒 | Half & half wing & drumstick",
+          "price": 399600,
+          "outOfStock": false,
+          "sortOrder": 1
+        },
+        {
+          "code": "(W02) Cánh chiên giòn",
+          "displayName": "크리스피 윙봉Crispy Wings 炸鸡翅 Cánh chiên giòn",
+          "price": 399600,
+          "outOfStock": false,
+          "sortOrder": 2
+        },
+        {
+          "code": "(W03) Cánh gà xì dầu",
+          "displayName": "간장 윙봉 Soy Sauce Wings 酱油鸡翅 Cánh gà xì dầu",
+          "price": 399600,
+          "outOfStock": false,
+          "sortOrder": 3
+        },
+        {
+          "code": "(W05) Cánh gà mật ong",
+          "displayName": "허니 윙봉 Honey Wings 蜜汁鸡翅 Cánh gà mật ong",
+          "price": 399600,
+          "outOfStock": false,
+          "sortOrder": 4
+        },
+        {
+          "code": "(W04) Cánh gà cay",
+          "displayName": "레드 윙봉 Spicy Red Wings 辣鸡翅Cánh gà cay",
+          "price": 399600,
+          "outOfStock": false,
+          "sortOrder": 5
+        }
+      ]
+    },
+    {
+      "id": "5181465e-2d7d-4f9f-bdc1-de466348cd7f",
+      "code": "다방분식 | Đồ ăn nhẹ Dabang",
+      "sourceName": "다방분식|Mónănvặt|小吃|KoreanSnacks",
+      "names": {
+        "ko": "다방분식",
+        "vi": "Món ăn vặt Dabang",
+        "zh": "Dabang 小吃",
+        "en": "Dabang Snacks"
+      },
+      "visible": true,
+      "sortOrder": 6,
+      "menus": [
+        {
+          "code": "(T06) Tokbokki cay nhẹ",
+          "displayName": "다방 떡볶이 Classic Tteokbokki韩式辣烧年糕（有点辣）Tokbokki cay nhẹ",
+          "price": 129600,
+          "outOfStock": false,
+          "sortOrder": 0
+        },
+        {
+          "code": "(T09) Tok banh gao to",
+          "displayName": "가래떡 떡볶이| Garaetteok Tteokbokki |粗年糕炒年糕 |Tokbokki bánh gạo to",
+          "price": 172800,
+          "outOfStock": false,
+          "sortOrder": 1
+        },
+        {
+          "code": "(T07) Tok kem cay(rose)",
+          "displayName": "로제떡볶이 Rosé Tteokbokki 奶油辣酱年糕（Rosé酱） Tokbokki sốt kem cay (Rosé)",
+          "price": 172800,
+          "outOfStock": false,
+          "sortOrder": 2
+        },
+        {
+          "code": "(T08) Mì Tokbokki",
+          "displayName": "라볶이 Rabokki 炒年糕拉面 Mì Tokbokki",
+          "price": 151200,
+          "outOfStock": false,
+          "sortOrder": 3
+        },
+        {
+          "code": "(T10) Do chien/mon chien",
+          "displayName": "튀김 Fried Snacks 油炸小吃 / 炸物 Đồ chiên/Món chiên",
+          "price": 0,
+          "outOfStock": false,
+          "sortOrder": 4
+        },
+        {
+          "code": "ᄀ CTXD",
+          "displayName": "간장계란밥 | Cơm trứng xì dầu | 酱油鸡蛋饭 | Soy sauce egg rice",
+          "price": 54000,
+          "outOfStock": false,
+          "sortOrder": 5
+        },
+        {
+          "code": "(T16) Cơm nắm",
+          "displayName": "주먹밥Rice Ball 饭团 Cơm nắm",
+          "price": 54000,
+          "outOfStock": false,
+          "sortOrder": 6
+        },
+        {
+          "code": "ᄀ TH 蒸ZD SE",
+          "displayName": "계란찜 | Trứng hấp | 蒸蛋 (Zhēng dàn) | Steamed egg",
+          "price": 43200,
+          "outOfStock": false,
+          "sortOrder": 7
+        },
+        {
+          "code": "(T11) Ha cao chien cay",
+          "displayName": "비빔만두 Spicy Mixed Dumplings 辣拌煎饺 / 拌饺子 Há cảo chiên trộn cay",
+          "price": 216000,
+          "outOfStock": false,
+          "sortOrder": 8
+        },
+        {
+          "code": "(T12) Mì trộn cay dai",
+          "displayName": "쫄면Spicy Chewy Noodles辣拌劲道面 Mì trộn cay dai",
+          "price": 97200,
+          "outOfStock": false,
+          "sortOrder": 9
+        },
+        {
+          "code": "(T13) Udon xiên chả cá",
+          "displayName": "어묵꼬치우동 Udon with Fish Cake Skewers关东煮乌冬面 Udon xiên chả cá",
+          "price": 97200,
+          "outOfStock": false,
+          "sortOrder": 10
+        },
+        {
+          "code": "(T14) Udon kimchi cay",
+          "displayName": "얼큰김치우동 Spicy Kimchi Udon 泡菜辣乌冬面 Udon kimchi cay",
+          "price": 97200,
+          "outOfStock": false,
+          "sortOrder": 11
+        }
+      ]
+    },
+    {
+      "id": "0ac81743-8d00-47bd-af8c-e102b44f4247",
+      "code": "스페이스 피자 | Space Pizza",
+      "sourceName": "스페이스 피자|Bánhpizza|披萨|Pizza",
+      "names": {
+        "ko": "스페이스 피자",
+        "vi": "Pizza Space",
+        "zh": "Space 披萨",
+        "en": "Space Pizza"
+      },
+      "visible": true,
+      "sortOrder": 7,
+      "menus": [
+        {
+          "code": "SPACE111",
+          "displayName": "일반도우 반반피자 / Regular Dough Half & Half Pizza / 普通饼底半半披萨 / Pizza nửa nửa đế thường",
+          "price": 324000,
+          "outOfStock": false,
+          "sortOrder": 0
+        },
+        {
+          "code": "SPACE112",
+          "displayName": "체다치즈 반반피자 / Cheddar Cheese Half & Half Pizza / 车打芝士半半披萨 / Pizza nửa nửa phô mai Cheddar",
+          "price": 367200,
+          "outOfStock": false,
+          "sortOrder": 1
+        },
+        {
+          "code": "SPACE113",
+          "displayName": "치즈크러스트 반반피자 / Cheese Crust Half & Half Pizza / 芝士边半半披萨 / Pizza nửa nửa viền phô mai",
+          "price": 432000,
+          "outOfStock": false,
+          "sortOrder": 2
+        },
+        {
+          "code": "SPACE114",
+          "displayName": "치즈바이트 반반피자 / Cheese Bite Half & Half Pizza / 芝士球边半半披萨 / Pizza nửa nửa viên phô mai",
+          "price": 453600,
+          "outOfStock": false,
+          "sortOrder": 3
+        },
+        {
+          "code": "SPACE115",
+          "displayName": "리치골드 반반피자 / Rich Gold Half & Half Pizza / Rich Gold 边半半披萨 / Pizza nửa nửa viền Rich Gold",
+          "price": 475200,
+          "outOfStock": false,
+          "sortOrder": 4
+        },
+        {
+          "code": "SPACE33",
+          "displayName": "고르곤졸라피자|Gorgonzola Pizza| Pizza phô mai Gorgonzola| 戈贡佐拉奶酪披萨",
+          "price": 237600,
+          "outOfStock": false,
+          "sortOrder": 5
+        },
+        {
+          "code": "SPACE8",
+          "displayName": "치즈오븐스파게티 Cheese Oven-Baked Spaghetti 芝士焗意大利面Mì Ý đút lò phô mai",
+          "price": 172800,
+          "outOfStock": false,
+          "sortOrder": 6
+        },
+        {
+          "code": "SPACE32",
+          "displayName": "파마산 치즈가루 | Phô mai bột Parmesan",
+          "price": 5400,
+          "outOfStock": false,
+          "sortOrder": 7
+        }
+      ]
+    },
+    {
+      "id": "601b353e-0f17-46db-bd64-d64140a70d27",
+      "code": "안주 |Món nhắm",
+      "sourceName": "안주|Mónnhậu|下酒菜|SideDish/BarSnacks",
+      "names": {
+        "ko": "안주",
+        "vi": "Món nhậu",
+        "zh": "下酒菜",
+        "en": "Bar Snacks"
+      },
+      "visible": true,
+      "sortOrder": 8,
+      "menus": [
+        {
+          "code": "(M04) nacho cham phomai",
+          "displayName": "딥치즈&나쵸칩Deep Cheese & Nacho Chips 芝士酱蘸玉米片Bánh nacho chấm phô mai đậm đà",
+          "price": 194400,
+          "outOfStock": true,
+          "sortOrder": 0
+        },
+        {
+          "code": "BDH",
+          "displayName": "수박 | dưa hấu | 西瓜刨冰 |",
+          "price": 97200,
+          "outOfStock": false,
+          "sortOrder": 1
+        },
+        {
+          "code": "(M02) Bánh quesadilla gà",
+          "displayName": "폴드치킨 퀘사디아Folded Chicken Quesadilla 墨西哥鸡肉芝士饼 Bánh quesadilla nhân thịt gà",
+          "price": 205200,
+          "outOfStock": false,
+          "sortOrder": 2
+        },
+        {
+          "code": "(F01) Chan ga ham co nuoc",
+          "displayName": "국물닭발 Spicy Chicken Feet Stew 辣炖鸡爪 Chân gà hầm cay",
+          "price": 291600,
+          "outOfStock": false,
+          "sortOrder": 3
+        },
+        {
+          "code": "SMPW",
+          "displayName": "마라감자|麻辣薯角|Khoai tây tẩm sốt Mala|Mala Potato Wedges",
+          "price": 97200,
+          "outOfStock": false,
+          "sortOrder": 4
+        },
+        {
+          "code": "(F09) Do kho tong hop",
+          "displayName": "건어물떠까 Mixed Dried Seafood Snacks 韩式什锦干货拼盘 Đồ khô tổng hợp kiểu Hàn",
+          "price": 345600,
+          "outOfStock": false,
+          "sortOrder": 5
+        },
+        {
+          "code": "(F06) Cá pollack non khô",
+          "displayName": "반건조 노가리 半干黄花鱼仔 Cá pollack non khô (nửa khô)",
+          "price": 291600,
+          "outOfStock": false,
+          "sortOrder": 6
+        },
+        {
+          "code": "(F08) Ca chi vang nuong",
+          "displayName": "버터 먹태구이 Grilled Pollack with Butter 黄花鱼干奶油烤 Cá chỉ vàng lớn nướng bơ",
+          "price": 216000,
+          "outOfStock": false,
+          "sortOrder": 7
+        },
+        {
+          "code": "(F07) Mực bán khô tẩm vị",
+          "displayName": "조미오징어|Mực tẩmgia|调味鱿鱼|Seasonedsquid",
+          "price": 172800,
+          "outOfStock": false,
+          "sortOrder": 8
+        },
+        {
+          "code": "ᄋ LCC 鱼 FCS",
+          "displayName": "어묵탕 | Lẩu chả cá | 鱼饼汤 | Fish cake soup",
+          "price": 248400,
+          "outOfStock": false,
+          "sortOrder": 9
+        },
+        {
+          "code": "(F04) Cá chỉ vàng nướng",
+          "displayName": "클래식 쥐포 Thin Grilled Filefish 烤鳞头鱼片 / 薄片鱿鱼干 Cá chỉ vàng nướng lát mỏng",
+          "price": 108000,
+          "outOfStock": false,
+          "sortOrder": 10
+        },
+        {
+          "code": "Mực",
+          "displayName": "촉촉 반건조 오징어 | Mực một nắng | 半干鱿鱼 | Semi-dried squid",
+          "price": 226800,
+          "outOfStock": false,
+          "sortOrder": 11
+        },
+        {
+          "code": "ᄉ TT 加 AET",
+          "displayName": "사리추가 | Thêm topping | 加配料 | Add extra toppings",
+          "price": 0,
+          "outOfStock": false,
+          "sortOrder": 12
+        }
+      ]
+    },
+    {
+      "id": "4ae5f7a4-9b6d-4c73-a895-af5d60c8fd87",
+      "code": "음료 | Đồ uống",
+      "sourceName": "음료|Nướcuống|饮料|Beverages",
+      "names": {
+        "ko": "음료",
+        "vi": "Nước uống",
+        "zh": "饮料",
+        "en": "Beverages"
+      },
+      "visible": true,
+      "sortOrder": 9,
+      "menus": [
+        {
+          "code": "수량확인13",
+          "displayName": "코카콜라 Coca-Cola可口可乐 Coca-Cola",
+          "price": 22000,
+          "outOfStock": false,
+          "sortOrder": 0
+        },
+        {
+          "code": "수량확인16",
+          "displayName": "스프라이트 Sprite雪碧 Sprite",
+          "price": 33000,
+          "outOfStock": false,
+          "sortOrder": 1
+        },
+        {
+          "code": "수량확인14",
+          "displayName": "펩시제로 | Pepsi Zero | 百事可乐无糖 | Pepsi không đường",
+          "price": 33000,
+          "outOfStock": false,
+          "sortOrder": 2
+        },
+        {
+          "code": "ᄂᄌ NCZ5",
+          "displayName": "나랑드 제로 | Narangd Cider Zero (500ml)",
+          "price": 55000,
+          "outOfStock": false,
+          "sortOrder": 3
+        },
+        {
+          "code": "수량확인15",
+          "displayName": "펩시제로 1.5L Pepsi Zero (1.5L Bottle)百事可乐无糖（1.5升 Pepsi không đường (chai 1.5L)",
+          "price": 77000,
+          "outOfStock": false,
+          "sortOrder": 4
+        },
+        {
+          "code": "Nước ép xoài",
+          "displayName": "망고 에이드 | Nước xoài | 芒果汽水 | Mango Ade",
+          "price": 55000,
+          "outOfStock": false,
+          "sortOrder": 5
+        },
+        {
+          "code": "CC",
+          "displayName": "쥬시큘 | Cool C",
+          "price": 44000,
+          "outOfStock": true,
+          "sortOrder": 6
+        }
+      ]
+    },
+    {
+      "id": "cukcuk-alcohol",
+      "code": "주류 |Đồ uống có cồn",
+      "sourceName": "주류|Đốuốngcócồn|酒类|AlcoholicDrinks",
+      "names": {
+        "ko": "주류",
+        "vi": "Đồ uống có cồn",
+        "zh": "酒类",
+        "en": "Alcohol"
+      },
+      "visible": true,
+      "sortOrder": 10,
+      "menus": [
+        {
+          "code": "ᄃᄀᄉ TG S",
+          "displayName": "데킬라 골드&실버 | Tequila Gold & Silver",
+          "price": 1089000,
+          "outOfStock": false,
+          "sortOrder": 0
+        },
+        {
+          "code": "ᄒᄉ1 BTHN1 河1 HDB1",
+          "displayName": "하노이 생맥주 1L | Bia tươi Hà Nội 1L | 河内生啤 1升 | Hanoi Draft Beer 1L",
+          "price": 110000,
+          "outOfStock": false,
+          "sortOrder": 1
+        },
+        {
+          "code": "(A01) Sapporo 1t1 640ml",
+          "displayName": "사포로 1+1 (640cc) Sapporo 1+1 (640ml) 三宝乐1+1（640毫升 Sapporo 1 tặng 1 (640ml)",
+          "price": 165000,
+          "outOfStock": false,
+          "sortOrder": 2
+        },
+        {
+          "code": "(A02) Bia tuoi Sapporo",
+          "displayName": "사포로 생맥주 Sapporo Draft Beer 三宝乐生啤酒 Bia tươi Sapporo",
+          "price": 0,
+          "outOfStock": false,
+          "sortOrder": 3
+        },
+        {
+          "code": "(A03) Bia den tuoi Sap",
+          "displayName": "사포로 블랙 생맥주/Sapporo Black Draft Beer 三宝乐黑啤 Bia đen tươi Sapporo",
+          "price": 66000,
+          "outOfStock": false,
+          "sortOrder": 4
+        },
+        {
+          "code": "ᄉ SS 鲜 SS",
+          "displayName": "선양소주 | Sunyang Soju | 鲜洋烧酒 |",
+          "price": 154000,
+          "outOfStock": false,
+          "sortOrder": 5
+        },
+        {
+          "code": "ᄉ SSO 鲜",
+          "displayName": "선양오크 | Sunyang Soju Oak | 鲜洋橡木烧酒",
+          "price": 174900,
+          "outOfStock": false,
+          "sortOrder": 6
+        },
+        {
+          "code": "수량확인6",
+          "displayName": "처음처럼 Chum Churum Soju 初饮初乐 Rượu soju Chum Churum",
+          "price": 154000,
+          "outOfStock": false,
+          "sortOrder": 7
+        },
+        {
+          "code": "수량확인7",
+          "displayName": "진로 Jinro Soju 真露（淡口） Rượu soju Jinro",
+          "price": 154000,
+          "outOfStock": false,
+          "sortOrder": 8
+        },
+        {
+          "code": "수량확인5",
+          "displayName": "Fresh 참이슬 | Chamisul fresh | 眞露 (Zhēnlù) | Chamisul fresh",
+          "price": 154000,
+          "outOfStock": false,
+          "sortOrder": 9
+        },
+        {
+          "code": "수량확인8",
+          "displayName": "새로/ Saero Soju Saero烧酒 Rượu soju Saero",
+          "price": 165000,
+          "outOfStock": false,
+          "sortOrder": 10
+        },
+        {
+          "code": "수량확인11",
+          "displayName": "코로나 병맥주 Corona Beer (Bottle)科罗娜瓶装啤酒Bia chai Corona",
+          "price": 71500,
+          "outOfStock": false,
+          "sortOrder": 11
+        },
+        {
+          "code": "수량확인12",
+          "displayName": "코로나 5병 세트 Corona 5-Bottle Set 科罗娜5瓶套餐 Set 5 chai bia Corona",
+          "price": 319000,
+          "outOfStock": false,
+          "sortOrder": 12
+        },
+        {
+          "code": "수량확인1",
+          "displayName": "타이거 병맥주 Tiger Beer (Bottle) 虎牌瓶装啤酒 Bia chai Tiger",
+          "price": 49500,
+          "outOfStock": false,
+          "sortOrder": 13
+        },
+        {
+          "code": "수량확인3",
+          "displayName": "사이공캔맥주|BialonSàiGòn|西贡罐装啤酒|Saigoncannedbeer",
+          "price": 38500,
+          "outOfStock": false,
+          "sortOrder": 14
+        },
+        {
+          "code": "수량확인29",
+          "displayName": "하노이 캔맥주 | Bia lon Hà Nội | 河内罐装啤酒 | Hanoi canned beer",
+          "price": 38500,
+          "outOfStock": false,
+          "sortOrder": 15
+        },
+        {
+          "code": "수량확인9",
+          "displayName": "보드카MEN Vodka MEN MEN伏特加 Rượu Vodka MEN",
+          "price": 165000,
+          "outOfStock": false,
+          "sortOrder": 16
+        },
+        {
+          "code": "수량확인30",
+          "displayName": "타이거 크리스탈 병맥주 | Bia Tiger Crystal chai | 虎牌水晶啤酒（瓶装） | Tiger Crystal (Bottle)",
+          "price": 55000,
+          "outOfStock": false,
+          "sortOrder": 17
+        }
+      ]
+    },
+    {
+      "id": "cukcuk-qr-highball",
+      "code": "하이볼 | Highball",
+      "sourceName": "하이볼|RượuHighball|高球酒|Highball",
+      "names": {
+        "ko": "하이볼",
+        "vi": "Rượu Highball",
+        "zh": "高球酒",
+        "en": "Highball"
+      },
+      "visible": true,
+      "sortOrder": 11,
+      "menus": [
+        {
+          "code": "(H10) Highball Tanqueray",
+          "displayName": "데킬라 실버 하이볼 | Jose Cuervo Silver Tequila Highball",
+          "price": 99000,
+          "outOfStock": false,
+          "sortOrder": 0
+        },
+        {
+          "code": "(H02) Highball Earl Grey",
+          "displayName": "데킬라 골드 하이볼 | Jose Cuervo Gold Tequila Highball",
+          "price": 99000,
+          "outOfStock": false,
+          "sortOrder": 1
+        },
+        {
+          "code": "(H01) Highball Suntory",
+          "displayName": "산토리 하이볼 | Suntory Kakubin Highball",
+          "price": 99000,
+          "outOfStock": false,
+          "sortOrder": 2
+        },
+        {
+          "code": "(H08) Highball Jameson",
+          "displayName": "제임슨 하이볼 | Jameson Highball",
+          "price": 99000,
+          "outOfStock": false,
+          "sortOrder": 3
+        },
+        {
+          "code": "(H05) Highball Jim Beam",
+          "displayName": "짐빔 하이볼 | Jim Beam Highball",
+          "price": 99000,
+          "outOfStock": false,
+          "sortOrder": 4
+        },
+        {
+          "code": "(H09) Highball Bombay",
+          "displayName": "짐빔블랙 하이볼 | Jim Beam Black Extra-Aged Highball",
+          "price": 99000,
+          "outOfStock": false,
+          "sortOrder": 5
+        },
+        {
+          "code": "(H06) Highball Johnnie",
+          "displayName": "짐빔애플 하이볼 | Jim Beam Apple Highball",
+          "price": 99000,
+          "outOfStock": false,
+          "sortOrder": 6
+        },
+        {
+          "code": "(H03) Highball Jack Honey",
+          "displayName": "짐빔허니 하이볼 | Jim Beam Honey Highball",
+          "price": 99000,
+          "outOfStock": false,
+          "sortOrder": 7
+        }
+      ]
+    }
+  ]
+}
