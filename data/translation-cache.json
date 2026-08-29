@@ -13,7 +13,7 @@
       "updatedAt": "2026-07-18T13:46:57.736Z"
     },
     "category:6a144c27-c7ba-43f6-b6e1-4be8b008b433": {
-      "fingerprint": "54f8070de5c236791f4ddd0c1140973eb72555e3bb8472e3927e9c9405fb7a90",
+      "fingerprint": "473b50416fee28e00203312cc6478e012620225b8e83130f0ddd401c06d7a651",
       "sourceName": "세트|Combo/Phầnăn|套餐|Set/Combo",
       "names": {
         "ko": "세트",
@@ -21,10 +21,10 @@
         "zh": "套餐",
         "en": "Set Combo"
       },
-      "updatedAt": "2026-07-18T13:46:57.736Z"
+      "updatedAt": "2026-08-29T11:28:57.479Z"
     },
     "category:0afd5056-2ad2-46d3-9122-6886fedc4d3a": {
-      "fingerprint": "96b6af2a3e8376c70bc6a4525eefca0475e0ed8455562047add8e1665cb3843f",
+      "fingerprint": "0391a85ce6c34813d51a924df2dfa26d0cd5ddcdee46aca61f0013af28c48b21",
       "sourceName": "다방치킨 | Dabang Chicken",
       "names": {
         "ko": "다방치킨",
@@ -32,10 +32,10 @@
         "zh": "Dabang 炸鸡",
         "en": "Dabang Chicken"
       },
-      "updatedAt": "2026-07-18T13:46:57.736Z"
+      "updatedAt": "2026-08-29T11:28:57.479Z"
     },
     "category:52c66f7a-c2df-4713-a319-65e3963eb912": {
-      "fingerprint": "72bbaf2eae70da337481854ec43d4ba29a102a3285c1413dfbe9d46e3e449ade",
+      "fingerprint": "d2dc512292656abd55e8a517da9de5dab3ddf2ce0969944b80ca7c535c0e5c7a",
       "sourceName": "통닭|Gànguyê-conchiên|整只炸鸡|WholeFriedChicken",
       "names": {
         "ko": "통닭",
@@ -43,10 +43,10 @@
         "zh": "整只炸鸡",
         "en": "Whole Fried Chicken"
       },
-      "updatedAt": "2026-07-18T13:46:57.736Z"
+      "updatedAt": "2026-08-29T11:28:57.479Z"
     },
     "category:2424e567-8845-48c6-a4af-91c51a4d3aaa": {
-      "fingerprint": "11024e8d48ddbe9f25e9b3ea6607882b5da70acad0d72f2dbf4e02261a8535f8",
+      "fingerprint": "76d3284bc357fc3acd4afb48a97941558af6faa448662d3f1f845c7a06f36803",
       "sourceName": "날개치킨|Gàcánhchiên|炸鸡翅|WingChicken",
       "names": {
         "ko": "날개치킨",
@@ -54,10 +54,10 @@
         "zh": "炸鸡翅",
         "en": "Chicken Wings"
       },
-      "updatedAt": "2026-07-18T13:46:57.736Z"
+      "updatedAt": "2026-08-29T11:28:57.479Z"
     },
     "category:0ac81743-8d00-47bd-af8c-e102b44f4247": {
-      "fingerprint": "8128141a14bb4c8ad34f8cf5028f2e7d5ee6ecda84664cf6c0f6676d7386ed14",
+      "fingerprint": "b18025ad59a8267d626f339747a66503b74a386b1b51fdd87eb698006428eb2d",
       "sourceName": "스페이스 피자|Bánhpizza|披萨|Pizza",
       "names": {
         "ko": "스페이스 피자",
@@ -65,7 +65,7 @@
         "zh": "Space 披萨",
         "en": "Space Pizza"
       },
-      "updatedAt": "2026-07-18T13:46:57.736Z"
+      "updatedAt": "2026-08-29T11:28:57.479Z"
     },
     "category:6abec948-8c84-4476-b8c8-95d7903b4015": {
       "fingerprint": "9691a2e10b56d9b1f06811cb1a2ee589fdb98e2a0874d80d6e8ee8d2ca5ff198",
@@ -79,7 +79,7 @@
       "updatedAt": "2026-07-18T13:46:57.736Z"
     },
     "category:5181465e-2d7d-4f9f-bdc1-de466348cd7f": {
-      "fingerprint": "e4eb86fb0a99f74f230ae93b41c13082b4ffcc883c92057e81eb36289dcbab6a",
+      "fingerprint": "c9f7578339dd286bd369d72ec4be059a19eeaccf38b4293fe4385db6c3143bfa",
       "sourceName": "다방분식|Mónănvặt|小吃|KoreanSnacks",
       "names": {
         "ko": "다방분식",
@@ -87,10 +87,10 @@
         "zh": "Dabang 小吃",
         "en": "Dabang Snacks"
       },
-      "updatedAt": "2026-07-18T13:46:57.736Z"
+      "updatedAt": "2026-08-29T11:28:57.479Z"
     },
     "category:601b353e-0f17-46db-bd64-d64140a70d27": {
-      "fingerprint": "a8f60d74099c081ad681b786fcd7d9ddf9e7705cf2a9b7d488d3a17b8b2bd0ab",
+      "fingerprint": "48a168de480059249ebf7a031bc7419a68f2e8792ca707a4d107d882f15a2bdd",
       "sourceName": "안주|Mónnhậu|下酒菜|SideDish/BarSnacks",
       "names": {
         "ko": "안주",
@@ -98,10 +98,10 @@
         "zh": "下酒菜",
         "en": "Bar Snacks"
       },
-      "updatedAt": "2026-07-18T13:46:57.736Z"
+      "updatedAt": "2026-08-29T11:28:57.479Z"
     },
     "category:4ae5f7a4-9b6d-4c73-a895-af5d60c8fd87": {
-      "fingerprint": "9ef8af264e82d71d44249630f79b2b9cd75c1f11eb2288fae1a19933205150dc",
+      "fingerprint": "8427383613f6ef920789564d2436abd139455ebc0ba92ab888a446aa9a9c1b81",
       "sourceName": "음료|Nướcuống|饮料|Beverages",
       "names": {
         "ko": "음료",
@@ -109,7 +109,7 @@
         "zh": "饮料",
         "en": "Beverages"
       },
-      "updatedAt": "2026-07-18T13:46:57.736Z"
+      "updatedAt": "2026-08-29T11:28:57.479Z"
     },
     "category:b4606019-4a6b-4923-8a87-7f02012c1044": {
       "fingerprint": "4fafe87e1c5dc08bc3cf1eb7adad84585764579dfbf043ad0be8702d7dbfc0d7",
@@ -123,15 +123,15 @@
       "updatedAt": "2026-07-18T13:46:57.736Z"
     },
     "category:cukcuk-alcohol": {
-      "fingerprint": "b8e8f8f12518b6e256379cfc32a2b500697b4d2d49a57627e4b094bab0000dc2",
-      "sourceName": "주류 | Đồ uống có cồn | 酒类 | Alcohol",
+      "fingerprint": "22c969e7169d0bab30681f994a29a7aa159ee4c84bd412d94b92a1a83f79cc22",
+      "sourceName": "주류|Đốuốngcócồn|酒类|AlcoholicDrinks",
       "names": {
         "ko": "주류",
         "vi": "Đồ uống có cồn",
         "zh": "酒类",
-        "en": "Alcohol"
+        "en": "Alcoholic Drinks"
       },
-      "updatedAt": "2026-07-18T13:46:57.736Z"
+      "updatedAt": "2026-08-29T11:28:57.479Z"
     },
     "menu:7c92814f-40ee-4742-8e2b-004a659bcb97": {
       "fingerprint": "7b64bf052e06c80e9dc0a0a9bbc9675fbcdbf2584cb73f6bdd5a81daf36d7641",
@@ -3058,6 +3058,127 @@
         "en": "Vanilla Ice Cream 110ml"
       },
       "updatedAt": "2026-07-31T14:30:00.630Z"
+    },
+    "category:cukcuk-qr-daily-discounts": {
+      "fingerprint": "b05f70cf38fc16d8266173ee77c1dd999c2a36ed08ef937f1b8a64013af3652c",
+      "sourceName": "요일별 할인 | Giảm giá theo ngày trong tuần | 每日優惠 | Daily Discounts",
+      "names": {
+        "ko": "요일별 할인",
+        "vi": "Ưu đãi theo ngày",
+        "zh": "每日优惠",
+        "en": "Daily Discounts"
+      },
+      "updatedAt": "2026-08-29T11:28:57.478Z"
+    },
+    "category:cukcuk-qr-highball": {
+      "fingerprint": "532aa59bc1820442c9bb0bc0faec6c955ab5fe01df82246af80f25641b8e7cd2",
+      "sourceName": "하이볼|RượuHighball|高球酒|Highball",
+      "names": {
+        "ko": "하이볼",
+        "vi": "Highball",
+        "zh": "高球酒",
+        "en": "Highball"
+      },
+      "updatedAt": "2026-08-29T11:28:57.479Z"
+    },
+    "menu:9af79e36-a7aa-4c21-8349-1e61555866e4": {
+      "fingerprint": "18f1021fb63c0017d5d4cc9cf26b79ef8a7d08df1266f23532fad591d9dca8de",
+      "sourceName": "디진다 돈까스 챌린지 | Thử thách Tonkatsu DIZINDA",
+      "names": {
+        "ko": "디진다 돈까스 챌린지",
+        "vi": "Thử thách Tonkatsu DIZINDA",
+        "zh": "DIZINDA 炸猪排挑战",
+        "en": "DIZINDA Tonkatsu Challenge"
+      },
+      "updatedAt": "2026-08-29T11:28:57.479Z"
+    },
+    "menu:3b52569c-47cc-4005-af74-87653bbbc4d9": {
+      "fingerprint": "16caf7e269ea75c2bf26a3413e0dbb1a98f3e6037e3d55aeae3862418daf8c60",
+      "sourceName": "참숯불닭 | Gà nướng than cay | 炭火辣鸡 | Charcoal Spicy Chicken",
+      "names": {
+        "ko": "참숯불닭",
+        "vi": "Gà nướng than cay",
+        "zh": "炭火辣鸡",
+        "en": "Charcoal Spicy Chicken"
+      },
+      "updatedAt": "2026-08-29T11:28:57.479Z"
+    },
+    "menu:7724d42e-f568-4346-909a-848a1a1599e9": {
+      "fingerprint": "a0512bfebea487a36807503985f01a0d5f8f7d258f9aaa081ca7e2715872c171",
+      "sourceName": "화덕통닭 | 烤炉柴鸡 | Gà nướng lò củi | Oven Whole Chicken",
+      "names": {
+        "ko": "화덕통닭",
+        "vi": "Gà nguyên con nướng lò củi",
+        "zh": "烤炉柴鸡",
+        "en": "Wood-Fired Whole Chicken"
+      },
+      "updatedAt": "2026-08-29T11:28:57.479Z"
+    },
+    "menu:54d8170c-bdfc-4fdd-a502-e31e6a1e311d": {
+      "fingerprint": "e27b06a779c700045bab21f7c39b1f41201a6787754586cfbab51023f01560ab",
+      "sourceName": "마니치 |Gà MANICHI|蒜香MANICHI炸鸡|MANICHI Garlic Chicken",
+      "names": {
+        "ko": "마니치",
+        "vi": "Gà MANICHI",
+        "zh": "蒜香 MANICHI 炸鸡",
+        "en": "MANICHI Garlic Chicken"
+      },
+      "updatedAt": "2026-08-29T11:28:57.479Z"
+    },
+    "menu:69959bf4-90dd-4517-bb41-e43eaaba0bd8": {
+      "fingerprint": "ae290258206dcc6c03a69e6ed6c8312bb848f6a5c001e7021e87fefd6009e056",
+      "sourceName": "불쫄면 | Mì trộn cay siêu cay | Extra Spicy Chewy Noodles | 超辣劲道拌面",
+      "names": {
+        "ko": "불쫄면",
+        "vi": "Mì trộn cay siêu cay",
+        "zh": "超辣劲道拌面",
+        "en": "Extra Spicy Chewy Noodles"
+      },
+      "updatedAt": "2026-08-29T11:28:57.479Z"
+    },
+    "menu:6a4fc8cd-4937-46f0-990c-536bdffb1de3": {
+      "fingerprint": "032167e6b428dac7f19d4ffb4d0c8926c77d885468b29d3d0bb783c66ec4b5a6",
+      "sourceName": "튀김 Fried Snacks 油炸小吃 / 炸物 Đồ chiên/Món chiên",
+      "names": {
+        "ko": "튀김",
+        "vi": "Đồ chiên",
+        "zh": "炸物",
+        "en": "Fried Snacks"
+      },
+      "updatedAt": "2026-08-29T11:28:57.479Z"
+    },
+    "menu:df258d2e-d7f9-4752-a4a0-f43578ecb965": {
+      "fingerprint": "c0fb869a74b0d2b6717e77a4c65744977a6c96003953fdb708292912a8f49075",
+      "sourceName": "폴드치킨 퀘사디아Folded Chicken Quesadilla 墨西哥鸡肉芝士饼 Bánh quesadilla nhân thịt gà",
+      "names": {
+        "ko": "폴드 치킨 퀘사디아",
+        "vi": "Bánh quesadilla nhân thịt gà",
+        "zh": "墨西哥鸡肉芝士饼",
+        "en": "Folded Chicken Quesadilla"
+      },
+      "updatedAt": "2026-08-29T11:28:57.479Z"
+    },
+    "menu:08b4aba2-4116-4148-b2a9-763c5d72d543": {
+      "fingerprint": "9b3e684d17f436ab1e7abc0d039ac3480db6644f83e14b884776cda4060e1b6f",
+      "sourceName": "사리추가 | Thêm topping | 加配料 | Add extra toppings",
+      "names": {
+        "ko": "사리 추가",
+        "vi": "Thêm topping",
+        "zh": "加配料",
+        "en": "Add Extra Toppings"
+      },
+      "updatedAt": "2026-08-29T11:28:57.479Z"
+    },
+    "menu:45a0262c-d9f7-4b8b-a937-542d81c32e95": {
+      "fingerprint": "8cea937456f69973e32f9bb67c62470a3d88d113235db4d917a95fffe850fba0",
+      "sourceName": "펩시제로 1.5L Pepsi Zero (1.5L Bottle)百事可乐无糖（1.5升 Pepsi không đường (chai 1.5L)",
+      "names": {
+        "ko": "펩시 제로 1.5L",
+        "vi": "Pepsi không đường (chai 1.5L)",
+        "zh": "百事可乐无糖（1.5升）",
+        "en": "Pepsi Zero (1.5L Bottle)"
+      },
+      "updatedAt": "2026-08-29T11:28:57.479Z"
     }
   }
 }
