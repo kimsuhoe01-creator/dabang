@@ -2,9 +2,9 @@
 
 기준일: 2026-08-29
 
-기준 커밋: `4c51288` (`Add images for QR-only menu items`)
+기준 커밋: `aeea3c7` (`Keep CUKCUK free options first`)
 
-카탈로그 기준: `cukcuk-table-qr-2026-08-29-95357aa1ca69`
+카탈로그 기준: `cukcuk-table-qr-2026-08-29-95357aa1ca69-option-order-v2`
 
 ## 현재 완료 상태
 
@@ -17,8 +17,12 @@
 - 현재 테이블 파일 기준 첫 네 구역은 `A-1~6`, `B-01~13`, `C-1~9`, `D-1~6`이다.
 - 예전 브라우저 저장 배치는 레이아웃 버전 3으로 자동 갱신된다. 새 CUKCUK 테이블은 같은 구역에 합쳐진다.
 - 5분 자동 동기화는 전체 활성 재고에 상품코드를 붙인 뒤 테이블 QR 허용 목록 112개만 남긴다. 상품코드 중복, 메뉴 누락, 옵션 템플릿 누락, 잘못된 가격이 있으면 공개 파일을 갱신하지 않고 실패한다.
+- 2026-08-20 CUKCUK 관리자에서 실제 저장한 옵션 순서를 앱 동기화 설정에도 고정했다. 대상 10개 메뉴의 옵션 그룹 순서와 7개 템플릿의 선택지 순서를 그대로 적용한다.
+- 모든 옵션 템플릿은 무료 선택지가 유료 선택지보다 먼저 나온다. 별도 확인 기록이 없는 템플릿은 무료/유료 각 구간 안의 기존 순서를 유지한다.
+- 치피 SET M/L은 `치킨 선택 → 피자 옵션 → 피자 엣지 변경` 순이다. 피자 옵션은 `고구마 → 옥수수 → 불닭 → 하와이안 → 치킨 데리야끼` 무료 5종 뒤에 유료 4종이 나온다.
+- 이 규칙은 5분 CUKCUK 자동 동기화와 QR 캡처 설정 재생성 후에도 유지되며, 카탈로그 revision을 올려 매장 태블릿의 예전 로컬 옵션 순서도 새 기준으로 갱신한다.
 - 활성 메뉴 112개 모두 사진이 연결돼 있다. 사진 레지스트리와 파일은 133개이며, 현재 미노출 메뉴의 보관 사진 21개는 삭제하지 않았다.
-- 주문 워커와 레이아웃·QR 일치 테스트는 총 18개 통과, 실패 0이다.
+- 주문 워커와 레이아웃·QR·옵션 순서 테스트는 총 23개 통과, 실패 0이다.
 
 ## CUKCUK 테이블 QR 카테고리 순서
 
@@ -63,12 +67,12 @@ AI 생성 후 육안 검수:
 
 ## 공개 링크
 
-- 안전 미리보기: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=4c51288
-- 관리자 화면: https://kimsuhoe01-creator.github.io/dabang/admin-v2.html?deploy=4c51288
+- 안전 미리보기: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=aeea3c7
+- 관리자 화면: https://kimsuhoe01-creator.github.io/dabang/admin-v2.html?deploy=aeea3c7
 - 공개 메뉴 JSON: https://kimsuhoe01-creator.github.io/dabang/data/cukcuk-menu.json
 - 공개 테이블 JSON: https://kimsuhoe01-creator.github.io/dabang/data/cukcuk-tables.json
 - GitHub 저장소: https://github.com/kimsuhoe01-creator/dabang
-- QR 일치 동기화 실행: https://github.com/kimsuhoe01-creator/dabang/actions/runs/33250203974
+- CUKCUK 동기화 실행 기록: https://github.com/kimsuhoe01-creator/dabang/actions/workflows/cukcuk-sync.yml
 - 주문 워커 상태: https://dabang-cukcuk-order-api.kimsuhoe01.workers.dev/health
 
 `preview=1`이 없는 주소에서는 실제 주문이 전송될 수 있다. 사용자 허가 없이 주문 제출 테스트를 하지 않는다. 화면 검토는 시크릿 창과 `?preview=1` 주소를 사용한다.
@@ -118,17 +122,18 @@ C:\Users\Admin\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin
 - 활성 메뉴 사진 누락 0
 - 옵션 템플릿 누락 0
 - 버거 메뉴 0
-- 테스트 18개 통과
+- 테스트 23개 통과
 
 ## 구조 변경 시 주의
 
-공식 CUKCUK OpenPlatform 메뉴·카테고리 API에는 테이블 QR 노출 여부와 수동 표시 순서가 없다. 따라서 가격·일반 판매상태·테이블 목록은 5분마다 자동 갱신되지만, 카테고리/메뉴 구조와 순서는 `data/cukcuk-table-qr-layout.json`의 2026-08-29 관리자 캡처를 기준으로 잠겨 있다.
+공식 CUKCUK OpenPlatform 메뉴·카테고리 API에는 테이블 QR 노출 여부와 수동 표시 순서가 없다. 따라서 가격·일반 판매상태·테이블 목록은 5분마다 자동 갱신되지만, 카테고리/메뉴 구조와 순서는 `data/cukcuk-table-qr-layout.json`의 2026-08-29 관리자 캡처를 기준으로 잠겨 있다. 같은 파일의 `optionOrdering`에는 2026-08-20 CUKCUK 관리자에서 저장 완료한 메뉴별 옵션 그룹 및 선택지 순서가 들어 있다.
 
 CUKCUK 테이블 QR에서 품목이나 순서를 바꾼 경우에는 관리자 화면을 다시 읽기 전용으로 캡처하고 다음 순서로 갱신한다.
 
 1. 원본 캡처 JSON을 로컬 `work/`에 둔다. `work/`는 Git에 포함하지 않는다.
-2. `scripts/build-table-qr-layout.mjs`로 `data/cukcuk-table-qr-layout.json`을 다시 만든다.
-3. 전체 테스트와 이미지 감사를 실행한다.
-4. `main`에 반영한 뒤 `CUKCUK menu sync` 성공과 최종 공개 JSON을 확인한다.
+2. `scripts/build-table-qr-layout.mjs`로 `data/cukcuk-table-qr-layout.json`을 다시 만든다. 생성기는 기존 `optionOrdering`을 보존한다.
+3. CUKCUK에서 옵션 순서 자체도 바꿨다면 `optionOrdering`의 메뉴 코드·템플릿/선택지 UUID를 별도 확인 기록에 맞춰 갱신한다. 없는 선택지를 새로 만들지 않는다.
+4. 전체 테스트와 이미지 감사를 실행한다.
+5. `main`에 반영한 뒤 `CUKCUK menu sync` 성공과 최종 공개 JSON을 확인한다.
 
 비밀키는 GitHub Secret/Cloudflare Secret에서만 사용한다. HTML, 문서, 로컬 인계 파일에 비밀값을 저장하지 않는다.
