@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-08-29 13:12:23",
-    "finished_at": "2026-08-29 13:12:31",
+    "started_at": "2026-08-29 13:43:02",
+    "finished_at": "2026-08-29 13:43:09",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -18,7 +18,7 @@
       "sourceName": "하이볼|RượuHighball|高球酒|Highball",
       "names": {
         "ko": "하이볼",
-        "vi": "Rượu Highball",
+        "vi": "Highball",
         "zh": "高球酒",
         "en": "Highball"
       },
@@ -176,7 +176,7 @@
         "ko": "주류",
         "vi": "Đồ uống có cồn",
         "zh": "酒类",
-        "en": "Alcohol"
+        "en": "Alcoholic Drinks"
       },
       "visible": true,
       "sortOrder": 13
@@ -1067,9 +1067,9 @@
       "sourceName": "후라이드  Fried Chicken  无骨炸鸡腿 Má đùi rút xương",
       "names": {
         "ko": "후라이드 치킨",
-        "vi": "Gà rán má đùi rút xương",
+        "vi": "Gà chiên không xương",
         "zh": "无骨炸鸡腿",
-        "en": "Boneless Fried Chicken Thigh"
+        "en": "Fried Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1177,7 +1177,7 @@
       "sourceName": "스리라차 어니언  Sriracha Onion Chicken洋葱奶酱炸鸡 Gà sốt kem hành",
       "names": {
         "ko": "스리라차 어니언 치킨",
-        "vi": "Gà sốt kem hành Sriracha",
+        "vi": "Gà sốt kem hành tây Sriracha",
         "zh": "是拉差洋葱奶油炸鸡",
         "en": "Sriracha Onion Chicken"
       },
@@ -4296,10 +4296,10 @@
     "provider": "openai",
     "model": "gpt-5.6-terra",
     "status": "ready",
-    "entityCount": 256,
-    "cacheHits": 256,
-    "translated": 0,
+    "entityCount": 258,
+    "cacheHits": 250,
+    "translated": 8,
     "pendingCount": 0,
-    "updatedAt": "2026-08-29T13:12:38.656Z"
+    "updatedAt": "2026-08-29T13:43:19.117Z"
   }
 }

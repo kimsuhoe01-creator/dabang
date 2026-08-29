@@ -134,15 +134,15 @@
       "updatedAt": "2026-08-29T11:28:57.479Z"
     },
     "menu:7c92814f-40ee-4742-8e2b-004a659bcb97": {
-      "fingerprint": "7b64bf052e06c80e9dc0a0a9bbc9675fbcdbf2584cb73f6bdd5a81daf36d7641",
+      "fingerprint": "09111deaac346bbabc4231e2804ebefdde24ab08d7d873a529b1c8fca9d68174",
       "sourceName": "후라이드 Fried Chicken 无骨炸鸡腿 Má đùi rút xương",
       "names": {
         "ko": "후라이드 치킨",
-        "vi": "Gà rán má đùi rút xương",
+        "vi": "Gà chiên không xương",
         "zh": "无骨炸鸡腿",
-        "en": "Boneless Fried Chicken Thigh"
+        "en": "Fried Chicken"
       },
-      "updatedAt": "2026-07-18T13:46:57.736Z"
+      "updatedAt": "2026-08-29T13:43:19.116Z"
     },
     "menu:84eca397-5e7f-4f5e-8e39-e62981936afe": {
       "fingerprint": "185bb09794e4378d5facdaa4461b6d400e8b65f0a0fdf518b665f373279569e3",
@@ -541,15 +541,15 @@
       "updatedAt": "2026-07-18T13:47:13.845Z"
     },
     "menu:d939174b-8266-4b40-ac1b-8314d3ea647b": {
-      "fingerprint": "070c83464755d0434981e1a49480f10f05443749d037028f6b407006ea5507e9",
+      "fingerprint": "12c2b150d168213aea4bfb4d4c2128d231b88ce9d8e4d971990a996d9b54dc20",
       "sourceName": "양념 Sweet & Spicy Chicken 韩式甜酱炸鸡 Gà sốt ngọt HQ",
       "names": {
-        "ko": "양념치킨",
+        "ko": "양념 치킨",
         "vi": "Gà sốt ngọt Hàn Quốc",
         "zh": "韩式甜酱炸鸡",
         "en": "Sweet & Spicy Chicken"
       },
-      "updatedAt": "2026-07-18T13:47:13.845Z"
+      "updatedAt": "2026-08-29T13:43:19.116Z"
     },
     "menu:0738f65b-7561-4467-8ba9-a814587a9b59": {
       "fingerprint": "f6f4b6ce7aa75964454405afb31a0b6c39591feb729dfcd93a0c349181bb9a73",
@@ -585,15 +585,15 @@
       "updatedAt": "2026-07-18T13:47:13.845Z"
     },
     "menu:9dc365e6-11a7-4308-9899-b69cfdce6132": {
-      "fingerprint": "e8cd7b7d8a9394706059b4d1c37b43a4e2545e18adc67723c7f995157a7c6051",
+      "fingerprint": "18f47ad71e2a13a52ac3c0af01d50eb014eee88e64c079b27201278766425299",
       "sourceName": "스리라차 어니언 Sriracha Onion Chicken洋葱奶酱炸鸡 Gà sốt kem hành",
       "names": {
         "ko": "스리라차 어니언 치킨",
-        "vi": "Gà sốt kem hành Sriracha",
+        "vi": "Gà sốt kem hành tây Sriracha",
         "zh": "是拉差洋葱奶油炸鸡",
         "en": "Sriracha Onion Chicken"
       },
-      "updatedAt": "2026-07-18T13:47:13.845Z"
+      "updatedAt": "2026-08-29T13:43:19.116Z"
     },
     "menu:7fc37f94-fa7a-4206-ac56-e46984856488": {
       "fingerprint": "febebb11e1f063202b5ffc468f060411b8135aea0a0de66a2b8a296c0a453583",
@@ -640,15 +640,15 @@
       "updatedAt": "2026-07-18T13:47:13.845Z"
     },
     "menu:1644c776-3499-42d0-a911-ab8152608195": {
-      "fingerprint": "477c74fde16fc8e26e62fff88dcfc4c6c4ae166d52ab64fcdc072a4032e5b42c",
+      "fingerprint": "8f75ebd2503b81d31edd6059d3858fb74a2c2734960b4e37e99d758e5ef74653",
       "sourceName": "수박 | dưa hấu | 西瓜刨冰 |",
       "names": {
-        "ko": "수박 빙수",
-        "vi": "Đá bào dưa hấu",
-        "zh": "西瓜刨冰",
-        "en": "Watermelon Shaved Ice"
+        "ko": "수박",
+        "vi": "Dưa hấu",
+        "zh": "西瓜",
+        "en": "Watermelon"
       },
-      "updatedAt": "2026-07-18T13:47:13.845Z"
+      "updatedAt": "2026-08-29T13:43:19.116Z"
     },
     "menu:26003bff-2c2b-4c10-9a3b-606f0af46041": {
       "fingerprint": "b39050b4737d154599477120a5bfa5ef7cf6d69b57fa6d6a803a27817b1bd05f",
@@ -772,15 +772,15 @@
       "updatedAt": "2026-07-18T13:47:13.845Z"
     },
     "menu:b2c769d6-83b0-4c07-a942-ae7113fabd31": {
-      "fingerprint": "d51a9243720d5cc9fda5fe9b4c084cfef0d305f81981305fb156653e63d46f35",
+      "fingerprint": "154dfa9d6b28d94523da3e6332c6ed2259578c491fe24a6596cef310cea2cd32",
       "sourceName": "매운양념 Hot & Spicy Chicken韩式辣酱炸鸡 Gà sốt cay HQ",
       "names": {
-        "ko": "매운 양념치킨",
+        "ko": "매운 양념 치킨",
         "vi": "Gà sốt cay Hàn Quốc",
         "zh": "韩式辣酱炸鸡",
         "en": "Hot & Spicy Chicken"
       },
-      "updatedAt": "2026-07-18T13:47:13.845Z"
+      "updatedAt": "2026-08-29T13:43:19.116Z"
     },
     "menu:4283f6a7-e57f-42d5-b377-5ab73413146e": {
       "fingerprint": "cee4dfc4583aafe6216c2cdc5b9cadeff9bde7d586355af8a5e726cc8321a0d7",
@@ -948,7 +948,7 @@
       "updatedAt": "2026-07-18T13:47:21.808Z"
     },
     "menu:316a67e3-b913-4b86-81fa-79c053604819": {
-      "fingerprint": "946237a43ef2403cbb9f53ed2f618892b73230c89f839171517dba79d46dfaf7",
+      "fingerprint": "77c2cd313d29fe40042501535494fddda6896a58c10db3d7b2bb74cc79cee4ff",
       "sourceName": "고추마늘간장Garlic Soy Chicken/ 辣椒蒜酱鸡 /Gà sốt xì dầu tỏi ớt",
       "names": {
         "ko": "고추마늘간장 치킨",
@@ -956,7 +956,7 @@
         "zh": "辣椒蒜酱鸡",
         "en": "Garlic Soy Chicken"
       },
-      "updatedAt": "2026-07-18T13:47:21.809Z"
+      "updatedAt": "2026-08-29T13:43:19.116Z"
     },
     "menu:5e53f8d3-3b1e-4c08-82d0-136726552c5b": {
       "fingerprint": "fde3259df3c89bcbb76bd95b57771475a0e13f613107f5a7f1ec66bac4188d06",
@@ -3179,6 +3179,28 @@
         "en": "Pepsi Zero (1.5L Bottle)"
       },
       "updatedAt": "2026-08-29T11:28:57.479Z"
+    },
+    "category:cukcuk-half-chicken": {
+      "fingerprint": "a7291cba72d5fbf296d748ecbc0c4085d921368b7b87eefda5041fe6302593fa",
+      "sourceName": "반마리 치킨 | Gà nửa con | 半只鸡 | Half Chicken",
+      "names": {
+        "ko": "반마리 치킨",
+        "vi": "Gà nửa con",
+        "zh": "半只鸡",
+        "en": "Half Chicken"
+      },
+      "updatedAt": "2026-08-29T13:43:19.115Z"
+    },
+    "category:cukcuk-dried-snacks": {
+      "fingerprint": "1c549cd8fbe9fac35a07ca91c79a1152ca1da6578ad1783c93fe0522b0871a1c",
+      "sourceName": "건어물 | Đồ khô | 干货 | Dried Snacks",
+      "names": {
+        "ko": "건어물",
+        "vi": "Đồ khô",
+        "zh": "干货",
+        "en": "Dried Snacks"
+      },
+      "updatedAt": "2026-08-29T13:43:19.115Z"
     }
   }
 }
