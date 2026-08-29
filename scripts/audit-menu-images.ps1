@@ -21,10 +21,14 @@ function Read-RegistrySet([string]$name) {
     return $match.Groups[1].Value.Split(' ', [StringSplitOptions]::RemoveEmptyEntries)
 }
 
-$mappedIds = Read-RegistrySet 'MENU_IMAGE_IDS'
+$mappedIds = @(
+    Read-RegistrySet 'MENU_IMAGE_IDS'
+    Read-RegistrySet 'MENU_QR_ADDED_IMAGE_IDS'
+)
 $jpgIds = @(
     Read-RegistrySet 'MENU_JPG_IDS'
     Read-RegistrySet 'MENU_GENERATED_JPG_IDS'
+    Read-RegistrySet 'MENU_QR_ADDED_JPG_IDS'
 )
 $menuIds = @($menuData.menus | ForEach-Object id)
 
