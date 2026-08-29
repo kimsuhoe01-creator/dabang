@@ -2,73 +2,101 @@
 
 기준일: 2026-08-29
 
-기준 커밋: `8713310254c409b1b39971620f98511f5b30142b`
+기준 커밋: `4c51288` (`Add images for QR-only menu items`)
+
+카탈로그 기준: `cukcuk-table-qr-2026-08-29-95357aa1ca69`
 
 ## 현재 완료 상태
 
-- 최종 메뉴 이미지 19개를 교체해 GitHub Pages에 배포했다.
-- 공개 서버의 교체 이미지 19개가 로컬 결과와 SHA-256 기준 19/19 일치했다.
-- CUKCUK 고객 메뉴 85개와 활성 주류 39개를 합친 124개를 앱 메뉴 124개와 UUID 단위로 대조했다.
-- 누락 0, 예상하지 않은 추가 0, 메뉴명·가격·카테고리·판매상태 핵심 불일치 0이다.
-- 이미지 매핑 124, 이미지 파일 124이며 누락·깨짐·오래된 매핑·고아 파일은 0이다.
-- 고객 웹 테이블 메뉴와 태블릿 메뉴는 모두 `tablet-preview.html` 및 `data/cukcuk-menu.json`을 사용하므로 별도 품목 목록이 아니다.
-- 주문 워커 테스트는 10개 통과, 0개 실패였다.
-- 공개 브라우저에서 모든 카테고리와 새 이미지를 확인했고 콘솔 오류는 0이었다.
+- 권한이 있는 기존 Codex 작업 `CUKCUK 수정`에서 CUKCUK 관리자 화면을 읽기 전용으로 확인했다. 실제 주문이나 CUKCUK 설정 변경은 하지 않았다.
+- CUKCUK `Bán hàng Online > Gọi món tại bàn > Thực đơn`의 고객 노출 기준은 카테고리 12개, 메뉴 112개다.
+- 앱의 카테고리와 메뉴를 CUKCUK 테이블 QR의 상품코드 및 표시 순서와 112/112 일치시켰다.
+- CUKCUK에는 등록돼 있지만 테이블 QR에 노출되지 않는 버거 2종(`SPACE6`, `SPACE7`)은 앱에서 제외했다.
+- 추천 메뉴는 기본 숨김이다. 관리자가 의도적으로 다시 켜기 전에는 첫 카테고리가 맨 위에 나온다.
+- 테이블 선택 화면은 테이블 이름 기준 `A → B → C → D → Z(PC) → 배달` 순이며 각 구역 안에서는 1번부터 자연 숫자순이다.
+- 현재 테이블 파일 기준 첫 네 구역은 `A-1~6`, `B-01~13`, `C-1~9`, `D-1~6`이다.
+- 예전 브라우저 저장 배치는 레이아웃 버전 3으로 자동 갱신된다. 새 CUKCUK 테이블은 같은 구역에 합쳐진다.
+- 5분 자동 동기화는 전체 활성 재고에 상품코드를 붙인 뒤 테이블 QR 허용 목록 112개만 남긴다. 상품코드 중복, 메뉴 누락, 옵션 템플릿 누락, 잘못된 가격이 있으면 공개 파일을 갱신하지 않고 실패한다.
+- 활성 메뉴 112개 모두 사진이 연결돼 있다. 사진 레지스트리와 파일은 133개이며, 현재 미노출 메뉴의 보관 사진 21개는 삭제하지 않았다.
+- 주문 워커와 레이아웃·QR 일치 테스트는 총 18개 통과, 실패 0이다.
+
+## CUKCUK 테이블 QR 카테고리 순서
+
+1. 신메뉴 — 15개
+2. 요일별 할인 — 0개
+3. 세트 — 10개
+4. 다방치킨 — 14개
+5. 통닭 — 1개
+6. 날개치킨 — 6개
+7. 다방분식 — 12개
+8. 스페이스 피자 — 8개
+9. 안주 — 13개
+10. 음료 — 7개
+11. 주류 — 18개
+12. 하이볼 — 8개
+
+`요일별 할인`은 관리자에서 활성 카테고리지만 현재 고객 노출 메뉴가 0개라 태블릿의 카테고리 레일에서는 자동으로 감춰진다.
+
+현재 CUKCUK QR에서 품절로 확인된 메뉴는 다음 2개다.
+
+- 딥치즈 & 나초칩 — 코드 `(M04) nacho cham phomai`
+- 쥬시큘 — 코드 `CC`
+
+## 이번에 추가한 QR 전용 메뉴 사진 9개
+
+원드라이브/기존 앱 원본 사용:
+
+- 디진다 돈까스 챌린지
+- 참숯불닭
+- 화덕통닭
+- 마니치
+- 불쫄면
+- 튀김
+- 사리 추가
+
+AI 생성 후 육안 검수:
+
+- 폴드 치킨 퀘사디아
+- 펩시 제로 1.5L
+
+두 생성 이미지는 Codex 내장 이미지 생성 기능을 사용했으며 최종 파일은 다른 메뉴 사진과 같이 `assets/menu/<CUKCUK UUID>.png`에 포함돼 있다.
 
 ## 공개 링크
 
-- 안전 미리보기: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=8713310
-- 실제 주문 루트: https://kimsuhoe01-creator.github.io/dabang/
-- 관리자 화면: https://kimsuhoe01-creator.github.io/dabang/admin-v2.html
+- 안전 미리보기: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=4c51288
+- 관리자 화면: https://kimsuhoe01-creator.github.io/dabang/admin-v2.html?deploy=4c51288
 - 공개 메뉴 JSON: https://kimsuhoe01-creator.github.io/dabang/data/cukcuk-menu.json
 - 공개 테이블 JSON: https://kimsuhoe01-creator.github.io/dabang/data/cukcuk-tables.json
-- CUKCUK 고객 메뉴 소스: https://dabang-tablet-admin.kimsuhoe.chatgpt.site/api/cukcuk/menu
+- GitHub 저장소: https://github.com/kimsuhoe01-creator/dabang
+- QR 일치 동기화 실행: https://github.com/kimsuhoe01-creator/dabang/actions/runs/33250203974
 - 주문 워커 상태: https://dabang-cukcuk-order-api.kimsuhoe01.workers.dev/health
-- GitHub Pages 배포: https://github.com/kimsuhoe01-creator/dabang/actions/runs/33243582327
 
-`preview=1`이 없는 주소에서는 실제 주문이 전송될 수 있으므로 사용자 허가 없이 주문 제출 테스트를 하지 않는다. 기존 로컬 저장 설정을 피하려면 시크릿 창에서 검토한다.
+`preview=1`이 없는 주소에서는 실제 주문이 전송될 수 있다. 사용자 허가 없이 주문 제출 테스트를 하지 않는다. 화면 검토는 시크릿 창과 `?preview=1` 주소를 사용한다.
 
-## 이번에 교체한 19개 이미지
+## 매장 노트북에서 이어서 작업
 
-- 간장계란밥, 주먹밥, 계란찜, 고르곤졸라 피자, 치즈 오븐 스파게티, 딥치즈 & 나초칩
-- 크리스피 윙봉, 윙봉 반마리, 파마산 치즈가루, 망고 에이드, 데킬라 샷
-- 촉촉 반건조 오징어, 조미 오징어, 버터 먹태구이, 반건조 노가리, 건어물 떠까, 클래식 쥐포
-- 막걸리, 막걸리 1
+코드는 OneDrive가 아니라 로컬 저장소 `C:\Codex\repos\dabang`에서 작업한다.
 
-## 가장 먼저 할 현장 작업
+저장소가 이미 있으면 삭제하거나 다시 clone하지 않는다.
 
-집 PC에서 발견한 예전 박닌 QR은 `https://kimsuhoe.qrplanet.com/042yla`였고 현재 404다. OneDrive 매장 이미지와 디자인 이미지 1,748장을 검사했지만 현행 박닌 테이블 주문 QR은 찾지 못했다.
+```powershell
+cd C:\Codex\repos\dabang
+git status
+git fetch origin --prune
+git switch main
+git pull --ff-only origin main
+```
 
-매장에 도착하면 다음을 수행한다.
-
-1. 테이블에 현재 붙은 QR을 정면에서 선명하게 촬영한다.
-2. OneDrive 최상위의 `다방_테이블오더_매장인계/10_현장QR_사진_여기에`에 사진을 넣는다.
-3. QR을 로컬에서 해독해 최종 URL을 확인한다.
-4. 실제 QR 화면과 최신 CUKCUK 원본, 공개 메뉴 JSON을 UUID·메뉴명·가격·카테고리·판매상태별로 전수 대조한다.
-5. 구형 404 QR이 아직 붙어 있으면 새 메뉴 주소용 QR로 교체한다.
-
-## CUKCUK 원본에서 사용자 확인이 필요한 항목
-
-- 서로 다른 UUID의 `하노이 생맥주 1L` 2개
-- 0원 품목 `사포로 생맥주`, `사이공 캔맥주 서비스`
-- 배달·서비스용으로 보이는 `배달) 참이슬`, `배달) 진로`, `배달) 새로`, `배달) 사포로 생맥주`, `배달) 선양소주`, `사이공 캔맥주 서비스`
-- 서로 다른 UUID의 `막걸리`, `막걸리 1`
-- 카테고리 UUID가 없어 런타임 `기타`로 표시되는 `페퍼로니 (SP02)`, `쉬림프 피자`, `불고기 피자`, `고구마 베이컨 피자`, `고구마 피자`
-
-이 항목들은 앱이 임의로 만든 것이 아니라 점검 시점의 CUKCUK 원본/활성 재고에 존재했다. 사용자 확인 없이 삭제하거나 합치지 않는다.
-
-## 매장 노트북에서 시작
-
-코드는 OneDrive 안이 아니라 로컬 작업 폴더에 둔다.
+저장소가 없을 때만 다음을 실행한다.
 
 ```powershell
 git clone https://github.com/kimsuhoe01-creator/dabang.git C:\Codex\repos\dabang
 cd C:\Codex\repos\dabang
-git fetch origin --prune
-git switch -c store-menu-review-YYYYMMDD origin/main
 ```
 
-이미 저장소가 있으면 clone하거나 삭제하지 말고 `git status`와 변경 파일부터 확인한다. 원격 `main`은 CUKCUK 자동 동기화로 계속 갱신될 수 있으므로 기준 커밋보다 최신이어도 정상이다.
+매장 Codex에는 다음과 같이 말하면 된다.
+
+> `C:\Codex\repos\dabang`에서 `docs\STORE_HANDOFF.md`와 `AGENTS.md`를 먼저 읽고, 현재 CUKCUK QR 12개 카테고리·112개 메뉴 상태를 안전 미리보기에서 점검해 줘. 실제 주문은 보내지 마.
 
 ## 검증 명령
 
@@ -78,19 +106,29 @@ git switch -c store-menu-review-YYYYMMDD origin/main
 powershell -ExecutionPolicy Bypass -File .\scripts\audit-menu-images.ps1
 ```
 
-주문 워커 변경 시:
+주문 워커 및 QR/테이블 레이아웃 테스트:
 
 ```powershell
-cd cloudflare-order-worker
-npm test
+C:\Users\Admin\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin\node.exe --test .\cloudflare-order-worker\test\image-edit.test.js .\cloudflare-order-worker\test\order.test.js .\cloudflare-order-worker\test\sales-report.test.js .\cloudflare-order-worker\test\table-layout.test.js
 ```
 
-## OneDrive 인계 폴더
+정상 기준:
 
-논리적 위치:
+- 메뉴 112
+- 활성 메뉴 사진 누락 0
+- 옵션 템플릿 누락 0
+- 버거 메뉴 0
+- 테스트 18개 통과
 
-`OneDrive 최상위 > 다방_테이블오더_매장인계`
+## 구조 변경 시 주의
 
-이 폴더에는 휴대폰용 안내, 매장 Codex에 붙여 넣을 지시문, 링크, 124개 전수 대조표, 점검 시점의 JSON, 현장 QR 및 새 사진 투입 폴더가 있다. 원본 후보 사진 전체와 개인 Codex 세션은 옮기지 않는다.
+공식 CUKCUK OpenPlatform 메뉴·카테고리 API에는 테이블 QR 노출 여부와 수동 표시 순서가 없다. 따라서 가격·일반 판매상태·테이블 목록은 5분마다 자동 갱신되지만, 카테고리/메뉴 구조와 순서는 `data/cukcuk-table-qr-layout.json`의 2026-08-29 관리자 캡처를 기준으로 잠겨 있다.
 
-`30_관리자설정백업/dabang-tablet-settings-2026-08-29.json`은 집 브라우저의 관리자 화면에서 내보낸 메뉴 표시·카테고리·테이블 배치 설정이다. 매장 관리자 화면의 `설정 복원`으로 불러올 수 있다. 복원은 매장 브라우저의 기존 로컬 설정을 바꿀 수 있으므로, 기존 설정을 보존해야 하면 매장 브라우저에서도 먼저 별도 백업한다.
+CUKCUK 테이블 QR에서 품목이나 순서를 바꾼 경우에는 관리자 화면을 다시 읽기 전용으로 캡처하고 다음 순서로 갱신한다.
+
+1. 원본 캡처 JSON을 로컬 `work/`에 둔다. `work/`는 Git에 포함하지 않는다.
+2. `scripts/build-table-qr-layout.mjs`로 `data/cukcuk-table-qr-layout.json`을 다시 만든다.
+3. 전체 테스트와 이미지 감사를 실행한다.
+4. `main`에 반영한 뒤 `CUKCUK menu sync` 성공과 최종 공개 JSON을 확인한다.
+
+비밀키는 GitHub Secret/Cloudflare Secret에서만 사용한다. HTML, 문서, 로컬 인계 파일에 비밀값을 저장하지 않는다.
