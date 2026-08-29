@@ -1,6 +1,7 @@
 import fs from 'node:fs';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+import optionOrder from '../assets/option-order.js';
 
 function clean(value) {
   return String(value ?? '').normalize('NFKC').replace(/\s+/g, ' ').trim();
@@ -12,6 +13,52 @@ function codeKey(value) {
 
 function clone(value) {
   return JSON.parse(JSON.stringify(value));
+}
+
+function validateIdList(values, label) {
+  if (!Array.isArray(values) || !values.length) throw new Error(`${label} must contain at least one id.`);
+  const ids = values.map(value => clean(value));
+  if (ids.some(value => !value) || new Set(ids).size !== ids.length) throw new Error(`${label} contains a blank or duplicate id.`);
+}
+
+function validateOptionOrdering(config, configuredCodes) {
+  const ordering = config.optionOrdering;
+  if (!ordering) return;
+  if (ordering.policy !== 'free-first-stable') throw new Error('Option ordering policy must be free-first-stable.');
+  if (!Array.isArray(ordering.menus) || !Array.isArray(ordering.templates)) throw new Error('Option ordering must define menus and templates.');
+  const menuCodes = new Set();
+  for (const menu of ordering.menus) {
+    const key = codeKey(menu.code);
+    if (!key || menuCodes.has(key)) throw new Error(`Invalid or duplicate option-ordering menu code: ${menu.code}`);
+    if (!configuredCodes.has(key)) throw new Error(`Option-ordering menu ${menu.code} is not present in the table QR layout.`);
+    validateIdList(menu.templateIds, `Option-ordering menu ${menu.code}`);
+    menuCodes.add(key);
+  }
+  const templateIds = new Set();
+  for (const template of ordering.templates) {
+    const id = clean(template.templateId);
+    if (!id || templateIds.has(id)) throw new Error(`Invalid or duplicate option-ordering template id: ${template.templateId}`);
+    validateIdList(template.valueIds, `Option-ordering template ${template.templateId}`);
+    templateIds.add(id);
+  }
+}
+
+function reorderExistingIds(values, preferredIds) {
+  const source = (Array.isArray(values) ? values : []).map(String);
+  if (!Array.isArray(preferredIds) || !preferredIds.length) return source;
+  const available = new Set(source);
+  const preferred = preferredIds.map(String).filter(id => available.has(id));
+  const preferredSet = new Set(preferred);
+  return [...preferred, ...source.filter(id => !preferredSet.has(id))];
+}
+
+function normalizeTemplateValues(values, preferredIds) {
+  const source = (Array.isArray(values) ? values : []).filter(Boolean);
+  const byId = new Map(source.map(value => [String(value.id), value]));
+  const preferred = (Array.isArray(preferredIds) ? preferredIds : []).map(String).map(id => byId.get(id)).filter(Boolean);
+  const preferredSet = new Set(preferred.map(value => String(value.id)));
+  const combined = [...preferred, ...source.filter(value => !preferredSet.has(String(value.id)))];
+  return optionOrder.normalizeValues(combined.map((value, index) => ({ ...value, sortOrder: index })));
 }
 
 function validateConfig(config) {
@@ -36,6 +83,7 @@ function validateConfig(config) {
   }
   if (Number(config.categoryCount) !== config.categories.length) throw new Error('Configured categoryCount does not match the category list.');
   if (Number(config.menuCount) !== menuCount) throw new Error('Configured menuCount does not match the menu lists.');
+  validateOptionOrdering(config, codes);
 }
 
 function candidateCodes(menu) {
@@ -55,6 +103,10 @@ export function applyTableQrLayout(publishedInput, configInput) {
   validateConfig(config);
 
   const candidates = Array.isArray(published.menus) ? published.menus : [];
+  const declaredCandidateCount = Number(published.inventoryCandidateCount);
+  const candidateCount = Number.isFinite(declaredCandidateCount) && declaredCandidateCount >= candidates.length ? declaredCandidateCount : candidates.length;
+  const menuOrderingByCode = new Map((config.optionOrdering?.menus || []).map(rule => [codeKey(rule.code), rule]));
+  const templateOrderingById = new Map((config.optionOrdering?.templates || []).map(rule => [String(rule.templateId), rule]));
   const byCode = new Map();
   for (const menu of candidates) {
     for (const key of new Set(candidateCodes(menu))) {
@@ -96,6 +148,7 @@ export function applyTableQrLayout(publishedInput, configInput) {
       if (rawPrice === null || rawPrice === undefined || clean(rawPrice) === '' || !Number.isFinite(price) || price < 0) throw new Error(`CUKCUK product ${ruleMenu.code} has an invalid price.`);
       if (selectedIds.has(id)) throw new Error(`CUKCUK product id ${id} was selected more than once.`);
       selectedIds.add(id);
+      const orderedTemplateIds = reorderExistingIds(candidate.optionTemplateIds, menuOrderingByCode.get(codeKey(ruleMenu.code))?.templateIds);
       menus.push({
         ...candidate,
         id,
@@ -105,6 +158,7 @@ export function applyTableQrLayout(publishedInput, configInput) {
         categoryName,
         price,
         available: ruleMenu.outOfStock ? false : candidate.available !== false,
+        optionTemplateIds: orderedTemplateIds,
         sortOrder: globalSortOrder++,
         categorySortOrder
       });
@@ -125,6 +179,7 @@ export function applyTableQrLayout(publishedInput, configInput) {
     .filter(template => referencedTemplateIds.has(String(template.id)))
     .map(template => ({
       ...template,
+      values: normalizeTemplateValues(template.values, templateOrderingById.get(String(template.id))?.valueIds),
       menuIds: (template.menuIds || []).map(String).filter(id => selectedIds.has(id))
     }));
   const retainedTemplateIds = new Set(optionTemplates.map(template => String(template.id)));
@@ -146,7 +201,10 @@ export function applyTableQrLayout(publishedInput, configInput) {
     source: config.source,
     includeUnlisted: false,
     featuredVisible: config.featuredVisible === true,
-    excludedCandidateCount: Math.max(0, candidates.length - selectedIds.size)
+    optionOrderingPolicy: config.optionOrdering?.policy || 'free-first-stable',
+    orderedMenuCount: config.optionOrdering?.menus?.length || 0,
+    orderedTemplateCount: config.optionOrdering?.templates?.length || 0,
+    excludedCandidateCount: Math.max(0, candidateCount - selectedIds.size)
   };
   if (published.lastSync && typeof published.lastSync === 'object') published.lastSync.published_menu_count = menus.length;
   return published;

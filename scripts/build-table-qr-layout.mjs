@@ -37,12 +37,17 @@ function clean(value) {
   return String(value ?? '').replace(/\s+/g, ' ').trim();
 }
 
+function clone(value) {
+  return value === undefined ? undefined : JSON.parse(JSON.stringify(value));
+}
+
 function categoryNames(sourceName) {
   const parts = clean(sourceName).split(/\s*\|\s*/).map(clean).filter(Boolean);
   return { ko: parts[0] || '', vi: parts[1] || '', zh: parts[2] || '', en: parts[3] || '' };
 }
 
-export function buildTableQrConfig(snapshot) {
+export function buildTableQrConfig(snapshot, existingConfig = {}) {
+  const optionOrdering = clone(existingConfig?.optionOrdering);
   const activeCategories = (snapshot.categories || [])
     .filter(category => category.active && !category.hidden)
     .slice()
@@ -85,15 +90,18 @@ export function buildTableQrConfig(snapshot) {
     throw new Error(`Visible menu count mismatch: ${visibleMenus.length} rows, ${seenCodes.size} configured codes.`);
   }
 
-  const fingerprintSource = categories.map(category => ({
-    id: category.id,
-    code: category.code,
-    menus: category.menus.map(menu => ({ code: menu.code, outOfStock: menu.outOfStock }))
-  }));
+  const fingerprintSource = {
+    categories: categories.map(category => ({
+      id: category.id,
+      code: category.code,
+      menus: category.menus.map(menu => ({ code: menu.code, outOfStock: menu.outOfStock }))
+    })),
+    optionOrdering: optionOrdering || null
+  };
   const fingerprint = crypto.createHash('sha256').update(JSON.stringify(fingerprintSource)).digest('hex').slice(0, 12);
   const capturedDate = String(snapshot.extractedAt || '').slice(0, 10) || 'undated';
 
-  return {
+  const config = {
     version: 1,
     revision: `cukcuk-table-qr-${capturedDate}-${fingerprint}`,
     capturedAt: snapshot.extractedAt || new Date().toISOString(),
@@ -106,12 +114,15 @@ export function buildTableQrConfig(snapshot) {
     menuCount: seenCodes.size,
     categories
   };
+  if (optionOrdering) config.optionOrdering = optionOrdering;
+  return config;
 }
 
 function runCli() {
   const [inputPath = 'work/cukcuk-table-qr-layout-20260829.json', outputPath = 'data/cukcuk-table-qr-layout.json'] = process.argv.slice(2);
   const snapshot = JSON.parse(fs.readFileSync(inputPath, 'utf8'));
-  const config = buildTableQrConfig(snapshot);
+  const existingConfig = fs.existsSync(outputPath) ? JSON.parse(fs.readFileSync(outputPath, 'utf8')) : {};
+  const config = buildTableQrConfig(snapshot, existingConfig);
   fs.writeFileSync(outputPath, JSON.stringify(config, null, 2) + '\n');
   console.log(`Wrote ${config.categoryCount} categories and ${config.menuCount} menus to ${outputPath}.`);
   console.log(`Catalog revision: ${config.revision}`);

@@ -1,10 +1,11 @@
-const CACHE_VERSION = 'dabang-tablet-v5';
+const CACHE_VERSION = 'dabang-tablet-v6';
 const SHELL_CACHE = `${CACHE_VERSION}-shell`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const APP_SHELL = [
   './tablet-preview.html',
   './manifest.webmanifest',
   './assets/table-layout.js',
+  './assets/option-order.js',
   './assets/menu-images.js',
   './assets/pwa/icon-32.png',
   './assets/pwa/icon-180.png',

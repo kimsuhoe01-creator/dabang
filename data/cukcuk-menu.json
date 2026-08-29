@@ -140,7 +140,7 @@
         "ko": "주류",
         "vi": "Đồ uống có cồn",
         "zh": "酒类",
-        "en": "Alcoholic Drinks"
+        "en": "Alcohol"
       },
       "visible": true,
       "sortOrder": 10
@@ -150,7 +150,7 @@
       "sourceName": "하이볼|RượuHighball|高球酒|Highball",
       "names": {
         "ko": "하이볼",
-        "vi": "Highball",
+        "vi": "Rượu Highball",
         "zh": "高球酒",
         "en": "Highball"
       },
@@ -487,10 +487,10 @@
       "available": true,
       "optionGroups": 4,
       "optionTemplateIds": [
-        "5197c337-535f-4e91-b7d1-26029a4b9222",
+        "9bba9fb9-e294-4a63-b9db-a5e43df5012f",
         "4c90727b-0406-4177-a8c6-42394fa69f56",
-        "d7fcbd85-9fb6-40db-872a-8275dce401ed",
-        "9bba9fb9-e294-4a63-b9db-a5e43df5012f"
+        "5197c337-535f-4e91-b7d1-26029a4b9222",
+        "d7fcbd85-9fb6-40db-872a-8275dce401ed"
       ],
       "sortOrder": 15,
       "cukcukCode": "(S03) Gà k xương + Tok",
@@ -512,8 +512,8 @@
       "available": true,
       "optionGroups": 3,
       "optionTemplateIds": [
-        "5197c337-535f-4e91-b7d1-26029a4b9222",
         "4c90727b-0406-4177-a8c6-42394fa69f56",
+        "5197c337-535f-4e91-b7d1-26029a4b9222",
         "d7fcbd85-9fb6-40db-872a-8275dce401ed"
       ],
       "sortOrder": 16,
@@ -537,8 +537,8 @@
       "optionGroups": 4,
       "optionTemplateIds": [
         "2be54a6c-ab0d-40d7-a080-0c50e0d228dc",
-        "5197c337-535f-4e91-b7d1-26029a4b9222",
         "4c90727b-0406-4177-a8c6-42394fa69f56",
+        "5197c337-535f-4e91-b7d1-26029a4b9222",
         "d7fcbd85-9fb6-40db-872a-8275dce401ed"
       ],
       "sortOrder": 17,
@@ -665,9 +665,9 @@
       "available": true,
       "optionGroups": 3,
       "optionTemplateIds": [
-        "4fdd345d-483e-4f95-a0c4-73faf37ffd0c",
+        "b69b854b-5607-4f8c-a795-c775e55bacb7",
         "bd5ba827-b64d-4910-a24a-86fa7a8e29cd",
-        "b69b854b-5607-4f8c-a795-c775e55bacb7"
+        "4fdd345d-483e-4f95-a0c4-73faf37ffd0c"
       ],
       "sortOrder": 23,
       "cukcukCode": "SPACE35",
@@ -689,9 +689,9 @@
       "available": true,
       "optionGroups": 3,
       "optionTemplateIds": [
-        "4fdd345d-483e-4f95-a0c4-73faf37ffd0c",
+        "b69b854b-5607-4f8c-a795-c775e55bacb7",
         "bd5ba827-b64d-4910-a24a-86fa7a8e29cd",
-        "b69b854b-5607-4f8c-a795-c775e55bacb7"
+        "4fdd345d-483e-4f95-a0c4-73faf37ffd0c"
       ],
       "sortOrder": 24,
       "cukcukCode": "SPACE36",
@@ -713,8 +713,8 @@
       "available": true,
       "optionGroups": 2,
       "optionTemplateIds": [
-        "b2fbfcca-55f5-4718-87d4-96627091764a",
-        "85cead19-7d83-4c61-8199-b7fab35fb672"
+        "85cead19-7d83-4c61-8199-b7fab35fb672",
+        "b2fbfcca-55f5-4718-87d4-96627091764a"
       ],
       "sortOrder": 25,
       "cukcukCode": "(KX13)",
@@ -846,8 +846,8 @@
       "available": true,
       "optionGroups": 2,
       "optionTemplateIds": [
-        "b2fbfcca-55f5-4718-87d4-96627091764a",
-        "85cead19-7d83-4c61-8199-b7fab35fb672"
+        "85cead19-7d83-4c61-8199-b7fab35fb672",
+        "b2fbfcca-55f5-4718-87d4-96627091764a"
       ],
       "sortOrder": 31,
       "cukcukCode": "(KX01)",
@@ -1165,8 +1165,8 @@
       "available": true,
       "optionGroups": 2,
       "optionTemplateIds": [
-        "d7fcbd85-9fb6-40db-872a-8275dce401ed",
-        "21b53642-cba7-4ef9-b877-bab92f845c25"
+        "21b53642-cba7-4ef9-b877-bab92f845c25",
+        "d7fcbd85-9fb6-40db-872a-8275dce401ed"
       ],
       "sortOrder": 46,
       "cukcukCode": "(T06) Tokbokki cay nhẹ",
@@ -1188,9 +1188,9 @@
       "available": true,
       "optionGroups": 3,
       "optionTemplateIds": [
+        "21b53642-cba7-4ef9-b877-bab92f845c25",
         "5197c337-535f-4e91-b7d1-26029a4b9222",
-        "d7fcbd85-9fb6-40db-872a-8275dce401ed",
-        "21b53642-cba7-4ef9-b877-bab92f845c25"
+        "d7fcbd85-9fb6-40db-872a-8275dce401ed"
       ],
       "sortOrder": 47,
       "cukcukCode": "(T09) Tok banh gao to",
@@ -1234,8 +1234,8 @@
       "available": true,
       "optionGroups": 2,
       "optionTemplateIds": [
-        "d7fcbd85-9fb6-40db-872a-8275dce401ed",
-        "21b53642-cba7-4ef9-b877-bab92f845c25"
+        "21b53642-cba7-4ef9-b877-bab92f845c25",
+        "d7fcbd85-9fb6-40db-872a-8275dce401ed"
       ],
       "sortOrder": 49,
       "cukcukCode": "(T08) Mì Tokbokki",
@@ -2645,52 +2645,16 @@
       "revision": 1,
       "values": [
         {
-          "id": "9216a4e8-c9cc-4edd-a798-2d43ea86cfc9",
+          "id": "4ebaf633-328d-4d41-af17-da9d3db10800",
           "names": {
-            "ko": "매운 라볶이",
-            "vi": "Rabokki cay",
-            "zh": "辣味拉面炒年糕",
-            "en": "Spicy Rabokki"
+            "ko": "달달한 떡볶이",
+            "vi": "Tokbokki vị ngọt",
+            "zh": "甜味炒年糕",
+            "en": "Sweet Tteokbokki"
           },
-          "additionalPrice": 32400,
+          "additionalPrice": 0,
           "visible": true,
           "sortOrder": 0
-        },
-        {
-          "id": "0000a2d5-0343-4560-b3c6-3c2cd356c326",
-          "names": {
-            "ko": "매운 가래떡 떡볶이",
-            "vi": "Tokbokki bánh gạo dài cay",
-            "zh": "辣味条状年糕炒年糕",
-            "en": "Spicy Garaetteok Tteokbokki"
-          },
-          "additionalPrice": 32400,
-          "visible": true,
-          "sortOrder": 1
-        },
-        {
-          "id": "8a128245-102f-426d-8aed-47bf5684da06",
-          "names": {
-            "ko": "로제 떡볶이",
-            "vi": "Tokbokki sốt Rosé",
-            "zh": "玫瑰奶油炒年糕",
-            "en": "Rosé Tteokbokki"
-          },
-          "additionalPrice": 32400,
-          "visible": true,
-          "sortOrder": 2
-        },
-        {
-          "id": "7f58814c-27d6-4462-92ee-5524ac83139f",
-          "names": {
-            "ko": "달달한 라볶이",
-            "vi": "Rabokki vị ngọt",
-            "zh": "甜味拉面炒年糕",
-            "en": "Sweet Rabokki"
-          },
-          "additionalPrice": 32400,
-          "visible": true,
-          "sortOrder": 3
         },
         {
           "id": "7500e3bf-03c9-486c-b995-60375ac1b40e",
@@ -2702,7 +2666,31 @@
           },
           "additionalPrice": 0,
           "visible": true,
-          "sortOrder": 4
+          "sortOrder": 1
+        },
+        {
+          "id": "7f58814c-27d6-4462-92ee-5524ac83139f",
+          "names": {
+            "ko": "달달한 라볶이",
+            "vi": "Rabokki vị ngọt",
+            "zh": "甜味拉面炒年糕",
+            "en": "Sweet Rabokki"
+          },
+          "additionalPrice": 32400,
+          "visible": true,
+          "sortOrder": 2
+        },
+        {
+          "id": "9216a4e8-c9cc-4edd-a798-2d43ea86cfc9",
+          "names": {
+            "ko": "매운 라볶이",
+            "vi": "Rabokki cay",
+            "zh": "辣味拉面炒年糕",
+            "en": "Spicy Rabokki"
+          },
+          "additionalPrice": 32400,
+          "visible": true,
+          "sortOrder": 3
         },
         {
           "id": "2c0c5c37-3b68-45ca-a389-85263b98b4a1",
@@ -2714,17 +2702,29 @@
           },
           "additionalPrice": 32400,
           "visible": true,
+          "sortOrder": 4
+        },
+        {
+          "id": "0000a2d5-0343-4560-b3c6-3c2cd356c326",
+          "names": {
+            "ko": "매운 가래떡 떡볶이",
+            "vi": "Tokbokki bánh gạo dài cay",
+            "zh": "辣味条状年糕炒年糕",
+            "en": "Spicy Garaetteok Tteokbokki"
+          },
+          "additionalPrice": 32400,
+          "visible": true,
           "sortOrder": 5
         },
         {
-          "id": "4ebaf633-328d-4d41-af17-da9d3db10800",
+          "id": "8a128245-102f-426d-8aed-47bf5684da06",
           "names": {
-            "ko": "달달한 떡볶이",
-            "vi": "Tokbokki vị ngọt",
-            "zh": "甜味炒年糕",
-            "en": "Sweet Tteokbokki"
+            "ko": "로제 떡볶이",
+            "vi": "Tokbokki sốt Rosé",
+            "zh": "玫瑰奶油炒年糕",
+            "en": "Rosé Tteokbokki"
           },
-          "additionalPrice": 0,
+          "additionalPrice": 32400,
           "visible": true,
           "sortOrder": 6
         }
@@ -3242,6 +3242,18 @@
       "revision": 1,
       "values": [
         {
+          "id": "096e9442-2079-4c5e-aaa5-c3ceb187bd72",
+          "names": {
+            "ko": "후라이드 윙봉",
+            "vi": "Cánh và đùi gà chiên giòn",
+            "zh": "炸鸡翅鸡腿",
+            "en": "Fried Wings & Drumsticks"
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 0
+        },
+        {
           "id": "08e23927-330b-4a0d-ae1d-0f9e7a8dcefb",
           "names": {
             "ko": "핫후라이드 윙봉",
@@ -3251,7 +3263,7 @@
           },
           "additionalPrice": 0,
           "visible": true,
-          "sortOrder": 0
+          "sortOrder": 1
         },
         {
           "id": "4ff6ab3c-6c59-452c-808a-205a83ea6368",
@@ -3260,18 +3272,6 @@
             "vi": "Cánh và đùi gà sốt xì dầu",
             "zh": "酱油鸡翅鸡腿",
             "en": "Soy Sauce Wings & Drumsticks"
-          },
-          "additionalPrice": 0,
-          "visible": true,
-          "sortOrder": 1
-        },
-        {
-          "id": "9aec3e3c-57f7-441b-83ae-2aff79348608",
-          "names": {
-            "ko": "허니 윙봉",
-            "vi": "Cánh và đùi gà mật ong",
-            "zh": "蜜汁鸡翅鸡腿",
-            "en": "Honey Wings & Drumsticks"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3290,28 +3290,16 @@
           "sortOrder": 3
         },
         {
-          "id": "f276a28f-4dd4-4ee3-93eb-9f0e94941689",
+          "id": "9aec3e3c-57f7-441b-83ae-2aff79348608",
           "names": {
-            "ko": "스노윙 윙봉",
-            "vi": "Cánh và đùi gà phủ bột phô mai",
-            "zh": "芝士粉鸡翅鸡腿",
-            "en": "Cheese Powder Wings & Drumsticks"
+            "ko": "허니 윙봉",
+            "vi": "Cánh và đùi gà mật ong",
+            "zh": "蜜汁鸡翅鸡腿",
+            "en": "Honey Wings & Drumsticks"
           },
           "additionalPrice": 0,
           "visible": true,
           "sortOrder": 4
-        },
-        {
-          "id": "096e9442-2079-4c5e-aaa5-c3ceb187bd72",
-          "names": {
-            "ko": "후라이드 윙봉",
-            "vi": "Cánh và đùi gà chiên giòn",
-            "zh": "炸鸡翅鸡腿",
-            "en": "Fried Wings & Drumsticks"
-          },
-          "additionalPrice": 0,
-          "visible": true,
-          "sortOrder": 5
         },
         {
           "id": "a6c767fa-5abc-4e31-acb3-c840184971f1",
@@ -3320,6 +3308,18 @@
             "vi": "Cánh và đùi gà sốt cay",
             "zh": "辣味鸡翅鸡腿",
             "en": "Spicy Red Wings & Drumsticks"
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 5
+        },
+        {
+          "id": "f276a28f-4dd4-4ee3-93eb-9f0e94941689",
+          "names": {
+            "ko": "스노윙 윙봉",
+            "vi": "Cánh và đùi gà phủ bột phô mai",
+            "zh": "芝士粉鸡翅鸡腿",
+            "en": "Cheese Powder Wings & Drumsticks"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3346,6 +3346,18 @@
       "revision": 1,
       "values": [
         {
+          "id": "24d048ab-f235-4825-9cc9-9b5a386d4254",
+          "names": {
+            "ko": "BBQ 반마리",
+            "vi": "Nửa con gà BBQ",
+            "zh": "半只BBQ鸡",
+            "en": "Half BBQ Chicken"
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 0
+        },
+        {
           "id": "6edb778c-e1bf-4bbd-ab5f-338b0b8bd41a",
           "names": {
             "ko": "모짜렐라 치즈 추가",
@@ -3355,7 +3367,7 @@
           },
           "additionalPrice": 54000,
           "visible": true,
-          "sortOrder": 0
+          "sortOrder": 1
         },
         {
           "id": "4a2a7a67-d229-4d97-b89b-40d5136a9b61",
@@ -3367,7 +3379,7 @@
           },
           "additionalPrice": 64800,
           "visible": true,
-          "sortOrder": 1
+          "sortOrder": 2
         },
         {
           "id": "752786d0-1a0f-43b2-b204-5bf8241e2712",
@@ -3378,18 +3390,6 @@
             "en": "Add Half BBQ Chicken"
           },
           "additionalPrice": 183600,
-          "visible": true,
-          "sortOrder": 2
-        },
-        {
-          "id": "24d048ab-f235-4825-9cc9-9b5a386d4254",
-          "names": {
-            "ko": "BBQ 반마리",
-            "vi": "Nửa con gà BBQ",
-            "zh": "半只BBQ鸡",
-            "en": "Half BBQ Chicken"
-          },
-          "additionalPrice": 0,
           "visible": true,
           "sortOrder": 3
         },
@@ -3763,18 +3763,6 @@
       "revision": 1,
       "values": [
         {
-          "id": "5b311b20-6191-403f-8612-08cf8648b49d",
-          "names": {
-            "ko": "양념 치킨",
-            "vi": "Gà sốt ngọt kiểu Hàn",
-            "zh": "韩式甜酱炸鸡",
-            "en": "Sweet & Spicy Chicken"
-          },
-          "additionalPrice": 0,
-          "visible": true,
-          "sortOrder": 0
-        },
-        {
           "id": "29a63a17-2438-4370-a4ef-1529d2007a23",
           "names": {
             "ko": "후라이드 치킨",
@@ -3784,7 +3772,7 @@
           },
           "additionalPrice": 0,
           "visible": true,
-          "sortOrder": 1
+          "sortOrder": 0
         },
         {
           "id": "de514282-5410-45a5-9de4-50e2964886ea",
@@ -3796,67 +3784,19 @@
           },
           "additionalPrice": 0,
           "visible": true,
+          "sortOrder": 1
+        },
+        {
+          "id": "5b311b20-6191-403f-8612-08cf8648b49d",
+          "names": {
+            "ko": "양념 치킨",
+            "vi": "Gà sốt ngọt kiểu Hàn",
+            "zh": "韩式甜酱炸鸡",
+            "en": "Sweet & Spicy Chicken"
+          },
+          "additionalPrice": 0,
+          "visible": true,
           "sortOrder": 2
-        },
-        {
-          "id": "9a54adba-98c2-41ac-a060-57d64379c4bb",
-          "names": {
-            "ko": "고추마늘간장 치킨",
-            "vi": "Gà sốt xì dầu tỏi ớt",
-            "zh": "辣椒蒜香酱油鸡",
-            "en": "Chili Garlic Soy Chicken"
-          },
-          "additionalPrice": 0,
-          "visible": true,
-          "sortOrder": 3
-        },
-        {
-          "id": "2dfd957a-1061-4e7d-a1ca-5ec27dfc1da0",
-          "names": {
-            "ko": "파닭",
-            "vi": "Gà hành lá sốt mù tạt",
-            "zh": "葱香炸鸡（芥末酱）",
-            "en": "Green Onion Chicken with Mustard Sauce"
-          },
-          "additionalPrice": 0,
-          "visible": true,
-          "sortOrder": 4
-        },
-        {
-          "id": "b3a7e4ce-1840-4d17-9636-6e91cd32fd36",
-          "names": {
-            "ko": "마니치 치킨",
-            "vi": "Gà MANICHI",
-            "zh": "蒜香MANICHI炸鸡",
-            "en": "MANICHI Garlic Chicken"
-          },
-          "additionalPrice": 0,
-          "visible": true,
-          "sortOrder": 5
-        },
-        {
-          "id": "a8da2a14-4ec6-40a9-926c-9b41755b2de5",
-          "names": {
-            "ko": "스노윙 치킨",
-            "vi": "Gà phủ bột phô mai",
-            "zh": "雪花芝士粉炸鸡",
-            "en": "Snowing Cheese Powder Chicken"
-          },
-          "additionalPrice": 0,
-          "visible": true,
-          "sortOrder": 6
-        },
-        {
-          "id": "fd21b308-6f37-443b-a50c-a35c5a604106",
-          "names": {
-            "ko": "슈프림 소스 치킨",
-            "vi": "Gà sốt Supreme",
-            "zh": "至尊酱鸡",
-            "en": "Supreme Sauce Chicken"
-          },
-          "additionalPrice": 0,
-          "visible": true,
-          "sortOrder": 7
         },
         {
           "id": "69fa9032-47e8-4c12-9a76-ac9b53e53039",
@@ -3868,7 +3808,31 @@
           },
           "additionalPrice": 0,
           "visible": true,
-          "sortOrder": 8
+          "sortOrder": 3
+        },
+        {
+          "id": "9a54adba-98c2-41ac-a060-57d64379c4bb",
+          "names": {
+            "ko": "고추마늘간장 치킨",
+            "vi": "Gà sốt xì dầu tỏi ớt",
+            "zh": "辣椒蒜香酱油鸡",
+            "en": "Chili Garlic Soy Chicken"
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 4
+        },
+        {
+          "id": "2dfd957a-1061-4e7d-a1ca-5ec27dfc1da0",
+          "names": {
+            "ko": "파닭",
+            "vi": "Gà hành lá sốt mù tạt",
+            "zh": "葱香炸鸡（芥末酱）",
+            "en": "Green Onion Chicken with Mustard Sauce"
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 5
         },
         {
           "id": "8113cf6b-beb4-4180-bbf8-ada62b3cef54",
@@ -3877,6 +3841,42 @@
             "vi": "Gà sốt kem hành Sriracha",
             "zh": "是拉差洋葱奶油酱炸鸡",
             "en": "Sriracha Onion Chicken"
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 6
+        },
+        {
+          "id": "b3a7e4ce-1840-4d17-9636-6e91cd32fd36",
+          "names": {
+            "ko": "마니치 치킨",
+            "vi": "Gà MANICHI",
+            "zh": "蒜香MANICHI炸鸡",
+            "en": "MANICHI Garlic Chicken"
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 7
+        },
+        {
+          "id": "fd21b308-6f37-443b-a50c-a35c5a604106",
+          "names": {
+            "ko": "슈프림 소스 치킨",
+            "vi": "Gà sốt Supreme",
+            "zh": "至尊酱鸡",
+            "en": "Supreme Sauce Chicken"
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 8
+        },
+        {
+          "id": "a8da2a14-4ec6-40a9-926c-9b41755b2de5",
+          "names": {
+            "ko": "스노윙 치킨",
+            "vi": "Gà phủ bột phô mai",
+            "zh": "雪花芝士粉炸鸡",
+            "en": "Snowing Cheese Powder Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -3902,18 +3902,6 @@
       "revision": 1,
       "values": [
         {
-          "id": "3745c71f-47e0-406b-b911-6baf319caf1c",
-          "names": {
-            "ko": "불고기 컴비네이션 피자",
-            "vi": "Pizza thập cẩm bulgogi",
-            "zh": "牛肉综合披萨",
-            "en": "Bulgogi Combination Pizza"
-          },
-          "additionalPrice": 10800,
-          "visible": true,
-          "sortOrder": 0
-        },
-        {
           "id": "1a42eee7-878c-45d7-9a35-746e6a22f56c",
           "names": {
             "ko": "고구마 피자",
@@ -3923,31 +3911,7 @@
           },
           "additionalPrice": 0,
           "visible": true,
-          "sortOrder": 1
-        },
-        {
-          "id": "cd7ad83a-4505-47c5-9d60-7717a78a7b88",
-          "names": {
-            "ko": "쉬림프 피자",
-            "vi": "Pizza tôm",
-            "zh": "虾仁披萨",
-            "en": "Shrimp Pizza"
-          },
-          "additionalPrice": 10800,
-          "visible": true,
-          "sortOrder": 2
-        },
-        {
-          "id": "a8a8e35a-e326-4451-b5b0-91dfec56f869",
-          "names": {
-            "ko": "페퍼로니 체다 피자",
-            "vi": "Pizza pepperoni phô mai cheddar",
-            "zh": "切达芝士意大利香肠披萨",
-            "en": "Pepperoni Cheddar Pizza"
-          },
-          "additionalPrice": 10800,
-          "visible": true,
-          "sortOrder": 3
+          "sortOrder": 0
         },
         {
           "id": "76bab82f-fb7e-4dd1-b1d9-9c444adb3d08",
@@ -3959,7 +3923,7 @@
           },
           "additionalPrice": 0,
           "visible": true,
-          "sortOrder": 4
+          "sortOrder": 1
         },
         {
           "id": "b7ed5732-ba72-42c6-bc25-bdf470409d4c",
@@ -3971,7 +3935,7 @@
           },
           "additionalPrice": 0,
           "visible": true,
-          "sortOrder": 5
+          "sortOrder": 2
         },
         {
           "id": "a04a549c-d272-4e05-97f5-ce51e49caa91",
@@ -3983,19 +3947,7 @@
           },
           "additionalPrice": 0,
           "visible": true,
-          "sortOrder": 6
-        },
-        {
-          "id": "dc13d57d-b4ab-4d77-9c77-d1406e59e736",
-          "names": {
-            "ko": "베이컨 포테이토 피자",
-            "vi": "Pizza khoai tây thịt xông khói",
-            "zh": "培根土豆披萨",
-            "en": "Bacon Potato Pizza"
-          },
-          "additionalPrice": 10800,
-          "visible": true,
-          "sortOrder": 7
+          "sortOrder": 3
         },
         {
           "id": "52a00d26-8c3c-474b-83a0-daa65b26c33a",
@@ -4006,6 +3958,54 @@
             "en": "Chicken Teriyaki Pizza"
           },
           "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 4
+        },
+        {
+          "id": "3745c71f-47e0-406b-b911-6baf319caf1c",
+          "names": {
+            "ko": "불고기 컴비네이션 피자",
+            "vi": "Pizza thập cẩm bulgogi",
+            "zh": "牛肉综合披萨",
+            "en": "Bulgogi Combination Pizza"
+          },
+          "additionalPrice": 10800,
+          "visible": true,
+          "sortOrder": 5
+        },
+        {
+          "id": "cd7ad83a-4505-47c5-9d60-7717a78a7b88",
+          "names": {
+            "ko": "쉬림프 피자",
+            "vi": "Pizza tôm",
+            "zh": "虾仁披萨",
+            "en": "Shrimp Pizza"
+          },
+          "additionalPrice": 10800,
+          "visible": true,
+          "sortOrder": 6
+        },
+        {
+          "id": "a8a8e35a-e326-4451-b5b0-91dfec56f869",
+          "names": {
+            "ko": "페퍼로니 체다 피자",
+            "vi": "Pizza pepperoni phô mai cheddar",
+            "zh": "切达芝士意大利香肠披萨",
+            "en": "Pepperoni Cheddar Pizza"
+          },
+          "additionalPrice": 10800,
+          "visible": true,
+          "sortOrder": 7
+        },
+        {
+          "id": "dc13d57d-b4ab-4d77-9c77-d1406e59e736",
+          "names": {
+            "ko": "베이컨 포테이토 피자",
+            "vi": "Pizza khoai tây thịt xông khói",
+            "zh": "培根土豆披萨",
+            "en": "Bacon Potato Pizza"
+          },
+          "additionalPrice": 10800,
           "visible": true,
           "sortOrder": 8
         }
@@ -4032,14 +4032,14 @@
       "revision": 1,
       "values": [
         {
-          "id": "6487fbeb-3650-488a-b13c-14c4f64d7d41",
+          "id": "7b862bfc-fac4-4195-a9cd-c3959fa71f82",
           "names": {
-            "ko": "크림치즈 크러스트",
-            "vi": "Viền phô mai kem",
-            "zh": "奶油芝士边",
-            "en": "Cream Cheese Crust"
+            "ko": "체다 엣지",
+            "vi": "Viền phô mai cheddar",
+            "zh": "切达芝士边",
+            "en": "Cheddar Cheese Crust"
           },
-          "additionalPrice": 86400,
+          "additionalPrice": 0,
           "visible": true,
           "sortOrder": 0
         },
@@ -4056,6 +4056,18 @@
           "sortOrder": 1
         },
         {
+          "id": "6487fbeb-3650-488a-b13c-14c4f64d7d41",
+          "names": {
+            "ko": "크림치즈 크러스트",
+            "vi": "Viền phô mai kem",
+            "zh": "奶油芝士边",
+            "en": "Cream Cheese Crust"
+          },
+          "additionalPrice": 86400,
+          "visible": true,
+          "sortOrder": 2
+        },
+        {
           "id": "fcb6956f-c11e-4e08-83fb-9249b9e938b4",
           "names": {
             "ko": "치즈 바이트",
@@ -4064,18 +4076,6 @@
             "en": "Cheese Bites Crust"
           },
           "additionalPrice": 86400,
-          "visible": true,
-          "sortOrder": 2
-        },
-        {
-          "id": "7b862bfc-fac4-4195-a9cd-c3959fa71f82",
-          "names": {
-            "ko": "체다 엣지",
-            "vi": "Viền phô mai cheddar",
-            "zh": "切达芝士边",
-            "en": "Cheddar Cheese Crust"
-          },
-          "additionalPrice": 0,
           "visible": true,
           "sortOrder": 3
         }
@@ -4099,14 +4099,14 @@
       "revision": 1,
       "values": [
         {
-          "id": "4146e08c-e39b-48f7-932f-14b67c082573",
+          "id": "569f318e-7298-4103-b8b6-ca3a61264757",
           "names": {
-            "ko": "불고기 컴비네이션 피자",
-            "vi": "Pizza thập cẩm bulgogi",
-            "zh": "牛肉综合披萨",
-            "en": "Bulgogi Combination Pizza"
+            "ko": "고구마 피자",
+            "vi": "Pizza khoai lang",
+            "zh": "地瓜披萨",
+            "en": "Sweet Potato Pizza"
           },
-          "additionalPrice": 21600,
+          "additionalPrice": 0,
           "visible": true,
           "sortOrder": 0
         },
@@ -4123,30 +4123,6 @@
           "sortOrder": 1
         },
         {
-          "id": "b865b334-9203-4d79-bb19-39ae47400d62",
-          "names": {
-            "ko": "하와이안 피자",
-            "vi": "Pizza Hawaii",
-            "zh": "夏威夷披萨",
-            "en": "Hawaiian Pizza"
-          },
-          "additionalPrice": 0,
-          "visible": true,
-          "sortOrder": 2
-        },
-        {
-          "id": "333a8be1-fd83-41e1-b92a-45a16306df09",
-          "names": {
-            "ko": "쉬림프 피자",
-            "vi": "Pizza tôm",
-            "zh": "虾仁披萨",
-            "en": "Shrimp Pizza"
-          },
-          "additionalPrice": 21600,
-          "visible": true,
-          "sortOrder": 3
-        },
-        {
           "id": "b98042d3-d24f-465f-af43-4b2685767936",
           "names": {
             "ko": "불닭 피자",
@@ -4156,7 +4132,19 @@
           },
           "additionalPrice": 0,
           "visible": true,
-          "sortOrder": 4
+          "sortOrder": 2
+        },
+        {
+          "id": "b865b334-9203-4d79-bb19-39ae47400d62",
+          "names": {
+            "ko": "하와이안 피자",
+            "vi": "Pizza Hawaii",
+            "zh": "夏威夷披萨",
+            "en": "Hawaiian Pizza"
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 3
         },
         {
           "id": "38ee07d3-f641-4713-b136-8cef26d57e26",
@@ -4167,6 +4155,18 @@
             "en": "Chicken Teriyaki Pizza"
           },
           "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 4
+        },
+        {
+          "id": "4146e08c-e39b-48f7-932f-14b67c082573",
+          "names": {
+            "ko": "불고기 컴비네이션 피자",
+            "vi": "Pizza thập cẩm bulgogi",
+            "zh": "牛肉综合披萨",
+            "en": "Bulgogi Combination Pizza"
+          },
+          "additionalPrice": 21600,
           "visible": true,
           "sortOrder": 5
         },
@@ -4183,6 +4183,18 @@
           "sortOrder": 6
         },
         {
+          "id": "333a8be1-fd83-41e1-b92a-45a16306df09",
+          "names": {
+            "ko": "쉬림프 피자",
+            "vi": "Pizza tôm",
+            "zh": "虾仁披萨",
+            "en": "Shrimp Pizza"
+          },
+          "additionalPrice": 21600,
+          "visible": true,
+          "sortOrder": 7
+        },
+        {
           "id": "c53ec157-0322-4e2c-b2e7-afd039459f10",
           "names": {
             "ko": "페퍼로니 체다 피자",
@@ -4191,18 +4203,6 @@
             "en": "Pepperoni Cheddar Pizza"
           },
           "additionalPrice": 21600,
-          "visible": true,
-          "sortOrder": 7
-        },
-        {
-          "id": "569f318e-7298-4103-b8b6-ca3a61264757",
-          "names": {
-            "ko": "고구마 피자",
-            "vi": "Pizza khoai lang",
-            "zh": "地瓜披萨",
-            "en": "Sweet Potato Pizza"
-          },
-          "additionalPrice": 0,
           "visible": true,
           "sortOrder": 8
         }
@@ -4256,13 +4256,16 @@
     }
   ],
   "inventoryCandidateCount": 251,
-  "catalogRevision": "cukcuk-table-qr-2026-08-29-95357aa1ca69",
+  "catalogRevision": "cukcuk-table-qr-2026-08-29-95357aa1ca69-option-order-v2",
   "tableQrLayout": {
-    "revision": "cukcuk-table-qr-2026-08-29-95357aa1ca69",
+    "revision": "cukcuk-table-qr-2026-08-29-95357aa1ca69-option-order-v2",
     "capturedAt": "2026-08-29T11:04:37.313Z",
     "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
     "includeUnlisted": false,
     "featuredVisible": false,
+    "optionOrderingPolicy": "free-first-stable",
+    "orderedMenuCount": 10,
+    "orderedTemplateCount": 7,
     "excludedCandidateCount": 139
   },
   "translation": {
