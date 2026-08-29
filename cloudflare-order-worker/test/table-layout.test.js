@@ -34,13 +34,23 @@ test('rebuilding a table QR capture preserves the separately verified CUKCUK opt
     menus: [{ code: 'ONE', templateIds: ['choice'] }],
     templates: [{ templateId: 'choice', valueIds: ['free', 'paid'] }]
   };
+  const menuNameOverrides = { ONE: { ko: '첫 번째 메뉴' } };
 
-  const result = buildTableQrConfig(snapshot, { optionOrdering });
-  const changed = buildTableQrConfig(snapshot, { optionOrdering: { ...optionOrdering, templates: [{ templateId: 'choice', valueIds: ['paid', 'free'] }] } });
+  const result = buildTableQrConfig(snapshot, { optionOrdering, menuNameOverrides });
+  const changed = buildTableQrConfig(snapshot, { optionOrdering: { ...optionOrdering, templates: [{ templateId: 'choice', valueIds: ['paid', 'free'] }] }, menuNameOverrides });
+  const renamedSnapshot = {
+    ...snapshot,
+    categories: [{ ...snapshot.categories[0], displayName: 'New Menu | Món mới' }],
+    menus: [{ ...snapshot.menus[0], category: 'New Menu | Món mới' }]
+  };
+  const renamed = buildTableQrConfig(renamedSnapshot, { optionOrdering, menuNameOverrides });
 
   assert.deepEqual(result.optionOrdering, optionOrdering);
+  assert.deepEqual(result.menuNameOverrides, menuNameOverrides);
   assert.notEqual(result.optionOrdering, optionOrdering);
+  assert.notEqual(result.menuNameOverrides, menuNameOverrides);
   assert.notEqual(result.revision, changed.revision);
+  assert.notEqual(result.revision, renamed.revision);
 });
 
 test('default table groups use table-name prefixes and A, B, C priority', () => {
@@ -244,7 +254,7 @@ test('table QR layout rejects invalid prices and inconsistent declared sort orde
   assert.throws(() => applyTableQrLayout({ categories: [], menus: [], optionTemplates: [] }, invalidSort), /sortOrder must be 0/i);
 });
 
-test('the checked-in CUKCUK table QR snapshot publishes exactly 12 categories and 112 non-burger menus', () => {
+test('the checked-in CUKCUK table QR snapshot publishes the polished 14-category, 112-menu layout', () => {
   const config = JSON.parse(fs.readFileSync(new URL('../../data/cukcuk-table-qr-layout.json', import.meta.url), 'utf8'));
   const rules = config.categories.flatMap(category => category.menus);
   const menus = rules.map((rule, index) => ({
@@ -260,10 +270,17 @@ test('the checked-in CUKCUK table QR snapshot publishes exactly 12 categories an
 
   const result = applyTableQrLayout({ categories: [], menus, optionTemplates: [] }, config);
 
-  assert.equal(result.categoryCount, 12);
+  assert.equal(result.categoryCount, 14);
   assert.equal(result.menuCount, 112);
   assert.equal(result.tableQrLayout.excludedCandidateCount, 1);
-  assert.deepEqual(result.categories.map(category => category.names.ko), ['신메뉴', '요일별 할인', '세트', '다방치킨', '통닭', '날개치킨', '다방분식', '스페이스 피자', '안주', '음료', '주류', '하이볼']);
+  assert.deepEqual(result.categories.map(category => category.names.ko), ['하이볼', '신메뉴', '요일별 할인', '세트', '반마리 치킨', '다방치킨', '통닭', '날개치킨', '다방분식', '스페이스 피자', '안주', '건어물', '음료', '주류']);
+  const menusByCategory = new Map(result.categories.map(category => [category.names.ko, result.menus.filter(menu => menu.categoryId === category.id)]));
+  assert.deepEqual(menusByCategory.get('반마리 치킨').map(menu => menu.cukcukCode), ['(KX13)', '(KX14)', 'Original Roast', 'Crispy Spicy Roast', '(W06) Nửa con gà']);
+  assert.deepEqual(menusByCategory.get('건어물').map(menu => menu.cukcukCode), ['(F09) Do kho tong hop', '(F06) Cá pollack non khô', '(F08) Ca chi vang nuong', '(F07) Mực bán khô tẩm vị', '(F04) Cá chỉ vàng nướng', 'Mực']);
+  assert.deepEqual(menusByCategory.get('신메뉴').slice(0, 5).map(menu => menu.cukcukCode), ['ᄃᄃᄎ TTTD', 'ᄃᄃ TD 地', 'HCX', 'ᄃ DC 达', 'ᄎ GNTC 炭 CSC']);
+  assert.equal(result.menus.find(menu => menu.cukcukCode === '(KX04)').names.ko, '후라이드 치킨');
+  assert.equal(result.menus.find(menu => menu.cukcukCode === '(KX05)').names.ko, '양념 치킨');
+  assert.deepEqual(result.menus.find(menu => menu.cukcukCode === 'BDH').names, { ko: '수박', vi: 'Dưa hấu', zh: '西瓜', en: 'Watermelon' });
   assert.equal(result.menus.filter(menu => menu.available === false).length, 2);
   assert.equal(result.menus.some(menu => /burger|버거/i.test(`${menu.cukcukCode} ${menu.names?.ko || ''}`)), false);
 });

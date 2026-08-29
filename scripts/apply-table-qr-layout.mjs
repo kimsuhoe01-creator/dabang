@@ -43,6 +43,22 @@ function validateOptionOrdering(config, configuredCodes) {
   }
 }
 
+function validateMenuNameOverrides(config, configuredCodes) {
+  const overrides = config.menuNameOverrides;
+  if (!overrides) return;
+  if (!overrides || typeof overrides !== 'object' || Array.isArray(overrides)) throw new Error('Menu name overrides must be an object keyed by CUKCUK product code.');
+  const seenCodes = new Set();
+  for (const [code, names] of Object.entries(overrides)) {
+    const key = codeKey(code);
+    if (!key || seenCodes.has(key)) throw new Error(`Invalid or duplicate menu-name override code: ${code}`);
+    if (!configuredCodes.has(key)) throw new Error(`Menu-name override ${code} is not present in the table QR layout.`);
+    if (!names || typeof names !== 'object' || Array.isArray(names)) throw new Error(`Menu-name override ${code} must define localized names.`);
+    const localized = ['ko', 'vi', 'zh', 'en'].filter(language => clean(names[language]));
+    if (!localized.length) throw new Error(`Menu-name override ${code} has no localized name.`);
+    seenCodes.add(key);
+  }
+}
+
 function reorderExistingIds(values, preferredIds) {
   const source = (Array.isArray(values) ? values : []).map(String);
   if (!Array.isArray(preferredIds) || !preferredIds.length) return source;
@@ -84,6 +100,7 @@ function validateConfig(config) {
   if (Number(config.categoryCount) !== config.categories.length) throw new Error('Configured categoryCount does not match the category list.');
   if (Number(config.menuCount) !== menuCount) throw new Error('Configured menuCount does not match the menu lists.');
   validateOptionOrdering(config, codes);
+  validateMenuNameOverrides(config, codes);
 }
 
 function candidateCodes(menu) {
@@ -107,6 +124,7 @@ export function applyTableQrLayout(publishedInput, configInput) {
   const candidateCount = Number.isFinite(declaredCandidateCount) && declaredCandidateCount >= candidates.length ? declaredCandidateCount : candidates.length;
   const menuOrderingByCode = new Map((config.optionOrdering?.menus || []).map(rule => [codeKey(rule.code), rule]));
   const templateOrderingById = new Map((config.optionOrdering?.templates || []).map(rule => [String(rule.templateId), rule]));
+  const menuNameOverridesByCode = new Map(Object.entries(config.menuNameOverrides || {}).map(([code, names]) => [codeKey(code), names]));
   const byCode = new Map();
   for (const menu of candidates) {
     for (const key of new Set(candidateCodes(menu))) {
@@ -149,6 +167,9 @@ export function applyTableQrLayout(publishedInput, configInput) {
       if (selectedIds.has(id)) throw new Error(`CUKCUK product id ${id} was selected more than once.`);
       selectedIds.add(id);
       const orderedTemplateIds = reorderExistingIds(candidate.optionTemplateIds, menuOrderingByCode.get(codeKey(ruleMenu.code))?.templateIds);
+      const nameOverrides = menuNameOverridesByCode.get(codeKey(ruleMenu.code)) || {};
+      const names = { ...(candidate.names || {}) };
+      for (const language of ['ko', 'vi', 'zh', 'en']) if (clean(nameOverrides[language])) names[language] = clean(nameOverrides[language]);
       menus.push({
         ...candidate,
         id,
@@ -156,6 +177,7 @@ export function applyTableQrLayout(publishedInput, configInput) {
         cukcukCode: clean(candidate.cukcukCode || candidate.productCode || candidate.code || ruleMenu.code),
         categoryId: String(ruleCategory.id),
         categoryName,
+        names,
         price,
         available: ruleMenu.outOfStock ? false : candidate.available !== false,
         optionTemplateIds: orderedTemplateIds,

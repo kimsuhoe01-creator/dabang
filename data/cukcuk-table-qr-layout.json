@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": "cukcuk-table-qr-2026-08-29-95357aa1ca69-option-order-v2",
+  "revision": "cukcuk-table-qr-2026-08-29-977c992bdbcc-menu-polish-v2",
   "capturedAt": "2026-08-29T11:04:37.313Z",
   "timezone": "Asia/Ho_Chi_Minh",
   "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
@@ -194,9 +194,80 @@
     ],
     "withinGroup": "numeric-by-table-name"
   },
-  "categoryCount": 12,
+  "categoryCount": 14,
   "menuCount": 112,
   "categories": [
+    {
+      "id": "cukcuk-qr-highball",
+      "code": "하이볼 | Highball",
+      "sourceName": "하이볼|RượuHighball|高球酒|Highball",
+      "names": {
+        "ko": "하이볼",
+        "vi": "Rượu Highball",
+        "zh": "高球酒",
+        "en": "Highball"
+      },
+      "visible": true,
+      "sortOrder": 0,
+      "menus": [
+        {
+          "code": "(H10) Highball Tanqueray",
+          "displayName": "데킬라 실버 하이볼 | Jose Cuervo Silver Tequila Highball",
+          "price": 99000,
+          "outOfStock": false,
+          "sortOrder": 0
+        },
+        {
+          "code": "(H02) Highball Earl Grey",
+          "displayName": "데킬라 골드 하이볼 | Jose Cuervo Gold Tequila Highball",
+          "price": 99000,
+          "outOfStock": false,
+          "sortOrder": 1
+        },
+        {
+          "code": "(H01) Highball Suntory",
+          "displayName": "산토리 하이볼 | Suntory Kakubin Highball",
+          "price": 99000,
+          "outOfStock": false,
+          "sortOrder": 2
+        },
+        {
+          "code": "(H08) Highball Jameson",
+          "displayName": "제임슨 하이볼 | Jameson Highball",
+          "price": 99000,
+          "outOfStock": false,
+          "sortOrder": 3
+        },
+        {
+          "code": "(H05) Highball Jim Beam",
+          "displayName": "짐빔 하이볼 | Jim Beam Highball",
+          "price": 99000,
+          "outOfStock": false,
+          "sortOrder": 4
+        },
+        {
+          "code": "(H09) Highball Bombay",
+          "displayName": "짐빔블랙 하이볼 | Jim Beam Black Extra-Aged Highball",
+          "price": 99000,
+          "outOfStock": false,
+          "sortOrder": 5
+        },
+        {
+          "code": "(H06) Highball Johnnie",
+          "displayName": "짐빔애플 하이볼 | Jim Beam Apple Highball",
+          "price": 99000,
+          "outOfStock": false,
+          "sortOrder": 6
+        },
+        {
+          "code": "(H03) Highball Jack Honey",
+          "displayName": "짐빔허니 하이볼 | Jim Beam Honey Highball",
+          "price": 99000,
+          "outOfStock": false,
+          "sortOrder": 7
+        }
+      ]
+    },
     {
       "id": "f60b3e05-f21f-4905-9207-0e494ff2b464",
       "code": "New Menu",
@@ -208,7 +279,7 @@
         "en": "New Menu"
       },
       "visible": true,
-      "sortOrder": 0,
+      "sortOrder": 1,
       "menus": [
         {
           "code": "ᄃᄃᄎ TTTD",
@@ -225,23 +296,23 @@
           "sortOrder": 1
         },
         {
+          "code": "HCX",
+          "displayName": "돈까스 플레이트 Pork Cutlet Plate 炸猪排拼盘 Đĩa Thịt Heo Chiên Xù",
+          "price": 313200,
+          "outOfStock": false,
+          "sortOrder": 2
+        },
+        {
           "code": "ᄃ DC 达",
           "displayName": "다방콤보 | DABANG COMBO | 达邦组合",
           "price": 421200,
           "outOfStock": false,
-          "sortOrder": 2
+          "sortOrder": 3
         },
         {
           "code": "ᄎ GNTC 炭 CSC",
           "displayName": "참숯불닭 | Gà nướng than cay | 炭火辣鸡 | Charcoal Spicy Chicken",
           "price": 367200,
-          "outOfStock": false,
-          "sortOrder": 3
-        },
-        {
-          "code": "ᄋ GCSCNKH 油",
-          "displayName": "유린기 | Gà chiên sốt chua ngọt kiểu Hoa | 油淋鸡",
-          "price": 205200,
           "outOfStock": false,
           "sortOrder": 4
         },
@@ -267,30 +338,30 @@
           "sortOrder": 7
         },
         {
+          "code": "ᄆGMGC",
+          "displayName": "마니치 |Gà MANICHI|蒜香MANICHI炸鸡|MANICHI Garlic Chicken",
+          "price": 399600,
+          "outOfStock": false,
+          "sortOrder": 8
+        },
+        {
+          "code": "ᄋ GCSCNKH 油",
+          "displayName": "유린기 | Gà chiên sốt chua ngọt kiểu Hoa | 油淋鸡",
+          "price": 205200,
+          "outOfStock": false,
+          "sortOrder": 9
+        },
+        {
           "code": "ᄆGRXCF",
           "displayName": "무뼈닭발|Chân gà rút xương|无骨鸡爪|Boneless Chicken Feet",
           "price": 291600,
           "outOfStock": false,
-          "sortOrder": 8
+          "sortOrder": 10
         },
         {
           "code": "ᄎ CC KCC",
           "displayName": "치밥키트(밥+실비김치) | Combo cơm + kim chi cay(250g)",
           "price": 54000,
-          "outOfStock": false,
-          "sortOrder": 9
-        },
-        {
-          "code": "HCX",
-          "displayName": "돈까스 플레이트 Pork Cutlet Plate 炸猪排拼盘 Đĩa Thịt Heo Chiên Xù",
-          "price": 313200,
-          "outOfStock": false,
-          "sortOrder": 10
-        },
-        {
-          "code": "ᄆGMGC",
-          "displayName": "마니치 |Gà MANICHI|蒜香MANICHI炸鸡|MANICHI Garlic Chicken",
-          "price": 399600,
           "outOfStock": false,
           "sortOrder": 11
         },
@@ -328,7 +399,7 @@
         "en": "Daily Discounts"
       },
       "visible": true,
-      "sortOrder": 1,
+      "sortOrder": 2,
       "menus": []
     },
     {
@@ -342,7 +413,7 @@
         "en": "Set Combo"
       },
       "visible": true,
-      "sortOrder": 2,
+      "sortOrder": 3,
       "menus": [
         {
           "code": "(S03) Gà k xương + Tok",
@@ -417,17 +488,17 @@
       ]
     },
     {
-      "id": "0afd5056-2ad2-46d3-9122-6886fedc4d3a",
-      "code": "다방치킨 | Dabang Chicken",
-      "sourceName": "다방치킨 | Dabang Chicken",
+      "id": "cukcuk-half-chicken",
+      "code": "Half Chicken",
+      "sourceName": "반마리 치킨 | Gà nửa con | 半只鸡 | Half Chicken",
       "names": {
-        "ko": "다방치킨",
-        "vi": "Gà Dabang",
-        "zh": "Dabang 炸鸡",
-        "en": "Dabang Chicken"
+        "ko": "반마리 치킨",
+        "vi": "Gà nửa con",
+        "zh": "半只鸡",
+        "en": "Half Chicken"
       },
       "visible": true,
-      "sortOrder": 3,
+      "sortOrder": 4,
       "menus": [
         {
           "code": "(KX13)",
@@ -458,74 +529,96 @@
           "sortOrder": 3
         },
         {
+          "code": "(W06) Nửa con gà",
+          "displayName": "윙봉반 | Gà cánh chiên nửa con | 半只炸鸡翅 | Half Fried Chicken Wings",
+          "price": 216000,
+          "outOfStock": false,
+          "sortOrder": 4
+        }
+      ]
+    },
+    {
+      "id": "0afd5056-2ad2-46d3-9122-6886fedc4d3a",
+      "code": "다방치킨 | Dabang Chicken",
+      "sourceName": "다방치킨 | Dabang Chicken",
+      "names": {
+        "ko": "다방치킨",
+        "vi": "Gà Dabang",
+        "zh": "Dabang 炸鸡",
+        "en": "Dabang Chicken"
+      },
+      "visible": true,
+      "sortOrder": 5,
+      "menus": [
+        {
           "code": "(KX02)",
           "displayName": "짭코바|Spicy BBQ Chicken| BBQ烤鸡 |Gà nướng BBQ",
           "price": 399600,
           "outOfStock": false,
-          "sortOrder": 4
+          "sortOrder": 0
         },
         {
           "code": "rose bbq",
           "displayName": "로제짭코바|Rosé Spicy BBQ Chicken|罗西BBQ烤鸡|Gà nướng BBQ sốt rosé",
           "price": 399600,
           "outOfStock": false,
-          "sortOrder": 5
+          "sortOrder": 1
         },
         {
           "code": "(KX01)",
           "displayName": "반반치킨 Half & Half Chicken 半半无骨炸鸡 Gà vị đôi (뼈 순살)",
           "price": 399600,
           "outOfStock": false,
-          "sortOrder": 6
+          "sortOrder": 2
         },
         {
           "code": "(KX04)",
           "displayName": "후라이드 Fried Chicken 无骨炸鸡腿 Má đùi rút xương",
           "price": 399600,
           "outOfStock": false,
-          "sortOrder": 7
+          "sortOrder": 3
         },
         {
           "code": "(KX05)",
           "displayName": "양념 Sweet & Spicy Chicken 韩式甜酱炸鸡 Gà sốt ngọt HQ",
           "price": 399600,
           "outOfStock": false,
-          "sortOrder": 8
+          "sortOrder": 4
         },
         {
           "code": "(KX06)",
           "displayName": "매운양념 Hot & Spicy Chicken韩式辣酱炸鸡 Gà sốt cay HQ",
           "price": 399600,
           "outOfStock": false,
-          "sortOrder": 9
+          "sortOrder": 5
         },
         {
           "code": "(KX08)",
           "displayName": "파닭 Green Onion Chicken 葱香炸鸡（芥末酱 Gà hành lá (sốt mù tạt)",
           "price": 399600,
           "outOfStock": false,
-          "sortOrder": 10
+          "sortOrder": 6
         },
         {
           "code": "(KX10)",
           "displayName": "고추마늘간장Garlic Soy Chicken/ 辣椒蒜酱鸡 /Gà sốt xì dầu tỏi ớt",
           "price": 399600,
           "outOfStock": false,
-          "sortOrder": 11
+          "sortOrder": 7
         },
         {
           "code": "(KX07)",
           "displayName": "스리라차 어니언 Sriracha Onion Chicken洋葱奶酱炸鸡 Gà sốt kem hành",
           "price": 399600,
           "outOfStock": false,
-          "sortOrder": 12
+          "sortOrder": 8
         },
         {
           "code": "ᄉ GS 至 SC",
           "displayName": "슈프림치킨 | Gà Supreme | 至尊炸鸡 | Supreme Chicken",
           "price": 399600,
           "outOfStock": false,
-          "sortOrder": 13
+          "sortOrder": 9
         }
       ]
     },
@@ -540,7 +633,7 @@
         "en": "Whole Fried Chicken"
       },
       "visible": true,
-      "sortOrder": 4,
+      "sortOrder": 6,
       "menus": [
         {
           "code": "(T01) Gà chiên nguyên con",
@@ -562,49 +655,42 @@
         "en": "Chicken Wings"
       },
       "visible": true,
-      "sortOrder": 5,
+      "sortOrder": 7,
       "menus": [
-        {
-          "code": "(W06) Nửa con gà",
-          "displayName": "윙봉반 | Gà cánh chiên nửa con | 半只炸鸡翅 | Half Fried Chicken Wings",
-          "price": 216000,
-          "outOfStock": false,
-          "sortOrder": 0
-        },
         {
           "code": "(W01) Cánh gà vị đôi",
           "displayName": "반반윙봉 | Gà cánh & đùi half-half | 半半鸡翅棒 | Half & half wing & drumstick",
           "price": 399600,
           "outOfStock": false,
-          "sortOrder": 1
+          "sortOrder": 0
         },
         {
           "code": "(W02) Cánh chiên giòn",
           "displayName": "크리스피 윙봉Crispy Wings 炸鸡翅 Cánh chiên giòn",
           "price": 399600,
           "outOfStock": false,
-          "sortOrder": 2
+          "sortOrder": 1
         },
         {
           "code": "(W03) Cánh gà xì dầu",
           "displayName": "간장 윙봉 Soy Sauce Wings 酱油鸡翅 Cánh gà xì dầu",
           "price": 399600,
           "outOfStock": false,
-          "sortOrder": 3
+          "sortOrder": 2
         },
         {
           "code": "(W05) Cánh gà mật ong",
           "displayName": "허니 윙봉 Honey Wings 蜜汁鸡翅 Cánh gà mật ong",
           "price": 399600,
           "outOfStock": false,
-          "sortOrder": 4
+          "sortOrder": 3
         },
         {
           "code": "(W04) Cánh gà cay",
           "displayName": "레드 윙봉 Spicy Red Wings 辣鸡翅Cánh gà cay",
           "price": 399600,
           "outOfStock": false,
-          "sortOrder": 5
+          "sortOrder": 4
         }
       ]
     },
@@ -619,7 +705,7 @@
         "en": "Dabang Snacks"
       },
       "visible": true,
-      "sortOrder": 6,
+      "sortOrder": 8,
       "menus": [
         {
           "code": "(T06) Tokbokki cay nhẹ",
@@ -718,7 +804,7 @@
         "en": "Space Pizza"
       },
       "visible": true,
-      "sortOrder": 7,
+      "sortOrder": 9,
       "menus": [
         {
           "code": "SPACE111",
@@ -789,7 +875,7 @@
         "en": "Bar Snacks"
       },
       "visible": true,
-      "sortOrder": 8,
+      "sortOrder": 10,
       "menus": [
         {
           "code": "(M04) nacho cham phomai",
@@ -827,60 +913,75 @@
           "sortOrder": 4
         },
         {
-          "code": "(F09) Do kho tong hop",
-          "displayName": "건어물떠까 Mixed Dried Seafood Snacks 韩式什锦干货拼盘 Đồ khô tổng hợp kiểu Hàn",
-          "price": 345600,
-          "outOfStock": false,
-          "sortOrder": 5
-        },
-        {
-          "code": "(F06) Cá pollack non khô",
-          "displayName": "반건조 노가리 半干黄花鱼仔 Cá pollack non khô (nửa khô)",
-          "price": 291600,
-          "outOfStock": false,
-          "sortOrder": 6
-        },
-        {
-          "code": "(F08) Ca chi vang nuong",
-          "displayName": "버터 먹태구이 Grilled Pollack with Butter 黄花鱼干奶油烤 Cá chỉ vàng lớn nướng bơ",
-          "price": 216000,
-          "outOfStock": false,
-          "sortOrder": 7
-        },
-        {
-          "code": "(F07) Mực bán khô tẩm vị",
-          "displayName": "조미오징어|Mực tẩmgia|调味鱿鱼|Seasonedsquid",
-          "price": 172800,
-          "outOfStock": false,
-          "sortOrder": 8
-        },
-        {
           "code": "ᄋ LCC 鱼 FCS",
           "displayName": "어묵탕 | Lẩu chả cá | 鱼饼汤 | Fish cake soup",
           "price": 248400,
           "outOfStock": false,
-          "sortOrder": 9
-        },
-        {
-          "code": "(F04) Cá chỉ vàng nướng",
-          "displayName": "클래식 쥐포 Thin Grilled Filefish 烤鳞头鱼片 / 薄片鱿鱼干 Cá chỉ vàng nướng lát mỏng",
-          "price": 108000,
-          "outOfStock": false,
-          "sortOrder": 10
-        },
-        {
-          "code": "Mực",
-          "displayName": "촉촉 반건조 오징어 | Mực một nắng | 半干鱿鱼 | Semi-dried squid",
-          "price": 226800,
-          "outOfStock": false,
-          "sortOrder": 11
+          "sortOrder": 5
         },
         {
           "code": "ᄉ TT 加 AET",
           "displayName": "사리추가 | Thêm topping | 加配料 | Add extra toppings",
           "price": 0,
           "outOfStock": false,
-          "sortOrder": 12
+          "sortOrder": 6
+        }
+      ]
+    },
+    {
+      "id": "cukcuk-dried-snacks",
+      "code": "Dried Snacks",
+      "sourceName": "건어물 | Đồ khô | 干货 | Dried Snacks",
+      "names": {
+        "ko": "건어물",
+        "vi": "Đồ khô",
+        "zh": "干货",
+        "en": "Dried Snacks"
+      },
+      "visible": true,
+      "sortOrder": 11,
+      "menus": [
+        {
+          "code": "(F09) Do kho tong hop",
+          "displayName": "건어물떠까 Mixed Dried Seafood Snacks 韩式什锦干货拼盘 Đồ khô tổng hợp kiểu Hàn",
+          "price": 345600,
+          "outOfStock": false,
+          "sortOrder": 0
+        },
+        {
+          "code": "(F06) Cá pollack non khô",
+          "displayName": "반건조 노가리 半干黄花鱼仔 Cá pollack non khô (nửa khô)",
+          "price": 291600,
+          "outOfStock": false,
+          "sortOrder": 1
+        },
+        {
+          "code": "(F08) Ca chi vang nuong",
+          "displayName": "버터 먹태구이 Grilled Pollack with Butter 黄花鱼干奶油烤 Cá chỉ vàng lớn nướng bơ",
+          "price": 216000,
+          "outOfStock": false,
+          "sortOrder": 2
+        },
+        {
+          "code": "(F07) Mực bán khô tẩm vị",
+          "displayName": "조미오징어|Mực tẩmgia|调味鱿鱼|Seasonedsquid",
+          "price": 172800,
+          "outOfStock": false,
+          "sortOrder": 3
+        },
+        {
+          "code": "(F04) Cá chỉ vàng nướng",
+          "displayName": "클래식 쥐포 Thin Grilled Filefish 烤鳞头鱼片 / 薄片鱿鱼干 Cá chỉ vàng nướng lát mỏng",
+          "price": 108000,
+          "outOfStock": false,
+          "sortOrder": 4
+        },
+        {
+          "code": "Mực",
+          "displayName": "촉촉 반건조 오징어 | Mực một nắng | 半干鱿鱼 | Semi-dried squid",
+          "price": 226800,
+          "outOfStock": false,
+          "sortOrder": 5
         }
       ]
     },
@@ -895,7 +996,7 @@
         "en": "Beverages"
       },
       "visible": true,
-      "sortOrder": 9,
+      "sortOrder": 12,
       "menus": [
         {
           "code": "수량확인13",
@@ -959,7 +1060,7 @@
         "en": "Alcohol"
       },
       "visible": true,
-      "sortOrder": 10,
+      "sortOrder": 13,
       "menus": [
         {
           "code": "ᄃᄀᄉ TG S",
@@ -1088,77 +1189,29 @@
           "sortOrder": 17
         }
       ]
-    },
-    {
-      "id": "cukcuk-qr-highball",
-      "code": "하이볼 | Highball",
-      "sourceName": "하이볼|RượuHighball|高球酒|Highball",
-      "names": {
-        "ko": "하이볼",
-        "vi": "Rượu Highball",
-        "zh": "高球酒",
-        "en": "Highball"
-      },
-      "visible": true,
-      "sortOrder": 11,
-      "menus": [
-        {
-          "code": "(H10) Highball Tanqueray",
-          "displayName": "데킬라 실버 하이볼 | Jose Cuervo Silver Tequila Highball",
-          "price": 99000,
-          "outOfStock": false,
-          "sortOrder": 0
-        },
-        {
-          "code": "(H02) Highball Earl Grey",
-          "displayName": "데킬라 골드 하이볼 | Jose Cuervo Gold Tequila Highball",
-          "price": 99000,
-          "outOfStock": false,
-          "sortOrder": 1
-        },
-        {
-          "code": "(H01) Highball Suntory",
-          "displayName": "산토리 하이볼 | Suntory Kakubin Highball",
-          "price": 99000,
-          "outOfStock": false,
-          "sortOrder": 2
-        },
-        {
-          "code": "(H08) Highball Jameson",
-          "displayName": "제임슨 하이볼 | Jameson Highball",
-          "price": 99000,
-          "outOfStock": false,
-          "sortOrder": 3
-        },
-        {
-          "code": "(H05) Highball Jim Beam",
-          "displayName": "짐빔 하이볼 | Jim Beam Highball",
-          "price": 99000,
-          "outOfStock": false,
-          "sortOrder": 4
-        },
-        {
-          "code": "(H09) Highball Bombay",
-          "displayName": "짐빔블랙 하이볼 | Jim Beam Black Extra-Aged Highball",
-          "price": 99000,
-          "outOfStock": false,
-          "sortOrder": 5
-        },
-        {
-          "code": "(H06) Highball Johnnie",
-          "displayName": "짐빔애플 하이볼 | Jim Beam Apple Highball",
-          "price": 99000,
-          "outOfStock": false,
-          "sortOrder": 6
-        },
-        {
-          "code": "(H03) Highball Jack Honey",
-          "displayName": "짐빔허니 하이볼 | Jim Beam Honey Highball",
-          "price": 99000,
-          "outOfStock": false,
-          "sortOrder": 7
-        }
-      ]
     }
-  ]
+  ],
+  "menuNameOverrides": {
+    "(KX04)": {
+      "ko": "후라이드 치킨"
+    },
+    "(KX05)": {
+      "ko": "양념 치킨"
+    },
+    "(KX06)": {
+      "ko": "매운 양념 치킨"
+    },
+    "(KX10)": {
+      "ko": "고추마늘간장 치킨"
+    },
+    "(KX07)": {
+      "ko": "스리라차 어니언 치킨"
+    },
+    "BDH": {
+      "ko": "수박",
+      "vi": "Dưa hấu",
+      "zh": "西瓜",
+      "en": "Watermelon"
+    }
+  }
 }

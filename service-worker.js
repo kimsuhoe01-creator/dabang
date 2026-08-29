@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'dabang-tablet-v6';
+const CACHE_VERSION = 'dabang-tablet-v8';
 const SHELL_CACHE = `${CACHE_VERSION}-shell`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const APP_SHELL = [
@@ -79,7 +79,9 @@ async function networkFirst(request, fallbackUrl) {
 
 async function staleWhileRevalidate(request) {
   const cache = await caches.open(RUNTIME_CACHE);
-  const cached = await cache.match(request, { ignoreSearch: true });
+  // Menu photos keep stable UUID filenames. Respect the catalog-revision query
+  // so an edited photo is shown immediately instead of the prior cached bytes.
+  const cached = await cache.match(request);
   const refreshed = fetch(request)
     .then(response => {
       if (response.ok) cache.put(request, response.clone());

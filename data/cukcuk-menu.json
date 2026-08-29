@@ -9,10 +9,22 @@
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
     "published_menu_count": 112
   },
-  "categoryCount": 12,
+  "categoryCount": 14,
   "menuCount": 112,
   "optionTemplateCount": 22,
   "categories": [
+    {
+      "id": "cukcuk-qr-highball",
+      "sourceName": "하이볼|RượuHighball|高球酒|Highball",
+      "names": {
+        "ko": "하이볼",
+        "vi": "Rượu Highball",
+        "zh": "高球酒",
+        "en": "Highball"
+      },
+      "visible": true,
+      "sortOrder": 0
+    },
     {
       "id": "f60b3e05-f21f-4905-9207-0e494ff2b464",
       "sourceName": "신메뉴 | Món mới | 新菜单 | New Menu",
@@ -23,7 +35,7 @@
         "en": "New Menu"
       },
       "visible": true,
-      "sortOrder": 0
+      "sortOrder": 1
     },
     {
       "id": "cukcuk-qr-daily-discounts",
@@ -35,7 +47,7 @@
         "en": "Daily Discounts"
       },
       "visible": true,
-      "sortOrder": 1
+      "sortOrder": 2
     },
     {
       "id": "6a144c27-c7ba-43f6-b6e1-4be8b008b433",
@@ -47,7 +59,19 @@
         "en": "Set Combo"
       },
       "visible": true,
-      "sortOrder": 2
+      "sortOrder": 3
+    },
+    {
+      "id": "cukcuk-half-chicken",
+      "sourceName": "반마리 치킨 | Gà nửa con | 半只鸡 | Half Chicken",
+      "names": {
+        "ko": "반마리 치킨",
+        "vi": "Gà nửa con",
+        "zh": "半只鸡",
+        "en": "Half Chicken"
+      },
+      "visible": true,
+      "sortOrder": 4
     },
     {
       "id": "0afd5056-2ad2-46d3-9122-6886fedc4d3a",
@@ -59,7 +83,7 @@
         "en": "Dabang Chicken"
       },
       "visible": true,
-      "sortOrder": 3
+      "sortOrder": 5
     },
     {
       "id": "52c66f7a-c2df-4713-a319-65e3963eb912",
@@ -71,7 +95,7 @@
         "en": "Whole Fried Chicken"
       },
       "visible": true,
-      "sortOrder": 4
+      "sortOrder": 6
     },
     {
       "id": "2424e567-8845-48c6-a4af-91c51a4d3aaa",
@@ -83,7 +107,7 @@
         "en": "Chicken Wings"
       },
       "visible": true,
-      "sortOrder": 5
+      "sortOrder": 7
     },
     {
       "id": "5181465e-2d7d-4f9f-bdc1-de466348cd7f",
@@ -95,7 +119,7 @@
         "en": "Dabang Snacks"
       },
       "visible": true,
-      "sortOrder": 6
+      "sortOrder": 8
     },
     {
       "id": "0ac81743-8d00-47bd-af8c-e102b44f4247",
@@ -107,7 +131,7 @@
         "en": "Space Pizza"
       },
       "visible": true,
-      "sortOrder": 7
+      "sortOrder": 9
     },
     {
       "id": "601b353e-0f17-46db-bd64-d64140a70d27",
@@ -119,7 +143,19 @@
         "en": "Bar Snacks"
       },
       "visible": true,
-      "sortOrder": 8
+      "sortOrder": 10
+    },
+    {
+      "id": "cukcuk-dried-snacks",
+      "sourceName": "건어물 | Đồ khô | 干货 | Dried Snacks",
+      "names": {
+        "ko": "건어물",
+        "vi": "Đồ khô",
+        "zh": "干货",
+        "en": "Dried Snacks"
+      },
+      "visible": true,
+      "sortOrder": 11
     },
     {
       "id": "4ae5f7a4-9b6d-4c73-a895-af5d60c8fd87",
@@ -131,7 +167,7 @@
         "en": "Beverages"
       },
       "visible": true,
-      "sortOrder": 9
+      "sortOrder": 12
     },
     {
       "id": "cukcuk-alcohol",
@@ -140,25 +176,173 @@
         "ko": "주류",
         "vi": "Đồ uống có cồn",
         "zh": "酒类",
-        "en": "Alcoholic Drinks"
+        "en": "Alcohol"
       },
       "visible": true,
-      "sortOrder": 10
-    },
-    {
-      "id": "cukcuk-qr-highball",
-      "sourceName": "하이볼|RượuHighball|高球酒|Highball",
-      "names": {
-        "ko": "하이볼",
-        "vi": "Highball",
-        "zh": "高球酒",
-        "en": "Highball"
-      },
-      "visible": true,
-      "sortOrder": 11
+      "sortOrder": 13
     }
   ],
   "menus": [
+    {
+      "id": "853e043d-fe9f-49f4-9d31-c86b38262204",
+      "cukcukId": "853e043d-fe9f-49f4-9d31-c86b38262204",
+      "cukcukCode": "(H10) Highball Tanqueray",
+      "categoryId": "cukcuk-qr-highball",
+      "categoryName": "하이볼",
+      "sourceName": "데킬라 실버 하이볼 | Jose Cuervo Silver Tequila Highball",
+      "names": {
+        "ko": "호세 쿠에르보 실버 데킬라 하이볼",
+        "vi": "Highball Tequila Jose Cuervo Silver",
+        "zh": "豪帅银龙舌兰高球",
+        "en": "Jose Cuervo Silver Tequila Highball"
+      },
+      "price": 99000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 0,
+      "categorySortOrder": 0
+    },
+    {
+      "id": "50f90120-5773-4bdf-b9bc-71a7e99c7a6f",
+      "cukcukId": "50f90120-5773-4bdf-b9bc-71a7e99c7a6f",
+      "cukcukCode": "(H02) Highball Earl Grey",
+      "categoryId": "cukcuk-qr-highball",
+      "categoryName": "하이볼",
+      "sourceName": "데킬라 골드 하이볼 | Jose Cuervo Gold Tequila Highball",
+      "names": {
+        "ko": "호세 쿠에르보 골드 데킬라 하이볼",
+        "vi": "Highball Tequila Jose Cuervo Gold",
+        "zh": "豪帅金龙舌兰高球",
+        "en": "Jose Cuervo Gold Tequila Highball"
+      },
+      "price": 99000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 1,
+      "categorySortOrder": 1
+    },
+    {
+      "id": "db099bd8-4ac3-45cf-a4be-eb9de43aff68",
+      "cukcukId": "db099bd8-4ac3-45cf-a4be-eb9de43aff68",
+      "cukcukCode": "(H01) Highball Suntory",
+      "categoryId": "cukcuk-qr-highball",
+      "categoryName": "하이볼",
+      "sourceName": "산토리 하이볼 | Suntory Kakubin Highball",
+      "names": {
+        "ko": "산토리 가쿠빈 하이볼",
+        "vi": "Suntory Kakubin Highball",
+        "zh": "三得利角瓶高球",
+        "en": "Suntory Kakubin Highball"
+      },
+      "price": 99000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 2,
+      "categorySortOrder": 2
+    },
+    {
+      "id": "a0f42985-3dee-4257-9683-c70fef7992e6",
+      "cukcukId": "a0f42985-3dee-4257-9683-c70fef7992e6",
+      "cukcukCode": "(H08) Highball Jameson",
+      "categoryId": "cukcuk-qr-highball",
+      "categoryName": "하이볼",
+      "sourceName": "제임슨 하이볼 | Jameson Highball",
+      "names": {
+        "ko": "제임슨 하이볼",
+        "vi": "Jameson Highball",
+        "zh": "尊美醇高球",
+        "en": "Jameson Highball"
+      },
+      "price": 99000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 3,
+      "categorySortOrder": 3
+    },
+    {
+      "id": "23343ff7-8a2a-4b96-bb0e-25b133195e53",
+      "cukcukId": "23343ff7-8a2a-4b96-bb0e-25b133195e53",
+      "cukcukCode": "(H05) Highball Jim Beam",
+      "categoryId": "cukcuk-qr-highball",
+      "categoryName": "하이볼",
+      "sourceName": "짐빔 하이볼 | Jim Beam Highball",
+      "names": {
+        "ko": "짐빔 하이볼",
+        "vi": "Jim Beam Highball",
+        "zh": "金宾高球",
+        "en": "Jim Beam Highball"
+      },
+      "price": 99000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 4,
+      "categorySortOrder": 4
+    },
+    {
+      "id": "b0562531-0db8-4602-bc6d-661b06645147",
+      "cukcukId": "b0562531-0db8-4602-bc6d-661b06645147",
+      "cukcukCode": "(H09) Highball Bombay",
+      "categoryId": "cukcuk-qr-highball",
+      "categoryName": "하이볼",
+      "sourceName": "짐빔블랙 하이볼 | Jim Beam Black Extra-Aged Highball",
+      "names": {
+        "ko": "짐빔 블랙 엑스트라 에이지드 하이볼",
+        "vi": "Jim Beam Black Extra-Aged Highball",
+        "zh": "金宾黑牌特酿高球",
+        "en": "Jim Beam Black Extra-Aged Highball"
+      },
+      "price": 99000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 5,
+      "categorySortOrder": 5
+    },
+    {
+      "id": "65df8aff-db47-4441-8215-e60ff8229e99",
+      "cukcukId": "65df8aff-db47-4441-8215-e60ff8229e99",
+      "cukcukCode": "(H06) Highball Johnnie",
+      "categoryId": "cukcuk-qr-highball",
+      "categoryName": "하이볼",
+      "sourceName": "짐빔애플 하이볼 | Jim Beam Apple Highball",
+      "names": {
+        "ko": "짐빔 애플 하이볼",
+        "vi": "Jim Beam Apple Highball",
+        "zh": "金宾苹果高球",
+        "en": "Jim Beam Apple Highball"
+      },
+      "price": 99000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 6,
+      "categorySortOrder": 6
+    },
+    {
+      "id": "292433d8-bef9-450d-814d-f2cb60aebb6b",
+      "cukcukId": "292433d8-bef9-450d-814d-f2cb60aebb6b",
+      "cukcukCode": "(H03) Highball Jack Honey",
+      "categoryId": "cukcuk-qr-highball",
+      "categoryName": "하이볼",
+      "sourceName": "짐빔허니 하이볼 | Jim Beam Honey Highball",
+      "names": {
+        "ko": "짐빔 허니 하이볼",
+        "vi": "Jim Beam Honey Highball",
+        "zh": "金宾蜂蜜高球",
+        "en": "Jim Beam Honey Highball"
+      },
+      "price": 99000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 7,
+      "categorySortOrder": 7
+    },
     {
       "id": "9af79e36-a7aa-4c21-8349-1e61555866e4",
       "cukcukId": "9af79e36-a7aa-4c21-8349-1e61555866e4",
@@ -176,7 +360,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 0,
+      "sortOrder": 8,
       "categorySortOrder": 0
     },
     {
@@ -197,9 +381,29 @@
       "optionTemplateIds": [
         "a18f98eb-3772-4af6-a8cc-4dee966884bc"
       ],
-      "sortOrder": 1,
+      "sortOrder": 9,
       "cukcukCode": "ᄃᄃ TD 地",
       "categorySortOrder": 1
+    },
+    {
+      "id": "d301f64f-16fa-4c8f-86bb-62318205039a",
+      "cukcukId": "d301f64f-16fa-4c8f-86bb-62318205039a",
+      "categoryId": "f60b3e05-f21f-4905-9207-0e494ff2b464",
+      "categoryName": "신메뉴",
+      "sourceName": "돈까스 플레이트 Pork Cutlet Plate 炸猪排拼盘 Đĩa Thịt Heo Chiên Xù",
+      "names": {
+        "ko": "돈까스 플레이트",
+        "vi": "Đĩa thịt heo chiên xù",
+        "zh": "炸猪排拼盘",
+        "en": "Pork Cutlet Plate"
+      },
+      "price": 313200,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 10,
+      "cukcukCode": "HCX",
+      "categorySortOrder": 2
     },
     {
       "id": "2e18bb28-3e48-4155-8802-b47876d60c89",
@@ -217,9 +421,9 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 2,
+      "sortOrder": 11,
       "cukcukCode": "ᄃ DC 达",
-      "categorySortOrder": 2
+      "categorySortOrder": 3
     },
     {
       "id": "3b52569c-47cc-4005-af74-87653bbbc4d9",
@@ -238,27 +442,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 3,
-      "categorySortOrder": 3
-    },
-    {
-      "id": "d2dfd961-40ae-401b-8b3a-530963b32741",
-      "cukcukId": "d2dfd961-40ae-401b-8b3a-530963b32741",
-      "categoryId": "f60b3e05-f21f-4905-9207-0e494ff2b464",
-      "categoryName": "신메뉴",
-      "sourceName": "유린기 | Gà chiên sốt chua ngọt kiểu Hoa | 油淋鸡",
-      "names": {
-        "ko": "유린기",
-        "vi": "Gà chiên sốt chua ngọt kiểu Hoa",
-        "zh": "油淋鸡",
-        "en": "Chinese-Style Fried Chicken with Sweet and Sour Sauce"
-      },
-      "price": 205200,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 4,
-      "cukcukCode": "ᄋ GCSCNKH 油",
+      "sortOrder": 12,
       "categorySortOrder": 4
     },
     {
@@ -278,7 +462,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 5,
+      "sortOrder": 13,
       "categorySortOrder": 5
     },
     {
@@ -299,7 +483,7 @@
       "optionTemplateIds": [
         "6274f44c-9256-418a-a59d-20e04e651fa1"
       ],
-      "sortOrder": 6,
+      "sortOrder": 14,
       "cukcukCode": "hot",
       "categorySortOrder": 6
     },
@@ -321,9 +505,49 @@
       "optionTemplateIds": [
         "85cead19-7d83-4c61-8199-b7fab35fb672"
       ],
-      "sortOrder": 7,
+      "sortOrder": 15,
       "cukcukCode": "ᄉ GPBPM 雪 SCPC",
       "categorySortOrder": 7
+    },
+    {
+      "id": "54d8170c-bdfc-4fdd-a502-e31e6a1e311d",
+      "cukcukId": "54d8170c-bdfc-4fdd-a502-e31e6a1e311d",
+      "cukcukCode": "ᄆGMGC",
+      "categoryId": "f60b3e05-f21f-4905-9207-0e494ff2b464",
+      "categoryName": "신메뉴",
+      "sourceName": "마니치 |Gà MANICHI|蒜香MANICHI炸鸡|MANICHI Garlic Chicken",
+      "names": {
+        "ko": "마니치",
+        "vi": "Gà MANICHI",
+        "zh": "蒜香 MANICHI 炸鸡",
+        "en": "MANICHI Garlic Chicken"
+      },
+      "price": 399600,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 16,
+      "categorySortOrder": 8
+    },
+    {
+      "id": "d2dfd961-40ae-401b-8b3a-530963b32741",
+      "cukcukId": "d2dfd961-40ae-401b-8b3a-530963b32741",
+      "categoryId": "f60b3e05-f21f-4905-9207-0e494ff2b464",
+      "categoryName": "신메뉴",
+      "sourceName": "유린기 | Gà chiên sốt chua ngọt kiểu Hoa | 油淋鸡",
+      "names": {
+        "ko": "유린기",
+        "vi": "Gà chiên sốt chua ngọt kiểu Hoa",
+        "zh": "油淋鸡",
+        "en": "Chinese-Style Fried Chicken with Sweet and Sour Sauce"
+      },
+      "price": 205200,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 17,
+      "cukcukCode": "ᄋ GCSCNKH 油",
+      "categorySortOrder": 9
     },
     {
       "id": "395e98e6-9062-40cc-872d-563ee5cf49ab",
@@ -341,9 +565,9 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 8,
+      "sortOrder": 18,
       "cukcukCode": "ᄆGRXCF",
-      "categorySortOrder": 8
+      "categorySortOrder": 10
     },
     {
       "id": "718a9af3-056b-44ee-b833-04cab90d1e9f",
@@ -363,48 +587,8 @@
       "optionTemplateIds": [
         "80ff7a38-11c2-4942-a403-b5e3921ef3e2"
       ],
-      "sortOrder": 9,
+      "sortOrder": 19,
       "cukcukCode": "ᄎ CC KCC",
-      "categorySortOrder": 9
-    },
-    {
-      "id": "d301f64f-16fa-4c8f-86bb-62318205039a",
-      "cukcukId": "d301f64f-16fa-4c8f-86bb-62318205039a",
-      "categoryId": "f60b3e05-f21f-4905-9207-0e494ff2b464",
-      "categoryName": "신메뉴",
-      "sourceName": "돈까스 플레이트 Pork Cutlet Plate 炸猪排拼盘 Đĩa Thịt Heo Chiên Xù",
-      "names": {
-        "ko": "돈까스 플레이트",
-        "vi": "Đĩa thịt heo chiên xù",
-        "zh": "炸猪排拼盘",
-        "en": "Pork Cutlet Plate"
-      },
-      "price": 313200,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 10,
-      "cukcukCode": "HCX",
-      "categorySortOrder": 10
-    },
-    {
-      "id": "54d8170c-bdfc-4fdd-a502-e31e6a1e311d",
-      "cukcukId": "54d8170c-bdfc-4fdd-a502-e31e6a1e311d",
-      "cukcukCode": "ᄆGMGC",
-      "categoryId": "f60b3e05-f21f-4905-9207-0e494ff2b464",
-      "categoryName": "신메뉴",
-      "sourceName": "마니치 |Gà MANICHI|蒜香MANICHI炸鸡|MANICHI Garlic Chicken",
-      "names": {
-        "ko": "마니치",
-        "vi": "Gà MANICHI",
-        "zh": "蒜香 MANICHI 炸鸡",
-        "en": "MANICHI Garlic Chicken"
-      },
-      "price": 399600,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 11,
       "categorySortOrder": 11
     },
     {
@@ -424,7 +608,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 12,
+      "sortOrder": 20,
       "categorySortOrder": 12
     },
     {
@@ -445,7 +629,7 @@
       "optionTemplateIds": [
         "8491b574-2973-47f0-8d46-5c489fd9bba8"
       ],
-      "sortOrder": 13,
+      "sortOrder": 21,
       "cukcukCode": "ᄋ1 K1 冰1 IC1",
       "categorySortOrder": 13
     },
@@ -467,7 +651,7 @@
       "optionTemplateIds": [
         "f7e12072-8edf-4485-b897-6a440704d521"
       ],
-      "sortOrder": 14,
+      "sortOrder": 22,
       "cukcukCode": "ᄋ5 K5 冰5 IC5",
       "categorySortOrder": 14
     },
@@ -492,7 +676,7 @@
         "5197c337-535f-4e91-b7d1-26029a4b9222",
         "d7fcbd85-9fb6-40db-872a-8275dce401ed"
       ],
-      "sortOrder": 15,
+      "sortOrder": 23,
       "cukcukCode": "(S03) Gà k xương + Tok",
       "categorySortOrder": 0
     },
@@ -516,7 +700,7 @@
         "5197c337-535f-4e91-b7d1-26029a4b9222",
         "d7fcbd85-9fb6-40db-872a-8275dce401ed"
       ],
-      "sortOrder": 16,
+      "sortOrder": 24,
       "cukcukCode": "(S04) Gà nguyên con + Tok",
       "categorySortOrder": 1
     },
@@ -541,7 +725,7 @@
         "5197c337-535f-4e91-b7d1-26029a4b9222",
         "d7fcbd85-9fb6-40db-872a-8275dce401ed"
       ],
-      "sortOrder": 17,
+      "sortOrder": 25,
       "cukcukCode": "(S05) Cánh gà + Tok",
       "categorySortOrder": 2
     },
@@ -561,7 +745,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 18,
+      "sortOrder": 26,
       "cukcukCode": "(S06) Gà k xương 5 vị",
       "categorySortOrder": 3
     },
@@ -581,7 +765,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 19,
+      "sortOrder": 27,
       "cukcukCode": "(S08) Cánh gà 4 vị",
       "categorySortOrder": 4
     },
@@ -603,7 +787,7 @@
       "optionTemplateIds": [
         "3bd1519c-f24f-4aaf-9776-0579d374738f"
       ],
-      "sortOrder": 20,
+      "sortOrder": 28,
       "cukcukCode": "SCGHC",
       "categorySortOrder": 5
     },
@@ -623,7 +807,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 21,
+      "sortOrder": 29,
       "cukcukCode": "ᄆCGRX",
       "categorySortOrder": 6
     },
@@ -645,7 +829,7 @@
       "optionTemplateIds": [
         "3bd1519c-f24f-4aaf-9776-0579d374738f"
       ],
-      "sortOrder": 22,
+      "sortOrder": 30,
       "cukcukCode": "ᄃᄐᄌᄉGNNCVCG CNS",
       "categorySortOrder": 7
     },
@@ -669,7 +853,7 @@
         "bd5ba827-b64d-4910-a24a-86fa7a8e29cd",
         "4fdd345d-483e-4f95-a0c4-73faf37ffd0c"
       ],
-      "sortOrder": 23,
+      "sortOrder": 31,
       "cukcukCode": "SPACE35",
       "categorySortOrder": 8
     },
@@ -693,15 +877,15 @@
         "bd5ba827-b64d-4910-a24a-86fa7a8e29cd",
         "4fdd345d-483e-4f95-a0c4-73faf37ffd0c"
       ],
-      "sortOrder": 24,
+      "sortOrder": 32,
       "cukcukCode": "SPACE36",
       "categorySortOrder": 9
     },
     {
       "id": "f0e8b2b9-eaf9-4b48-b711-ccfd158e3d81",
       "cukcukId": "f0e8b2b9-eaf9-4b48-b711-ccfd158e3d81",
-      "categoryId": "0afd5056-2ad2-46d3-9122-6886fedc4d3a",
-      "categoryName": "다방치킨",
+      "categoryId": "cukcuk-half-chicken",
+      "categoryName": "반마리 치킨",
       "sourceName": "반마리치킨|Half Chicken |半只鸡|Nửa con gà (뼈 순살)",
       "names": {
         "ko": "반마리치킨",
@@ -716,15 +900,15 @@
         "85cead19-7d83-4c61-8199-b7fab35fb672",
         "b2fbfcca-55f5-4718-87d4-96627091764a"
       ],
-      "sortOrder": 25,
+      "sortOrder": 33,
       "cukcukCode": "(KX13)",
       "categorySortOrder": 0
     },
     {
       "id": "2813d1e7-250b-49ae-9f76-e5b40f451492",
       "cukcukId": "2813d1e7-250b-49ae-9f76-e5b40f451492",
-      "categoryId": "0afd5056-2ad2-46d3-9122-6886fedc4d3a",
-      "categoryName": "다방치킨",
+      "categoryId": "cukcuk-half-chicken",
+      "categoryName": "반마리 치킨",
       "sourceName": "짭코바 반마리|BBQ cay nửa con|辣烤鸡半只|Spicy Grilled Chicken (Half)",
       "names": {
         "ko": "짭코바 반마리",
@@ -739,15 +923,15 @@
         "a18f98eb-3772-4af6-a8cc-4dee966884bc",
         "80ff7a38-11c2-4942-a403-b5e3921ef3e2"
       ],
-      "sortOrder": 26,
+      "sortOrder": 34,
       "cukcukCode": "(KX14)",
       "categorySortOrder": 1
     },
     {
       "id": "c92bb30f-12ac-4c63-84cd-5040166c3833",
       "cukcukId": "c92bb30f-12ac-4c63-84cd-5040166c3833",
-      "categoryId": "0afd5056-2ad2-46d3-9122-6886fedc4d3a",
-      "categoryName": "다방치킨",
+      "categoryId": "cukcuk-half-chicken",
+      "categoryName": "반마리 치킨",
       "sourceName": "½ 오리지널 로스트 | Gà quay truyền thống½ | 原味烤鸡 | Original Roast",
       "names": {
         "ko": "½ 오리지널 로스트",
@@ -761,15 +945,15 @@
       "optionTemplateIds": [
         "f035ccfc-db83-4ba0-ac18-bd38af8b0437"
       ],
-      "sortOrder": 27,
+      "sortOrder": 35,
       "cukcukCode": "Original Roast",
       "categorySortOrder": 2
     },
     {
       "id": "b7a6075c-130d-42ea-a474-386dc480ae3a",
       "cukcukId": "b7a6075c-130d-42ea-a474-386dc480ae3a",
-      "categoryId": "0afd5056-2ad2-46d3-9122-6886fedc4d3a",
-      "categoryName": "다방치킨",
+      "categoryId": "cukcuk-half-chicken",
+      "categoryName": "반마리 치킨",
       "sourceName": "½ 고추바삭 로스트|Gà quay giòn cay½|香辣脆皮烤鸡|Crispy Spicy Roast",
       "names": {
         "ko": "½ 고추바삭 로스트",
@@ -783,9 +967,31 @@
       "optionTemplateIds": [
         "f035ccfc-db83-4ba0-ac18-bd38af8b0437"
       ],
-      "sortOrder": 28,
+      "sortOrder": 36,
       "cukcukCode": "Crispy Spicy Roast",
       "categorySortOrder": 3
+    },
+    {
+      "id": "b2bf24a7-1018-4953-86ce-baacae6fe06c",
+      "cukcukId": "b2bf24a7-1018-4953-86ce-baacae6fe06c",
+      "categoryId": "cukcuk-half-chicken",
+      "categoryName": "반마리 치킨",
+      "sourceName": "윙봉반 | Gà cánh chiên nửa con | 半只炸鸡翅 | Half Fried Chicken Wings",
+      "names": {
+        "ko": "윙봉 반마리",
+        "vi": "Cánh gà chiên nửa phần",
+        "zh": "半只炸鸡翅",
+        "en": "Half Fried Chicken Wings"
+      },
+      "price": 216000,
+      "available": true,
+      "optionGroups": 1,
+      "optionTemplateIds": [
+        "2be54a6c-ab0d-40d7-a080-0c50e0d228dc"
+      ],
+      "sortOrder": 37,
+      "cukcukCode": "(W06) Nửa con gà",
+      "categorySortOrder": 4
     },
     {
       "id": "42257f0b-e1f2-4b69-b7ce-d59d43a69f87",
@@ -806,9 +1012,9 @@
         "a18f98eb-3772-4af6-a8cc-4dee966884bc",
         "80ff7a38-11c2-4942-a403-b5e3921ef3e2"
       ],
-      "sortOrder": 29,
+      "sortOrder": 38,
       "cukcukCode": "(KX02)",
-      "categorySortOrder": 4
+      "categorySortOrder": 0
     },
     {
       "id": "7f78a64e-bba9-43fb-8c37-5f8413cf4644",
@@ -826,9 +1032,9 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 30,
+      "sortOrder": 39,
       "cukcukCode": "rose bbq",
-      "categorySortOrder": 5
+      "categorySortOrder": 1
     },
     {
       "id": "c2beac10-4cdb-4d1b-b83b-ebac299eb44e",
@@ -849,9 +1055,9 @@
         "85cead19-7d83-4c61-8199-b7fab35fb672",
         "b2fbfcca-55f5-4718-87d4-96627091764a"
       ],
-      "sortOrder": 31,
+      "sortOrder": 40,
       "cukcukCode": "(KX01)",
-      "categorySortOrder": 6
+      "categorySortOrder": 2
     },
     {
       "id": "7c92814f-40ee-4742-8e2b-004a659bcb97",
@@ -871,9 +1077,9 @@
       "optionTemplateIds": [
         "85cead19-7d83-4c61-8199-b7fab35fb672"
       ],
-      "sortOrder": 32,
+      "sortOrder": 41,
       "cukcukCode": "(KX04)",
-      "categorySortOrder": 7
+      "categorySortOrder": 3
     },
     {
       "id": "d939174b-8266-4b40-ac1b-8314d3ea647b",
@@ -882,7 +1088,7 @@
       "categoryName": "다방치킨",
       "sourceName": "양념  Sweet & Spicy Chicken  韩式甜酱炸鸡 Gà sốt ngọt HQ",
       "names": {
-        "ko": "양념치킨",
+        "ko": "양념 치킨",
         "vi": "Gà sốt ngọt Hàn Quốc",
         "zh": "韩式甜酱炸鸡",
         "en": "Sweet & Spicy Chicken"
@@ -893,9 +1099,9 @@
       "optionTemplateIds": [
         "85cead19-7d83-4c61-8199-b7fab35fb672"
       ],
-      "sortOrder": 33,
+      "sortOrder": 42,
       "cukcukCode": "(KX05)",
-      "categorySortOrder": 8
+      "categorySortOrder": 4
     },
     {
       "id": "b2c769d6-83b0-4c07-a942-ae7113fabd31",
@@ -904,7 +1110,7 @@
       "categoryName": "다방치킨",
       "sourceName": "매운양념  Hot & Spicy Chicken韩式辣酱炸鸡  Gà sốt cay HQ",
       "names": {
-        "ko": "매운 양념치킨",
+        "ko": "매운 양념 치킨",
         "vi": "Gà sốt cay Hàn Quốc",
         "zh": "韩式辣酱炸鸡",
         "en": "Hot & Spicy Chicken"
@@ -915,9 +1121,9 @@
       "optionTemplateIds": [
         "85cead19-7d83-4c61-8199-b7fab35fb672"
       ],
-      "sortOrder": 34,
+      "sortOrder": 43,
       "cukcukCode": "(KX06)",
-      "categorySortOrder": 9
+      "categorySortOrder": 5
     },
     {
       "id": "08e44de3-df20-4b82-aa28-b26a7d2d69f9",
@@ -937,9 +1143,9 @@
       "optionTemplateIds": [
         "85cead19-7d83-4c61-8199-b7fab35fb672"
       ],
-      "sortOrder": 35,
+      "sortOrder": 44,
       "cukcukCode": "(KX08)",
-      "categorySortOrder": 10
+      "categorySortOrder": 6
     },
     {
       "id": "316a67e3-b913-4b86-81fa-79c053604819",
@@ -959,9 +1165,9 @@
       "optionTemplateIds": [
         "85cead19-7d83-4c61-8199-b7fab35fb672"
       ],
-      "sortOrder": 36,
+      "sortOrder": 45,
       "cukcukCode": "(KX10)",
-      "categorySortOrder": 11
+      "categorySortOrder": 7
     },
     {
       "id": "9dc365e6-11a7-4308-9899-b69cfdce6132",
@@ -981,9 +1187,9 @@
       "optionTemplateIds": [
         "85cead19-7d83-4c61-8199-b7fab35fb672"
       ],
-      "sortOrder": 37,
+      "sortOrder": 46,
       "cukcukCode": "(KX07)",
-      "categorySortOrder": 12
+      "categorySortOrder": 8
     },
     {
       "id": "28c23af3-2b38-43c5-b053-477d65f8c70c",
@@ -1001,9 +1207,9 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 38,
+      "sortOrder": 47,
       "cukcukCode": "ᄉ GS 至 SC",
-      "categorySortOrder": 13
+      "categorySortOrder": 9
     },
     {
       "id": "4ab44b18-16b3-4deb-8dcc-a37cf505d041",
@@ -1021,30 +1227,8 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 39,
+      "sortOrder": 48,
       "cukcukCode": "(T01) Gà chiên nguyên con",
-      "categorySortOrder": 0
-    },
-    {
-      "id": "b2bf24a7-1018-4953-86ce-baacae6fe06c",
-      "cukcukId": "b2bf24a7-1018-4953-86ce-baacae6fe06c",
-      "categoryId": "2424e567-8845-48c6-a4af-91c51a4d3aaa",
-      "categoryName": "날개치킨",
-      "sourceName": "윙봉반 | Gà cánh chiên nửa con | 半只炸鸡翅 | Half Fried Chicken Wings",
-      "names": {
-        "ko": "윙봉 반마리",
-        "vi": "Cánh gà chiên nửa phần",
-        "zh": "半只炸鸡翅",
-        "en": "Half Fried Chicken Wings"
-      },
-      "price": 216000,
-      "available": true,
-      "optionGroups": 1,
-      "optionTemplateIds": [
-        "2be54a6c-ab0d-40d7-a080-0c50e0d228dc"
-      ],
-      "sortOrder": 40,
-      "cukcukCode": "(W06) Nửa con gà",
       "categorySortOrder": 0
     },
     {
@@ -1065,9 +1249,9 @@
       "optionTemplateIds": [
         "2be54a6c-ab0d-40d7-a080-0c50e0d228dc"
       ],
-      "sortOrder": 41,
+      "sortOrder": 49,
       "cukcukCode": "(W01) Cánh gà vị đôi",
-      "categorySortOrder": 1
+      "categorySortOrder": 0
     },
     {
       "id": "a0d375e8-a3f7-456d-8713-7b3c148e83fc",
@@ -1085,9 +1269,9 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 42,
+      "sortOrder": 50,
       "cukcukCode": "(W02) Cánh chiên giòn",
-      "categorySortOrder": 2
+      "categorySortOrder": 1
     },
     {
       "id": "8ea56264-b4dd-46dd-a4f8-70329e31d2c7",
@@ -1105,9 +1289,9 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 43,
+      "sortOrder": 51,
       "cukcukCode": "(W03) Cánh gà xì dầu",
-      "categorySortOrder": 3
+      "categorySortOrder": 2
     },
     {
       "id": "84eca397-5e7f-4f5e-8e39-e62981936afe",
@@ -1125,9 +1309,9 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 44,
+      "sortOrder": 52,
       "cukcukCode": "(W05) Cánh gà mật ong",
-      "categorySortOrder": 4
+      "categorySortOrder": 3
     },
     {
       "id": "da30295f-f6b9-43d0-aa5f-db944140645e",
@@ -1145,9 +1329,9 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 45,
+      "sortOrder": 53,
       "cukcukCode": "(W04) Cánh gà cay",
-      "categorySortOrder": 5
+      "categorySortOrder": 4
     },
     {
       "id": "cf78e938-ff9f-441f-a3a3-c7375f393dfa",
@@ -1168,7 +1352,7 @@
         "21b53642-cba7-4ef9-b877-bab92f845c25",
         "d7fcbd85-9fb6-40db-872a-8275dce401ed"
       ],
-      "sortOrder": 46,
+      "sortOrder": 54,
       "cukcukCode": "(T06) Tokbokki cay nhẹ",
       "categorySortOrder": 0
     },
@@ -1192,7 +1376,7 @@
         "5197c337-535f-4e91-b7d1-26029a4b9222",
         "d7fcbd85-9fb6-40db-872a-8275dce401ed"
       ],
-      "sortOrder": 47,
+      "sortOrder": 55,
       "cukcukCode": "(T09) Tok banh gao to",
       "categorySortOrder": 1
     },
@@ -1214,7 +1398,7 @@
       "optionTemplateIds": [
         "d7fcbd85-9fb6-40db-872a-8275dce401ed"
       ],
-      "sortOrder": 48,
+      "sortOrder": 56,
       "cukcukCode": "(T07) Tok kem cay(rose)",
       "categorySortOrder": 2
     },
@@ -1237,7 +1421,7 @@
         "21b53642-cba7-4ef9-b877-bab92f845c25",
         "d7fcbd85-9fb6-40db-872a-8275dce401ed"
       ],
-      "sortOrder": 49,
+      "sortOrder": 57,
       "cukcukCode": "(T08) Mì Tokbokki",
       "categorySortOrder": 3
     },
@@ -1258,7 +1442,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 50,
+      "sortOrder": 58,
       "categorySortOrder": 4
     },
     {
@@ -1277,7 +1461,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 51,
+      "sortOrder": 59,
       "cukcukCode": "ᄀ CTXD",
       "categorySortOrder": 5
     },
@@ -1297,7 +1481,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 52,
+      "sortOrder": 60,
       "cukcukCode": "(T16) Cơm nắm",
       "categorySortOrder": 6
     },
@@ -1317,7 +1501,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 53,
+      "sortOrder": 61,
       "cukcukCode": "ᄀ TH 蒸ZD SE",
       "categorySortOrder": 7
     },
@@ -1337,7 +1521,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 54,
+      "sortOrder": 62,
       "cukcukCode": "(T11) Ha cao chien cay",
       "categorySortOrder": 8
     },
@@ -1357,7 +1541,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 55,
+      "sortOrder": 63,
       "cukcukCode": "(T12) Mì trộn cay dai",
       "categorySortOrder": 9
     },
@@ -1377,7 +1561,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 56,
+      "sortOrder": 64,
       "cukcukCode": "(T13) Udon xiên chả cá",
       "categorySortOrder": 10
     },
@@ -1397,7 +1581,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 57,
+      "sortOrder": 65,
       "cukcukCode": "(T14) Udon kimchi cay",
       "categorySortOrder": 11
     },
@@ -1419,7 +1603,7 @@
       "optionTemplateIds": [
         "4a947b5f-0eb9-4c88-87b2-94debe05a41d"
       ],
-      "sortOrder": 58,
+      "sortOrder": 66,
       "cukcukCode": "SPACE111",
       "categorySortOrder": 0
     },
@@ -1441,7 +1625,7 @@
       "optionTemplateIds": [
         "4a947b5f-0eb9-4c88-87b2-94debe05a41d"
       ],
-      "sortOrder": 59,
+      "sortOrder": 67,
       "cukcukCode": "SPACE112",
       "categorySortOrder": 1
     },
@@ -1463,7 +1647,7 @@
       "optionTemplateIds": [
         "4a947b5f-0eb9-4c88-87b2-94debe05a41d"
       ],
-      "sortOrder": 60,
+      "sortOrder": 68,
       "cukcukCode": "SPACE113",
       "categorySortOrder": 2
     },
@@ -1485,7 +1669,7 @@
       "optionTemplateIds": [
         "4a947b5f-0eb9-4c88-87b2-94debe05a41d"
       ],
-      "sortOrder": 61,
+      "sortOrder": 69,
       "cukcukCode": "SPACE114",
       "categorySortOrder": 3
     },
@@ -1507,7 +1691,7 @@
       "optionTemplateIds": [
         "4a947b5f-0eb9-4c88-87b2-94debe05a41d"
       ],
-      "sortOrder": 62,
+      "sortOrder": 70,
       "cukcukCode": "SPACE115",
       "categorySortOrder": 4
     },
@@ -1527,7 +1711,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 63,
+      "sortOrder": 71,
       "cukcukCode": "SPACE33",
       "categorySortOrder": 5
     },
@@ -1547,7 +1731,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 64,
+      "sortOrder": 72,
       "cukcukCode": "SPACE8",
       "categorySortOrder": 6
     },
@@ -1567,7 +1751,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 65,
+      "sortOrder": 73,
       "cukcukCode": "SPACE32",
       "categorySortOrder": 7
     },
@@ -1587,7 +1771,7 @@
       "available": false,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 66,
+      "sortOrder": 74,
       "cukcukCode": "(M04) nacho cham phomai",
       "categorySortOrder": 0
     },
@@ -1598,16 +1782,16 @@
       "categoryName": "안주",
       "sourceName": "수박 | dưa hấu | 西瓜刨冰 |",
       "names": {
-        "ko": "수박 빙수",
-        "vi": "Đá bào dưa hấu",
-        "zh": "西瓜刨冰",
-        "en": "Watermelon Shaved Ice"
+        "ko": "수박",
+        "vi": "Dưa hấu",
+        "zh": "西瓜",
+        "en": "Watermelon"
       },
       "price": 97200,
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 67,
+      "sortOrder": 75,
       "cukcukCode": "BDH",
       "categorySortOrder": 1
     },
@@ -1628,7 +1812,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 68,
+      "sortOrder": 76,
       "categorySortOrder": 2
     },
     {
@@ -1650,7 +1834,7 @@
         "3bd1519c-f24f-4aaf-9776-0579d374738f",
         "25d39e7d-a94b-40fb-b610-1db368947c95"
       ],
-      "sortOrder": 69,
+      "sortOrder": 77,
       "cukcukCode": "(F01) Chan ga ham co nuoc",
       "categorySortOrder": 3
     },
@@ -1670,89 +1854,9 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 70,
+      "sortOrder": 78,
       "cukcukCode": "SMPW",
       "categorySortOrder": 4
-    },
-    {
-      "id": "2e9b612e-df88-49f7-ab7d-7feb08e64bcc",
-      "cukcukId": "2e9b612e-df88-49f7-ab7d-7feb08e64bcc",
-      "categoryId": "601b353e-0f17-46db-bd64-d64140a70d27",
-      "categoryName": "안주",
-      "sourceName": "건어물떠까 Mixed Dried Seafood Snacks 韩式什锦干货拼盘  Đồ khô tổng hợp kiểu Hàn",
-      "names": {
-        "ko": "건어물 떠까",
-        "vi": "Đồ khô tổng hợp kiểu Hàn",
-        "zh": "韩式什锦干货拼盘",
-        "en": "Mixed Dried Seafood Snacks"
-      },
-      "price": 345600,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 71,
-      "cukcukCode": "(F09) Do kho tong hop",
-      "categorySortOrder": 5
-    },
-    {
-      "id": "1df5eaef-5f0d-44dc-9536-2b6ce6e27381",
-      "cukcukId": "1df5eaef-5f0d-44dc-9536-2b6ce6e27381",
-      "categoryId": "601b353e-0f17-46db-bd64-d64140a70d27",
-      "categoryName": "안주",
-      "sourceName": "반건조 노가리  半干黄花鱼仔 Cá pollack non khô (nửa khô)",
-      "names": {
-        "ko": "반건조 노가리",
-        "vi": "Cá pollack non nửa khô",
-        "zh": "半干黄花鱼仔",
-        "en": "Semi-Dried Young Pollack"
-      },
-      "price": 291600,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 72,
-      "cukcukCode": "(F06) Cá pollack non khô",
-      "categorySortOrder": 6
-    },
-    {
-      "id": "88cbf763-9271-490a-9b3c-4e43297bf1fa",
-      "cukcukId": "88cbf763-9271-490a-9b3c-4e43297bf1fa",
-      "categoryId": "601b353e-0f17-46db-bd64-d64140a70d27",
-      "categoryName": "안주",
-      "sourceName": "버터 먹태구이 Grilled Pollack with Butter 黄花鱼干奶油烤  Cá chỉ vàng lớn nướng bơ",
-      "names": {
-        "ko": "버터 먹태구이",
-        "vi": "Cá chỉ vàng lớn nướng bơ",
-        "zh": "奶油烤黄花鱼干",
-        "en": "Grilled Dried Pollack with Butter"
-      },
-      "price": 216000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 73,
-      "cukcukCode": "(F08) Ca chi vang nuong",
-      "categorySortOrder": 7
-    },
-    {
-      "id": "353812e8-9360-4594-8561-e3ba133c999b",
-      "cukcukId": "353812e8-9360-4594-8561-e3ba133c999b",
-      "categoryId": "601b353e-0f17-46db-bd64-d64140a70d27",
-      "categoryName": "안주",
-      "sourceName": "조미오징어|Mực tẩmgia|调味鱿鱼|Seasonedsquid",
-      "names": {
-        "ko": "조미 오징어",
-        "vi": "Mực tẩm gia vị",
-        "zh": "调味鱿鱼",
-        "en": "Seasoned Squid"
-      },
-      "price": 172800,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 74,
-      "cukcukCode": "(F07) Mực bán khô tẩm vị",
-      "categorySortOrder": 8
     },
     {
       "id": "2e30dd59-0f0e-471f-af86-5dff225f1c5e",
@@ -1772,49 +1876,9 @@
       "optionTemplateIds": [
         "2fb4a046-da1a-4e98-a7fa-40703f938de2"
       ],
-      "sortOrder": 75,
+      "sortOrder": 79,
       "cukcukCode": "ᄋ LCC 鱼 FCS",
-      "categorySortOrder": 9
-    },
-    {
-      "id": "69570173-d7e8-4f3b-81cc-bc498f66351a",
-      "cukcukId": "69570173-d7e8-4f3b-81cc-bc498f66351a",
-      "categoryId": "601b353e-0f17-46db-bd64-d64140a70d27",
-      "categoryName": "안주",
-      "sourceName": "클래식 쥐포 Thin Grilled Filefish  烤鳞头鱼片 / 薄片鱿鱼干 Cá chỉ vàng nướng lát mỏng",
-      "names": {
-        "ko": "클래식 쥐포",
-        "vi": "Cá chỉ vàng nướng lát mỏng",
-        "zh": "烤鳞头鱼片",
-        "en": "Thin Grilled Filefish"
-      },
-      "price": 108000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 76,
-      "cukcukCode": "(F04) Cá chỉ vàng nướng",
-      "categorySortOrder": 10
-    },
-    {
-      "id": "036876df-cb82-4686-8ace-3734480320cc",
-      "cukcukId": "036876df-cb82-4686-8ace-3734480320cc",
-      "categoryId": "601b353e-0f17-46db-bd64-d64140a70d27",
-      "categoryName": "안주",
-      "sourceName": "촉촉 반건조 오징어 | Mực một nắng | 半干鱿鱼 | Semi-dried squid",
-      "names": {
-        "ko": "촉촉 반건조 오징어",
-        "vi": "Mực một nắng",
-        "zh": "半干鱿鱼",
-        "en": "Semi-Dried Squid"
-      },
-      "price": 226800,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 77,
-      "cukcukCode": "Mực",
-      "categorySortOrder": 11
+      "categorySortOrder": 5
     },
     {
       "id": "08b4aba2-4116-4148-b2a9-763c5d72d543",
@@ -1833,8 +1897,128 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 78,
-      "categorySortOrder": 12
+      "sortOrder": 80,
+      "categorySortOrder": 6
+    },
+    {
+      "id": "2e9b612e-df88-49f7-ab7d-7feb08e64bcc",
+      "cukcukId": "2e9b612e-df88-49f7-ab7d-7feb08e64bcc",
+      "categoryId": "cukcuk-dried-snacks",
+      "categoryName": "건어물",
+      "sourceName": "건어물떠까 Mixed Dried Seafood Snacks 韩式什锦干货拼盘  Đồ khô tổng hợp kiểu Hàn",
+      "names": {
+        "ko": "건어물 떠까",
+        "vi": "Đồ khô tổng hợp kiểu Hàn",
+        "zh": "韩式什锦干货拼盘",
+        "en": "Mixed Dried Seafood Snacks"
+      },
+      "price": 345600,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 81,
+      "cukcukCode": "(F09) Do kho tong hop",
+      "categorySortOrder": 0
+    },
+    {
+      "id": "1df5eaef-5f0d-44dc-9536-2b6ce6e27381",
+      "cukcukId": "1df5eaef-5f0d-44dc-9536-2b6ce6e27381",
+      "categoryId": "cukcuk-dried-snacks",
+      "categoryName": "건어물",
+      "sourceName": "반건조 노가리  半干黄花鱼仔 Cá pollack non khô (nửa khô)",
+      "names": {
+        "ko": "반건조 노가리",
+        "vi": "Cá pollack non nửa khô",
+        "zh": "半干黄花鱼仔",
+        "en": "Semi-Dried Young Pollack"
+      },
+      "price": 291600,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 82,
+      "cukcukCode": "(F06) Cá pollack non khô",
+      "categorySortOrder": 1
+    },
+    {
+      "id": "88cbf763-9271-490a-9b3c-4e43297bf1fa",
+      "cukcukId": "88cbf763-9271-490a-9b3c-4e43297bf1fa",
+      "categoryId": "cukcuk-dried-snacks",
+      "categoryName": "건어물",
+      "sourceName": "버터 먹태구이 Grilled Pollack with Butter 黄花鱼干奶油烤  Cá chỉ vàng lớn nướng bơ",
+      "names": {
+        "ko": "버터 먹태구이",
+        "vi": "Cá chỉ vàng lớn nướng bơ",
+        "zh": "奶油烤黄花鱼干",
+        "en": "Grilled Dried Pollack with Butter"
+      },
+      "price": 216000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 83,
+      "cukcukCode": "(F08) Ca chi vang nuong",
+      "categorySortOrder": 2
+    },
+    {
+      "id": "353812e8-9360-4594-8561-e3ba133c999b",
+      "cukcukId": "353812e8-9360-4594-8561-e3ba133c999b",
+      "categoryId": "cukcuk-dried-snacks",
+      "categoryName": "건어물",
+      "sourceName": "조미오징어|Mực tẩmgia|调味鱿鱼|Seasonedsquid",
+      "names": {
+        "ko": "조미 오징어",
+        "vi": "Mực tẩm gia vị",
+        "zh": "调味鱿鱼",
+        "en": "Seasoned Squid"
+      },
+      "price": 172800,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 84,
+      "cukcukCode": "(F07) Mực bán khô tẩm vị",
+      "categorySortOrder": 3
+    },
+    {
+      "id": "69570173-d7e8-4f3b-81cc-bc498f66351a",
+      "cukcukId": "69570173-d7e8-4f3b-81cc-bc498f66351a",
+      "categoryId": "cukcuk-dried-snacks",
+      "categoryName": "건어물",
+      "sourceName": "클래식 쥐포 Thin Grilled Filefish  烤鳞头鱼片 / 薄片鱿鱼干 Cá chỉ vàng nướng lát mỏng",
+      "names": {
+        "ko": "클래식 쥐포",
+        "vi": "Cá chỉ vàng nướng lát mỏng",
+        "zh": "烤鳞头鱼片",
+        "en": "Thin Grilled Filefish"
+      },
+      "price": 108000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 85,
+      "cukcukCode": "(F04) Cá chỉ vàng nướng",
+      "categorySortOrder": 4
+    },
+    {
+      "id": "036876df-cb82-4686-8ace-3734480320cc",
+      "cukcukId": "036876df-cb82-4686-8ace-3734480320cc",
+      "categoryId": "cukcuk-dried-snacks",
+      "categoryName": "건어물",
+      "sourceName": "촉촉 반건조 오징어 | Mực một nắng | 半干鱿鱼 | Semi-dried squid",
+      "names": {
+        "ko": "촉촉 반건조 오징어",
+        "vi": "Mực một nắng",
+        "zh": "半干鱿鱼",
+        "en": "Semi-Dried Squid"
+      },
+      "price": 226800,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 86,
+      "cukcukCode": "Mực",
+      "categorySortOrder": 5
     },
     {
       "id": "586cac45-0ec8-4fab-a5a6-393846ca53fd",
@@ -1852,7 +2036,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 79,
+      "sortOrder": 87,
       "cukcukCode": "수량확인13",
       "categorySortOrder": 0
     },
@@ -1872,7 +2056,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 80,
+      "sortOrder": 88,
       "cukcukCode": "수량확인16",
       "categorySortOrder": 1
     },
@@ -1892,7 +2076,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 81,
+      "sortOrder": 89,
       "cukcukCode": "수량확인14",
       "categorySortOrder": 2
     },
@@ -1912,7 +2096,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 82,
+      "sortOrder": 90,
       "cukcukCode": "ᄂᄌ NCZ5",
       "categorySortOrder": 3
     },
@@ -1933,7 +2117,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 83,
+      "sortOrder": 91,
       "categorySortOrder": 4
     },
     {
@@ -1952,7 +2136,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 84,
+      "sortOrder": 92,
       "cukcukCode": "Nước ép xoài",
       "categorySortOrder": 5
     },
@@ -1974,7 +2158,7 @@
       "optionTemplateIds": [
         "7524baa2-2174-4d16-988e-8904ce1192db"
       ],
-      "sortOrder": 85,
+      "sortOrder": 93,
       "cukcukCode": "CC",
       "categorySortOrder": 6
     },
@@ -1995,7 +2179,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 86,
+      "sortOrder": 94,
       "categorySortOrder": 0
     },
     {
@@ -2015,7 +2199,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 87,
+      "sortOrder": 95,
       "categorySortOrder": 1
     },
     {
@@ -2035,7 +2219,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 88,
+      "sortOrder": 96,
       "categorySortOrder": 2
     },
     {
@@ -2055,7 +2239,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 89,
+      "sortOrder": 97,
       "categorySortOrder": 3
     },
     {
@@ -2075,7 +2259,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 90,
+      "sortOrder": 98,
       "categorySortOrder": 4
     },
     {
@@ -2095,7 +2279,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 91,
+      "sortOrder": 99,
       "categorySortOrder": 5
     },
     {
@@ -2115,7 +2299,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 92,
+      "sortOrder": 100,
       "categorySortOrder": 6
     },
     {
@@ -2135,7 +2319,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 93,
+      "sortOrder": 101,
       "categorySortOrder": 7
     },
     {
@@ -2155,7 +2339,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 94,
+      "sortOrder": 102,
       "categorySortOrder": 8
     },
     {
@@ -2175,7 +2359,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 95,
+      "sortOrder": 103,
       "categorySortOrder": 9
     },
     {
@@ -2195,7 +2379,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 96,
+      "sortOrder": 104,
       "categorySortOrder": 10
     },
     {
@@ -2215,7 +2399,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 97,
+      "sortOrder": 105,
       "categorySortOrder": 11
     },
     {
@@ -2235,7 +2419,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 98,
+      "sortOrder": 106,
       "categorySortOrder": 12
     },
     {
@@ -2255,7 +2439,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 99,
+      "sortOrder": 107,
       "categorySortOrder": 13
     },
     {
@@ -2275,7 +2459,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 100,
+      "sortOrder": 108,
       "categorySortOrder": 14
     },
     {
@@ -2295,7 +2479,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 101,
+      "sortOrder": 109,
       "categorySortOrder": 15
     },
     {
@@ -2315,7 +2499,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 102,
+      "sortOrder": 110,
       "categorySortOrder": 16
     },
     {
@@ -2335,168 +2519,8 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 103,
-      "categorySortOrder": 17
-    },
-    {
-      "id": "853e043d-fe9f-49f4-9d31-c86b38262204",
-      "cukcukId": "853e043d-fe9f-49f4-9d31-c86b38262204",
-      "cukcukCode": "(H10) Highball Tanqueray",
-      "categoryId": "cukcuk-qr-highball",
-      "categoryName": "하이볼",
-      "sourceName": "데킬라 실버 하이볼 | Jose Cuervo Silver Tequila Highball",
-      "names": {
-        "ko": "호세 쿠에르보 실버 데킬라 하이볼",
-        "vi": "Highball Tequila Jose Cuervo Silver",
-        "zh": "豪帅银龙舌兰高球",
-        "en": "Jose Cuervo Silver Tequila Highball"
-      },
-      "price": 99000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 104,
-      "categorySortOrder": 0
-    },
-    {
-      "id": "50f90120-5773-4bdf-b9bc-71a7e99c7a6f",
-      "cukcukId": "50f90120-5773-4bdf-b9bc-71a7e99c7a6f",
-      "cukcukCode": "(H02) Highball Earl Grey",
-      "categoryId": "cukcuk-qr-highball",
-      "categoryName": "하이볼",
-      "sourceName": "데킬라 골드 하이볼 | Jose Cuervo Gold Tequila Highball",
-      "names": {
-        "ko": "호세 쿠에르보 골드 데킬라 하이볼",
-        "vi": "Highball Tequila Jose Cuervo Gold",
-        "zh": "豪帅金龙舌兰高球",
-        "en": "Jose Cuervo Gold Tequila Highball"
-      },
-      "price": 99000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 105,
-      "categorySortOrder": 1
-    },
-    {
-      "id": "db099bd8-4ac3-45cf-a4be-eb9de43aff68",
-      "cukcukId": "db099bd8-4ac3-45cf-a4be-eb9de43aff68",
-      "cukcukCode": "(H01) Highball Suntory",
-      "categoryId": "cukcuk-qr-highball",
-      "categoryName": "하이볼",
-      "sourceName": "산토리 하이볼 | Suntory Kakubin Highball",
-      "names": {
-        "ko": "산토리 가쿠빈 하이볼",
-        "vi": "Suntory Kakubin Highball",
-        "zh": "三得利角瓶高球",
-        "en": "Suntory Kakubin Highball"
-      },
-      "price": 99000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 106,
-      "categorySortOrder": 2
-    },
-    {
-      "id": "a0f42985-3dee-4257-9683-c70fef7992e6",
-      "cukcukId": "a0f42985-3dee-4257-9683-c70fef7992e6",
-      "cukcukCode": "(H08) Highball Jameson",
-      "categoryId": "cukcuk-qr-highball",
-      "categoryName": "하이볼",
-      "sourceName": "제임슨 하이볼 | Jameson Highball",
-      "names": {
-        "ko": "제임슨 하이볼",
-        "vi": "Jameson Highball",
-        "zh": "尊美醇高球",
-        "en": "Jameson Highball"
-      },
-      "price": 99000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 107,
-      "categorySortOrder": 3
-    },
-    {
-      "id": "23343ff7-8a2a-4b96-bb0e-25b133195e53",
-      "cukcukId": "23343ff7-8a2a-4b96-bb0e-25b133195e53",
-      "cukcukCode": "(H05) Highball Jim Beam",
-      "categoryId": "cukcuk-qr-highball",
-      "categoryName": "하이볼",
-      "sourceName": "짐빔 하이볼 | Jim Beam Highball",
-      "names": {
-        "ko": "짐빔 하이볼",
-        "vi": "Jim Beam Highball",
-        "zh": "金宾高球",
-        "en": "Jim Beam Highball"
-      },
-      "price": 99000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 108,
-      "categorySortOrder": 4
-    },
-    {
-      "id": "b0562531-0db8-4602-bc6d-661b06645147",
-      "cukcukId": "b0562531-0db8-4602-bc6d-661b06645147",
-      "cukcukCode": "(H09) Highball Bombay",
-      "categoryId": "cukcuk-qr-highball",
-      "categoryName": "하이볼",
-      "sourceName": "짐빔블랙 하이볼 | Jim Beam Black Extra-Aged Highball",
-      "names": {
-        "ko": "짐빔 블랙 엑스트라 에이지드 하이볼",
-        "vi": "Jim Beam Black Extra-Aged Highball",
-        "zh": "金宾黑牌特酿高球",
-        "en": "Jim Beam Black Extra-Aged Highball"
-      },
-      "price": 99000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 109,
-      "categorySortOrder": 5
-    },
-    {
-      "id": "65df8aff-db47-4441-8215-e60ff8229e99",
-      "cukcukId": "65df8aff-db47-4441-8215-e60ff8229e99",
-      "cukcukCode": "(H06) Highball Johnnie",
-      "categoryId": "cukcuk-qr-highball",
-      "categoryName": "하이볼",
-      "sourceName": "짐빔애플 하이볼 | Jim Beam Apple Highball",
-      "names": {
-        "ko": "짐빔 애플 하이볼",
-        "vi": "Jim Beam Apple Highball",
-        "zh": "金宾苹果高球",
-        "en": "Jim Beam Apple Highball"
-      },
-      "price": 99000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 110,
-      "categorySortOrder": 6
-    },
-    {
-      "id": "292433d8-bef9-450d-814d-f2cb60aebb6b",
-      "cukcukId": "292433d8-bef9-450d-814d-f2cb60aebb6b",
-      "cukcukCode": "(H03) Highball Jack Honey",
-      "categoryId": "cukcuk-qr-highball",
-      "categoryName": "하이볼",
-      "sourceName": "짐빔허니 하이볼 | Jim Beam Honey Highball",
-      "names": {
-        "ko": "짐빔 허니 하이볼",
-        "vi": "Jim Beam Honey Highball",
-        "zh": "金宾蜂蜜高球",
-        "en": "Jim Beam Honey Highball"
-      },
-      "price": 99000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
       "sortOrder": 111,
-      "categorySortOrder": 7
+      "categorySortOrder": 17
     }
   ],
   "optionTemplates": [
@@ -4256,9 +4280,9 @@
     }
   ],
   "inventoryCandidateCount": 251,
-  "catalogRevision": "cukcuk-table-qr-2026-08-29-95357aa1ca69-option-order-v2",
+  "catalogRevision": "cukcuk-table-qr-2026-08-29-977c992bdbcc-menu-polish-v2",
   "tableQrLayout": {
-    "revision": "cukcuk-table-qr-2026-08-29-95357aa1ca69-option-order-v2",
+    "revision": "cukcuk-table-qr-2026-08-29-977c992bdbcc-menu-polish-v2",
     "capturedAt": "2026-08-29T11:04:37.313Z",
     "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
     "includeUnlisted": false,

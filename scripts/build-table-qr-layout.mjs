@@ -7,12 +7,14 @@ const CATEGORY_IDS = new Map([
   ['New Menu', 'f60b3e05-f21f-4905-9207-0e494ff2b464'],
   ['Daily Discounts', 'cukcuk-qr-daily-discounts'],
   ['세트메뉴 | Combo món ăn', '6a144c27-c7ba-43f6-b6e1-4be8b008b433'],
+  ['Half Chicken', 'cukcuk-half-chicken'],
   ['다방치킨 | Dabang Chicken', '0afd5056-2ad2-46d3-9122-6886fedc4d3a'],
   ['통닭 | Gà nguyên con', '52c66f7a-c2df-4713-a319-65e3963eb912'],
   ['날개치킨 | Cánh gà sốt', '2424e567-8845-48c6-a4af-91c51a4d3aaa'],
   ['다방분식 | Đồ ăn nhẹ Dabang', '5181465e-2d7d-4f9f-bdc1-de466348cd7f'],
   ['스페이스 피자 | Space Pizza', '0ac81743-8d00-47bd-af8c-e102b44f4247'],
   ['안주 |Món nhắm', '601b353e-0f17-46db-bd64-d64140a70d27'],
+  ['Dried Snacks', 'cukcuk-dried-snacks'],
   ['음료 | Đồ uống', '4ae5f7a4-9b6d-4c73-a895-af5d60c8fd87'],
   ['주류 |Đồ uống có cồn', 'cukcuk-alcohol'],
   ['하이볼 | Highball', 'cukcuk-qr-highball']
@@ -22,12 +24,14 @@ const CATEGORY_NAMES = new Map([
   ['New Menu', { ko: '신메뉴', vi: 'Món mới', zh: '新菜单', en: 'New Menu' }],
   ['Daily Discounts', { ko: '요일별 할인', vi: 'Ưu đãi theo ngày', zh: '每日优惠', en: 'Daily Discounts' }],
   ['세트메뉴 | Combo món ăn', { ko: '세트', vi: 'Combo', zh: '套餐', en: 'Set Combo' }],
+  ['Half Chicken', { ko: '반마리 치킨', vi: 'Gà nửa con', zh: '半只鸡', en: 'Half Chicken' }],
   ['다방치킨 | Dabang Chicken', { ko: '다방치킨', vi: 'Gà Dabang', zh: 'Dabang 炸鸡', en: 'Dabang Chicken' }],
   ['통닭 | Gà nguyên con', { ko: '통닭', vi: 'Gà nguyên con chiên', zh: '整只炸鸡', en: 'Whole Fried Chicken' }],
   ['날개치킨 | Cánh gà sốt', { ko: '날개치킨', vi: 'Gà cánh chiên', zh: '炸鸡翅', en: 'Chicken Wings' }],
   ['다방분식 | Đồ ăn nhẹ Dabang', { ko: '다방분식', vi: 'Món ăn vặt Dabang', zh: 'Dabang 小吃', en: 'Dabang Snacks' }],
   ['스페이스 피자 | Space Pizza', { ko: '스페이스 피자', vi: 'Pizza Space', zh: 'Space 披萨', en: 'Space Pizza' }],
   ['안주 |Món nhắm', { ko: '안주', vi: 'Món nhậu', zh: '下酒菜', en: 'Bar Snacks' }],
+  ['Dried Snacks', { ko: '건어물', vi: 'Đồ khô', zh: '干货', en: 'Dried Snacks' }],
   ['음료 | Đồ uống', { ko: '음료', vi: 'Nước uống', zh: '饮料', en: 'Beverages' }],
   ['주류 |Đồ uống có cồn', { ko: '주류', vi: 'Đồ uống có cồn', zh: '酒类', en: 'Alcohol' }],
   ['하이볼 | Highball', { ko: '하이볼', vi: 'Rượu Highball', zh: '高球酒', en: 'Highball' }]
@@ -48,6 +52,7 @@ function categoryNames(sourceName) {
 
 export function buildTableQrConfig(snapshot, existingConfig = {}) {
   const optionOrdering = clone(existingConfig?.optionOrdering);
+  const menuNameOverrides = clone(existingConfig?.menuNameOverrides);
   const activeCategories = (snapshot.categories || [])
     .filter(category => category.active && !category.hidden)
     .slice()
@@ -94,9 +99,12 @@ export function buildTableQrConfig(snapshot, existingConfig = {}) {
     categories: categories.map(category => ({
       id: category.id,
       code: category.code,
+      sourceName: category.sourceName,
+      names: category.names,
       menus: category.menus.map(menu => ({ code: menu.code, outOfStock: menu.outOfStock }))
     })),
-    optionOrdering: optionOrdering || null
+    optionOrdering: optionOrdering || null,
+    menuNameOverrides: menuNameOverrides || null
   };
   const fingerprint = crypto.createHash('sha256').update(JSON.stringify(fingerprintSource)).digest('hex').slice(0, 12);
   const capturedDate = String(snapshot.extractedAt || '').slice(0, 10) || 'undated';
@@ -115,6 +123,7 @@ export function buildTableQrConfig(snapshot, existingConfig = {}) {
     categories
   };
   if (optionOrdering) config.optionOrdering = optionOrdering;
+  if (menuNameOverrides) config.menuNameOverrides = menuNameOverrides;
   return config;
 }
 

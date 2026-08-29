@@ -7,6 +7,7 @@ const LANGUAGES = ['ko', 'vi', 'zh', 'en'];
 const MODEL = process.env.OPENAI_TRANSLATION_MODEL || 'gpt-5.6-terra';
 const API_KEY = process.env.OPENAI_API_KEY || '';
 const BATCH_SIZE = 24;
+const LAYOUT_PATH = 'data/cukcuk-table-qr-layout.json';
 
 const published = JSON.parse(fs.readFileSync(DATA_PATH, 'utf8'));
 let cache = { version: 1, items: {} };
@@ -15,6 +16,15 @@ try {
 } catch {}
 if (!cache || typeof cache !== 'object') cache = { version: 1, items: {} };
 if (!cache.items || typeof cache.items !== 'object') cache.items = {};
+let menuNameOverrides = {};
+try {
+  menuNameOverrides = JSON.parse(fs.readFileSync(LAYOUT_PATH, 'utf8'))?.menuNameOverrides || {};
+} catch {}
+
+function codeKey(value) {
+  return String(value ?? '').normalize('NFKC').replace(/\s+/g, ' ').trim().toLocaleLowerCase('en-US');
+}
+const menuNameOverridesByCode = new Map(Object.entries(menuNameOverrides).map(([code, names]) => [codeKey(code), names]));
 
 const entities = [];
 function cleanNames(names = {}) {
@@ -126,6 +136,23 @@ if (pending.length && API_KEY) {
   } catch (error) {
     translationError = error.message || 'translation failed';
     console.log(`::warning::AI translation skipped: ${translationError}`);
+  }
+}
+
+for (const menu of published.menus || []) {
+  const overrides = menuNameOverridesByCode.get(codeKey(menu.cukcukCode || menu.productCode || menu.code));
+  if (!overrides) continue;
+  const finalNames = cleanNames({ ...(menu.names || {}), ...overrides });
+  menu.names = finalNames;
+  const key = `menu:${menu.id}`;
+  const sourceName = String(menu.sourceName || finalNames.ko || finalNames.en || '').replace(/\s+/g, ' ').trim();
+  if (sourceName && LANGUAGES.every(code => finalNames[code])) {
+    cache.items[key] = {
+      fingerprint: entityFingerprint({ sourceName, currentNames: finalNames }),
+      sourceName,
+      names: finalNames,
+      updatedAt: new Date().toISOString()
+    };
   }
 }
 
