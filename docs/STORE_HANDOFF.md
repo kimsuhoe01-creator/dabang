@@ -6,7 +6,8 @@
 
 - 작업 기준 `main`: `7f8609a` (`Update CUKCUK published data`)
 - 작업 브랜치: `tablet-menu-content-options-20260830`
-- 상태: **CUKCUK 옵션과 앱 옵션 검증 완료, 전체 사진 보강·최종 배포 진행 중**
+- 사진·캐시 배포 커밋: `da9be9e` (`Refresh tablet menu photos and offline cache`)
+- 상태: **CUKCUK 옵션·앱 옵션·전체 사진 보강을 `main`에 배포 완료**
 
 ### 돈까스 플레이트·튀김 옵션 완료
 
@@ -66,8 +67,8 @@
 
 ### 공개 링크
 
-- 안전 미리보기: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1
-- 관리자 화면: https://kimsuhoe01-creator.github.io/dabang/admin-v2.html
+- 안전 미리보기: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=da9be9e
+- 관리자 화면: https://kimsuhoe01-creator.github.io/dabang/admin-v2.html?deploy=da9be9e
 - GitHub 저장소: https://github.com/kimsuhoe01-creator/dabang
 - CUKCUK 동기화: https://github.com/kimsuhoe01-creator/dabang/actions/workflows/cukcuk-sync.yml
 - 주문 워커 상태: https://dabang-cukcuk-order-api.kimsuhoe01.workers.dev/health
