@@ -208,6 +208,7 @@ const SAPPORO_DETAIL_TEMPLATE = 'cukcuk-detail:57b1fe70-fe33-4654-9d58-575f27774
 const FRIED_DETAIL_TEMPLATE = 'cukcuk-detail:6a4fc8cd-4937-46f0-990c-536bdffb1de3:0';
 const FOUR_WINGS_DETAIL_TEMPLATE = 'cukcuk-detail:88d856ff-e35d-4c21-893b-3f60e2fa71fa:0';
 const HALF_WINGS_DETAIL_TEMPLATE = 'cukcuk-detail:2ce328a0-8d0c-481e-883f-2e35684b900d:0';
+const EXTRA_TOPPINGS_DETAIL_TEMPLATE = 'cukcuk-detail:08b4aba2-4116-4148-b2a9-763c5d72d543:0';
 const SAPPORO_SIZE_ORDER = [
   'dc46801f-c5c7-4b94-82f0-014b2c1aad69', // 330cc
   '38465a50-9825-4244-8887-bbc1fd87efbd', // 640cc
@@ -239,6 +240,11 @@ layout.detailOptionSources = {
     expectedCategoryCount: 1,
     expectedValueCount: 7,
     templateNames: { ko: '윙봉 맛 2개 선택', vi: 'Chọn 2 vị cánh gà', zh: '选择两种鸡翅口味', en: 'Choose Two Wing Flavors' }
+  },
+  'ᄉ TT 加 AET': {
+    expectedCategoryCount: 1,
+    expectedValueCount: 6,
+    templateNames: { ko: '사리 추가 선택', vi: 'Chọn món thêm', zh: '选择加料', en: 'Choose Extra Toppings' }
   }
 };
 
@@ -268,6 +274,10 @@ layout.menuOptionOverrides = {
   '(W01) Cánh gà vị đôi': {
     templateIds: [HALF_WINGS_DETAIL_TEMPLATE],
     rules: { [HALF_WINGS_DETAIL_TEMPLATE]: { required: true, minSelections: 2, maxSelections: 2 } }
+  },
+  'ᄉ TT 加 AET': {
+    templateIds: [EXTRA_TOPPINGS_DETAIL_TEMPLATE],
+    rules: { [EXTRA_TOPPINGS_DETAIL_TEMPLATE]: { required: true, minSelections: 1, maxSelections: 5 } }
   },
   '(KX01)': {
     templateIds: [BONE_TEMPLATE, CHICKEN_TEMPLATE],
@@ -327,10 +337,7 @@ markAvailable('주류 |Đồ uống có cồn', '(A02) Bia tuoi Sapporo');
 markAvailable('New Menu', 'HCX');
 markAvailable('세트메뉴 | Combo món ăn', '(S08) Cánh gà 4 vị');
 markAvailable('날개치킨 | Cánh gà sốt', '(W01) Cánh gà vị đôi');
-
-// A separate zero-won “add extras” wrapper still has no public option attachment.
-// Keep only this item unavailable until CUKCUK confirms its six-value group.
-markUnavailable('안주 |Món nhắm', 'ᄉ TT 加 AET');
+markAvailable('안주 |Món nhắm', 'ᄉ TT 加 AET');
 
 reorder('주류 |Đồ uống có cồn', [
   '(A01) Sapporo 1t1 640ml',

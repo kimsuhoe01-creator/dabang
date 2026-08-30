@@ -351,15 +351,15 @@ test('the checked-in CUKCUK table QR snapshot publishes the polished 14-category
   assert.deepEqual(result.menus.find(menu => menu.cukcukCode === 'BDH').names, { ko: '수박', vi: 'Dưa hấu', zh: '西瓜', en: 'Watermelon' });
   assert.deepEqual(result.menus.filter(menu => menu.available === false).map(menu => menu.cukcukCode).sort(), [
     '(M04) nacho cham phomai',
-    'CC',
-    'ᄉ TT 加 AET'
+    'CC'
   ].sort());
   const expectedRules = {
     HCX: [1, 1],
     '(A02) Bia tuoi Sapporo': [1, 3],
     '(T10) Do chien/mon chien': [1, 10],
     '(S08) Cánh gà 4 vị': [4, 4],
-    '(W01) Cánh gà vị đôi': [2, 2]
+    '(W01) Cánh gà vị đôi': [2, 2],
+    'ᄉ TT 加 AET': [1, 5]
   };
   for (const [code, [minSelections, maxSelections]] of Object.entries(expectedRules)) {
     const menu = result.menus.find(item => item.cukcukCode === code);

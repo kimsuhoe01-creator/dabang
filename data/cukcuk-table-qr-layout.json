@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "revision": "cukcuk-tablet-content-2026-08-30-a449e2658a9b",
-  "capturedAt": "2026-08-30T03:10:01.719Z",
+  "revision": "cukcuk-tablet-content-2026-08-30-0376804d9cc1",
+  "capturedAt": "2026-08-30T03:57:09.888Z",
   "timezone": "Asia/Ho_Chi_Minh",
   "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
   "includeUnlisted": false,
@@ -931,7 +931,7 @@
           "code": "ᄉ TT 加 AET",
           "displayName": "사리추가 | Thêm topping | 加配料 | Add extra toppings",
           "price": 0,
-          "outOfStock": true,
+          "outOfStock": false,
           "sortOrder": 6
         }
       ]
@@ -1399,6 +1399,18 @@
           "maxSelections": 2
         }
       }
+    },
+    "ᄉ TT 加 AET": {
+      "templateIds": [
+        "cukcuk-detail:08b4aba2-4116-4148-b2a9-763c5d72d543:0"
+      ],
+      "rules": {
+        "cukcuk-detail:08b4aba2-4116-4148-b2a9-763c5d72d543:0": {
+          "required": true,
+          "minSelections": 1,
+          "maxSelections": 5
+        }
+      }
     }
   },
   "menuSubtitleOverrides": {
@@ -1614,6 +1626,16 @@
         "vi": "Chọn 2 vị cánh gà",
         "zh": "选择两种鸡翅口味",
         "en": "Choose Two Wing Flavors"
+      }
+    },
+    "ᄉ TT 加 AET": {
+      "expectedCategoryCount": 1,
+      "expectedValueCount": 6,
+      "templateNames": {
+        "ko": "사리 추가 선택",
+        "vi": "Chọn món thêm",
+        "zh": "选择加料",
+        "en": "Choose Extra Toppings"
       }
     }
   }
