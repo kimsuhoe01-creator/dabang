@@ -70,7 +70,7 @@ test('store tablet cards use a compact four-column layout without empty subtitle
 
 test('preview orders are unmistakably marked as not sent to the POS', () => {
   assert.match(html, /id="previewModeBadge"[^>]*hidden>미리보기 · POS 전송 안 됨<\/div>/);
-  assert.match(html, /const PREVIEW_MODE=new URLSearchParams\(location\.search\)\.get\('preview'\)==='1'/);
+  assert.match(html, /const PREVIEW_MODE=PAGE_PARAMS\.get\('preview'\)==='1'/);
   assert.match(html, /previewBadge:'미리보기 · POS 전송 안 됨'/);
   assert.match(html, /previewNote:'미리보기입니다\. 이 주문은 POS와 주방으로 전송되지 않습니다\.'/);
   assert.match(html, /previewTitle:'미리보기 완료'/);
@@ -81,12 +81,43 @@ test('preview orders are unmistakably marked as not sent to the POS', () => {
   assert.match(cartSource, /PREVIEW_MODE\?words\[lang\]\.previewNote:words\[lang\]\.orderNote/);
 
   const submitSource = sourceSlice('async function submitOrder()', 'function showOrderSuccess');
-  assert.match(submitSource, /if\(PREVIEW_MODE\).*else\{const response=await fetch\(ORDER_ENDPOINT/s);
+  assert.match(submitSource, /if\(PREVIEW_MODE\).*else\{.*const response=await fetch\(ORDER_ENDPOINT/s);
   assert.match(submitSource, /showOrderSuccess\(payload,receipt,PREVIEW_MODE\)/);
 
   const successSource = sourceSlice('function showOrderSuccess', 'function finishOrder');
   assert.match(successSource, /preview\?words\[lang\]\.previewTitle:words\[lang\]\.orderSuccess/);
   assert.match(successSource, /preview\?words\[lang\]\.previewOrder:words\[lang\]\.orderSuccessMessage/);
+});
+
+test('live orders ignore editor drafts and wait for the published catalog', () => {
+  const stateSource = sourceSlice("const SUPPORTED_LANGS=new Set", 'const words=');
+  assert.match(stateSource, /const PREVIEW_MODE=PAGE_PARAMS\.get\('preview'\)==='1'/);
+  assert.match(stateSource, /let storedState=null;if\(PREVIEW_MODE\)\{try\{storedState=JSON\.parse\(localStorage\.getItem\('dabangTabletPreview'\)\)/);
+
+  const selectionSource = sourceSlice('function selectMenu(id,opener)', 'function addItem');
+  assert.match(selectionSource, /!PREVIEW_MODE&&!catalogReady/);
+  assert.match(selectionSource, /catalogLoadFailed\?words\[lang\]\.menuLoadFailed:words\[lang\]\.menuLoading/);
+
+  const loaderSource = sourceSlice('async function loadPublishedMenu()', 'function restartForNextGuest');
+  assert.match(loaderSource, /catalogReady=true;catalogLoadFailed=false/);
+  assert.match(loaderSource, /catalogReady=PREVIEW_MODE;catalogLoadFailed=true/);
+});
+
+test('live submission has bounded waiting, actionable errors, and a stable retry id', () => {
+  const submitSource = sourceSlice('function orderPayload()', 'function showOrderSuccess');
+  assert.match(submitSource, /if\(pendingOrderPayload\)return pendingOrderPayload/);
+  assert.match(submitSource, /typeof crypto!=='undefined'&&typeof crypto\.randomUUID==='function'/);
+  assert.match(submitSource, /catalogRevision:String\(state\.catalogRevision\|\|''\)/);
+  assert.match(submitSource, /headers:\{'Content-Type':'application\/json'\}/);
+  assert.match(submitSource, /new AbortController\(\)/);
+  assert.match(submitSource, /setTimeout\(\(\)=>controller\.abort\(\),20000\)/);
+  assert.match(submitSource, /result\.message/);
+  assert.match(submitSource, /ORDER_IN_PROGRESS','ORDER_OUTCOME_UNKNOWN/);
+  assert.match(submitSource, /orderVerificationRequired=error\?\.definite!==true/);
+  assert.match(submitSource, /setOrderNotice\(message,orderVerificationRequired\?'uncertain':'error'\)/);
+  assert.match(submitSource, /try\{\s*payload=orderPayload\(\)/);
+  assert.match(submitSource, /finally\{if\(timeoutId\)clearTimeout\(timeoutId\);setOrderSending\(false\)\}/);
+  assert.match(html, /orderUncertain:'Chưa xác nhận được kết quả gửi\. Không bấm lại; hãy kiểm tra đơn trên POS\.'/);
 });
 
 function decodeRgbaPng(buffer) {

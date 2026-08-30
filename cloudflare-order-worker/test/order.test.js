@@ -57,6 +57,7 @@ test("allows up to three toppings but rejects a fourth", () => {
 
 test("rejects a zero-priced wrapper menu when its option source is missing", () => {
   assert.throws(() => validateAndBuildOrder({
+    clientOrderId: "order-zero",
     table: { id: "table-1", name: "B-02" },
     items: [{ menuId: "menu-zero", quantity: 1, options: [] }],
   }, {
@@ -70,6 +71,20 @@ test("rejects foreign option groups, unknown values, and duplicate selections", 
   assert.throws(() => buildConstrainedOrder("owned", ["value-1"], 0, 3, { templateId: "foreign" }), /선택할 수 없는 옵션 그룹/);
   assert.throws(() => buildConstrainedOrder("owned", ["unknown"], 0, 3), /선택할 수 없는 옵션/);
   assert.throws(() => buildConstrainedOrder("owned", ["value-1", "value-1"], 0, 3), /중복/);
+});
+
+test("requires a valid client order id so retries cannot bypass deduplication", () => {
+  assert.throws(
+    () => validateAndBuildOrder({
+      table: { id: "table-1", name: "B-02" },
+      items: [{ menuId: "menu-1", quantity: 1, options: [] }],
+    }, {
+      synced: true,
+      menus: [{ id: "menu-1", price: 100, available: true, optionTemplateIds: [] }],
+      optionTemplates: [],
+    }, "branch-1"),
+    (error) => error.code === "CLIENT_ORDER_ID_REQUIRED" && error.status === 400,
+  );
 });
 
 test("logs in and creates the first order for a table", async () => {
@@ -178,6 +193,7 @@ function buildConstrainedOrder(templateId, valueIds, minSelections, maxSelection
     visible: true,
   }));
   return validateAndBuildOrder({
+    clientOrderId: `order-${templateId}`,
     table: { id: "table-1", name: "B-02" },
     items: [{
       menuId: "menu-1",

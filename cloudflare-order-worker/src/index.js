@@ -31,22 +31,37 @@ export default {
       return cors(request, json({ ok: false, code: "ORIGIN_NOT_ALLOWED", message: "허용되지 않은 주문 요청입니다." }, 403));
     }
 
+    let payload = null;
     try {
-      const payload = await request.json();
+      payload = await request.json();
       const menuResponse = await fetch(env.MENU_DATA_URL, {
         headers: { Accept: "application/json" },
         cf: { cacheTtl: 60, cacheEverything: true },
       });
       if (!menuResponse.ok) throw new ServiceError("메뉴 기준 정보를 불러오지 못했습니다.", 503, "MENU_DATA_UNAVAILABLE");
       const menuData = await menuResponse.json();
+      const requestedRevision = typeof payload.catalogRevision === "string" ? payload.catalogRevision.trim() : "";
+      const currentRevision = String(menuData.catalogRevision || menuData.tableQrLayout?.revision || "").trim();
+      if (requestedRevision && currentRevision && requestedRevision !== currentRevision) {
+        throw new ServiceError("메뉴 정보가 갱신되었습니다. 화면을 새로고침하고 메뉴와 옵션을 다시 선택해 주세요.", 409, "CATALOG_OUTDATED");
+      }
       const order = validateAndBuildOrder(payload, menuData, env.CUKCUK_BRANCH_ID);
       const tableId = order.ListTableID[0];
       const tableName = String(payload.table.name);
+      const submissionFingerprint = JSON.stringify({
+        catalogRevision: requestedRevision,
+        tableId,
+        items: payload.items.map((item) => ({
+          menuId: item?.menuId,
+          quantity: item?.quantity,
+          options: Array.isArray(item?.options) ? item.options.map((option) => ({ templateId: option?.templateId, valueId: option?.valueId })) : [],
+        })),
+      });
       const coordinator = env.TABLE_ORDERS.getByName(tableId);
       const coordinatorResponse = await coordinator.fetch("https://table-order.internal/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ order, tableName }),
+        body: JSON.stringify({ order, tableName, submissionFingerprint }),
       });
       const coordinatorResult = await coordinatorResponse.json();
       if (!coordinatorResponse.ok || coordinatorResult.ok === false) {
@@ -66,6 +81,15 @@ export default {
       }));
     } catch (error) {
       const status = Number.isInteger(error?.status) ? error.status : 502;
+      console.warn("order_request_failed", JSON.stringify({
+        status,
+        code: typeof error?.code === "string" ? error.code : "ORDER_ERROR",
+        message: error instanceof Error ? error.message : "unknown error",
+        clientOrderId: typeof payload?.clientOrderId === "string" ? payload.clientOrderId.slice(0, 100) : null,
+        tableId: typeof payload?.table?.id === "string" ? payload.table.id.slice(0, 100) : null,
+        itemCount: Array.isArray(payload?.items) ? payload.items.length : 0,
+        menuIds: Array.isArray(payload?.items) ? payload.items.slice(0, 50).map((item) => String(item?.menuId || "").slice(0, 100)) : [],
+      }));
       return cors(request, json({
         ok: false,
         code: typeof error?.code === "string" ? error.code : "ORDER_ERROR",
@@ -90,20 +114,9 @@ export class TableOrderCoordinator {
     return task;
   }
 
-  async submit({ order, tableName }) {
+  async submit({ order, tableName, submissionFingerprint }) {
     try {
-      const activeOrder = await this.ctx.storage.get("activeOrder");
-      const result = await createOrAppendCukCukOrder(
-        this.env,
-        order,
-        tableName,
-        activeOrder?.orderId || null,
-      );
-      await this.ctx.storage.put("activeOrder", {
-        orderId: result.Id || order.Id,
-        orderNo: result.No || null,
-        updatedAt: new Date().toISOString(),
-      });
+      const result = await submitTableOrder(this.ctx.storage, this.env, order, tableName, submissionFingerprint);
       return json({ ok: true, data: result });
     } catch (error) {
       const status = Number.isInteger(error?.status) ? error.status : 502;
@@ -113,6 +126,48 @@ export class TableOrderCoordinator {
         message: error instanceof Error ? error.message : "주문 처리 중 오류가 발생했습니다.",
       }, status);
     }
+  }
+}
+
+export async function submitTableOrder(storage, env, order, tableName, submissionFingerprint, submitter = createOrAppendCukCukOrder) {
+  const submissionKey = `submission:${order.Id}`;
+  const fingerprint = typeof submissionFingerprint === "string" ? submissionFingerprint : "";
+  const previous = await storage.get(submissionKey);
+  if (previous) {
+    if (previous.fingerprint !== fingerprint) {
+      throw new ServiceError("같은 주문 번호에 다른 메뉴가 들어 있어 전송을 막았습니다.", 409, "ORDER_ID_CONFLICT");
+    }
+    if (previous.status === "completed" && previous.result) return { ...previous.result, deduplicated: true };
+    throw new ServiceError(
+      previous.status === "processing" ? "같은 주문을 이미 처리 중입니다. 다시 누르지 말고 POS를 확인해 주세요." : "이 주문의 처리 결과를 확인해야 합니다. 다시 누르지 말고 POS를 확인해 주세요.",
+      409,
+      previous.status === "processing" ? "ORDER_IN_PROGRESS" : "ORDER_OUTCOME_UNKNOWN",
+    );
+  }
+
+  const startedAt = new Date().toISOString();
+  await storage.put(submissionKey, { status: "processing", fingerprint, startedAt });
+  try {
+    const activeOrder = await storage.get("activeOrder");
+    const result = await submitter(env, order, tableName, activeOrder?.orderId || null);
+    const storedResult = {
+      Id: result.Id || order.Id,
+      No: result.No || null,
+      Status: result.Status ?? null,
+      action: result.action || "created",
+    };
+    const completedAt = new Date().toISOString();
+    await storage.put({
+      [submissionKey]: { status: "completed", fingerprint, startedAt, completedAt, result: storedResult },
+      activeOrder: { orderId: storedResult.Id, orderNo: storedResult.No, updatedAt: completedAt },
+    });
+    return storedResult;
+  } catch (error) {
+    const code = typeof error?.code === "string" ? error.code : "ORDER_ERROR";
+    const definitelyNotApplied = Number(error?.status) < 500 || code.startsWith("CUKCUK_LOGIN_");
+    if (definitelyNotApplied) await storage.delete(submissionKey);
+    else await storage.put(submissionKey, { status: "unknown", fingerprint, startedAt, failedAt: new Date().toISOString(), code });
+    throw error;
   }
 }
 

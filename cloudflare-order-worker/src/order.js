@@ -2,6 +2,8 @@ const API_ROOT = "https://graphapi.cukcuk.vn";
 
 export function validateAndBuildOrder(payload, menuData, branchId) {
   if (!payload || typeof payload !== "object") throw invalid("주문 정보가 올바르지 않습니다.");
+  const requestedId = cleanId(payload.clientOrderId);
+  if (!requestedId) throw new OrderError("주문 번호가 올바르지 않습니다. 화면을 새로고침하고 다시 주문해 주세요.", 400, "CLIENT_ORDER_ID_REQUIRED");
   const tableId = cleanId(payload.table?.id);
   const tableName = cleanText(payload.table?.name, 80);
   if (!tableId || !tableName) throw invalid("테이블을 다시 선택해 주세요.");
@@ -88,12 +90,11 @@ export function validateAndBuildOrder(payload, menuData, branchId) {
     }
   }
 
-  const requestedId = cleanId(payload.clientOrderId);
   const date = typeof payload.orderedAt === "string" && Number.isFinite(Date.parse(payload.orderedAt))
     ? new Date(payload.orderedAt).toISOString()
     : new Date().toISOString();
   return {
-    Id: requestedId || crypto.randomUUID(),
+    Id: requestedId,
     Type: 1,
     BranchId: branchId,
     Date: date,
