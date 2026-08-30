@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'dabang-tablet-v15';
+const CACHE_VERSION = 'dabang-tablet-v16';
 const SHELL_CACHE = `${CACHE_VERSION}-shell`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const APP_SHELL = [
@@ -6,7 +6,7 @@ const APP_SHELL = [
   './manifest.webmanifest',
   './assets/table-layout.js',
   './assets/option-order.js',
-  './assets/menu-images.js?v=20260830-visual-option-fix-v6',
+  './assets/menu-images.js?v=20260830-soju-head-safe-v7',
   './assets/brand/dabang-logo.png',
   './assets/pwa/icon-32.png',
   './assets/pwa/icon-180.png',
