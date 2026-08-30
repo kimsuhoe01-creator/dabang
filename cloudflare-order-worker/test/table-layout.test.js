@@ -35,22 +35,73 @@ test('rebuilding a table QR capture preserves the separately verified CUKCUK opt
     templates: [{ templateId: 'choice', valueIds: ['free', 'paid'] }]
   };
   const menuNameOverrides = { ONE: { ko: '첫 번째 메뉴' } };
+  const menuSubtitleOverrides = { ONE: { names: { ko: '부제목', vi: 'Phụ đề' }, tone: 'warning' } };
+  const menuOptionOverrides = { ONE: { templateIds: ['choice'], rules: { choice: { required: true, minSelections: 2, maxSelections: 2 } } } };
+  const detailOptionSources = { ONE: { expectedCategoryCount: 1, expectedValueCount: 2, templateNames: { ko: '선택' } } };
 
-  const result = buildTableQrConfig(snapshot, { optionOrdering, menuNameOverrides });
-  const changed = buildTableQrConfig(snapshot, { optionOrdering: { ...optionOrdering, templates: [{ templateId: 'choice', valueIds: ['paid', 'free'] }] }, menuNameOverrides });
+  const result = buildTableQrConfig(snapshot, { optionOrdering, menuNameOverrides, menuSubtitleOverrides, menuOptionOverrides, detailOptionSources });
+  const changed = buildTableQrConfig(snapshot, { optionOrdering: { ...optionOrdering, templates: [{ templateId: 'choice', valueIds: ['paid', 'free'] }] }, menuNameOverrides, menuSubtitleOverrides, menuOptionOverrides, detailOptionSources });
   const renamedSnapshot = {
     ...snapshot,
     categories: [{ ...snapshot.categories[0], displayName: 'New Menu | Món mới' }],
     menus: [{ ...snapshot.menus[0], category: 'New Menu | Món mới' }]
   };
-  const renamed = buildTableQrConfig(renamedSnapshot, { optionOrdering, menuNameOverrides });
+  const renamed = buildTableQrConfig(renamedSnapshot, { optionOrdering, menuNameOverrides, menuSubtitleOverrides, menuOptionOverrides, detailOptionSources });
 
   assert.deepEqual(result.optionOrdering, optionOrdering);
   assert.deepEqual(result.menuNameOverrides, menuNameOverrides);
+  assert.deepEqual(result.menuSubtitleOverrides, menuSubtitleOverrides);
+  assert.deepEqual(result.menuOptionOverrides, menuOptionOverrides);
+  assert.deepEqual(result.detailOptionSources, detailOptionSources);
   assert.notEqual(result.optionOrdering, optionOrdering);
   assert.notEqual(result.menuNameOverrides, menuNameOverrides);
+  assert.notEqual(result.menuSubtitleOverrides, menuSubtitleOverrides);
+  assert.notEqual(result.menuOptionOverrides, menuOptionOverrides);
+  assert.notEqual(result.detailOptionSources, detailOptionSources);
   assert.notEqual(result.revision, changed.revision);
   assert.notEqual(result.revision, renamed.revision);
+});
+
+test('menu overrides attach a real option template and publish per-menu rules and localized subtitles', () => {
+  const published = {
+    categories: [],
+    menus: [{ id: 'one', cukcukCode: 'ONE', names: { ko: '하나' }, price: 100, optionTemplateIds: [] }],
+    optionTemplates: [{ id: 'choice', menuIds: [], minSelections: 0, maxSelections: 1, values: [{ id: 'a', visible: true }, { id: 'b', visible: true }] }]
+  };
+  const config = {
+    revision: 'menu-overrides-v1',
+    includeUnlisted: false,
+    categoryCount: 1,
+    menuCount: 1,
+    categories: [{ id: 'cat', sortOrder: 0, menus: [{ code: 'ONE', sortOrder: 0 }] }],
+    menuSubtitleOverrides: { ONE: { names: { ko: '두 개를 골라 주세요', vi: 'Chọn hai vị' }, tone: 'danger' } },
+    menuOptionOverrides: { ONE: { templateIds: ['choice'], rules: { choice: { required: true, minSelections: 2, maxSelections: 2 } } } }
+  };
+
+  const result = applyTableQrLayout(published, config);
+
+  assert.deepEqual(result.menus[0].optionTemplateIds, ['choice']);
+  assert.deepEqual(result.menus[0].optionRules.choice, { required: true, minSelections: 2, maxSelections: 2 });
+  assert.deepEqual(result.menus[0].subtitle, { names: { ko: '두 개를 골라 주세요', vi: 'Chọn hai vị', zh: '', en: '' }, tone: 'danger' });
+  assert.deepEqual(result.optionTemplates[0].menuIds, ['one']);
+});
+
+test('menu option rules cannot require more selections than the template exposes', () => {
+  const published = {
+    categories: [],
+    menus: [{ id: 'one', cukcukCode: 'ONE', names: { ko: '하나' }, price: 100, optionTemplateIds: [] }],
+    optionTemplates: [{ id: 'choice', menuIds: [], values: [{ id: 'a', visible: true }, { id: 'b', visible: true }] }]
+  };
+  const config = {
+    revision: 'menu-overrides-invalid-count',
+    includeUnlisted: false,
+    categoryCount: 1,
+    menuCount: 1,
+    categories: [{ id: 'cat', sortOrder: 0, menus: [{ code: 'ONE', sortOrder: 0 }] }],
+    menuOptionOverrides: { ONE: { templateIds: ['choice'], rules: { choice: { required: true, minSelections: 1, maxSelections: 3 } } } }
+  };
+
+  assert.throws(() => applyTableQrLayout(published, config), /only 2 visible values exist/i);
 });
 
 test('default table groups use table-name prefixes and A, B, C priority', () => {
@@ -264,11 +315,23 @@ test('the checked-in CUKCUK table QR snapshot publishes the polished 14-category
     names: { ko: rule.displayName },
     price: rule.price,
     available: true,
-    optionTemplateIds: []
+    optionTemplateIds: config.menuOptionOverrides?.[rule.code]?.templateIds
+      || Object.keys(config.menuOptionOverrides?.[rule.code]?.rules || {})
   }));
   menus.push({ id: 'burger', cukcukCode: 'SPACE6', names: { ko: '판매하지 않는 버거 세트' }, available: true, optionTemplateIds: [] });
+  const optionTemplateIds = [...new Set(Object.values(config.menuOptionOverrides || {}).flatMap(override => [
+    ...(override.templateIds || []),
+    ...Object.keys(override.rules || {})
+  ]))];
+  const optionTemplates = optionTemplateIds.map(id => ({
+    id,
+    menuIds: [],
+    minSelections: 0,
+    maxSelections: 4,
+    values: Array.from({ length: 7 }, (_, index) => ({ id: `${id}-value-${index + 1}`, visible: true, sortOrder: index }))
+  }));
 
-  const result = applyTableQrLayout({ categories: [], menus, optionTemplates: [] }, config);
+  const result = applyTableQrLayout({ categories: [], menus, optionTemplates }, config);
 
   assert.equal(result.categoryCount, 14);
   assert.equal(result.menuCount, 112);
@@ -281,6 +344,14 @@ test('the checked-in CUKCUK table QR snapshot publishes the polished 14-category
   assert.equal(result.menus.find(menu => menu.cukcukCode === '(KX04)').names.ko, '후라이드 치킨');
   assert.equal(result.menus.find(menu => menu.cukcukCode === '(KX05)').names.ko, '양념 치킨');
   assert.deepEqual(result.menus.find(menu => menu.cukcukCode === 'BDH').names, { ko: '수박', vi: 'Dưa hấu', zh: '西瓜', en: 'Watermelon' });
-  assert.equal(result.menus.filter(menu => menu.available === false).length, 2);
+  assert.deepEqual(result.menus.filter(menu => menu.available === false).map(menu => menu.cukcukCode).sort(), [
+    '(A02) Bia tuoi Sapporo',
+    '(M04) nacho cham phomai',
+    '(S08) Cánh gà 4 vị',
+    '(T10) Do chien/mon chien',
+    '(W01) Cánh gà vị đôi',
+    'HCX',
+    'CC'
+  ].sort());
   assert.equal(result.menus.some(menu => /burger|버거/i.test(`${menu.cukcukCode} ${menu.names?.ko || ''}`)), false);
 });

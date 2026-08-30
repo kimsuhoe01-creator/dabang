@@ -53,6 +53,9 @@ function categoryNames(sourceName) {
 export function buildTableQrConfig(snapshot, existingConfig = {}) {
   const optionOrdering = clone(existingConfig?.optionOrdering);
   const menuNameOverrides = clone(existingConfig?.menuNameOverrides);
+  const menuSubtitleOverrides = clone(existingConfig?.menuSubtitleOverrides);
+  const menuOptionOverrides = clone(existingConfig?.menuOptionOverrides);
+  const detailOptionSources = clone(existingConfig?.detailOptionSources);
   const activeCategories = (snapshot.categories || [])
     .filter(category => category.active && !category.hidden)
     .slice()
@@ -104,7 +107,10 @@ export function buildTableQrConfig(snapshot, existingConfig = {}) {
       menus: category.menus.map(menu => ({ code: menu.code, outOfStock: menu.outOfStock }))
     })),
     optionOrdering: optionOrdering || null,
-    menuNameOverrides: menuNameOverrides || null
+    menuNameOverrides: menuNameOverrides || null,
+    menuSubtitleOverrides: menuSubtitleOverrides || null,
+    menuOptionOverrides: menuOptionOverrides || null,
+    detailOptionSources: detailOptionSources || null
   };
   const fingerprint = crypto.createHash('sha256').update(JSON.stringify(fingerprintSource)).digest('hex').slice(0, 12);
   const capturedDate = String(snapshot.extractedAt || '').slice(0, 10) || 'undated';
@@ -124,6 +130,9 @@ export function buildTableQrConfig(snapshot, existingConfig = {}) {
   };
   if (optionOrdering) config.optionOrdering = optionOrdering;
   if (menuNameOverrides) config.menuNameOverrides = menuNameOverrides;
+  if (menuSubtitleOverrides) config.menuSubtitleOverrides = menuSubtitleOverrides;
+  if (menuOptionOverrides) config.menuOptionOverrides = menuOptionOverrides;
+  if (detailOptionSources) config.detailOptionSources = detailOptionSources;
   return config;
 }
 

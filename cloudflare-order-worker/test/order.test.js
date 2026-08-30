@@ -14,7 +14,51 @@ test("validates menu prices and links options to their parent menu", () => {
   assert.equal(order.OrderDetails[0].Price, 100);
   assert.equal(order.OrderDetails[1].AdditionId, "option-1");
   assert.equal(order.OrderDetails[1].ParentId, order.OrderDetails[0].Id);
+  assert.equal(order.OrderDetails[1].ItemName, "Nước sốt / 소스");
   assert.deepEqual(order.ListTableID, ["table-1"]);
+});
+
+test("enforces an exact two-choice rule for half-and-half menus", () => {
+  assert.doesNotThrow(() => buildConstrainedOrder("exact-2", ["value-1", "value-2"], 2, 2));
+  assert.throws(() => buildConstrainedOrder("exact-2", ["value-1"], 2, 2), /선택 개수/);
+  assert.throws(() => buildConstrainedOrder("exact-2", ["value-1", "value-2", "value-3"], 2, 2), /선택 개수/);
+});
+
+test("enforces an exact four-choice rule for four-flavor wing menus", () => {
+  assert.doesNotThrow(() => buildConstrainedOrder("exact-4", ["value-1", "value-2", "value-3", "value-4"], 4, 4));
+  assert.throws(() => buildConstrainedOrder("exact-4", ["value-1", "value-2", "value-3"], 4, 4), /선택 개수/);
+  assert.throws(() => buildConstrainedOrder("exact-4", ["value-1", "value-2", "value-3", "value-4", "value-5"], 4, 4), /선택 개수/);
+});
+
+test("requires exactly one of the two tonkatsu plate choices", () => {
+  assert.doesNotThrow(() => buildConstrainedOrder("tonkatsu-plate", ["value-1"], 1, 1, {}, 2));
+  assert.throws(() => buildConstrainedOrder("tonkatsu-plate", [], 1, 1, {}, 2), /선택 개수/);
+  assert.throws(() => buildConstrainedOrder("tonkatsu-plate", ["value-1", "value-2"], 1, 1, {}, 2), /선택 개수/);
+});
+
+test("allows one to three Sapporo draft sizes", () => {
+  assert.doesNotThrow(() => buildConstrainedOrder("sapporo-sizes", ["value-1"], 1, 3, {}, 3));
+  assert.doesNotThrow(() => buildConstrainedOrder("sapporo-sizes", ["value-1", "value-2", "value-3"], 1, 3, {}, 3));
+  assert.throws(() => buildConstrainedOrder("sapporo-sizes", [], 1, 3, {}, 3), /선택 개수/);
+});
+
+test("allows one to ten fried-item choices", () => {
+  const tenChoices = Array.from({ length: 10 }, (_, index) => `value-${index + 1}`);
+  assert.doesNotThrow(() => buildConstrainedOrder("fried-items", ["value-1"], 1, 10, {}, 10));
+  assert.doesNotThrow(() => buildConstrainedOrder("fried-items", tenChoices, 1, 10, {}, 10));
+  assert.throws(() => buildConstrainedOrder("fried-items", [], 1, 10, {}, 10), /선택 개수/);
+});
+
+test("allows up to three toppings but rejects a fourth", () => {
+  assert.doesNotThrow(() => buildConstrainedOrder("toppings", [], 0, 3));
+  assert.doesNotThrow(() => buildConstrainedOrder("toppings", ["value-1", "value-2", "value-3"], 0, 3));
+  assert.throws(() => buildConstrainedOrder("toppings", ["value-1", "value-2", "value-3", "value-4"], 0, 3), /선택 개수/);
+});
+
+test("rejects foreign option groups, unknown values, and duplicate selections", () => {
+  assert.throws(() => buildConstrainedOrder("owned", ["value-1"], 0, 3, { templateId: "foreign" }), /선택할 수 없는 옵션 그룹/);
+  assert.throws(() => buildConstrainedOrder("owned", ["unknown"], 0, 3), /선택할 수 없는 옵션/);
+  assert.throws(() => buildConstrainedOrder("owned", ["value-1", "value-1"], 0, 3), /중복/);
 });
 
 test("logs in and creates the first order for a table", async () => {
@@ -107,11 +151,40 @@ function buildOrder() {
     orderedAt: "2026-07-19T08:00:00.000Z",
     language: "ko",
     table: { id: "table-1", name: "B-02" },
-    items: [{ menuId: "menu-1", quantity: 2, options: [{ valueId: "option-1" }] }],
+    items: [{ menuId: "menu-1", quantity: 2, options: [{ templateId: "template-1", valueId: "option-1" }] }],
   }, {
     synced: true,
     menus: [{ id: "menu-1", cukcukId: "menu-1", sourceName: "Chicken", price: 100, available: true, optionTemplateIds: ["template-1"] }],
-    optionTemplates: [{ id: "template-1", values: [{ id: "option-1", names: { ko: "Sauce" }, additionalPrice: 10, visible: true }] }],
+    optionTemplates: [{ id: "template-1", minSelections: 0, maxSelections: 1, values: [{ id: "option-1", names: { ko: "번역된 소스", vi: "Sốt đã dịch" }, receiptNames: { ko: "소스", vi: "Nước sốt" }, additionalPrice: 10, visible: true }] }],
+  }, "branch-1");
+}
+
+function buildConstrainedOrder(templateId, valueIds, minSelections, maxSelections, selectionOverride = {}, valueCount = 6) {
+  const values = Array.from({ length: valueCount }, (_, index) => ({
+    id: `value-${index + 1}`,
+    names: { ko: `선택 ${index + 1}`, vi: `Lựa chọn ${index + 1}` },
+    additionalPrice: 0,
+    visible: true,
+  }));
+  return validateAndBuildOrder({
+    table: { id: "table-1", name: "B-02" },
+    items: [{
+      menuId: "menu-1",
+      quantity: 1,
+      options: valueIds.map(valueId => ({ templateId, valueId, ...selectionOverride })),
+    }],
+  }, {
+    synced: true,
+    menus: [{
+      id: "menu-1",
+      cukcukId: "menu-1",
+      sourceName: "Chicken",
+      price: 100,
+      available: true,
+      optionTemplateIds: [templateId],
+      optionRules: { [templateId]: { required: minSelections > 0, minSelections, maxSelections } },
+    }],
+    optionTemplates: [{ id: templateId, required: false, minSelections: 0, maxSelections: 1, values }],
   }, "branch-1");
 }
 

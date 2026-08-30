@@ -45,7 +45,14 @@ html[lang="zh"] body,html[lang="zh"] button,html[lang="zh"] input{font-family:"M
 .start-panel{position:relative}.install-app-button{position:absolute;right:22px;top:22px;z-index:3;min-height:43px;padding:0 15px;border:1px solid #d6d0c7;border-radius:12px;background:#fff;color:#171717;font-size:13px;font-weight:850;box-shadow:0 5px 16px #2c1b0c12}.install-app-button:hover{border-color:var(--ui-red);color:var(--ui-red)}
 .app-update-bar{position:fixed;left:50%;bottom:22px;z-index:100;display:flex;align-items:center;gap:16px;width:min(560px,calc(100vw - 40px));padding:13px 14px 13px 18px;border:1px solid #343434;border-radius:15px;background:#171717;color:#fff;box-shadow:0 18px 45px #0006;transform:translateX(-50%)}.app-update-bar span{flex:1;font-size:13px;font-weight:700;line-height:1.45}.app-update-bar button{flex:0 0 auto;min-height:42px;padding:0 15px;border:0;border-radius:10px;background:var(--ui-yellow);color:#171717;font-size:13px;font-weight:900}.app-update-bar[hidden]{display:none}
 @media(max-width:1040px){.rail-heading{padding-left:10px}.rail-heading strong{font-size:18px}.dialog-panel{width:min(680px,calc(100vw - 32px));max-height:calc(100vh - 32px)}.option-dialog{width:min(900px,calc(100vw - 32px))}.dialog-layer{padding:16px}.cart-line{grid-template-columns:66px minmax(0,1fr) auto}.cart-line-photo{width:66px}}
-@media(max-width:760px){.option-dialog .option-values{grid-template-columns:1fr}.option-dialog .dialog-body{padding:15px}.option-dialog .option-group{padding:14px}.option-dialog .dialog-head,.option-dialog .dialog-foot{padding-left:18px;padding-right:18px}}
+ @media(max-width:760px){.option-dialog .option-values{grid-template-columns:1fr}.option-dialog .dialog-body{padding:15px}.option-dialog .option-group{padding:14px}.option-dialog .dialog-head,.option-dialog .dialog-foot{padding-left:18px;padding-right:18px}}
+ .rail-logo{width:100%;height:66px;object-fit:contain;object-position:left center;margin-bottom:7px;filter:drop-shadow(0 4px 8px #0008)}
+ .menu-subtitle{min-height:58px;margin:-3px 0 12px;color:#68635d;font-size:13px;font-weight:650;line-height:1.45;display:-webkit-box;overflow:hidden;-webkit-box-orient:vertical;-webkit-line-clamp:3;word-break:keep-all}
+ .menu-subtitle.warning{color:#c81d2a;font-weight:850}
+ .info .price{padding:7px 10px;border:1px solid #ffd2d6;border-radius:9px;background:#fff0f1;font-size:18px}
+ .sold>span{max-width:88%;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}.sold b{font-size:22px}.sold small{font-size:12px;line-height:1.45;font-weight:700;color:#eee}
+ .dialog-head p{line-height:1.45;white-space:pre-line}
+ .visual.crop-tight .menu-photo{transform:scale(1.28);transform-origin:center 62%}
 </style>
 </head>
 <body>
@@ -63,7 +70,7 @@ html[lang="zh"] body,html[lang="zh"] button,html[lang="zh"] input{font-family:"M
   <div class="right"><span class="order-ready" id="orderReady">주문 준비</span><div class="langs" id="langs" aria-label="Language"></div><button class="cart" type="button" onclick="showCartSummary(this)"><b id="cartCount" aria-live="polite">0</b><span class="cart-copy"><span id="cartText">장바구니</span><small id="cartSummary">0개</small></span></button></div>
  </header>
  <div class="menu-shell">
-  <aside class="category-rail"><div class="rail-heading"><strong id="railStoreName">다방치킨</strong><small>MENU</small></div><nav class="cats" id="cats" aria-label="Menu categories"></nav></aside>
+  <aside class="category-rail"><div class="rail-heading"><img class="rail-logo" src="assets/brand/dabang-logo.png" alt="DABANG Chicken"><strong id="railStoreName">다방치킨</strong><small>MENU</small></div><nav class="cats" id="cats" aria-label="Menu categories"></nav></aside>
   <main class="content" id="menuContent">
    <div id="menuSections"></div>
   </main>
@@ -88,7 +95,7 @@ html[lang="zh"] body,html[lang="zh"] button,html[lang="zh"] input{font-family:"M
 <div class="dialog-layer" id="successModal" aria-hidden="true">
  <section class="dialog-panel success-panel" role="dialog" aria-modal="true" aria-labelledby="successTitle"><div class="success-icon">✓</div><h2 id="successTitle">주문을 전송했습니다</h2><p id="successMessage">주방에서 주문을 확인하고 있습니다.</p><div class="order-receipt"><div class="receipt-box"><span id="successTableLabel">테이블</span><strong id="successTable">-</strong></div><div class="receipt-box"><span id="successTotalLabel">주문 금액</span><strong id="successTotal">0 ₫</strong></div></div><button class="success-done" id="successDone" type="button" onclick="finishOrder()">확인</button></section>
 </div>
-<script src="assets/menu-images.js"></script>
+<script src="assets/menu-images.js?v=20260830-content-v2"></script>
 <script src="assets/table-layout.js"></script>
 <script src="assets/option-order.js"></script>
 <script>
@@ -116,10 +123,10 @@ state={...state,featuredVisible:state.featuredVisible===true,menus:state.menus.f
 state.menus.forEach(menu=>{if(menu.recommended===undefined)menu.recommended=false});
 let lang=SUPPORTED_LANGS.has(state.lang)?state.lang:'ko',active='',cart=0,cartTotal=0;
 const words={
- ko:{featured:'추천',section:'추천 메뉴',reset:'테이블 다시 선택',table:'현재 테이블',cart:'장바구니',itemSuffix:'개',menuSuffix:'개 메뉴',add:'담기',sold:'품절',photoSoon:'사진 준비 중',empty:'이 카테고리에 표시할 메뉴가 없습니다.',added:' 장바구니에 담았어요.',cartEmpty:'장바구니가 비어 있습니다.',resetConfirm:'현재 장바구니를 비우고 테이블 선택 화면으로 돌아갈까요?'},
- vi:{featured:'Đề xuất',section:'Món đề xuất',reset:'Chọn lại bàn',table:'Bàn hiện tại',cart:'Giỏ hàng',itemSuffix:'món',menuSuffix:'món',add:'Thêm',sold:'Hết món',photoSoon:'Sắp có ảnh',empty:'Không có món trong danh mục này.',added:' đã được thêm vào giỏ.',cartEmpty:'Giỏ hàng đang trống.',resetConfirm:'Xóa giỏ hàng và quay lại màn hình chọn bàn?'},
- zh:{featured:'推荐',section:'推荐菜单',reset:'重新选桌',table:'当前桌号',cart:'购物车',itemSuffix:'件',menuSuffix:'道菜',add:'加入',sold:'售罄',photoSoon:'图片准备中',empty:'此分类暂无菜单。',added:' 已加入购物车。',cartEmpty:'购物车是空的。',resetConfirm:'清空购物车并返回选桌页面吗？'},
- en:{featured:'Featured',section:'Featured menu',reset:'Select table again',table:'Current table',cart:'Cart',itemSuffix:'items',menuSuffix:'items',add:'Add',sold:'Sold out',photoSoon:'Photo coming soon',empty:'There are no items in this category.',added:' was added to the cart.',cartEmpty:'Your cart is empty.',resetConfirm:'Clear the cart and return to table selection?'}
+ ko:{featured:'추천',section:'추천 메뉴',reset:'테이블 다시 선택',table:'현재 테이블',cart:'장바구니',itemSuffix:'개',menuSuffix:'개 메뉴',add:'담기',sold:'품절',soldDetail:'인기가 많아 잠시 품절되었습니다. 최대한 빨리 다시 준비하겠습니다.',photoSoon:'사진 준비 중',empty:'이 카테고리에 표시할 메뉴가 없습니다.',added:' 장바구니에 담았어요.',cartEmpty:'장바구니가 비어 있습니다.',resetConfirm:'현재 장바구니를 비우고 테이블 선택 화면으로 돌아갈까요?'},
+ vi:{featured:'Đề xuất',section:'Món đề xuất',reset:'Chọn lại bàn',table:'Bàn hiện tại',cart:'Giỏ hàng',itemSuffix:'món',menuSuffix:'món',add:'Thêm',sold:'Hết món',soldDetail:'Món được yêu thích nên tạm hết. Chúng tôi sẽ chuẩn bị lại sớm nhất có thể.',photoSoon:'Sắp có ảnh',empty:'Không có món trong danh mục này.',added:' đã được thêm vào giỏ.',cartEmpty:'Giỏ hàng đang trống.',resetConfirm:'Xóa giỏ hàng và quay lại màn hình chọn bàn?'},
+ zh:{featured:'推荐',section:'推荐菜单',reset:'重新选桌',table:'当前桌号',cart:'购物车',itemSuffix:'件',menuSuffix:'道菜',add:'加入',sold:'售罄',soldDetail:'人气太高，暂时售罄。我们会尽快重新供应。',photoSoon:'图片准备中',empty:'此分类暂无菜单。',added:' 已加入购物车。',cartEmpty:'购物车是空的。',resetConfirm:'清空购物车并返回选桌页面吗？'},
+ en:{featured:'Featured',section:'Featured menu',reset:'Select table again',table:'Current table',cart:'Cart',itemSuffix:'items',menuSuffix:'items',add:'Add',sold:'Sold out',soldDetail:'Temporarily sold out due to high demand. We will bring it back as soon as possible.',photoSoon:'Photo coming soon',empty:'There are no items in this category.',added:' was added to the cart.',cartEmpty:'Your cart is empty.',resetConfirm:'Clear the cart and return to table selection?'}
 };
 function displayMenuImage(id){
   const url=menuImage(id);
@@ -133,7 +140,9 @@ function categoryLabel(category){return category?.names?.[lang]||category?.names
 function visibleCategories(){return state.categories.filter(c=>c.visible&&state.menus.some(m=>m.cat===c.name))}
 function compactCount(value,suffix){return ['ko','zh'].includes(lang)?value+suffix:value+' '+suffix}
 function placeholderMarkup(){return `<span class="placeholder"><span class="photo-icon" aria-hidden="true">▧</span><span>${escapeHtml(words[lang].photoSoon)}</span></span>`}
-function fitMenuPhoto(image){if(!image.naturalWidth||!image.naturalHeight)return;const ratio=image.naturalWidth/image.naturalHeight;image.closest('.visual')?.classList.toggle('fit-contain',ratio>1.18||ratio<.85)}
+const FORCE_COVER_IMAGE_IDS=new Set(['2813d1e7-250b-49ae-9f76-e5b40f451492','2ce328a0-8d0c-481e-883f-2e35684b900d']);
+const TIGHT_CROP_IMAGE_IDS=new Set(['2813d1e7-250b-49ae-9f76-e5b40f451492']);
+function fitMenuPhoto(image){if(!image.naturalWidth||!image.naturalHeight)return;const visual=image.closest('.visual'),ratio=image.naturalWidth/image.naturalHeight;visual?.classList.toggle('fit-contain',!FORCE_COVER_IMAGE_IDS.has(visual?.dataset.menuId)&&(ratio>1.18||ratio<.85));visual?.classList.toggle('crop-tight',TIGHT_CROP_IMAGE_IDS.has(visual?.dataset.menuId))}
 function handleImageError(image){const visual=image.closest('.visual');if(!visual)return;visual.classList.remove('fit-contain');visual.querySelectorAll('.menu-photo,.photo-back').forEach(node=>node.remove());if(!visual.querySelector('.placeholder'))visual.insertAdjacentHTML('afterbegin',placeholderMarkup())}
 function showToast(msg){const t=document.getElementById('toast');t.textContent=msg;t.classList.add('show');clearTimeout(window._t);window._t=setTimeout(()=>t.classList.remove('show'),2000)}
 function cleanPublishedName(value){return String(value||'').replace(/\s+/g,' ').replace(/^[\s|/]+|[\s|/]+$/g,'').trim()}
@@ -260,14 +269,16 @@ function ensureStateOptions(){
 function visibleOptionValues(group){const values=(Array.isArray(group?.values)?group.values:[]).filter(v=>v&&v.visible!==false);return window.DABANG_OPTION_ORDER?.sortValues(values)??values.slice().sort((a,b)=>(Number(a.additionalPrice)>0)-(Number(b.additionalPrice)>0)||(Number(a.sortOrder)||0)-(Number(b.sortOrder)||0))}
 function menuOptionGroups(menu){
  const byId=new Map((state.optionTemplates||[]).map(group=>[String(group.id),group]));
- return (menu?.optionTemplateIds||[]).map(id=>byId.get(String(id))).filter(group=>group&&visibleOptionValues(group).length);
+ return (menu?.optionTemplateIds||[]).map(id=>{const group=byId.get(String(id)),rule=menu?.optionRules?.[String(id)]||{};return group?{...group,...rule,id:String(group.id)}:null}).filter(group=>group&&visibleOptionValues(group).length);
 }
 function menuCardMarkup(menu,index){
  const image=displayMenuImage(menu.id),name=menu.n?.[lang]||menu.n?.ko||menu.sourceName||'',safeName=escapeHtml(name),safeId=safeJsString(menu.id),loading=index<6?'eager':'lazy',hasOptions=menuOptionGroups(menu).length>0;
+ const subtitle=localizedNames(menu.subtitles),subtitleMarkup=subtitle?`<span class="menu-subtitle ${['warning','danger'].includes(menu.subtitleTone)?'warning':''}">${escapeHtml(subtitle)}</span>`:'<span class="menu-subtitle" aria-hidden="true"></span>';
+ const soldDetail=localizedNames(menu.statusMessages)||words[lang].soldDetail;
  const photo=image?`<img class="photo-back" src="${image}" alt="" aria-hidden="true" loading="${loading}" decoding="async"><img class="menu-photo" src="${image}" alt="${safeName}" loading="${loading}" decoding="async" onload="fitMenuPhoto(this)" onerror="handleImageError(this)">`:placeholderMarkup();
  const optionChip=hasOptions?`<span class="option-chip">${escapeHtml(words[lang].optionShort)}</span>`:'';
  const actionLabel=(hasOptions?words[lang].options:words[lang].add)+' '+name+', '+money(menu.price);
- return `<button type="button" class="card" aria-label="${escapeHtml(actionLabel)}" title="${safeName}" onclick="selectMenu('${safeId}',this)" ${menu.available?'':'disabled'}>${menu.available?'':`<span class="sold">${escapeHtml(words[lang].sold)}</span>`}<span class="visual">${photo}${optionChip}</span><span class="info"><span class="name">${safeName}</span><span class="foot"><strong class="price">${money(menu.price)}</strong><span class="add" aria-hidden="true"><span>＋</span>${escapeHtml(words[lang].add)}</span></span></span></button>`;
+ return `<button type="button" class="card" aria-label="${escapeHtml(actionLabel)}" title="${safeName}" onclick="selectMenu('${safeId}',this)" ${menu.available?'':'disabled'}>${menu.available?'':`<span class="sold"><span><b>${escapeHtml(words[lang].sold)}</b><small>${escapeHtml(soldDetail)}</small></span></span>`}<span class="visual" data-menu-id="${escapeHtml(menu.id)}">${photo}${optionChip}</span><span class="info"><span class="name">${safeName}</span>${subtitleMarkup}<span class="foot"><strong class="price">${money(menu.price)}</strong><span class="add" aria-hidden="true"><span>＋</span>${escapeHtml(words[lang].add)}</span></span></span></button>`;
 }
 function menuSections(){
  const sections=visibleCategories().map(category=>({key:category.name,label:categoryLabel(category),menus:state.menus.filter(menu=>menu.cat===category.name)}));
@@ -345,7 +356,7 @@ function openOptionModal(menu,groups,opener){
  optionDraft={menu,groups:groups.map(group=>({...group,_values:visibleOptionValues(group)})),selections:groups.map(()=>[])};
  document.getElementById('optionKicker').textContent=words[lang].options;
  document.getElementById('optionMenuName').textContent=menu.n?.[lang]||menu.n?.ko||menu.sourceName||'';
- document.getElementById('optionBasePrice').textContent=words[lang].basePrice+' · '+money(menu.price);
+ document.getElementById('optionBasePrice').textContent=[localizedNames(menu.subtitles),words[lang].basePrice+' · '+money(menu.price)].filter(Boolean).join('\n');
  document.getElementById('optionCancel').textContent=words[lang].cancel;
  document.getElementById('optionConfirm').textContent=words[lang].addToCart;
  document.getElementById('optionTotalLabel').textContent=words[lang].total;
@@ -495,7 +506,7 @@ async function loadPublishedMenu(){
     if(!saved.templateIds.length)optionTemplateIds=[];
     else{const candidates=saved.templateIds.map(ref=>typeof ref==='number'?storedRows[ref]?.[6]:ref).filter(Boolean).map(String),resolved=candidates.filter(id=>availableTemplateIds.has(id));optionTemplateIds=resolved.length?resolved:publishedTemplateIds}
    }
-   return{id:item.id,sourceName:item.sourceName,cat:savedCategory||categoryNames.get(item.categoryId)||item.categoryName||'',price:Number(item.price)||0,available:preserveStructure&&saved?.availabilityEdited?saved.available:item.available!==false,recommended:preserveStructure?(saved?.recommended??false):false,n:mergeLocalizedNames((saved?.nameEdited||saved?.languageOrganized)?saved.n:null,publishedNames(item)),optionGroups:Number(item.optionGroups)||optionTemplateIds.length,optionTemplateIds};
+   return{id:item.id,sourceName:item.sourceName,cat:savedCategory||categoryNames.get(item.categoryId)||item.categoryName||'',price:Number(item.price)||0,available:preserveStructure&&saved?.availabilityEdited?saved.available:item.available!==false,recommended:preserveStructure?(saved?.recommended??false):false,n:mergeLocalizedNames((saved?.nameEdited||saved?.languageOrganized)?saved.n:null,publishedNames(item)),subtitles:item.subtitle?.names||item.subtitles||{},subtitleTone:item.subtitle?.tone||item.subtitleTone||'',statusMessages:item.statusMessages||{},optionRules:item.optionRules||{},optionGroups:Number(item.optionGroups)||optionTemplateIds.length,optionTemplateIds};
   });
   if(preserveStructure)menus.sort((left,right)=>(savedMenuOrder.get(left.id)??9999)-(savedMenuOrder.get(right.id)??9999));
   const knownCategoryNames=new Set(categories.map(category=>category.name));

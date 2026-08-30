@@ -361,7 +361,16 @@
       "optionGroups": 0,
       "optionTemplateIds": [],
       "sortOrder": 8,
-      "categorySortOrder": 0
+      "categorySortOrder": 0,
+      "subtitle": {
+        "names": {
+          "ko": "제한시간 안에 다 먹으면 무료!",
+          "vi": "Ăn hết trong thời gian thử thách thì được miễn phí!",
+          "zh": "在挑战规定时间内吃完即可免单!",
+          "en": "Finish it within the challenge time and it’s free!"
+        },
+        "tone": "danger"
+      }
     },
     {
       "id": "7bd7dad2-ef46-4ca2-a260-1b786e4066be",
@@ -383,7 +392,16 @@
       ],
       "sortOrder": 9,
       "cukcukCode": "ᄃᄃ TD 地",
-      "categorySortOrder": 1
+      "categorySortOrder": 1,
+      "subtitle": {
+        "names": {
+          "ko": "진짜 매우 맵습니다. 재미로 가볍게 도전하지 마세요.",
+          "vi": "Món này thực sự rất cay. Đừng thử chỉ vì tò mò hoặc cho vui.",
+          "zh": "真的非常辣,请勿抱着玩笑心态轻易挑战。",
+          "en": "This is seriously spicy. Please don’t take the challenge lightly."
+        },
+        "tone": "danger"
+      }
     },
     {
       "id": "d301f64f-16fa-4c8f-86bb-62318205039a",
@@ -393,17 +411,26 @@
       "sourceName": "돈까스 플레이트 (안 매운맛) Pork Cutlet Plate 炸猪排拼盘 Đĩa Thịt Heo Chiên Xù",
       "names": {
         "ko": "돈까스 플레이트 (안 매운맛)",
-        "vi": "Đĩa thịt heo chiên xù (không cay)",
+        "vi": "Đĩa tonkatsu (không cay)",
         "zh": "炸猪排拼盘（不辣）",
-        "en": "Pork Cutlet Plate (Non-Spicy)"
+        "en": "Tonkatsu Plate (Non-spicy)"
       },
       "price": 313200,
-      "available": true,
+      "available": false,
       "optionGroups": 0,
       "optionTemplateIds": [],
       "sortOrder": 10,
       "cukcukCode": "HCX",
-      "categorySortOrder": 2
+      "categorySortOrder": 2,
+      "subtitle": {
+        "names": {
+          "ko": "디진다 돈까스와 반반으로도 즐길 수 있어요.",
+          "vi": "Có thể chọn nửa không cay, nửa “Dijinda” siêu cay.",
+          "zh": "可选不辣与超辣“Dijinda”猪排各半。",
+          "en": "Half-and-half with the extra-spicy “Dijinda” tonkatsu is available."
+        },
+        "tone": "default"
+      }
     },
     {
       "id": "2e18bb28-3e48-4155-8802-b47876d60c89",
@@ -443,7 +470,16 @@
       "optionGroups": 0,
       "optionTemplateIds": [],
       "sortOrder": 12,
-      "categorySortOrder": 4
+      "categorySortOrder": 4,
+      "subtitle": {
+        "names": {
+          "ko": "한국 훌*라 바비큐를 떠올리는 진한 숯불 맛.",
+          "vi": "Đậm vị nướng than, gợi nhớ BBQ Hul*la Hàn Quốc.",
+          "zh": "浓郁炭火风味,让人想起韩式 Hul*la 烧烤鸡。",
+          "en": "Rich charcoal flavor inspired by Korean Hul*la-style BBQ chicken."
+        },
+        "tone": "default"
+      }
     },
     {
       "id": "7724d42e-f568-4346-909a-848a1a1599e9",
@@ -463,7 +499,16 @@
       "optionGroups": 0,
       "optionTemplateIds": [],
       "sortOrder": 13,
-      "categorySortOrder": 5
+      "categorySortOrder": 5,
+      "subtitle": {
+        "names": {
+          "ko": "화덕에서 1시간 동안 훈연해 촉촉하고 훈제향이 깊은 통닭.",
+          "vi": "Hun và nướng trong lò suốt 1 giờ, thơm khói và mềm mọng.",
+          "zh": "入炉熏烤一小时,烟熏香浓郁,肉质鲜嫩多汁。",
+          "en": "Smoked and oven-roasted for one hour for deep smoky flavor and juicy meat."
+        },
+        "tone": "default"
+      }
     },
     {
       "id": "0cb6c0d0-0b9d-4813-96d5-606287423eb8",
@@ -485,7 +530,16 @@
       ],
       "sortOrder": 14,
       "cukcukCode": "hot",
-      "categorySortOrder": 6
+      "categorySortOrder": 6,
+      "subtitle": {
+        "names": {
+          "ko": "생각보다 맵습니다. 주의하세요! B*C 치킨을 떠올리는 맛.",
+          "vi": "Cay hơn bạn nghĩ—hãy cẩn thận! Gợi nhớ phong cách gà B*C Hàn Quốc.",
+          "zh": "比想象中更辣,请注意!让人想起韩式 B*C 炸鸡。",
+          "en": "Hotter than you may expect—be careful! Inspired by Korean B*C-style chicken."
+        },
+        "tone": "warning"
+      }
     },
     {
       "id": "7fc37f94-fa7a-4206-ac56-e46984856488",
@@ -507,7 +561,16 @@
       ],
       "sortOrder": 15,
       "cukcukCode": "ᄉ GPBPM 雪 SCPC",
-      "categorySortOrder": 7
+      "categorySortOrder": 7,
+      "subtitle": {
+        "names": {
+          "ko": "네*치킨을 떠올리는 달콤짭짤한 스노윙 맛.",
+          "vi": "Vị phủ tuyết ngọt mặn, gợi nhớ gà Ne* Chicken.",
+          "zh": "甜咸雪花风味,让人想起 Ne* Chicken。",
+          "en": "A sweet-and-savory snowing flavor inspired by Ne* Chicken."
+        },
+        "tone": "default"
+      }
     },
     {
       "id": "54d8170c-bdfc-4fdd-a502-e31e6a1e311d",
@@ -527,7 +590,16 @@
       "optionGroups": 0,
       "optionTemplateIds": [],
       "sortOrder": 16,
-      "categorySortOrder": 8
+      "categorySortOrder": 8,
+      "subtitle": {
+        "names": {
+          "ko": "푸*닭 마마치를 떠올리는 달콤고소한 맛.",
+          "vi": "Vị ngọt béo gợi nhớ MaMaChi của Pu*Dak.",
+          "zh": "香甜浓郁,让人想起 Pu*Dak 的 MaMaChi。",
+          "en": "A sweet, savory flavor inspired by Pu*Dak’s MaMaChi."
+        },
+        "tone": "default"
+      }
     },
     {
       "id": "d2dfd961-40ae-401b-8b3a-530963b32741",
@@ -547,7 +619,16 @@
       "optionTemplateIds": [],
       "sortOrder": 17,
       "cukcukCode": "ᄋ GCSCNKH 油",
-      "categorySortOrder": 9
+      "categorySortOrder": 9,
+      "subtitle": {
+        "names": {
+          "ko": "아직 많이 알려지진 않았지만, 이 집 사장의 1픽 메뉴.",
+          "vi": "Chưa được nhiều khách biết đến, nhưng là món số 1 của chủ quán.",
+          "zh": "虽然还不太为人熟知,却是店主的第一推荐。",
+          "en": "Still a hidden gem, but it’s the owner’s number-one pick."
+        },
+        "tone": "default"
+      }
     },
     {
       "id": "395e98e6-9062-40cc-872d-563ee5cf49ab",
@@ -567,7 +648,16 @@
       "optionTemplateIds": [],
       "sortOrder": 18,
       "cukcukCode": "ᄆGRXCF",
-      "categorySortOrder": 10
+      "categorySortOrder": 10,
+      "subtitle": {
+        "names": {
+          "ko": "직접 만든 소스와 진한 불향이 어우러진 숨은 별미.",
+          "vi": "Món ngon ẩn mình với sốt nhà làm và hương khói đậm đà.",
+          "zh": "自制酱汁融合浓郁火香,是一道隐藏美味。",
+          "en": "A hidden gem with house-made sauce and a rich flame-grilled aroma."
+        },
+        "tone": "default"
+      }
     },
     {
       "id": "718a9af3-056b-44ee-b833-04cab90d1e9f",
@@ -589,7 +679,16 @@
       ],
       "sortOrder": 19,
       "cukcukCode": "ᄎ CC KCC",
-      "categorySortOrder": 11
+      "categorySortOrder": 11,
+      "subtitle": {
+        "names": {
+          "ko": "실비김치가 들어갑니다. 정말 많이 매워요!",
+          "vi": "Có kimchi Silbi siêu cay. Món này rất cay!",
+          "zh": "内含超辣 Silbi 泡菜,真的很辣!",
+          "en": "Includes extra-spicy Silbi kimchi. It is very hot!"
+        },
+        "tone": "danger"
+      }
     },
     {
       "id": "69959bf4-90dd-4517-bb41-e43eaaba0bd8",
@@ -609,7 +708,16 @@
       "optionGroups": 0,
       "optionTemplateIds": [],
       "sortOrder": 20,
-      "categorySortOrder": 12
+      "categorySortOrder": 12,
+      "subtitle": {
+        "names": {
+          "ko": "불냉면 양념으로 만들었습니다. 정말 많이 매워요!",
+          "vi": "Làm với sốt mì lạnh cay. Món này rất cay!",
+          "zh": "使用火辣冷面酱调制,真的很辣!",
+          "en": "Made with spicy cold-noodle sauce. It is very hot!"
+        },
+        "tone": "danger"
+      }
     },
     {
       "id": "04c7d4b2-d155-4dbf-aa30-4e4a4c03aa1a",
@@ -662,10 +770,10 @@
       "categoryName": "세트",
       "sourceName": "치떡 SET | Chicken & Tteok Set | 无骨炸鸡 + 辣炒年糕 | Gà không xương + Tokbokki",
       "names": {
-        "ko": "치떡 세트",
-        "vi": "Combo gà không xương + tokbokki",
-        "zh": "无骨炸鸡+辣炒年糕套餐",
-        "en": "Chicken & Tteok Set"
+        "ko": "치킨 떡볶이 세트",
+        "vi": "Combo gà không xương & tokbokki",
+        "zh": "无骨炸鸡辣炒年糕套餐",
+        "en": "Chicken Tteokbokki Set"
       },
       "price": 324000,
       "available": true,
@@ -678,7 +786,16 @@
       ],
       "sortOrder": 23,
       "cukcukCode": "(S03) Gà k xương + Tok",
-      "categorySortOrder": 0
+      "categorySortOrder": 0,
+      "subtitle": {
+        "names": {
+          "ko": "순살치킨 반 마리와 다방 떡볶이 세트. 2~3인용.",
+          "vi": "Nửa phần gà không xương và tokbokki Dabang. Dành cho 2–3 người.",
+          "zh": "半份无骨炸鸡搭配 Dabang 辣炒年糕,适合 2–3 人。",
+          "en": "Half boneless chicken with Dabang tteokbokki. Serves 2–3."
+        },
+        "tone": "default"
+      }
     },
     {
       "id": "930eadf4-1572-4fda-83c2-428092e0eb24",
@@ -687,10 +804,10 @@
       "categoryName": "세트",
       "sourceName": "통떡 SET  Whole Chicken & Tteok Set 整只炸鸡 + 辣炒年糕Gà nguyên con + Tokbokki",
       "names": {
-        "ko": "통떡 세트",
-        "vi": "Combo gà nguyên con và tokbokki",
-        "zh": "整只炸鸡配辣炒年糕",
-        "en": "Whole Chicken & Tteokbokki Set"
+        "ko": "통닭 떡볶이 세트",
+        "vi": "Combo gà nguyên con & tokbokki",
+        "zh": "整只炸鸡辣炒年糕套餐",
+        "en": "Whole Chicken Tteokbokki Set"
       },
       "price": 378000,
       "available": true,
@@ -702,7 +819,16 @@
       ],
       "sortOrder": 24,
       "cukcukCode": "(S04) Gà nguyên con + Tok",
-      "categorySortOrder": 1
+      "categorySortOrder": 1,
+      "subtitle": {
+        "names": {
+          "ko": "바삭하게 튀긴 옛날통닭 한 마리와 떡볶이 세트. 3~4인용.",
+          "vi": "Một con gà chiên kiểu truyền thống và tokbokki. Dành cho 3–4 người.",
+          "zh": "一整只酥脆怀旧炸鸡搭配辣炒年糕,适合 3–4 人。",
+          "en": "One crispy old-style whole chicken with tteokbokki. Serves 3–4."
+        },
+        "tone": "default"
+      }
     },
     {
       "id": "27ab97f7-0ddf-495a-b475-4533e945da85",
@@ -711,10 +837,10 @@
       "categoryName": "세트",
       "sourceName": "윙떡 SET  Wings & Tteok Set鸡翅 + 辣炒年糕 Cánh gà + Tokbokki",
       "names": {
-        "ko": "윙떡 세트",
-        "vi": "Combo cánh gà + tokbokki",
-        "zh": "鸡翅+辣炒年糕套餐",
-        "en": "Wings & Tteok Set"
+        "ko": "윙봉 떡볶이 세트",
+        "vi": "Combo cánh gà & tokbokki",
+        "zh": "鸡翅辣炒年糕套餐",
+        "en": "Wing Tteokbokki Set"
       },
       "price": 324000,
       "available": true,
@@ -727,7 +853,23 @@
       ],
       "sortOrder": 25,
       "cukcukCode": "(S05) Cánh gà + Tok",
-      "categorySortOrder": 2
+      "categorySortOrder": 2,
+      "subtitle": {
+        "names": {
+          "ko": "원하는 윙봉 소스를 골라 즐기는 윙봉과 떡볶이 세트. 2~3인용.",
+          "vi": "Cánh gà với sốt tự chọn và tokbokki. Dành cho 2–3 người.",
+          "zh": "自选酱味鸡翅搭配辣炒年糕,适合 2–3 人。",
+          "en": "Wings with your choice of sauce and tteokbokki. Serves 2–3."
+        },
+        "tone": "default"
+      },
+      "optionRules": {
+        "2be54a6c-ab0d-40d7-a080-0c50e0d228dc": {
+          "required": true,
+          "minSelections": 1,
+          "maxSelections": 1
+        }
+      }
     },
     {
       "id": "b1b2c7bb-da45-433f-bc86-fb5feead0be7",
@@ -736,10 +878,10 @@
       "categoryName": "세트",
       "sourceName": "순살떠까  Boneless Chicken Tossed in Sauce 五味无骨炸鸡 Gà không xương 5 vị",
       "names": {
-        "ko": "순살 떠까",
+        "ko": "순살 떠까 (5가지 맛)",
         "vi": "Gà không xương 5 vị",
-        "zh": "五味无骨炸鸡",
-        "en": "Boneless Chicken Tossed in Sauce"
+        "zh": "五味无骨炸鸡拼盘",
+        "en": "Five-flavor Boneless Chicken Platter"
       },
       "price": 421200,
       "available": true,
@@ -747,7 +889,16 @@
       "optionTemplateIds": [],
       "sortOrder": 26,
       "cukcukCode": "(S06) Gà k xương 5 vị",
-      "categorySortOrder": 3
+      "categorySortOrder": 3,
+      "subtitle": {
+        "names": {
+          "ko": "다방치킨 순살 5가지 맛을 한 번에. 3~4인용.",
+          "vi": "Thưởng thức cùng lúc 5 vị gà không xương Dabang. Dành cho 3–4 người.",
+          "zh": "一次品尝五种 Dabang 无骨炸鸡口味,适合 3–4 人。",
+          "en": "Enjoy five Dabang boneless-chicken flavors at once. Serves 3–4."
+        },
+        "tone": "default"
+      }
     },
     {
       "id": "88d856ff-e35d-4c21-893b-3f60e2fa71fa",
@@ -756,18 +907,27 @@
       "categoryName": "세트",
       "sourceName": "윙봉떠까  Sauced Chicken Wings  四味鸡翅  Cánh gà 4 vị",
       "names": {
-        "ko": "윙봉 떠까",
+        "ko": "윙봉 떠까 (4가지 맛)",
         "vi": "Cánh gà 4 vị",
-        "zh": "四味鸡翅",
-        "en": "Four-Flavor Chicken Wings"
+        "zh": "四味鸡翅拼盘",
+        "en": "Four-flavor Wing Platter"
       },
       "price": 421200,
-      "available": true,
+      "available": false,
       "optionGroups": 0,
       "optionTemplateIds": [],
       "sortOrder": 27,
       "cukcukCode": "(S08) Cánh gà 4 vị",
-      "categorySortOrder": 4
+      "categorySortOrder": 4,
+      "subtitle": {
+        "names": {
+          "ko": "베트남 손님이 가장 좋아하는 다방 윙봉 4가지 맛을 한 번에. 맛 4개를 꼭 선택해 주세요.",
+          "vi": "Thưởng thức cùng lúc 4 vị cánh gà Dabang được khách Việt yêu thích nhất. Vui lòng chọn đúng 4 vị.",
+          "zh": "一次品尝越南客人最喜爱的四种 Dabang 鸡翅口味。请务必选择四种口味。",
+          "en": "Enjoy four of our Vietnamese guests’ favorite Dabang wing flavors at once. Please select exactly four flavors."
+        },
+        "tone": "default"
+      }
     },
     {
       "id": "dfd26114-45e6-48f0-a0b3-4afc283eb847",
@@ -979,9 +1139,9 @@
       "sourceName": "윙봉반 | Gà cánh chiên nửa con | 半只炸鸡翅 | Half Fried Chicken Wings",
       "names": {
         "ko": "윙봉 반마리",
-        "vi": "Cánh gà chiên nửa phần",
-        "zh": "半只炸鸡翅",
-        "en": "Half Fried Chicken Wings"
+        "vi": "Nửa phần cánh gà chiên",
+        "zh": "半份炸鸡翅",
+        "en": "Half Portion of Fried Wings"
       },
       "price": 216000,
       "available": true,
@@ -1057,7 +1217,19 @@
       ],
       "sortOrder": 40,
       "cukcukCode": "(KX01)",
-      "categorySortOrder": 2
+      "categorySortOrder": 2,
+      "optionRules": {
+        "85cead19-7d83-4c61-8199-b7fab35fb672": {
+          "required": true,
+          "minSelections": 1,
+          "maxSelections": 1
+        },
+        "b2fbfcca-55f5-4718-87d4-96627091764a": {
+          "required": true,
+          "minSelections": 2,
+          "maxSelections": 2
+        }
+      }
     },
     {
       "id": "7c92814f-40ee-4742-8e2b-004a659bcb97",
@@ -1244,7 +1416,7 @@
         "en": "Half & Half Wings & Drumettes"
       },
       "price": 399600,
-      "available": true,
+      "available": false,
       "optionGroups": 0,
       "optionTemplateIds": [],
       "sortOrder": 49,
@@ -1352,7 +1524,19 @@
       ],
       "sortOrder": 54,
       "cukcukCode": "(T06) Tokbokki cay nhẹ",
-      "categorySortOrder": 0
+      "categorySortOrder": 0,
+      "optionRules": {
+        "21b53642-cba7-4ef9-b877-bab92f845c25": {
+          "required": true,
+          "minSelections": 1,
+          "maxSelections": 1
+        },
+        "d7fcbd85-9fb6-40db-872a-8275dce401ed": {
+          "required": false,
+          "minSelections": 0,
+          "maxSelections": 3
+        }
+      }
     },
     {
       "id": "69b57fd4-2b15-4c79-80da-e7f3eba63b67",
@@ -1437,7 +1621,7 @@
         "en": "Fried Snacks"
       },
       "price": 0,
-      "available": true,
+      "available": false,
       "optionGroups": 0,
       "optionTemplateIds": [],
       "sortOrder": 58,
@@ -2025,10 +2209,10 @@
       "categoryName": "음료",
       "sourceName": "코카콜라 Coca-Cola可口可乐  Coca-Cola",
       "names": {
-        "ko": "코카콜라",
-        "vi": "Coca-Cola",
-        "zh": "可口可乐",
-        "en": "Coca-Cola"
+        "ko": "코카콜라 (390ml)",
+        "vi": "Coca-Cola (390ml)",
+        "zh": "可口可乐（390ml）",
+        "en": "Coca-Cola (390ml)"
       },
       "price": 22000,
       "available": true,
@@ -2065,10 +2249,10 @@
       "categoryName": "음료",
       "sourceName": "펩시제로 | Pepsi Zero | 百事可乐无糖 | Pepsi không đường",
       "names": {
-        "ko": "펩시 제로",
-        "vi": "Pepsi không đường",
-        "zh": "百事可乐无糖",
-        "en": "Pepsi Zero"
+        "ko": "펩시 제로 (390ml)",
+        "vi": "Pepsi Không Calo (390ml)",
+        "zh": "百事无糖（390ml）",
+        "en": "Pepsi Zero (390ml)"
       },
       "price": 33000,
       "available": true,
@@ -2085,10 +2269,10 @@
       "categoryName": "음료",
       "sourceName": "나랑드 제로 | Narangd Cider Zero (500ml)",
       "names": {
-        "ko": "나랑드 사이다 제로 (500ml)",
-        "vi": "Narangd Cider Zero (500ml)",
-        "zh": "Narangd 无糖汽水（500ml）",
-        "en": "Narangd Cider Zero (500ml)"
+        "ko": "나랑드 제로 (500ml)",
+        "vi": "Narangd Zero (500ml)",
+        "zh": "Narangd 零糖（500ml）",
+        "en": "Narangd Zero (500ml)"
       },
       "price": 55000,
       "available": true,
@@ -2096,7 +2280,16 @@
       "optionTemplateIds": [],
       "sortOrder": 90,
       "cukcukCode": "ᄂᄌ NCZ5",
-      "categorySortOrder": 3
+      "categorySortOrder": 3,
+      "subtitle": {
+        "names": {
+          "ko": "제로 칼로리.",
+          "vi": "Không calo.",
+          "zh": "零卡路里。",
+          "en": "Zero calories."
+        },
+        "tone": "default"
+      }
     },
     {
       "id": "45a0262c-d9f7-4b8b-a937-542d81c32e95",
@@ -2106,10 +2299,10 @@
       "categoryName": "음료",
       "sourceName": "펩시제로 1.5L Pepsi Zero (1.5L Bottle)百事可乐无糖（1.5升 Pepsi không đường (chai 1.5L)",
       "names": {
-        "ko": "펩시 제로 1.5L",
-        "vi": "Pepsi không đường (chai 1.5L)",
-        "zh": "百事可乐无糖（1.5升）",
-        "en": "Pepsi Zero (1.5L Bottle)"
+        "ko": "펩시 제로 라임 (1.5L)",
+        "vi": "Pepsi Không Calo Vị Chanh (1,5L)",
+        "zh": "百事无糖青柠味（1.5L）",
+        "en": "Pepsi Zero Lime (1.5L)"
       },
       "price": 77000,
       "available": true,
@@ -2161,46 +2354,6 @@
       "categorySortOrder": 6
     },
     {
-      "id": "225f2ecd-94d2-4970-bb7d-acb313837cb9",
-      "cukcukId": "225f2ecd-94d2-4970-bb7d-acb313837cb9",
-      "cukcukCode": "ᄃᄀᄉ TG S",
-      "categoryId": "cukcuk-alcohol",
-      "categoryName": "주류",
-      "sourceName": "데킬라 골드&실버 | Tequila Gold & Silver",
-      "names": {
-        "ko": "데킬라 골드 & 실버",
-        "vi": "Tequila Gold & Silver",
-        "zh": "金银龙舌兰",
-        "en": "Tequila Gold & Silver"
-      },
-      "price": 1089000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 94,
-      "categorySortOrder": 0
-    },
-    {
-      "id": "87b45d34-14f6-46d3-a272-493cbd4276c7",
-      "cukcukId": "87b45d34-14f6-46d3-a272-493cbd4276c7",
-      "cukcukCode": "ᄒᄉ1 BTHN1 河1 HDB1",
-      "categoryId": "cukcuk-alcohol",
-      "categoryName": "주류",
-      "sourceName": "하노이 생맥주 1L | Bia tươi Hà Nội 1L | 河内生啤 1升 | Hanoi Draft Beer 1L",
-      "names": {
-        "ko": "하노이 생맥주 1L",
-        "vi": "Bia tươi Hà Nội 1L",
-        "zh": "河内生啤 1升",
-        "en": "Hanoi Draft Beer 1L"
-      },
-      "price": 110000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 95,
-      "categorySortOrder": 1
-    },
-    {
       "id": "52c29562-ac31-42c7-9f24-956d348de02a",
       "cukcukId": "52c29562-ac31-42c7-9f24-956d348de02a",
       "cukcukCode": "(A01) Sapporo 1t1 640ml",
@@ -2217,8 +2370,8 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 96,
-      "categorySortOrder": 2
+      "sortOrder": 94,
+      "categorySortOrder": 0
     },
     {
       "id": "57b1fe70-fe33-4654-9d58-575f277749be",
@@ -2234,11 +2387,11 @@
         "en": "Sapporo Draft Beer"
       },
       "price": 0,
-      "available": true,
+      "available": false,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 97,
-      "categorySortOrder": 3
+      "sortOrder": 95,
+      "categorySortOrder": 1
     },
     {
       "id": "4182ba40-0603-49ac-9b7a-e2438229f7b8",
@@ -2257,88 +2410,28 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 98,
-      "categorySortOrder": 4
+      "sortOrder": 96,
+      "categorySortOrder": 2
     },
     {
-      "id": "2d93c37e-8f59-4f39-a06d-cbaa6dab47f6",
-      "cukcukId": "2d93c37e-8f59-4f39-a06d-cbaa6dab47f6",
-      "cukcukCode": "ᄉ SS 鲜 SS",
+      "id": "87b45d34-14f6-46d3-a272-493cbd4276c7",
+      "cukcukId": "87b45d34-14f6-46d3-a272-493cbd4276c7",
+      "cukcukCode": "ᄒᄉ1 BTHN1 河1 HDB1",
       "categoryId": "cukcuk-alcohol",
       "categoryName": "주류",
-      "sourceName": "선양소주 | Sunyang Soju | 鲜洋烧酒 |",
+      "sourceName": "하노이 생맥주 1L | Bia tươi Hà Nội 1L | 河内生啤 1升 | Hanoi Draft Beer 1L",
       "names": {
-        "ko": "선양 소주",
-        "vi": "Rượu soju Sunyang",
-        "zh": "鲜洋烧酒",
-        "en": "Sunyang Soju"
+        "ko": "하노이 생맥주 KEG (1L)",
+        "vi": "Bia Hơi Hà Nội KEG (1L)",
+        "zh": "河内鲜啤 KEG（1L）",
+        "en": "Hanoi Draft Beer KEG (1L)"
       },
-      "price": 154000,
+      "price": 110000,
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 99,
-      "categorySortOrder": 5
-    },
-    {
-      "id": "5e6c1f83-2f15-432a-b497-6d4747393196",
-      "cukcukId": "5e6c1f83-2f15-432a-b497-6d4747393196",
-      "cukcukCode": "ᄉ SSO 鲜",
-      "categoryId": "cukcuk-alcohol",
-      "categoryName": "주류",
-      "sourceName": "선양오크 | Sunyang Soju Oak | 鲜洋橡木烧酒",
-      "names": {
-        "ko": "선양 오크 소주",
-        "vi": "Rượu soju Sunyang Oak",
-        "zh": "鲜洋橡木烧酒",
-        "en": "Sunyang Soju Oak"
-      },
-      "price": 174900,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 100,
-      "categorySortOrder": 6
-    },
-    {
-      "id": "867b2e98-da89-4688-bcfa-0433c48ba7a8",
-      "cukcukId": "867b2e98-da89-4688-bcfa-0433c48ba7a8",
-      "cukcukCode": "수량확인6",
-      "categoryId": "cukcuk-alcohol",
-      "categoryName": "주류",
-      "sourceName": "처음처럼  Chum Churum Soju 初饮初乐  Rượu soju Chum Churum",
-      "names": {
-        "ko": "처음처럼 소주",
-        "vi": "Rượu soju Chum Churum",
-        "zh": "初饮初乐烧酒",
-        "en": "Chum Churum Soju"
-      },
-      "price": 154000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 101,
-      "categorySortOrder": 7
-    },
-    {
-      "id": "ebe0706f-a35f-4ec6-a7a3-dca6d4a47edf",
-      "cukcukId": "ebe0706f-a35f-4ec6-a7a3-dca6d4a47edf",
-      "cukcukCode": "수량확인7",
-      "categoryId": "cukcuk-alcohol",
-      "categoryName": "주류",
-      "sourceName": "진로 Jinro Soju 真露（淡口） Rượu soju Jinro",
-      "names": {
-        "ko": "진로 소주",
-        "vi": "Rượu soju Jinro",
-        "zh": "真露淡口烧酒",
-        "en": "Jinro Soju"
-      },
-      "price": 154000,
-      "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
-      "sortOrder": 102,
-      "categorySortOrder": 8
+      "sortOrder": 97,
+      "categorySortOrder": 3
     },
     {
       "id": "5e9db310-b4ff-4c6a-8c9f-8706a78065f9",
@@ -2357,8 +2450,48 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 103,
-      "categorySortOrder": 9
+      "sortOrder": 98,
+      "categorySortOrder": 4
+    },
+    {
+      "id": "ebe0706f-a35f-4ec6-a7a3-dca6d4a47edf",
+      "cukcukId": "ebe0706f-a35f-4ec6-a7a3-dca6d4a47edf",
+      "cukcukCode": "수량확인7",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "진로 Jinro Soju 真露（淡口） Rượu soju Jinro",
+      "names": {
+        "ko": "진로 소주",
+        "vi": "Rượu soju Jinro",
+        "zh": "真露淡口烧酒",
+        "en": "Jinro Soju"
+      },
+      "price": 154000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 99,
+      "categorySortOrder": 5
+    },
+    {
+      "id": "867b2e98-da89-4688-bcfa-0433c48ba7a8",
+      "cukcukId": "867b2e98-da89-4688-bcfa-0433c48ba7a8",
+      "cukcukCode": "수량확인6",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "처음처럼  Chum Churum Soju 初饮初乐  Rượu soju Chum Churum",
+      "names": {
+        "ko": "처음처럼 소주",
+        "vi": "Rượu soju Chum Churum",
+        "zh": "初饮初乐烧酒",
+        "en": "Chum Churum Soju"
+      },
+      "price": 154000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 100,
+      "categorySortOrder": 6
     },
     {
       "id": "0f40c0ed-06d2-433b-a19d-6983b0c4e014",
@@ -2377,8 +2510,48 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 104,
-      "categorySortOrder": 10
+      "sortOrder": 101,
+      "categorySortOrder": 7
+    },
+    {
+      "id": "2d93c37e-8f59-4f39-a06d-cbaa6dab47f6",
+      "cukcukId": "2d93c37e-8f59-4f39-a06d-cbaa6dab47f6",
+      "cukcukCode": "ᄉ SS 鲜 SS",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "선양소주 | Sunyang Soju | 鲜洋烧酒 |",
+      "names": {
+        "ko": "선양 소주",
+        "vi": "Rượu soju Sunyang",
+        "zh": "鲜洋烧酒",
+        "en": "Sunyang Soju"
+      },
+      "price": 154000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 102,
+      "categorySortOrder": 8
+    },
+    {
+      "id": "5e6c1f83-2f15-432a-b497-6d4747393196",
+      "cukcukId": "5e6c1f83-2f15-432a-b497-6d4747393196",
+      "cukcukCode": "ᄉ SSO 鲜",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "선양오크 | Sunyang Soju Oak | 鲜洋橡木烧酒",
+      "names": {
+        "ko": "선양 오크 소주",
+        "vi": "Rượu soju Sunyang Oak",
+        "zh": "鲜洋橡木烧酒",
+        "en": "Sunyang Soju Oak"
+      },
+      "price": 174900,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 103,
+      "categorySortOrder": 9
     },
     {
       "id": "b3ff9a43-637b-436f-ab7e-d3e0b3f2826f",
@@ -2397,8 +2570,8 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 105,
-      "categorySortOrder": 11
+      "sortOrder": 104,
+      "categorySortOrder": 10
     },
     {
       "id": "5d41c81c-7a68-4726-a8df-1a6315788b1c",
@@ -2417,8 +2590,8 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 106,
-      "categorySortOrder": 12
+      "sortOrder": 105,
+      "categorySortOrder": 11
     },
     {
       "id": "addccbaa-223e-4456-a73a-98b2e0d7e9ae",
@@ -2434,6 +2607,26 @@
         "en": "Tiger Beer (Bottle)"
       },
       "price": 49500,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 106,
+      "categorySortOrder": 12
+    },
+    {
+      "id": "9086861a-9c6c-48f1-a2bf-c20cc3c38a80",
+      "cukcukId": "9086861a-9c6c-48f1-a2bf-c20cc3c38a80",
+      "cukcukCode": "수량확인30",
+      "categoryId": "cukcuk-alcohol",
+      "categoryName": "주류",
+      "sourceName": "타이거 크리스탈 병맥주 | Bia Tiger Crystal chai | 虎牌水晶啤酒（瓶装） | Tiger Crystal (Bottle)",
+      "names": {
+        "ko": "타이거 크리스탈 병맥주",
+        "vi": "Bia Tiger Crystal chai",
+        "zh": "虎牌水晶啤酒（瓶装）",
+        "en": "Tiger Crystal Beer (Bottle)"
+      },
+      "price": 55000,
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
@@ -2501,19 +2694,19 @@
       "categorySortOrder": 16
     },
     {
-      "id": "9086861a-9c6c-48f1-a2bf-c20cc3c38a80",
-      "cukcukId": "9086861a-9c6c-48f1-a2bf-c20cc3c38a80",
-      "cukcukCode": "수량확인30",
+      "id": "225f2ecd-94d2-4970-bb7d-acb313837cb9",
+      "cukcukId": "225f2ecd-94d2-4970-bb7d-acb313837cb9",
+      "cukcukCode": "ᄃᄀᄉ TG S",
       "categoryId": "cukcuk-alcohol",
       "categoryName": "주류",
-      "sourceName": "타이거 크리스탈 병맥주 | Bia Tiger Crystal chai | 虎牌水晶啤酒（瓶装） | Tiger Crystal (Bottle)",
+      "sourceName": "데킬라 골드&실버 | Tequila Gold & Silver",
       "names": {
-        "ko": "타이거 크리스탈 병맥주",
-        "vi": "Bia Tiger Crystal chai",
-        "zh": "虎牌水晶啤酒（瓶装）",
-        "en": "Tiger Crystal Beer (Bottle)"
+        "ko": "데킬라 골드 & 실버",
+        "vi": "Tequila Gold & Silver",
+        "zh": "金银龙舌兰",
+        "en": "Tequila Gold & Silver"
       },
-      "price": 55000,
+      "price": 1089000,
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
@@ -2603,10 +2796,10 @@
         }
       ],
       "menuIds": [
-        "27ab97f7-0ddf-495a-b475-4533e945da85",
         "57ef6bb8-37f3-4296-b1c5-3e24412c2af9",
-        "69b57fd4-2b15-4c79-80da-e7f3eba63b67",
-        "930eadf4-1572-4fda-83c2-428092e0eb24"
+        "930eadf4-1572-4fda-83c2-428092e0eb24",
+        "27ab97f7-0ddf-495a-b475-4533e945da85",
+        "69b57fd4-2b15-4c79-80da-e7f3eba63b67"
       ]
     },
     {
@@ -2648,9 +2841,9 @@
         }
       ],
       "menuIds": [
-        "5936b951-be35-4ac7-9b33-abf50c40f7d3",
+        "cf78e938-ff9f-441f-a3a3-c7375f393dfa",
         "69b57fd4-2b15-4c79-80da-e7f3eba63b67",
-        "cf78e938-ff9f-441f-a3a3-c7375f393dfa"
+        "5936b951-be35-4ac7-9b33-abf50c40f7d3"
       ]
     },
     {
@@ -2752,9 +2945,9 @@
         }
       ],
       "menuIds": [
-        "27ab97f7-0ddf-495a-b475-4533e945da85",
         "57ef6bb8-37f3-4296-b1c5-3e24412c2af9",
-        "930eadf4-1572-4fda-83c2-428092e0eb24"
+        "930eadf4-1572-4fda-83c2-428092e0eb24",
+        "27ab97f7-0ddf-495a-b475-4533e945da85"
       ]
     },
     {
@@ -2808,13 +3001,13 @@
         }
       ],
       "menuIds": [
-        "27ab97f7-0ddf-495a-b475-4533e945da85",
         "57ef6bb8-37f3-4296-b1c5-3e24412c2af9",
-        "5936b951-be35-4ac7-9b33-abf50c40f7d3",
-        "69b57fd4-2b15-4c79-80da-e7f3eba63b67",
         "930eadf4-1572-4fda-83c2-428092e0eb24",
+        "27ab97f7-0ddf-495a-b475-4533e945da85",
+        "cf78e938-ff9f-441f-a3a3-c7375f393dfa",
+        "69b57fd4-2b15-4c79-80da-e7f3eba63b67",
         "bcaaa810-6f02-41dc-ae7d-d1bcf7e1acad",
-        "cf78e938-ff9f-441f-a3a3-c7375f393dfa"
+        "5936b951-be35-4ac7-9b33-abf50c40f7d3"
       ]
     },
     {
@@ -2844,8 +3037,8 @@
         }
       ],
       "menuIds": [
-        "b7a6075c-130d-42ea-a474-386dc480ae3a",
-        "c92bb30f-12ac-4c63-84cd-5040166c3833"
+        "c92bb30f-12ac-4c63-84cd-5040166c3833",
+        "b7a6075c-130d-42ea-a474-386dc480ae3a"
       ]
     },
     {
@@ -2887,9 +3080,9 @@
         }
       ],
       "menuIds": [
+        "7bd7dad2-ef46-4ca2-a260-1b786e4066be",
         "2813d1e7-250b-49ae-9f76-e5b40f451492",
-        "42257f0b-e1f2-4b69-b7ce-d59d43a69f87",
-        "7bd7dad2-ef46-4ca2-a260-1b786e4066be"
+        "42257f0b-e1f2-4b69-b7ce-d59d43a69f87"
       ]
     },
     {
@@ -2943,9 +3136,9 @@
         }
       ],
       "menuIds": [
-        "64d34508-2c75-4242-b63e-f8a4a475968c",
+        "dfd26114-45e6-48f0-a0b3-4afc283eb847",
         "899a8524-b720-4828-b7fc-1f2472ce962a",
-        "dfd26114-45e6-48f0-a0b3-4afc283eb847"
+        "64d34508-2c75-4242-b63e-f8a4a475968c"
       ]
     },
     {
@@ -3077,15 +3270,15 @@
         }
       ],
       "menuIds": [
+        "7fc37f94-fa7a-4206-ac56-e46984856488",
+        "f0e8b2b9-eaf9-4b48-b711-ccfd158e3d81",
+        "c2beac10-4cdb-4d1b-b83b-ebac299eb44e",
+        "7c92814f-40ee-4742-8e2b-004a659bcb97",
+        "d939174b-8266-4b40-ac1b-8314d3ea647b",
+        "b2c769d6-83b0-4c07-a942-ae7113fabd31",
         "08e44de3-df20-4b82-aa28-b26a7d2d69f9",
         "316a67e3-b913-4b86-81fa-79c053604819",
-        "7c92814f-40ee-4742-8e2b-004a659bcb97",
-        "7fc37f94-fa7a-4206-ac56-e46984856488",
-        "9dc365e6-11a7-4308-9899-b69cfdce6132",
-        "b2c769d6-83b0-4c07-a942-ae7113fabd31",
-        "c2beac10-4cdb-4d1b-b83b-ebac299eb44e",
-        "d939174b-8266-4b40-ac1b-8314d3ea647b",
-        "f0e8b2b9-eaf9-4b48-b711-ccfd158e3d81"
+        "9dc365e6-11a7-4308-9899-b69cfdce6132"
       ]
     },
     {
@@ -3452,9 +3645,9 @@
         }
       ],
       "menuIds": [
+        "718a9af3-056b-44ee-b833-04cab90d1e9f",
         "2813d1e7-250b-49ae-9f76-e5b40f451492",
-        "42257f0b-e1f2-4b69-b7ce-d59d43a69f87",
-        "718a9af3-056b-44ee-b833-04cab90d1e9f"
+        "42257f0b-e1f2-4b69-b7ce-d59d43a69f87"
       ]
     },
     {
@@ -3766,8 +3959,8 @@
         }
       ],
       "menuIds": [
-        "1ffd639e-dd8f-4185-9ab9-4b187835b21c",
-        "e1cf1187-b643-4b90-9f6f-9a7458eaf037"
+        "e1cf1187-b643-4b90-9f6f-9a7458eaf037",
+        "1ffd639e-dd8f-4185-9ab9-4b187835b21c"
       ]
     },
     {
@@ -3905,8 +4098,8 @@
         }
       ],
       "menuIds": [
-        "c2beac10-4cdb-4d1b-b83b-ebac299eb44e",
-        "f0e8b2b9-eaf9-4b48-b711-ccfd158e3d81"
+        "f0e8b2b9-eaf9-4b48-b711-ccfd158e3d81",
+        "c2beac10-4cdb-4d1b-b83b-ebac299eb44e"
       ]
     },
     {
@@ -4032,11 +4225,11 @@
         }
       ],
       "menuIds": [
-        "433a6207-b8cf-4333-aa33-f344d6bfeb31",
-        "646d2461-e692-4275-97a0-0ba277913e92",
-        "a84fa28e-bac3-45c2-9e00-5138b660ecd7",
         "c0f16b37-ff76-4d8e-a5a8-3ead5fd7b0a5",
-        "d902dc7b-b6b7-402d-aa90-4edb1e5cfbc2"
+        "d902dc7b-b6b7-402d-aa90-4edb1e5cfbc2",
+        "433a6207-b8cf-4333-aa33-f344d6bfeb31",
+        "a84fa28e-bac3-45c2-9e00-5138b660ecd7",
+        "646d2461-e692-4275-97a0-0ba277913e92"
       ]
     },
     {
@@ -4102,8 +4295,8 @@
         }
       ],
       "menuIds": [
-        "1ffd639e-dd8f-4185-9ab9-4b187835b21c",
-        "e1cf1187-b643-4b90-9f6f-9a7458eaf037"
+        "e1cf1187-b643-4b90-9f6f-9a7458eaf037",
+        "1ffd639e-dd8f-4185-9ab9-4b187835b21c"
       ]
     },
     {
@@ -4229,8 +4422,8 @@
         }
       ],
       "menuIds": [
-        "1ffd639e-dd8f-4185-9ab9-4b187835b21c",
-        "e1cf1187-b643-4b90-9f6f-9a7458eaf037"
+        "e1cf1187-b643-4b90-9f6f-9a7458eaf037",
+        "1ffd639e-dd8f-4185-9ab9-4b187835b21c"
       ]
     },
     {
@@ -4277,10 +4470,10 @@
     }
   ],
   "inventoryCandidateCount": 251,
-  "catalogRevision": "cukcuk-table-qr-2026-08-29-977c992bdbcc-menu-polish-v2",
+  "catalogRevision": "cukcuk-tablet-content-2026-08-30-a34a77a636a3",
   "tableQrLayout": {
-    "revision": "cukcuk-table-qr-2026-08-29-977c992bdbcc-menu-polish-v2",
-    "capturedAt": "2026-08-29T11:04:37.313Z",
+    "revision": "cukcuk-tablet-content-2026-08-30-a34a77a636a3",
+    "capturedAt": "2026-08-30T02:25:05.126Z",
     "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
     "includeUnlisted": false,
     "featuredVisible": false,
@@ -4294,9 +4487,9 @@
     "model": "gpt-5.6-terra",
     "status": "ready",
     "entityCount": 258,
-    "cacheHits": 252,
-    "translated": 6,
+    "cacheHits": 24,
+    "translated": 0,
     "pendingCount": 0,
-    "updatedAt": "2026-08-30T02:11:32.023Z"
+    "updatedAt": "2026-08-30T02:25:05.318Z"
   }
 }

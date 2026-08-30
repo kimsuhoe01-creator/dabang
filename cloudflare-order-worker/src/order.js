@@ -36,28 +36,52 @@ export function validateAndBuildOrder(payload, menuData, branchId) {
       SortOrder: sortOrder++,
     });
 
-    for (const selected of Array.isArray(line.options) ? line.options : []) {
+    if (line.options !== undefined && !Array.isArray(line.options)) throw invalid("메뉴 옵션 정보가 올바르지 않습니다.");
+    const selectedOptions = Array.isArray(line.options) ? line.options : [];
+    const attachedTemplateIds = (Array.isArray(menu.optionTemplateIds) ? menu.optionTemplateIds : []).map(String);
+    const attachedTemplateSet = new Set(attachedTemplateIds);
+    const selectedKeys = new Set();
+    const groupCounts = new Map();
+
+    for (const selected of selectedOptions) {
+      const templateId = cleanId(selected?.templateId);
       const valueId = cleanId(selected?.valueId);
-      let matched = null;
-      for (const templateId of Array.isArray(menu.optionTemplateIds) ? menu.optionTemplateIds : []) {
-        const template = templates.get(String(templateId));
-        const value = template?.values?.find((candidate) => String(candidate.id) === valueId && candidate.visible !== false);
-        if (value) {
-          matched = value;
-          break;
-        }
-      }
+      if (!templateId || !attachedTemplateSet.has(templateId)) throw invalid("이 메뉴에서 선택할 수 없는 옵션 그룹입니다.");
+      const selectionKey = `${templateId}:${valueId}`;
+      if (!valueId || selectedKeys.has(selectionKey)) throw invalid("같은 옵션을 중복해서 선택할 수 없습니다.");
+      selectedKeys.add(selectionKey);
+      const template = templates.get(templateId);
+      const matched = template?.values?.find((candidate) => String(candidate.id) === valueId && candidate.visible !== false);
       if (!matched) throw invalid("이 메뉴에서 선택할 수 없는 옵션입니다.");
+      groupCounts.set(templateId, (groupCounts.get(templateId) || 0) + 1);
       details.push({
         Id: crypto.randomUUID(),
         ParentId: parentId,
         AdditionId: String(matched.id),
-        ItemName: String(matched.names?.ko || matched.id),
+        ItemName: bilingualOptionName(matched),
         Quantity: quantity,
         Status: 1,
         Price: Number(matched.additionalPrice || 0),
         SortOrder: sortOrder++,
       });
+    }
+
+    for (const templateId of attachedTemplateIds) {
+      const template = templates.get(templateId);
+      if (!template) throw new OrderError("메뉴 옵션 원본을 찾을 수 없습니다.", 503, "MENU_DATA_INVALID");
+      const rule = menu.optionRules?.[templateId] || {};
+      const required = rule.required ?? template.required === true;
+      let minSelections = selectionLimit(rule.minSelections, template.minSelections, required ? 1 : 0);
+      const visibleCount = Array.isArray(template.values) ? template.values.filter(value => value.visible !== false).length : 0;
+      let maxSelections = selectionLimit(rule.maxSelections, template.maxSelections, visibleCount);
+      if (required && minSelections < 1) minSelections = 1;
+      if (maxSelections < minSelections || maxSelections > visibleCount) {
+        throw new OrderError("메뉴 옵션 선택 규칙이 올바르지 않습니다.", 503, "MENU_DATA_INVALID");
+      }
+      const selectedCount = groupCounts.get(templateId) || 0;
+      if (selectedCount < minSelections || selectedCount > maxSelections) {
+        throw invalid("필수 옵션의 선택 개수를 확인해 주세요.");
+      }
     }
   }
 
@@ -75,6 +99,20 @@ export function validateAndBuildOrder(payload, menuData, branchId) {
     OrderDetails: details,
     ListTableID: [tableId],
   };
+}
+
+function selectionLimit(primary, fallback, defaultValue) {
+  if (Number.isInteger(primary) && primary >= 0) return primary;
+  if (Number.isInteger(fallback) && fallback >= 0) return fallback;
+  return defaultValue;
+}
+
+function bilingualOptionName(option) {
+  const receiptNames = option.receiptNames || option.names || {};
+  const vi = cleanText(receiptNames.vi, 160);
+  const ko = cleanText(receiptNames.ko, 160);
+  if (vi && ko && vi !== ko) return `${vi} / ${ko}`;
+  return vi || ko || String(option.id);
 }
 
 export async function createCukCukOrder(env, order, fetcher = fetch) {

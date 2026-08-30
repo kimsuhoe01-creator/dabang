@@ -59,6 +59,61 @@ function validateMenuNameOverrides(config, configuredCodes) {
   }
 }
 
+function validateLocalizedNames(names, label) {
+  if (!names || typeof names !== 'object' || Array.isArray(names)) throw new Error(`${label} must define localized names.`);
+  const localized = ['ko', 'vi', 'zh', 'en'].filter(language => clean(names[language]));
+  if (!localized.length) throw new Error(`${label} has no localized text.`);
+}
+
+function validateCodeOverrideMap(overrides, label, configuredCodes, validateValue) {
+  if (!overrides) return;
+  if (typeof overrides !== 'object' || Array.isArray(overrides)) throw new Error(`${label} must be an object keyed by CUKCUK product code.`);
+  const seenCodes = new Set();
+  for (const [code, value] of Object.entries(overrides)) {
+    const key = codeKey(code);
+    if (!key || seenCodes.has(key)) throw new Error(`Invalid or duplicate ${label} code: ${code}`);
+    if (!configuredCodes.has(key)) throw new Error(`${label} ${code} is not present in the table QR layout.`);
+    validateValue(value, `${label} ${code}`);
+    seenCodes.add(key);
+  }
+}
+
+function validateMenuSubtitleOverrides(config, configuredCodes) {
+  validateCodeOverrideMap(config.menuSubtitleOverrides, 'Menu-subtitle override', configuredCodes, (override, label) => {
+    if (!override || typeof override !== 'object' || Array.isArray(override)) throw new Error(`${label} must be an object.`);
+    validateLocalizedNames(override.names, label);
+    if (override.tone !== undefined && !['default', 'warning', 'danger'].includes(clean(override.tone))) {
+      throw new Error(`${label} has an unsupported tone.`);
+    }
+  });
+}
+
+function validateMenuOptionOverrides(config, configuredCodes) {
+  validateCodeOverrideMap(config.menuOptionOverrides, 'Menu-option override', configuredCodes, (override, label) => {
+    if (!override || typeof override !== 'object' || Array.isArray(override)) throw new Error(`${label} must be an object.`);
+    if (Object.hasOwn(override, 'templateIds')) {
+      if (!Array.isArray(override.templateIds)) throw new Error(`${label}.templateIds must be an array.`);
+      const ids = override.templateIds.map(value => clean(value));
+      if (ids.some(value => !value) || new Set(ids).size !== ids.length) throw new Error(`${label}.templateIds contains a blank or duplicate id.`);
+    }
+    if (override.rules !== undefined && (!override.rules || typeof override.rules !== 'object' || Array.isArray(override.rules))) {
+      throw new Error(`${label}.rules must be an object keyed by option template id.`);
+    }
+    const configuredIds = Object.hasOwn(override, 'templateIds') ? new Set(override.templateIds.map(value => clean(value))) : null;
+    for (const [templateId, rule] of Object.entries(override.rules || {})) {
+      const id = clean(templateId);
+      if (!id || !rule || typeof rule !== 'object' || Array.isArray(rule)) throw new Error(`${label} has an invalid rule for ${templateId}.`);
+      if (configuredIds && !configuredIds.has(id)) throw new Error(`${label} rule ${id} is not listed in templateIds.`);
+      const min = rule.minSelections;
+      const max = rule.maxSelections;
+      if (min !== undefined && (!Number.isInteger(min) || min < 0)) throw new Error(`${label} rule ${id} has an invalid minSelections.`);
+      if (max !== undefined && (!Number.isInteger(max) || max < 0)) throw new Error(`${label} rule ${id} has an invalid maxSelections.`);
+      if (min !== undefined && max !== undefined && max < min) throw new Error(`${label} rule ${id} has maxSelections below minSelections.`);
+      if (rule.required !== undefined && typeof rule.required !== 'boolean') throw new Error(`${label} rule ${id} has a non-boolean required value.`);
+    }
+  });
+}
+
 function reorderExistingIds(values, preferredIds) {
   const source = (Array.isArray(values) ? values : []).map(String);
   if (!Array.isArray(preferredIds) || !preferredIds.length) return source;
@@ -101,6 +156,8 @@ function validateConfig(config) {
   if (Number(config.menuCount) !== menuCount) throw new Error('Configured menuCount does not match the menu lists.');
   validateOptionOrdering(config, codes);
   validateMenuNameOverrides(config, codes);
+  validateMenuSubtitleOverrides(config, codes);
+  validateMenuOptionOverrides(config, codes);
 }
 
 function candidateCodes(menu) {
@@ -125,6 +182,8 @@ export function applyTableQrLayout(publishedInput, configInput) {
   const menuOrderingByCode = new Map((config.optionOrdering?.menus || []).map(rule => [codeKey(rule.code), rule]));
   const templateOrderingById = new Map((config.optionOrdering?.templates || []).map(rule => [String(rule.templateId), rule]));
   const menuNameOverridesByCode = new Map(Object.entries(config.menuNameOverrides || {}).map(([code, names]) => [codeKey(code), names]));
+  const menuSubtitleOverridesByCode = new Map(Object.entries(config.menuSubtitleOverrides || {}).map(([code, subtitle]) => [codeKey(code), subtitle]));
+  const menuOptionOverridesByCode = new Map(Object.entries(config.menuOptionOverrides || {}).map(([code, override]) => [codeKey(code), override]));
   const byCode = new Map();
   for (const menu of candidates) {
     for (const key of new Set(candidateCodes(menu))) {
@@ -166,11 +225,16 @@ export function applyTableQrLayout(publishedInput, configInput) {
       if (rawPrice === null || rawPrice === undefined || clean(rawPrice) === '' || !Number.isFinite(price) || price < 0) throw new Error(`CUKCUK product ${ruleMenu.code} has an invalid price.`);
       if (selectedIds.has(id)) throw new Error(`CUKCUK product id ${id} was selected more than once.`);
       selectedIds.add(id);
-      const orderedTemplateIds = reorderExistingIds(candidate.optionTemplateIds, menuOrderingByCode.get(codeKey(ruleMenu.code))?.templateIds);
+      const optionOverride = menuOptionOverridesByCode.get(codeKey(ruleMenu.code));
+      const sourceTemplateIds = optionOverride && Object.hasOwn(optionOverride, 'templateIds')
+        ? optionOverride.templateIds.map(String)
+        : candidate.optionTemplateIds;
+      const orderedTemplateIds = reorderExistingIds(sourceTemplateIds, menuOrderingByCode.get(codeKey(ruleMenu.code))?.templateIds);
       const nameOverrides = menuNameOverridesByCode.get(codeKey(ruleMenu.code)) || {};
+      const subtitleOverride = menuSubtitleOverridesByCode.get(codeKey(ruleMenu.code));
       const names = { ...(candidate.names || {}) };
       for (const language of ['ko', 'vi', 'zh', 'en']) if (clean(nameOverrides[language])) names[language] = clean(nameOverrides[language]);
-      menus.push({
+      const publishedMenu = {
         ...candidate,
         id,
         cukcukId: String(candidate.cukcukId || id),
@@ -183,7 +247,15 @@ export function applyTableQrLayout(publishedInput, configInput) {
         optionTemplateIds: orderedTemplateIds,
         sortOrder: globalSortOrder++,
         categorySortOrder
-      });
+      };
+      if (subtitleOverride) {
+        publishedMenu.subtitle = {
+          names: Object.fromEntries(['ko', 'vi', 'zh', 'en'].map(language => [language, clean(subtitleOverride.names?.[language])])),
+          tone: clean(subtitleOverride.tone) || 'default'
+        };
+      }
+      if (optionOverride?.rules) publishedMenu.optionRules = clone(optionOverride.rules);
+      menus.push(publishedMenu);
     }
   }
 
@@ -202,11 +274,28 @@ export function applyTableQrLayout(publishedInput, configInput) {
     .map(template => ({
       ...template,
       values: normalizeTemplateValues(template.values, templateOrderingById.get(String(template.id))?.valueIds),
-      menuIds: (template.menuIds || []).map(String).filter(id => selectedIds.has(id))
+      menuIds: menus.filter(menu => menu.optionTemplateIds.map(String).includes(String(template.id))).map(menu => menu.id)
     }));
   const retainedTemplateIds = new Set(optionTemplates.map(template => String(template.id)));
+  const retainedTemplatesById = new Map(optionTemplates.map(template => [String(template.id), template]));
   for (const menu of menus) {
     menu.optionTemplateIds = (menu.optionTemplateIds || []).map(String).filter(id => retainedTemplateIds.has(id));
+    if (menu.optionRules) {
+      for (const templateId of Object.keys(menu.optionRules)) {
+        if (!menu.optionTemplateIds.includes(String(templateId))) {
+          throw new Error(`Menu ${menu.cukcukCode} has an option rule for unattached template ${templateId}.`);
+        }
+        const template = retainedTemplatesById.get(String(templateId));
+        const rule = menu.optionRules[templateId] || {};
+        const visibleCount = (template?.values || []).filter(value => value?.visible !== false).length;
+        const required = rule.required ?? template?.required === true;
+        const minSelections = rule.minSelections ?? template?.minSelections ?? (required ? 1 : 0);
+        const maxSelections = rule.maxSelections ?? template?.maxSelections ?? visibleCount;
+        if (minSelections > visibleCount || maxSelections > visibleCount) {
+          throw new Error(`Menu ${menu.cukcukCode} option rule ${templateId} requires up to ${maxSelections} selections but only ${visibleCount} visible values exist.`);
+        }
+      }
+    }
     menu.optionGroups = menu.optionTemplateIds.length;
   }
 
