@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'dabang-tablet-v19';
+const CACHE_VERSION = 'dabang-tablet-v20';
 const SHELL_CACHE = `${CACHE_VERSION}-shell`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const APP_SHELL = [

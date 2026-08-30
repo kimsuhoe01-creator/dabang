@@ -55,6 +55,19 @@ test('staff setup controls stay Vietnamese while the customer language prompt st
   assert.doesNotMatch(resetSource, /words\[lang\]\.resetConfirm/);
 });
 
+test('store tablet cards use a compact four-column layout without empty subtitle spacers', () => {
+  assert.match(html, /@media\(min-width:1180px\) and \(max-height:900px\)/);
+  assert.match(html, /\.grid\{grid-template-columns:repeat\(4,minmax\(0,1fr\)\);gap:12px;align-items:start\}/);
+  assert.match(html, /\.visual,\.sold\{aspect-ratio:3\/2\}/);
+  assert.match(html, /\.info\{flex:none;min-height:0;padding:9px 11px 10px\}/);
+  assert.match(html, /\.menu-subtitle\{min-height:0;margin:0 0 6px;font-size:12px;line-height:1\.35;-webkit-line-clamp:2\}/);
+  assert.match(html, /\.foot\{margin-top:5px\}/);
+
+  const cardMarkup = sourceSlice('function menuCardMarkup(menu,index)', 'function menuSections');
+  assert.match(cardMarkup, /subtitleMarkup=subtitle\?.+?:'';/s);
+  assert.doesNotMatch(cardMarkup, /menu-subtitle" aria-hidden="true"/);
+});
+
 function decodeRgbaPng(buffer) {
   const signature = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]);
   assert.equal(buffer.subarray(0, 8).equals(signature), true, 'invalid PNG signature');
