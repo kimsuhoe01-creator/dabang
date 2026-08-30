@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-08-30 03:12:39",
-    "finished_at": "2026-08-30 03:12:47",
+    "started_at": "2026-08-30 04:00:36",
+    "finished_at": "2026-08-30 04:00:46",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -11,7 +11,7 @@
   },
   "categoryCount": 14,
   "menuCount": 112,
-  "optionTemplateCount": 27,
+  "optionTemplateCount": 28,
   "categories": [
     {
       "id": "cukcuk-qr-highball",
@@ -1257,7 +1257,7 @@
       "sourceName": "후라이드  Fried Chicken  无骨炸鸡腿 Má đùi rút xương",
       "names": {
         "ko": "후라이드 치킨",
-        "vi": "Gà rán không xương",
+        "vi": "Gà chiên giòn không xương",
         "zh": "无骨炸鸡腿",
         "en": "Boneless Fried Chicken"
       },
@@ -1281,7 +1281,7 @@
         "ko": "양념 치킨",
         "vi": "Gà sốt ngọt kiểu Hàn",
         "zh": "韩式甜酱炸鸡",
-        "en": "Korean Sweet Sauce Chicken"
+        "en": "Sweet & Spicy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1303,7 +1303,7 @@
         "ko": "매운 양념 치킨",
         "vi": "Gà sốt cay kiểu Hàn",
         "zh": "韩式辣酱炸鸡",
-        "en": "Korean Spicy Sauce Chicken"
+        "en": "Hot & Spicy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1347,7 +1347,7 @@
         "ko": "고추마늘간장 치킨",
         "vi": "Gà sốt xì dầu tỏi ớt",
         "zh": "辣椒蒜酱鸡",
-        "en": "Chili Garlic Soy Chicken"
+        "en": "Garlic Soy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1369,7 +1369,7 @@
         "ko": "스리라차 어니언 치킨",
         "vi": "Gà sốt kem hành Sriracha",
         "zh": "是拉差洋葱奶油炸鸡",
-        "en": "Sriracha Onion Cream Chicken"
+        "en": "Sriracha Onion Chicken"
       },
       "price": 399600,
       "available": true,
@@ -2112,10 +2112,19 @@
         "en": "Add Extra Toppings"
       },
       "price": 0,
-      "available": false,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
+      "available": true,
+      "optionGroups": 1,
+      "optionTemplateIds": [
+        "cukcuk-detail:08b4aba2-4116-4148-b2a9-763c5d72d543:0"
+      ],
       "sortOrder": 80,
+      "optionRules": {
+        "cukcuk-detail:08b4aba2-4116-4148-b2a9-763c5d72d543:0": {
+          "required": true,
+          "minSelections": 1,
+          "maxSelections": 5
+        }
+      },
       "categorySortOrder": 6
     },
     {
@@ -5052,13 +5061,110 @@
       "menuIds": [
         "2ce328a0-8d0c-481e-883f-2e35684b900d"
       ]
+    },
+    {
+      "id": "cukcuk-detail:08b4aba2-4116-4148-b2a9-763c5d72d543:0",
+      "sourceName": "사리 추가 선택",
+      "names": {
+        "ko": "사리 추가 선택",
+        "vi": "Chọn món thêm",
+        "zh": "选择加料",
+        "en": "Choose Extra Toppings"
+      },
+      "required": false,
+      "minSelections": 0,
+      "maxSelections": 6,
+      "revision": 1,
+      "values": [
+        {
+          "id": "c8150ed7-3cdc-4693-9ea3-045fead5a6a9",
+          "sourceName": "라면사리 | Thêm mì gói | 加泡面 | Add instant noodles",
+          "names": {
+            "ko": "라면사리 추가",
+            "vi": "Thêm mì gói",
+            "zh": "加泡面",
+            "en": "Add Instant Noodles"
+          },
+          "additionalPrice": 32400,
+          "visible": true,
+          "sortOrder": 0
+        },
+        {
+          "id": "8dd99f36-7c4a-4952-87b7-0d08943f406d",
+          "sourceName": "쫄면사리 | Thêm mì trộn cay | 加韩式拌面 | Add spicy chewy noodles",
+          "names": {
+            "ko": "쫄면사리 추가",
+            "vi": "Thêm mì trộn cay",
+            "zh": "加韩式拌面",
+            "en": "Add Spicy Chewy Noodles"
+          },
+          "additionalPrice": 43200,
+          "visible": true,
+          "sortOrder": 1
+        },
+        {
+          "id": "daef3402-17a1-4c2a-992b-4580e2334a5f",
+          "sourceName": "수제비사리 | Thêm bánh bột xé | 加手擀面片 | Add hand-torn dough pieces",
+          "names": {
+            "ko": "수제비사리 추가",
+            "vi": "Thêm bánh bột xé",
+            "zh": "加手擀面片",
+            "en": "Add Hand-Torn Dough Pieces"
+          },
+          "additionalPrice": 43200,
+          "visible": true,
+          "sortOrder": 2
+        },
+        {
+          "id": "7f7cd94d-de0d-4ef2-8cee-c6d2bced92c3",
+          "sourceName": "우동사리 추가 | Thêm mì udon | 加乌冬面 | Add Udon Noodles",
+          "names": {
+            "ko": "우동사리 추가",
+            "vi": "Thêm mì udon",
+            "zh": "加乌冬面",
+            "en": "Add Udon Noodles"
+          },
+          "additionalPrice": 54000,
+          "visible": true,
+          "sortOrder": 3
+        },
+        {
+          "id": "c4c55e38-59f1-4564-9d7a-ef11a6ccaa75",
+          "sourceName": "물만두사리 | Thêm há cảo nước | 加水饺 | Add boiled dumplings",
+          "names": {
+            "ko": "물만두사리 추가",
+            "vi": "Thêm há cảo nước",
+            "zh": "加水饺",
+            "en": "Add Boiled Dumplings"
+          },
+          "additionalPrice": 54000,
+          "visible": true,
+          "sortOrder": 4
+        },
+        {
+          "id": "ec159ded-1789-4789-9db7-f98bb2ee44c9",
+          "sourceName": "떡사리/ thêm tok",
+          "names": {
+            "ko": "떡사리 추가",
+            "vi": "Thêm bánh gạo",
+            "zh": "加年糕",
+            "en": "Add Rice Cakes"
+          },
+          "additionalPrice": 32400,
+          "visible": true,
+          "sortOrder": 5
+        }
+      ],
+      "menuIds": [
+        "08b4aba2-4116-4148-b2a9-763c5d72d543"
+      ]
     }
   ],
   "inventoryCandidateCount": 251,
-  "catalogRevision": "cukcuk-tablet-content-2026-08-30-a449e2658a9b",
+  "catalogRevision": "cukcuk-tablet-content-2026-08-30-0376804d9cc1",
   "tableQrLayout": {
-    "revision": "cukcuk-tablet-content-2026-08-30-a449e2658a9b",
-    "capturedAt": "2026-08-30T03:10:01.719Z",
+    "revision": "cukcuk-tablet-content-2026-08-30-0376804d9cc1",
+    "capturedAt": "2026-08-30T03:57:09.888Z",
     "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
     "includeUnlisted": false,
     "featuredVisible": false,
@@ -5071,10 +5177,10 @@
     "provider": "openai",
     "model": "gpt-5.6-terra",
     "status": "ready",
-    "entityCount": 292,
-    "cacheHits": 280,
-    "translated": 12,
+    "entityCount": 299,
+    "cacheHits": 281,
+    "translated": 18,
     "pendingCount": 0,
-    "updatedAt": "2026-08-30T03:12:58.975Z"
+    "updatedAt": "2026-08-30T04:01:04.354Z"
   }
 }
