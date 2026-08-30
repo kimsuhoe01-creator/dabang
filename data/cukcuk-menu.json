@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-08-30 01:38:26",
-    "finished_at": "2026-08-30 01:38:34",
+    "started_at": "2026-08-30 02:11:14",
+    "finished_at": "2026-08-30 02:11:22",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -390,12 +390,12 @@
       "cukcukId": "d301f64f-16fa-4c8f-86bb-62318205039a",
       "categoryId": "f60b3e05-f21f-4905-9207-0e494ff2b464",
       "categoryName": "신메뉴",
-      "sourceName": "돈까스 플레이트 Pork Cutlet Plate 炸猪排拼盘 Đĩa Thịt Heo Chiên Xù",
+      "sourceName": "돈까스 플레이트 (안 매운맛) Pork Cutlet Plate 炸猪排拼盘 Đĩa Thịt Heo Chiên Xù",
       "names": {
-        "ko": "돈까스 플레이트",
-        "vi": "Đĩa thịt heo chiên xù",
-        "zh": "炸猪排拼盘",
-        "en": "Pork Cutlet Plate"
+        "ko": "돈까스 플레이트 (안 매운맛)",
+        "vi": "Đĩa thịt heo chiên xù (không cay)",
+        "zh": "炸猪排拼盘（不辣）",
+        "en": "Pork Cutlet Plate (Non-Spicy)"
       },
       "price": 313200,
       "available": true,
@@ -1089,7 +1089,7 @@
       "sourceName": "양념  Sweet & Spicy Chicken  韩式甜酱炸鸡 Gà sốt ngọt HQ",
       "names": {
         "ko": "양념 치킨",
-        "vi": "Gà sốt ngọt kiểu Hàn",
+        "vi": "Gà sốt ngọt Hàn Quốc",
         "zh": "韩式甜酱炸鸡",
         "en": "Sweet & Spicy Chicken"
       },
@@ -1111,7 +1111,7 @@
       "sourceName": "매운양념  Hot & Spicy Chicken韩式辣酱炸鸡  Gà sốt cay HQ",
       "names": {
         "ko": "매운 양념 치킨",
-        "vi": "Gà sốt cay kiểu Hàn",
+        "vi": "Gà sốt cay Hàn Quốc",
         "zh": "韩式辣酱炸鸡",
         "en": "Hot & Spicy Chicken"
       },
@@ -1245,10 +1245,8 @@
       },
       "price": 399600,
       "available": true,
-      "optionGroups": 1,
-      "optionTemplateIds": [
-        "2be54a6c-ab0d-40d7-a080-0c50e0d228dc"
-      ],
+      "optionGroups": 0,
+      "optionTemplateIds": [],
       "sortOrder": 49,
       "cukcukCode": "(W01) Cánh gà vị đôi",
       "categorySortOrder": 0
@@ -3352,7 +3350,6 @@
       ],
       "menuIds": [
         "27ab97f7-0ddf-495a-b475-4533e945da85",
-        "2ce328a0-8d0c-481e-883f-2e35684b900d",
         "b2bf24a7-1018-4953-86ce-baacae6fe06c"
       ]
     },
@@ -4297,9 +4294,9 @@
     "model": "gpt-5.6-terra",
     "status": "ready",
     "entityCount": 258,
-    "cacheHits": 253,
-    "translated": 5,
+    "cacheHits": 252,
+    "translated": 6,
     "pendingCount": 0,
-    "updatedAt": "2026-08-30T01:38:42.391Z"
+    "updatedAt": "2026-08-30T02:11:32.023Z"
   }
 }

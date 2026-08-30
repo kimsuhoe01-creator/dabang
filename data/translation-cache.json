@@ -142,7 +142,7 @@
         "zh": "无骨炸鸡腿",
         "en": "Boneless Fried Chicken"
       },
-      "updatedAt": "2026-08-30T01:38:42.390Z"
+      "updatedAt": "2026-08-30T02:11:32.022Z"
     },
     "menu:84eca397-5e7f-4f5e-8e39-e62981936afe": {
       "fingerprint": "185bb09794e4378d5facdaa4461b6d400e8b65f0a0fdf518b665f373279569e3",
@@ -541,15 +541,15 @@
       "updatedAt": "2026-07-18T13:47:13.845Z"
     },
     "menu:d939174b-8266-4b40-ac1b-8314d3ea647b": {
-      "fingerprint": "06ed28d54497088a8efc3cd71c9b70f4a9ac9a038ba67e2b3306d5f00587a525",
+      "fingerprint": "12c2b150d168213aea4bfb4d4c2128d231b88ce9d8e4d971990a996d9b54dc20",
       "sourceName": "양념 Sweet & Spicy Chicken 韩式甜酱炸鸡 Gà sốt ngọt HQ",
       "names": {
         "ko": "양념 치킨",
-        "vi": "Gà sốt ngọt kiểu Hàn",
+        "vi": "Gà sốt ngọt Hàn Quốc",
         "zh": "韩式甜酱炸鸡",
         "en": "Sweet & Spicy Chicken"
       },
-      "updatedAt": "2026-08-30T01:38:42.390Z"
+      "updatedAt": "2026-08-30T02:11:32.022Z"
     },
     "menu:0738f65b-7561-4467-8ba9-a814587a9b59": {
       "fingerprint": "f6f4b6ce7aa75964454405afb31a0b6c39591feb729dfcd93a0c349181bb9a73",
@@ -593,7 +593,7 @@
         "zh": "是拉差洋葱奶油炸鸡",
         "en": "Sriracha Onion Chicken"
       },
-      "updatedAt": "2026-08-30T01:38:42.390Z"
+      "updatedAt": "2026-08-30T02:11:32.022Z"
     },
     "menu:7fc37f94-fa7a-4206-ac56-e46984856488": {
       "fingerprint": "febebb11e1f063202b5ffc468f060411b8135aea0a0de66a2b8a296c0a453583",
@@ -648,7 +648,7 @@
         "zh": "西瓜",
         "en": "Watermelon"
       },
-      "updatedAt": "2026-08-30T01:38:42.390Z"
+      "updatedAt": "2026-08-30T02:11:32.023Z"
     },
     "menu:26003bff-2c2b-4c10-9a3b-606f0af46041": {
       "fingerprint": "b39050b4737d154599477120a5bfa5ef7cf6d69b57fa6d6a803a27817b1bd05f",
@@ -772,15 +772,15 @@
       "updatedAt": "2026-07-18T13:47:13.845Z"
     },
     "menu:b2c769d6-83b0-4c07-a942-ae7113fabd31": {
-      "fingerprint": "3c93d5d2eb62c300f39424cb708c19be95de8b7b63dcdfd74793d256afbe2775",
+      "fingerprint": "154dfa9d6b28d94523da3e6332c6ed2259578c491fe24a6596cef310cea2cd32",
       "sourceName": "매운양념 Hot & Spicy Chicken韩式辣酱炸鸡 Gà sốt cay HQ",
       "names": {
         "ko": "매운 양념 치킨",
-        "vi": "Gà sốt cay kiểu Hàn",
+        "vi": "Gà sốt cay Hàn Quốc",
         "zh": "韩式辣酱炸鸡",
         "en": "Hot & Spicy Chicken"
       },
-      "updatedAt": "2026-08-30T01:38:42.390Z"
+      "updatedAt": "2026-08-30T02:11:32.022Z"
     },
     "menu:4283f6a7-e57f-42d5-b377-5ab73413146e": {
       "fingerprint": "cee4dfc4583aafe6216c2cdc5b9cadeff9bde7d586355af8a5e726cc8321a0d7",
@@ -882,15 +882,15 @@
       "updatedAt": "2026-07-18T13:47:21.808Z"
     },
     "menu:d301f64f-16fa-4c8f-86bb-62318205039a": {
-      "fingerprint": "cd83ebac1d3e943b430df858ee4fe1985b712f17b73c38d41363b4f3a8fbe57c",
-      "sourceName": "돈까스 플레이트 Pork Cutlet Plate 炸猪排拼盘 Đĩa Thịt Heo Chiên Xù",
+      "fingerprint": "15350174e53668c42af8b1143695f848d0fe112db2c25cfe732fedfc4964d494",
+      "sourceName": "돈까스 플레이트 (안 매운맛) Pork Cutlet Plate 炸猪排拼盘 Đĩa Thịt Heo Chiên Xù",
       "names": {
-        "ko": "돈까스 플레이트",
-        "vi": "Đĩa thịt heo chiên xù",
-        "zh": "炸猪排拼盘",
-        "en": "Pork Cutlet Plate"
+        "ko": "돈까스 플레이트 (안 매운맛)",
+        "vi": "Đĩa thịt heo chiên xù (không cay)",
+        "zh": "炸猪排拼盘（不辣）",
+        "en": "Pork Cutlet Plate (Non-Spicy)"
       },
-      "updatedAt": "2026-07-18T13:47:21.808Z"
+      "updatedAt": "2026-08-30T02:11:32.021Z"
     },
     "menu:2e18bb28-3e48-4155-8802-b47876d60c89": {
       "fingerprint": "a8fde1f5a3020a9f87f532c4a74ebcdbaf5c480cbf34d00a62c0e679fe5b1373",
@@ -956,7 +956,7 @@
         "zh": "辣椒蒜酱鸡",
         "en": "Garlic Soy Chicken"
       },
-      "updatedAt": "2026-08-30T01:38:42.390Z"
+      "updatedAt": "2026-08-30T02:11:32.022Z"
     },
     "menu:5e53f8d3-3b1e-4c08-82d0-136726552c5b": {
       "fingerprint": "fde3259df3c89bcbb76bd95b57771475a0e13f613107f5a7f1ec66bac4188d06",
