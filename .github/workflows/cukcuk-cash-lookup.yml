@@ -1,0 +1,101 @@
+name: Encrypted CUKCUK cash lookup
+
+on:
+  push:
+    branches: [main]
+    paths:
+      - ".github/workflows/cukcuk-cash-lookup.yml"
+
+jobs:
+  lookup:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Find matching paid orders
+        env:
+          CUKCUK_SECRET_KEY: ${{ secrets.CUKCUK_SECRET_KEY }}
+        shell: bash
+        run: |
+          node <<'NODE'
+          const crypto = require('node:crypto');
+          const fs = require('node:fs');
+
+          const secret = process.env.CUKCUK_SECRET_KEY;
+          const apiRoot = 'https://graphapi.cukcuk.vn';
+          const branchId = '430a00af-29db-4f30-b8f8-e87bdb793ab0';
+          if (!secret) throw new Error('CUKCUK_SECRET_KEY is not configured.');
+
+          async function login() {
+            const loginTime = new Date().toISOString();
+            const shapes = [
+              { Domain: 'dabang', AppID: 'CUKCUKOpenPlatform', LoginTime: loginTime },
+              { AppID: 'CUKCUKOpenPlatform', Domain: 'dabang', LoginTime: loginTime }
+            ];
+            for (const data of shapes) {
+              const raw = JSON.stringify(data);
+              for (const encoding of ['base64', 'hex']) {
+                const signature = crypto.createHmac('sha256', secret).update(raw, 'utf8').digest(encoding);
+                const response = await fetch(`${apiRoot}/api/Account/Login`, {
+                  method: 'POST', headers: { 'Content-Type': 'application/json' },
+                  body: JSON.stringify({ ...data, SignatureInfo: signature })
+                });
+                const result = await response.json().catch(() => null);
+                if (response.ok && result?.Success && result.Data?.AccessToken) return result.Data;
+              }
+            }
+            throw new Error('CUKCUK login failed.');
+          }
+
+          async function main() {
+            const session = await login();
+            const headers = {
+              Authorization: `Bearer ${session.AccessToken}`,
+              CompanyCode: session.CompanyCode,
+              'Content-Type': 'application/json'
+            };
+            const rows = [];
+            for (let page = 1; page <= 20; page++) {
+              const response = await fetch(`${apiRoot}/api/v1/orders/paging`, {
+                method: 'POST', headers,
+                body: JSON.stringify({ Page: page, Limit: 100, BranchId: branchId, LastSyncDate: '2026-08-29T17:00:00.000Z' })
+              });
+              const result = await response.json();
+              if (!response.ok || !result?.Success || !Array.isArray(result.Data)) throw new Error('Order paging failed.');
+              rows.push(...result.Data);
+              if (result.Data.length < 100) break;
+            }
+            const start = Date.parse('2026-08-30T00:00:00+07:00');
+            const end = Date.parse('2026-08-31T00:00:00+07:00');
+            const candidates = rows.filter(order => {
+              const time = Date.parse(order.Date);
+              const amount = Number(order.TotalAmount || 0);
+              return time >= start && time < end && Number(order.Status) === 4 && amount >= 350000 && amount <= 450000;
+            }).map(order => ({
+              id: String(order.Id || ''),
+              receipt: String(order.OrderNo || order.OrderNumber || order.Code || order.Number || ''),
+              date: order.Date,
+              amount: Number(order.TotalAmount || 0),
+              type: Number(order.Type || 0),
+              paymentMethod: String(order.PaymentMethodName || order.PaymentTypeName || order.PaymentMethod || order.PaymentType || '')
+            }));
+            fs.writeFileSync('result.json', JSON.stringify({ date: '2026-08-30', range: [350000, 450000], candidates }, null, 2));
+          }
+          main().catch(error => { console.error(error.message); process.exit(1); });
+          NODE
+
+      - name: Encrypt lookup result
+        shell: bash
+        run: |
+          printf '%s' 'LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUE2Ni84N3JQYWVWSlZ1bVk1MEJzLwpyOEd1T3FlanBXWXBWbHczQm1STlRjb09oelZNbTVLRW81aHNJWTE2UlBUTlJMeFZCOWRxcjVDUU04cE9wZ1N0Cm4zSjErMVNoZEpNdXpaT0J6MlExUDJKQ3NVSzVveTNWYnFwbTZ0S0FYeXVWcktycXdxUXBxV05nNUhmRlV2NjYKOHRLNkxsSDdWOVZqMkhnQTkvaWN4VEVTei90YU1BMmcvZHFjUDkxektEdmRGWEQ2SlQrTW5ZRVVQSkhCYVFHbwpuMGkyd3dsZkkxZlZUZ0VTY2JIUkFRWFRwakhKWEEycko3NDhaWWxjelhOK0U5R3lOZ25LTGxPOU4yc0I0Z1J6CklsR1Vmb0lTYytuT2dsWFFuZ3ZrV2dIaTN4cnhmd0syTG1rT2Q3L3pqNmFOWWVRSlBtSVcwNjVYZkJHMjVRWjEKelFJREFRQUIKLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0tCg==' | base64 -d > public.pem
+          openssl cms -encrypt -binary -aes-256-cbc -in result.json -outform DER -out result.cms public.pem
+          rm -f result.json public.pem
+
+      - name: Upload encrypted result
+        uses: actions/upload-artifact@v4
+        with:
+          name: cukcuk-cash-lookup
+          path: result.cms
+          retention-days: 1
+          if-no-files-found: error
