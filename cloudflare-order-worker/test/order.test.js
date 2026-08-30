@@ -31,9 +31,11 @@ test("enforces an exact four-choice rule for four-flavor wing menus", () => {
 });
 
 test("requires exactly one of the two tonkatsu plate choices", () => {
-  assert.doesNotThrow(() => buildConstrainedOrder("tonkatsu-plate", ["value-1"], 1, 1, {}, 2));
-  assert.throws(() => buildConstrainedOrder("tonkatsu-plate", [], 1, 1, {}, 2), /선택 개수/);
-  assert.throws(() => buildConstrainedOrder("tonkatsu-plate", ["value-1", "value-2"], 1, 1, {}, 2), /선택 개수/);
+  const templateId = "cukcuk-detail:menu-hcx:0";
+  const order = buildConstrainedOrder(templateId, ["value-1"], 1, 1, {}, 2);
+  assert.equal(order.OrderDetails[1].AdditionId, "value-1");
+  assert.throws(() => buildConstrainedOrder(templateId, [], 1, 1, {}, 2), /선택 개수/);
+  assert.throws(() => buildConstrainedOrder(templateId, ["value-1", "value-2"], 1, 1, {}, 2), /선택 개수/);
 });
 
 test("allows one to three Sapporo draft sizes", () => {
@@ -69,6 +71,7 @@ test("rejects a zero-priced wrapper menu when its option source is missing", () 
 
 test("rejects foreign option groups, unknown values, and duplicate selections", () => {
   assert.throws(() => buildConstrainedOrder("owned", ["value-1"], 0, 3, { templateId: "foreign" }), /선택할 수 없는 옵션 그룹/);
+  assert.throws(() => buildConstrainedOrder("owned", ["value-1"], 0, 3, { templateId: "cukcuk-detail:foreign-menu:0" }), /선택할 수 없는 옵션 그룹/);
   assert.throws(() => buildConstrainedOrder("owned", ["unknown"], 0, 3), /선택할 수 없는 옵션/);
   assert.throws(() => buildConstrainedOrder("owned", ["value-1", "value-1"], 0, 3), /중복/);
 });
@@ -193,7 +196,7 @@ function buildConstrainedOrder(templateId, valueIds, minSelections, maxSelection
     visible: true,
   }));
   return validateAndBuildOrder({
-    clientOrderId: `order-${templateId}`,
+    clientOrderId: "order-constrained",
     table: { id: "table-1", name: "B-02" },
     items: [{
       menuId: "menu-1",

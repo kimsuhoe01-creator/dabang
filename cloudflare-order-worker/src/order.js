@@ -49,7 +49,7 @@ export function validateAndBuildOrder(payload, menuData, branchId) {
     const groupCounts = new Map();
 
     for (const selected of selectedOptions) {
-      const templateId = cleanId(selected?.templateId);
+      const templateId = cleanTemplateId(selected?.templateId);
       const valueId = cleanId(selected?.valueId);
       if (!templateId || !attachedTemplateSet.has(templateId)) throw invalid("이 메뉴에서 선택할 수 없는 옵션 그룹입니다.");
       const selectionKey = `${templateId}:${valueId}`;
@@ -261,6 +261,11 @@ function invalid(message) {
 function cleanId(value) {
   const v = typeof value === "string" ? value.trim() : "";
   return /^[a-zA-Z0-9_-]{1,100}$/.test(v) ? v : "";
+}
+
+function cleanTemplateId(value) {
+  const v = typeof value === "string" ? value.trim() : "";
+  return /^[a-zA-Z0-9_:-]{1,200}$/.test(v) ? v : "";
 }
 
 function cleanText(value, max) {

@@ -269,7 +269,7 @@ layout.menuOptionOverrides = {
   },
   '(A02) Bia tuoi Sapporo': {
     templateIds: [SAPPORO_DETAIL_TEMPLATE],
-    rules: { [SAPPORO_DETAIL_TEMPLATE]: { required: true, minSelections: 1, maxSelections: 3 } }
+    rules: { [SAPPORO_DETAIL_TEMPLATE]: { required: true, minSelections: 1, maxSelections: 3, selectionMode: 'quantity-per-value-lines', maxQuantityPerValue: 99 } }
   },
   '(T10) Do chien/mon chien': {
     templateIds: [FRIED_DETAIL_TEMPLATE],

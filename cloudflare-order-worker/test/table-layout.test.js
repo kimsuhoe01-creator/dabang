@@ -354,18 +354,18 @@ test('the checked-in CUKCUK table QR snapshot publishes the polished 14-category
     'CC'
   ].sort());
   const expectedRules = {
-    HCX: [1, 1],
-    '(A02) Bia tuoi Sapporo': [1, 3],
-    '(T10) Do chien/mon chien': [1, 10],
-    '(S08) Cánh gà 4 vị': [4, 4],
-    '(W01) Cánh gà vị đôi': [2, 2],
-    'ᄉ TT 加 AET': [1, 5]
+    HCX: { required: true, minSelections: 1, maxSelections: 1 },
+    '(A02) Bia tuoi Sapporo': { required: true, minSelections: 1, maxSelections: 3, selectionMode: 'quantity-per-value-lines', maxQuantityPerValue: 99 },
+    '(T10) Do chien/mon chien': { required: true, minSelections: 1, maxSelections: 10 },
+    '(S08) Cánh gà 4 vị': { required: true, minSelections: 4, maxSelections: 4 },
+    '(W01) Cánh gà vị đôi': { required: true, minSelections: 2, maxSelections: 2 },
+    'ᄉ TT 加 AET': { required: true, minSelections: 1, maxSelections: 5 }
   };
-  for (const [code, [minSelections, maxSelections]] of Object.entries(expectedRules)) {
+  for (const [code, expectedRule] of Object.entries(expectedRules)) {
     const menu = result.menus.find(item => item.cukcukCode === code);
     assert.equal(menu.available, true, `${code} should be available after its detail options are attached`);
     assert.equal(menu.optionTemplateIds.length, 1, `${code} should expose one option group`);
-    assert.deepEqual(menu.optionRules[menu.optionTemplateIds[0]], { required: true, minSelections, maxSelections });
+    assert.deepEqual(menu.optionRules[menu.optionTemplateIds[0]], expectedRule);
   }
   const halfPizzaTemplateId = '4a947b5f-0eb9-4c88-87b2-94debe05a41d';
   for (const code of ['SPACE111', 'SPACE112', 'SPACE113', 'SPACE114', 'SPACE115']) {

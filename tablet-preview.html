@@ -43,6 +43,7 @@ html[lang="zh"] body,html[lang="zh"] button,html[lang="zh"] input{font-family:"M
 .start-brand{position:relative;isolation:isolate;overflow:hidden;padding:44px 32px;background:linear-gradient(155deg,#111 0%,#181818 58%,#101010 100%)}.start-brand:before{content:"";position:absolute;z-index:-1;width:210px;height:210px;right:-118px;top:-85px;border:1px solid #ffffff12;border-radius:50%;box-shadow:0 0 0 38px #ffffff06,0 0 0 76px #ffffff03}.start-brand:after{content:"";position:absolute;z-index:-1;width:120px;height:4px;left:32px;top:0;border-radius:0 0 5px 5px;background:linear-gradient(90deg,var(--ui-red) 0 38%,var(--ui-yellow) 38% 100%)}.start-brand-lockup{position:relative}.start-brand-eyebrow{display:flex;align-items:center;gap:9px;color:#d5d5d5;font-size:10px;font-weight:800;letter-spacing:2.3px}.start-brand-dot{width:8px;height:8px;border-radius:3px;background:var(--ui-red);box-shadow:11px 0 0 var(--ui-yellow)}.start-brand-title{display:flex!important;flex-direction:column;margin-top:25px;color:#fff!important;font-size:42px!important;font-weight:900!important;line-height:.88!important;letter-spacing:-2px}.start-brand-title span,.start-brand-title em{display:block}.start-brand-title em{margin-top:8px;color:var(--ui-yellow);font-style:normal}.start-brand-subtitle{margin:18px 0 0;padding-top:15px;border-top:1px solid #333;color:#858585;font-size:9px;font-weight:800;letter-spacing:1.8px}.start-brand-guide{position:relative;padding-top:20px;border-top:1px solid #303030}.start-step-pill{display:inline-flex;align-items:center;min-height:28px;padding:0 10px;border:1px solid #3b3b3b;border-radius:999px;background:#1d1d1d;color:#d1d1d1!important;font-size:9px!important;font-weight:900;letter-spacing:1.4px!important}.start-brand-guide>p{max-width:180px;margin:14px 0 18px;color:#fff;font-size:14px;font-weight:750;line-height:1.55;word-break:keep-all}.start-guide-line{display:flex;align-items:center;gap:9px;color:#707070;font-size:8px;font-weight:800;letter-spacing:1.1px}.start-guide-line i{width:24px;height:2px;border-radius:2px;background:var(--ui-red);box-shadow:13px 0 0 -0.5px var(--ui-yellow)}
 .start-brand-logo{display:block;width:100%;max-width:196px;height:107px;margin:0 0 24px;object-fit:contain;object-position:left center;filter:drop-shadow(0 4px 8px #0007)}.start-brand-title{margin-top:0}
 .option-dialog .option-value input{position:absolute;width:1px;height:1px;margin:0;opacity:0;pointer-events:none}
+.option-dialog .quantity-option-value{align-items:center;padding-right:15px;cursor:default}.option-dialog .quantity-option-value:hover{transform:none}.option-dialog .quantity-option-value.has-quantity{border-color:var(--ui-red);background:linear-gradient(145deg,#fffafa,#fff1f2);box-shadow:0 0 0 1px var(--ui-red),0 6px 14px #df2c4014}.option-quantity-control{flex:0 0 auto;display:grid;grid-template-columns:42px 40px 42px;align-items:center;overflow:hidden;border:1px solid #d9d4cc;border-radius:11px;background:#fff}.option-quantity-control button{height:42px;border:0;background:#f2efea;color:#282520;font-size:20px;font-weight:800}.option-quantity-control button:disabled{color:#b9b3ab;cursor:not-allowed}.option-quantity-control span{text-align:center;font-size:15px;font-weight:900}.qty-control button:disabled{color:#b9b3ab;cursor:not-allowed}
 .start-panel{position:relative}.install-app-button{position:absolute;right:22px;top:22px;z-index:3;min-height:43px;padding:0 15px;border:1px solid #d6d0c7;border-radius:12px;background:#fff;color:#171717;font-size:13px;font-weight:850;box-shadow:0 5px 16px #2c1b0c12}.install-app-button:hover{border-color:var(--ui-red);color:var(--ui-red)}
 .app-update-bar{position:fixed;left:50%;bottom:22px;z-index:100;display:flex;align-items:center;gap:16px;width:min(560px,calc(100vw - 40px));padding:13px 14px 13px 18px;border:1px solid #343434;border-radius:15px;background:#171717;color:#fff;box-shadow:0 18px 45px #0006;transform:translateX(-50%)}.app-update-bar span{flex:1;font-size:13px;font-weight:700;line-height:1.45}.app-update-bar button{flex:0 0 auto;min-height:42px;padding:0 15px;border:0;border-radius:10px;background:var(--ui-yellow);color:#171717;font-size:13px;font-weight:900}.app-update-bar[hidden]{display:none}
 .preview-mode-badge{position:fixed;top:8px;left:50%;z-index:110;max-width:calc(100vw - 420px);padding:8px 14px;border:2px solid #171717;border-radius:999px;background:var(--ui-yellow);color:#171717;font-size:12px;font-weight:950;line-height:1.2;letter-spacing:.2px;box-shadow:0 5px 16px #0003;transform:translateX(-50%);white-space:nowrap}.preview-mode-badge[hidden]{display:none}
@@ -104,11 +105,11 @@ html[lang="zh"] body,html[lang="zh"] button,html[lang="zh"] input{font-family:"M
  <section class="dialog-panel cart-dialog" role="dialog" aria-modal="true" aria-labelledby="cartModalTitle">
   <header class="dialog-head"><div><span class="dialog-kicker" id="cartModalKicker">CART</span><h2 id="cartModalTitle">장바구니</h2><p id="cartModalCaption"></p></div><button class="dialog-close" type="button" aria-label="닫기" onclick="closeCart()">×</button></header>
   <div class="dialog-body"><div class="cart-lines" id="cartItems"></div></div>
-   <footer class="dialog-foot cart-footer"><div class="cart-total-row"><span id="cartTotalLabel">총 금액</span><strong id="cartModalTotal">0 ₫</strong></div><div class="checkout-actions"><button class="continue-order" id="continueOrder" type="button" onclick="closeCart()">메뉴 더 담기</button><button class="send-order" id="sendOrder" type="button" onclick="submitOrder()"><span class="send-order-icon" aria-hidden="true">✓</span><span id="sendOrderText">주문 전송</span></button></div><div class="order-note" id="orderNote">선택한 테이블로 주문이 전송됩니다. 전송 전에 메뉴와 수량을 확인해주세요.</div></footer>
+   <footer class="dialog-foot cart-footer"><div class="cart-total-row"><span id="cartTotalLabel">총 금액</span><strong id="cartModalTotal">0 ₫</strong></div><div class="checkout-actions"><button class="continue-order" id="continueOrder" type="button" onclick="closeCart()">메뉴 더 담기</button><button class="send-order" id="sendOrder" type="button" onclick="submitOrder()"><span class="send-order-icon" aria-hidden="true">✓</span><span id="sendOrderText">주문 전송</span></button></div><div class="order-note" id="orderNote">POS에 주문이 등록됩니다. 직원이 CUKCUK에서 확인한 뒤 주방·바로 전송해야 영수증이 출력됩니다. 메뉴와 수량을 확인해 주세요.</div></footer>
   </section>
 </div>
 <div class="dialog-layer" id="successModal" aria-hidden="true">
- <section class="dialog-panel success-panel" role="dialog" aria-modal="true" aria-labelledby="successTitle"><div class="success-icon">✓</div><h2 id="successTitle">주문을 전송했습니다</h2><p id="successMessage">주방에서 주문을 확인하고 있습니다.</p><div class="order-receipt"><div class="receipt-box"><span id="successTableLabel">테이블</span><strong id="successTable">-</strong></div><div class="receipt-box"><span id="successTotalLabel">주문 금액</span><strong id="successTotal">0 ₫</strong></div></div><button class="success-done" id="successDone" type="button" onclick="finishOrder()">확인</button></section>
+ <section class="dialog-panel success-panel" role="dialog" aria-modal="true" aria-labelledby="successTitle"><div class="success-icon">✓</div><h2 id="successTitle">POS에 주문이 등록됐습니다</h2><p id="successMessage">직원이 CUKCUK에서 주문을 확인한 뒤 주방·바로 전송해야 영수증이 출력됩니다.</p><div class="order-receipt"><div class="receipt-box"><span id="successTableLabel">테이블</span><strong id="successTable">-</strong></div><div class="receipt-box"><span id="successTotalLabel">주문 금액</span><strong id="successTotal">0 ₫</strong></div></div><button class="success-done" id="successDone" type="button" onclick="finishOrder()">확인</button></section>
 </div>
 <script src="assets/menu-images.js?v=20260830-sunyang-oak-photo-v9"></script>
 <script src="assets/table-layout.js"></script>
@@ -234,10 +235,14 @@ Object.assign(words.ko,{cart:'장바구니',added:' 장바구니에 담았어요
 Object.assign(words.vi,{options:'Chọn tùy chọn',optionShort:'Tùy chọn',optional:'Tùy chọn',required:'Bắt buộc',free:'Không phụ thu',total:'Tổng cộng',basePrice:'Giá cơ bản',extra:'Phụ thu',cancel:'Hủy',addToCart:'Thêm vào giỏ',maxSelect:'Chọn tối đa {n}',exactSelect:'Chọn {n}',rangeSelect:'Chọn {min}–{max}',selectedCount:'Đã chọn {selected}/{max}',requiredAlert:'Vui lòng chọn đủ số lượng bắt buộc.',optionUnavailable:'Đang tải thông tin tùy chọn. Vui lòng thử lại sau.',cartCaption:'Kiểm tra món và tùy chọn đã chọn.',close:'Đóng',decrease:'Giảm số lượng',increase:'Tăng số lượng'});
 Object.assign(words.zh,{options:'选择选项',optionShort:'选项',optional:'可选',required:'必选',free:'无加价',total:'总金额',basePrice:'基础价格',extra:'选项加价',cancel:'取消',addToCart:'加入购物车',maxSelect:'最多选择 {n} 项',exactSelect:'选择 {n} 项',rangeSelect:'选择 {min}–{max} 项',selectedCount:'已选 {selected}/{max}',requiredAlert:'请达到必选项的最低数量。',optionUnavailable:'正在加载选项信息，请稍后再试。',cartCaption:'请确认所选菜单和选项。',close:'关闭',decrease:'减少数量',increase:'增加数量'});
 Object.assign(words.en,{options:'Choose options',optionShort:'Options',optional:'Optional',required:'Required',free:'No extra charge',total:'Total',basePrice:'Base price',extra:'Option extras',cancel:'Cancel',addToCart:'Add to cart',maxSelect:'Choose up to {n}',exactSelect:'Choose {n}',rangeSelect:'Choose {min}–{max}',selectedCount:'Selected {selected}/{max}',requiredAlert:'Please meet the minimum selection for required options.',optionUnavailable:'Options are still loading. Please try again shortly.',cartCaption:'Review your selected items and options.',close:'Close',decrease:'Decrease quantity',increase:'Increase quantity'});
-Object.assign(words.ko,{orderReady:'주문 준비',continueOrder:'메뉴 더 담기',sendOrder:'주문 전송',sending:'전송 중…',orderCheck:'POS 확인 필요',orderNote:'선택한 테이블로 주문이 전송됩니다. 전송 전에 메뉴와 수량을 확인해주세요.',orderEmpty:'주문할 메뉴를 먼저 담아주세요.',orderFailed:'주문 전송에 실패했습니다. 직원을 불러주세요.',orderRejected:'이 주문은 POS로 전송되지 않았습니다. 화면을 새로고침한 뒤 메뉴와 옵션을 다시 담아주세요.',orderUncertain:'전송 결과를 확인하지 못했습니다. 다시 누르지 말고 POS에서 주문 여부를 확인해 주세요.',menuLoading:'최신 메뉴를 불러오는 중입니다. 잠시 후 다시 눌러주세요.',menuLoadFailed:'최신 메뉴를 불러오지 못해 주문을 막았습니다. 인터넷을 확인한 뒤 화면을 새로고침해 주세요.',previewBadge:'미리보기 · POS 전송 안 됨',previewSend:'미리보기 확인',previewNote:'미리보기입니다. 이 주문은 POS와 주방으로 전송되지 않습니다.',previewTitle:'미리보기 완료',previewOrder:'이 주문은 POS와 주방으로 전송되지 않았습니다.',orderSuccess:'주문을 전송했습니다',orderSuccessMessage:'주방에서 주문을 확인하고 있습니다.',table:'테이블',orderTotal:'주문 금액',done:'확인'});
-Object.assign(words.vi,{orderReady:'Sẵn sàng đặt món',continueOrder:'Chọn thêm món',sendOrder:'Gửi đơn',sending:'Đang gửi…',orderCheck:'Cần kiểm tra POS',orderNote:'Đơn sẽ được gửi đến bàn đã chọn. Vui lòng kiểm tra món và số lượng.',orderEmpty:'Vui lòng chọn món trước.',orderFailed:'Không thể gửi đơn. Vui lòng gọi nhân viên.',orderRejected:'Đơn này chưa được gửi đến POS. Hãy tải lại màn hình rồi chọn lại món và tùy chọn.',orderUncertain:'Chưa xác nhận được kết quả gửi. Không bấm lại; hãy kiểm tra đơn trên POS.',menuLoading:'Đang tải thực đơn mới nhất. Vui lòng chờ một chút.',menuLoadFailed:'Không tải được thực đơn mới nhất nên đã chặn gửi đơn. Hãy kiểm tra mạng và tải lại màn hình.',previewBadge:'XEM TRƯỚC · KHÔNG GỬI POS',previewSend:'Kiểm tra bản xem trước',previewNote:'Đây là bản xem trước. Đơn này không được gửi đến POS hoặc bếp.',previewTitle:'Đã kiểm tra bản xem trước',previewOrder:'Đơn này không được gửi đến POS hoặc bếp.',orderSuccess:'Đã gửi đơn',orderSuccessMessage:'Bếp đang kiểm tra đơn của bạn.',table:'Bàn',orderTotal:'Tổng đơn',done:'Xác nhận'});
-Object.assign(words.zh,{orderReady:'可以点餐',continueOrder:'继续选菜',sendOrder:'发送订单',sending:'发送中…',orderCheck:'需要检查 POS',orderNote:'订单将发送到所选桌位，请确认菜品和数量。',orderEmpty:'请先选择菜品。',orderFailed:'订单发送失败，请呼叫工作人员。',orderRejected:'此订单未发送到 POS。请刷新页面后重新选择菜品和选项。',orderUncertain:'无法确认发送结果。请勿再次点击，并先在 POS 上检查订单。',menuLoading:'正在加载最新菜单，请稍候。',menuLoadFailed:'无法加载最新菜单，已阻止发送订单。请检查网络并刷新页面。',previewBadge:'预览模式 · 不发送到 POS',previewSend:'检查预览订单',previewNote:'这是预览模式。此订单不会发送到 POS 或厨房。',previewTitle:'预览检查完成',previewOrder:'此订单未发送到 POS 或厨房。',orderSuccess:'订单已发送',orderSuccessMessage:'厨房正在确认您的订单。',table:'桌位',orderTotal:'订单金额',done:'确认'});
-Object.assign(words.en,{orderReady:'Ready to order',continueOrder:'Add more items',sendOrder:'Send order',sending:'Sending…',orderCheck:'Check POS first',orderNote:'Your order will be sent to the selected table. Check items and quantities first.',orderEmpty:'Add an item before ordering.',orderFailed:'Could not send the order. Please call a staff member.',orderRejected:'This order was not sent to the POS. Reload the screen, then select the items and options again.',orderUncertain:'The sending result could not be confirmed. Do not tap again; check the POS first.',menuLoading:'Loading the latest menu. Please wait a moment.',menuLoadFailed:'The latest menu could not be loaded, so ordering is blocked. Check the connection and reload.',previewBadge:'PREVIEW · NOT SENT TO POS',previewSend:'Check preview order',previewNote:'This is preview mode. This order will not be sent to the POS or kitchen.',previewTitle:'Preview check complete',previewOrder:'This order was not sent to the POS or kitchen.',orderSuccess:'Order sent',orderSuccessMessage:'The kitchen is checking your order.',table:'Table',orderTotal:'Order total',done:'Done'});
+Object.assign(words.ko,{quantityByValue:'용량별 수량 선택',quantityTotal:'총 {n}개'});
+Object.assign(words.vi,{quantityByValue:'Chọn số lượng theo dung tích',quantityTotal:'Tổng {n}'});
+Object.assign(words.zh,{quantityByValue:'按容量选择数量',quantityTotal:'共 {n} 件'});
+Object.assign(words.en,{quantityByValue:'Choose quantity by size',quantityTotal:'{n} total'});
+Object.assign(words.ko,{orderReady:'주문 준비',continueOrder:'메뉴 더 담기',sendOrder:'주문 전송',sending:'전송 중…',orderCheck:'POS 확인 필요',orderNote:'POS에 주문이 등록됩니다. 직원이 CUKCUK에서 확인한 뒤 주방·바로 전송해야 영수증이 출력됩니다. 메뉴와 수량을 확인해 주세요.',orderEmpty:'주문할 메뉴를 먼저 담아주세요.',orderFailed:'주문 전송에 실패했습니다. 직원을 불러주세요.',orderRejected:'이 주문은 POS로 전송되지 않았습니다. 화면을 새로고침한 뒤 메뉴와 옵션을 다시 담아주세요.',orderUncertain:'전송 결과를 확인하지 못했습니다. 다시 누르지 말고 POS에서 주문 여부를 확인해 주세요.',menuLoading:'최신 메뉴를 불러오는 중입니다. 잠시 후 다시 눌러주세요.',menuLoadFailed:'최신 메뉴를 불러오지 못해 주문을 막았습니다. 인터넷을 확인한 뒤 화면을 새로고침해 주세요.',previewBadge:'미리보기 · POS 전송 안 됨',previewSend:'미리보기 확인',previewNote:'미리보기입니다. 이 주문은 POS와 주방으로 전송되지 않습니다.',previewTitle:'미리보기 완료',previewOrder:'이 주문은 POS와 주방으로 전송되지 않았습니다.',orderSuccess:'POS에 주문이 등록됐습니다',orderSuccessMessage:'직원이 CUKCUK에서 주문을 확인한 뒤 주방·바로 전송해야 영수증이 출력됩니다.',table:'테이블',orderTotal:'주문 금액',done:'확인'});
+Object.assign(words.vi,{orderReady:'Sẵn sàng đặt món',continueOrder:'Chọn thêm món',sendOrder:'Gửi đơn',sending:'Đang gửi…',orderCheck:'Cần kiểm tra POS',orderNote:'Đơn sẽ được ghi nhận trên POS. Nhân viên phải xác nhận trên CUKCUK rồi gửi đến bếp/quầy bar để in phiếu. Hãy kiểm tra món và số lượng.',orderEmpty:'Vui lòng chọn món trước.',orderFailed:'Không thể gửi đơn. Vui lòng gọi nhân viên.',orderRejected:'Đơn này chưa được gửi đến POS. Hãy tải lại màn hình rồi chọn lại món và tùy chọn.',orderUncertain:'Chưa xác nhận được kết quả gửi. Không bấm lại; hãy kiểm tra đơn trên POS.',menuLoading:'Đang tải thực đơn mới nhất. Vui lòng chờ một chút.',menuLoadFailed:'Không tải được thực đơn mới nhất nên đã chặn gửi đơn. Hãy kiểm tra mạng và tải lại màn hình.',previewBadge:'XEM TRƯỚC · KHÔNG GỬI POS',previewSend:'Kiểm tra bản xem trước',previewNote:'Đây là bản xem trước. Đơn này không được gửi đến POS hoặc bếp.',previewTitle:'Đã kiểm tra bản xem trước',previewOrder:'Đơn này không được gửi đến POS hoặc bếp.',orderSuccess:'Đơn đã được ghi nhận trên POS',orderSuccessMessage:'Nhân viên phải xác nhận đơn trên CUKCUK rồi gửi đến bếp/quầy bar thì phiếu mới được in.',table:'Bàn',orderTotal:'Tổng đơn',done:'Xác nhận'});
+Object.assign(words.zh,{orderReady:'可以点餐',continueOrder:'继续选菜',sendOrder:'发送订单',sending:'发送中…',orderCheck:'需要检查 POS',orderNote:'订单将登记到 POS。工作人员必须在 CUKCUK 中确认并发送至厨房/吧台，才会打印小票。请先确认菜品和数量。',orderEmpty:'请先选择菜品。',orderFailed:'订单发送失败，请呼叫工作人员。',orderRejected:'此订单未发送到 POS。请刷新页面后重新选择菜品和选项。',orderUncertain:'无法确认发送结果。请勿再次点击，并先在 POS 上检查订单。',menuLoading:'正在加载最新菜单，请稍候。',menuLoadFailed:'无法加载最新菜单，已阻止发送订单。请检查网络并刷新页面。',previewBadge:'预览模式 · 不发送到 POS',previewSend:'检查预览订单',previewNote:'这是预览模式。此订单不会发送到 POS 或厨房。',previewTitle:'预览检查完成',previewOrder:'此订单未发送到 POS 或厨房。',orderSuccess:'订单已登记到 POS',orderSuccessMessage:'工作人员必须在 CUKCUK 中确认订单并发送至厨房/吧台，才会打印小票。',table:'桌位',orderTotal:'订单金额',done:'确认'});
+Object.assign(words.en,{orderReady:'Ready to order',continueOrder:'Add more items',sendOrder:'Send order',sending:'Sending…',orderCheck:'Check POS first',orderNote:'The order will be registered in the POS. Staff must confirm it in CUKCUK and send it to the kitchen/bar before the ticket prints. Check items and quantities first.',orderEmpty:'Add an item before ordering.',orderFailed:'Could not send the order. Please call a staff member.',orderRejected:'This order was not sent to the POS. Reload the screen, then select the items and options again.',orderUncertain:'The sending result could not be confirmed. Do not tap again; check the POS first.',menuLoading:'Loading the latest menu. Please wait a moment.',menuLoadFailed:'The latest menu could not be loaded, so ordering is blocked. Check the connection and reload.',previewBadge:'PREVIEW · NOT SENT TO POS',previewSend:'Check preview order',previewNote:'This is preview mode. This order will not be sent to the POS or kitchen.',previewTitle:'Preview check complete',previewOrder:'This order was not sent to the POS or kitchen.',orderSuccess:'Order registered in the POS',orderSuccessMessage:'Staff must confirm the order in CUKCUK and send it to the kitchen/bar before the ticket prints.',table:'Table',orderTotal:'Order total',done:'Done'});
 const STORE_NAMES={ko:'다방치킨',vi:'Gà Dabang',zh:'Dabang 炸鸡',en:'Dabang Chicken'};
 const OTHER_CATEGORY_NAMES={ko:'기타',vi:'Món khác',zh:'其他',en:'Other'};
 const ORDER_ENDPOINT='https://dabang-cukcuk-order-api.kimsuhoe01.workers.dev/api/cukcuk/order';
@@ -363,6 +368,11 @@ function syncCategoryFromScroll(){
 }
 document.getElementById('menuContent').addEventListener('scroll',()=>{if(!categoryScrollFrame)categoryScrollFrame=requestAnimationFrame(syncCategoryFromScroll)},{passive:true});
 
+function quantitySelectionMode(group){return group?.selectionMode==='quantity-per-value-lines'}
+function optionQuantityLimit(group){const raw=Number(group?.maxQuantityPerValue);return Math.max(1,Math.min(99,Number.isInteger(raw)&&raw>0?raw:99))}
+function selectedGroupCount(group,index){return quantitySelectionMode(group)?(optionDraft?.quantities?.[index]||[]).filter(quantity=>Number(quantity)>0).length:(optionDraft?.selections?.[index]?.length||0)}
+function groupTotalQuantity(group,index){return quantitySelectionMode(group)?(optionDraft?.quantities?.[index]||[]).reduce((sum,quantity)=>sum+(Number(quantity)||0),0):selectedGroupCount(group,index)}
+function quantityConfiguredLines(rows){return (Array.isArray(rows)?rows:[]).filter(row=>row?.quantityMode&&Number(row.quantity)>0).map(row=>{const selection={...row},quantity=Math.max(1,Math.min(99,Math.floor(Number(row.quantity)||1)));delete selection.quantity;delete selection.quantityMode;return{selections:[selection],quantity}})}
 function optionLimits(group){
  const values=visibleOptionValues(group),rawMax=Number(group.maxSelections);
  const max=Math.max(1,Math.min(values.length||1,Number.isFinite(rawMax)&&rawMax>0?Math.floor(rawMax):Math.max(1,values.length)));
@@ -371,11 +381,13 @@ function optionLimits(group){
 }
 function optionRuleText(group){
  const limits=optionLimits(group);
+ if(quantitySelectionMode(group))return (limits.min>0?words[lang].required:words[lang].optional)+' · '+words[lang].quantityByValue;
  const selection=limits.min>0&&limits.min===limits.max?words[lang].exactSelect.replace('{n}',limits.max):limits.min>0?words[lang].rangeSelect.replace('{min}',limits.min).replace('{max}',limits.max):words[lang].maxSelect.replace('{n}',limits.max);
  return (limits.min>0?words[lang].required:words[lang].optional)+' · '+selection;
 }
 function openOptionModal(menu,groups,opener){
- optionDraft={menu,groups:groups.map(group=>({...group,_values:visibleOptionValues(group)})),selections:groups.map(()=>[])};
+ const preparedGroups=groups.map(group=>({...group,_values:visibleOptionValues(group)}));
+ optionDraft={menu,groups:preparedGroups,selections:preparedGroups.map(()=>[]),quantities:preparedGroups.map(group=>group._values.map(()=>0))};
  document.getElementById('optionKicker').textContent=words[lang].options;
  document.getElementById('optionMenuName').textContent=menu.n?.[lang]||menu.n?.ko||menu.sourceName||'';
  document.getElementById('optionBasePrice').textContent=[localizedNames(menu.subtitles),words[lang].basePrice+' · '+money(menu.price)].filter(Boolean).join('\n');
@@ -384,7 +396,11 @@ function openOptionModal(menu,groups,opener){
  document.getElementById('optionTotalLabel').textContent=words[lang].total;
  document.getElementById('optionGroups').innerHTML=optionDraft.groups.map((group,groupIndex)=>{
   const limits=optionLimits(group),required=limits.min>0,singleRequired=limits.max===1&&required;
-  const values=group._values.map((value,valueIndex)=>`<label class="option-value"><input type="${singleRequired?'radio':'checkbox'}" name="option-group-${groupIndex}" onchange="updateOptionSelection(${groupIndex},${valueIndex},this)"><span class="option-value-copy"><span class="option-value-name">${escapeHtml(localizedNames(value.names))}</span><span class="option-value-price ${Number(value.additionalPrice)?'':'free'}">${Number(value.additionalPrice)?'+'+money(value.additionalPrice):escapeHtml(words[lang].free)}</span></span><span class="option-check" aria-hidden="true">✓</span></label>`).join('');
+  const values=group._values.map((value,valueIndex)=>{
+   const valueName=localizedNames(value.names),priceMarkup=`<span class="option-value-price ${Number(value.additionalPrice)?'':'free'}">${Number(value.additionalPrice)?'+'+money(value.additionalPrice):escapeHtml(words[lang].free)}</span>`;
+   if(quantitySelectionMode(group))return `<div class="option-value quantity-option-value" data-quantity-option="${groupIndex}-${valueIndex}"><span class="option-value-copy"><span class="option-value-name">${escapeHtml(valueName)}</span>${priceMarkup}</span><span class="option-quantity-control"><button type="button" data-option-quantity-action="-1" aria-label="${escapeHtml(words[lang].decrease+' '+valueName)}" onclick="changeOptionQuantity(${groupIndex},${valueIndex},-1)" disabled>−</button><span data-option-quantity>0</span><button type="button" data-option-quantity-action="1" aria-label="${escapeHtml(words[lang].increase+' '+valueName)}" onclick="changeOptionQuantity(${groupIndex},${valueIndex},1)">＋</button></span></div>`;
+   return `<label class="option-value"><input type="${singleRequired?'radio':'checkbox'}" name="option-group-${groupIndex}" onchange="updateOptionSelection(${groupIndex},${valueIndex},this)"><span class="option-value-copy"><span class="option-value-name">${escapeHtml(valueName)}</span>${priceMarkup}</span><span class="option-check" aria-hidden="true">✓</span></label>`;
+  }).join('');
  return `<section class="option-group" data-group-index="${groupIndex}"><div class="option-group-head"><h3>${escapeHtml(localizedNames(group.names))}</h3><span class="option-rule ${required?'required':''}" data-option-rule="${groupIndex}">${escapeHtml(optionRuleText(group))}</span></div><div class="option-values">${values}</div></section>`;
  }).join('');
  document.getElementById('optionGroups').scrollTop=0;
@@ -402,23 +418,41 @@ function updateOptionSelection(groupIndex,valueIndex,input){
  }else optionDraft.selections[groupIndex]=selected.filter(id=>id!==group._values[valueIndex].id);
  updateOptionSummary();
 }
+function changeOptionQuantity(groupIndex,valueIndex,delta){
+ if(!optionDraft)return;
+ const group=optionDraft.groups[groupIndex],quantities=optionDraft.quantities?.[groupIndex];
+ if(!quantitySelectionMode(group)||!Array.isArray(quantities)||!Number.isInteger(delta))return;
+ const current=Number(quantities[valueIndex])||0,limits=optionLimits(group);
+ if(delta>0&&current===0&&selectedGroupCount(group,groupIndex)>=limits.max){showToast(words[lang].maxSelect.replace('{n}',limits.max));return}
+ quantities[valueIndex]=Math.max(0,Math.min(optionQuantityLimit(group),current+delta));
+ updateOptionSummary();
+}
 function selectedOptionRows(){
  if(!optionDraft)return[];
  return optionDraft.groups.flatMap((group,index)=>{
+  if(quantitySelectionMode(group))return group._values.flatMap((value,valueIndex)=>{const quantity=Number(optionDraft.quantities?.[index]?.[valueIndex])||0;return quantity>0?[{templateId:String(group.id),groupNames:group.names||{},valueId:String(value.id),valueNames:value.names||{},additionalPrice:Number(value.additionalPrice)||0,quantity,quantityMode:true}]:[]});
   const selected=new Set(optionDraft.selections[index]);
   return group._values.filter(value=>selected.has(value.id)).map(value=>({templateId:String(group.id),groupNames:group.names||{},valueId:String(value.id),valueNames:value.names||{},additionalPrice:Number(value.additionalPrice)||0}));
  });
 }
 function optionDraftValid(){
  if(!optionDraft)return false;
- return optionDraft.groups.every((group,index)=>optionDraft.selections[index].length>=optionLimits(group).min);
+ return optionDraft.groups.every((group,index)=>{const limits=optionLimits(group),selected=selectedGroupCount(group,index);return selected>=limits.min&&selected<=limits.max});
 }
 function updateOptionSummary(){
  if(!optionDraft)return;
- const extra=selectedOptionRows().reduce((sum,row)=>sum+row.additionalPrice,0);
+ const rows=selectedOptionRows(),hasQuantityMode=optionDraft.groups.some(quantitySelectionMode);
+ const extra=rows.reduce((sum,row)=>sum+row.additionalPrice*(row.quantityMode?row.quantity:1),0);
+ const base=hasQuantityMode?rows.reduce((sum,row)=>sum+(Number(optionDraft.menu.price)||0)*row.quantity,0):(Number(optionDraft.menu.price)||0);
  document.getElementById('optionExtraPrice').textContent=words[lang].extra+' · '+(extra?'+'+money(extra):money(0));
- document.getElementById('optionTotalPrice').textContent=money((Number(optionDraft.menu.price)||0)+extra);
- optionDraft.groups.forEach((group,index)=>{const limits=optionLimits(group),selected=optionDraft.selections[index].length,rule=document.querySelector(`[data-option-rule="${index}"]`),section=document.querySelector(`.option-group[data-group-index="${index}"]`);if(rule)rule.textContent=optionRuleText(group)+' · '+words[lang].selectedCount.replace('{selected}',selected).replace('{max}',limits.max);if(selected>=limits.min)section?.classList.remove('invalid');if(limits.max>1)document.querySelectorAll(`#optionGroups input[name="option-group-${index}"]`).forEach(input=>input.disabled=selected>=limits.max&&!input.checked)});
+ document.getElementById('optionTotalPrice').textContent=money(base+extra);
+ optionDraft.groups.forEach((group,index)=>{
+  const limits=optionLimits(group),selected=selectedGroupCount(group,index),rule=document.querySelector(`[data-option-rule="${index}"]`),section=document.querySelector(`.option-group[data-group-index="${index}"]`);
+  if(rule)rule.textContent=optionRuleText(group)+' · '+(quantitySelectionMode(group)?words[lang].quantityTotal.replace('{n}',groupTotalQuantity(group,index)):words[lang].selectedCount.replace('{selected}',selected).replace('{max}',limits.max));
+  if(selected>=limits.min&&selected<=limits.max)section?.classList.remove('invalid');
+  if(quantitySelectionMode(group))group._values.forEach((value,valueIndex)=>{const quantity=Number(optionDraft.quantities?.[index]?.[valueIndex])||0,row=document.querySelector(`[data-quantity-option="${index}-${valueIndex}"]`),limit=optionQuantityLimit(group);row?.classList.toggle('has-quantity',quantity>0);const count=row?.querySelector('[data-option-quantity]');if(count)count.textContent=String(quantity);const minus=row?.querySelector('[data-option-quantity-action="-1"]'),plus=row?.querySelector('[data-option-quantity-action="1"]');if(minus)minus.disabled=quantity<=0;if(plus)plus.disabled=quantity>=limit});
+  else if(limits.max>1)document.querySelectorAll(`#optionGroups input[name="option-group-${index}"]`).forEach(input=>input.disabled=selected>=limits.max&&!input.checked);
+ });
  const optionConfirm=document.getElementById('optionConfirm'),invalid=!optionDraftValid();
  optionConfirm.disabled=invalid;
  optionConfirm.setAttribute('aria-disabled',String(invalid));
@@ -427,9 +461,10 @@ function closeOptionModal(){
  deactivateDialogLayer(document.getElementById('optionModal'));optionDraft=null;
 }
 function confirmOptions(){
- if(!optionDraft||!optionDraftValid()){const invalidIndex=optionDraft?.groups.findIndex((group,index)=>optionDraft.selections[index].length<optionLimits(group).min)??-1,section=document.querySelector(`.option-group[data-group-index="${invalidIndex}"]`);section?.classList.add('invalid');section?.scrollIntoView({block:'nearest',behavior:'smooth'});showToast(words[lang].requiredAlert);return}
- const menu=optionDraft.menu,selections=selectedOptionRows();
+ if(!optionDraft||!optionDraftValid()){const invalidIndex=optionDraft?.groups.findIndex((group,index)=>{const limits=optionLimits(group),selected=selectedGroupCount(group,index);return selected<limits.min||selected>limits.max})??-1,section=document.querySelector(`.option-group[data-group-index="${invalidIndex}"]`);section?.classList.add('invalid');section?.scrollIntoView({block:'nearest',behavior:'smooth'});showToast(words[lang].requiredAlert);return}
+ const menu=optionDraft.menu,selections=selectedOptionRows(),hasQuantityMode=optionDraft.groups.some(quantitySelectionMode);
  closeOptionModal();
+ if(hasQuantityMode){quantityConfiguredLines(selections).forEach(line=>addConfiguredItem(menu,line.selections,line.quantity,false));showToast((menu.n?.[lang]||menu.n?.ko||menu.sourceName||'')+words[lang].added);return}
  addConfiguredItem(menu,selections);
 }
 function selectMenu(id,opener){
@@ -442,12 +477,12 @@ function selectMenu(id,opener){
 }
 function addItem(id){selectMenu(id)}
 function cartKey(menu,selections){return String(menu.id)+'|'+selections.map(row=>row.templateId+':'+row.valueId).sort().join(',')}
-function addConfiguredItem(menu,selections){
- const extra=selections.reduce((sum,row)=>sum+row.additionalPrice,0),key=cartKey(menu,selections),existing=cartItems.find(line=>line.key===key);
- if(existing)existing.quantity+=1;
- else cartItems.push({lineId:++cartLineSequence,key,menuId:String(menu.id),basePrice:Number(menu.price)||0,unitPrice:(Number(menu.price)||0)+extra,selections:selections.map(row=>({...row})),quantity:1});
+function addConfiguredItem(menu,selections,quantity=1,notify=true){
+ const addQuantity=Math.max(1,Math.min(99,Math.floor(Number(quantity)||1))),extra=selections.reduce((sum,row)=>sum+row.additionalPrice,0),key=cartKey(menu,selections),existing=cartItems.find(line=>line.key===key);
+ if(existing)existing.quantity=Math.min(99,existing.quantity+addQuantity);
+ else cartItems.push({lineId:++cartLineSequence,key,menuId:String(menu.id),basePrice:Number(menu.price)||0,unitPrice:(Number(menu.price)||0)+extra,selections:selections.map(row=>({...row})),quantity:addQuantity});
  recalculateCart();
- showToast((menu.n?.[lang]||menu.n?.ko||menu.sourceName||'')+words[lang].added);
+ if(notify)showToast((menu.n?.[lang]||menu.n?.ko||menu.sourceName||'')+words[lang].added);
 }
 function recalculateCart(){
  if(!orderSending)pendingOrderPayload=null;
@@ -481,14 +516,15 @@ function renderCartItems(){
   const menu=state.menus.find(item=>String(item.id)===line.menuId),name=menu?.n?.[lang]||menu?.n?.ko||menu?.sourceName||'',image=displayMenuImage(line.menuId);
   const photo=image?`<img src="${image}" alt="${escapeHtml(name)}" onerror="this.style.display='none'">`:`<div class="placeholder"><span class="photo-icon" aria-hidden="true">▧</span></div>`;
   const options=line.selections.length?`<div class="cart-line-options">${cartLineOptions(line)}</div>`:'';
-  return `<article class="cart-line"><div class="cart-line-photo">${photo}</div><div><div class="cart-line-name">${escapeHtml(name)}</div>${options}<div class="cart-line-price">${money(line.unitPrice*line.quantity)}</div></div><div class="qty-control"><button type="button" data-line-id="${line.lineId}" data-action="decrease" aria-label="${escapeHtml(words[lang].decrease)}" onclick="changeCartQuantity(${line.lineId},-1,'decrease')">−</button><span>${line.quantity}</span><button type="button" data-line-id="${line.lineId}" data-action="increase" aria-label="${escapeHtml(words[lang].increase)}" onclick="changeCartQuantity(${line.lineId},1,'increase')">＋</button></div></article>`;
+  return `<article class="cart-line"><div class="cart-line-photo">${photo}</div><div><div class="cart-line-name">${escapeHtml(name)}</div>${options}<div class="cart-line-price">${money(line.unitPrice*line.quantity)}</div></div><div class="qty-control"><button type="button" data-line-id="${line.lineId}" data-action="decrease" aria-label="${escapeHtml(words[lang].decrease)}" onclick="changeCartQuantity(${line.lineId},-1,'decrease')">−</button><span>${line.quantity}</span><button type="button" data-line-id="${line.lineId}" data-action="increase" aria-label="${escapeHtml(words[lang].increase)}" onclick="changeCartQuantity(${line.lineId},1,'increase')" ${line.quantity>=99?'disabled':''}>＋</button></div></article>`;
  }).join('');
 }
 function changeCartQuantity(lineId,delta,action){
  if(orderSending)return;
  const line=cartItems.find(item=>item.lineId===lineId);
  if(!line)return;
- line.quantity+=delta;
+ if(delta>0&&line.quantity>=99)return;
+ line.quantity=Math.min(99,line.quantity+delta);
  if(line.quantity<=0)cartItems=cartItems.filter(item=>item.lineId!==lineId);
  recalculateCart();
  requestAnimationFrame(()=>{const next=document.querySelector(`#cartItems [data-line-id="${lineId}"][data-action="${action}"]`)||document.querySelector('#cartModal .dialog-close');next?.focus()});

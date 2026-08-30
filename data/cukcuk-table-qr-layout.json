@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": "cukcuk-tablet-content-2026-08-30-4871d839181b",
+  "revision": "cukcuk-tablet-content-2026-08-30-a02-quantity-v1",
   "capturedAt": "2026-08-30T06:34:32.171Z",
   "timezone": "Asia/Ho_Chi_Minh",
   "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
@@ -1360,7 +1360,9 @@
         "cukcuk-detail:57b1fe70-fe33-4654-9d58-575f277749be:0": {
           "required": true,
           "minSelections": 1,
-          "maxSelections": 3
+          "maxSelections": 3,
+          "selectionMode": "quantity-per-value-lines",
+          "maxQuantityPerValue": 99
         }
       }
     },

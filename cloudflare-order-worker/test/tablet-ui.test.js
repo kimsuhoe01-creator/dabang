@@ -89,6 +89,15 @@ test('preview orders are unmistakably marked as not sent to the POS', () => {
   assert.match(successSource, /preview\?words\[lang\]\.previewOrder:words\[lang\]\.orderSuccessMessage/);
 });
 
+test('live success copy distinguishes POS registration from manual kitchen dispatch', () => {
+  assert.match(html, /orderSuccess:'POS에 주문이 등록됐습니다'/);
+  assert.match(html, /orderSuccessMessage:'직원이 CUKCUK에서 주문을 확인한 뒤 주방·바로 전송해야 영수증이 출력됩니다\.'/);
+  assert.match(html, /orderSuccess:'Đơn đã được ghi nhận trên POS'/);
+  assert.match(html, /orderSuccessMessage:'Nhân viên phải xác nhận đơn trên CUKCUK rồi gửi đến bếp\/quầy bar thì phiếu mới được in\.'/);
+  assert.doesNotMatch(html, /orderSuccessMessage:'주방에서 주문을 확인하고 있습니다\.'/);
+  assert.doesNotMatch(html, /orderSuccessMessage:'Bếp đang kiểm tra đơn của bạn\.'/);
+});
+
 test('live orders ignore editor drafts and wait for the published catalog', () => {
   const stateSource = sourceSlice("const SUPPORTED_LANGS=new Set", 'const words=');
   assert.match(stateSource, /const PREVIEW_MODE=PAGE_PARAMS\.get\('preview'\)==='1'/);
@@ -118,6 +127,45 @@ test('live submission has bounded waiting, actionable errors, and a stable retry
   assert.match(submitSource, /try\{\s*payload=orderPayload\(\)/);
   assert.match(submitSource, /finally\{if\(timeoutId\)clearTimeout\(timeoutId\);setOrderSending\(false\)\}/);
   assert.match(html, /orderUncertain:'Chưa xác nhận được kết quả gửi\. Không bấm lại; hãy kiểm tra đơn trên POS\.'/);
+});
+
+test('Sapporo draft sizes use independent quantity counters and cart lines', () => {
+  const catalog = JSON.parse(fs.readFileSync(path.join(projectRoot, 'data', 'cukcuk-menu.json'), 'utf8'));
+  const menu = catalog.menus.find(item => item.cukcukCode === '(A02) Bia tuoi Sapporo');
+  assert.ok(menu, 'missing A02 Sapporo draft menu');
+  const templateId = menu.optionTemplateIds[0];
+  assert.deepEqual(menu.optionRules[templateId], {
+    required: true,
+    minSelections: 1,
+    maxSelections: 3,
+    selectionMode: 'quantity-per-value-lines',
+    maxQuantityPerValue: 99
+  });
+
+  const optionSource = sourceSlice('function quantitySelectionMode', 'function closeOptionModal');
+  assert.match(optionSource, /selectionMode==='quantity-per-value-lines'/);
+  assert.match(optionSource, /data-option-quantity-action="-1"/);
+  assert.match(optionSource, /data-option-quantity-action="1"/);
+  assert.match(optionSource, /additionalPrice\*\(row\.quantityMode\?row\.quantity:1\)/);
+  assert.match(optionSource, /quantityTotal\.replace\('\{n\}',groupTotalQuantity\(group,index\)\)/);
+
+  const confirmSource = sourceSlice('function confirmOptions()', 'function selectMenu');
+  assert.match(confirmSource, /quantityConfiguredLines\(selections\)\.forEach\(line=>addConfiguredItem\(menu,line\.selections,line\.quantity,false\)\)/);
+
+  const mapperSource = sourceSlice('function quantityConfiguredLines', 'function optionLimits');
+  const quantityConfiguredLines = new Function(`${mapperSource};return quantityConfiguredLines`)();
+  assert.deepEqual(quantityConfiguredLines([
+    { templateId, valueId: '330', additionalPrice: 77000, quantity: 2, quantityMode: true },
+    { templateId, valueId: '640', additionalPrice: 165000, quantity: 1, quantityMode: true }
+  ]), [
+    { selections: [{ templateId, valueId: '330', additionalPrice: 77000 }], quantity: 2 },
+    { selections: [{ templateId, valueId: '640', additionalPrice: 165000 }], quantity: 1 }
+  ]);
+
+  const cartSource = sourceSlice('function cartKey', 'function recalculateCart');
+  assert.match(cartSource, /key=cartKey\(menu,selections\)/);
+  assert.match(cartSource, /existing\.quantity=Math\.min\(99,existing\.quantity\+addQuantity\)/);
+  assert.match(cartSource, /quantity:addQuantity/);
 });
 
 function decodeRgbaPng(buffer) {
