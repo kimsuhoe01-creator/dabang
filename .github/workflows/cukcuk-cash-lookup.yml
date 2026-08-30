@@ -89,13 +89,17 @@ jobs:
         shell: bash
         run: |
           printf '%s' 'LS0tLS1CRUdJTiBQVUJMSUMgS0VZLS0tLS0KTUlJQklqQU5CZ2txaGtpRzl3MEJBUUVGQUFPQ0FROEFNSUlCQ2dLQ0FRRUE2Ni84N3JQYWVWSlZ1bVk1MEJzLwpyOEd1T3FlanBXWXBWbHczQm1STlRjb09oelZNbTVLRW81aHNJWTE2UlBUTlJMeFZCOWRxcjVDUU04cE9wZ1N0Cm4zSjErMVNoZEpNdXpaT0J6MlExUDJKQ3NVSzVveTNWYnFwbTZ0S0FYeXVWcktycXdxUXBxV05nNUhmRlV2NjYKOHRLNkxsSDdWOVZqMkhnQTkvaWN4VEVTei90YU1BMmcvZHFjUDkxektEdmRGWEQ2SlQrTW5ZRVVQSkhCYVFHbwpuMGkyd3dsZkkxZlZUZ0VTY2JIUkFRWFRwakhKWEEycko3NDhaWWxjelhOK0U5R3lOZ25LTGxPOU4yc0I0Z1J6CklsR1Vmb0lTYytuT2dsWFFuZ3ZrV2dIaTN4cnhmd0syTG1rT2Q3L3pqNmFOWWVRSlBtSVcwNjVYZkJHMjVRWjEKelFJREFRQUIKLS0tLS1FTkQgUFVCTElDIEtFWS0tLS0tCg==' | base64 -d > public.pem
-          openssl cms -encrypt -binary -aes-256-cbc -in result.json -outform DER -out result.cms public.pem
-          rm -f result.json public.pem
+          openssl rand -hex 32 > aes.key
+          openssl enc -aes-256-cbc -pbkdf2 -salt -in result.json -out result.enc -pass file:aes.key
+          openssl pkeyutl -encrypt -pubin -inkey public.pem -in aes.key -out key.enc
+          rm -f result.json public.pem aes.key
 
       - name: Upload encrypted result
         uses: actions/upload-artifact@v4
         with:
           name: cukcuk-cash-lookup
-          path: result.cms
+          path: |
+            result.enc
+            key.enc
           retention-days: 1
           if-no-files-found: error
