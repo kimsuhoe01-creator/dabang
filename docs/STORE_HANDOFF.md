@@ -6,6 +6,8 @@
 
 - `preview=1` 주소는 주문 성공 화면만 모의 표시하고 주문 Worker를 호출하지 않는다. 따라서 POS·주방·CUKCUK에는 주문이 생성되지 않는다.
 - 매장 실주문 주소: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?deploy=3fc1ab1
+- 매장 실주문 QR: https://kimsuhoe01-creator.github.io/dabang/docs/assets/dabang-live-order-qr.png
+- QR에 저장된 주소는 `https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?source=store-qr`이며 `preview=1`이 없어 실제 주문 모드다.
 - 안전 미리보기 주소: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=3fc1ab1
 - 혼동 방지를 위해 미리보기에서는 상단에 `미리보기 · POS 전송 안 됨` 배지를 항상 표시하고, 장바구니 버튼·안내문·완료창에도 POS와 주방으로 전송되지 않는다고 한국어·베트남어·중국어·영어로 명확히 표시한다.
 - 실제 주문 주소에는 경고 배지가 없고 기존처럼 `주문 전송` 버튼과 실제 전송 안내만 나온다.
