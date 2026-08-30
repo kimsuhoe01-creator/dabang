@@ -117,6 +117,7 @@ test('live submission has bounded waiting, actionable errors, and a stable retry
   assert.match(submitSource, /if\(pendingOrderPayload\)return pendingOrderPayload/);
   assert.match(submitSource, /typeof crypto!=='undefined'&&typeof crypto\.randomUUID==='function'/);
   assert.match(submitSource, /catalogRevision:String\(state\.catalogRevision\|\|''\)/);
+  assert.match(submitSource, /transport:\(new URL\(location\.href\)\.searchParams\.get\('transport'\)==='cukcuk-self-order'\?'cukcuk-self-order':'graph'\)/);
   assert.match(submitSource, /headers:\{'Content-Type':'application\/json'\}/);
   assert.match(submitSource, /new AbortController\(\)/);
   assert.match(submitSource, /setTimeout\(\(\)=>controller\.abort\(\),20000\)/);

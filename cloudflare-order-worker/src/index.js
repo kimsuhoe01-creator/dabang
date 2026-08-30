@@ -1,4 +1,5 @@
 import { createOrAppendCukCukOrder, validateAndBuildOrder } from "./order.js";
+import { submitCukCukSelfOrder } from "./self-order.js";
 import { expandMenuImage } from "./image-edit.js";
 import { handleStoreApi } from "./gpt-api.js";
 
@@ -48,7 +49,9 @@ export default {
       const order = validateAndBuildOrder(payload, menuData, env.CUKCUK_BRANCH_ID);
       const tableId = order.ListTableID[0];
       const tableName = String(payload.table.name);
+      const transport = payload.transport === "cukcuk-self-order" ? "cukcuk-self-order" : "graph";
       const submissionFingerprint = JSON.stringify({
+        transport,
         catalogRevision: requestedRevision,
         tableId,
         items: payload.items.map((item) => ({
@@ -61,7 +64,7 @@ export default {
       const coordinatorResponse = await coordinator.fetch("https://table-order.internal/submit", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ order, tableName, submissionFingerprint }),
+        body: JSON.stringify({ order, tableName, submissionFingerprint, transport }),
       });
       const coordinatorResult = await coordinatorResponse.json();
       if (!coordinatorResponse.ok || coordinatorResult.ok === false) {
@@ -114,9 +117,10 @@ export class TableOrderCoordinator {
     return task;
   }
 
-  async submit({ order, tableName, submissionFingerprint }) {
+  async submit({ order, tableName, submissionFingerprint, transport }) {
     try {
-      const result = await submitTableOrder(this.ctx.storage, this.env, order, tableName, submissionFingerprint);
+      const submitter = transport === "cukcuk-self-order" ? submitCukCukSelfOrder : createOrAppendCukCukOrder;
+      const result = await submitTableOrder(this.ctx.storage, this.env, order, tableName, submissionFingerprint, submitter);
       return json({ ok: true, data: result });
     } catch (error) {
       const status = Number.isInteger(error?.status) ? error.status : 502;
