@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'dabang-tablet-v9';
+const CACHE_VERSION = 'dabang-tablet-v14';
 const SHELL_CACHE = `${CACHE_VERSION}-shell`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const APP_SHELL = [
@@ -6,7 +6,7 @@ const APP_SHELL = [
   './manifest.webmanifest',
   './assets/table-layout.js',
   './assets/option-order.js',
-  './assets/menu-images.js?v=20260830-content-v2',
+  './assets/menu-images.js?v=20260830-content-v5',
   './assets/brand/dabang-logo.png',
   './assets/pwa/icon-32.png',
   './assets/pwa/icon-180.png',
@@ -64,7 +64,7 @@ async function networkFirst(request, fallbackUrl) {
     const response = await fetch(request, { cache: 'no-store' });
     if (response.ok) {
       const cache = await caches.open(RUNTIME_CACHE);
-      cache.put(request, response.clone());
+      await cache.put(request, response.clone());
     }
     return response;
   } catch (error) {
@@ -82,10 +82,12 @@ async function staleWhileRevalidate(request) {
   const cache = await caches.open(RUNTIME_CACHE);
   // Menu photos keep stable UUID filenames. Respect the catalog-revision query
   // so an edited photo is shown immediately instead of the prior cached bytes.
-  const cached = await cache.match(request);
+  // Search every current cache so precached shell assets remain available if
+  // the connection drops immediately after the new service worker activates.
+  const cached = await caches.match(request);
   const refreshed = fetch(request)
-    .then(response => {
-      if (response.ok) cache.put(request, response.clone());
+    .then(async response => {
+      if (response.ok) await cache.put(request, response.clone());
       return response;
     })
     .catch(() => null);

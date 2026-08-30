@@ -28,8 +28,13 @@ $mappedIds = @(
 $jpgIds = @(
     Read-RegistrySet 'MENU_JPG_IDS'
     Read-RegistrySet 'MENU_GENERATED_JPG_IDS'
+    Read-RegistrySet 'MENU_REFRESHED_JPG_IDS'
+    Read-RegistrySet 'MENU_REFRAMED_JPG_IDS'
+    Read-RegistrySet 'MENU_CROPPED_JPG_IDS'
     Read-RegistrySet 'MENU_QR_ADDED_JPG_IDS'
 )
+$forcePngIds = @(Read-RegistrySet 'MENU_FORCE_PNG_IDS')
+$forceJpgIds = @(Read-RegistrySet 'MENU_FORCE_JPG_IDS')
 $menuIds = @($menuData.menus | ForEach-Object id)
 
 $missingMappings = @($menuData.menus | Where-Object { $mappedIds -notcontains $_.id })
@@ -37,7 +42,13 @@ $staleMappings = @($mappedIds | Where-Object { $menuIds -notcontains $_ })
 $missingFiles = @()
 
 foreach ($mappedId in $mappedIds) {
-    $extension = if ($jpgIds -contains $mappedId) { 'jpg' } else { 'png' }
+    $extension = if ($forcePngIds -contains $mappedId) {
+        'png'
+    } elseif (($forceJpgIds -contains $mappedId) -or ($jpgIds -contains $mappedId)) {
+        'jpg'
+    } else {
+        'png'
+    }
     $expectedPath = Join-Path $imageDirectory "$mappedId.$extension"
     if (-not (Test-Path -LiteralPath $expectedPath)) {
         $menu = $menuData.menus | Where-Object { $_.id -eq $mappedId } | Select-Object -First 1
