@@ -52,7 +52,7 @@ function fixture() {
           Additions: [
             { Id: 'hcx-plain', Description: '안 매운맛 | Không cay', Price: 0, InActive: false },
             { Id: 'hcx-retired', Description: '예전 옵션 | Tùy chọn cũ', Price: 0, InActive: true },
-            { Id: 'hcx-half', Description: '반반 | Nửa không cay + nửa Dijinda', Price: '10000' }
+            { Id: 'hcx-half', Description: 'Nửa không cay + nửa Dijinda | 반반', Price: '10000' }
           ]
         }]
       },
@@ -100,6 +100,7 @@ test('detail options replace HCX and S08 attachments with deterministic template
   assert.deepEqual(hcxTemplate.values.map(value => value.additionalPrice), [0, 10000]);
   assert.deepEqual(hcxTemplate.values[0].receiptNames, { ko: '안 매운맛', vi: 'Không cay' });
   assert.deepEqual(hcxTemplate.values[0].names, { ko: '안 매운맛', vi: 'Không cay', zh: '', en: '' });
+  assert.deepEqual(hcxTemplate.values[1].receiptNames, { ko: '반반', vi: 'Nửa không cay + nửa Dijinda' });
   assert.equal(s08Template.values.length, 7);
   assert.deepEqual(s08Template.values.map(value => value.sortOrder), [0, 1, 2, 3, 4, 5, 6]);
   assert.equal(result.optionTemplates.some(template => template.id === 'old-hcx'), false);

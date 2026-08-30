@@ -323,13 +323,18 @@ test('the checked-in CUKCUK table QR snapshot publishes the polished 14-category
     ...(override.templateIds || []),
     ...Object.keys(override.rules || {})
   ]))];
-  const optionTemplates = optionTemplateIds.map(id => ({
-    id,
-    menuIds: [],
-    minSelections: 0,
-    maxSelections: 4,
-    values: Array.from({ length: 7 }, (_, index) => ({ id: `${id}-value-${index + 1}`, visible: true, sortOrder: index }))
-  }));
+  const optionTemplates = optionTemplateIds.map(id => {
+    const configuredMax = Math.max(0, ...Object.values(config.menuOptionOverrides || {})
+      .map(override => Number(override.rules?.[id]?.maxSelections) || 0));
+    const valueCount = Math.max(7, configuredMax);
+    return {
+      id,
+      menuIds: [],
+      minSelections: 0,
+      maxSelections: valueCount,
+      values: Array.from({ length: valueCount }, (_, index) => ({ id: `${id}-value-${index + 1}`, visible: true, sortOrder: index }))
+    };
+  });
 
   const result = applyTableQrLayout({ categories: [], menus, optionTemplates }, config);
 
@@ -345,13 +350,23 @@ test('the checked-in CUKCUK table QR snapshot publishes the polished 14-category
   assert.equal(result.menus.find(menu => menu.cukcukCode === '(KX05)').names.ko, '양념 치킨');
   assert.deepEqual(result.menus.find(menu => menu.cukcukCode === 'BDH').names, { ko: '수박', vi: 'Dưa hấu', zh: '西瓜', en: 'Watermelon' });
   assert.deepEqual(result.menus.filter(menu => menu.available === false).map(menu => menu.cukcukCode).sort(), [
-    '(A02) Bia tuoi Sapporo',
     '(M04) nacho cham phomai',
-    '(S08) Cánh gà 4 vị',
-    '(T10) Do chien/mon chien',
-    '(W01) Cánh gà vị đôi',
-    'HCX',
-    'CC'
+    'CC',
+    'ᄉ TT 加 AET'
   ].sort());
+  const expectedRules = {
+    HCX: [1, 1],
+    '(A02) Bia tuoi Sapporo': [1, 3],
+    '(T10) Do chien/mon chien': [1, 10],
+    '(S08) Cánh gà 4 vị': [4, 4],
+    '(W01) Cánh gà vị đôi': [2, 2]
+  };
+  for (const [code, [minSelections, maxSelections]] of Object.entries(expectedRules)) {
+    const menu = result.menus.find(item => item.cukcukCode === code);
+    assert.equal(menu.available, true, `${code} should be available after its detail options are attached`);
+    assert.equal(menu.optionTemplateIds.length, 1, `${code} should expose one option group`);
+    assert.deepEqual(menu.optionRules[menu.optionTemplateIds[0]], { required: true, minSelections, maxSelections });
+  }
+  assert.equal(result.menus.some(menu => menu.available && Number(menu.price) === 0 && menu.optionTemplateIds.length === 0), false);
   assert.equal(result.menus.some(menu => /burger|버거/i.test(`${menu.cukcukCode} ${menu.names?.ko || ''}`)), false);
 });

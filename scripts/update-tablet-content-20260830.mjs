@@ -203,6 +203,16 @@ const CHICKEN_TEMPLATE = 'b2fbfcca-55f5-4718-87d4-96627091764a';
 const BONE_TEMPLATE = '85cead19-7d83-4c61-8199-b7fab35fb672';
 const TTEOK_SPICE_TEMPLATE = '21b53642-cba7-4ef9-b877-bab92f845c25';
 const TTEOK_TOPPING_TEMPLATE = 'd7fcbd85-9fb6-40db-872a-8275dce401ed';
+const HCX_DETAIL_TEMPLATE = 'cukcuk-detail:d301f64f-16fa-4c8f-86bb-62318205039a:0';
+const SAPPORO_DETAIL_TEMPLATE = 'cukcuk-detail:57b1fe70-fe33-4654-9d58-575f277749be:0';
+const FRIED_DETAIL_TEMPLATE = 'cukcuk-detail:6a4fc8cd-4937-46f0-990c-536bdffb1de3:0';
+const FOUR_WINGS_DETAIL_TEMPLATE = 'cukcuk-detail:88d856ff-e35d-4c21-893b-3f60e2fa71fa:0';
+const HALF_WINGS_DETAIL_TEMPLATE = 'cukcuk-detail:2ce328a0-8d0c-481e-883f-2e35684b900d:0';
+const SAPPORO_SIZE_ORDER = [
+  'dc46801f-c5c7-4b94-82f0-014b2c1aad69', // 330cc
+  '38465a50-9825-4244-8887-bbc1fd87efbd', // 640cc
+  '9b558fc3-68b9-4ec9-8d7c-307c338d4610'  // 3300cc
+];
 
 layout.detailOptionSources = {
   HCX: {
@@ -232,8 +242,33 @@ layout.detailOptionSources = {
   }
 };
 
+layout.optionOrdering.templates = [
+  ...(layout.optionOrdering.templates || []).filter(item => item.templateId !== SAPPORO_DETAIL_TEMPLATE),
+  { templateId: SAPPORO_DETAIL_TEMPLATE, valueIds: SAPPORO_SIZE_ORDER }
+];
+
 layout.menuOptionOverrides = {
   ...(layout.menuOptionOverrides || {}),
+  HCX: {
+    templateIds: [HCX_DETAIL_TEMPLATE],
+    rules: { [HCX_DETAIL_TEMPLATE]: { required: true, minSelections: 1, maxSelections: 1 } }
+  },
+  '(A02) Bia tuoi Sapporo': {
+    templateIds: [SAPPORO_DETAIL_TEMPLATE],
+    rules: { [SAPPORO_DETAIL_TEMPLATE]: { required: true, minSelections: 1, maxSelections: 3 } }
+  },
+  '(T10) Do chien/mon chien': {
+    templateIds: [FRIED_DETAIL_TEMPLATE],
+    rules: { [FRIED_DETAIL_TEMPLATE]: { required: true, minSelections: 1, maxSelections: 10 } }
+  },
+  '(S08) Cánh gà 4 vị': {
+    templateIds: [FOUR_WINGS_DETAIL_TEMPLATE],
+    rules: { [FOUR_WINGS_DETAIL_TEMPLATE]: { required: true, minSelections: 4, maxSelections: 4 } }
+  },
+  '(W01) Cánh gà vị đôi': {
+    templateIds: [HALF_WINGS_DETAIL_TEMPLATE],
+    rules: { [HALF_WINGS_DETAIL_TEMPLATE]: { required: true, minSelections: 2, maxSelections: 2 } }
+  },
   '(KX01)': {
     templateIds: [BONE_TEMPLATE, CHICKEN_TEMPLATE],
     rules: {
@@ -253,10 +288,6 @@ layout.menuOptionOverrides = {
   }
 };
 
-// Until the detail-backed IDs are verified, do not reattach the stale shared wing group.
-delete layout.menuOptionOverrides['(W01) Cánh gà vị đôi'];
-delete layout.menuOptionOverrides['(S08) Cánh gà 4 vị'];
-
 layout.menuNameOverrides = names;
 layout.menuSubtitleOverrides = subtitles;
 
@@ -272,6 +303,12 @@ function markUnavailable(categoryCode, menuCode) {
   menu.outOfStock = true;
 }
 
+function markAvailable(categoryCode, menuCode) {
+  const menu = categoryByCode(categoryCode).menus.find(item => item.code === menuCode);
+  if (!menu) throw new Error(`Missing menu ${menuCode} in ${categoryCode}`);
+  menu.outOfStock = false;
+}
+
 function reorder(categoryCode, orderedCodes) {
   const category = categoryByCode(categoryCode);
   const byCode = new Map(category.menus.map(menu => [menu.code, menu]));
@@ -284,12 +321,16 @@ function reorder(categoryCode, orderedCodes) {
   category.menus = [...preferred, ...byCode.values()].map((menu, index) => ({ ...menu, sortOrder: index }));
 }
 
-// Prevent accidental zero-won orders until the CUKCUK option/price source is restored.
-markUnavailable('다방분식 | Đồ ăn nhẹ Dabang', '(T10) Do chien/mon chien');
-markUnavailable('주류 |Đồ uống có cồn', '(A02) Bia tuoi Sapporo');
-markUnavailable('New Menu', 'HCX');
-markUnavailable('세트메뉴 | Combo món ăn', '(S08) Cánh gà 4 vị');
-markUnavailable('날개치킨 | Cánh gà sốt', '(W01) Cánh gà vị đôi');
+// The detail-backed Addition IDs are verified. Re-open these menus with fail-closed rules.
+markAvailable('다방분식 | Đồ ăn nhẹ Dabang', '(T10) Do chien/mon chien');
+markAvailable('주류 |Đồ uống có cồn', '(A02) Bia tuoi Sapporo');
+markAvailable('New Menu', 'HCX');
+markAvailable('세트메뉴 | Combo món ăn', '(S08) Cánh gà 4 vị');
+markAvailable('날개치킨 | Cánh gà sốt', '(W01) Cánh gà vị đôi');
+
+// A separate zero-won “add extras” wrapper still has no public option attachment.
+// Keep only this item unavailable until CUKCUK confirms its six-value group.
+markUnavailable('안주 |Món nhắm', 'ᄉ TT 加 AET');
 
 reorder('주류 |Đồ uống có cồn', [
   '(A01) Sapporo 1t1 640ml',

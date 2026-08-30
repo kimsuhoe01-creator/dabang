@@ -55,6 +55,17 @@ test("allows up to three toppings but rejects a fourth", () => {
   assert.throws(() => buildConstrainedOrder("toppings", ["value-1", "value-2", "value-3", "value-4"], 0, 3), /선택 개수/);
 });
 
+test("rejects a zero-priced wrapper menu when its option source is missing", () => {
+  assert.throws(() => validateAndBuildOrder({
+    table: { id: "table-1", name: "B-02" },
+    items: [{ menuId: "menu-zero", quantity: 1, options: [] }],
+  }, {
+    synced: true,
+    menus: [{ id: "menu-zero", cukcukId: "menu-zero", sourceName: "Add extras", price: 0, available: true, optionTemplateIds: [] }],
+    optionTemplates: [],
+  }, "branch-1"), error => error.code === "MENU_DATA_INVALID" && error.status === 503);
+});
+
 test("rejects foreign option groups, unknown values, and duplicate selections", () => {
   assert.throws(() => buildConstrainedOrder("owned", ["value-1"], 0, 3, { templateId: "foreign" }), /선택할 수 없는 옵션 그룹/);
   assert.throws(() => buildConstrainedOrder("owned", ["unknown"], 0, 3), /선택할 수 없는 옵션/);

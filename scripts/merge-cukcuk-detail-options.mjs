@@ -70,9 +70,14 @@ function additionPrice(value, code, id) {
 function valueNames(description) {
   const parts = description.split('|').map(clean);
   if (parts.length === 2 && parts.every(Boolean)) {
+    const firstHasKorean = /[\u3131-\u318e\uac00-\ud7a3]/u.test(parts[0]);
+    const secondHasKorean = /[\u3131-\u318e\uac00-\ud7a3]/u.test(parts[1]);
+    const [ko, vi] = !firstHasKorean && secondHasKorean
+      ? [parts[1], parts[0]]
+      : [parts[0], parts[1]];
     return {
-      names: { ko: parts[0], vi: parts[1], zh: '', en: '' },
-      receiptNames: { ko: parts[0], vi: parts[1] }
+      names: { ko, vi, zh: '', en: '' },
+      receiptNames: { ko, vi }
     };
   }
   return { names: { ko: description, vi: '', zh: '', en: '' } };

@@ -39,6 +39,9 @@ export function validateAndBuildOrder(payload, menuData, branchId) {
     if (line.options !== undefined && !Array.isArray(line.options)) throw invalid("메뉴 옵션 정보가 올바르지 않습니다.");
     const selectedOptions = Array.isArray(line.options) ? line.options : [];
     const attachedTemplateIds = (Array.isArray(menu.optionTemplateIds) ? menu.optionTemplateIds : []).map(String);
+    if (Number(menu.price || 0) === 0 && attachedTemplateIds.length === 0) {
+      throw new OrderError("가격이 0원인 메뉴의 옵션 원본을 찾을 수 없습니다.", 503, "MENU_DATA_INVALID");
+    }
     const attachedTemplateSet = new Set(attachedTemplateIds);
     const selectedKeys = new Set();
     const groupCounts = new Map();

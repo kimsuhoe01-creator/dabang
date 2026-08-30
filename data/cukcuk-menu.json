@@ -18,7 +18,7 @@
       "sourceName": "하이볼|RượuHighball|高球酒|Highball",
       "names": {
         "ko": "하이볼",
-        "vi": "Highball",
+        "vi": "Rượu Highball",
         "zh": "高球酒",
         "en": "Highball"
       },
@@ -176,7 +176,7 @@
         "ko": "주류",
         "vi": "Đồ uống có cồn",
         "zh": "酒类",
-        "en": "Alcoholic Drinks"
+        "en": "Alcohol"
       },
       "visible": true,
       "sortOrder": 13
@@ -412,7 +412,7 @@
       "names": {
         "ko": "돈까스 플레이트 (안 매운맛)",
         "vi": "Đĩa tonkatsu (không cay)",
-        "zh": "炸猪排拼盘（不辣）",
+        "zh": "炸猪排拼盘(不辣)",
         "en": "Tonkatsu Plate (Non-spicy)"
       },
       "price": 313200,
@@ -432,6 +432,13 @@
           "en": "Half-and-half with the extra-spicy “Dijinda” tonkatsu is available."
         },
         "tone": "default"
+      },
+      "optionRules": {
+        "cukcuk-detail:d301f64f-16fa-4c8f-86bb-62318205039a:0": {
+          "required": true,
+          "minSelections": 1,
+          "maxSelections": 1
+        }
       }
     },
     {
@@ -931,6 +938,13 @@
           "en": "Enjoy four of our Vietnamese guests’ favorite Dabang wing flavors at once. Please select exactly four flavors."
         },
         "tone": "default"
+      },
+      "optionRules": {
+        "cukcuk-detail:88d856ff-e35d-4c21-893b-3f60e2fa71fa:0": {
+          "required": true,
+          "minSelections": 4,
+          "maxSelections": 4
+        }
       }
     },
     {
@@ -1427,7 +1441,14 @@
       ],
       "sortOrder": 49,
       "cukcukCode": "(W01) Cánh gà vị đôi",
-      "categorySortOrder": 0
+      "categorySortOrder": 0,
+      "optionRules": {
+        "cukcuk-detail:2ce328a0-8d0c-481e-883f-2e35684b900d:0": {
+          "required": true,
+          "minSelections": 2,
+          "maxSelections": 2
+        }
+      }
     },
     {
       "id": "a0d375e8-a3f7-456d-8713-7b3c148e83fc",
@@ -1633,7 +1654,14 @@
         "cukcuk-detail:6a4fc8cd-4937-46f0-990c-536bdffb1de3:0"
       ],
       "sortOrder": 58,
-      "categorySortOrder": 4
+      "categorySortOrder": 4,
+      "optionRules": {
+        "cukcuk-detail:6a4fc8cd-4937-46f0-990c-536bdffb1de3:0": {
+          "required": true,
+          "minSelections": 1,
+          "maxSelections": 10
+        }
+      }
     },
     {
       "id": "c7bb95c0-8e0f-4980-93ea-1714a997e669",
@@ -2084,7 +2112,7 @@
         "en": "Add Extra Toppings"
       },
       "price": 0,
-      "available": true,
+      "available": false,
       "optionGroups": 0,
       "optionTemplateIds": [],
       "sortOrder": 80,
@@ -2219,7 +2247,7 @@
       "names": {
         "ko": "코카콜라 (390ml)",
         "vi": "Coca-Cola (390ml)",
-        "zh": "可口可乐（390ml）",
+        "zh": "可口可乐(390ml)",
         "en": "Coca-Cola (390ml)"
       },
       "price": 22000,
@@ -2259,7 +2287,7 @@
       "names": {
         "ko": "펩시 제로 (390ml)",
         "vi": "Pepsi Không Calo (390ml)",
-        "zh": "百事无糖（390ml）",
+        "zh": "百事无糖(390ml)",
         "en": "Pepsi Zero (390ml)"
       },
       "price": 33000,
@@ -2279,7 +2307,7 @@
       "names": {
         "ko": "나랑드 제로 (500ml)",
         "vi": "Narangd Zero (500ml)",
-        "zh": "Narangd 零糖（500ml）",
+        "zh": "Narangd 零糖(500ml)",
         "en": "Narangd Zero (500ml)"
       },
       "price": 55000,
@@ -2309,7 +2337,7 @@
       "names": {
         "ko": "펩시 제로 라임 (1.5L)",
         "vi": "Pepsi Không Calo Vị Chanh (1,5L)",
-        "zh": "百事无糖青柠味（1.5L）",
+        "zh": "百事无糖青柠味(1.5L)",
         "en": "Pepsi Zero Lime (1.5L)"
       },
       "price": 77000,
@@ -2401,7 +2429,14 @@
         "cukcuk-detail:57b1fe70-fe33-4654-9d58-575f277749be:0"
       ],
       "sortOrder": 95,
-      "categorySortOrder": 1
+      "categorySortOrder": 1,
+      "optionRules": {
+        "cukcuk-detail:57b1fe70-fe33-4654-9d58-575f277749be:0": {
+          "required": true,
+          "minSelections": 1,
+          "maxSelections": 3
+        }
+      }
     },
     {
       "id": "4182ba40-0603-49ac-9b7a-e2438229f7b8",
@@ -2433,7 +2468,7 @@
       "names": {
         "ko": "하노이 생맥주 KEG (1L)",
         "vi": "Bia Hơi Hà Nội KEG (1L)",
-        "zh": "河内鲜啤 KEG（1L）",
+        "zh": "河内鲜啤 KEG(1L)",
         "en": "Hanoi Draft Beer KEG (1L)"
       },
       "price": 110000,
@@ -4559,19 +4594,6 @@
           "sortOrder": 0
         },
         {
-          "id": "9b558fc3-68b9-4ec9-8d7c-307c338d4610",
-          "sourceName": "3300cc",
-          "names": {
-            "ko": "3300cc",
-            "vi": "3300cc",
-            "zh": "3300cc",
-            "en": "3300cc"
-          },
-          "additionalPrice": 660000,
-          "visible": true,
-          "sortOrder": 1
-        },
-        {
           "id": "38465a50-9825-4244-8887-bbc1fd87efbd",
           "sourceName": "640cc",
           "names": {
@@ -4581,6 +4603,19 @@
             "en": "640cc"
           },
           "additionalPrice": 165000,
+          "visible": true,
+          "sortOrder": 1
+        },
+        {
+          "id": "9b558fc3-68b9-4ec9-8d7c-307c338d4610",
+          "sourceName": "3300cc",
+          "names": {
+            "ko": "3300cc",
+            "vi": "3300cc",
+            "zh": "3300cc",
+            "en": "3300cc"
+          },
+          "additionalPrice": 660000,
           "visible": true,
           "sortOrder": 2
         }
@@ -5020,16 +5055,16 @@
     }
   ],
   "inventoryCandidateCount": 251,
-  "catalogRevision": "cukcuk-tablet-content-2026-08-30-a34a77a636a3",
+  "catalogRevision": "cukcuk-tablet-content-2026-08-30-a449e2658a9b",
   "tableQrLayout": {
-    "revision": "cukcuk-tablet-content-2026-08-30-a34a77a636a3",
-    "capturedAt": "2026-08-30T02:25:05.126Z",
+    "revision": "cukcuk-tablet-content-2026-08-30-a449e2658a9b",
+    "capturedAt": "2026-08-30T03:10:01.719Z",
     "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
     "includeUnlisted": false,
     "featuredVisible": false,
     "optionOrderingPolicy": "free-first-stable",
     "orderedMenuCount": 10,
-    "orderedTemplateCount": 7,
+    "orderedTemplateCount": 8,
     "excludedCandidateCount": 139
   },
   "translation": {

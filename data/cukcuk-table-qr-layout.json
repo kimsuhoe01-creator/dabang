@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "revision": "cukcuk-tablet-content-2026-08-30-a34a77a636a3",
-  "capturedAt": "2026-08-30T02:25:05.126Z",
+  "revision": "cukcuk-tablet-content-2026-08-30-a449e2658a9b",
+  "capturedAt": "2026-08-30T03:10:01.719Z",
   "timezone": "Asia/Ho_Chi_Minh",
   "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
   "includeUnlisted": false,
@@ -183,6 +183,14 @@
           "6487fbeb-3650-488a-b13c-14c4f64d7d41",
           "fcb6956f-c11e-4e08-83fb-9249b9e938b4"
         ]
+      },
+      {
+        "templateId": "cukcuk-detail:57b1fe70-fe33-4654-9d58-575f277749be:0",
+        "valueIds": [
+          "dc46801f-c5c7-4b94-82f0-014b2c1aad69",
+          "38465a50-9825-4244-8887-bbc1fd87efbd",
+          "9b558fc3-68b9-4ec9-8d7c-307c338d4610"
+        ]
       }
     ]
   },
@@ -299,7 +307,7 @@
           "code": "HCX",
           "displayName": "돈까스 플레이트 Pork Cutlet Plate 炸猪排拼盘 Đĩa Thịt Heo Chiên Xù",
           "price": 313200,
-          "outOfStock": true,
+          "outOfStock": false,
           "sortOrder": 2
         },
         {
@@ -447,7 +455,7 @@
           "code": "(S08) Cánh gà 4 vị",
           "displayName": "윙봉떠까 Sauced Chicken Wings 四味鸡翅 Cánh gà 4 vị",
           "price": 421200,
-          "outOfStock": true,
+          "outOfStock": false,
           "sortOrder": 4
         },
         {
@@ -661,7 +669,7 @@
           "code": "(W01) Cánh gà vị đôi",
           "displayName": "반반윙봉 | Gà cánh & đùi half-half | 半半鸡翅棒 | Half & half wing & drumstick",
           "price": 399600,
-          "outOfStock": true,
+          "outOfStock": false,
           "sortOrder": 0
         },
         {
@@ -739,7 +747,7 @@
           "code": "(T10) Do chien/mon chien",
           "displayName": "튀김 Fried Snacks 油炸小吃 / 炸物 Đồ chiên/Món chiên",
           "price": 0,
-          "outOfStock": true,
+          "outOfStock": false,
           "sortOrder": 4
         },
         {
@@ -923,7 +931,7 @@
           "code": "ᄉ TT 加 AET",
           "displayName": "사리추가 | Thêm topping | 加配料 | Add extra toppings",
           "price": 0,
-          "outOfStock": false,
+          "outOfStock": true,
           "sortOrder": 6
         }
       ]
@@ -1073,7 +1081,7 @@
           "code": "(A02) Bia tuoi Sapporo",
           "displayName": "사포로 생맥주 Sapporo Draft Beer 三宝乐生啤酒 Bia tươi Sapporo",
           "price": 0,
-          "outOfStock": true,
+          "outOfStock": false,
           "sortOrder": 1
         },
         {
@@ -1329,6 +1337,66 @@
           "required": false,
           "minSelections": 0,
           "maxSelections": 3
+        }
+      }
+    },
+    "HCX": {
+      "templateIds": [
+        "cukcuk-detail:d301f64f-16fa-4c8f-86bb-62318205039a:0"
+      ],
+      "rules": {
+        "cukcuk-detail:d301f64f-16fa-4c8f-86bb-62318205039a:0": {
+          "required": true,
+          "minSelections": 1,
+          "maxSelections": 1
+        }
+      }
+    },
+    "(A02) Bia tuoi Sapporo": {
+      "templateIds": [
+        "cukcuk-detail:57b1fe70-fe33-4654-9d58-575f277749be:0"
+      ],
+      "rules": {
+        "cukcuk-detail:57b1fe70-fe33-4654-9d58-575f277749be:0": {
+          "required": true,
+          "minSelections": 1,
+          "maxSelections": 3
+        }
+      }
+    },
+    "(T10) Do chien/mon chien": {
+      "templateIds": [
+        "cukcuk-detail:6a4fc8cd-4937-46f0-990c-536bdffb1de3:0"
+      ],
+      "rules": {
+        "cukcuk-detail:6a4fc8cd-4937-46f0-990c-536bdffb1de3:0": {
+          "required": true,
+          "minSelections": 1,
+          "maxSelections": 10
+        }
+      }
+    },
+    "(S08) Cánh gà 4 vị": {
+      "templateIds": [
+        "cukcuk-detail:88d856ff-e35d-4c21-893b-3f60e2fa71fa:0"
+      ],
+      "rules": {
+        "cukcuk-detail:88d856ff-e35d-4c21-893b-3f60e2fa71fa:0": {
+          "required": true,
+          "minSelections": 4,
+          "maxSelections": 4
+        }
+      }
+    },
+    "(W01) Cánh gà vị đôi": {
+      "templateIds": [
+        "cukcuk-detail:2ce328a0-8d0c-481e-883f-2e35684b900d:0"
+      ],
+      "rules": {
+        "cukcuk-detail:2ce328a0-8d0c-481e-883f-2e35684b900d:0": {
+          "required": true,
+          "minSelections": 2,
+          "maxSelections": 2
         }
       }
     }
