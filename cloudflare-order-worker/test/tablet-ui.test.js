@@ -68,6 +68,27 @@ test('store tablet cards use a compact four-column layout without empty subtitle
   assert.doesNotMatch(cardMarkup, /menu-subtitle" aria-hidden="true"/);
 });
 
+test('preview orders are unmistakably marked as not sent to the POS', () => {
+  assert.match(html, /id="previewModeBadge"[^>]*hidden>미리보기 · POS 전송 안 됨<\/div>/);
+  assert.match(html, /const PREVIEW_MODE=new URLSearchParams\(location\.search\)\.get\('preview'\)==='1'/);
+  assert.match(html, /previewBadge:'미리보기 · POS 전송 안 됨'/);
+  assert.match(html, /previewNote:'미리보기입니다\. 이 주문은 POS와 주방으로 전송되지 않습니다\.'/);
+  assert.match(html, /previewTitle:'미리보기 완료'/);
+  assert.match(html, /previewOrder:'이 주문은 POS와 주방으로 전송되지 않았습니다\.'/);
+
+  const cartSource = sourceSlice('function renderCartItems()', 'function changeCartQuantity');
+  assert.match(cartSource, /PREVIEW_MODE\?words\[lang\]\.previewSend:words\[lang\]\.sendOrder/);
+  assert.match(cartSource, /PREVIEW_MODE\?words\[lang\]\.previewNote:words\[lang\]\.orderNote/);
+
+  const submitSource = sourceSlice('async function submitOrder()', 'function showOrderSuccess');
+  assert.match(submitSource, /if\(PREVIEW_MODE\).*else\{const response=await fetch\(ORDER_ENDPOINT/s);
+  assert.match(submitSource, /showOrderSuccess\(payload,receipt,PREVIEW_MODE\)/);
+
+  const successSource = sourceSlice('function showOrderSuccess', 'function finishOrder');
+  assert.match(successSource, /preview\?words\[lang\]\.previewTitle:words\[lang\]\.orderSuccess/);
+  assert.match(successSource, /preview\?words\[lang\]\.previewOrder:words\[lang\]\.orderSuccessMessage/);
+});
+
 function decodeRgbaPng(buffer) {
   const signature = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]);
   assert.equal(buffer.subarray(0, 8).equals(signature), true, 'invalid PNG signature');
