@@ -14,6 +14,7 @@ on:
     - cron: "*/5 * * * *"
 
 concurrency:
+  # Keep manual/push refreshes serialized with the five-minute store sync.
   group: cukcuk-menu-sync
   cancel-in-progress: false
 
