@@ -95,7 +95,7 @@ html[lang="zh"] body,html[lang="zh"] button,html[lang="zh"] input{font-family:"M
 <div class="dialog-layer" id="successModal" aria-hidden="true">
  <section class="dialog-panel success-panel" role="dialog" aria-modal="true" aria-labelledby="successTitle"><div class="success-icon">✓</div><h2 id="successTitle">주문을 전송했습니다</h2><p id="successMessage">주방에서 주문을 확인하고 있습니다.</p><div class="order-receipt"><div class="receipt-box"><span id="successTableLabel">테이블</span><strong id="successTable">-</strong></div><div class="receipt-box"><span id="successTotalLabel">주문 금액</span><strong id="successTotal">0 ₫</strong></div></div><button class="success-done" id="successDone" type="button" onclick="finishOrder()">확인</button></section>
 </div>
-<script src="assets/menu-images.js?v=20260830-content-v5"></script>
+<script src="assets/menu-images.js?v=20260830-visual-option-fix-v6"></script>
 <script src="assets/table-layout.js"></script>
 <script src="assets/option-order.js"></script>
 <script>
@@ -397,7 +397,9 @@ function updateOptionSummary(){
  document.getElementById('optionExtraPrice').textContent=words[lang].extra+' · '+(extra?'+'+money(extra):money(0));
  document.getElementById('optionTotalPrice').textContent=money((Number(optionDraft.menu.price)||0)+extra);
  optionDraft.groups.forEach((group,index)=>{const limits=optionLimits(group),selected=optionDraft.selections[index].length,rule=document.querySelector(`[data-option-rule="${index}"]`),section=document.querySelector(`.option-group[data-group-index="${index}"]`);if(rule)rule.textContent=optionRuleText(group)+' · '+words[lang].selectedCount.replace('{selected}',selected).replace('{max}',limits.max);if(selected>=limits.min)section?.classList.remove('invalid');if(limits.max>1)document.querySelectorAll(`#optionGroups input[name="option-group-${index}"]`).forEach(input=>input.disabled=selected>=limits.max&&!input.checked)});
- document.getElementById('optionConfirm').setAttribute('aria-disabled',String(!optionDraftValid()));
+ const optionConfirm=document.getElementById('optionConfirm'),invalid=!optionDraftValid();
+ optionConfirm.disabled=invalid;
+ optionConfirm.setAttribute('aria-disabled',String(invalid));
 }
 function closeOptionModal(){
  deactivateDialogLayer(document.getElementById('optionModal'));optionDraft=null;

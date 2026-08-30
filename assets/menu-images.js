@@ -8,7 +8,7 @@ const MENU_QR_ADDED_IMAGE_IDS=new Set(`08b4aba2-4116-4148-b2a9-763c5d72d543 3b52
 const MENU_QR_ADDED_JPG_IDS=new Set(`6a4fc8cd-4937-46f0-990c-536bdffb1de3`.split(' '));
 MENU_QR_ADDED_IMAGE_IDS.forEach(id=>MENU_IMAGE_IDS.add(id));
 MENU_QR_ADDED_JPG_IDS.forEach(id=>MENU_JPG_IDS.add(id));
-const MENU_IMAGE_REVISION='20260830-full-refresh-v5';
+const MENU_IMAGE_REVISION='20260830-visual-option-fix-v6';
 const MENU_FORCE_PNG_IDS=new Set(`1644c776-3499-42d0-a911-ab8152608195`.split(' '));
 const MENU_FORCE_JPG_IDS=new Set(`2813d1e7-250b-49ae-9f76-e5b40f451492 45a0262c-d9f7-4b8b-a937-542d81c32e95`.split(' '));
 function menuImage(id){if(!MENU_IMAGE_IDS.has(id))return'';const extension=MENU_FORCE_PNG_IDS.has(id)?'png':MENU_FORCE_JPG_IDS.has(id)||MENU_JPG_IDS.has(id)||MENU_GENERATED_JPG_IDS.has(id)||MENU_REFRESHED_JPG_IDS.has(id)||MENU_REFRAMED_JPG_IDS.has(id)||MENU_CROPPED_JPG_IDS.has(id)?'jpg':'png';return`assets/menu/${id}.${extension}?asset=${MENU_IMAGE_REVISION}`}

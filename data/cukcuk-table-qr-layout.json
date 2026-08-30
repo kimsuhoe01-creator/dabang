@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "revision": "cukcuk-tablet-content-2026-08-30-0376804d9cc1",
-  "capturedAt": "2026-08-30T03:57:09.888Z",
+  "revision": "cukcuk-tablet-content-2026-08-30-4871d839181b",
+  "capturedAt": "2026-08-30T06:34:32.171Z",
   "timezone": "Asia/Ho_Chi_Minh",
   "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
   "includeUnlisted": false,
@@ -1411,6 +1411,66 @@
           "maxSelections": 5
         }
       }
+    },
+    "SPACE111": {
+      "templateIds": [
+        "4a947b5f-0eb9-4c88-87b2-94debe05a41d"
+      ],
+      "rules": {
+        "4a947b5f-0eb9-4c88-87b2-94debe05a41d": {
+          "required": true,
+          "minSelections": 2,
+          "maxSelections": 2
+        }
+      }
+    },
+    "SPACE112": {
+      "templateIds": [
+        "4a947b5f-0eb9-4c88-87b2-94debe05a41d"
+      ],
+      "rules": {
+        "4a947b5f-0eb9-4c88-87b2-94debe05a41d": {
+          "required": true,
+          "minSelections": 2,
+          "maxSelections": 2
+        }
+      }
+    },
+    "SPACE113": {
+      "templateIds": [
+        "4a947b5f-0eb9-4c88-87b2-94debe05a41d"
+      ],
+      "rules": {
+        "4a947b5f-0eb9-4c88-87b2-94debe05a41d": {
+          "required": true,
+          "minSelections": 2,
+          "maxSelections": 2
+        }
+      }
+    },
+    "SPACE114": {
+      "templateIds": [
+        "4a947b5f-0eb9-4c88-87b2-94debe05a41d"
+      ],
+      "rules": {
+        "4a947b5f-0eb9-4c88-87b2-94debe05a41d": {
+          "required": true,
+          "minSelections": 2,
+          "maxSelections": 2
+        }
+      }
+    },
+    "SPACE115": {
+      "templateIds": [
+        "4a947b5f-0eb9-4c88-87b2-94debe05a41d"
+      ],
+      "rules": {
+        "4a947b5f-0eb9-4c88-87b2-94debe05a41d": {
+          "required": true,
+          "minSelections": 2,
+          "maxSelections": 2
+        }
+      }
     }
   },
   "menuSubtitleOverrides": {
@@ -1575,6 +1635,15 @@
         "en": "Zero calories."
       },
       "tone": "default"
+    },
+    "(A01) Sapporo 1t1 640ml": {
+      "names": {
+        "ko": "해피아워 이벤트 · 매일 18:00까지 1+1",
+        "vi": "Happy Hour · Mua 1 tặng 1 đến 18:00 mỗi ngày",
+        "zh": "欢乐时光活动 · 每天18:00前买一送一",
+        "en": "Happy Hour · Buy 1, get 1 free until 18:00 daily"
+      },
+      "tone": "danger"
     }
   },
   "detailOptionSources": {

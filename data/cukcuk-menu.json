@@ -1823,7 +1823,14 @@
       ],
       "sortOrder": 66,
       "cukcukCode": "SPACE111",
-      "categorySortOrder": 0
+      "categorySortOrder": 0,
+      "optionRules": {
+        "4a947b5f-0eb9-4c88-87b2-94debe05a41d": {
+          "required": true,
+          "minSelections": 2,
+          "maxSelections": 2
+        }
+      }
     },
     {
       "id": "d902dc7b-b6b7-402d-aa90-4edb1e5cfbc2",
@@ -1845,7 +1852,14 @@
       ],
       "sortOrder": 67,
       "cukcukCode": "SPACE112",
-      "categorySortOrder": 1
+      "categorySortOrder": 1,
+      "optionRules": {
+        "4a947b5f-0eb9-4c88-87b2-94debe05a41d": {
+          "required": true,
+          "minSelections": 2,
+          "maxSelections": 2
+        }
+      }
     },
     {
       "id": "433a6207-b8cf-4333-aa33-f344d6bfeb31",
@@ -1867,7 +1881,14 @@
       ],
       "sortOrder": 68,
       "cukcukCode": "SPACE113",
-      "categorySortOrder": 2
+      "categorySortOrder": 2,
+      "optionRules": {
+        "4a947b5f-0eb9-4c88-87b2-94debe05a41d": {
+          "required": true,
+          "minSelections": 2,
+          "maxSelections": 2
+        }
+      }
     },
     {
       "id": "a84fa28e-bac3-45c2-9e00-5138b660ecd7",
@@ -1889,7 +1910,14 @@
       ],
       "sortOrder": 69,
       "cukcukCode": "SPACE114",
-      "categorySortOrder": 3
+      "categorySortOrder": 3,
+      "optionRules": {
+        "4a947b5f-0eb9-4c88-87b2-94debe05a41d": {
+          "required": true,
+          "minSelections": 2,
+          "maxSelections": 2
+        }
+      }
     },
     {
       "id": "646d2461-e692-4275-97a0-0ba277913e92",
@@ -1911,7 +1939,14 @@
       ],
       "sortOrder": 70,
       "cukcukCode": "SPACE115",
-      "categorySortOrder": 4
+      "categorySortOrder": 4,
+      "optionRules": {
+        "4a947b5f-0eb9-4c88-87b2-94debe05a41d": {
+          "required": true,
+          "minSelections": 2,
+          "maxSelections": 2
+        }
+      }
     },
     {
       "id": "5e53f8d3-3b1e-4c08-82d0-136726552c5b",
@@ -2416,7 +2451,16 @@
       "optionGroups": 0,
       "optionTemplateIds": [],
       "sortOrder": 94,
-      "categorySortOrder": 0
+      "categorySortOrder": 0,
+      "subtitle": {
+        "names": {
+          "ko": "해피아워 이벤트 · 매일 18:00까지 1+1",
+          "vi": "Happy Hour · Mua 1 tặng 1 đến 18:00 mỗi ngày",
+          "zh": "欢乐时光活动 · 每天18:00前买一送一",
+          "en": "Happy Hour · Buy 1, get 1 free until 18:00 daily"
+        },
+        "tone": "danger"
+      }
     },
     {
       "id": "57b1fe70-fe33-4654-9d58-575f277749be",
@@ -5161,10 +5205,10 @@
     }
   ],
   "inventoryCandidateCount": 251,
-  "catalogRevision": "cukcuk-tablet-content-2026-08-30-0376804d9cc1",
+  "catalogRevision": "cukcuk-tablet-content-2026-08-30-4871d839181b",
   "tableQrLayout": {
-    "revision": "cukcuk-tablet-content-2026-08-30-0376804d9cc1",
-    "capturedAt": "2026-08-30T03:57:09.888Z",
+    "revision": "cukcuk-tablet-content-2026-08-30-4871d839181b",
+    "capturedAt": "2026-08-30T06:34:32.171Z",
     "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
     "includeUnlisted": false,
     "featuredVisible": false,

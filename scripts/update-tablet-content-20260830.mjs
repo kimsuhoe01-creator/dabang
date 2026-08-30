@@ -83,6 +83,13 @@ const names = {
 const subtitle = (ko, vi, zh, en, tone = 'default') => ({ names: { ko, vi, zh, en }, tone });
 const subtitles = {
   ...(layout.menuSubtitleOverrides || {}),
+  '(A01) Sapporo 1t1 640ml': subtitle(
+    '해피아워 이벤트 · 매일 18:00까지 1+1',
+    'Happy Hour · Mua 1 tặng 1 đến 18:00 mỗi ngày',
+    '欢乐时光活动 · 每天18:00前买一送一',
+    'Happy Hour · Buy 1, get 1 free until 18:00 daily',
+    'danger'
+  ),
   HCX: subtitle(
     '디진다 돈까스와 반반으로도 즐길 수 있어요.',
     'Có thể chọn nửa không cay, nửa “Dijinda” siêu cay.',
@@ -203,6 +210,7 @@ const CHICKEN_TEMPLATE = 'b2fbfcca-55f5-4718-87d4-96627091764a';
 const BONE_TEMPLATE = '85cead19-7d83-4c61-8199-b7fab35fb672';
 const TTEOK_SPICE_TEMPLATE = '21b53642-cba7-4ef9-b877-bab92f845c25';
 const TTEOK_TOPPING_TEMPLATE = 'd7fcbd85-9fb6-40db-872a-8275dce401ed';
+const PIZZA_CHOICE_TEMPLATE = '4a947b5f-0eb9-4c88-87b2-94debe05a41d';
 const HCX_DETAIL_TEMPLATE = 'cukcuk-detail:d301f64f-16fa-4c8f-86bb-62318205039a:0';
 const SAPPORO_DETAIL_TEMPLATE = 'cukcuk-detail:57b1fe70-fe33-4654-9d58-575f277749be:0';
 const FRIED_DETAIL_TEMPLATE = 'cukcuk-detail:6a4fc8cd-4937-46f0-990c-536bdffb1de3:0';
@@ -295,6 +303,26 @@ layout.menuOptionOverrides = {
       [TTEOK_SPICE_TEMPLATE]: { required: true, minSelections: 1, maxSelections: 1 },
       [TTEOK_TOPPING_TEMPLATE]: { required: false, minSelections: 0, maxSelections: 3 }
     }
+  },
+  SPACE111: {
+    templateIds: [PIZZA_CHOICE_TEMPLATE],
+    rules: { [PIZZA_CHOICE_TEMPLATE]: { required: true, minSelections: 2, maxSelections: 2 } }
+  },
+  SPACE112: {
+    templateIds: [PIZZA_CHOICE_TEMPLATE],
+    rules: { [PIZZA_CHOICE_TEMPLATE]: { required: true, minSelections: 2, maxSelections: 2 } }
+  },
+  SPACE113: {
+    templateIds: [PIZZA_CHOICE_TEMPLATE],
+    rules: { [PIZZA_CHOICE_TEMPLATE]: { required: true, minSelections: 2, maxSelections: 2 } }
+  },
+  SPACE114: {
+    templateIds: [PIZZA_CHOICE_TEMPLATE],
+    rules: { [PIZZA_CHOICE_TEMPLATE]: { required: true, minSelections: 2, maxSelections: 2 } }
+  },
+  SPACE115: {
+    templateIds: [PIZZA_CHOICE_TEMPLATE],
+    rules: { [PIZZA_CHOICE_TEMPLATE]: { required: true, minSelections: 2, maxSelections: 2 } }
   }
 };
 

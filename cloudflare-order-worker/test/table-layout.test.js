@@ -367,6 +367,28 @@ test('the checked-in CUKCUK table QR snapshot publishes the polished 14-category
     assert.equal(menu.optionTemplateIds.length, 1, `${code} should expose one option group`);
     assert.deepEqual(menu.optionRules[menu.optionTemplateIds[0]], { required: true, minSelections, maxSelections });
   }
+  const halfPizzaTemplateId = '4a947b5f-0eb9-4c88-87b2-94debe05a41d';
+  for (const code of ['SPACE111', 'SPACE112', 'SPACE113', 'SPACE114', 'SPACE115']) {
+    const menu = result.menus.find(item => item.cukcukCode === code);
+    assert.deepEqual(menu.optionTemplateIds, [halfPizzaTemplateId], `${code} should expose the shared pizza-choice group`);
+    assert.deepEqual(menu.optionRules[halfPizzaTemplateId], { required: true, minSelections: 2, maxSelections: 2 });
+  }
+  assert.deepEqual(result.menus.find(menu => menu.cukcukCode === '(A01) Sapporo 1t1 640ml').subtitle, {
+    names: {
+      ko: '해피아워 이벤트 · 매일 18:00까지 1+1',
+      vi: 'Happy Hour · Mua 1 tặng 1 đến 18:00 mỗi ngày',
+      zh: '欢乐时光活动 · 每天18:00前买一送一',
+      en: 'Happy Hour · Buy 1, get 1 free until 18:00 daily'
+    },
+    tone: 'danger'
+  });
   assert.equal(result.menus.some(menu => menu.available && Number(menu.price) === 0 && menu.optionTemplateIds.length === 0), false);
   assert.equal(result.menus.some(menu => /burger|버거/i.test(`${menu.cukcukCode} ${menu.names?.ko || ''}`)), false);
+});
+
+test('the tablet disables the add-to-cart button until required option counts are valid', () => {
+  const html = fs.readFileSync(new URL('../../tablet-preview.html', import.meta.url), 'utf8');
+
+  assert.match(html, /optionConfirm\.disabled=invalid/);
+  assert.match(html, /optionConfirm\.setAttribute\('aria-disabled',String\(invalid\)\)/);
 });
