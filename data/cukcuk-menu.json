@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-08-30 03:00:19",
-    "finished_at": "2026-08-30 03:00:29",
+    "started_at": "2026-08-30 03:12:39",
+    "finished_at": "2026-08-30 03:12:47",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -18,7 +18,7 @@
       "sourceName": "하이볼|RượuHighball|高球酒|Highball",
       "names": {
         "ko": "하이볼",
-        "vi": "Rượu Highball",
+        "vi": "Highball",
         "zh": "高球酒",
         "en": "Highball"
       },
@@ -176,7 +176,7 @@
         "ko": "주류",
         "vi": "Đồ uống có cồn",
         "zh": "酒类",
-        "en": "Alcohol"
+        "en": "Alcoholic Drinks"
       },
       "visible": true,
       "sortOrder": 13
@@ -412,17 +412,24 @@
       "names": {
         "ko": "돈까스 플레이트 (안 매운맛)",
         "vi": "Đĩa tonkatsu (không cay)",
-        "zh": "炸猪排拼盘(不辣)",
+        "zh": "炸猪排拼盘（不辣）",
         "en": "Tonkatsu Plate (Non-spicy)"
       },
       "price": 313200,
-      "available": false,
+      "available": true,
       "optionGroups": 1,
       "optionTemplateIds": [
         "cukcuk-detail:d301f64f-16fa-4c8f-86bb-62318205039a:0"
       ],
       "sortOrder": 10,
       "cukcukCode": "HCX",
+      "optionRules": {
+        "cukcuk-detail:d301f64f-16fa-4c8f-86bb-62318205039a:0": {
+          "required": true,
+          "minSelections": 1,
+          "maxSelections": 1
+        }
+      },
       "categorySortOrder": 2,
       "subtitle": {
         "names": {
@@ -432,13 +439,6 @@
           "en": "Half-and-half with the extra-spicy “Dijinda” tonkatsu is available."
         },
         "tone": "default"
-      },
-      "optionRules": {
-        "cukcuk-detail:d301f64f-16fa-4c8f-86bb-62318205039a:0": {
-          "required": true,
-          "minSelections": 1,
-          "maxSelections": 1
-        }
       }
     },
     {
@@ -922,13 +922,20 @@
         "en": "Four-flavor Wing Platter"
       },
       "price": 421200,
-      "available": false,
+      "available": true,
       "optionGroups": 1,
       "optionTemplateIds": [
         "cukcuk-detail:88d856ff-e35d-4c21-893b-3f60e2fa71fa:0"
       ],
       "sortOrder": 27,
       "cukcukCode": "(S08) Cánh gà 4 vị",
+      "optionRules": {
+        "cukcuk-detail:88d856ff-e35d-4c21-893b-3f60e2fa71fa:0": {
+          "required": true,
+          "minSelections": 4,
+          "maxSelections": 4
+        }
+      },
       "categorySortOrder": 4,
       "subtitle": {
         "names": {
@@ -938,13 +945,6 @@
           "en": "Enjoy four of our Vietnamese guests’ favorite Dabang wing flavors at once. Please select exactly four flavors."
         },
         "tone": "default"
-      },
-      "optionRules": {
-        "cukcuk-detail:88d856ff-e35d-4c21-893b-3f60e2fa71fa:0": {
-          "required": true,
-          "minSelections": 4,
-          "maxSelections": 4
-        }
       }
     },
     {
@@ -1257,9 +1257,9 @@
       "sourceName": "후라이드  Fried Chicken  无骨炸鸡腿 Má đùi rút xương",
       "names": {
         "ko": "후라이드 치킨",
-        "vi": "Gà chiên giòn",
+        "vi": "Gà rán không xương",
         "zh": "无骨炸鸡腿",
-        "en": "Fried Chicken"
+        "en": "Boneless Fried Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1281,7 +1281,7 @@
         "ko": "양념 치킨",
         "vi": "Gà sốt ngọt kiểu Hàn",
         "zh": "韩式甜酱炸鸡",
-        "en": "Sweet & Spicy Chicken"
+        "en": "Korean Sweet Sauce Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1303,7 +1303,7 @@
         "ko": "매운 양념 치킨",
         "vi": "Gà sốt cay kiểu Hàn",
         "zh": "韩式辣酱炸鸡",
-        "en": "Hot & Spicy Chicken"
+        "en": "Korean Spicy Sauce Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1346,8 +1346,8 @@
       "names": {
         "ko": "고추마늘간장 치킨",
         "vi": "Gà sốt xì dầu tỏi ớt",
-        "zh": "辣椒蒜香酱油鸡",
-        "en": "Garlic Soy Chicken"
+        "zh": "辣椒蒜酱鸡",
+        "en": "Chili Garlic Soy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1369,7 +1369,7 @@
         "ko": "스리라차 어니언 치킨",
         "vi": "Gà sốt kem hành Sriracha",
         "zh": "是拉差洋葱奶油炸鸡",
-        "en": "Sriracha Onion Chicken"
+        "en": "Sriracha Onion Cream Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1434,21 +1434,21 @@
         "en": "Half & Half Wings & Drumettes"
       },
       "price": 399600,
-      "available": false,
+      "available": true,
       "optionGroups": 1,
       "optionTemplateIds": [
         "cukcuk-detail:2ce328a0-8d0c-481e-883f-2e35684b900d:0"
       ],
       "sortOrder": 49,
       "cukcukCode": "(W01) Cánh gà vị đôi",
-      "categorySortOrder": 0,
       "optionRules": {
         "cukcuk-detail:2ce328a0-8d0c-481e-883f-2e35684b900d:0": {
           "required": true,
           "minSelections": 2,
           "maxSelections": 2
         }
-      }
+      },
+      "categorySortOrder": 0
     },
     {
       "id": "a0d375e8-a3f7-456d-8713-7b3c148e83fc",
@@ -1648,20 +1648,20 @@
         "en": "Fried Snacks"
       },
       "price": 0,
-      "available": false,
+      "available": true,
       "optionGroups": 1,
       "optionTemplateIds": [
         "cukcuk-detail:6a4fc8cd-4937-46f0-990c-536bdffb1de3:0"
       ],
       "sortOrder": 58,
-      "categorySortOrder": 4,
       "optionRules": {
         "cukcuk-detail:6a4fc8cd-4937-46f0-990c-536bdffb1de3:0": {
           "required": true,
           "minSelections": 1,
           "maxSelections": 10
         }
-      }
+      },
+      "categorySortOrder": 4
     },
     {
       "id": "c7bb95c0-8e0f-4980-93ea-1714a997e669",
@@ -2247,7 +2247,7 @@
       "names": {
         "ko": "코카콜라 (390ml)",
         "vi": "Coca-Cola (390ml)",
-        "zh": "可口可乐(390ml)",
+        "zh": "可口可乐（390ml）",
         "en": "Coca-Cola (390ml)"
       },
       "price": 22000,
@@ -2287,7 +2287,7 @@
       "names": {
         "ko": "펩시 제로 (390ml)",
         "vi": "Pepsi Không Calo (390ml)",
-        "zh": "百事无糖(390ml)",
+        "zh": "百事无糖（390ml）",
         "en": "Pepsi Zero (390ml)"
       },
       "price": 33000,
@@ -2307,7 +2307,7 @@
       "names": {
         "ko": "나랑드 제로 (500ml)",
         "vi": "Narangd Zero (500ml)",
-        "zh": "Narangd 零糖(500ml)",
+        "zh": "Narangd 零糖（500ml）",
         "en": "Narangd Zero (500ml)"
       },
       "price": 55000,
@@ -2337,7 +2337,7 @@
       "names": {
         "ko": "펩시 제로 라임 (1.5L)",
         "vi": "Pepsi Không Calo Vị Chanh (1,5L)",
-        "zh": "百事无糖青柠味(1.5L)",
+        "zh": "百事无糖青柠味（1.5L）",
         "en": "Pepsi Zero Lime (1.5L)"
       },
       "price": 77000,
@@ -2423,20 +2423,20 @@
         "en": "Sapporo Draft Beer"
       },
       "price": 0,
-      "available": false,
+      "available": true,
       "optionGroups": 1,
       "optionTemplateIds": [
         "cukcuk-detail:57b1fe70-fe33-4654-9d58-575f277749be:0"
       ],
       "sortOrder": 95,
-      "categorySortOrder": 1,
       "optionRules": {
         "cukcuk-detail:57b1fe70-fe33-4654-9d58-575f277749be:0": {
           "required": true,
           "minSelections": 1,
           "maxSelections": 3
         }
-      }
+      },
+      "categorySortOrder": 1
     },
     {
       "id": "4182ba40-0603-49ac-9b7a-e2438229f7b8",
@@ -2468,7 +2468,7 @@
       "names": {
         "ko": "하노이 생맥주 KEG (1L)",
         "vi": "Bia Hơi Hà Nội KEG (1L)",
-        "zh": "河内鲜啤 KEG(1L)",
+        "zh": "河内鲜啤 KEG（1L）",
         "en": "Hanoi Draft Beer KEG (1L)"
       },
       "price": 110000,
@@ -4752,8 +4752,8 @@
             "en": "Fried Sweet Potato"
           },
           "receiptNames": {
-            "ko": "Khoai lang chiên",
-            "vi": "고구마 튀김"
+            "ko": "고구마 튀김",
+            "vi": "Khoai lang chiên"
           },
           "additionalPrice": 64800,
           "visible": true,
@@ -5072,9 +5072,9 @@
     "model": "gpt-5.6-terra",
     "status": "ready",
     "entityCount": 292,
-    "cacheHits": 247,
-    "translated": 45,
+    "cacheHits": 280,
+    "translated": 12,
     "pendingCount": 0,
-    "updatedAt": "2026-08-30T03:00:59.657Z"
+    "updatedAt": "2026-08-30T03:12:58.975Z"
   }
 }
