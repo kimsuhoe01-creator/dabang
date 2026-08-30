@@ -1,18 +1,19 @@
 # 매장 노트북 인계 — 다방 테이블오더
 
-## 2026-08-30 CUKCUK 실제 테이블 QR 전송 시험 경로
+## 2026-08-30 CUKCUK 실제 테이블 QR 경로 기본 적용 완료
 
 - 일반 POS 주문과 배달 주문은 주방 영수증이 정상 출력되지만, 기존 태블릿 주문은 OpenPlatform `orders/create`로 테이블에 직접 등록되어 주방 전송 이벤트가 발생하지 않는 현장을 확인했다. 현재 프린터 이름·드라이버·매장 출력 설정 문제로 보지 않는다.
 - CUKCUK가 실제 테이블 QR에서 사용하는 순서를 읽기 전용으로 확인했다: `GetOrderByTableID` → 메뉴 상세 조회 → `self-order/update-cart` → `self-order/confirm-order`.
-- 기존 실주문 경로를 즉시 교체하지 않고 URL에 `transport=cukcuk-self-order`가 있을 때만 위 실제 QR 경로를 사용하는 시험 기능을 추가했다. 기존 QR은 계속 OpenPlatform 경로를 사용한다.
+- 먼저 URL에 `transport=cukcuk-self-order`가 있을 때만 위 실제 QR 경로를 쓰도록 시험 기능을 추가했다. 현장 시험에서 POS 기기와 관리자 태블릿 모두 주문 알림을 정상 수신했다.
 - 일반 메뉴와 돈까스 플레이트 옵션 메뉴를 대상으로 실서버 테이블·메뉴 조회 드라이런을 통과했다. 드라이런에서는 마지막 장바구니 전송·주문 확정 호출을 가짜 응답으로 차단해 실제 주문을 만들지 않았다.
-- 전체 테스트 54개, `git diff --check`, Worker `/health`, 공개 Pages의 새 전송 코드와 서비스워커 `dabang-tablet-v24`를 확인했다. Pages와 Worker 배포가 모두 성공했다.
-- 기능 커밋: `4aeedb0` (`Add native CUKCUK self-order test route`)
-- 현장 시험 주소: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?source=store-qr&transport=cukcuk-self-order&deploy=4aeedb0
-- 현장에서는 가장 저렴한 메뉴 1개를 한 번만 전송한다. 화면이 성공을 표시하면 반복 전송하지 말고 POS 알림·테이블 등록·주방 영수증을 각각 확인한다. CUKCUK 직원 확인 알림이 뜨면 한 번 확인한 뒤 출력 여부를 기록한다.
-- 결과가 검증되기 전까지 기존 QR의 기본 전송 방식을 새 경로로 바꾸지 않는다.
+- 현장 수신 성공 후 기존 매장 QR의 기본 전송 방식을 CUKCUK 실제 테이블 QR 경로로 변경했다. 별도 시험 파라미터가 없어도 `source=store-qr` 주소는 새 경로를 쓴다. 이전 OpenPlatform 직접등록 경로는 비상 복구용 `transport=graph` 파라미터로만 남겼다.
+- 주방 영수증은 CUKCUK 관리자 확인 뒤 출력되는 매장의 기존 운용 흐름이며 사용자가 중복 재검증을 생략했다. 앱 쪽 검증 완료 기준은 POS 기기와 관리자 태블릿의 정상 주문 알림 수신이다.
+- 전체 테스트 54개와 `git diff --check`를 통과했다. 서비스워커 캐시는 `dabang-tablet-v25`다.
+- 시험 기능 커밋: `4aeedb0` (`Add native CUKCUK self-order test route`), 기본 적용 커밋: `a512eb5` (`Make CUKCUK self-order the live default`).
+- 최종 매장 주소: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?source=store-qr
+- 최종 매장 QR: https://kimsuhoe01-creator.github.io/dabang/docs/assets/dabang-live-order-qr.png
 
-> 최신 상태는 위 `2026-08-30 CUKCUK 실제 테이블 QR 전송 시험 경로`다. 아래의 같은 날 보정·진행 상태와 2026-08-29 내용은 당시 기록으로 보존한다.
+> 최신 상태는 위 `2026-08-30 CUKCUK 실제 테이블 QR 경로 기본 적용 완료`다. 아래의 같은 날 보정·진행 상태와 2026-08-29 내용은 당시 기록으로 보존한다.
 
 ## 2026-08-30 옵션 주문·사포로 수량·주방 출력 확인
 
