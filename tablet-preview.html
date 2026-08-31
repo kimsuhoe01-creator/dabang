@@ -579,7 +579,7 @@ async function refreshTableOrderHistory(){
  const controller=new AbortController();let timeoutId=null;
  try{
   const timeout=new Promise((_,reject)=>{timeoutId=setTimeout(()=>{controller.abort();reject(new Error('table order request timeout'))},8000)});
-  const response=await Promise.race([fetch(TABLE_ORDER_ENDPOINT,{method:'GET',headers:{'X-Dabang-Table-Id':selectedTable.id},cache:'no-store',signal:controller.signal}),timeout]);
+  const response=await Promise.race([fetch(TABLE_ORDER_ENDPOINT,{method:'GET',headers:{'X-Dabang-Table-Id':selectedTable.id,'X-Dabang-Table-Name':selectedTable.name},cache:'no-store',signal:controller.signal}),timeout]);
   const result=await response.json().catch(()=>({}));
   if(!response.ok||result.ok===false)throw new Error('table order request failed');
   if(requestId===historyRequestId)historyPayload=result;

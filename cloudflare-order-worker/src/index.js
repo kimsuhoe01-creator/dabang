@@ -1,5 +1,6 @@
 import { createOrAppendCukCukOrder, validateAndBuildOrder } from "./order.js";
 import { fetchCukCukTableOrder, submitCukCukSelfOrder } from "./self-order.js";
+import { fetchCukCukPosTableOrder } from "./table-order.js";
 import { expandMenuImage } from "./image-edit.js";
 import { handleStoreApi } from "./gpt-api.js";
 import { handleVoiceOrderApi } from "./voice-order.js";
@@ -33,7 +34,20 @@ export default {
         return cors(request, json({ ok: false, code: "ORIGIN_NOT_ALLOWED", message: "허용되지 않은 테이블 조회 요청입니다." }, 403));
       }
       try {
-        const result = await fetchCukCukTableOrder(env, request.headers.get("X-Dabang-Table-Id"));
+        const tableId = request.headers.get("X-Dabang-Table-Id");
+        const tableName = request.headers.get("X-Dabang-Table-Name");
+        let result = null;
+        let posError = null;
+        try {
+          result = await fetchCukCukPosTableOrder(env, tableId, tableName);
+        } catch (error) {
+          posError = error;
+        }
+        if (!result?.hasOrder) {
+          const qrResult = await fetchCukCukTableOrder(env, tableId);
+          if (qrResult.hasOrder) result = qrResult;
+          else if (posError) throw posError;
+        }
         return cors(request, json({ ok: true, ...result }));
       } catch (error) {
         const status = Number.isInteger(error?.status) ? error.status : 502;
@@ -216,7 +230,7 @@ function cors(request, response) {
     response.headers.set("Access-Control-Allow-Origin", origin);
     response.headers.set("Vary", "Origin");
     response.headers.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
-    response.headers.set("Access-Control-Allow-Headers", "Authorization, Content-Type, X-Dabang-Table-Id, X-Dabang-Language");
+    response.headers.set("Access-Control-Allow-Headers", "Authorization, Content-Type, X-Dabang-Table-Id, X-Dabang-Table-Name, X-Dabang-Language");
   }
   return response;
 }
