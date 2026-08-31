@@ -67,15 +67,15 @@ async function createRealtimeConversation(request, env, fetcher) {
     },
     tools: [{
       type: "function",
-      name: "finalize_order",
-      description: "Use only after the customer explicitly confirms the complete spoken order. Sends a complete natural-language order summary to the app for exact menu and option validation.",
+      name: "prepare_order_review",
+      description: "Use as soon as the customer's complete order is understood. Sends the draft to the app for exact menu and option validation, then the app shows buttons for final confirmation.",
       parameters: {
         type: "object",
         additionalProperties: false,
         properties: {
           orderSummary: {
             type: "string",
-            description: "The complete confirmed order using exact menu and option names from the supplied catalog, including every quantity.",
+            description: "The complete understood order using exact menu and option names from the supplied catalog, including every quantity.",
           },
         },
         required: ["orderSummary"],
@@ -110,9 +110,9 @@ function realtimeVoiceInstructions(language, catalog) {
     "Understand corrections, cancellations, replacements, quantities, short follow-up answers, and ordinary indecision across the whole conversation.",
     "Use only menu and option names present in MENU_CATALOG. Never invent availability, prices, ingredients, sizes, or choices.",
     "When the request is ambiguous or a required option is missing, ask exactly one short, concrete question and give only the relevant available choices.",
-    "When the order is complete, briefly summarize every item, quantity, and option, then ask the customer to say yes or confirm.",
-    "Call finalize_order only after the customer explicitly confirms that complete summary. Never call it merely because the order sounds complete.",
-    "If the customer changes anything after a summary, update the draft, summarize again, and wait for a new explicit confirmation.",
+    "As soon as the order is complete, call prepare_order_review with every item, quantity, and option. Do not ask the customer to say yes and do not read a final confirmation aloud.",
+    "The app will validate the draft and show the customer two buttons: place this order or speak again. The button is the final confirmation.",
+    "If the customer changes anything before review, update the draft and call prepare_order_review with the latest complete order.",
     "Keep every spoken reply to at most two short sentences. Do not discuss topics unrelated to this restaurant order.",
     "If the app reports that validation failed, explain the supplied missing detail in one short question and continue the same conversation.",
     `MENU_CATALOG=${JSON.stringify(catalog)}`,

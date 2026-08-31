@@ -97,8 +97,9 @@ test("voice session uses GPT-Realtime-2.1 Mini as a conversational waiter", asyn
   assert.deepEqual(session.output_modalities, ["audio"]);
   assert.equal(session.audio.input.turn_detection, null);
   assert.equal(session.audio.output.voice, "marin");
-  assert.equal(session.tools[0].name, "finalize_order");
-  assert.match(session.instructions, /explicitly confirms/);
+  assert.equal(session.tools[0].name, "prepare_order_review");
+  assert.match(session.instructions, /Do not ask the customer to say yes/);
+  assert.match(session.instructions, /button is the final confirmation/);
   assert.match(session.instructions, /후라이드 치킨/);
 });
 

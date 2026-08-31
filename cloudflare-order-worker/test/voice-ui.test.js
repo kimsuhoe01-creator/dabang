@@ -22,7 +22,7 @@ test("voice ordering stays in the header while the customer browses the menu", (
 test("AI draft opens the existing cart for one final customer confirmation", () => {
   assert.match(source, /window\.voiceCartReviewActive=true/);
   assert.match(source, /resetVoiceHeader\(\);showCartSummary\(opener\)/);
-  assert.match(source, /cartSend:"맞아요 · 주문 전송"/);
+  assert.match(source, /cartSend:"이대로 주문하기"/);
   assert.match(html, /onclick="handleCartSecondary\(\)"/);
   assert.match(html, /onclick="submitOrder\(\)"/);
   assert.doesNotMatch(source, /await submitOrder\(\)/);
@@ -37,9 +37,11 @@ test("voice capture keeps one conversational WebRTC session until the order is c
   assert.match(source, /input_audio_buffer\.commit/);
   assert.match(source, /response\.create/);
   assert.match(source, /response\.done/);
-  assert.match(source, /function_call[^\n]+finalize_order/);
+  assert.match(source, /function_call[^\n]+prepare_order_review/);
   assert.match(source, /function_call_output/);
   assert.match(source, /input_audio_buffer\.clear/);
+  assert.match(source, /response\.cancel/);
+  assert.match(source, /output_audio_buffer\.clear/);
   assert.match(source, /const MAX_SECONDS = 90/);
   assert.match(source, /fetchWithTimeout\(`\$\{API_BASE\}\/api\/voice\/interpret[\s\S]*,15000\)/);
   assert.match(source, /failed to fetch\|networkerror\|load failed/i);
@@ -47,9 +49,9 @@ test("voice capture keeps one conversational WebRTC session until the order is c
 });
 
 test("voice assets are versioned in the offline tablet shell", () => {
-  assert.match(worker, /dabang-tablet-v33/);
-  assert.match(worker, /voice-order\.js\?v=20260831-v8/);
-  assert.match(worker, /voice-order\.css\?v=20260831-v8/);
+  assert.match(worker, /dabang-tablet-v34/);
+  assert.match(worker, /voice-order\.js\?v=20260831-v9/);
+  assert.match(worker, /voice-order\.css\?v=20260831-v9/);
 });
 
 test("clarification retries keep prior voice context and make the AI question prominent", () => {
