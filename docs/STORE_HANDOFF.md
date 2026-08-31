@@ -4,12 +4,14 @@
 
 - 태블릿 상단의 장바구니 왼쪽에 작은 영수증 모양 버튼을 추가했다. 이 버튼은 태블릿의 로컬 장바구니나 해당 기기의 기록이 아니라, 현재 선택된 테이블에 실제 등록된 CUKCUK/POS 누적 주문을 매번 새로 조회한다.
 - 조회창에는 메뉴 사진·현재 언어의 메뉴명·선택 옵션·수량·항목 금액·테이블 전체 합계를 표시한다. 한국어·베트남어·중국어·영어 문구를 모두 제공하며 `주문 내역 새로고침`으로 현 상태를 다시 읽을 수 있다.
-- 새 API는 `GET /api/cukcuk/table-order`이며 공식 GitHub Pages 출처와 선택된 테이블 ID만 받는다. CUKCUK의 `GetOrderByTableID`를 조회 전용으로 사용하고 장바구니 갱신·주문 확정·POS 수정 호출은 하지 않는다.
-- 현장 D-6 화면에서 조회 중 표시가 오래 유지된다는 보고 뒤 같은 공개 화면을 재현했다. D-6 CUKCUK 응답은 약 0.85초, 공개 태블릿은 약 1초 뒤 빈 주문 안내로 정상 종료됐지만, 일부 브라우저가 요청 취소 신호를 처리하지 않아도 `Promise.race`로 최대 8초 안에 반드시 오류·재시도 화면으로 전환되도록 보강했다.
-- 설치형 태블릿 캐시는 `dabang-tablet-v41`, 기능 커밋은 `d6b828b` (`Add current table order history`), 로딩 종료 보강 커밋은 `d37271c` (`Bound table order history loading`)이다. Cloudflare Worker 배포 버전은 `50e40828-449d-4107-86d1-f6b2bf2d8cbb`이며 `/health` 응답을 확인했다.
-- 전체 회귀 테스트 71개, 메뉴 이미지 감사 112개·누락 0, `git diff --check`를 통과했다. 공개 1280×800 안전 미리보기에서 실제 D-3 테이블의 3개 주문줄(통닭 떡볶이 세트·계란찜·코카콜라 2개), 옵션, 합계 465,200동이 한국어와 베트남어로 정상 표시되는 것을 확인했다. 검증 중 새 CUKCUK/POS 주문은 제출하지 않았다.
-- 안전 미리보기: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=d6b828b
-- 매장 실주문 주소: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?source=store-qr&deploy=d6b828b
+- 최초 구현은 CUKCUK 테이블 QR의 `GetOrderByTableID`만 조회해, QR로 들어온 D-3 주문은 보였지만 직원이 POS에서 직접 등록한 D-6 주문을 빈 테이블로 잘못 표시했다. 현장 POS 사진에서 D-6 합계 714,200동을 확인한 뒤 이 경로만으로는 부족하다고 판정했다.
+- 새 API `GET /api/cukcuk/table-order`는 CUKCUK OpenPlatform의 오늘 활성 POS 주문을 테이블 ID·이름으로 먼저 조회하고, 활성 POS 주문이 없을 때만 테이블 QR 주문을 보조 조회한다. 목록·상세 GET/조회 호출만 사용하며 장바구니 갱신·주문 확정·POS 수정 호출은 하지 않는다.
+- 수정 후 D-6에서 짭코바 반마리 216,000동, 국물닭발 291,600동, 펩시제로 1.5L 77,000동, 다방 떡볶이 129,600동과 각 옵션을 읽어 POS와 같은 합계 714,200동을 확인했다.
+- 일부 브라우저가 요청 취소 신호를 처리하지 않더라도 `Promise.race`로 최대 8초 안에 반드시 오류·재시도 화면으로 전환된다. 설치형 태블릿 캐시는 `dabang-tablet-v42`다.
+- 기능 커밋은 `d6b828b` (`Add current table order history`), 로딩 종료 보강은 `d37271c` (`Bound table order history loading`), POS 활성 주문 조회 수정은 `50cefbc` (`Read active POS table orders`)다. Cloudflare Worker 배포 버전은 `7f89ac9f-1d6d-4880-b9d8-79f44e590bc2`이며 `/health` 응답을 확인했다.
+- 전체 회귀 테스트 72개, 메뉴 이미지 감사 112개·누락 0, `git diff --check`를 통과했다. 검증 중 새 CUKCUK/POS 주문은 제출하지 않았다.
+- 안전 미리보기: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=50cefbc
+- 매장 실주문 주소: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?source=store-qr&deploy=50cefbc
 
 ## 2026-08-31 피자 사진 카드 확대 보정
 
