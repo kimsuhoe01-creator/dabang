@@ -1,5 +1,16 @@
 # 매장 노트북 인계 — 다방 테이블오더
 
+## 2026-08-31 메뉴 조회 진행 표시·거짓 대기 안내 제거
+
+- 공개 메뉴 조회 기능은 태블릿의 현재 메뉴를 즉시 읽어 완료됐지만, AI가 완료 결과를 받고도 `도구가 아직 실행 중`이라고 잘못 말하는 현장이 확인됐다.
+- 조회 호출이 시작되면 상단에 회전 표시와 `실제 판매 메뉴를 확인하고 있습니다…`를 표시한다. 베트남어·중국어·영어에도 같은 진행 문구를 추가했다.
+- 도구 결과에 `ok:true`, `status:"completed"`를 명시하고 `조회 완료, 지금 답변` 지침을 함께 반환한다. Realtime 지침에도 완료된 도구를 실행 중·대기 중이라고 말하거나 손님에게 기다리라고 하지 말고 즉시 결과로 답하도록 고정했다.
+- 설치형 태블릿 캐시는 `dabang-tablet-v37`, 음성 자산은 `20260831-v12`다. 기능 커밋은 `fd9f5ef` (`Show grounded menu lookup progress`)이다.
+- Cloudflare Worker 배포 버전은 `6eb5a770-7472-4535-9078-6ee017a6788c`이며 `/health` 응답을 확인했다.
+- 전체 회귀 테스트 68개, 메뉴 이미지 감사 112개·누락 0, JavaScript 문법 검사와 `git diff --check`를 통과했다. 실제 마이크 대화와 CUKCUK/POS 주문은 제출하지 않았다.
+- 안전 미리보기: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=fd9f5ef
+- 매장 실주문 주소: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?source=store-qr&deploy=fd9f5ef
+
 ## 2026-08-31 음성 AI의 미등록 메뉴 답변 차단
 
 - 현장 대화에서 AI가 `토크보키`, `치즈 버터`처럼 공개 메뉴에 없는 이름을 추천하는 문제가 확인됐다. 주문 확정 경로는 UUID 검증을 했지만 일반 메뉴 문의·추천 답변은 Realtime 모델이 직접 말해 검증을 우회한 것이 원인이었다.
