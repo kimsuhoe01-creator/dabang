@@ -1,5 +1,14 @@
 # 매장 노트북 인계 — 다방 테이블오더
 
+## 2026-08-31 피자 사진 카드 확대 보정
+
+- 직전 교체한 피자 사진이 카드 안에서 전체 이미지 맞춤으로 표시돼 음식이 작고 흐린 여백이 많이 남던 문제를 수정했다.
+- 반반피자 일반도우·체다치즈·치즈크러스트·치즈바이트·리치골드, 고르곤졸라 피자와 치즈 오븐 스파게티까지 7개 사진을 중앙 `cover` 방식으로 표시한다. 음식이 카드 높이를 꽉 채우며 가로 가장자리만 조금 잘리도록 했다.
+- 메뉴 이미지 자산 버전은 `20260831-pizza-fill-v11`, 설치형 태블릿 캐시는 `dabang-tablet-v39`다. 기능 커밋은 `39583b3` (`Fill pizza menu cards with larger photos`)이다.
+- 전체 회귀 테스트 69개, 메뉴 이미지 감사 112개·누락 0, `git diff --check`를 통과했다. 1280×800 안전 미리보기에서 7개 이미지가 모두 로드되고 `object-fit:cover`, 여백 제거, 중앙 확대 표시되는 것을 확인했다. 실제 CUKCUK/POS 주문은 제출하지 않았다.
+- 안전 미리보기: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=39583b3
+- 매장 실주문 주소: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?source=store-qr&deploy=39583b3
+
 ## 2026-08-31 피자·치즈오븐스파게티 사진 교체
 
 - 사용자가 제공한 사진으로 고르곤졸라 피자, 반반피자 일반도우·체다치즈·치즈크러스트·치즈바이트·리치골드, 치즈 오븐 스파게티까지 총 7개 메뉴 이미지를 교체했다.
