@@ -1,5 +1,14 @@
 # 매장 노트북 인계 — 다방 테이블오더
 
+## 2026-08-31 피자·치즈오븐스파게티 사진 교체
+
+- 사용자가 제공한 사진으로 고르곤졸라 피자, 반반피자 일반도우·체다치즈·치즈크러스트·치즈바이트·리치골드, 치즈 오븐 스파게티까지 총 7개 메뉴 이미지를 교체했다.
+- 각 사진은 기존 메뉴 UUID 이미지 파일에 연결해 메뉴명·가격·CUKCUK 옵션·POS 전송 정보는 변경하지 않았다. PNG 원본은 웹 표시용 고품질 JPG로 변환했으며 피자 6장은 1280×720, 오븐 스파게티는 원본 비율 333×243을 유지했다.
+- 메뉴 이미지 자산 버전은 `20260831-pizza-refresh-v10`, 설치형 태블릿 캐시는 `dabang-tablet-v38`이다. 기능 커밋은 `56e1804` (`Replace pizza and oven spaghetti photos`)이다.
+- 전체 회귀 테스트 68개, 메뉴 이미지 감사 112개·누락 0, `git diff --check`를 통과했다. 1280×800 안전 미리보기에서 7개 카드의 이미지 로딩·중앙 배치·전체 피자 표시를 확인했으며 실제 CUKCUK/POS 주문은 제출하지 않았다.
+- 안전 미리보기: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=56e1804
+- 매장 실주문 주소: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?source=store-qr&deploy=56e1804
+
 ## 2026-08-31 메뉴 조회 진행 표시·거짓 대기 안내 제거
 
 - 공개 메뉴 조회 기능은 태블릿의 현재 메뉴를 즉시 읽어 완료됐지만, AI가 완료 결과를 받고도 `도구가 아직 실행 중`이라고 잘못 말하는 현장이 확인됐다.
