@@ -45,6 +45,9 @@ test("voice capture keeps one conversational WebRTC session until the order is c
   assert.match(source, /function_call[^\n]+list_published_menu/);
   assert.match(source, /exactMenuNames/);
   assert.match(source, /Copy only these exact menu names verbatim/);
+  assert.match(source, /lookup:"실제 판매 메뉴를 확인하고 있습니다…"/);
+  assert.match(source, /setPhase\("processing",t\(\)\.lookup\)/);
+  assert.match(source, /status:"completed"/);
   assert.match(source, /function_call_output/);
   assert.match(source, /input_audio_buffer\.clear/);
   assert.match(source, /response\.cancel/);
@@ -56,9 +59,9 @@ test("voice capture keeps one conversational WebRTC session until the order is c
 });
 
 test("voice assets are versioned in the offline tablet shell", () => {
-  assert.match(worker, /dabang-tablet-v36/);
-  assert.match(worker, /voice-order\.js\?v=20260831-v11/);
-  assert.match(worker, /voice-order\.css\?v=20260831-v11/);
+  assert.match(worker, /dabang-tablet-v37/);
+  assert.match(worker, /voice-order\.js\?v=20260831-v12/);
+  assert.match(worker, /voice-order\.css\?v=20260831-v12/);
 });
 
 test("clarification retries keep prior voice context and make the AI question prominent", () => {

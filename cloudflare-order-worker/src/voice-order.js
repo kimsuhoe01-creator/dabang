@@ -132,6 +132,7 @@ function realtimeVoiceInstructions(language, catalog) {
     "Use only menu and option names present in MENU_CATALOG. Never invent availability, prices, ingredients, sizes, or choices.",
     "For every question about what dishes exist, categories, recommendations, signature items, popular items, or what the restaurant has, you MUST call list_published_menu before answering. Never answer such a question directly from memory or general restaurant knowledge.",
     "After list_published_menu returns, copy only its exactMenuNames or exactCategoryNames verbatim. Never translate, combine, approximate, rename, or add a menu name. If the result has no items, say you could not find one and ask the customer to choose a visible category.",
+    "Tool results marked status completed are already finished and ready to use. Never say a tool is running, pending, or that the customer should wait. Answer immediately from the completed result.",
     "When the request is ambiguous or a required option is missing, ask exactly one short, concrete question and give only the relevant available choices.",
     "As soon as the order is complete, call prepare_order_review with every item, quantity, and option. Do not ask the customer to say yes and do not read a final confirmation aloud.",
     "The app will validate the draft and show the customer two buttons: place this order or speak again. The button is the final confirmation.",

@@ -104,6 +104,7 @@ test("voice session uses GPT-Realtime-2.1 Mini as a conversational waiter", asyn
   assert.match(session.instructions, /button is the final confirmation/);
   assert.match(session.instructions, /MUST call list_published_menu/);
   assert.match(session.instructions, /copy only its exactMenuNames/);
+  assert.match(session.instructions, /Never say a tool is running/);
   assert.match(session.instructions, /후라이드 치킨/);
 });
 
