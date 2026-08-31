@@ -16,6 +16,8 @@
 - 공개 안전 미리보기에서 `사포로 생맥주 두 잔` → 용량 추가 질문 → `640cc` 한 번 답변 뒤 장바구니에 사포로 생맥주 2잔, 640cc, 합계 330,000동이 즉시 열린 것을 확인했다. 실제 POS 주문은 전송하지 않았다.
 - 안전 미리보기: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=659f545
 - 추가 질문 뒤 `답변 이어 말하기`를 눌러 마이크를 연결하고 듣는 동안에도 노란 AI 질문 카드를 그대로 유지한다. 손님은 질문과 선택지를 계속 보면서 답할 수 있고, 연결·듣기 상태는 버튼과 완료 버튼에서 확인한다. 서비스워커 캐시는 `dabang-tablet-v32`, 음성 자산은 `20260831-v7`이다.
+- 질문 유지 커밋은 `d96b191` (`Keep voice clarification visible while listening`)이다. 공개 안전 미리보기에서 버튼이 `답변 이어 말하기`에서 `듣는 중 · 취소`로 바뀐 뒤에도 질문 문구·노란 카드·96px 상단 높이가 동일하게 유지되고 `음성 주문 보내기`가 표시되는 것을 확인했다.
+- 질문 유지 안전 미리보기: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=d96b191
 
 ## 2026-08-30 CUKCUK 실제 테이블 QR 경로 기본 적용 완료
 
