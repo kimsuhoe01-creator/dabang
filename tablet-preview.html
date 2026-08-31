@@ -576,14 +576,15 @@ async function showTableOrderHistory(opener){
 async function refreshTableOrderHistory(){
  if(!selectedTable||historyLoading)return;
  const requestId=++historyRequestId;historyLoading=true;renderTableOrderHistory();
- const controller=new AbortController(),timeoutId=setTimeout(()=>controller.abort(),12000);
+ const controller=new AbortController();let timeoutId=null;
  try{
-  const response=await fetch(TABLE_ORDER_ENDPOINT,{method:'GET',headers:{'X-Dabang-Table-Id':selectedTable.id},cache:'no-store',signal:controller.signal});
+  const timeout=new Promise((_,reject)=>{timeoutId=setTimeout(()=>{controller.abort();reject(new Error('table order request timeout'))},8000)});
+  const response=await Promise.race([fetch(TABLE_ORDER_ENDPOINT,{method:'GET',headers:{'X-Dabang-Table-Id':selectedTable.id},cache:'no-store',signal:controller.signal}),timeout]);
   const result=await response.json().catch(()=>({}));
   if(!response.ok||result.ok===false)throw new Error('table order request failed');
   if(requestId===historyRequestId)historyPayload=result;
  }catch(error){if(requestId===historyRequestId)historyPayload={error:true,items:[],total:0,table:{id:selectedTable.id,name:selectedTable.name}}}
- finally{clearTimeout(timeoutId);if(requestId===historyRequestId){historyLoading=false;renderTableOrderHistory()}}
+ finally{if(timeoutId)clearTimeout(timeoutId);if(requestId===historyRequestId){historyLoading=false;renderTableOrderHistory()}}
 }
 function closeTableOrderHistory(){deactivateDialogLayer(document.getElementById('historyModal'))}
 function cartLineOptions(line){

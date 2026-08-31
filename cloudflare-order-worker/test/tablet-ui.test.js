@@ -194,6 +194,8 @@ test('receipt icon shows the selected table current CUKCUK order instead of the 
   assert.match(historySource, /method:'GET'/);
   assert.match(historySource, /'X-Dabang-Table-Id':selectedTable\.id/);
   assert.match(historySource, /cache:'no-store'/);
+  assert.match(historySource, /Promise\.race/);
+  assert.match(historySource, /8000/);
   assert.match(historySource, /historyPayload=result/);
   assert.match(historySource, /item\.quantity/);
   assert.match(historySource, /item\.lineTotal/);
