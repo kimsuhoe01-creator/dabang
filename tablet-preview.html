@@ -114,7 +114,7 @@ html[lang="zh"] body,html[lang="zh"] button,html[lang="zh"] input{font-family:"M
 <div class="dialog-layer" id="successModal" aria-hidden="true">
  <section class="dialog-panel success-panel" role="dialog" aria-modal="true" aria-labelledby="successTitle"><div class="success-icon">✓</div><h2 id="successTitle">POS에 주문이 등록됐습니다</h2><p id="successMessage">직원이 CUKCUK에서 주문을 확인한 뒤 주방·바로 전송해야 영수증이 출력됩니다.</p><div class="order-receipt"><div class="receipt-box"><span id="successTableLabel">테이블</span><strong id="successTable">-</strong></div><div class="receipt-box"><span id="successTotalLabel">주문 금액</span><strong id="successTotal">0 ₫</strong></div></div><button class="success-done" id="successDone" type="button" onclick="finishOrder()">확인</button></section>
 </div>
-<script src="assets/menu-images.js?v=20260831-pizza-refresh-v10"></script>
+<script src="assets/menu-images.js?v=20260831-pizza-fill-v11"></script>
 <script src="assets/table-layout.js"></script>
 <script src="assets/option-order.js"></script>
 <script>
@@ -163,7 +163,13 @@ function categoryLabel(category){return category?.names?.[lang]||category?.names
 function visibleCategories(){return state.categories.filter(c=>c.visible&&state.menus.some(m=>m.cat===c.name))}
 function compactCount(value,suffix){return ['ko','zh'].includes(lang)?value+suffix:value+' '+suffix}
 function placeholderMarkup(){return `<span class="placeholder"><span class="photo-icon" aria-hidden="true">▧</span><span>${escapeHtml(words[lang].photoSoon)}</span></span>`}
-const FORCE_COVER_IMAGE_IDS=new Set(['2813d1e7-250b-49ae-9f76-e5b40f451492','2ce328a0-8d0c-481e-883f-2e35684b900d']);
+const FORCE_COVER_IMAGE_IDS=new Set([
+ '2813d1e7-250b-49ae-9f76-e5b40f451492','2ce328a0-8d0c-481e-883f-2e35684b900d',
+ 'c0f16b37-ff76-4d8e-a5a8-3ead5fd7b0a5','d902dc7b-b6b7-402d-aa90-4edb1e5cfbc2',
+ '433a6207-b8cf-4333-aa33-f344d6bfeb31','a84fa28e-bac3-45c2-9e00-5138b660ecd7',
+ '646d2461-e692-4275-97a0-0ba277913e92','5e53f8d3-3b1e-4c08-82d0-136726552c5b',
+ '89116940-5e7e-4e1e-b808-a0a2fdb5798e'
+]);
 const TIGHT_CROP_IMAGE_IDS=new Set(['2813d1e7-250b-49ae-9f76-e5b40f451492']);
 function fitMenuPhoto(image){if(!image.naturalWidth||!image.naturalHeight)return;const visual=image.closest('.visual'),ratio=image.naturalWidth/image.naturalHeight;visual?.classList.toggle('fit-contain',!FORCE_COVER_IMAGE_IDS.has(visual?.dataset.menuId)&&(ratio>1.18||ratio<.85));visual?.classList.toggle('crop-tight',TIGHT_CROP_IMAGE_IDS.has(visual?.dataset.menuId))}
 function handleImageError(image){const visual=image.closest('.visual');if(!visual)return;visual.classList.remove('fit-contain');visual.querySelectorAll('.menu-photo,.photo-back').forEach(node=>node.remove());if(!visual.querySelector('.placeholder'))visual.insertAdjacentHTML('afterbegin',placeholderMarkup())}

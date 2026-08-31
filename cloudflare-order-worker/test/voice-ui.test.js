@@ -59,9 +59,21 @@ test("voice capture keeps one conversational WebRTC session until the order is c
 });
 
 test("voice assets are versioned in the offline tablet shell", () => {
-  assert.match(worker, /dabang-tablet-v38/);
+  assert.match(worker, /dabang-tablet-v39/);
   assert.match(worker, /voice-order\.js\?v=20260831-v12/);
   assert.match(worker, /voice-order\.css\?v=20260831-v12/);
+});
+
+test("new pizza and oven photos fill their menu cards", () => {
+  for (const id of [
+    "c0f16b37-ff76-4d8e-a5a8-3ead5fd7b0a5",
+    "d902dc7b-b6b7-402d-aa90-4edb1e5cfbc2",
+    "433a6207-b8cf-4333-aa33-f344d6bfeb31",
+    "a84fa28e-bac3-45c2-9e00-5138b660ecd7",
+    "646d2461-e692-4275-97a0-0ba277913e92",
+    "5e53f8d3-3b1e-4c08-82d0-136726552c5b",
+    "89116940-5e7e-4e1e-b808-a0a2fdb5798e",
+  ]) assert.match(html, new RegExp(`FORCE_COVER_IMAGE_IDS[\\s\\S]*${id}`));
 });
 
 test("clarification retries keep prior voice context and make the AI question prominent", () => {
