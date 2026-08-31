@@ -131,6 +131,35 @@ test("voice follow-up sends the prior question and draft with a short option ans
   assert.equal(modelInput.currentTranscript, "640cc");
 });
 
+test("an exact short answer fills the one missing published option without another model call", async () => {
+  const calls = [];
+  const fetcher = async (url) => {
+    calls.push(String(url));
+    if (String(url) === "https://menu.test/catalog.json") return Response.json(menuData);
+    throw new Error(`the exact follow-up should not call ${url}`);
+  };
+  const request = new Request("https://worker.test/api/voice/interpret", {
+    method: "POST",
+    headers: { Origin: "https://kimsuhoe01-creator.github.io", "Content-Type": "application/json" },
+    body: JSON.stringify({
+      transcript: "640cc로 주세요",
+      catalogRevision: "voice-r1",
+      language: "ko",
+      context: { turns: [{
+        transcript: "사포로 생맥주 두 잔 주세요",
+        questions: ["용량을 선택해 주세요."],
+        items: [{ menuId: "sapporo", quantity: 2, options: [] }],
+      }] },
+    }),
+  });
+  const response = await handleVoiceOrderApi(request, { OPENAI_API_KEY: "test-secret", MENU_DATA_URL: "https://menu.test/catalog.json" }, new Set(["https://kimsuhoe01-creator.github.io"]), fetcher);
+  const result = await response.json();
+  assert.equal(result.ready, true);
+  assert.equal(result.items[0].quantity, 2);
+  assert.equal(result.items[0].selections[0].valueId, "640");
+  assert.deepEqual(calls, ["https://menu.test/catalog.json"]);
+});
+
 test("voice clarification returns compact context for the next retry", async () => {
   const fetcher = async (url) => {
     if (String(url) === "https://menu.test/catalog.json") return Response.json(menuData);

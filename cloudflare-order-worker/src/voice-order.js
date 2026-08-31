@@ -91,6 +91,11 @@ async function interpretVoiceOrder(request, env, fetcher) {
 
   const catalog = compactCatalog(menuData);
   const priorTurns = sanitizeFollowUpContext(payload?.context);
+  const exactFollowUp = resolveExactFollowUp(priorTurns, transcript, menuData);
+  if (exactFollowUp) {
+    const draft = validateVoiceDraft(exactFollowUp, menuData);
+    if (draft.ready) return json({ ok: true, transcript, ...draft, followUpContext: null });
+  }
   const response = await fetcher(`${OPENAI_API_ROOT}/responses`, {
     method: "POST",
     headers: { Authorization: `Bearer ${env.OPENAI_API_KEY}`, "Content-Type": "application/json" },
@@ -243,6 +248,47 @@ function appendFollowUpContext(priorTurns, transcript, draft) {
   return { turns: [...priorTurns, turn].slice(-MAX_FOLLOW_UP_TURNS) };
 }
 
+function resolveExactFollowUp(priorTurns, transcript, menuData) {
+  const latest = priorTurns.at(-1);
+  if (!latest?.items?.length) return null;
+  const menus = new Map((menuData.menus || []).filter(menu => menu.available !== false).map(menu => [String(menu.id), menu]));
+  const templates = new Map((menuData.optionTemplates || []).map(template => [String(template.id), template]));
+  const spoken = normalizeSpokenChoice(transcript);
+  if (!spoken) return null;
+  const unresolved = [];
+  for (const item of latest.items) {
+    const menu = menus.get(String(item.menuId));
+    if (!menu) return null;
+    const counts = new Map();
+    for (const option of item.options || []) counts.set(String(option.templateId), (counts.get(String(option.templateId)) || 0) + 1);
+    for (const templateId of (menu.optionTemplateIds || []).map(String)) {
+      const template = templates.get(templateId);
+      const rule = menu.optionRules?.[templateId] || {};
+      const required = rule.required ?? template?.required === true;
+      const min = selectionLimit(rule.minSelections, template?.minSelections, required ? 1 : 0);
+      if ((counts.get(templateId) || 0) < min) unresolved.push({ item, menu, templateId, template });
+    }
+  }
+  if (unresolved.length !== 1) return null;
+  const pending = unresolved[0];
+  const matches = (pending.template?.values || []).filter(value => value.visible !== false && Object.values(value.names || value.receiptNames || {})
+    .map(normalizeSpokenChoice)
+    .filter(alias => alias.length >= 2)
+    .some(alias => spoken === alias || spoken.includes(alias)));
+  if (matches.length !== 1) return null;
+  return {
+    questions: [],
+    items: latest.items.map(item => ({
+      menuId: item.menuId,
+      quantity: item.quantity,
+      options: [
+        ...(item.options || []),
+        ...(item === pending.item ? [{ templateId: pending.templateId, valueId: String(matches[0].id) }] : []),
+      ],
+    })),
+  };
+}
+
 function voiceOrderSchema() {
   return {
     type: "json_schema",
@@ -308,6 +354,7 @@ function selectionLimit(primary, fallback, defaultValue) {
 function displayName(menu) { return cleanText(menu?.names?.ko || menu?.sourceName || menu?.id, 100) || "메뉴"; }
 function cleanText(value, max) { return typeof value === "string" ? value.trim().slice(0, max) : ""; }
 function cleanKeyword(value) { return cleanText(value, 80).replace(/[<>\r\n]/g, " ").replace(/\s+/g, " ").trim(); }
+function normalizeSpokenChoice(value) { return cleanText(value, 240).toLocaleLowerCase().replace(/[^\p{L}\p{N}]+/gu, ""); }
 function serviceError(message, status, code) { const error = new Error(message); error.status = status; error.code = code; return error; }
 async function safetyIdentifier(value) {
   const digest = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(`dabang-voice:${value}`));
