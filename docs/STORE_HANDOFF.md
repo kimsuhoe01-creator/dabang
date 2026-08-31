@@ -1,5 +1,17 @@
 # 매장 노트북 인계 — 다방 테이블오더
 
+## 2026-08-31 음성 답변 즉시 중단·버튼 최종 확인
+
+- 손님이 AI의 질문을 눈으로 먼저 읽고 `답변 이어 말하기`를 누르면, 진행 중 응답을 취소하고 WebRTC 출력 음성 버퍼를 비운 뒤 재청취를 시작한다. 듣는 동안 원격 오디오도 음소거해 남은 답변이 이어 재생되지 않게 했다.
+- 주문의 메뉴·옵션·수량이 모두 이해되면 AI가 전체 내용을 다시 읽으며 `네`라고 말하라고 요구하지 않는다. 곧바로 서버의 실제 메뉴 UUID·옵션 UUID·가격 검증을 거쳐 기존 주문 확인창을 연다.
+- 최종 선택은 `이대로 주문하기`와 `다시 말하기` 두 버튼이다. `이대로 주문하기`만 기존 CUKCUK/POS 전송 함수를 실행하며, 검증 전 자동 전송은 없다. 베트남어·중국어·영어에도 같은 흐름과 문구를 적용했다.
+- Realtime 함수 이름을 `prepare_order_review`로 바꾸고, 완성된 초안은 즉시 검토 화면으로 넘기며 애매하거나 필수 옵션이 빠진 경우에만 음성으로 한 가지씩 되묻게 했다.
+- 설치형 태블릿 캐시는 `dabang-tablet-v34`, 음성 자산은 `20260831-v9`다. 기능 커밋은 `acaaee0` (`Stop voice playback and confirm orders with buttons`)이다.
+- Cloudflare Worker 배포 버전은 `2a414c02-81c7-470c-8f4f-dd06a9d618ab`이며 `/health` 응답을 확인했다.
+- 주문·태블릿 회귀 테스트 68개, 메뉴 이미지 감사 112개·누락 0, JavaScript 문법 검사와 `git diff --check`를 통과했다. 이번 검증에서는 실제 CUKCUK/POS 주문을 제출하지 않았다.
+- 안전 미리보기: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=acaaee0
+- 매장 실주문 주소: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?source=store-qr&deploy=acaaee0
+
 ## 2026-08-31 GPT-Realtime-2.1 Mini 대화형 음성 주문 배포
 
 - 음성 앞단을 단순 전사 세션에서 `gpt-realtime-2.1-mini` 대화 세션으로 교체했다. Worker 설정에도 `VOICE_REALTIME_MODEL=gpt-realtime-2.1-mini`와 최종 구조화 검증용 `VOICE_ORDER_MODEL=gpt-5.6-luna`를 명시적으로 고정했다.
