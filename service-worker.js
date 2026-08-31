@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'dabang-tablet-v29';
+const CACHE_VERSION = 'dabang-tablet-v30';
 const SHELL_CACHE = `${CACHE_VERSION}-shell`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const APP_SHELL = [
@@ -6,8 +6,8 @@ const APP_SHELL = [
   './manifest.webmanifest',
   './assets/table-layout.js',
   './assets/option-order.js',
-  './assets/voice-order.js?v=20260831-v4',
-  './assets/voice-order.css?v=20260831-v4',
+  './assets/voice-order.js?v=20260831-v5',
+  './assets/voice-order.css?v=20260831-v5',
   './assets/menu-images.js?v=20260830-sunyang-oak-photo-v9',
   './assets/brand/dabang-logo-transparent.png',
   './assets/pwa/icon-32.png',

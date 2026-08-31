@@ -1,6 +1,7 @@
 const OPENAI_API_ROOT = "https://api.openai.com/v1";
 const MAX_TRANSCRIPT_CHARS = 12000;
 const MAX_SDP_CHARS = 100000;
+const MAX_FOLLOW_UP_TURNS = 4;
 
 export async function handleVoiceOrderApi(request, env, allowedOrigins, fetcher = fetch) {
   const url = new URL(request.url);
@@ -89,6 +90,7 @@ async function interpretVoiceOrder(request, env, fetcher) {
   }
 
   const catalog = compactCatalog(menuData);
+  const priorTurns = sanitizeFollowUpContext(payload?.context);
   const response = await fetcher(`${OPENAI_API_ROOT}/responses`, {
     method: "POST",
     headers: { Authorization: `Bearer ${env.OPENAI_API_KEY}`, "Content-Type": "application/json" },
@@ -96,7 +98,7 @@ async function interpretVoiceOrder(request, env, fetcher) {
       model: env.VOICE_ORDER_MODEL || "gpt-5.6-luna",
       reasoning: { effort: "none" },
       instructions: voiceInstructions(),
-      input: JSON.stringify({ language: cleanText(payload?.language, 12) || "ko", transcript, catalog }),
+      input: JSON.stringify({ language: cleanText(payload?.language, 12) || "ko", priorTurns, currentTranscript: transcript, catalog }),
       text: { format: voiceOrderSchema() },
       store: false,
     }),
@@ -108,7 +110,8 @@ async function interpretVoiceOrder(request, env, fetcher) {
   }
   const parsed = parseStructuredOutput(result);
   const draft = validateVoiceDraft(parsed, menuData);
-  return json({ ok: true, transcript, ...draft });
+  const followUpContext = draft.ready ? null : appendFollowUpContext(priorTurns, transcript, draft);
+  return json({ ok: true, transcript, ...draft, followUpContext });
 }
 
 export function validateVoiceDraft(parsed, menuData) {
@@ -201,11 +204,43 @@ function compactCatalog(menuData) {
 function voiceInstructions() {
   return [
     "Convert a restaurant customer's spoken deliberation into the final intended order using only exact IDs in the supplied catalog.",
+    "The input contains priorTurns followed by currentTranscript. When priorTurns is not empty, treat currentTranscript as the customer's answer, correction, or addition to the latest unanswered question.",
+    "Carry forward the prior menu, quantity, and resolved options unless the customer explicitly changes or cancels them. A short answer such as '640cc' must be resolved against the latest question instead of being treated as a new unrelated order.",
+    "Return the complete accumulated order on every turn, not only the newly supplied option or correction.",
     "Apply statements in chronological order: later corrections, cancellations, quantity changes, and replacements override earlier ones.",
     "Do not invent a menu, option, quantity, or ID. Do not guess between similar items.",
     "If a menu or required option is ambiguous or missing, add a short customer-facing question and do not pretend the order is ready.",
     "Return only the schema. Keep questions in the customer's language when possible.",
   ].join("\n");
+}
+
+function sanitizeFollowUpContext(value) {
+  const turns = Array.isArray(value?.turns) ? value.turns.slice(-MAX_FOLLOW_UP_TURNS) : [];
+  return turns.map(turn => ({
+    transcript: cleanText(turn?.transcript, 2000),
+    questions: Array.isArray(turn?.questions) ? turn.questions.map(question => cleanText(question, 240)).filter(Boolean).slice(0, 5) : [],
+    items: Array.isArray(turn?.items) ? turn.items.slice(0, 50).map(item => ({
+      menuId: cleanText(item?.menuId, 120),
+      quantity: Number.isInteger(Number(item?.quantity)) ? Math.max(1, Math.min(99, Number(item.quantity))) : 1,
+      options: (Array.isArray(item?.options) ? item.options : Array.isArray(item?.selections) ? item.selections : []).slice(0, 30).map(option => ({
+        templateId: cleanText(option?.templateId, 160),
+        valueId: cleanText(option?.valueId, 160),
+      })).filter(option => option.templateId && option.valueId),
+    })).filter(item => item.menuId) : [],
+  })).filter(turn => turn.transcript || turn.questions.length || turn.items.length);
+}
+
+function appendFollowUpContext(priorTurns, transcript, draft) {
+  const turn = {
+    transcript,
+    questions: draft.questions,
+    items: draft.items.map(item => ({
+      menuId: item.menuId,
+      quantity: item.quantity,
+      options: item.selections.map(option => ({ templateId: option.templateId, valueId: option.valueId })),
+    })),
+  };
+  return { turns: [...priorTurns, turn].slice(-MAX_FOLLOW_UP_TURNS) };
 }
 
 function voiceOrderSchema() {

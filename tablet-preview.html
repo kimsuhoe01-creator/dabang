@@ -11,7 +11,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/pwa/icon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/pwa/icon-180.png">
-<link rel="stylesheet" href="assets/voice-order.css?v=20260831-v4">
+<link rel="stylesheet" href="assets/voice-order.css?v=20260831-v5">
 <title>DABANG Chicken Tablet Menu</title>
 <style>
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,"Noto Sans KR","Noto Sans SC","Microsoft YaHei","PingFang SC","Segoe UI",sans-serif;color:#1d1b18;background:#f3eee5}button{font:inherit;cursor:pointer}:root{--red:#ff3344;--yellow:#ffdf00;--black:#111;--cream:#f3eee5;--white:#fff}
@@ -85,7 +85,7 @@ html[lang="zh"] body,html[lang="zh"] button,html[lang="zh"] input{font-family:"M
 <div class="app" id="tabletApp" inert aria-hidden="true">
  <header class="header">
   <div class="header-left"><button class="reset-flow" type="button" onclick="restartForNextGuest()"><span class="reset-icon" aria-hidden="true">↶</span><span class="reset-label" id="resetText">Chọn lại bàn</span></button><div class="store-name"><span class="table-caption" id="tableCaption">Bàn hiện tại</span><strong id="tableName">-</strong></div><span class="order-ready" id="orderReady">Sẵn sàng đặt món</span><div class="langs" id="langs" aria-label="Language"></div></div>
-  <div class="right"><p class="voice-inline-guide" id="voiceGuide">직원에게 말하듯 메뉴판을 보면서 편하게 말씀해 주세요.</p><div class="voice-inline-status" id="voiceInlineStatus" hidden><span class="voice-inline-spinner" aria-hidden="true"></span><strong id="voiceInlineStatusText">주문을 정리하고 있습니다…</strong><time id="voiceTimer">00:00</time></div><button class="voice-order-button" id="voiceOrderButton" type="button" onclick="openVoiceOrder(this)"><span class="voice-order-icon" aria-hidden="true">●</span><span id="voiceButtonText">음성 주문</span></button><button class="voice-finish-button" id="voiceFinishButton" type="button" onclick="finishVoiceListening()" hidden><span aria-hidden="true">✓</span><span id="voiceFinishText">음성 주문 보내기</span></button><button class="cart" type="button" onclick="showCartSummary(this)"><b id="cartCount" aria-live="polite">0</b><span class="cart-copy"><span id="cartText">장바구니</span><small id="cartSummary">0개</small></span></button></div>
+  <div class="right"><p class="voice-inline-guide" id="voiceGuide" role="status" aria-live="polite">직원에게 말하듯 메뉴판을 보면서 편하게 말씀해 주세요.</p><div class="voice-inline-status" id="voiceInlineStatus" hidden><span class="voice-inline-spinner" aria-hidden="true"></span><strong id="voiceInlineStatusText">주문을 정리하고 있습니다…</strong><time id="voiceTimer">00:00</time></div><button class="voice-order-button" id="voiceOrderButton" type="button" onclick="openVoiceOrder(this)"><span class="voice-order-icon" aria-hidden="true">●</span><span id="voiceButtonText">음성 주문</span></button><button class="voice-finish-button" id="voiceFinishButton" type="button" onclick="finishVoiceListening()" hidden><span aria-hidden="true">✓</span><span id="voiceFinishText">음성 주문 보내기</span></button><button class="cart" type="button" onclick="showCartSummary(this)"><b id="cartCount" aria-live="polite">0</b><span class="cart-copy"><span id="cartText">장바구니</span><small id="cartSummary">0개</small></span></button></div>
  </header>
  <div class="voice-preview-bar" id="voiceMockBar" hidden><label for="voiceMockTranscript" id="voiceMockLabel">미리보기용 음성 주문</label><input id="voiceMockTranscript" type="text" aria-label="미리보기 음성 문장"><button type="button" id="voiceMockSend" onclick="finishVoiceListening()">음성 주문 보내기</button></div>
  <div class="menu-shell">
@@ -739,6 +739,6 @@ renderLanguageCards();
 loadPublishedMenu();
 loadCukcukTables();
 </script>
-<script src="assets/voice-order.js?v=20260831-v4"></script>
+<script src="assets/voice-order.js?v=20260831-v5"></script>
 </body>
 </html>
