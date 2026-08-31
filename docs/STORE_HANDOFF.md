@@ -316,8 +316,8 @@ Codex 내장 이미지 생성 기능으로 메뉴 카드용 1:1 사진을 만들
 
 ## 공개 링크
 
-- 안전 미리보기: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=5fb276d
-- 관리자 화면: https://kimsuhoe01-creator.github.io/dabang/admin-v2.html?deploy=5fb276d
+- 안전 미리보기: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=44ec549
+- 관리자 화면: https://kimsuhoe01-creator.github.io/dabang/admin-v2.html?deploy=44ec549
 - 공개 메뉴 JSON: https://kimsuhoe01-creator.github.io/dabang/data/cukcuk-menu.json
 - 공개 테이블 JSON: https://kimsuhoe01-creator.github.io/dabang/data/cukcuk-tables.json
 - GitHub 저장소: https://github.com/kimsuhoe01-creator/dabang
@@ -416,3 +416,4 @@ C:\Users\Admin\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin
 - Cloudflare Worker에 음성 API를 배포했다. 배포 버전은 `12467d1b-d647-4d10-8afe-dcad3e5f4e8c`이다.
 - 실제 OpenAI Responses API로 `호세 쿠에르보 실버 데킬라 하이볼 한 잔`을 시험해 메뉴 UUID 1개, 수량 1개, 추가 질문 0개로 정확히 연결되는 것을 확인했다. 이 검증은 POS 주문을 전송하지 않았다.
 - OpenAI 공식 문서에서 `gpt-live-transcribe`의 실시간 전사와 `gpt-5.6-luna`의 Responses API·구조화 출력 지원을 재확인했다.
+- 프런트엔드는 커밋 `44ec549`까지 `main`과 GitHub Pages에 배포했으며 공개 안전 미리보기에서 음성 버튼의 실제 서버 연결 시작 상태를 확인했다. 자동화 브라우저에서는 마이크 입력 장치를 제공하지 못하므로 최종 음성 청취는 매장 태블릿에서 1회 확인해야 한다.
