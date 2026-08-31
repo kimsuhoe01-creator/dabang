@@ -15,8 +15,12 @@ test("voice ordering stays in the header while the customer browses the menu", (
   assert.match(html, /id="voiceGuide"[^>]*>직원에게 말하듯 메뉴판을 보면서 편하게 말씀해 주세요/);
   assert.match(html, /id="voiceFinishButton"[^>]*onclick="finishVoiceListening\(\)"[^>]*hidden/);
   assert.doesNotMatch(html, /id="voiceModal"/);
-  assert.match(source, /listening:"듣는 중 · 취소"/);
+  assert.match(source, /listening:"듣기 취소"/);
   assert.match(source, /finish:"말하기 완료"/);
+  assert.match(css, /voice-inline-guide:not\(\.is-clarification\):not\(\.is-error\):after\{content:"  →"/);
+  assert.match(css, /voice-finish-button\{[^}]*background:#ffd51f/);
+  assert.match(css, /voice-order-button\.is-listening \.voice-order-icon\{[^}]*animation:none/);
+  assert.match(css, /voice-finish-button\{order:2\}/);
 });
 
 test("AI draft opens the existing cart for one final customer confirmation", () => {
@@ -49,9 +53,9 @@ test("voice capture keeps one conversational WebRTC session until the order is c
 });
 
 test("voice assets are versioned in the offline tablet shell", () => {
-  assert.match(worker, /dabang-tablet-v34/);
-  assert.match(worker, /voice-order\.js\?v=20260831-v9/);
-  assert.match(worker, /voice-order\.css\?v=20260831-v9/);
+  assert.match(worker, /dabang-tablet-v35/);
+  assert.match(worker, /voice-order\.js\?v=20260831-v10/);
+  assert.match(worker, /voice-order\.css\?v=20260831-v10/);
 });
 
 test("clarification retries keep prior voice context and make the AI question prominent", () => {
