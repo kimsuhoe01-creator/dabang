@@ -249,7 +249,7 @@ function appendFollowUpContext(priorTurns, transcript, draft) {
 }
 
 function resolveExactFollowUp(priorTurns, transcript, menuData) {
-  const latest = priorTurns.at(-1);
+  const latest = [...priorTurns].reverse().find(turn => turn?.items?.length);
   if (!latest?.items?.length) return null;
   const menus = new Map((menuData.menus || []).filter(menu => menu.available !== false).map(menu => [String(menu.id), menu]));
   const templates = new Map((menuData.optionTemplates || []).map(template => [String(template.id), template]));

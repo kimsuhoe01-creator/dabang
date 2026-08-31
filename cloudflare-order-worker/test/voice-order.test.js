@@ -149,6 +149,10 @@ test("an exact short answer fills the one missing published option without anoth
         transcript: "사포로 생맥주 두 잔 주세요",
         questions: ["용량을 선택해 주세요."],
         items: [{ menuId: "sapporo", quantity: 2, options: [] }],
+      }, {
+        transcript: "640cc",
+        questions: ["사포로 생맥주의 필수 옵션을 다시 말씀해 주세요."],
+        items: [],
       }] },
     }),
   });
