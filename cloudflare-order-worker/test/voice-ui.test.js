@@ -34,15 +34,15 @@ test("voice capture streams through WebRTC and commits only when the customer fi
   assert.match(source, /input_audio_buffer\.commit/);
   assert.match(source, /conversation\.item\.input_audio_transcription\.completed/);
   assert.match(source, /const MAX_SECONDS = 90/);
-  assert.match(source, /fetchWithTimeout\(`\$\{API_BASE\}\/api\/voice\/interpret[\s\S]*,8000\)/);
+  assert.match(source, /fetchWithTimeout\(`\$\{API_BASE\}\/api\/voice\/interpret[\s\S]*,12000\)/);
   assert.match(source, /failed to fetch\|networkerror\|load failed/i);
   assert.match(source, /timeout:"주문 정리가 오래 걸리고 있습니다/);
 });
 
 test("voice assets are versioned in the offline tablet shell", () => {
-  assert.match(worker, /dabang-tablet-v30/);
-  assert.match(worker, /voice-order\.js\?v=20260831-v5/);
-  assert.match(worker, /voice-order\.css\?v=20260831-v5/);
+  assert.match(worker, /dabang-tablet-v31/);
+  assert.match(worker, /voice-order\.js\?v=20260831-v6/);
+  assert.match(worker, /voice-order\.css\?v=20260831-v6/);
 });
 
 test("clarification retries keep prior voice context and make the AI question prominent", () => {
@@ -54,4 +54,6 @@ test("clarification retries keep prior voice context and make the AI question pr
   assert.match(css, /font-size:16px/);
   assert.doesNotMatch(css, /@media\(max-width:1040px\)\{\.voice-inline-guide\{display:none/);
   assert.match(html, /id="voiceGuide" role="status" aria-live="polite"/);
+  assert.match(source, /window\.voiceOrderPhase=phase/);
+  assert.match(html, /!\['connecting','listening','processing','clarify'\]\.includes\(window\.voiceOrderPhase\)/);
 });

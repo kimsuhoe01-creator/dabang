@@ -15,6 +15,7 @@
 
   function setPhase(phase,message=""){
     voice.phase=phase;
+    window.voiceOrderPhase=phase;
     const c=t(),button=el("voiceOrderButton"),finish=el("voiceFinishButton"),guide=el("voiceGuide"),status=el("voiceInlineStatus"),mockBar=el("voiceMockBar");
     button.hidden=false;button.disabled=false;button.classList.remove("is-listening");guide.classList.remove("is-clarification","is-error");finish.hidden=true;status.hidden=true;mockBar.hidden=true;
     if(phase==="idle"){
@@ -89,7 +90,7 @@
   }
 
   async function interpretTranscript(transcript){
-    const response=await fetchWithTimeout(`${API_BASE}/api/voice/interpret`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({transcript,context:voice.followUpContext,catalogRevision:String(state.catalogRevision||""),language:lang,tableId:String(selectedTable?.id||"")})},8000);
+    const response=await fetchWithTimeout(`${API_BASE}/api/voice/interpret`,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({transcript,context:voice.followUpContext,catalogRevision:String(state.catalogRevision||""),language:lang,tableId:String(selectedTable?.id||"")})},12000);
     const result=await response.json().catch(()=>({}));if(!response.ok||result.ok===false)throw new Error(result.code==="VOICE_NOT_CONFIGURED"?t().unavailable:t().failed);
     if(!result.ready){voice.followUpContext=result.followUpContext||voice.followUpContext;setPhase("clarify",(result.questions||[]).join(" ")||t().failed);return}
     voice.followUpContext=null;
