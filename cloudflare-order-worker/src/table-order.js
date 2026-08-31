@@ -1,22 +1,34 @@
 import { login } from "./order.js";
 
 const API_ROOT = "https://graphapi.cukcuk.vn";
-const ACTIVE_STATUSES = new Set([1, 3, 7, 8]);
+const PAID_STATUS = 4;
+const CANCELLED_STATUS = 5;
 const PAGE_LIMIT = 100;
 const MAX_PAGES = 5;
 
 export async function fetchCukCukPosTableOrder(env, tableIdValue, tableNameValue, fetcher = fetch) {
   const branchId = cleanGuid(env.CUKCUK_BRANCH_ID);
   const tableId = cleanGuid(tableIdValue);
-  const tableName = cleanLabel(tableNameValue, 80);
+  let tableName = cleanLabel(tableNameValue, 80);
   if (!branchId || !tableId) throw new TableOrderError("CUKCUK POS 테이블 조회 설정이 올바르지 않습니다.", 400, "POS_TABLE_CONFIG_INVALID");
 
   const session = await login(env, fetcher);
+  let table = null;
+  try {
+    table = await fetchTable(session, branchId, tableId, fetcher);
+  } catch (error) {
+    if (!tableName) throw error;
+  }
+  if (!tableName) tableName = table?.name || "";
   const since = new Date(Date.now() - 72 * 60 * 60 * 1000).toISOString();
   const summaries = await fetchActiveOrders(session, branchId, since, fetcher);
-  const matches = summaries
-    .filter(order => ACTIVE_STATUSES.has(Number(order?.Status)) && matchesTable(order, tableId, tableName))
-    .sort((left, right) => Date.parse(left?.Date || 0) - Date.parse(right?.Date || 0));
+  const candidates = summaries
+    .filter(order => Number.isFinite(Number(order?.Status)) && Number(order.Status) !== CANCELLED_STATUS && matchesTable(order, tableId, tableName))
+    .sort((left, right) => Date.parse(right?.Date || 0) - Date.parse(left?.Date || 0));
+  const current = table?.occupied
+    ? candidates[0]
+    : candidates.find(order => Number(order.Status) !== PAID_STATUS);
+  const matches = current ? [current] : [];
 
   if (!matches.length) return emptyResult(tableId, tableName);
   const details = await Promise.all(matches.map(order => fetchOrderDetail(session, order.Id, fetcher)));
@@ -29,6 +41,20 @@ export async function fetchCukCukPosTableOrder(env, tableIdValue, tableNameValue
     items,
     refreshedAt: new Date().toISOString(),
     source: "pos-active-order",
+  };
+}
+
+async function fetchTable(session, branchId, tableId, fetcher) {
+  const response = await fetcher(`${API_ROOT}/api/v1/tables/${encodeURIComponent(branchId)}`, {
+    method: "GET",
+    headers: apiHeaders(session),
+  });
+  const data = await readResult(response, "POS 테이블 목록 조회");
+  const matched = (Array.isArray(data?.ListTable) ? data.ListTable : []).find(table => cleanGuid(table?.MapObjectID) === tableId);
+  if (!matched) return null;
+  return {
+    name: cleanLabel(matched.MapObjectName, 80),
+    occupied: matched.IsAvailable === false || Number(matched.Status) === 1,
   };
 }
 
