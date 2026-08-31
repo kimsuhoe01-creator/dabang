@@ -2,6 +2,7 @@ import { createOrAppendCukCukOrder, validateAndBuildOrder } from "./order.js";
 import { submitCukCukSelfOrder } from "./self-order.js";
 import { expandMenuImage } from "./image-edit.js";
 import { handleStoreApi } from "./gpt-api.js";
+import { handleVoiceOrderApi } from "./voice-order.js";
 
 const ALLOWED_ORIGINS = new Set([
   "https://kimsuhoe01-creator.github.io",
@@ -13,6 +14,8 @@ export default {
     const url = new URL(request.url);
     const storeResponse = await handleStoreApi(request, env);
     if (storeResponse) return cors(request, storeResponse);
+    const voiceResponse = await handleVoiceOrderApi(request, env, ALLOWED_ORIGINS);
+    if (voiceResponse) return cors(request, voiceResponse);
 
     if (url.pathname === "/health" && request.method === "GET") {
       return cors(request, json({ ok: true, service: "dabang-cukcuk-order-api" }));
@@ -196,7 +199,7 @@ function cors(request, response) {
     response.headers.set("Access-Control-Allow-Origin", origin);
     response.headers.set("Vary", "Origin");
     response.headers.set("Access-Control-Allow-Methods", "POST, OPTIONS");
-    response.headers.set("Access-Control-Allow-Headers", "Authorization, Content-Type");
+    response.headers.set("Access-Control-Allow-Headers", "Authorization, Content-Type, X-Dabang-Table-Id");
   }
   return response;
 }

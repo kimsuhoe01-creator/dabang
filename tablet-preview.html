@@ -11,6 +11,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/pwa/icon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/pwa/icon-180.png">
+<link rel="stylesheet" href="assets/voice-order.css?v=20260831-v2">
 <title>DABANG Chicken Tablet Menu</title>
 <style>
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,"Noto Sans KR","Noto Sans SC","Microsoft YaHei","PingFang SC","Segoe UI",sans-serif;color:#1d1b18;background:#f3eee5}button{font:inherit;cursor:pointer}:root{--red:#ff3344;--yellow:#ffdf00;--black:#111;--cream:#f3eee5;--white:#fff}
@@ -83,7 +84,7 @@ html[lang="zh"] body,html[lang="zh"] button,html[lang="zh"] input{font-family:"M
 <div class="app" id="tabletApp" inert aria-hidden="true">
  <header class="header">
   <div class="header-left"><button class="reset-flow" type="button" onclick="restartForNextGuest()"><span class="reset-icon" aria-hidden="true">↶</span><span class="reset-label" id="resetText">Chọn lại bàn</span></button><div class="store-name"><span class="table-caption" id="tableCaption">Bàn hiện tại</span><strong id="tableName">-</strong></div></div>
-  <div class="right"><span class="order-ready" id="orderReady">Sẵn sàng đặt món</span><div class="langs" id="langs" aria-label="Language"></div><button class="cart" type="button" onclick="showCartSummary(this)"><b id="cartCount" aria-live="polite">0</b><span class="cart-copy"><span id="cartText">장바구니</span><small id="cartSummary">0개</small></span></button></div>
+  <div class="right"><span class="order-ready" id="orderReady">Sẵn sàng đặt món</span><div class="langs" id="langs" aria-label="Language"></div><button class="voice-order-button" type="button" onclick="openVoiceOrder(this)"><span class="voice-order-icon" aria-hidden="true">●</span><span id="voiceButtonText">음성 주문</span></button><button class="cart" type="button" onclick="showCartSummary(this)"><b id="cartCount" aria-live="polite">0</b><span class="cart-copy"><span id="cartText">장바구니</span><small id="cartSummary">0개</small></span></button></div>
  </header>
  <div class="menu-shell">
   <aside class="category-rail"><div class="rail-heading"><img class="rail-logo" src="assets/brand/dabang-logo-transparent.png" alt="DABANG Chicken"><strong id="railStoreName">다방치킨</strong><small>MENU</small></div><nav class="cats" id="cats" aria-label="Menu categories"></nav></aside>
@@ -107,6 +108,17 @@ html[lang="zh"] body,html[lang="zh"] button,html[lang="zh"] input{font-family:"M
   <div class="dialog-body"><div class="cart-lines" id="cartItems"></div></div>
    <footer class="dialog-foot cart-footer"><div class="cart-total-row"><span id="cartTotalLabel">총 금액</span><strong id="cartModalTotal">0 ₫</strong></div><div class="checkout-actions"><button class="continue-order" id="continueOrder" type="button" onclick="closeCart()">메뉴 더 담기</button><button class="send-order" id="sendOrder" type="button" onclick="submitOrder()"><span class="send-order-icon" aria-hidden="true">✓</span><span id="sendOrderText">주문 전송</span></button></div><div class="order-note" id="orderNote">POS에 주문이 등록됩니다. 직원이 CUKCUK에서 확인한 뒤 주방·바로 전송해야 영수증이 출력됩니다. 메뉴와 수량을 확인해 주세요.</div></footer>
   </section>
+</div>
+<div class="dialog-layer" id="voiceModal" aria-hidden="true" onclick="if(event.target===this)closeVoiceOrder()">
+ <section class="dialog-panel voice-order-dialog" role="dialog" aria-modal="true" aria-labelledby="voiceTitle">
+  <header class="dialog-head"><div><span class="dialog-kicker" id="voiceKicker">VOICE ORDER</span><h2 id="voiceTitle">말로 주문하기</h2><p id="voiceCaption">편하게 말씀하신 뒤 듣기 완료를 눌러 주세요.</p></div><button class="dialog-close" id="voiceClose" type="button" aria-label="닫기" onclick="closeVoiceOrder()">×</button></header>
+  <div class="dialog-body voice-order-body">
+   <div class="voice-state-card"><div class="voice-orb" id="voiceOrb" aria-hidden="true"><i></i><i></i><i></i></div><strong id="voiceStatus">주문을 들을 준비가 됐습니다.</strong><span id="voiceTimer">00:00</span></div>
+   <div class="voice-transcript-card"><span id="voiceTranscriptLabel">들은 내용</span><p id="voiceTranscript">듣기 시작을 누르고 주문을 말씀해 주세요.</p><textarea id="voiceMockTranscript" hidden aria-label="미리보기 음성 문장"></textarea></div>
+   <div class="voice-review" id="voiceReview" hidden><div class="voice-review-head"><strong id="voiceReviewTitle">이렇게 주문할까요?</strong><span id="voiceReviewTotal"></span></div><div class="voice-review-lines" id="voiceReviewLines"></div><div class="voice-questions" id="voiceQuestions" hidden></div></div>
+  </div>
+  <footer class="dialog-foot voice-order-foot"><button class="voice-secondary" id="voiceSecondary" type="button" onclick="handleVoiceSecondary()">취소</button><button class="voice-primary" id="voicePrimary" type="button" onclick="handleVoicePrimary()"><span id="voicePrimaryText">듣기 시작</span></button></footer>
+ </section>
 </div>
 <div class="dialog-layer" id="successModal" aria-hidden="true">
  <section class="dialog-panel success-panel" role="dialog" aria-modal="true" aria-labelledby="successTitle"><div class="success-icon">✓</div><h2 id="successTitle">POS에 주문이 등록됐습니다</h2><p id="successMessage">직원이 CUKCUK에서 주문을 확인한 뒤 주방·바로 전송해야 영수증이 출력됩니다.</p><div class="order-receipt"><div class="receipt-box"><span id="successTableLabel">테이블</span><strong id="successTable">-</strong></div><div class="receipt-box"><span id="successTotalLabel">주문 금액</span><strong id="successTotal">0 ₫</strong></div></div><button class="success-done" id="successDone" type="button" onclick="finishOrder()">확인</button></section>
@@ -345,7 +357,7 @@ function render({preserveScroll=true}={}){
  if(document.getElementById('cartModal').classList.contains('open'))renderCartItems();
  requestAnimationFrame(()=>{content.scrollTop=previousScroll;syncCategoryFromScroll()});
 }
-function setLang(value){if(!SUPPORTED_LANGS.has(value))return;lang=value;state.lang=value;render()}
+function setLang(value){if(!SUPPORTED_LANGS.has(value))return;lang=value;state.lang=value;render();if(typeof updateVoiceLanguage==='function')updateVoiceLanguage()}
 function setCat(value){
  const content=document.getElementById('menuContent'),target=[...document.querySelectorAll('.menu-category-section')].find(section=>section.dataset.category===value);
  if(!target)return;
@@ -634,11 +646,12 @@ function restartForNextGuest(force=false){
  const start=document.getElementById('startFlow');
  if(!force&&start.classList.contains('hidden')&&!window.confirm(STAFF_COPY.resetConfirm))return;
  cartItems=[];cart=0;cartTotal=0;optionDraft=null;selectedTable=null;active='';dialogOpener=null;orderVerificationRequired=false;pendingOrderPayload=null;
+ if(typeof closeVoiceOrder==='function')closeVoiceOrder(true);
  deactivateDialogLayer(document.getElementById('optionModal'),false);deactivateDialogLayer(document.getElementById('cartModal'),false);deactivateDialogLayer(document.getElementById('successModal'),false);sessionStorage.removeItem('dabangSelectedTable');document.getElementById('tableName').textContent='-';
  const app=document.getElementById('tabletApp');app.setAttribute('inert','');app.setAttribute('aria-hidden','true');start.classList.remove('hidden');start.removeAttribute('aria-hidden');showTableStep();render({preserveScroll:false});document.getElementById('menuContent').scrollTop=0;
  if(typeof appUpdatePending!=='undefined'&&appUpdatePending)setTimeout(applyAppUpdate,0);
 }
-document.addEventListener('keydown',event=>{if(event.key==='Tab'){trapDialogFocus(event);return}if(event.key!=='Escape')return;if(document.getElementById('optionModal').classList.contains('open'))closeOptionModal();else if(document.getElementById('cartModal').classList.contains('open'))closeCart()});
+document.addEventListener('keydown',event=>{if(event.key==='Tab'){trapDialogFocus(event);return}if(event.key!=='Escape')return;if(document.getElementById('optionModal').classList.contains('open'))closeOptionModal();else if(document.getElementById('cartModal').classList.contains('open'))closeCart();else if(document.getElementById('voiceModal').classList.contains('open')&&typeof closeVoiceOrder==='function')closeVoiceOrder()});
 
 let deferredInstallPrompt=null,pwaRegistration=null,pwaReloading=false,appUpdatePending=false,appDocumentVersion='';
 const hadServiceWorkerController={value:Boolean(navigator.serviceWorker?.controller)};
@@ -703,5 +716,6 @@ renderLanguageCards();
 loadPublishedMenu();
 loadCukcukTables();
 </script>
+<script src="assets/voice-order.js?v=20260831-v2"></script>
 </body>
 </html>
