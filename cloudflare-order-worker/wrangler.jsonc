@@ -22,6 +22,8 @@
     "CUKCUK_DOMAIN": "dabang",
     "CUKCUK_APP_ID": "CUKCUKOpenPlatform",
     "CUKCUK_BRANCH_ID": "430a00af-29db-4f30-b8f8-e87bdb793ab0",
+    "VOICE_REALTIME_MODEL": "gpt-realtime-2.1-mini",
+    "VOICE_ORDER_MODEL": "gpt-5.6-luna",
     "MENU_DATA_URL": "https://raw.githubusercontent.com/kimsuhoe01-creator/dabang/main/data/cukcuk-menu.json",
     "STORE_GPT_TOKEN_SHA256": "a81925acb4dc89be3d0c402df21cc27cd6dac63406b62ec16e16eadf46164888"
   }

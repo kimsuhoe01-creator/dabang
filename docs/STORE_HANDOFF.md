@@ -1,5 +1,19 @@
 # 매장 노트북 인계 — 다방 테이블오더
 
+## 2026-08-31 GPT-Realtime-2.1 Mini 대화형 음성 주문 배포
+
+- 음성 앞단을 단순 전사 세션에서 `gpt-realtime-2.1-mini` 대화 세션으로 교체했다. Worker 설정에도 `VOICE_REALTIME_MODEL=gpt-realtime-2.1-mini`와 최종 구조화 검증용 `VOICE_ORDER_MODEL=gpt-5.6-luna`를 명시적으로 고정했다.
+- 손님이 처음 말한 뒤 AI가 같은 WebRTC 세션에서 음성으로 짧게 되묻고, 화면 상단에도 답변을 크게 표시한다. `답변 이어 말하기`를 누르면 새 세션을 만들지 않고 기존 주문 맥락을 유지한 채 마이크만 다시 켠다.
+- AI는 공개 메뉴에 있는 메뉴명·옵션만 사용하고, 용량·맛·수량이 애매하면 관련 선택지만 한 번에 하나씩 질문한다. 주문이 완성되면 전체 주문을 요약하고 손님의 명시적인 확인을 받은 뒤에만 `finalize_order` 함수 호출을 할 수 있다.
+- Realtime 모델의 함수 결과를 곧바로 POS에 보내지 않는다. 확정 요약은 기존 `gpt-5.6-luna` 구조화 출력과 서버의 메뉴 UUID·옵션 UUID·가격·수량 검증을 다시 통과해야 기존 장바구니 확인창에 들어간다. 이후 손님이 `맞아요 · 주문 전송`을 눌러야 기존 CUKCUK 경로가 실행된다.
+- Realtime 모델의 음성 출력은 `marin`을 사용한다. 한 응답은 최대 두 문장으로 제한하고 메뉴 주문 이외의 대화를 하지 않도록 프롬프트를 제한했다. 한국어·베트남어·중국어·영어 선택값을 세션에 전달한다.
+- 설치형 태블릿 캐시는 `dabang-tablet-v33`, 음성 자산은 `20260831-v8`이다. 기능 커밋은 `3c5963d` (`Upgrade voice ordering to Realtime 2.1 Mini`)다.
+- Cloudflare Worker 배포 버전은 `e3ffdb38-5457-4471-b51a-c4d2a13278cd`다. `/health`는 `ok:true`, 새 언어 헤더를 포함한 CORS 사전 요청은 HTTP 204로 확인했다.
+- Worker·태블릿 회귀 테스트 68개, 메뉴 이미지 감사 112개·누락 0, JavaScript 문법 검사와 `git diff --check`를 통과했다. 공개 안전 미리보기에서 v8 자산, 음성 버튼, 브라우저 오류 0을 확인했다.
+- 마이크의 실제 매장 음성을 OpenAI로 보내는 현장 대화 시험은 매장 태블릿에서 진행한다. 안전 미리보기에서는 최종 주문 전송을 눌러도 POS로 가지 않으며, 이번 배포 검증 중 실제 CUKCUK/POS 주문은 제출하지 않았다.
+- 안전 미리보기: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=3c5963d
+- 매장 실주문 주소: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?source=store-qr&deploy=3c5963d
+
 ## 2026-08-31 음성 추가 질문 맥락 유지·상단 가독성 보정
 
 - AI가 용량·맛처럼 빠진 옵션을 되물은 뒤 손님이 `640cc`처럼 짧게 답해도, 직전 주문 문장·AI 질문·이미 확정된 메뉴 초안을 함께 해석하도록 수정했다. 추가 질문은 최대 최근 4회만 짧게 전달하며 OpenAI 응답 저장은 계속 `store:false`다.
