@@ -6,9 +6,9 @@ const menuData = {
   synced: true,
   catalogRevision: "voice-r1",
   menus: [
-    { id: "fried", sourceName: "후라이드 치킨", names: { ko: "후라이드 치킨", vi: "Gà rán" }, price: 100000, available: true, optionTemplateIds: [] },
-    { id: "wings", sourceName: "반반 윙봉", names: { ko: "반반 윙봉" }, price: 120000, available: true, optionTemplateIds: ["flavor"], optionRules: { flavor: { required: true, minSelections: 2, maxSelections: 2 } } },
-    { id: "sapporo", sourceName: "사포로 생맥주", names: { ko: "사포로 생맥주" }, price: 50000, available: true, optionTemplateIds: ["sapporo-size"], optionRules: { "sapporo-size": { required: true, minSelections: 1, maxSelections: 1 } } },
+    { id: "fried", sourceName: "후라이드 치킨", categoryName: "다방치킨", names: { ko: "후라이드 치킨", vi: "Gà rán" }, price: 100000, available: true, optionTemplateIds: [] },
+    { id: "wings", sourceName: "반반 윙봉", categoryName: "날개치킨", names: { ko: "반반 윙봉" }, price: 120000, available: true, optionTemplateIds: ["flavor"], optionRules: { flavor: { required: true, minSelections: 2, maxSelections: 2 } } },
+    { id: "sapporo", sourceName: "사포로 생맥주", categoryName: "주류", names: { ko: "사포로 생맥주" }, price: 50000, available: true, optionTemplateIds: ["sapporo-size"], optionRules: { "sapporo-size": { required: true, minSelections: 1, maxSelections: 1 } } },
   ],
   optionTemplates: [{
     id: "flavor",
@@ -98,8 +98,12 @@ test("voice session uses GPT-Realtime-2.1 Mini as a conversational waiter", asyn
   assert.equal(session.audio.input.turn_detection, null);
   assert.equal(session.audio.output.voice, "marin");
   assert.equal(session.tools[0].name, "prepare_order_review");
+  assert.equal(session.tools[1].name, "list_published_menu");
+  assert.ok(session.tools[1].parameters.properties.categoryName.enum.includes("다방치킨"));
   assert.match(session.instructions, /Do not ask the customer to say yes/);
   assert.match(session.instructions, /button is the final confirmation/);
+  assert.match(session.instructions, /MUST call list_published_menu/);
+  assert.match(session.instructions, /copy only its exactMenuNames/);
   assert.match(session.instructions, /후라이드 치킨/);
 });
 

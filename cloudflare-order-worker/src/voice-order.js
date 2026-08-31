@@ -47,6 +47,10 @@ async function createRealtimeConversation(request, env, fetcher) {
     .filter((keyword, index, rows) => rows.indexOf(keyword) === index)
     .slice(0, 180);
   const catalog = compactCatalog(menuData);
+  const categoryNames = [...new Set((menuData.menus || [])
+    .filter(menu => menu.available !== false)
+    .map(menu => cleanText(menu.categoryName, 120))
+    .filter(Boolean))];
   const session = {
     type: "realtime",
     model: env.VOICE_REALTIME_MODEL || REALTIME_MODEL,
@@ -80,6 +84,23 @@ async function createRealtimeConversation(request, env, fetcher) {
         },
         required: ["orderSummary"],
       },
+    }, {
+      type: "function",
+      name: "list_published_menu",
+      description: "Required before answering which dishes, categories, signature items, recommendations, or available menu items exist. Returns only currently published names that may be spoken to the customer.",
+      parameters: {
+        type: "object",
+        additionalProperties: false,
+        properties: {
+          categoryName: {
+            type: "string",
+            enum: ["ALL_CATEGORIES", ...categoryNames],
+            description: "Use ALL_CATEGORIES to retrieve the exact category list, or one exact category name to retrieve its published items.",
+          },
+          limit: { type: "integer", minimum: 1, maximum: 8 },
+        },
+        required: ["categoryName", "limit"],
+      },
     }],
     tool_choice: "auto",
   };
@@ -109,6 +130,8 @@ function realtimeVoiceInstructions(language, catalog) {
     `Speak in ${languageNames[language] || "the customer's language"}.`,
     "Understand corrections, cancellations, replacements, quantities, short follow-up answers, and ordinary indecision across the whole conversation.",
     "Use only menu and option names present in MENU_CATALOG. Never invent availability, prices, ingredients, sizes, or choices.",
+    "For every question about what dishes exist, categories, recommendations, signature items, popular items, or what the restaurant has, you MUST call list_published_menu before answering. Never answer such a question directly from memory or general restaurant knowledge.",
+    "After list_published_menu returns, copy only its exactMenuNames or exactCategoryNames verbatim. Never translate, combine, approximate, rename, or add a menu name. If the result has no items, say you could not find one and ask the customer to choose a visible category.",
     "When the request is ambiguous or a required option is missing, ask exactly one short, concrete question and give only the relevant available choices.",
     "As soon as the order is complete, call prepare_order_review with every item, quantity, and option. Do not ask the customer to say yes and do not read a final confirmation aloud.",
     "The app will validate the draft and show the customer two buttons: place this order or speak again. The button is the final confirmation.",
@@ -229,6 +252,7 @@ function compactCatalog(menuData) {
   return (menuData.menus || []).filter(menu => menu.available !== false).map(menu => ({
     id: String(menu.id),
     code: cleanText(menu.cukcukCode, 80),
+    categoryName: cleanText(menu.categoryName, 120),
     names: menu.names || { ko: menu.sourceName },
     price: Number(menu.price || 0),
     options: (menu.optionTemplateIds || []).map(templateId => {

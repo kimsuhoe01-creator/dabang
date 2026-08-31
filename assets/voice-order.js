@@ -103,7 +103,13 @@
 
   async function completeRealtimeResponse(response){
     if(!voice.waiter)return;
-    const call=(response?.output||[]).find(item=>item?.type==="function_call"&&item?.name==="prepare_order_review");
+    const output=response?.output||[];
+    const lookupCall=output.find(item=>item?.type==="function_call"&&item?.name==="list_published_menu");
+    if(lookupCall){
+      let args={};try{args=JSON.parse(lookupCall.arguments||"{}") }catch{}
+      sendFunctionResult(lookupCall.call_id,publishedMenuLookup(args));voice.assistantText="";requestRealtimeResponse();return;
+    }
+    const call=output.find(item=>item?.type==="function_call"&&item?.name==="prepare_order_review");
     if(call){
       let args={};try{args=JSON.parse(call.arguments||"{}") }catch{}
       const summary=String(args.orderSummary||"").trim();
@@ -121,6 +127,15 @@
   function sendFunctionResult(callId,value){sendRealtime({type:"conversation.item.create",item:{type:"function_call_output",call_id:callId,output:JSON.stringify(value)}})}
   function requestRealtimeResponse(){sendRealtime({type:"response.create",response:{output_modalities:["audio"]}})}
   function extractResponseText(response){return (response?.output||[]).flatMap(item=>item?.content||[]).map(part=>part?.transcript||part?.text||"").join(" ").trim()}
+  function publishedMenuLookup(args){
+    const requested=String(args?.categoryName||"ALL_CATEGORIES"),limit=Math.max(1,Math.min(8,Number(args?.limit)||6));
+    const categories=(state.categories||[]).filter(category=>category.visible!==false&&(state.menus||[]).some(menu=>menu.available!==false&&menu.cat===category.name));
+    if(requested==="ALL_CATEGORIES")return{kind:"categories",exactCategoryNames:categories.map(category=>localizedNames(category.names)||category.name),instruction:"Speak only these exact category names."};
+    const category=categories.find(row=>row.name===requested||Object.values(row.names||{}).includes(requested));
+    if(!category)return{kind:"items",exactMenuNames:[],exactCategoryNames:categories.map(row=>localizedNames(row.names)||row.name),instruction:"The requested category is not published. Do not invent a name."};
+    const exactMenuNames=(state.menus||[]).filter(menu=>menu.available!==false&&menu.cat===category.name).slice(0,limit).map(menu=>localizedNames(menu.n)||menu.sourceName).filter(Boolean);
+    return{kind:"items",exactCategoryName:localizedNames(category.names)||category.name,exactMenuNames,instruction:"Copy only these exact menu names verbatim. Do not add, rename, translate, or combine items."};
+  }
 
   function createResponseWaiter(){
     return new Promise((resolve,reject)=>{
