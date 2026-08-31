@@ -1,5 +1,17 @@
 # 매장 노트북 인계 — 다방 테이블오더
 
+## 2026-08-31 음성 AI의 미등록 메뉴 답변 차단
+
+- 현장 대화에서 AI가 `토크보키`, `치즈 버터`처럼 공개 메뉴에 없는 이름을 추천하는 문제가 확인됐다. 주문 확정 경로는 UUID 검증을 했지만 일반 메뉴 문의·추천 답변은 Realtime 모델이 직접 말해 검증을 우회한 것이 원인이었다.
+- `list_published_menu` 도구를 추가해 메뉴 종류·카테고리·추천·시그니처·판매 메뉴 질문에는 AI가 반드시 현재 공개 메뉴를 먼저 조회하게 했다.
+- 조회 결과는 태블릿이 현재 표시 중인 카테고리와 판매 가능 메뉴에서 만들며, AI에는 `exactMenuNames`·`exactCategoryNames`만 그대로 말하고 번역·조합·근사 이름·추가 이름을 만들지 말라는 강한 제약을 적용했다. 일치 항목이 없으면 임의 메뉴를 말하지 않고 화면의 카테고리를 선택해 달라고 안내한다.
+- Realtime 세션에 카테고리명을 포함한 실제 공개 카탈로그를 전달한다. 기존 주문 최종 UUID·옵션·가격 검증과 CUKCUK/POS 전송 흐름은 변경하지 않았다.
+- 설치형 태블릿 캐시는 `dabang-tablet-v36`, 음성 자산은 `20260831-v11`이다. 기능 커밋은 `bc2fc07` (`Ground voice menu answers in published catalog`)이다.
+- Cloudflare Worker 배포 버전은 `57056bf0-c8cf-47f2-82d8-889d45dd219a`이며 `/health` 응답을 확인했다.
+- 전체 회귀 테스트 68개, 메뉴 이미지 감사 112개·누락 0, JavaScript 문법 검사와 `git diff --check`를 통과했다. 실제 마이크 대화와 CUKCUK/POS 주문은 제출하지 않았다.
+- 안전 미리보기: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=bc2fc07
+- 매장 실주문 주소: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?source=store-qr&deploy=bc2fc07
+
 ## 2026-08-31 음성 청취 버튼 오조작 방지 배치
 
 - 음성 청취 중 실제 다음 단계인 `말하기 완료`를 검은 테두리·노란 배경의 가장 큰 주 버튼으로 바꾸고, 안내문 바로 다음 위치에 배치했다.
