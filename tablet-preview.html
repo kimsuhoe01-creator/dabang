@@ -11,7 +11,7 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/pwa/icon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/pwa/icon-180.png">
-<link rel="stylesheet" href="assets/voice-order.css?v=20260831-v7">
+<link rel="stylesheet" href="assets/voice-order.css?v=20260831-v8">
 <title>DABANG Chicken Tablet Menu</title>
 <style>
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,"Noto Sans KR","Noto Sans SC","Microsoft YaHei","PingFang SC","Segoe UI",sans-serif;color:#1d1b18;background:#f3eee5}button{font:inherit;cursor:pointer}:root{--red:#ff3344;--yellow:#ffdf00;--black:#111;--cream:#f3eee5;--white:#fff}
@@ -678,7 +678,7 @@ document.addEventListener('keydown',event=>{if(event.key==='Tab'){trapDialogFocu
 
 let deferredInstallPrompt=null,pwaRegistration=null,pwaReloading=false,appUpdatePending=false,appDocumentVersion='';
 const hadServiceWorkerController={value:Boolean(navigator.serviceWorker?.controller)};
-function pwaCanReloadNow(){return !orderSending&&!cartItems.length&&!document.querySelector('.dialog-layer.open')&&!['connecting','listening','processing','clarify'].includes(window.voiceOrderPhase)}
+function pwaCanReloadNow(){return !orderSending&&!cartItems.length&&!document.querySelector('.dialog-layer.open')&&!['connecting','listening','processing','responding','clarify'].includes(window.voiceOrderPhase)}
 function showAppUpdate(){document.getElementById('appUpdateBar').hidden=false}
 function queueAppRefresh(){
  appUpdatePending=true;
@@ -739,6 +739,6 @@ renderLanguageCards();
 loadPublishedMenu();
 loadCukcukTables();
 </script>
-<script src="assets/voice-order.js?v=20260831-v7"></script>
+<script src="assets/voice-order.js?v=20260831-v8"></script>
 </body>
 </html>

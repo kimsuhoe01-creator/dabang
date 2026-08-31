@@ -2,6 +2,7 @@ const OPENAI_API_ROOT = "https://api.openai.com/v1";
 const MAX_TRANSCRIPT_CHARS = 12000;
 const MAX_SDP_CHARS = 100000;
 const MAX_FOLLOW_UP_TURNS = 4;
+const REALTIME_MODEL = "gpt-realtime-2.1-mini";
 
 export async function handleVoiceOrderApi(request, env, allowedOrigins, fetcher = fetch) {
   const url = new URL(request.url);
@@ -16,7 +17,7 @@ export async function handleVoiceOrderApi(request, env, allowedOrigins, fetcher 
   try {
     if (url.pathname === "/api/voice/realtime") {
       if (request.method !== "POST") return json({ ok: false, message: "Method not allowed" }, 405);
-      return createRealtimeTranscription(request, env, fetcher);
+      return createRealtimeConversation(request, env, fetcher);
     }
     if (request.method !== "POST") return json({ ok: false, message: "Method not allowed" }, 405);
     return interpretVoiceOrder(request, env, fetcher);
@@ -29,13 +30,14 @@ export async function handleVoiceOrderApi(request, env, allowedOrigins, fetcher 
   }
 }
 
-async function createRealtimeTranscription(request, env, fetcher) {
+async function createRealtimeConversation(request, env, fetcher) {
   if (!(request.headers.get("Content-Type") || "").toLowerCase().startsWith("application/sdp")) {
     throw serviceError("음성 연결 형식이 올바르지 않습니다.", 415, "VOICE_SDP_REQUIRED");
   }
   const sdp = await request.text();
   if (!sdp || sdp.length > MAX_SDP_CHARS) throw serviceError("음성 연결 정보가 올바르지 않습니다.", 400, "VOICE_SDP_INVALID");
   const tableId = cleanText(request.headers.get("X-Dabang-Table-Id"), 100) || "unselected";
+  const language = cleanText(request.headers.get("X-Dabang-Language"), 12) || "ko";
   const menuData = await fetchMenuData(env, fetcher);
   const keywords = menuData.menus
     .filter(menu => menu.available !== false)
@@ -44,8 +46,12 @@ async function createRealtimeTranscription(request, env, fetcher) {
     .filter(Boolean)
     .filter((keyword, index, rows) => rows.indexOf(keyword) === index)
     .slice(0, 180);
+  const catalog = compactCatalog(menuData);
   const session = {
-    type: "transcription",
+    type: "realtime",
+    model: env.VOICE_REALTIME_MODEL || REALTIME_MODEL,
+    output_modalities: ["audio"],
+    instructions: realtimeVoiceInstructions(language, catalog),
     audio: {
       input: {
         transcription: {
@@ -57,7 +63,25 @@ async function createRealtimeTranscription(request, env, fetcher) {
         },
         turn_detection: null,
       },
+      output: { voice: "marin" },
     },
+    tools: [{
+      type: "function",
+      name: "finalize_order",
+      description: "Use only after the customer explicitly confirms the complete spoken order. Sends a complete natural-language order summary to the app for exact menu and option validation.",
+      parameters: {
+        type: "object",
+        additionalProperties: false,
+        properties: {
+          orderSummary: {
+            type: "string",
+            description: "The complete confirmed order using exact menu and option names from the supplied catalog, including every quantity.",
+          },
+        },
+        required: ["orderSummary"],
+      },
+    }],
+    tool_choice: "auto",
   };
   const form = new FormData();
   form.set("sdp", sdp);
@@ -76,6 +100,23 @@ async function createRealtimeTranscription(request, env, fetcher) {
     throw serviceError("음성 인식 연결을 시작하지 못했습니다.", 502, "VOICE_REALTIME_FAILED");
   }
   return new Response(answer, { status: 200, headers: { "Content-Type": "application/sdp", "Cache-Control": "no-store" } });
+}
+
+function realtimeVoiceInstructions(language, catalog) {
+  const languageNames = { ko: "Korean", vi: "Vietnamese", zh: "Chinese", en: "English" };
+  return [
+    "You are the concise voice-ordering waiter for DABANG Chicken in Vietnam.",
+    `Speak in ${languageNames[language] || "the customer's language"}.`,
+    "Understand corrections, cancellations, replacements, quantities, short follow-up answers, and ordinary indecision across the whole conversation.",
+    "Use only menu and option names present in MENU_CATALOG. Never invent availability, prices, ingredients, sizes, or choices.",
+    "When the request is ambiguous or a required option is missing, ask exactly one short, concrete question and give only the relevant available choices.",
+    "When the order is complete, briefly summarize every item, quantity, and option, then ask the customer to say yes or confirm.",
+    "Call finalize_order only after the customer explicitly confirms that complete summary. Never call it merely because the order sounds complete.",
+    "If the customer changes anything after a summary, update the draft, summarize again, and wait for a new explicit confirmation.",
+    "Keep every spoken reply to at most two short sentences. Do not discuss topics unrelated to this restaurant order.",
+    "If the app reports that validation failed, explain the supplied missing detail in one short question and continue the same conversation.",
+    `MENU_CATALOG=${JSON.stringify(catalog)}`,
+  ].join("\n");
 }
 
 async function interpretVoiceOrder(request, env, fetcher) {

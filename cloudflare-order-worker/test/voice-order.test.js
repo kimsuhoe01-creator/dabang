@@ -70,6 +70,38 @@ test("voice API stays disabled until an OpenAI secret is configured", async () =
   assert.equal((await response.json()).code, "VOICE_NOT_CONFIGURED");
 });
 
+test("voice session uses GPT-Realtime-2.1 Mini as a conversational waiter", async () => {
+  const calls = [];
+  const fetcher = async (url, init = {}) => {
+    calls.push({ url: String(url), init });
+    if (String(url) === "https://menu.test/catalog.json") return Response.json(menuData);
+    if (String(url) === "https://api.openai.com/v1/realtime/calls") return new Response("answer-sdp", { status: 200 });
+    throw new Error(`unexpected URL ${url}`);
+  };
+  const request = new Request("https://worker.test/api/voice/realtime", {
+    method: "POST",
+    headers: {
+      Origin: "https://kimsuhoe01-creator.github.io",
+      "Content-Type": "application/sdp",
+      "X-Dabang-Table-Id": "A-01",
+      "X-Dabang-Language": "ko",
+    },
+    body: "offer-sdp",
+  });
+  const response = await handleVoiceOrderApi(request, { OPENAI_API_KEY: "test-secret", MENU_DATA_URL: "https://menu.test/catalog.json" }, new Set(["https://kimsuhoe01-creator.github.io"]), fetcher);
+  assert.equal(response.status, 200);
+  assert.equal(await response.text(), "answer-sdp");
+  const session = JSON.parse(calls[1].init.body.get("session"));
+  assert.equal(session.type, "realtime");
+  assert.equal(session.model, "gpt-realtime-2.1-mini");
+  assert.deepEqual(session.output_modalities, ["audio"]);
+  assert.equal(session.audio.input.turn_detection, null);
+  assert.equal(session.audio.output.voice, "marin");
+  assert.equal(session.tools[0].name, "finalize_order");
+  assert.match(session.instructions, /explicitly confirms/);
+  assert.match(session.instructions, /후라이드 치킨/);
+});
+
 test("voice interpretation validates the model JSON against the published catalog", async () => {
   const calls = [];
   const fetcher = async (url, init = {}) => {

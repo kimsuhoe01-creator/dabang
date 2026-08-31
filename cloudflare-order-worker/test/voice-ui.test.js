@@ -16,37 +16,43 @@ test("voice ordering stays in the header while the customer browses the menu", (
   assert.match(html, /id="voiceFinishButton"[^>]*onclick="finishVoiceListening\(\)"[^>]*hidden/);
   assert.doesNotMatch(html, /id="voiceModal"/);
   assert.match(source, /listening:"듣는 중 · 취소"/);
-  assert.match(source, /finish:"음성 주문 보내기"/);
+  assert.match(source, /finish:"말하기 완료"/);
 });
 
 test("AI draft opens the existing cart for one final customer confirmation", () => {
-  assert.match(source, /window\.voiceCartReviewActive=true;resetVoiceHeader\(\);showCartSummary/);
+  assert.match(source, /window\.voiceCartReviewActive=true/);
+  assert.match(source, /resetVoiceHeader\(\);showCartSummary\(opener\)/);
   assert.match(source, /cartSend:"맞아요 · 주문 전송"/);
   assert.match(html, /onclick="handleCartSecondary\(\)"/);
   assert.match(html, /onclick="submitOrder\(\)"/);
   assert.doesNotMatch(source, /await submitOrder\(\)/);
 });
 
-test("voice capture streams through WebRTC and commits only when the customer finishes", () => {
+test("voice capture keeps one conversational WebRTC session until the order is confirmed", () => {
   assert.match(source, /new RTCPeerConnection\(\)/);
   assert.match(source, /navigator\.mediaDevices\.getUserMedia/);
   assert.match(source, /\/api\/voice\/realtime/);
+  assert.match(source, /X-Dabang-Language/);
+  assert.match(source, /remoteAudio\.autoplay=true/);
   assert.match(source, /input_audio_buffer\.commit/);
-  assert.match(source, /conversation\.item\.input_audio_transcription\.completed/);
+  assert.match(source, /response\.create/);
+  assert.match(source, /response\.done/);
+  assert.match(source, /function_call[^\n]+finalize_order/);
+  assert.match(source, /function_call_output/);
+  assert.match(source, /input_audio_buffer\.clear/);
   assert.match(source, /const MAX_SECONDS = 90/);
-  assert.match(source, /fetchWithTimeout\(`\$\{API_BASE\}\/api\/voice\/interpret[\s\S]*,12000\)/);
+  assert.match(source, /fetchWithTimeout\(`\$\{API_BASE\}\/api\/voice\/interpret[\s\S]*,15000\)/);
   assert.match(source, /failed to fetch\|networkerror\|load failed/i);
-  assert.match(source, /timeout:"주문 정리가 오래 걸리고 있습니다/);
+  assert.match(source, /timeout:"AI 응답이 오래 걸리고 있습니다/);
 });
 
 test("voice assets are versioned in the offline tablet shell", () => {
-  assert.match(worker, /dabang-tablet-v32/);
-  assert.match(worker, /voice-order\.js\?v=20260831-v7/);
-  assert.match(worker, /voice-order\.css\?v=20260831-v7/);
+  assert.match(worker, /dabang-tablet-v33/);
+  assert.match(worker, /voice-order\.js\?v=20260831-v8/);
+  assert.match(worker, /voice-order\.css\?v=20260831-v8/);
 });
 
 test("clarification retries keep prior voice context and make the AI question prominent", () => {
-  assert.match(source, /context:voice\.followUpContext/);
   assert.match(source, /voice\.followUpContext=result\.followUpContext/);
   assert.match(source, /setPhase\("clarify"/);
   assert.match(source, /continueAnswer:"답변 이어 말하기"/);
@@ -55,8 +61,8 @@ test("clarification retries keep prior voice context and make the AI question pr
   assert.doesNotMatch(css, /@media\(max-width:1040px\)\{\.voice-inline-guide\{display:none/);
   assert.match(html, /id="voiceGuide" role="status" aria-live="polite"/);
   assert.match(source, /window\.voiceOrderPhase=phase/);
-  assert.match(html, /!\['connecting','listening','processing','clarify'\]\.includes\(window\.voiceOrderPhase\)/);
-  assert.match(source, /const keepQuestion=Boolean\(voice\.followUpContext&&voice\.clarificationMessage\)/);
+  assert.match(html, /!\['connecting','listening','processing','responding','clarify'\]\.includes\(window\.voiceOrderPhase\)/);
+  assert.match(source, /const keepQuestion=Boolean\(voice\.clarificationMessage\)/);
   assert.match(source, /guide\.textContent=keepQuestion\?voice\.clarificationMessage:c\.listeningGuide/);
   assert.match(source, /phase==="connecting"[\s\S]*if\(keepQuestion\)\{guide\.hidden=false;guide\.textContent=voice\.clarificationMessage/);
 });
