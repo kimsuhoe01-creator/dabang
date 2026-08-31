@@ -78,7 +78,7 @@ test('preview orders are unmistakably marked as not sent to the POS', () => {
 
   const cartSource = sourceSlice('function renderCartItems()', 'function changeCartQuantity');
   assert.match(cartSource, /PREVIEW_MODE\?words\[lang\]\.previewSend:words\[lang\]\.sendOrder/);
-  assert.match(cartSource, /PREVIEW_MODE\?words\[lang\]\.previewNote:words\[lang\]\.orderNote/);
+  assert.match(cartSource, /PREVIEW_MODE\?words\[lang\]\.previewNote:\(voiceCopy\?\.note\|\|words\[lang\]\.orderNote\)/);
 
   const submitSource = sourceSlice('async function submitOrder()', 'function showOrderSuccess');
   assert.match(submitSource, /if\(PREVIEW_MODE\).*else\{.*const response=await fetch\(ORDER_ENDPOINT/s);
@@ -151,7 +151,8 @@ test('Sapporo draft sizes use independent quantity counters and cart lines', () 
   assert.match(optionSource, /quantityTotal\.replace\('\{n\}',groupTotalQuantity\(group,index\)\)/);
 
   const confirmSource = sourceSlice('function confirmOptions()', 'function selectMenu');
-  assert.match(confirmSource, /quantityConfiguredLines\(selections\)\.forEach\(line=>addConfiguredItem\(menu,line\.selections,line\.quantity,false\)\)/);
+  assert.match(confirmSource, /quantityConfiguredLines\(selections\)\.forEach\(line=>addConfiguredItem\(menu,line\.selections,line\.quantity,false,false\)\)/);
+  assert.match(confirmSource, /animateMenuToCart\(menu\.id\)/);
 
   const mapperSource = sourceSlice('function quantityConfiguredLines', 'function optionLimits');
   const quantityConfiguredLines = new Function(`${mapperSource};return quantityConfiguredLines`)();
@@ -167,6 +168,19 @@ test('Sapporo draft sizes use independent quantity counters and cart lines', () 
   assert.match(cartSource, /key=cartKey\(menu,selections\)/);
   assert.match(cartSource, /existing\.quantity=Math\.min\(99,existing\.quantity\+addQuantity\)/);
   assert.match(cartSource, /quantity:addQuantity/);
+});
+
+test('cart offers explicit line removal, full clearing, and add-to-cart guidance animation', () => {
+  assert.match(html, /id="clearCartButton"[^>]*onclick="clearCartItems\(\)"[^>]*>장바구니 비우기<\/button>/);
+  assert.match(html, /removeItem:'비우기',clearCart:'장바구니 비우기'/);
+  assert.match(html, /class="remove-cart-line"[^>]*onclick="removeCartLine\(\$\{line\.lineId\}\)"/);
+  assert.match(html, /function removeCartLine\(lineId\)/);
+  assert.match(html, /function clearCartItems\(\)/);
+  assert.match(html, /window\.confirm\(words\[lang\]\.clearCartConfirm\)/);
+  assert.match(html, /function animateMenuToCart\(menuId\)/);
+  assert.match(html, /className='cart-fly-item'/);
+  assert.match(html, /function pulseCart\(\)/);
+  assert.match(html, /\.cart\.cart-nudge\{animation:cartNudge/);
 });
 
 function decodeRgbaPng(buffer) {

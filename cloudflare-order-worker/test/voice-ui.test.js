@@ -9,14 +9,21 @@ const html = fs.readFileSync(path.join(root, "tablet-preview.html"), "utf8");
 const source = fs.readFileSync(path.join(root, "assets", "voice-order.js"), "utf8");
 const worker = fs.readFileSync(path.join(root, "service-worker.js"), "utf8");
 
-test("tablet exposes a dedicated voice order review that sends directly after confirmation", () => {
+test("voice ordering stays in the header while the customer browses the menu", () => {
   assert.match(html, /class="voice-order-button"[^>]*onclick="openVoiceOrder\(this\)"/);
-  assert.match(html, /id="voiceModal"/);
-  assert.match(html, /id="voicePrimaryText">듣기 시작<\/span>/);
-  assert.match(source, /send:"맞아요 · 주문 전송"/);
-  assert.match(source, /function sendVoiceOrder\(\)/);
-  assert.match(source, /deactivateDialogLayer\(voiceModal\(\),false\);await submitOrder\(\)/);
-  assert.doesNotMatch(source, /showCartSummary\([^)]*\);\s*await submitOrder/);
+  assert.match(html, /id="voiceGuide">직원에게 말하듯 메뉴판을 보면서 편하게 말씀해 주세요/);
+  assert.match(html, /id="voiceFinishButton"[^>]*onclick="finishVoiceListening\(\)"[^>]*hidden/);
+  assert.doesNotMatch(html, /id="voiceModal"/);
+  assert.match(source, /listening:"듣는 중 · 취소"/);
+  assert.match(source, /finish:"음성 주문 보내기"/);
+});
+
+test("AI draft opens the existing cart for one final customer confirmation", () => {
+  assert.match(source, /window\.voiceCartReviewActive=true;resetVoiceHeader\(\);showCartSummary/);
+  assert.match(source, /cartSend:"맞아요 · 주문 전송"/);
+  assert.match(html, /onclick="handleCartSecondary\(\)"/);
+  assert.match(html, /onclick="submitOrder\(\)"/);
+  assert.doesNotMatch(source, /await submitOrder\(\)/);
 });
 
 test("voice capture streams through WebRTC and commits only when the customer finishes", () => {
@@ -32,7 +39,7 @@ test("voice capture streams through WebRTC and commits only when the customer fi
 });
 
 test("voice assets are versioned in the offline tablet shell", () => {
-  assert.match(worker, /dabang-tablet-v27/);
-  assert.match(worker, /voice-order\.js\?v=20260831-v2/);
-  assert.match(worker, /voice-order\.css\?v=20260831-v2/);
+  assert.match(worker, /dabang-tablet-v29/);
+  assert.match(worker, /voice-order\.js\?v=20260831-v4/);
+  assert.match(worker, /voice-order\.css\?v=20260831-v4/);
 });
