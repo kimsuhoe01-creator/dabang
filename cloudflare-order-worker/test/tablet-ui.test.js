@@ -183,6 +183,23 @@ test('cart offers explicit line removal, full clearing, and add-to-cart guidance
   assert.match(html, /\.cart\.cart-nudge\{animation:cartNudge/);
 });
 
+test('receipt icon shows the selected table current CUKCUK order instead of the local cart', () => {
+  assert.match(html, /id="tableOrderHistoryButton"[^>]*onclick="showTableOrderHistory\(this\)"/);
+  assert.match(html, /id="historyModal"[^>]*onclick="if\(event\.target===this\)closeTableOrderHistory\(\)"/);
+  assert.match(html, /historyCaption:'현재 테이블에 실제 등록된 CUKCUK\/POS 주문입니다\.'/);
+  assert.match(html, /historyCaption:'Đơn thực tế đang được ghi nhận trên CUKCUK\/POS của bàn này\.'/);
+
+  const historySource = sourceSlice('function localizedHistoryMenu(item)', 'function cartLineOptions');
+  assert.match(historySource, /TABLE_ORDER_ENDPOINT/);
+  assert.match(historySource, /method:'GET'/);
+  assert.match(historySource, /'X-Dabang-Table-Id':selectedTable\.id/);
+  assert.match(historySource, /cache:'no-store'/);
+  assert.match(historySource, /historyPayload=result/);
+  assert.match(historySource, /item\.quantity/);
+  assert.match(historySource, /item\.lineTotal/);
+  assert.doesNotMatch(historySource, /cartItems|localStorage|submitOrder/);
+});
+
 function decodeRgbaPng(buffer) {
   const signature = Buffer.from([137, 80, 78, 71, 13, 10, 26, 10]);
   assert.equal(buffer.subarray(0, 8).equals(signature), true, 'invalid PNG signature');

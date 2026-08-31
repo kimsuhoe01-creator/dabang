@@ -1,5 +1,98 @@
 const EMPTY_GUID = "00000000-0000-0000-0000-000000000000";
 
+export async function fetchCukCukTableOrder(env, tableIdValue, fetcher = fetch) {
+  const domain = safeDomain(env.CUKCUK_DOMAIN);
+  const branchId = cleanGuid(env.CUKCUK_BRANCH_ID);
+  const tableId = cleanGuid(tableIdValue);
+  if (!domain || !branchId || !tableId) {
+    throw new SelfOrderError("CUKCUK 테이블 조회 설정이 올바르지 않습니다.", 400, "TABLE_ORDER_CONFIG_INVALID");
+  }
+
+  const sessionId = crypto.randomUUID();
+  const host = `https://${domain}.cukcuk.vn`;
+  const configResponse = await fetcher(`${host}/order-online/Config/GetConfig`, {
+    method: "GET",
+    headers: { Accept: "application/json", Authorization: sessionId },
+  });
+  const configResult = await readResult(configResponse, "QR 설정 조회");
+  const token = typeof configResult?.Token === "string" ? configResult.Token : "";
+  const companyCode = safeDomain(configResult?.CompanyCode || domain);
+  if (!token || !companyCode) {
+    throw new SelfOrderError("CUKCUK QR 인증 정보를 불러오지 못했습니다.", 502, "SELF_ORDER_TOKEN_MISSING");
+  }
+
+  const headers = {
+    Accept: "application/json",
+    "Content-Type": "application/json",
+    AuthorizationKey: token,
+  };
+  const order = await postResult(fetcher, withCompany(
+    `${host}/cukapiv2/orderonline/api/Order/GetOrderByTableID?idTable=${encodeURIComponent(tableId)}&branchID=${encodeURIComponent(branchId)}&qrID=`,
+    companyCode,
+  ), headers, undefined, "QR 테이블 주문 조회");
+  return normalizeTableOrder(order, tableId);
+}
+
+function normalizeTableOrder(order, tableId) {
+  const items = (Array.isArray(order?.ListInventoryItem) ? order.ListInventoryItem : [])
+    .map(normalizeTableOrderItem)
+    .filter(Boolean);
+  const calculatedTotal = items.reduce((sum, item) => sum + item.lineTotal, 0);
+  const reportedTotal = positiveNumber(order?.TotalAmount) || positiveNumber(order?.Amount);
+  return {
+    table: { id: tableId, name: cleanLabel(order?.TableName, 80) },
+    hasOrder: items.length > 0,
+    total: reportedTotal || calculatedTotal,
+    items,
+    refreshedAt: new Date().toISOString(),
+  };
+}
+
+function normalizeTableOrderItem(item) {
+  const quantity = positiveNumber(item?.BuyQuantity);
+  const menuId = cleanGuid(item?.InventoryItemID);
+  if (!menuId || !quantity) return null;
+  const options = [];
+  let optionTotal = 0;
+  for (const category of Array.isArray(item?.InventoryItemAdditionsCategory) ? item.InventoryItemAdditionsCategory : []) {
+    for (const addition of Array.isArray(category?.InventoryItemAdditions) ? category.InventoryItemAdditions : []) {
+      const optionQuantity = positiveNumber(addition?.BuyQuantity);
+      if (!addition?.Selected && !optionQuantity) continue;
+      const additionalPrice = Math.max(0, Number(addition?.UnitPrice) || 0);
+      optionTotal += additionalPrice * Math.max(1, optionQuantity);
+      options.push({
+        additionId: cleanGuid(addition?.InventoryItemAdditionID),
+        name: cleanLabel(addition?.Description, 160),
+        groupName: cleanLabel(category?.InventoryItemCategoryAdditionName, 120),
+        quantity: Math.max(1, optionQuantity),
+        additionalPrice,
+      });
+    }
+  }
+  const basePrice = item?.IsDiscount
+    ? Math.max(0, Number(item?.DiscountPrice) || 0)
+    : Math.max(0, Number(item?.UnitPriceDelivery ?? item?.UnitPrice) || 0);
+  const reportedUnitPrice = Math.max(0, Number(item?.UnitPriceAddtion) || 0);
+  const unitPrice = reportedUnitPrice || basePrice + optionTotal;
+  return {
+    menuId,
+    name: cleanLabel(item?.InventoryItemName, 240),
+    quantity,
+    unitPrice,
+    lineTotal: unitPrice * quantity,
+    options,
+  };
+}
+
+function positiveNumber(value) {
+  const number = Number(value);
+  return Number.isFinite(number) && number > 0 ? number : 0;
+}
+
+function cleanLabel(value, maxLength) {
+  return typeof value === "string" ? value.replace(/[\u0000-\u001f\u007f]+/g, " ").replace(/\s+/g, " ").trim().slice(0, maxLength) : "";
+}
+
 export async function submitCukCukSelfOrder(env, order, _tableName, _existingOrderId, fetcher = fetch) {
   const domain = safeDomain(env.CUKCUK_DOMAIN);
   const branchId = cleanGuid(env.CUKCUK_BRANCH_ID);

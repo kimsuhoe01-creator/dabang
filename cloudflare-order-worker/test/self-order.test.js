@@ -1,11 +1,69 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { submitCukCukSelfOrder } from "../src/self-order.js";
+import { fetchCukCukTableOrder, submitCukCukSelfOrder } from "../src/self-order.js";
 
 const env = {
   CUKCUK_DOMAIN: "dabang",
   CUKCUK_BRANCH_ID: "430a00af-29db-4f30-b8f8-e87bdb793ab0",
 };
+
+test("reads the current CUKCUK/POS order for one table without changing it", async () => {
+  const calls = [];
+  const tableId = "a7c94545-534d-400e-a21e-3e4ac824323c";
+  const fetcher = async (input, init = {}) => {
+    const url = String(input);
+    calls.push({ url, init });
+    if (url.endsWith("/order-online/Config/GetConfig")) {
+      return response({ Success: true, Data: { Token: "public-session-token", CompanyCode: "dabang" } });
+    }
+    assert.match(url, /GetOrderByTableID/);
+    assert.equal(init.method, "POST");
+    assert.equal(init.body, undefined);
+    assert.equal(init.headers.AuthorizationKey, "public-session-token");
+    return response({ Success: true, Data: {
+      TableName: "D-3",
+      TotalAmount: 165000,
+      ListInventoryItem: [{
+        InventoryItemID: "e9e75a8d-cb9d-442b-8f57-08c06421f56f",
+        InventoryItemName: "Sapporo draft",
+        BuyQuantity: 2,
+        UnitPriceDelivery: 77000,
+        UnitPriceAddtion: 82500,
+        InventoryItemAdditionsCategory: [{
+          InventoryItemCategoryAdditionName: "Size",
+          InventoryItemAdditions: [
+            { InventoryItemAdditionID: "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa", Description: "330cc", Selected: false, BuyQuantity: 0, UnitPrice: 0 },
+            { InventoryItemAdditionID: "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb", Description: "640cc", Selected: true, BuyQuantity: 1, UnitPrice: 5500 },
+          ],
+        }],
+      }],
+      ListInventoryItemTemp: [{ InventoryItemName: "must not be returned" }],
+    } });
+  };
+
+  const result = await fetchCukCukTableOrder(env, tableId, fetcher);
+
+  assert.equal(calls.length, 2);
+  assert.equal(result.table.id, tableId);
+  assert.equal(result.table.name, "D-3");
+  assert.equal(result.hasOrder, true);
+  assert.equal(result.total, 165000);
+  assert.equal(result.items.length, 1);
+  assert.deepEqual(result.items[0], {
+    menuId: "e9e75a8d-cb9d-442b-8f57-08c06421f56f",
+    name: "Sapporo draft",
+    quantity: 2,
+    unitPrice: 82500,
+    lineTotal: 165000,
+    options: [{
+      additionId: "bbbbbbbb-bbbb-4bbb-8bbb-bbbbbbbbbbbb",
+      name: "640cc",
+      groupName: "Size",
+      quantity: 1,
+      additionalPrice: 5500,
+    }],
+  });
+});
 
 test("submits a table cart through the native CUKCUK self-order sequence", async () => {
   const calls = [];

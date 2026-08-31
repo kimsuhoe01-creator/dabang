@@ -1,5 +1,5 @@
 import { createOrAppendCukCukOrder, validateAndBuildOrder } from "./order.js";
-import { submitCukCukSelfOrder } from "./self-order.js";
+import { fetchCukCukTableOrder, submitCukCukSelfOrder } from "./self-order.js";
 import { expandMenuImage } from "./image-edit.js";
 import { handleStoreApi } from "./gpt-api.js";
 import { handleVoiceOrderApi } from "./voice-order.js";
@@ -26,6 +26,23 @@ export default {
         return cors(request, json({ ok: false, code: "ORIGIN_NOT_ALLOWED", message: "허용되지 않은 관리자 요청입니다." }, 403));
       }
       return cors(request, await expandMenuImage(request, env));
+    }
+
+    if (url.pathname === "/api/cukcuk/table-order" && request.method === "GET") {
+      if (!ALLOWED_ORIGINS.has(request.headers.get("Origin") || "")) {
+        return cors(request, json({ ok: false, code: "ORIGIN_NOT_ALLOWED", message: "허용되지 않은 테이블 조회 요청입니다." }, 403));
+      }
+      try {
+        const result = await fetchCukCukTableOrder(env, request.headers.get("X-Dabang-Table-Id"));
+        return cors(request, json({ ok: true, ...result }));
+      } catch (error) {
+        const status = Number.isInteger(error?.status) ? error.status : 502;
+        return cors(request, json({
+          ok: false,
+          code: typeof error?.code === "string" ? error.code : "TABLE_ORDER_ERROR",
+          message: error instanceof Error ? error.message : "테이블 주문 내역을 불러오지 못했습니다.",
+        }, status));
+      }
     }
 
     if (url.pathname !== "/api/cukcuk/order" || request.method !== "POST") {
@@ -198,7 +215,7 @@ function cors(request, response) {
   if (origin && ALLOWED_ORIGINS.has(origin)) {
     response.headers.set("Access-Control-Allow-Origin", origin);
     response.headers.set("Vary", "Origin");
-    response.headers.set("Access-Control-Allow-Methods", "POST, OPTIONS");
+    response.headers.set("Access-Control-Allow-Methods", "GET, POST, OPTIONS");
     response.headers.set("Access-Control-Allow-Headers", "Authorization, Content-Type, X-Dabang-Table-Id, X-Dabang-Language");
   }
   return response;
