@@ -10,9 +10,11 @@
 - 공개 화면 검증에서 후속 해석이 기존 8초 제한을 근소하게 넘는 경우를 확인해 해석 제한을 12초로 조정했다. 음성 연결·듣기·처리·추가 질문 중에는 새 서비스워커가 설치돼도 주문 대화를 자동 새로고침하지 않고 완료 뒤 갱신한다.
 - 직전 초안에 미확정 필수 옵션이 정확히 1개이고 손님의 짧은 답변이 공개 선택지 하나와 정확히 일치하면, 모델을 다시 호출하지 않고 서버가 그 실제 옵션 ID를 즉시 채운다. `640cc로 주세요` 회귀 테스트에서 사포로 생맥주 2잔과 640cc가 추가 모델 호출 없이 확정된다.
 - 서비스워커 캐시는 `dabang-tablet-v31`, 음성 자산은 `20260831-v6`다.
-- 기능 커밋: `7008a6d` (`Preserve voice clarification context`)
+- 기능 커밋: `7008a6d` (`Preserve voice clarification context`), `d8f6838` (`Keep voice follow-ups active through slow responses`), `572b795` (`Resolve exact voice option follow-ups`), `659f545` (`Keep the last resolved voice draft`)
 - Cloudflare Worker 배포 버전: `d4ebfbb7-1bce-4a4d-ba9b-2069a13bbe81`
 - 주문 Worker·태블릿 UI 전체 테스트 67개, 메뉴 이미지 감사 112개·누락 0, `git diff --check`를 통과했다.
+- 공개 안전 미리보기에서 `사포로 생맥주 두 잔` → 용량 추가 질문 → `640cc` 한 번 답변 뒤 장바구니에 사포로 생맥주 2잔, 640cc, 합계 330,000동이 즉시 열린 것을 확인했다. 실제 POS 주문은 전송하지 않았다.
+- 안전 미리보기: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=659f545
 
 ## 2026-08-30 CUKCUK 실제 테이블 QR 경로 기본 적용 완료
 
