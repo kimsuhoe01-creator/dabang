@@ -7,7 +7,7 @@
     zh: { button:"语音点餐", guide:"请一边查看菜单，一边像对服务员一样自然说出您的订单。", connecting:"正在连接语音点餐…", listening:"正在收听 · 取消", listeningGuide:"正在收听。请查看菜单，也可以自然说出取消或修改内容。", finish:"发送语音订单", processing:"正在整理您说的订单…", retry:"重试", continueAnswer:"继续回答", empty:"没有听到订单内容。", unavailable:"目前无法连接语音点餐服务器，请稍后重试。", timeout:"订单整理时间过长，请重新说一次。", failed:"无法处理语音订单，请重新说。", cartBusy:"请在购物车为空时开始语音点餐。", mic:"请允许使用麦克风。", mockLabel:"预览用点餐语句", cartTitle:"请确认您刚才说的订单", cartCaption:"内容正确时，请点击下方的发送订单按钮。", cartRetry:"重新说", cartSend:"正确 · 发送订单", cartNote:"点击后会将此内容直接发送到 POS。请确认菜品、选项和数量。" },
     en: { button:"Voice order", guide:"Browse the menu and speak naturally, just as you would to a staff member.", connecting:"Connecting voice ordering…", listening:"Listening · Cancel", listeningGuide:"Listening now. Keep browsing and say any cancellations or changes naturally.", finish:"Send voice order", processing:"Organizing what you said…", retry:"Try again", continueAnswer:"Answer and continue", empty:"I could not hear an order.", unavailable:"The voice ordering server cannot be reached right now. Please try again shortly.", timeout:"Organizing the order is taking too long. Please say it again.", failed:"The voice order could not be processed. Please try again.", cartBusy:"Please start voice ordering with an empty cart.", mic:"Please allow microphone access.", mockLabel:"Preview voice order", cartTitle:"Please check the order you just said", cartCaption:"If this is correct, tap the send order button below.", cartRetry:"Say it again", cartSend:"Yes · Send order", cartNote:"Tapping the button sends this order directly to the POS. Check items, options, and quantities first." },
   };
-  const voice = { phase:"idle", peer:null, channel:null, stream:null, transcript:"", partial:"", completion:null, timer:null, startedAt:0, busy:false, mock:false, opener:null, followUpContext:null };
+  const voice = { phase:"idle", peer:null, channel:null, stream:null, transcript:"", partial:"", completion:null, timer:null, startedAt:0, busy:false, mock:false, opener:null, followUpContext:null, clarificationMessage:"" };
   window.voiceCartReviewActive = false;
 
   function t(){ return copy[lang] || copy.ko; }
@@ -17,18 +17,23 @@
     voice.phase=phase;
     window.voiceOrderPhase=phase;
     const c=t(),button=el("voiceOrderButton"),finish=el("voiceFinishButton"),guide=el("voiceGuide"),status=el("voiceInlineStatus"),mockBar=el("voiceMockBar");
+    if(phase==="clarify"&&message)voice.clarificationMessage=message;
+    const keepQuestion=Boolean(voice.followUpContext&&voice.clarificationMessage);
     button.hidden=false;button.disabled=false;button.classList.remove("is-listening");guide.classList.remove("is-clarification","is-error");finish.hidden=true;status.hidden=true;mockBar.hidden=true;
     if(phase==="idle"){
+      voice.clarificationMessage="";
       guide.hidden=false;guide.textContent=c.guide;el("voiceButtonText").textContent=c.button;el("voiceTimer").textContent="00:00";
     }else if(phase==="connecting"){
-      guide.hidden=true;button.disabled=true;el("voiceButtonText").textContent=c.connecting;status.hidden=false;el("voiceInlineStatusText").textContent=c.connecting;
+      button.disabled=true;el("voiceButtonText").textContent=c.connecting;
+      if(keepQuestion){guide.hidden=false;guide.textContent=voice.clarificationMessage;guide.classList.add("is-clarification")}
+      else{guide.hidden=true;status.hidden=false;el("voiceInlineStatusText").textContent=c.connecting}
     }else if(phase==="listening"){
-      guide.hidden=false;guide.textContent=c.listeningGuide;button.classList.add("is-listening");el("voiceButtonText").textContent=c.listening;finish.hidden=false;updateTimerText();
+      guide.hidden=false;guide.textContent=keepQuestion?voice.clarificationMessage:c.listeningGuide;if(keepQuestion)guide.classList.add("is-clarification");button.classList.add("is-listening");el("voiceButtonText").textContent=c.listening;finish.hidden=false;updateTimerText();
       if(voice.mock){mockBar.hidden=false;el("voiceMockLabel").textContent=c.mockLabel;el("voiceMockSend").textContent=c.finish}
     }else if(phase==="processing"){
       guide.hidden=true;button.hidden=true;finish.hidden=true;status.hidden=false;el("voiceInlineStatusText").textContent=message||c.processing;
     }else if(phase==="clarify"){
-      guide.hidden=false;guide.textContent=message||c.failed;guide.classList.add("is-clarification");el("voiceButtonText").textContent=c.continueAnswer;
+      guide.hidden=false;guide.textContent=voice.clarificationMessage||message||c.failed;guide.classList.add("is-clarification");el("voiceButtonText").textContent=c.continueAnswer;
     }else{
       guide.hidden=false;guide.textContent=message||c.failed;guide.classList.add("is-error");el("voiceButtonText").textContent=c.retry;
     }

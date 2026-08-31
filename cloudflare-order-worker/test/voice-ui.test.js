@@ -40,9 +40,9 @@ test("voice capture streams through WebRTC and commits only when the customer fi
 });
 
 test("voice assets are versioned in the offline tablet shell", () => {
-  assert.match(worker, /dabang-tablet-v31/);
-  assert.match(worker, /voice-order\.js\?v=20260831-v6/);
-  assert.match(worker, /voice-order\.css\?v=20260831-v6/);
+  assert.match(worker, /dabang-tablet-v32/);
+  assert.match(worker, /voice-order\.js\?v=20260831-v7/);
+  assert.match(worker, /voice-order\.css\?v=20260831-v7/);
 });
 
 test("clarification retries keep prior voice context and make the AI question prominent", () => {
@@ -56,4 +56,7 @@ test("clarification retries keep prior voice context and make the AI question pr
   assert.match(html, /id="voiceGuide" role="status" aria-live="polite"/);
   assert.match(source, /window\.voiceOrderPhase=phase/);
   assert.match(html, /!\['connecting','listening','processing','clarify'\]\.includes\(window\.voiceOrderPhase\)/);
+  assert.match(source, /const keepQuestion=Boolean\(voice\.followUpContext&&voice\.clarificationMessage\)/);
+  assert.match(source, /guide\.textContent=keepQuestion\?voice\.clarificationMessage:c\.listeningGuide/);
+  assert.match(source, /phase==="connecting"[\s\S]*if\(keepQuestion\)\{guide\.hidden=false;guide\.textContent=voice\.clarificationMessage/);
 });
