@@ -397,7 +397,7 @@ C:\Users\Admin\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin
 - AI가 비슷한 메뉴를 임의로 고르거나 필수 옵션을 빠뜨리면 전송을 막고 재확인 질문을 표시한다.
 - 최종 메뉴·옵션·가격은 Worker가 현재 공개 메뉴 JSON으로 다시 검증하므로 모델이 만든 임의 ID나 가격은 주문으로 넘어갈 수 없다.
 - 실제 OpenAI 키는 코드·Git·문서에 넣지 않는다. 활성화할 때 Cloudflare Worker Secret `OPENAI_API_KEY`로만 설정한다.
-- 현재 컴퓨터 환경에는 `OPENAI_API_KEY`가 없으므로 실제 마이크/API 연결 시험과 실매장 배포는 아직 하지 않았다.
+- OpenAI 전용 키는 Cloudflare Worker Secret `OPENAI_API_KEY`로 등록했으며 코드·Git·로컬 파일에는 저장하지 않았다.
 - 실제 활성화 전에는 OpenAI 프로젝트 예산 상한과 Cloudflare 요청 제한을 먼저 설정해 공개 주소의 비용 남용을 막는다.
 - 손님 화면은 한국어·베트남어·중국어·영어를 지원하고, 네트워크 실패·8초 정리 시간 초과 문구도 각 언어로 표시한다.
 - 미리보기 QA 주소는 로컬에서 `tablet-preview.html?preview=1&voiceMock=1`을 사용한다. 이 모드는 음성 대신 문장을 입력할 수 있으며 실제 POS 주문을 보내지 않는다.
@@ -413,4 +413,6 @@ C:\Users\Admin\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin
 - 오프라인 캐시는 `dabang-tablet-v29`, 음성 UI 자산은 `20260831-v4`로 갱신했다.
 - 로컬 1280×800 안전 미리보기에서 메뉴 1개 담기, 행별 비우기 노출, 하단 3개 버튼 정렬, 대기 중 음성 전송 버튼 숨김을 확인했다. 실제 POS 주문은 보내지 않았다.
 - 주문 워커·레이아웃·UI 테스트는 63개 전부 통과했다.
-- 이 후속 UI는 아직 `main`과 매장 공개 주소에는 배포하지 않았다.
+- Cloudflare Worker에 음성 API를 배포했다. 배포 버전은 `12467d1b-d647-4d10-8afe-dcad3e5f4e8c`이다.
+- 실제 OpenAI Responses API로 `호세 쿠에르보 실버 데킬라 하이볼 한 잔`을 시험해 메뉴 UUID 1개, 수량 1개, 추가 질문 0개로 정확히 연결되는 것을 확인했다. 이 검증은 POS 주문을 전송하지 않았다.
+- OpenAI 공식 문서에서 `gpt-live-transcribe`의 실시간 전사와 `gpt-5.6-luna`의 Responses API·구조화 출력 지원을 재확인했다.
