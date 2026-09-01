@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-08-31 22:48:33",
-    "finished_at": "2026-08-31 22:48:42",
+    "started_at": "2026-09-01 01:25:00",
+    "finished_at": "2026-09-01 01:25:09",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -1279,9 +1279,9 @@
       "sourceName": "양념  Sweet & Spicy Chicken  韩式甜酱炸鸡 Gà sốt ngọt HQ",
       "names": {
         "ko": "양념 치킨",
-        "vi": "Gà sốt ngọt Hàn Quốc",
+        "vi": "Gà sốt ngọt kiểu Hàn",
         "zh": "韩式甜酱炸鸡",
-        "en": "Korean Sweet Sauce Chicken"
+        "en": "Sweet & Spicy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1301,9 +1301,9 @@
       "sourceName": "매운양념  Hot & Spicy Chicken韩式辣酱炸鸡  Gà sốt cay HQ",
       "names": {
         "ko": "매운 양념 치킨",
-        "vi": "Gà sốt cay Hàn Quốc",
+        "vi": "Gà sốt cay kiểu Hàn",
         "zh": "韩式辣酱炸鸡",
-        "en": "Korean Spicy Sauce Chicken"
+        "en": "Hot & Spicy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1347,7 +1347,7 @@
         "ko": "고추마늘간장 치킨",
         "vi": "Gà sốt xì dầu tỏi ớt",
         "zh": "辣椒蒜酱鸡",
-        "en": "Chili Garlic Soy Chicken"
+        "en": "Garlic Soy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -5227,6 +5227,6 @@
     "cacheHits": 288,
     "translated": 11,
     "pendingCount": 0,
-    "updatedAt": "2026-08-31T22:48:59.253Z"
+    "updatedAt": "2026-09-01T01:25:22.504Z"
   }
 }
