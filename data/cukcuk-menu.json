@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-09-02 09:54:28",
-    "finished_at": "2026-09-02 09:54:38",
+    "started_at": "2026-09-02 13:53:54",
+    "finished_at": "2026-09-02 13:54:49",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -1281,7 +1281,7 @@
         "ko": "양념 치킨",
         "vi": "Gà sốt ngọt kiểu Hàn",
         "zh": "韩式甜酱炸鸡",
-        "en": "Sweet & Spicy Chicken"
+        "en": "Korean Sweet Sauce Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1303,7 +1303,7 @@
         "ko": "매운 양념 치킨",
         "vi": "Gà sốt cay kiểu Hàn",
         "zh": "韩式辣酱炸鸡",
-        "en": "Hot & Spicy Chicken"
+        "en": "Korean Spicy Sauce Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1346,8 +1346,8 @@
       "names": {
         "ko": "고추마늘간장 치킨",
         "vi": "Gà sốt xì dầu tỏi ớt",
-        "zh": "辣椒蒜酱鸡",
-        "en": "Garlic Soy Chicken"
+        "zh": "辣椒蒜香酱油鸡",
+        "en": "Chili Garlic Soy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1369,7 +1369,7 @@
         "ko": "스리라차 어니언 치킨",
         "vi": "Gà sốt kem hành Sriracha",
         "zh": "是拉差洋葱奶油炸鸡",
-        "en": "Sriracha Onion Chicken"
+        "en": "Sriracha Onion Cream Chicken"
       },
       "price": 399600,
       "available": true,
@@ -5227,6 +5227,6 @@
     "cacheHits": 288,
     "translated": 11,
     "pendingCount": 0,
-    "updatedAt": "2026-09-02T09:54:54.011Z"
+    "updatedAt": "2026-09-02T13:55:07.920Z"
   }
 }
