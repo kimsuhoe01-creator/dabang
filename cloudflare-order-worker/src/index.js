@@ -153,13 +153,33 @@ export class TableOrderCoordinator {
     }
     if (url.pathname === "/state" && request.method === "POST") {
       const payload = await request.json();
-      return json(await writeAvailabilityStorage(this.ctx.storage, payload?.menuId, payload?.available));
+      const task = this.queue.then(() => this.updateAvailability(payload));
+      this.queue = task.catch(() => undefined);
+      return task;
     }
     if (request.method !== "POST") return json({ ok: false, message: "Method not allowed" }, 405);
     const payload = await request.json();
     const task = this.queue.then(() => this.submit(payload));
     this.queue = task.catch(() => undefined);
     return task;
+  }
+
+  async updateAvailability(payload) {
+    try {
+      return json(await writeAvailabilityStorage(this.ctx.storage, payload?.menuId, payload?.available, {
+        expiresAt: payload?.expiresAt,
+        reason: payload?.reason,
+        menuName: payload?.menuName,
+        actor: payload?.actor,
+        requestId: payload?.requestId,
+      }));
+    } catch (error) {
+      return json({
+        ok: false,
+        code: "INVALID_AVAILABILITY",
+        message: error instanceof Error ? error.message : "판매상태 요청을 확인해 주세요.",
+      }, 400);
+    }
   }
 
   async submit({ order, tableName, submissionFingerprint, transport }) {

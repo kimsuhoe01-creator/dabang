@@ -19,6 +19,9 @@ const CHICKEN_PIZZA_SET_IDS = [
 ];
 const AVAILABILITY_OBJECT_NAME = "__dabang_menu_availability__";
 const INTERNAL_URL = "https://availability.internal/state";
+const MAX_AUDIT_EVENTS = 100;
+const MAX_MANUAL_HOLD_MS = 14 * 24 * 60 * 60 * 1000;
+const MAX_MANUAL_ENTRIES = 200;
 
 export async function handleAvailabilityApi(request, env, allowedOrigins) {
   const url = new URL(request.url);
@@ -41,20 +44,49 @@ export async function handleAvailabilityApi(request, env, allowedOrigins) {
     if (!menuId || typeof payload?.available !== "boolean") {
       return json({ ok: false, code: "INVALID_AVAILABILITY", message: "메뉴와 판매상태를 확인해 주세요." }, 400);
     }
-    const state = await writeManualAvailability(env, menuId, payload.available);
-    return json({ ok: true, ...buildAvailabilitySnapshot(state.manualUnavailableMenuIds) });
+    const state = await setManualAvailability(env, menuId, payload.available, {
+      actor: "tablet-admin",
+      reason: payload?.reason,
+      menuName: payload?.menuName,
+      expiresAt: payload?.expiresAt,
+      requestId: payload?.requestId,
+    });
+    return json({ ok: true, ...buildAvailabilitySnapshot(state) });
   } catch (error) {
     return json({ ok: false, code: "AVAILABILITY_UPDATE_FAILED", message: "판매상태를 저장하지 못했습니다." }, 502);
   }
 }
 
 export async function getAvailabilitySnapshot(env, now = new Date()) {
-  const state = await readManualAvailability(env);
-  return buildAvailabilitySnapshot(state.manualUnavailableMenuIds, now);
+  const state = await readManualAvailability(env, now);
+  return buildAvailabilitySnapshot(state, now);
 }
 
-export function buildAvailabilitySnapshot(manualUnavailableMenuIds = [], now = new Date()) {
-  const manual = [...new Set((Array.isArray(manualUnavailableMenuIds) ? manualUnavailableMenuIds : []).map(cleanGuid).filter(Boolean))];
+export async function getManualAvailabilityState(env, now = new Date()) {
+  return readManualAvailability(env, now);
+}
+
+export async function setManualAvailability(env, menuId, available, options = {}) {
+  if (!env.TABLE_ORDERS?.getByName) throw new Error("availability storage unavailable");
+  const coordinator = env.TABLE_ORDERS.getByName(AVAILABILITY_OBJECT_NAME);
+  const response = await coordinator.fetch(INTERNAL_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ menuId, available, ...options }),
+  });
+  if (!response.ok) {
+    const result = await response.json().catch(() => ({}));
+    const error = new Error(result?.message || "availability storage update failed");
+    error.status = response.status;
+    error.code = result?.code || "AVAILABILITY_UPDATE_FAILED";
+    throw error;
+  }
+  return response.json();
+}
+
+export function buildAvailabilitySnapshot(manualStateOrIds = [], now = new Date()) {
+  const state = normalizeState(manualStateOrIds, now);
+  const manual = state.manualUnavailableMenuIds;
   const schedule = scheduleAt(now);
   const scheduled = schedule.closed ? [SAPPORO_ONE_PLUS_ONE_ID] : [];
   const categoryClosures = storeDateAt(now) === SPACE_PIZZA_DAY_OFF_DATE ? [{
@@ -76,6 +108,10 @@ export function buildAvailabilitySnapshot(manualUnavailableMenuIds = [], now = n
     },
   }] : [];
   const closureUnavailable = categoryClosures.flatMap(closure => closure.menuIds);
+  const manualExpiryChangeInMs = state.manualEntries.reduce((soonest, entry) => {
+    if (!entry.expiresAt) return soonest;
+    return Math.min(soonest, Math.max(1000, Date.parse(entry.expiresAt) - now.getTime()));
+  }, Number.POSITIVE_INFINITY);
   return {
     timeZone: STORE_TIME_ZONE,
     generatedAt: now.toISOString(),
@@ -84,7 +120,7 @@ export function buildAvailabilitySnapshot(manualUnavailableMenuIds = [], now = n
     closureUnavailableMenuIds: closureUnavailable,
     unavailableMenuIds: [...new Set([...manual, ...scheduled, ...closureUnavailable])],
     categoryClosures,
-    nextScheduleChangeInMs: Math.min(schedule.nextChangeInMs, millisecondsUntilNextStoreDay(now)),
+    nextScheduleChangeInMs: Math.min(schedule.nextChangeInMs, millisecondsUntilNextStoreDay(now), manualExpiryChangeInMs),
   };
 }
 
@@ -99,41 +135,51 @@ export function applyAvailabilityToMenuData(menuData, snapshot) {
   };
 }
 
-export async function readAvailabilityStorage(storage) {
+export async function readAvailabilityStorage(storage, now = new Date()) {
   const state = await storage.get("menuAvailability");
-  return normalizeState(state);
+  return normalizeState(state, now);
 }
 
-export async function writeAvailabilityStorage(storage, menuIdValue, available) {
+export async function writeAvailabilityStorage(storage, menuIdValue, available, options = {}, now = new Date()) {
   const menuId = cleanGuid(menuIdValue);
   if (!menuId || typeof available !== "boolean") throw new Error("invalid availability state");
-  const state = await readAvailabilityStorage(storage);
-  const unavailable = new Set(state.manualUnavailableMenuIds);
-  if (available) unavailable.delete(menuId);
-  else unavailable.add(menuId);
-  const next = { manualUnavailableMenuIds: [...unavailable], updatedAt: new Date().toISOString() };
+  const state = await readAvailabilityStorage(storage, now);
+  const requestId = cleanLimitedText(options?.requestId, 100);
+  if (requestId && !/^[A-Za-z0-9_-]{8,100}$/.test(requestId)) throw new Error("invalid request id");
+  const replay = requestId ? state.auditLog.find(event => event.requestId === requestId) : null;
+  if (replay) {
+    if (replay.menuId !== menuId || replay.available !== available) {
+      throw new Error("request id was already used for another availability operation");
+    }
+    return { ...state, replayed: true, operation: replay };
+  }
+
+  const entries = new Map(state.manualEntries.map(entry => [entry.menuId, entry]));
+  if (!available && !entries.has(menuId) && entries.size >= MAX_MANUAL_ENTRIES) throw new Error("too many active availability entries");
+  const changedAt = now.toISOString();
+  const expiresAt = available ? null : normalizeFutureExpiry(options?.expiresAt, now);
+  const reason = cleanLimitedText(options?.reason, 200);
+  const menuName = cleanLimitedText(options?.menuName, 160);
+  const actor = cleanLimitedText(options?.actor, 80) || "unknown";
+  if (available) entries.delete(menuId);
+  else entries.set(menuId, { menuId, menuName, expiresAt, reason, actor, changedAt });
+
+  const operation = { requestId: requestId || null, menuId, menuName, available, expiresAt, reason, actor, changedAt };
+  const next = {
+    manualEntries: [...entries.values()],
+    auditLog: [...state.auditLog, operation].slice(-MAX_AUDIT_EVENTS),
+    updatedAt: changedAt,
+  };
   await storage.put("menuAvailability", next);
-  return next;
+  return { ...normalizeState(next, now), replayed: false, operation };
 }
 
-async function readManualAvailability(env) {
+async function readManualAvailability(env, now = new Date()) {
   if (!env.TABLE_ORDERS?.getByName) return normalizeState(null);
   const coordinator = env.TABLE_ORDERS.getByName(AVAILABILITY_OBJECT_NAME);
   const response = await coordinator.fetch(INTERNAL_URL, { method: "GET" });
   if (!response.ok) throw new Error("availability storage unavailable");
-  return normalizeState(await response.json());
-}
-
-async function writeManualAvailability(env, menuId, available) {
-  if (!env.TABLE_ORDERS?.getByName) throw new Error("availability storage unavailable");
-  const coordinator = env.TABLE_ORDERS.getByName(AVAILABILITY_OBJECT_NAME);
-  const response = await coordinator.fetch(INTERNAL_URL, {
-    method: "POST",
-    headers: { "Content-Type": "application/json" },
-    body: JSON.stringify({ menuId, available }),
-  });
-  if (!response.ok) throw new Error("availability storage update failed");
-  return normalizeState(await response.json());
+  return normalizeState(await response.json(), now);
 }
 
 function scheduleAt(now) {
@@ -189,11 +235,63 @@ async function digest(value) {
   return new Uint8Array(await crypto.subtle.digest("SHA-256", new TextEncoder().encode(value)));
 }
 
-function normalizeState(value) {
+function normalizeState(value, now = new Date()) {
+  const legacyIds = Array.isArray(value)
+    ? value
+    : (Array.isArray(value?.manualUnavailableMenuIds) ? value.manualUnavailableMenuIds : []);
+  const rawEntries = Array.isArray(value?.manualEntries)
+    ? value.manualEntries
+    : legacyIds.map(menuId => ({ menuId, expiresAt: null, reason: "", actor: "legacy", changedAt: value?.updatedAt || null }));
+  const entries = new Map();
+  for (const raw of rawEntries) {
+    const menuId = cleanGuid(raw?.menuId);
+    if (!menuId) continue;
+    const expiryText = typeof raw?.expiresAt === "string" ? raw.expiresAt.trim() : "";
+    const expiryMs = expiryText ? Date.parse(expiryText) : Number.NaN;
+    if (Number.isFinite(expiryMs) && expiryMs <= now.getTime()) continue;
+    entries.set(menuId, {
+      menuId,
+      menuName: cleanLimitedText(raw?.menuName, 160),
+      expiresAt: expiryText && Number.isFinite(expiryMs) ? new Date(expiryMs).toISOString() : null,
+      reason: cleanLimitedText(raw?.reason, 200),
+      actor: cleanLimitedText(raw?.actor, 80) || "unknown",
+      changedAt: normalizeIso(raw?.changedAt),
+    });
+  }
+  const auditLog = (Array.isArray(value?.auditLog) ? value.auditLog : []).slice(-MAX_AUDIT_EVENTS).map(event => ({
+    requestId: cleanLimitedText(event?.requestId, 100) || null,
+    menuId: cleanGuid(event?.menuId),
+    menuName: cleanLimitedText(event?.menuName, 160),
+    available: event?.available === true,
+    expiresAt: normalizeIso(event?.expiresAt),
+    reason: cleanLimitedText(event?.reason, 200),
+    actor: cleanLimitedText(event?.actor, 80) || "unknown",
+    changedAt: normalizeIso(event?.changedAt),
+  })).filter(event => event.menuId);
   return {
-    manualUnavailableMenuIds: [...new Set((Array.isArray(value?.manualUnavailableMenuIds) ? value.manualUnavailableMenuIds : []).map(cleanGuid).filter(Boolean))],
+    manualUnavailableMenuIds: [...entries.keys()],
+    manualEntries: [...entries.values()],
+    auditLog,
     updatedAt: typeof value?.updatedAt === "string" ? value.updatedAt : null,
   };
+}
+
+function normalizeFutureExpiry(value, now) {
+  if (value === null || value === undefined || value === "") return null;
+  if (typeof value !== "string" || !/(?:Z|[+-]\d{2}:\d{2})$/i.test(value.trim())) throw new Error("expiresAt must include a timezone");
+  const time = Date.parse(value);
+  if (!Number.isFinite(time) || time <= now.getTime()) throw new Error("expiresAt must be in the future");
+  if (time - now.getTime() > MAX_MANUAL_HOLD_MS) throw new Error("expiresAt is too far in the future");
+  return new Date(time).toISOString();
+}
+
+function normalizeIso(value) {
+  const time = typeof value === "string" ? Date.parse(value) : Number.NaN;
+  return Number.isFinite(time) ? new Date(time).toISOString() : null;
+}
+
+function cleanLimitedText(value, maxLength) {
+  return typeof value === "string" ? value.trim().replace(/[\u0000-\u001f\u007f]/g, " ").slice(0, maxLength) : "";
 }
 
 function cleanGuid(value) {

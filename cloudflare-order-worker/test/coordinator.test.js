@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import test from "node:test";
-import { submitTableOrder } from "../src/index.js";
+import { submitTableOrder, TableOrderCoordinator } from "../src/index.js";
+import { readAvailabilityStorage } from "../src/availability.js";
 
 function memoryStorage() {
   const values = new Map();
@@ -72,4 +73,24 @@ test("clears a definitely rejected submission so the same request may be retried
 
   const retry = await submitTableOrder(storage, {}, order(), "A-01", "same-cart", async () => ({ Id: "cukcuk-order-2", Status: 1 }));
   assert.equal(retry.Id, "cukcuk-order-2");
+});
+
+test("serializes concurrent availability writes so neither menu hold is lost", async () => {
+  const storage = memoryStorage();
+  const originalGet = storage.get;
+  storage.get = async key => {
+    await new Promise(resolve => setTimeout(resolve, 5));
+    return originalGet.call(storage, key);
+  };
+  const coordinator = new TableOrderCoordinator({ storage }, {});
+  const request = menuId => new Request("https://availability.internal/state", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ menuId, available: false, actor: "test" }),
+  });
+  const ids = ["c0f16b37-ff76-4d8e-a5a8-3ead5fd7b0a5", "d902dc7b-b6b7-402d-aa90-4edb1e5cfbc2"];
+  const responses = await Promise.all(ids.map(id => coordinator.fetch(request(id))));
+  assert.deepEqual(responses.map(response => response.status), [200, 200]);
+  const state = await readAvailabilityStorage(storage);
+  assert.deepEqual(state.manualUnavailableMenuIds.sort(), [...ids].sort());
 });

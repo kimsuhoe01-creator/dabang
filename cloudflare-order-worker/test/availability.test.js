@@ -52,3 +52,76 @@ test("manual availability storage persists and removes unavailable IDs", async (
   await writeAvailabilityStorage(storage, PIZZA_ID, true);
   assert.deepEqual((await readAvailabilityStorage(storage)).manualUnavailableMenuIds, []);
 });
+
+test("temporary manual availability expires without overriding future orders", async () => {
+  const values = new Map();
+  const storage = {
+    get: key => values.get(key),
+    put: async (key, value) => values.set(key, value),
+  };
+  const start = new Date("2026-09-04T01:00:00.000Z");
+  const state = await writeAvailabilityStorage(storage, PIZZA_ID, false, {
+    expiresAt: "2026-09-04T03:00:00+00:00",
+    reason: "test hold",
+    actor: "store-gpt",
+    requestId: "temporary-hold-1",
+  }, start);
+  assert.deepEqual(state.manualUnavailableMenuIds, [PIZZA_ID]);
+  assert.equal(state.manualEntries[0].expiresAt, "2026-09-04T03:00:00.000Z");
+  assert.deepEqual((await readAvailabilityStorage(storage, new Date("2026-09-04T03:00:01.000Z"))).manualUnavailableMenuIds, []);
+});
+
+test("manual availability writes are idempotent by request id and retain an audit trail", async () => {
+  const values = new Map();
+  const storage = {
+    get: key => values.get(key),
+    put: async (key, value) => values.set(key, value),
+  };
+  const now = new Date("2026-09-04T01:00:00.000Z");
+  const first = await writeAvailabilityStorage(storage, PIZZA_ID, false, {
+    actor: "store-gpt",
+    requestId: "same-request",
+  }, now);
+  const replay = await writeAvailabilityStorage(storage, PIZZA_ID, false, {
+    actor: "store-gpt",
+    requestId: "same-request",
+  }, new Date("2026-09-04T01:01:00.000Z"));
+  assert.equal(first.replayed, false);
+  assert.equal(replay.replayed, true);
+  assert.deepEqual(replay.manualUnavailableMenuIds, [PIZZA_ID]);
+  assert.equal(replay.auditLog.length, 1);
+});
+
+test("manual availability rejects a request id reused for another operation", async () => {
+  const values = new Map();
+  const storage = {
+    get: key => values.get(key),
+    put: async (key, value) => values.set(key, value),
+  };
+  const secondId = "d902dc7b-b6b7-402d-aa90-4edb1e5cfbc2";
+  const now = new Date("2026-09-04T03:00:00.000Z");
+  await writeAvailabilityStorage(storage, PIZZA_ID, false, { requestId: "request_12345678" }, now);
+
+  await assert.rejects(
+    writeAvailabilityStorage(storage, secondId, false, { requestId: "request_12345678" }, now),
+    /already used/,
+  );
+  await assert.rejects(
+    writeAvailabilityStorage(storage, PIZZA_ID, true, { requestId: "request_12345678" }, now),
+    /already used/,
+  );
+});
+
+test("legacy unavailable id storage migrates without reopening menus", async () => {
+  const values = new Map([["menuAvailability", {
+    manualUnavailableMenuIds: [PIZZA_ID],
+    updatedAt: "2026-09-03T10:00:00.000Z",
+  }]]);
+  const storage = {
+    get: key => values.get(key),
+    put: async (key, value) => values.set(key, value),
+  };
+  const state = await readAvailabilityStorage(storage, new Date("2026-09-04T01:00:00.000Z"));
+  assert.deepEqual(state.manualUnavailableMenuIds, [PIZZA_ID]);
+  assert.equal(state.manualEntries[0].expiresAt, null);
+});
