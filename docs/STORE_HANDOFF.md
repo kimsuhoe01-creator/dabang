@@ -554,3 +554,11 @@ C:\Users\Admin\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin
 - 기능 커밋: `21e7048` (`Show today-only Space Pizza closure`), 이후 자동 CUKCUK 동기화 커밋 `ce96eb3`까지 `main`과 GitHub Pages 반영 확인.
 - 검증: Worker/UI 테스트 78개 통과, 메뉴 이미지 감사 112개 통과(누락·고아 0), `git diff --check` 통과. 공개 안전 미리보기 1280×800에서 휴무 안내 1개, 피자 카드 0개, 치피 세트 카드 0개를 확인했다. 실제 POS 주문은 보내지 않았다.
 - 관리자 화면의 기존 판매중/품절 버튼을 서버 공용 상태로 쓰기 위한 Worker 저장소 기반은 추가됐지만, 관리자 인증키와 관리자 UI 연결은 아직 완료하지 않았다. 현재 금일 휴무 및 사포로 자동 시간 제어에는 영향이 없다.
+
+## 딥치즈 & 나초칩 판매 재개 (2026-09-03)
+
+- 작업 컴퓨터: `DESKTOP-NQAD8O7`
+- CUKCUK 원본 API에서 `(M04) nacho cham phomai`은 이미 판매중(`available: true`)이었고, 태블릿 QR 레이아웃의 예전 `outOfStock: true` 고정값만 남아 있었다.
+- `딥치즈 & 나초칩`을 태블릿에서 판매중으로 복구하고, 재생성 스크립트에도 `markAvailable`을 추가해 자동 동기화 뒤 다시 품절로 돌아가지 않게 했다. CUKCUK 원본은 변경하지 않았다.
+- 기능 커밋 `2efda10`, 자동 동기화 커밋 `a4d2f37`까지 GitHub Pages 반영 완료.
+- 검증: 전체 테스트 78개, 메뉴 이미지 감사 112개 통과. 공개 안전 미리보기에서 메뉴 카드 1개, `disabled: false`를 확인했으며 실제 POS 주문은 보내지 않았다.
