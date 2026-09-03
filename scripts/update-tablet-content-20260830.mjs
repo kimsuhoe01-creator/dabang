@@ -84,10 +84,10 @@ const subtitle = (ko, vi, zh, en, tone = 'default') => ({ names: { ko, vi, zh, e
 const subtitles = {
   ...(layout.menuSubtitleOverrides || {}),
   '(A01) Sapporo 1t1 640ml': subtitle(
-    '해피아워 이벤트 · 매일 18:00까지 1+1',
-    'Happy Hour · Mua 1 tặng 1 đến 18:00 mỗi ngày',
-    '欢乐时光活动 · 每天18:00前买一送一',
-    'Happy Hour · Buy 1, get 1 free until 18:00 daily',
+    '해피아워 이벤트 · 매일 19:00까지 1+1',
+    'Happy Hour · Mua 1 tặng 1 đến 19:00 mỗi ngày',
+    '欢乐时光活动 · 每天19:00前买一送一',
+    'Happy Hour · Buy 1, get 1 free until 19:00 daily',
     'danger'
   ),
   HCX: subtitle(

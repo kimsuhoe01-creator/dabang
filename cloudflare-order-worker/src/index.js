@@ -4,6 +4,7 @@ import { fetchCukCukPosTableOrder } from "./table-order.js";
 import { expandMenuImage } from "./image-edit.js";
 import { handleStoreApi } from "./gpt-api.js";
 import { handleVoiceOrderApi } from "./voice-order.js";
+import { applyAvailabilityToMenuData, getAvailabilitySnapshot, handleAvailabilityApi, readAvailabilityStorage, writeAvailabilityStorage } from "./availability.js";
 
 const ALLOWED_ORIGINS = new Set([
   "https://kimsuhoe01-creator.github.io",
@@ -15,6 +16,8 @@ export default {
     const url = new URL(request.url);
     const storeResponse = await handleStoreApi(request, env);
     if (storeResponse) return cors(request, storeResponse);
+    const availabilityResponse = await handleAvailabilityApi(request, env, ALLOWED_ORIGINS);
+    if (availabilityResponse) return cors(request, availabilityResponse);
     const voiceResponse = await handleVoiceOrderApi(request, env, ALLOWED_ORIGINS);
     if (voiceResponse) return cors(request, voiceResponse);
 
@@ -74,7 +77,7 @@ export default {
         cf: { cacheTtl: 60, cacheEverything: true },
       });
       if (!menuResponse.ok) throw new ServiceError("메뉴 기준 정보를 불러오지 못했습니다.", 503, "MENU_DATA_UNAVAILABLE");
-      const menuData = await menuResponse.json();
+      const menuData = applyAvailabilityToMenuData(await menuResponse.json(), await getAvailabilitySnapshot(env));
       const requestedRevision = typeof payload.catalogRevision === "string" ? payload.catalogRevision.trim() : "";
       const currentRevision = String(menuData.catalogRevision || menuData.tableQrLayout?.revision || "").trim();
       if (requestedRevision && currentRevision && requestedRevision !== currentRevision) {
@@ -144,6 +147,14 @@ export class TableOrderCoordinator {
   }
 
   async fetch(request) {
+    const url = new URL(request.url);
+    if (url.pathname === "/state" && request.method === "GET") {
+      return json(await readAvailabilityStorage(this.ctx.storage));
+    }
+    if (url.pathname === "/state" && request.method === "POST") {
+      const payload = await request.json();
+      return json(await writeAvailabilityStorage(this.ctx.storage, payload?.menuId, payload?.available));
+    }
     if (request.method !== "POST") return json({ ok: false, message: "Method not allowed" }, 405);
     const payload = await request.json();
     const task = this.queue.then(() => this.submit(payload));

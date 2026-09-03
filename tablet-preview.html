@@ -57,6 +57,7 @@ html[lang="zh"] body,html[lang="zh"] button,html[lang="zh"] input{font-family:"M
  .menu-subtitle.warning{color:#c81d2a;font-weight:850}
  .info .price{padding:7px 10px;border:1px solid #ffd2d6;border-radius:9px;background:#fff0f1;font-size:18px}
  .sold>span{max-width:88%;display:flex;flex-direction:column;align-items:center;gap:8px;text-align:center}.sold b{font-size:22px}.sold small{font-size:12px;line-height:1.45;font-weight:700;color:#eee}
+ .category-closure{grid-column:1/-1;min-height:290px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:44px 34px;border:1px solid #e6c9cc;border-radius:22px;background:radial-gradient(circle at 82% 18%,#ffd91a38 0 72px,transparent 74px),linear-gradient(135deg,#fff 0%,#fff8f5 52%,#f8e3e5 100%);box-shadow:0 8px 28px rgba(95,25,31,.08);text-align:center}.category-closure-mark{display:inline-flex;align-items:center;min-height:30px;padding:0 13px;border-radius:999px;background:#171717;color:#ffd91a;font-size:10px;font-weight:900;letter-spacing:2px}.category-closure h2{margin:19px 0 10px;color:#b91826;font-size:34px;line-height:1.2;letter-spacing:-1px}.category-closure p{max-width:620px;margin:0;color:#4e4944;font-size:18px;font-weight:700;line-height:1.55}.category-closure-note{margin-top:18px;color:#8a8179;font-size:12px;font-weight:700}
  .dialog-head p{line-height:1.45;white-space:pre-line}
  .visual.crop-tight .menu-photo{transform:scale(1.28);transform-origin:center 62%}
  @media(min-width:1180px) and (max-height:900px){
@@ -272,7 +273,36 @@ const STORE_NAMES={ko:'다방치킨',vi:'Gà Dabang',zh:'Dabang 炸鸡',en:'Daba
 const OTHER_CATEGORY_NAMES={ko:'기타',vi:'Món khác',zh:'其他',en:'Other'};
 const ORDER_ENDPOINT='https://dabang-cukcuk-order-api.kimsuhoe01.workers.dev/api/cukcuk/order';
 const TABLE_ORDER_ENDPOINT=ORDER_ENDPOINT.replace(/\/api\/cukcuk\/order$/,'/api/cukcuk/table-order');
+const AVAILABILITY_ENDPOINT=ORDER_ENDPOINT.replace(/\/api\/cukcuk\/order$/,'/api/tablet/availability');
+const SPACE_PIZZA_DAY_OFF_DATE='2026-09-03';
+const SPACE_PIZZA_DAY_OFF_IDS=['c0f16b37-ff76-4d8e-a5a8-3ead5fd7b0a5','d902dc7b-b6b7-402d-aa90-4edb1e5cfbc2','433a6207-b8cf-4333-aa33-f344d6bfeb31','a84fa28e-bac3-45c2-9e00-5138b660ecd7','646d2461-e692-4275-97a0-0ba277913e92','5e53f8d3-3b1e-4c08-82d0-136726552c5b','89116940-5e7e-4e1e-b808-a0a2fdb5798e','18c2eb1b-5a99-459e-98b2-8c630036442a','e1cf1187-b643-4b90-9f6f-9a7458eaf037','1ffd639e-dd8f-4185-9ab9-4b187835b21c'];
 let cartItems=[],optionDraft=null,cartLineSequence=0,categoryScrollFrame=0,dialogOpener=null,orderSending=false,catalogReady=PREVIEW_MODE,catalogLoadFailed=false,orderVerificationRequired=false,pendingOrderPayload=null,historyLoading=false,historyPayload=null,historyRequestId=0;
+let tabletAvailability=fallbackTabletAvailability(),availabilityRefreshTimer=0;
+
+function storeDateToday(){return new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Ho_Chi_Minh',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())}
+function fallbackTabletAvailability(){
+ const active=storeDateToday()===SPACE_PIZZA_DAY_OFF_DATE;
+ const categoryClosures=active?[{key:'space-pizza-day-off-'+SPACE_PIZZA_DAY_OFF_DATE,categoryName:'스페이스 피자',menuIds:SPACE_PIZZA_DAY_OFF_IDS,hiddenMenuIds:SPACE_PIZZA_DAY_OFF_IDS,title:{ko:'스페이스 피자 금일 휴무',vi:'Space Pizza hôm nay nghỉ',zh:'Space Pizza 今日休息',en:'Space Pizza is closed today'},message:{ko:'오늘은 피자 메뉴를 주문하실 수 없습니다.',vi:'Hôm nay không thể gọi các món pizza.',zh:'今天暂时无法订购披萨类菜单。',en:'Pizza items are unavailable to order today.'}}]:[];
+ return{unavailableMenuIds:active?SPACE_PIZZA_DAY_OFF_IDS:[],categoryClosures};
+}
+function normalizedTabletAvailability(value){
+ const unavailableMenuIds=Array.isArray(value?.unavailableMenuIds)?value.unavailableMenuIds.map(String):[];
+ const categoryClosures=Array.isArray(value?.categoryClosures)?value.categoryClosures.filter(closure=>closure&&typeof closure.categoryName==='string').map(closure=>({...closure,menuIds:Array.isArray(closure.menuIds)?closure.menuIds.map(String):[],hiddenMenuIds:Array.isArray(closure.hiddenMenuIds)?closure.hiddenMenuIds.map(String):[]})):[];
+ return{...value,unavailableMenuIds,categoryClosures};
+}
+function activeCategoryClosure(categoryName){return tabletAvailability.categoryClosures.find(closure=>closure.categoryName===categoryName)||null}
+function hiddenByCategoryClosure(menu){return tabletAvailability.categoryClosures.some(closure=>(closure.hiddenMenuIds||closure.menuIds||[]).includes(String(menu.id)))}
+function menuIsAvailable(menu){return menu?.available!==false&&!tabletAvailability.unavailableMenuIds.includes(String(menu?.id||''))}
+function closureStatusLabel(){return{ko:'오늘 휴무',vi:'Nghỉ hôm nay',zh:'今日休息',en:'Closed today'}[lang]}
+function categoryClosureMarkup(closure){const title=localizedNames(closure.title),message=localizedNames(closure.message);return`<article class="category-closure" role="status"><span class="category-closure-mark">SPACE PIZZA</span><h2>${escapeHtml(title)}</h2><p>${escapeHtml(message)}</p></article>`}
+async function refreshTabletAvailability(){
+ try{
+  const response=await fetch(AVAILABILITY_ENDPOINT,{cache:'no-store'});if(!response.ok)throw new Error('availability unavailable');
+  const result=await response.json();if(!result?.ok)throw new Error('availability invalid');tabletAvailability=normalizedTabletAvailability(result);
+ }catch(error){tabletAvailability=fallbackTabletAvailability()}
+ if(state?.menus?.length)render();
+}
+function startAvailabilityRefresh(){clearInterval(availabilityRefreshTimer);availabilityRefreshTimer=setInterval(refreshTabletAvailability,60*1000);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')refreshTabletAvailability()})}
 
 function activateDialogLayer(modal,opener){
  dialogOpener=opener||document.activeElement;
@@ -324,18 +354,19 @@ function menuOptionGroups(menu){
  return (menu?.optionTemplateIds||[]).map(id=>{const group=byId.get(String(id)),rule=menu?.optionRules?.[String(id)]||{};return group?{...group,...rule,id:String(group.id)}:null}).filter(group=>group&&visibleOptionValues(group).length);
 }
 function menuCardMarkup(menu,index){
- const image=displayMenuImage(menu.id),name=menu.n?.[lang]||menu.n?.ko||menu.sourceName||'',safeName=escapeHtml(name),safeId=safeJsString(menu.id),loading=index<6?'eager':'lazy',hasOptions=menuOptionGroups(menu).length>0;
+  const image=displayMenuImage(menu.id),name=menu.n?.[lang]||menu.n?.ko||menu.sourceName||'',safeName=escapeHtml(name),safeId=safeJsString(menu.id),loading=index<6?'eager':'lazy',hasOptions=menuOptionGroups(menu).length>0;
+  const available=menuIsAvailable(menu);
  const subtitle=localizedNames(menu.subtitles),subtitleMarkup=subtitle?`<span class="menu-subtitle ${['warning','danger'].includes(menu.subtitleTone)?'warning':''}">${escapeHtml(subtitle)}</span>`:'';
  const soldDetail=localizedNames(menu.statusMessages)||words[lang].soldDetail;
  const photo=image?`<img class="photo-back" src="${image}" alt="" aria-hidden="true" loading="${loading}" decoding="async"><img class="menu-photo" src="${image}" alt="${safeName}" loading="${loading}" decoding="async" onload="fitMenuPhoto(this)" onerror="handleImageError(this)">`:placeholderMarkup();
  const optionChip=hasOptions?`<span class="option-chip">${escapeHtml(words[lang].optionShort)}</span>`:'';
  const actionLabel=(hasOptions?words[lang].options:words[lang].add)+' '+name+', '+money(menu.price);
- return `<button type="button" class="card" aria-label="${escapeHtml(actionLabel)}" title="${safeName}" onclick="selectMenu('${safeId}',this)" ${menu.available?'':'disabled'}>${menu.available?'':`<span class="sold"><span><b>${escapeHtml(words[lang].sold)}</b><small>${escapeHtml(soldDetail)}</small></span></span>`}<span class="visual" data-menu-id="${escapeHtml(menu.id)}">${photo}${optionChip}</span><span class="info"><span class="name">${safeName}</span>${subtitleMarkup}<span class="foot"><strong class="price">${money(menu.price)}</strong><span class="add" aria-hidden="true"><span>＋</span>${escapeHtml(words[lang].add)}</span></span></span></button>`;
+  return `<button type="button" class="card" aria-label="${escapeHtml(actionLabel)}" title="${safeName}" onclick="selectMenu('${safeId}',this)" ${available?'':'disabled'}>${available?'':`<span class="sold"><span><b>${escapeHtml(words[lang].sold)}</b><small>${escapeHtml(soldDetail)}</small></span></span>`}<span class="visual" data-menu-id="${escapeHtml(menu.id)}">${photo}${optionChip}</span><span class="info"><span class="name">${safeName}</span>${subtitleMarkup}<span class="foot"><strong class="price">${money(menu.price)}</strong><span class="add" aria-hidden="true"><span>＋</span>${escapeHtml(words[lang].add)}</span></span></span></button>`;
 }
 function menuSections(){
- const sections=visibleCategories().map(category=>({key:category.name,label:categoryLabel(category),menus:state.menus.filter(menu=>menu.cat===category.name)}));
- if(!state.featuredVisible)return sections;
- return [{key:'featured',label:words[lang].section,menus:state.menus.filter(menu=>menu.recommended)}].concat(sections);
+  const sections=visibleCategories().map(category=>{const closure=activeCategoryClosure(category.name);return{key:category.name,label:categoryLabel(category),closure,menus:state.menus.filter(menu=>menu.cat===category.name&&!hiddenByCategoryClosure(menu))}});
+  if(!state.featuredVisible)return sections;
+  return [{key:'featured',label:words[lang].section,closure:null,menus:state.menus.filter(menu=>menu.recommended&&!hiddenByCategoryClosure(menu))}].concat(sections);
 }
 function renderCats(){
  const visible=visibleCategories();
@@ -365,8 +396,9 @@ function render({preserveScroll=true}={}){
  const content=document.getElementById('menuContent'),previousScroll=preserveScroll?content.scrollTop:0;
  let cardIndex=0;
  document.getElementById('menuSections').innerHTML=sections.map(section=>{
-  const cards=section.menus.length?section.menus.map(menu=>menuCardMarkup(menu,cardIndex++)).join(''):`<div class="empty">${escapeHtml(words[lang].empty)}</div>`;
-  return `<section class="menu-category-section" data-category="${escapeHtml(section.key)}"><div class="section-head"><div><span class="section-kicker">MENU</span><h1>${escapeHtml(section.label)}</h1></div><span class="count">${escapeHtml(compactCount(section.menus.length,words[lang].menuSuffix))}</span></div><div class="grid">${cards}</div></section>`;
+   const cards=section.closure?categoryClosureMarkup(section.closure):section.menus.length?section.menus.map(menu=>menuCardMarkup(menu,cardIndex++)).join(''):`<div class="empty">${escapeHtml(words[lang].empty)}</div>`;
+   const count=section.closure?closureStatusLabel():compactCount(section.menus.length,words[lang].menuSuffix);
+   return `<section class="menu-category-section" data-category="${escapeHtml(section.key)}"><div class="section-head"><div><span class="section-kicker">MENU</span><h1>${escapeHtml(section.label)}</h1></div><span class="count">${escapeHtml(count)}</span></div><div class="grid">${cards}</div></section>`;
  }).join('');
  updateCart();
  if(document.getElementById('cartModal').classList.contains('open'))renderCartItems();
@@ -498,7 +530,7 @@ function confirmOptions(){
 function selectMenu(id,opener){
  if(!PREVIEW_MODE&&!catalogReady){showToast(catalogLoadFailed?words[lang].menuLoadFailed:words[lang].menuLoading);return}
  const menu=state.menus.find(item=>String(item.id)===String(id));
- if(!menu||!menu.available)return;
+ if(!menu||!menuIsAvailable(menu))return;
  const groups=menuOptionGroups(menu);
  if(!groups.length&&(Number(menu.optionGroups)>0||Number(menu.price)===0)){showToast(words[lang].optionUnavailable);return}
  if(groups.length)openOptionModal(menu,groups,opener);else addConfiguredItem(menu,[]);
@@ -806,7 +838,8 @@ if('serviceWorker'in navigator){
 
 document.documentElement.lang=lang;render();
 renderLanguageCards();
-loadPublishedMenu();
+loadPublishedMenu().then(refreshTabletAvailability);
+startAvailabilityRefresh();
 loadCukcukTables();
 </script>
 <script src="assets/voice-order.js?v=20260831-v12"></script>

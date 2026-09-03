@@ -170,6 +170,28 @@ test('Sapporo draft sizes use independent quantity counters and cart lines', () 
   assert.match(cartSource, /quantity:addQuantity/);
 });
 
+test('today-only Space Pizza closure replaces sold-out cards with one localized notice', () => {
+  assert.match(html, /const SPACE_PIZZA_DAY_OFF_DATE='2026-09-03'/);
+  assert.match(html, /스페이스 피자 금일 휴무/);
+  assert.match(html, /Space Pizza hôm nay nghỉ/);
+  assert.match(html, /今天暂时无法订购披萨类菜单/);
+  assert.match(html, /Pizza items are unavailable to order today/);
+  assert.match(html, /class="category-closure" role="status"/);
+  assert.match(html, /const AVAILABILITY_ENDPOINT=ORDER_ENDPOINT\.replace/);
+  assert.match(html, /setInterval\(refreshTabletAvailability,60\*1000\)/);
+
+  const sectionsSource = sourceSlice('function menuSections()', 'function renderCats');
+  assert.match(sectionsSource, /activeCategoryClosure\(category\.name\)/);
+  assert.match(sectionsSource, /!hiddenByCategoryClosure\(menu\)/);
+
+  const renderSource = sourceSlice('function render({preserveScroll=true}={})', 'function setLang');
+  assert.match(renderSource, /section\.closure\?categoryClosureMarkup\(section\.closure\)/);
+  assert.match(renderSource, /section\.closure\?closureStatusLabel\(\)/);
+
+  const selectionSource = sourceSlice('function selectMenu(id,opener)', 'function addItem');
+  assert.match(selectionSource, /!menuIsAvailable\(menu\)/);
+});
+
 test('cart offers explicit line removal, full clearing, and add-to-cart guidance animation', () => {
   assert.match(html, /id="clearCartButton"[^>]*onclick="clearCartItems\(\)"[^>]*>장바구니 비우기<\/button>/);
   assert.match(html, /removeItem:'비우기',clearCart:'장바구니 비우기'/);

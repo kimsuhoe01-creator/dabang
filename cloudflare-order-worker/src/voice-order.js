@@ -1,3 +1,5 @@
+import { applyAvailabilityToMenuData, getAvailabilitySnapshot } from "./availability.js";
+
 const OPENAI_API_ROOT = "https://api.openai.com/v1";
 const MAX_TRANSCRIPT_CHARS = 12000;
 const MAX_SDP_CHARS = 100000;
@@ -408,7 +410,7 @@ async function fetchMenuData(env, fetcher) {
   if (!data?.synced || !Array.isArray(data.menus) || !Array.isArray(data.optionTemplates)) {
     throw serviceError("동기화된 메뉴 정보가 올바르지 않습니다.", 503, "MENU_DATA_INVALID");
   }
-  return data;
+  return applyAvailabilityToMenuData(data, await getAvailabilitySnapshot(env));
 }
 
 function selectionLimit(primary, fallback, defaultValue) {

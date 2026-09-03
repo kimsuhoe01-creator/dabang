@@ -1640,10 +1640,10 @@
     },
     "(A01) Sapporo 1t1 640ml": {
       "names": {
-        "ko": "해피아워 이벤트 · 매일 18:00까지 1+1",
-        "vi": "Happy Hour · Mua 1 tặng 1 đến 18:00 mỗi ngày",
-        "zh": "欢乐时光活动 · 每天18:00前买一送一",
-        "en": "Happy Hour · Buy 1, get 1 free until 18:00 daily"
+        "ko": "해피아워 이벤트 · 매일 19:00까지 1+1",
+        "vi": "Happy Hour · Mua 1 tặng 1 đến 19:00 mỗi ngày",
+        "zh": "欢乐时光活动 · 每天19:00前买一送一",
+        "en": "Happy Hour · Buy 1, get 1 free until 19:00 daily"
       },
       "tone": "danger"
     }
