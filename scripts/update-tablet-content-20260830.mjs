@@ -366,6 +366,7 @@ markAvailable('New Menu', 'HCX');
 markAvailable('세트메뉴 | Combo món ăn', '(S08) Cánh gà 4 vị');
 markAvailable('날개치킨 | Cánh gà sốt', '(W01) Cánh gà vị đôi');
 markAvailable('안주 |Món nhắm', 'ᄉ TT 加 AET');
+markAvailable('안주 |Món nhắm', '(M04) nacho cham phomai');
 
 reorder('주류 |Đồ uống có cồn', [
   '(A01) Sapporo 1t1 640ml',

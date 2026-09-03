@@ -889,7 +889,7 @@
           "code": "(M04) nacho cham phomai",
           "displayName": "딥치즈&나쵸칩Deep Cheese & Nacho Chips 芝士酱蘸玉米片Bánh nacho chấm phô mai đậm đà",
           "price": 194400,
-          "outOfStock": true,
+          "outOfStock": false,
           "sortOrder": 0
         },
         {

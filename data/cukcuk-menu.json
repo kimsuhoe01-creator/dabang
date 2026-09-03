@@ -2021,7 +2021,7 @@
         "en": "Deep Cheese & Nacho Chips"
       },
       "price": 194400,
-      "available": false,
+      "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
       "sortOrder": 74,
