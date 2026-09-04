@@ -106,6 +106,15 @@ test("store GPT endpoints reject missing authentication", async () => {
   assert.equal(response.status, 401);
 });
 
+test("dedicated store GPT token works without replacing the existing token", async () => {
+  const fixture = await apiFixture();
+  fixture.env.STORE_GPT_TOKEN_SHA256 = await sha256("existing-gpt-token");
+  fixture.env.STORE_GPT_MENU_TOKEN_SHA256 = await sha256(SECRET);
+  const response = await callApi(fixture, "/api/store/menus?query=딥치즈");
+  assert.equal(response.status, 200);
+  assert.equal((await response.json()).menus[0].id, NACHO_ID);
+});
+
 async function apiFixture() {
   const hash = await sha256(SECRET);
   const values = new Map();

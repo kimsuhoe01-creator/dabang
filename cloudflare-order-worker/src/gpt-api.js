@@ -25,7 +25,7 @@ export async function handleStoreApi(request, env, dependencies = {}) {
 
   const route = `${request.method} ${url.pathname}`;
   if (!PROTECTED_ROUTES.has(route)) return null;
-  if (!(await verifyStoreToken(request, env.STORE_GPT_TOKEN_SHA256))) {
+  if (!(await verifyStoreApiToken(request, env))) {
     return json({ ok: false, code: "UNAUTHORIZED", message: "매장 GPT 인증키가 올바르지 않습니다." }, 401);
   }
 
@@ -90,6 +90,12 @@ export async function handleStoreApi(request, env, dependencies = {}) {
       message: error instanceof Error ? error.message : "매장 요청을 처리하지 못했습니다.",
     }, Number.isInteger(error?.status) ? error.status : 502);
   }
+}
+
+async function verifyStoreApiToken(request, env) {
+  const hashes = [...new Set([env.STORE_GPT_TOKEN_SHA256, env.STORE_GPT_MENU_TOKEN_SHA256].filter(Boolean))];
+  if (!hashes.length) return false;
+  return (await Promise.all(hashes.map(hash => verifyStoreToken(request, hash)))).some(Boolean);
 }
 
 export function searchMenus(menuData, queryValue, snapshot, state = {}) {
