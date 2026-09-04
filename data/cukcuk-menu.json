@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-09-04 17:37:10",
-    "finished_at": "2026-09-04 17:37:19",
+    "started_at": "2026-09-04 19:49:41",
+    "finished_at": "2026-09-04 19:49:52",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -1257,9 +1257,9 @@
       "sourceName": "후라이드  Fried Chicken  无骨炸鸡腿 Má đùi rút xương",
       "names": {
         "ko": "후라이드 치킨",
-        "vi": "Gà chiên giòn",
+        "vi": "Gà đùi rút xương chiên giòn",
         "zh": "无骨炸鸡腿",
-        "en": "Fried Chicken"
+        "en": "Fried Boneless Chicken Thigh"
       },
       "price": 399600,
       "available": true,
@@ -1346,7 +1346,7 @@
       "names": {
         "ko": "고추마늘간장 치킨",
         "vi": "Gà sốt xì dầu tỏi ớt",
-        "zh": "辣椒蒜香酱油鸡",
+        "zh": "辣椒蒜酱鸡",
         "en": "Garlic Soy Chicken"
       },
       "price": 399600,
@@ -5227,6 +5227,6 @@
     "cacheHits": 288,
     "translated": 11,
     "pendingCount": 0,
-    "updatedAt": "2026-09-04T17:37:33.004Z"
+    "updatedAt": "2026-09-04T19:50:08.242Z"
   }
 }
