@@ -341,6 +341,7 @@ function openApiSchema(origin) {
       },
     },
     components: {
+      schemas: {},
       securitySchemes: {
         bearerAuth: { type: "http", scheme: "bearer" },
       },

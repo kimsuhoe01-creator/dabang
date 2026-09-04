@@ -27,6 +27,7 @@ test("store GPT OpenAPI publishes authenticated menu management actions", async 
   assert.equal(schema.paths["/api/store/menu-resume"].post["x-openai-isConsequential"], true);
   assert.equal(schema.paths["/api/store/menus"].get["x-openai-isConsequential"], false);
   assert.equal(schema.components.securitySchemes.bearerAuth.scheme, "bearer");
+  assert.deepEqual(schema.components.schemas, {});
 });
 
 test("menu search returns exact candidates and never collapses ambiguous sizes", () => {
