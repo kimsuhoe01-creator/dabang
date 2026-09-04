@@ -12,8 +12,10 @@
 - GPT Actions 스키마 주소: https://dabang-cukcuk-order-api.kimsuhoe01.workers.dev/openapi.json
 - 실제 매장 사용 문구와 GPT 설정 절차는 `docs/STORE_GPT_MENU_AVAILABILITY_SETUP.md`에 있다. 기존 인증키의 평문은 코드·문서에 저장하지 않았다.
 - 기능 커밋: `0ed365e` (`Connect store GPT menu availability`)
-- Cloudflare Worker 버전: `e0795f12-868c-46a5-b7a5-275d6a02f4c1`
-- 검증: Worker 전체 테스트 90개, 메뉴 이미지 감사 112개·누락 0, `git diff --check`, Worker 배포 전 문법·번들 검사를 통과했다. 공개 서버에서 `/health` 정상, OpenAPI 2.0.0, 무인증 요청 401, 현재 수동 품절 0개를 확인했다. 실제 메뉴 상태와 CUKCUK/POS 주문은 변경하지 않았다.
+- 전용 인증키 커밋: `43223b4` (`Add dedicated store GPT token`), GPT Actions 스키마 호환 커밋: `16335a0` (`Make GPT action schema importer compatible`)
+- Cloudflare Worker 버전: `b005b01c-c8a5-4abf-a622-a595d460d931`
+- 검증: Worker 전체 테스트 91개, 메뉴 이미지 감사 112개·누락 0, `git diff --check`, Worker 배포 전 문법·번들 검사를 통과했다. 공개 서버에서 `/health` 정상, OpenAPI 2.0.0, 무인증 요청 401, 현재 수동 품절 0개를 확인했다. 실제 메뉴 상태와 CUKCUK/POS 주문은 변경하지 않았다.
+- 실제 사용 대상은 사장님 개인 ChatGPT 계정이 아니라 매장 전화번호의 Google 계정으로 가입한 별도 유료 ChatGPT 계정이다. 개인 계정의 이름 없는 GPT 초안은 생성·공유하지 않았고, 매장 계정 로그인 후 해당 계정에서 새 GPT를 구성해야 한다.
 
 ## 2026-08-31 테이블 실제 주문 내역 조회 버튼
 
