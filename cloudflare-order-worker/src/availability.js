@@ -1,4 +1,18 @@
 const SAPPORO_ONE_PLUS_ONE_ID = "52c29562-ac31-42c7-9f24-956d348de02a";
+const SAPPORO_EVENT_ENDED_NOTICE = {
+  title: {
+    ko: "오늘의 1+1 행사 종료",
+    vi: "Ưu đãi 1 tặng 1 hôm nay đã kết thúc",
+    zh: "今日买一送一活动已结束",
+    en: "Today’s Buy 1, Get 1 offer has ended",
+  },
+  message: {
+    ko: "매일 19:00까지 이용하실 수 있어요. 내일 다시 만나요!",
+    vi: "Ưu đãi áp dụng hằng ngày đến 19:00. Hẹn gặp lại bạn vào ngày mai!",
+    zh: "本活动每天19:00前可享。明天再见！",
+    en: "Available daily until 19:00. See you again tomorrow!",
+  },
+};
 const STORE_TIME_ZONE = "Asia/Ho_Chi_Minh";
 const DAILY_CUTOFF_MINUTES = 19 * 60;
 const SPACE_PIZZA_DAY_OFF_DATE = "2026-09-03";
@@ -141,6 +155,7 @@ export function buildAvailabilitySnapshot(manualStateOrIds = [], now = new Date(
     closureUnavailableMenuIds: closureUnavailable,
     unavailableMenuIds: [...new Set([...manual, ...scheduled, ...closureUnavailable])],
     hiddenMenuIds: [...new Set([...manualHidden, ...closureHidden])],
+    unavailableNotices: schedule.closed ? { [SAPPORO_ONE_PLUS_ONE_ID]: SAPPORO_EVENT_ENDED_NOTICE } : {},
     categoryClosures,
     nextScheduleChangeInMs: Math.min(schedule.nextChangeInMs, millisecondsUntilNextStoreDay(now), manualExpiryChangeInMs),
   };

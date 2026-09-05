@@ -26,7 +26,13 @@ test("Sapporo 1+1 closes at 19:00 Asia/Ho_Chi_Minh", () => {
   const before = buildAvailabilitySnapshot([], new Date("2026-09-03T11:59:59.000Z"));
   const after = buildAvailabilitySnapshot([], new Date("2026-09-03T12:00:00.000Z"));
   assert.equal(before.scheduledUnavailableMenuIds.includes(SAPPORO_ONE_PLUS_ONE_ID), false);
+  assert.deepEqual(before.unavailableNotices, {});
   assert.equal(after.scheduledUnavailableMenuIds.includes(SAPPORO_ONE_PLUS_ONE_ID), true);
+  assert.equal(after.unavailableNotices[SAPPORO_ONE_PLUS_ONE_ID].title.ko, "오늘의 1+1 행사 종료");
+  assert.equal(after.unavailableNotices[SAPPORO_ONE_PLUS_ONE_ID].message.ko, "매일 19:00까지 이용하실 수 있어요. 내일 다시 만나요!");
+  assert.match(after.unavailableNotices[SAPPORO_ONE_PLUS_ONE_ID].message.vi, /19:00/);
+  assert.match(after.unavailableNotices[SAPPORO_ONE_PLUS_ONE_ID].message.zh, /19:00/);
+  assert.match(after.unavailableNotices[SAPPORO_ONE_PLUS_ONE_ID].message.en, /19:00/);
 });
 
 test("availability snapshot disables matching catalog items before order and voice validation", () => {

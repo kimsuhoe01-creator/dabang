@@ -192,6 +192,17 @@ test('today-only Space Pizza closure replaces sold-out cards with one localized 
   assert.match(selectionSource, /!menuIsAvailable\(menu\)/);
 });
 
+test('Sapporo 1+1 shows an event-ended notice instead of generic sold-out copy after 19:00', () => {
+  assert.match(html, /function menuUnavailableNotice\(menu\)/);
+  const cardMarkup = sourceSlice('function menuCardMarkup(menu,index)', 'function menuSections');
+  assert.match(cardMarkup, /soldTitle=localizedNames\(unavailableNotice\?\.title\)\|\|words\[lang\]\.sold/);
+  assert.match(cardMarkup, /soldDetail=localizedNames\(unavailableNotice\?\.message\)\|\|localizedNames\(menu\.statusMessages\)\|\|words\[lang\]\.soldDetail/);
+  assert.match(cardMarkup, /escapeHtml\(soldTitle\)/);
+  const availabilitySource = sourceSlice('function fallbackTabletAvailability()', 'function startAvailabilityRefresh');
+  assert.match(availabilitySource, /unavailableNotices:\{\}/);
+  assert.match(availabilitySource, /value\?\.unavailableNotices/);
+});
+
 test('server-hidden menus disappear from tablet sections and are removed from the cart', () => {
   const availabilitySource = sourceSlice('function fallbackTabletAvailability()', 'function startAvailabilityRefresh');
   assert.match(availabilitySource, /hiddenMenuIds:\[\]/);

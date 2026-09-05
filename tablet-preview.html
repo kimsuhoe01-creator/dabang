@@ -283,18 +283,20 @@ function storeDateToday(){return new Intl.DateTimeFormat('en-CA',{timeZone:'Asia
 function fallbackTabletAvailability(){
  const active=storeDateToday()===SPACE_PIZZA_DAY_OFF_DATE;
  const categoryClosures=active?[{key:'space-pizza-day-off-'+SPACE_PIZZA_DAY_OFF_DATE,categoryName:'스페이스 피자',menuIds:SPACE_PIZZA_DAY_OFF_IDS,hiddenMenuIds:SPACE_PIZZA_DAY_OFF_IDS,title:{ko:'스페이스 피자 금일 휴무',vi:'Space Pizza hôm nay nghỉ',zh:'Space Pizza 今日休息',en:'Space Pizza is closed today'},message:{ko:'오늘은 피자 메뉴를 주문하실 수 없습니다.',vi:'Hôm nay không thể gọi các món pizza.',zh:'今天暂时无法订购披萨类菜单。',en:'Pizza items are unavailable to order today.'}}]:[];
- return{unavailableMenuIds:active?SPACE_PIZZA_DAY_OFF_IDS:[],hiddenMenuIds:[],categoryClosures};
+ return{unavailableMenuIds:active?SPACE_PIZZA_DAY_OFF_IDS:[],hiddenMenuIds:[],unavailableNotices:{},categoryClosures};
 }
 function normalizedTabletAvailability(value){
  const unavailableMenuIds=Array.isArray(value?.unavailableMenuIds)?value.unavailableMenuIds.map(String):[];
  const hiddenMenuIds=Array.isArray(value?.hiddenMenuIds)?value.hiddenMenuIds.map(String):[];
+ const unavailableNotices=value?.unavailableNotices&&typeof value.unavailableNotices==='object'&&!Array.isArray(value.unavailableNotices)?value.unavailableNotices:{};
  const categoryClosures=Array.isArray(value?.categoryClosures)?value.categoryClosures.filter(closure=>closure&&typeof closure.categoryName==='string').map(closure=>({...closure,menuIds:Array.isArray(closure.menuIds)?closure.menuIds.map(String):[],hiddenMenuIds:Array.isArray(closure.hiddenMenuIds)?closure.hiddenMenuIds.map(String):[]})):[];
- return{...value,unavailableMenuIds,hiddenMenuIds,categoryClosures};
+ return{...value,unavailableMenuIds,hiddenMenuIds,unavailableNotices,categoryClosures};
 }
 function activeCategoryClosure(categoryName){return tabletAvailability.categoryClosures.find(closure=>closure.categoryName===categoryName)||null}
 function hiddenByCategoryClosure(menu){return tabletAvailability.categoryClosures.some(closure=>(closure.hiddenMenuIds||closure.menuIds||[]).includes(String(menu.id)))}
 function menuIsHidden(menu){return tabletAvailability.hiddenMenuIds.includes(String(menu?.id||''))}
 function menuIsAvailable(menu){return menu?.available!==false&&!tabletAvailability.unavailableMenuIds.includes(String(menu?.id||''))}
+function menuUnavailableNotice(menu){return tabletAvailability.unavailableNotices?.[String(menu?.id||'')]||null}
 function closureStatusLabel(){return{ko:'오늘 휴무',vi:'Nghỉ hôm nay',zh:'今日休息',en:'Closed today'}[lang]}
 function categoryClosureMarkup(closure){const title=localizedNames(closure.title),message=localizedNames(closure.message);return`<article class="category-closure" role="status"><span class="category-closure-mark">SPACE PIZZA</span><h2>${escapeHtml(title)}</h2><p>${escapeHtml(message)}</p></article>`}
 async function refreshTabletAvailability(){
@@ -362,11 +364,11 @@ function menuCardMarkup(menu,index){
   const image=displayMenuImage(menu.id),name=menu.n?.[lang]||menu.n?.ko||menu.sourceName||'',safeName=escapeHtml(name),safeId=safeJsString(menu.id),loading=index<6?'eager':'lazy',hasOptions=menuOptionGroups(menu).length>0;
   const available=menuIsAvailable(menu);
  const subtitle=localizedNames(menu.subtitles),subtitleMarkup=subtitle?`<span class="menu-subtitle ${['warning','danger'].includes(menu.subtitleTone)?'warning':''}">${escapeHtml(subtitle)}</span>`:'';
- const soldDetail=localizedNames(menu.statusMessages)||words[lang].soldDetail;
+ const unavailableNotice=menuUnavailableNotice(menu),soldTitle=localizedNames(unavailableNotice?.title)||words[lang].sold,soldDetail=localizedNames(unavailableNotice?.message)||localizedNames(menu.statusMessages)||words[lang].soldDetail;
  const photo=image?`<img class="photo-back" src="${image}" alt="" aria-hidden="true" loading="${loading}" decoding="async"><img class="menu-photo" src="${image}" alt="${safeName}" loading="${loading}" decoding="async" onload="fitMenuPhoto(this)" onerror="handleImageError(this)">`:placeholderMarkup();
  const optionChip=hasOptions?`<span class="option-chip">${escapeHtml(words[lang].optionShort)}</span>`:'';
  const actionLabel=(hasOptions?words[lang].options:words[lang].add)+' '+name+', '+money(menu.price);
-  return `<button type="button" class="card" aria-label="${escapeHtml(actionLabel)}" title="${safeName}" onclick="selectMenu('${safeId}',this)" ${available?'':'disabled'}>${available?'':`<span class="sold"><span><b>${escapeHtml(words[lang].sold)}</b><small>${escapeHtml(soldDetail)}</small></span></span>`}<span class="visual" data-menu-id="${escapeHtml(menu.id)}">${photo}${optionChip}</span><span class="info"><span class="name">${safeName}</span>${subtitleMarkup}<span class="foot"><strong class="price">${money(menu.price)}</strong><span class="add" aria-hidden="true"><span>＋</span>${escapeHtml(words[lang].add)}</span></span></span></button>`;
+  return `<button type="button" class="card" aria-label="${escapeHtml(actionLabel)}" title="${safeName}" onclick="selectMenu('${safeId}',this)" ${available?'':'disabled'}>${available?'':`<span class="sold"><span><b>${escapeHtml(soldTitle)}</b><small>${escapeHtml(soldDetail)}</small></span></span>`}<span class="visual" data-menu-id="${escapeHtml(menu.id)}">${photo}${optionChip}</span><span class="info"><span class="name">${safeName}</span>${subtitleMarkup}<span class="foot"><strong class="price">${money(menu.price)}</strong><span class="add" aria-hidden="true"><span>＋</span>${escapeHtml(words[lang].add)}</span></span></span></button>`;
 }
 function menuSections(){
   const sections=visibleCategories().map(category=>{const closure=activeCategoryClosure(category.name);return{key:category.name,label:categoryLabel(category),closure,menus:state.menus.filter(menu=>menu.cat===category.name&&!hiddenByCategoryClosure(menu)&&!menuIsHidden(menu))}});
