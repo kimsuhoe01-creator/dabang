@@ -84,9 +84,28 @@ export async function setManualAvailability(env, menuId, available, options = {}
   return response.json();
 }
 
+export async function setManualVisibility(env, menuId, visible, options = {}) {
+  if (!env.TABLE_ORDERS?.getByName) throw new Error("availability storage unavailable");
+  const coordinator = env.TABLE_ORDERS.getByName(AVAILABILITY_OBJECT_NAME);
+  const response = await coordinator.fetch(INTERNAL_URL, {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ menuId, visible, ...options }),
+  });
+  if (!response.ok) {
+    const result = await response.json().catch(() => ({}));
+    const error = new Error(result?.message || "visibility storage update failed");
+    error.status = response.status;
+    error.code = result?.code || "VISIBILITY_UPDATE_FAILED";
+    throw error;
+  }
+  return response.json();
+}
+
 export function buildAvailabilitySnapshot(manualStateOrIds = [], now = new Date()) {
   const state = normalizeState(manualStateOrIds, now);
   const manual = state.manualUnavailableMenuIds;
+  const manualHidden = state.manualHiddenMenuIds;
   const schedule = scheduleAt(now);
   const scheduled = schedule.closed ? [SAPPORO_ONE_PLUS_ONE_ID] : [];
   const categoryClosures = storeDateAt(now) === SPACE_PIZZA_DAY_OFF_DATE ? [{
@@ -108,6 +127,7 @@ export function buildAvailabilitySnapshot(manualStateOrIds = [], now = new Date(
     },
   }] : [];
   const closureUnavailable = categoryClosures.flatMap(closure => closure.menuIds);
+  const closureHidden = categoryClosures.flatMap(closure => closure.hiddenMenuIds || []);
   const manualExpiryChangeInMs = state.manualEntries.reduce((soonest, entry) => {
     if (!entry.expiresAt) return soonest;
     return Math.min(soonest, Math.max(1000, Date.parse(entry.expiresAt) - now.getTime()));
@@ -116,9 +136,11 @@ export function buildAvailabilitySnapshot(manualStateOrIds = [], now = new Date(
     timeZone: STORE_TIME_ZONE,
     generatedAt: now.toISOString(),
     manualUnavailableMenuIds: manual,
+    manualHiddenMenuIds: manualHidden,
     scheduledUnavailableMenuIds: scheduled,
     closureUnavailableMenuIds: closureUnavailable,
     unavailableMenuIds: [...new Set([...manual, ...scheduled, ...closureUnavailable])],
+    hiddenMenuIds: [...new Set([...manualHidden, ...closureHidden])],
     categoryClosures,
     nextScheduleChangeInMs: Math.min(schedule.nextChangeInMs, millisecondsUntilNextStoreDay(now), manualExpiryChangeInMs),
   };
@@ -148,7 +170,7 @@ export async function writeAvailabilityStorage(storage, menuIdValue, available, 
   if (requestId && !/^[A-Za-z0-9_-]{8,100}$/.test(requestId)) throw new Error("invalid request id");
   const replay = requestId ? state.auditLog.find(event => event.requestId === requestId) : null;
   if (replay) {
-    if (replay.menuId !== menuId || replay.available !== available) {
+    if (replay.menuId !== menuId || replay.operationType !== "availability" || replay.available !== available) {
       throw new Error("request id was already used for another availability operation");
     }
     return { ...state, replayed: true, operation: replay };
@@ -161,10 +183,65 @@ export async function writeAvailabilityStorage(storage, menuIdValue, available, 
   const reason = cleanLimitedText(options?.reason, 200);
   const menuName = cleanLimitedText(options?.menuName, 160);
   const actor = cleanLimitedText(options?.actor, 80) || "unknown";
-  if (available) entries.delete(menuId);
-  else entries.set(menuId, { menuId, menuName, expiresAt, reason, actor, changedAt });
+  const previous = entries.get(menuId) || null;
+  const hidden = previous?.hidden === true;
+  if (available && !hidden) entries.delete(menuId);
+  else entries.set(menuId, {
+    menuId,
+    menuName: menuName || previous?.menuName || "",
+    held: !available,
+    hidden,
+    expiresAt,
+    reason,
+    actor,
+    changedAt,
+  });
 
-  const operation = { requestId: requestId || null, menuId, menuName, available, expiresAt, reason, actor, changedAt };
+  const operation = { operationType: "availability", requestId: requestId || null, menuId, menuName, available, visible: null, expiresAt, reason, actor, changedAt };
+  const next = {
+    manualEntries: [...entries.values()],
+    auditLog: [...state.auditLog, operation].slice(-MAX_AUDIT_EVENTS),
+    updatedAt: changedAt,
+  };
+  await storage.put("menuAvailability", next);
+  return { ...normalizeState(next, now), replayed: false, operation };
+}
+
+export async function writeVisibilityStorage(storage, menuIdValue, visible, options = {}, now = new Date()) {
+  const menuId = cleanGuid(menuIdValue);
+  if (!menuId || typeof visible !== "boolean") throw new Error("invalid visibility state");
+  const state = await readAvailabilityStorage(storage, now);
+  const requestId = cleanLimitedText(options?.requestId, 100);
+  if (requestId && !/^[A-Za-z0-9_-]{8,100}$/.test(requestId)) throw new Error("invalid request id");
+  const replay = requestId ? state.auditLog.find(event => event.requestId === requestId) : null;
+  if (replay) {
+    if (replay.menuId !== menuId || replay.operationType !== "visibility" || replay.visible !== visible) {
+      throw new Error("request id was already used for another menu control operation");
+    }
+    return { ...state, replayed: true, operation: replay };
+  }
+
+  const entries = new Map(state.manualEntries.map(entry => [entry.menuId, entry]));
+  if (!visible && !entries.has(menuId) && entries.size >= MAX_MANUAL_ENTRIES) throw new Error("too many active menu control entries");
+  const previous = entries.get(menuId) || null;
+  const changedAt = now.toISOString();
+  const reason = cleanLimitedText(options?.reason, 200);
+  const menuName = cleanLimitedText(options?.menuName, 160);
+  const actor = cleanLimitedText(options?.actor, 80) || "unknown";
+  const held = previous?.held === true;
+  if (visible && !held) entries.delete(menuId);
+  else entries.set(menuId, {
+    menuId,
+    menuName: menuName || previous?.menuName || "",
+    held,
+    hidden: !visible,
+    expiresAt: held ? previous?.expiresAt || null : null,
+    reason,
+    actor,
+    changedAt,
+  });
+
+  const operation = { operationType: "visibility", requestId: requestId || null, menuId, menuName, available: null, visible, expiresAt: null, reason, actor, changedAt };
   const next = {
     manualEntries: [...entries.values()],
     auditLog: [...state.auditLog, operation].slice(-MAX_AUDIT_EVENTS),
@@ -248,28 +325,36 @@ function normalizeState(value, now = new Date()) {
     if (!menuId) continue;
     const expiryText = typeof raw?.expiresAt === "string" ? raw.expiresAt.trim() : "";
     const expiryMs = expiryText ? Date.parse(expiryText) : Number.NaN;
-    if (Number.isFinite(expiryMs) && expiryMs <= now.getTime()) continue;
+    const legacyHeld = raw?.held === undefined ? true : raw.held === true;
+    const held = legacyHeld && !(Number.isFinite(expiryMs) && expiryMs <= now.getTime());
+    const hidden = raw?.hidden === true;
+    if (!held && !hidden) continue;
     entries.set(menuId, {
       menuId,
       menuName: cleanLimitedText(raw?.menuName, 160),
-      expiresAt: expiryText && Number.isFinite(expiryMs) ? new Date(expiryMs).toISOString() : null,
+      held,
+      hidden,
+      expiresAt: held && expiryText && Number.isFinite(expiryMs) ? new Date(expiryMs).toISOString() : null,
       reason: cleanLimitedText(raw?.reason, 200),
       actor: cleanLimitedText(raw?.actor, 80) || "unknown",
       changedAt: normalizeIso(raw?.changedAt),
     });
   }
   const auditLog = (Array.isArray(value?.auditLog) ? value.auditLog : []).slice(-MAX_AUDIT_EVENTS).map(event => ({
+    operationType: event?.operationType === "visibility" ? "visibility" : "availability",
     requestId: cleanLimitedText(event?.requestId, 100) || null,
     menuId: cleanGuid(event?.menuId),
     menuName: cleanLimitedText(event?.menuName, 160),
-    available: event?.available === true,
+    available: typeof event?.available === "boolean" ? event.available : null,
+    visible: typeof event?.visible === "boolean" ? event.visible : null,
     expiresAt: normalizeIso(event?.expiresAt),
     reason: cleanLimitedText(event?.reason, 200),
     actor: cleanLimitedText(event?.actor, 80) || "unknown",
     changedAt: normalizeIso(event?.changedAt),
   })).filter(event => event.menuId);
   return {
-    manualUnavailableMenuIds: [...entries.keys()],
+    manualUnavailableMenuIds: [...entries.values()].filter(entry => entry.held || entry.hidden).map(entry => entry.menuId),
+    manualHiddenMenuIds: [...entries.values()].filter(entry => entry.hidden).map(entry => entry.menuId),
     manualEntries: [...entries.values()],
     auditLog,
     updatedAt: typeof value?.updatedAt === "string" ? value.updatedAt : null,

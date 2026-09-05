@@ -155,10 +155,10 @@ state={...state,featuredVisible:state.featuredVisible===true,menus:state.menus.f
 state.menus.forEach(menu=>{if(menu.recommended===undefined)menu.recommended=false});
 let lang=SUPPORTED_LANGS.has(state.lang)?state.lang:'ko',active='',cart=0,cartTotal=0;
 const words={
- ko:{featured:'추천',section:'추천 메뉴',reset:'테이블 다시 선택',table:'현재 테이블',cart:'장바구니',itemSuffix:'개',menuSuffix:'개 메뉴',add:'담기',sold:'품절',soldDetail:'인기가 많아 잠시 품절되었습니다. 최대한 빨리 다시 준비하겠습니다.',photoSoon:'사진 준비 중',empty:'이 카테고리에 표시할 메뉴가 없습니다.',added:' 장바구니에 담았어요.',cartEmpty:'장바구니가 비어 있습니다.',resetConfirm:'현재 장바구니를 비우고 테이블 선택 화면으로 돌아갈까요?'},
- vi:{featured:'Đề xuất',section:'Món đề xuất',reset:'Chọn lại bàn',table:'Bàn hiện tại',cart:'Giỏ hàng',itemSuffix:'món',menuSuffix:'món',add:'Thêm',sold:'Hết món',soldDetail:'Món được yêu thích nên tạm hết. Chúng tôi sẽ chuẩn bị lại sớm nhất có thể.',photoSoon:'Sắp có ảnh',empty:'Không có món trong danh mục này.',added:' đã được thêm vào giỏ.',cartEmpty:'Giỏ hàng đang trống.',resetConfirm:'Xóa giỏ hàng và quay lại màn hình chọn bàn?'},
- zh:{featured:'推荐',section:'推荐菜单',reset:'重新选桌',table:'当前桌号',cart:'购物车',itemSuffix:'件',menuSuffix:'道菜',add:'加入',sold:'售罄',soldDetail:'人气太高，暂时售罄。我们会尽快重新供应。',photoSoon:'图片准备中',empty:'此分类暂无菜单。',added:' 已加入购物车。',cartEmpty:'购物车是空的。',resetConfirm:'清空购物车并返回选桌页面吗？'},
- en:{featured:'Featured',section:'Featured menu',reset:'Select table again',table:'Current table',cart:'Cart',itemSuffix:'items',menuSuffix:'items',add:'Add',sold:'Sold out',soldDetail:'Temporarily sold out due to high demand. We will bring it back as soon as possible.',photoSoon:'Photo coming soon',empty:'There are no items in this category.',added:' was added to the cart.',cartEmpty:'Your cart is empty.',resetConfirm:'Clear the cart and return to table selection?'}
+ ko:{featured:'추천',section:'추천 메뉴',reset:'테이블 다시 선택',table:'현재 테이블',cart:'장바구니',itemSuffix:'개',menuSuffix:'개 메뉴',add:'담기',sold:'품절',soldDetail:'인기가 많아 잠시 품절되었습니다. 최대한 빨리 다시 준비하겠습니다.',photoSoon:'사진 준비 중',empty:'이 카테고리에 표시할 메뉴가 없습니다.',added:' 장바구니에 담았어요.',cartEmpty:'장바구니가 비어 있습니다.',resetConfirm:'현재 장바구니를 비우고 테이블 선택 화면으로 돌아갈까요?',hiddenRemoved:'매장 요청으로 숨겨진 메뉴를 장바구니에서 뺐습니다.'},
+ vi:{featured:'Đề xuất',section:'Món đề xuất',reset:'Chọn lại bàn',table:'Bàn hiện tại',cart:'Giỏ hàng',itemSuffix:'món',menuSuffix:'món',add:'Thêm',sold:'Hết món',soldDetail:'Món được yêu thích nên tạm hết. Chúng tôi sẽ chuẩn bị lại sớm nhất có thể.',photoSoon:'Sắp có ảnh',empty:'Không có món trong danh mục này.',added:' đã được thêm vào giỏ.',cartEmpty:'Giỏ hàng đang trống.',resetConfirm:'Xóa giỏ hàng và quay lại màn hình chọn bàn?',hiddenRemoved:'Món vừa được cửa hàng ẩn đã được xóa khỏi giỏ.'},
+ zh:{featured:'推荐',section:'推荐菜单',reset:'重新选桌',table:'当前桌号',cart:'购物车',itemSuffix:'件',menuSuffix:'道菜',add:'加入',sold:'售罄',soldDetail:'人气太高，暂时售罄。我们会尽快重新供应。',photoSoon:'图片准备中',empty:'此分类暂无菜单。',added:' 已加入购物车。',cartEmpty:'购物车是空的。',resetConfirm:'清空购物车并返回选桌页面吗？',hiddenRemoved:'门店刚刚隐藏的菜品已从购物车移除。'},
+ en:{featured:'Featured',section:'Featured menu',reset:'Select table again',table:'Current table',cart:'Cart',itemSuffix:'items',menuSuffix:'items',add:'Add',sold:'Sold out',soldDetail:'Temporarily sold out due to high demand. We will bring it back as soon as possible.',photoSoon:'Photo coming soon',empty:'There are no items in this category.',added:' was added to the cart.',cartEmpty:'Your cart is empty.',resetConfirm:'Clear the cart and return to table selection?',hiddenRemoved:'A menu item hidden by the store was removed from your cart.'}
 };
 function displayMenuImage(id){
   const url=menuImage(id);
@@ -277,29 +277,34 @@ const AVAILABILITY_ENDPOINT=ORDER_ENDPOINT.replace(/\/api\/cukcuk\/order$/,'/api
 const SPACE_PIZZA_DAY_OFF_DATE='2026-09-03';
 const SPACE_PIZZA_DAY_OFF_IDS=['c0f16b37-ff76-4d8e-a5a8-3ead5fd7b0a5','d902dc7b-b6b7-402d-aa90-4edb1e5cfbc2','433a6207-b8cf-4333-aa33-f344d6bfeb31','a84fa28e-bac3-45c2-9e00-5138b660ecd7','646d2461-e692-4275-97a0-0ba277913e92','5e53f8d3-3b1e-4c08-82d0-136726552c5b','89116940-5e7e-4e1e-b808-a0a2fdb5798e','18c2eb1b-5a99-459e-98b2-8c630036442a','e1cf1187-b643-4b90-9f6f-9a7458eaf037','1ffd639e-dd8f-4185-9ab9-4b187835b21c'];
 let cartItems=[],optionDraft=null,cartLineSequence=0,categoryScrollFrame=0,dialogOpener=null,orderSending=false,catalogReady=PREVIEW_MODE,catalogLoadFailed=false,orderVerificationRequired=false,pendingOrderPayload=null,historyLoading=false,historyPayload=null,historyRequestId=0;
-let tabletAvailability=fallbackTabletAvailability(),availabilityRefreshTimer=0;
+let tabletAvailability=fallbackTabletAvailability(),availabilityRefreshTimer=0,availabilityLoaded=false;
 
 function storeDateToday(){return new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Ho_Chi_Minh',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())}
 function fallbackTabletAvailability(){
  const active=storeDateToday()===SPACE_PIZZA_DAY_OFF_DATE;
  const categoryClosures=active?[{key:'space-pizza-day-off-'+SPACE_PIZZA_DAY_OFF_DATE,categoryName:'스페이스 피자',menuIds:SPACE_PIZZA_DAY_OFF_IDS,hiddenMenuIds:SPACE_PIZZA_DAY_OFF_IDS,title:{ko:'스페이스 피자 금일 휴무',vi:'Space Pizza hôm nay nghỉ',zh:'Space Pizza 今日休息',en:'Space Pizza is closed today'},message:{ko:'오늘은 피자 메뉴를 주문하실 수 없습니다.',vi:'Hôm nay không thể gọi các món pizza.',zh:'今天暂时无法订购披萨类菜单。',en:'Pizza items are unavailable to order today.'}}]:[];
- return{unavailableMenuIds:active?SPACE_PIZZA_DAY_OFF_IDS:[],categoryClosures};
+ return{unavailableMenuIds:active?SPACE_PIZZA_DAY_OFF_IDS:[],hiddenMenuIds:[],categoryClosures};
 }
 function normalizedTabletAvailability(value){
  const unavailableMenuIds=Array.isArray(value?.unavailableMenuIds)?value.unavailableMenuIds.map(String):[];
+ const hiddenMenuIds=Array.isArray(value?.hiddenMenuIds)?value.hiddenMenuIds.map(String):[];
  const categoryClosures=Array.isArray(value?.categoryClosures)?value.categoryClosures.filter(closure=>closure&&typeof closure.categoryName==='string').map(closure=>({...closure,menuIds:Array.isArray(closure.menuIds)?closure.menuIds.map(String):[],hiddenMenuIds:Array.isArray(closure.hiddenMenuIds)?closure.hiddenMenuIds.map(String):[]})):[];
- return{...value,unavailableMenuIds,categoryClosures};
+ return{...value,unavailableMenuIds,hiddenMenuIds,categoryClosures};
 }
 function activeCategoryClosure(categoryName){return tabletAvailability.categoryClosures.find(closure=>closure.categoryName===categoryName)||null}
 function hiddenByCategoryClosure(menu){return tabletAvailability.categoryClosures.some(closure=>(closure.hiddenMenuIds||closure.menuIds||[]).includes(String(menu.id)))}
+function menuIsHidden(menu){return tabletAvailability.hiddenMenuIds.includes(String(menu?.id||''))}
 function menuIsAvailable(menu){return menu?.available!==false&&!tabletAvailability.unavailableMenuIds.includes(String(menu?.id||''))}
 function closureStatusLabel(){return{ko:'오늘 휴무',vi:'Nghỉ hôm nay',zh:'今日休息',en:'Closed today'}[lang]}
 function categoryClosureMarkup(closure){const title=localizedNames(closure.title),message=localizedNames(closure.message);return`<article class="category-closure" role="status"><span class="category-closure-mark">SPACE PIZZA</span><h2>${escapeHtml(title)}</h2><p>${escapeHtml(message)}</p></article>`}
 async function refreshTabletAvailability(){
  try{
   const response=await fetch(AVAILABILITY_ENDPOINT,{cache:'no-store'});if(!response.ok)throw new Error('availability unavailable');
-  const result=await response.json();if(!result?.ok)throw new Error('availability invalid');tabletAvailability=normalizedTabletAvailability(result);
- }catch(error){tabletAvailability=fallbackTabletAvailability()}
+  const result=await response.json();if(!result?.ok)throw new Error('availability invalid');tabletAvailability=normalizedTabletAvailability(result);availabilityLoaded=true;
+ }catch(error){if(!availabilityLoaded)tabletAvailability=fallbackTabletAvailability()}
+ const hiddenIds=new Set(tabletAvailability.hiddenMenuIds);const before=cartItems.length;cartItems=cartItems.filter(item=>!hiddenIds.has(String(item.menuId)));
+ if(optionDraft&&hiddenIds.has(String(optionDraft.menu?.id))){closeOptionModal();optionDraft=null}
+ if(cartItems.length!==before){recalculateCart();showToast(words[lang].hiddenRemoved)}
  if(state?.menus?.length)render();
 }
 function startAvailabilityRefresh(){clearInterval(availabilityRefreshTimer);availabilityRefreshTimer=setInterval(refreshTabletAvailability,60*1000);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')refreshTabletAvailability()})}
@@ -364,9 +369,9 @@ function menuCardMarkup(menu,index){
   return `<button type="button" class="card" aria-label="${escapeHtml(actionLabel)}" title="${safeName}" onclick="selectMenu('${safeId}',this)" ${available?'':'disabled'}>${available?'':`<span class="sold"><span><b>${escapeHtml(words[lang].sold)}</b><small>${escapeHtml(soldDetail)}</small></span></span>`}<span class="visual" data-menu-id="${escapeHtml(menu.id)}">${photo}${optionChip}</span><span class="info"><span class="name">${safeName}</span>${subtitleMarkup}<span class="foot"><strong class="price">${money(menu.price)}</strong><span class="add" aria-hidden="true"><span>＋</span>${escapeHtml(words[lang].add)}</span></span></span></button>`;
 }
 function menuSections(){
-  const sections=visibleCategories().map(category=>{const closure=activeCategoryClosure(category.name);return{key:category.name,label:categoryLabel(category),closure,menus:state.menus.filter(menu=>menu.cat===category.name&&!hiddenByCategoryClosure(menu))}});
+  const sections=visibleCategories().map(category=>{const closure=activeCategoryClosure(category.name);return{key:category.name,label:categoryLabel(category),closure,menus:state.menus.filter(menu=>menu.cat===category.name&&!hiddenByCategoryClosure(menu)&&!menuIsHidden(menu))}});
   if(!state.featuredVisible)return sections;
-  return [{key:'featured',label:words[lang].section,closure:null,menus:state.menus.filter(menu=>menu.recommended&&!hiddenByCategoryClosure(menu))}].concat(sections);
+  return [{key:'featured',label:words[lang].section,closure:null,menus:state.menus.filter(menu=>menu.recommended&&!hiddenByCategoryClosure(menu)&&!menuIsHidden(menu))}].concat(sections);
 }
 function renderCats(){
  const visible=visibleCategories();
@@ -530,7 +535,7 @@ function confirmOptions(){
 function selectMenu(id,opener){
  if(!PREVIEW_MODE&&!catalogReady){showToast(catalogLoadFailed?words[lang].menuLoadFailed:words[lang].menuLoading);return}
  const menu=state.menus.find(item=>String(item.id)===String(id));
- if(!menu||!menuIsAvailable(menu))return;
+ if(!menu||menuIsHidden(menu)||!menuIsAvailable(menu))return;
  const groups=menuOptionGroups(menu);
  if(!groups.length&&(Number(menu.optionGroups)>0||Number(menu.price)===0)){showToast(words[lang].optionUnavailable);return}
  if(groups.length)openOptionModal(menu,groups,opener);else addConfiguredItem(menu,[]);

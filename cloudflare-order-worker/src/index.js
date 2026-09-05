@@ -4,7 +4,7 @@ import { fetchCukCukPosTableOrder } from "./table-order.js";
 import { expandMenuImage } from "./image-edit.js";
 import { handleStoreApi } from "./gpt-api.js";
 import { handleVoiceOrderApi } from "./voice-order.js";
-import { applyAvailabilityToMenuData, getAvailabilitySnapshot, handleAvailabilityApi, readAvailabilityStorage, writeAvailabilityStorage } from "./availability.js";
+import { applyAvailabilityToMenuData, getAvailabilitySnapshot, handleAvailabilityApi, readAvailabilityStorage, writeAvailabilityStorage, writeVisibilityStorage } from "./availability.js";
 
 const ALLOWED_ORIGINS = new Set([
   "https://kimsuhoe01-creator.github.io",
@@ -166,13 +166,17 @@ export class TableOrderCoordinator {
 
   async updateAvailability(payload) {
     try {
-      return json(await writeAvailabilityStorage(this.ctx.storage, payload?.menuId, payload?.available, {
+      const options = {
         expiresAt: payload?.expiresAt,
         reason: payload?.reason,
         menuName: payload?.menuName,
         actor: payload?.actor,
         requestId: payload?.requestId,
-      }));
+      };
+      const result = typeof payload?.visible === "boolean" && typeof payload?.available !== "boolean"
+        ? await writeVisibilityStorage(this.ctx.storage, payload?.menuId, payload.visible, options)
+        : await writeAvailabilityStorage(this.ctx.storage, payload?.menuId, payload?.available, options);
+      return json(result);
     } catch (error) {
       return json({
         ok: false,

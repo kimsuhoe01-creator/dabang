@@ -192,6 +192,23 @@ test('today-only Space Pizza closure replaces sold-out cards with one localized 
   assert.match(selectionSource, /!menuIsAvailable\(menu\)/);
 });
 
+test('server-hidden menus disappear from tablet sections and are removed from the cart', () => {
+  const availabilitySource = sourceSlice('function fallbackTabletAvailability()', 'function startAvailabilityRefresh');
+  assert.match(availabilitySource, /hiddenMenuIds:\[\]/);
+  assert.match(availabilitySource, /Array\.isArray\(value\?\.hiddenMenuIds\)/);
+  assert.match(availabilitySource, /function menuIsHidden\(menu\)/);
+  assert.match(availabilitySource, /cartItems=cartItems\.filter\(item=>!hiddenIds\.has\(String\(item\.menuId\)\)\)/);
+  assert.match(availabilitySource, /showToast\(words\[lang\]\.hiddenRemoved\)/);
+  assert.match(availabilitySource, /availabilityLoaded=true/);
+  assert.match(availabilitySource, /if\(!availabilityLoaded\)tabletAvailability=fallbackTabletAvailability\(\)/);
+
+  const sectionsSource = sourceSlice('function menuSections()', 'function renderCats');
+  assert.match(sectionsSource, /!menuIsHidden\(menu\)/);
+  const selectionSource = sourceSlice('function selectMenu(id,opener)', 'function addItem');
+  assert.match(selectionSource, /menuIsHidden\(menu\)/);
+  assert.match(html, /hiddenRemoved:'매장 요청으로 숨겨진 메뉴를 장바구니에서 뺐습니다\.'/);
+});
+
 test('cart offers explicit line removal, full clearing, and add-to-cart guidance animation', () => {
   assert.match(html, /id="clearCartButton"[^>]*onclick="clearCartItems\(\)"[^>]*>장바구니 비우기<\/button>/);
   assert.match(html, /removeItem:'비우기',clearCart:'장바구니 비우기'/);

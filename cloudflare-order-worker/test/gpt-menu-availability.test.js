@@ -1,7 +1,7 @@
 import test from "node:test";
 import assert from "node:assert/strict";
 import { handleStoreApi, resolveResumeAt, searchMenus } from "../src/gpt-api.js";
-import { readAvailabilityStorage, writeAvailabilityStorage } from "../src/availability.js";
+import { readAvailabilityStorage, writeAvailabilityStorage, writeVisibilityStorage } from "../src/availability.js";
 
 const SECRET = "store-gpt-test-secret";
 const NOW = new Date("2026-09-04T01:00:00.000Z");
@@ -20,11 +20,14 @@ const menuData = {
 test("store GPT OpenAPI publishes authenticated menu management actions", async () => {
   const response = await handleStoreApi(new Request("https://example.test/openapi.json"), {});
   const schema = await response.json();
-  assert.equal(schema.info.version, "2.0.0");
+  assert.equal(schema.info.version, "2.1.0");
   assert.ok(schema.paths["/api/store/menus"].get);
   assert.ok(schema.paths["/api/store/menu-availability"].get);
   assert.equal(schema.paths["/api/store/menu-hold"].post["x-openai-isConsequential"], true);
   assert.equal(schema.paths["/api/store/menu-resume"].post["x-openai-isConsequential"], true);
+  assert.equal(schema.paths["/api/store/menu-hide"].post["x-openai-isConsequential"], true);
+  assert.equal(schema.paths["/api/store/menu-show"].post["x-openai-isConsequential"], true);
+  assert.equal(schema.paths["/api/store/menu-audit"].get["x-openai-isConsequential"], false);
   assert.equal(schema.paths["/api/store/menus"].get["x-openai-isConsequential"], false);
   assert.equal(schema.components.securitySchemes.bearerAuth.scheme, "bearer");
   assert.deepEqual(schema.components.schemas, {});
@@ -116,6 +119,65 @@ test("dedicated store GPT token works without replacing the existing token", asy
   assert.equal((await response.json()).menus[0].id, NACHO_ID);
 });
 
+test("authenticated GPT can hide, verify, show, and audit an exact tablet menu", async () => {
+  const fixture = await apiFixture();
+  const hideBody = {
+    menuId: NACHO_ID,
+    expectedName: "딥치즈 & 나초칩",
+    reason: "태블릿에서 잠시 제외",
+    requestId: "64d9d673-a919-48cb-bf69-ad2d444a87ca",
+  };
+  const hide = await callApi(fixture, "/api/store/menu-hide", { method: "POST", body: JSON.stringify(hideBody) });
+  assert.equal(hide.status, 200);
+  const hidden = await hide.json();
+  assert.equal(hidden.menu.hiddenFromTablet, true);
+  assert.equal(hidden.menu.visibleOnTablet, false);
+  assert.equal(hidden.menu.effectiveAvailable, false);
+  assert.ok(hidden.menu.blockedBy.includes("tablet_hidden"));
+  assert.match(hidden.message, /원본은 변경하지 않았습니다/);
+
+  const replay = await callApi(fixture, "/api/store/menu-hide", { method: "POST", body: JSON.stringify(hideBody) });
+  assert.equal((await replay.json()).replayed, true);
+
+  const audit = await callApi(fixture, "/api/store/menu-audit?limit=10");
+  const history = await audit.json();
+  assert.equal(history.count, 1);
+  assert.equal(history.events[0].operation, "visibility");
+  assert.equal(history.events[0].visible, false);
+
+  const show = await callApi(fixture, "/api/store/menu-show", {
+    method: "POST",
+    body: JSON.stringify({ menuId: NACHO_ID, expectedName: "딥치즈 & 나초칩", requestId: "e1a01f24-1350-4b7c-8a38-0494e64c9079" }),
+  });
+  const shown = await show.json();
+  assert.equal(shown.menu.hiddenFromTablet, false);
+  assert.equal(shown.menu.visibleOnTablet, true);
+  assert.equal(shown.menu.effectiveAvailable, true);
+});
+
+test("showing a hidden menu does not clear a separate manual hold", async () => {
+  const fixture = await apiFixture();
+  const base = { menuId: NACHO_ID, expectedName: "딥치즈 & 나초칩" };
+  await callApi(fixture, "/api/store/menu-hold", { method: "POST", body: JSON.stringify({ ...base, resumePolicy: "manual", requestId: "7fb42f12-d4bc-42bd-97bd-b899c874a0fb" }) });
+  await callApi(fixture, "/api/store/menu-hide", { method: "POST", body: JSON.stringify({ ...base, requestId: "f112c392-3ab7-4096-bd60-1fa0f63e185d" }) });
+  const show = await callApi(fixture, "/api/store/menu-show", { method: "POST", body: JSON.stringify({ ...base, requestId: "ba0b0f4d-fabe-44fa-baba-a6295e045af1" }) });
+  const result = await show.json();
+  assert.equal(result.menu.visibleOnTablet, true);
+  assert.equal(result.menu.effectiveAvailable, false);
+  assert.deepEqual(result.menu.blockedBy, ["manual"]);
+});
+
+test("hide rejects a stale menu name without changing visibility", async () => {
+  const fixture = await apiFixture();
+  const response = await callApi(fixture, "/api/store/menu-hide", {
+    method: "POST",
+    body: JSON.stringify({ menuId: NACHO_ID, expectedName: "치피 세트 (M)", requestId: "209c4d3d-b9c3-4e26-af2b-af4ed52b44a4" }),
+  });
+  assert.equal(response.status, 409);
+  const status = await callApi(fixture, `/api/store/menu-availability?menuId=${NACHO_ID}`);
+  assert.equal((await status.json()).menus[0].hiddenFromTablet, false);
+});
+
 async function apiFixture() {
   const hash = await sha256(SECRET);
   const values = new Map();
@@ -128,7 +190,9 @@ async function apiFixture() {
       const method = init.method || "GET";
       if (method === "GET") return Response.json(await readAvailabilityStorage(storage, NOW));
       const payload = JSON.parse(init.body);
-      return Response.json(await writeAvailabilityStorage(storage, payload.menuId, payload.available, payload, NOW));
+      return Response.json(typeof payload.visible === "boolean" && typeof payload.available !== "boolean"
+        ? await writeVisibilityStorage(storage, payload.menuId, payload.visible, payload, NOW)
+        : await writeAvailabilityStorage(storage, payload.menuId, payload.available, payload, NOW));
     },
   };
   return {

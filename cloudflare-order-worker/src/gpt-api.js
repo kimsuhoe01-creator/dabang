@@ -1,6 +1,6 @@
 import { login } from "./order.js";
 import { buildStoreReport, verifyStoreToken } from "./sales.js";
-import { buildAvailabilitySnapshot, getManualAvailabilityState, setManualAvailability } from "./availability.js";
+import { buildAvailabilitySnapshot, getManualAvailabilityState, setManualAvailability, setManualVisibility } from "./availability.js";
 
 const STORE_TIME_ZONE = "Asia/Ho_Chi_Minh";
 const MAX_MENU_RESULTS = 12;
@@ -8,8 +8,11 @@ const PROTECTED_ROUTES = new Set([
   "GET /api/store/report",
   "GET /api/store/menus",
   "GET /api/store/menu-availability",
+  "GET /api/store/menu-audit",
   "POST /api/store/menu-hold",
   "POST /api/store/menu-resume",
+  "POST /api/store/menu-hide",
+  "POST /api/store/menu-show",
 ]);
 
 export async function handleStoreApi(request, env, dependencies = {}) {
@@ -53,6 +56,22 @@ export async function handleStoreApi(request, env, dependencies = {}) {
       if (menuId && !filtered.length) throw new StoreApiError("현재 공개 메뉴에서 해당 메뉴를 찾지 못했습니다.", 404, "MENU_NOT_FOUND");
       return json({ ok: true, count: filtered.length, menus: filtered, generatedAt: now.toISOString() });
     }
+    if (route === "GET /api/store/menu-audit") {
+      const state = await getManualAvailabilityState(env, now);
+      const limit = Math.max(1, Math.min(50, Number.parseInt(url.searchParams.get("limit") || "20", 10) || 20));
+      const events = state.auditLog.slice(-limit).reverse().map(event => ({
+        operation: event.operationType,
+        menuId: event.menuId,
+        menuName: event.menuName,
+        available: event.available,
+        visible: event.visible,
+        resumeAt: event.expiresAt,
+        reason: event.reason,
+        actor: event.actor,
+        changedAt: event.changedAt,
+      }));
+      return json({ ok: true, count: events.length, events, generatedAt: now.toISOString() });
+    }
 
     const payload = await readJson(request);
     const menuId = cleanGuid(payload?.menuId);
@@ -65,22 +84,27 @@ export async function handleStoreApi(request, env, dependencies = {}) {
       throw new StoreApiError("검색 결과의 메뉴명과 현재 메뉴가 일치하지 않습니다. 메뉴를 다시 검색해 주세요.", 409, "MENU_NAME_MISMATCH");
     }
 
+    const visibilityChange = route === "POST /api/store/menu-hide" || route === "POST /api/store/menu-show";
     const requestedAvailable = route === "POST /api/store/menu-resume";
-    const expiresAt = requestedAvailable ? null : resolveResumeAt(payload?.resumePolicy, payload?.resumeAt, now);
-    const state = await setManualAvailability(env, menuId, requestedAvailable, {
+    const requestedVisible = route === "POST /api/store/menu-show";
+    const expiresAt = route === "POST /api/store/menu-hold" ? resolveResumeAt(payload?.resumePolicy, payload?.resumeAt, now) : null;
+    const changeOptions = {
       expiresAt,
       reason: cleanText(payload?.reason, 200),
       menuName: menu?.names?.ko || menu?.sourceName || menuId,
       actor: "store-gpt",
       requestId,
-    });
+    };
+    const state = visibilityChange
+      ? await setManualVisibility(env, menuId, requestedVisible, changeOptions)
+      : await setManualAvailability(env, menuId, requestedAvailable, changeOptions);
     const snapshot = buildAvailabilitySnapshot(state, now);
     const result = describeMenuAvailability(menu, snapshot, state);
     return json({
       ok: true,
       replayed: state.replayed === true,
       menu: result,
-      message: availabilityResultMessage(result, requestedAvailable),
+      message: visibilityChange ? visibilityResultMessage(result, requestedVisible) : availabilityResultMessage(result, requestedAvailable),
       generatedAt: now.toISOString(),
     });
   } catch (error) {
@@ -150,10 +174,11 @@ function describeMenuAvailability(menu, snapshot, state) {
   const menuId = String(menu?.id || "");
   const manualEntry = (Array.isArray(state?.manualEntries) ? state.manualEntries : []).find(entry => entry.menuId === menuId) || null;
   const sourceUnavailable = menu?.available === false;
-  const manualUnavailable = (snapshot?.manualUnavailableMenuIds || []).includes(menuId);
+  const manualHeld = manualEntry?.held === true;
+  const hiddenFromTablet = (snapshot?.manualHiddenMenuIds || []).includes(menuId);
   const scheduledUnavailable = (snapshot?.scheduledUnavailableMenuIds || []).includes(menuId);
   const closureUnavailable = (snapshot?.closureUnavailableMenuIds || []).includes(menuId);
-  const blockedBy = [sourceUnavailable && "cukcuk_source", manualUnavailable && "manual", scheduledUnavailable && "schedule", closureUnavailable && "category_closure"].filter(Boolean);
+  const blockedBy = [sourceUnavailable && "cukcuk_source", manualHeld && "manual", hiddenFromTablet && "tablet_hidden", scheduledUnavailable && "schedule", closureUnavailable && "category_closure"].filter(Boolean);
   return {
     id: menuId,
     code: String(menu?.cukcukCode || ""),
@@ -163,11 +188,20 @@ function describeMenuAvailability(menu, snapshot, state) {
     price: Number(menu?.price) || 0,
     sourceAvailable: !sourceUnavailable,
     effectiveAvailable: blockedBy.length === 0,
+    visibleOnTablet: !hiddenFromTablet,
+    hiddenFromTablet,
     blockedBy,
     manualResumeAt: manualEntry?.expiresAt || null,
     manualReason: manualEntry?.reason || "",
     changedAt: manualEntry?.changedAt || null,
   };
+}
+
+function visibilityResultMessage(menu, requestedVisible) {
+  if (!requestedVisible) return `${menu.name}을(를) 태블릿 메뉴에서 숨겼고 주문도 차단했습니다. CUKCUK와 구글 원본은 변경하지 않았습니다.`;
+  return menu.effectiveAvailable
+    ? `${menu.name}을(를) 태블릿 메뉴에 다시 표시했고 현재 주문 가능합니다.`
+    : `${menu.name}을(를) 태블릿 메뉴에 다시 표시했지만 다른 품절 사유 때문에 아직 주문할 수 없습니다.`;
 }
 
 function availabilityResultMessage(menu, requestedAvailable) {
@@ -237,8 +271,8 @@ function openApiSchema(origin) {
     openapi: "3.1.0",
     info: {
       title: "DABANG CHICKEN Store Management API",
-      version: "2.0.0",
-      description: "다방치킨 박닌본점 CUKCUK 매출 조회와 태블릿 메뉴 품절·판매 재개 관리 API",
+      version: "2.1.0",
+      description: "다방치킨 박닌본점 CUKCUK 매출 조회와 태블릿 메뉴 품절·판매 재개·숨김·표시 관리 API",
     },
     servers: [{ url: origin }],
     paths: {
@@ -277,6 +311,18 @@ function openApiSchema(origin) {
             { name: "menuId", in: "query", required: false, schema: { type: "string", format: "uuid" }, description: "생략하면 현재 주문 불가 메뉴 전체, 지정하면 해당 메뉴 한 개" },
           ],
           responses: { "200": { description: "현재 유효한 판매상태" }, ...errorResponses },
+          security: [{ bearerAuth: [] }],
+          "x-openai-isConsequential": false,
+        },
+      },
+      "/api/store/menu-audit": {
+        get: {
+          operationId: "getDabangMenuChangeHistory",
+          summary: "최근 태블릿 메뉴 품절·판매 재개·숨김·표시 변경 이력을 조회합니다.",
+          parameters: [
+            { name: "limit", in: "query", required: false, schema: { type: "integer", minimum: 1, maximum: 50, default: 20 }, description: "가져올 최근 변경 건수" },
+          ],
+          responses: { "200": { description: "최근 메뉴 변경 이력" }, "401": { description: "인증 실패" } },
           security: [{ bearerAuth: [] }],
           "x-openai-isConsequential": false,
         },
@@ -336,6 +382,62 @@ function openApiSchema(origin) {
             },
           },
           responses: { "200": { description: "수동 품절 해제 후 서버에서 다시 확인한 판매상태" }, ...errorResponses, "409": { description: "메뉴명 불일치" } },
+          security: [{ bearerAuth: [] }],
+        },
+      },
+      "/api/store/menu-hide": {
+        post: {
+          operationId: "hideDabangMenuFromTablet",
+          summary: "정확한 메뉴 한 개를 태블릿에서 숨기고 주문을 차단합니다.",
+          description: "삭제 요청도 CUKCUK나 구글 원본을 삭제하지 않고 이 태블릿 전용 숨김으로 처리합니다. searchDabangMenus로 확인한 menuId와 정확한 메뉴명을 함께 사용합니다.",
+          "x-openai-isConsequential": true,
+          requestBody: {
+            required: true,
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  additionalProperties: false,
+                  required: ["menuId", "expectedName", "requestId"],
+                  properties: {
+                    menuId: { type: "string", format: "uuid", description: "검색 결과에서 확인한 메뉴 ID" },
+                    expectedName: { type: "string", maxLength: 160, description: "검색 결과에 나온 정확한 메뉴명" },
+                    reason: { type: "string", maxLength: 200, description: "매니저가 말한 짧은 숨김 사유" },
+                    requestId: { type: "string", maxLength: 100, description: "이 변경 요청의 고유 UUID. 재시도할 때 같은 값을 사용" },
+                  },
+                },
+              },
+            },
+          },
+          responses: { "200": { description: "태블릿 숨김 후 서버에서 다시 확인한 상태" }, ...errorResponses, "409": { description: "메뉴명 불일치" } },
+          security: [{ bearerAuth: [] }],
+        },
+      },
+      "/api/store/menu-show": {
+        post: {
+          operationId: "showDabangMenuOnTablet",
+          summary: "정확한 메뉴 한 개를 태블릿에 다시 표시합니다.",
+          description: "태블릿 전용 숨김만 해제합니다. 별도 품절, CUKCUK 원본 품절, 예약 차단은 해제하지 않습니다.",
+          "x-openai-isConsequential": true,
+          requestBody: {
+            required: true,
+            content: {
+              "application/json": {
+                schema: {
+                  type: "object",
+                  additionalProperties: false,
+                  required: ["menuId", "expectedName", "requestId"],
+                  properties: {
+                    menuId: { type: "string", format: "uuid", description: "검색 결과에서 확인한 메뉴 ID" },
+                    expectedName: { type: "string", maxLength: 160, description: "검색 결과에 나온 정확한 메뉴명" },
+                    reason: { type: "string", maxLength: 200, description: "다시 표시하는 짧은 사유" },
+                    requestId: { type: "string", maxLength: 100, description: "이 변경 요청의 고유 UUID. 재시도할 때 같은 값을 사용" },
+                  },
+                },
+              },
+            },
+          },
+          responses: { "200": { description: "태블릿 다시 표시 후 서버에서 다시 확인한 상태" }, ...errorResponses, "409": { description: "메뉴명 불일치" } },
           security: [{ bearerAuth: [] }],
         },
       },

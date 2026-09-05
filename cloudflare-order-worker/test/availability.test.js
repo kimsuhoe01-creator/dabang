@@ -1,6 +1,6 @@
 import test from "node:test";
 import assert from "node:assert/strict";
-import { applyAvailabilityToMenuData, buildAvailabilitySnapshot, readAvailabilityStorage, writeAvailabilityStorage } from "../src/availability.js";
+import { applyAvailabilityToMenuData, buildAvailabilitySnapshot, readAvailabilityStorage, writeAvailabilityStorage, writeVisibilityStorage } from "../src/availability.js";
 
 const SAPPORO_ONE_PLUS_ONE_ID = "52c29562-ac31-42c7-9f24-956d348de02a";
 const PIZZA_ID = "c0f16b37-ff76-4d8e-a5a8-3ead5fd7b0a5";
@@ -124,4 +124,68 @@ test("legacy unavailable id storage migrates without reopening menus", async () 
   const state = await readAvailabilityStorage(storage, new Date("2026-09-04T01:00:00.000Z"));
   assert.deepEqual(state.manualUnavailableMenuIds, [PIZZA_ID]);
   assert.equal(state.manualEntries[0].expiresAt, null);
+  assert.equal(state.manualEntries[0].held, true);
+  assert.equal(state.manualEntries[0].hidden, false);
+});
+
+test("tablet hiding is reversible and remains independent from a manual hold", async () => {
+  const values = new Map();
+  const storage = {
+    get: key => values.get(key),
+    put: async (key, value) => values.set(key, value),
+  };
+  const now = new Date("2026-09-04T01:00:00.000Z");
+  const hidden = await writeVisibilityStorage(storage, PIZZA_ID, false, {
+    menuName: "테스트 피자",
+    actor: "store-gpt",
+    requestId: "visibility-hide-1",
+  }, now);
+  assert.deepEqual(hidden.manualHiddenMenuIds, [PIZZA_ID]);
+  assert.deepEqual(hidden.manualUnavailableMenuIds, [PIZZA_ID]);
+  assert.equal(hidden.manualEntries[0].held, false);
+  assert.equal(hidden.auditLog[0].operationType, "visibility");
+  assert.equal(hidden.auditLog[0].visible, false);
+
+  const snapshot = buildAvailabilitySnapshot(hidden, now);
+  assert.ok(snapshot.hiddenMenuIds.includes(PIZZA_ID));
+  assert.ok(snapshot.unavailableMenuIds.includes(PIZZA_ID));
+  assert.equal(applyAvailabilityToMenuData({ menus: [{ id: PIZZA_ID, available: true }] }, snapshot).menus[0].available, false);
+
+  await writeAvailabilityStorage(storage, PIZZA_ID, false, { requestId: "availability-hold-1" }, now);
+  const shown = await writeVisibilityStorage(storage, PIZZA_ID, true, { requestId: "visibility-show-1" }, now);
+  assert.deepEqual(shown.manualHiddenMenuIds, []);
+  assert.deepEqual(shown.manualUnavailableMenuIds, [PIZZA_ID]);
+  assert.equal(shown.manualEntries[0].held, true);
+
+  const resumed = await writeAvailabilityStorage(storage, PIZZA_ID, true, { requestId: "availability-resume-1" }, now);
+  assert.deepEqual(resumed.manualUnavailableMenuIds, []);
+  assert.deepEqual(resumed.manualEntries, []);
+});
+
+test("expired hold does not make a separately hidden menu visible or orderable", async () => {
+  const values = new Map();
+  const storage = {
+    get: key => values.get(key),
+    put: async (key, value) => values.set(key, value),
+  };
+  const start = new Date("2026-09-04T01:00:00.000Z");
+  await writeAvailabilityStorage(storage, PIZZA_ID, false, { expiresAt: "2026-09-04T02:00:00Z", requestId: "hold-with-expiry-1" }, start);
+  await writeVisibilityStorage(storage, PIZZA_ID, false, { requestId: "hide-with-expiry-1" }, start);
+  const state = await readAvailabilityStorage(storage, new Date("2026-09-04T02:00:01.000Z"));
+  assert.equal(state.manualEntries[0].held, false);
+  assert.equal(state.manualEntries[0].hidden, true);
+  assert.deepEqual(state.manualHiddenMenuIds, [PIZZA_ID]);
+  assert.deepEqual(state.manualUnavailableMenuIds, [PIZZA_ID]);
+});
+
+test("request ids cannot be reused across availability and visibility operations", async () => {
+  const values = new Map();
+  const storage = {
+    get: key => values.get(key),
+    put: async (key, value) => values.set(key, value),
+  };
+  const now = new Date("2026-09-04T01:00:00.000Z");
+  await writeVisibilityStorage(storage, PIZZA_ID, false, { requestId: "cross-operation-1" }, now);
+  await assert.rejects(writeAvailabilityStorage(storage, PIZZA_ID, false, { requestId: "cross-operation-1" }, now), /already used/);
+  await assert.rejects(writeVisibilityStorage(storage, PIZZA_ID, true, { requestId: "cross-operation-1" }, now), /already used/);
 });
