@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-09-06 15:50:18",
-    "finished_at": "2026-09-06 15:50:31",
+    "started_at": "2026-09-06 17:45:42",
+    "finished_at": "2026-09-06 17:45:50",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -1279,9 +1279,9 @@
       "sourceName": "양념  Sweet & Spicy Chicken  韩式甜酱炸鸡 Gà sốt ngọt HQ",
       "names": {
         "ko": "양념 치킨",
-        "vi": "Gà sốt ngọt kiểu Hàn",
+        "vi": "Gà sốt ngọt Hàn Quốc",
         "zh": "韩式甜酱炸鸡",
-        "en": "Korean Sweet Sauce Chicken"
+        "en": "Sweet & Spicy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1301,9 +1301,9 @@
       "sourceName": "매운양념  Hot & Spicy Chicken韩式辣酱炸鸡  Gà sốt cay HQ",
       "names": {
         "ko": "매운 양념 치킨",
-        "vi": "Gà sốt cay kiểu Hàn",
+        "vi": "Gà sốt cay Hàn Quốc",
         "zh": "韩式辣酱炸鸡",
-        "en": "Korean Spicy Sauce Chicken"
+        "en": "Hot & Spicy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1347,7 +1347,7 @@
         "ko": "고추마늘간장 치킨",
         "vi": "Gà sốt xì dầu tỏi ớt",
         "zh": "辣椒蒜酱鸡",
-        "en": "Chili Garlic Soy Chicken"
+        "en": "Garlic Soy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1368,7 +1368,7 @@
       "names": {
         "ko": "스리라차 어니언 치킨",
         "vi": "Gà sốt kem hành Sriracha",
-        "zh": "斯里拉查洋葱奶油炸鸡",
+        "zh": "斯里拉差洋葱奶油炸鸡",
         "en": "Sriracha Onion Chicken"
       },
       "price": 399600,
@@ -5227,6 +5227,6 @@
     "cacheHits": 288,
     "translated": 11,
     "pendingCount": 0,
-    "updatedAt": "2026-09-06T15:50:51.147Z"
+    "updatedAt": "2026-09-06T17:46:05.365Z"
   }
 }
