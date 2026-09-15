@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-09-15 18:18:57",
-    "finished_at": "2026-09-15 18:19:09",
+    "started_at": "2026-09-15 21:26:53",
+    "finished_at": "2026-09-15 21:27:04",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -1257,7 +1257,7 @@
       "sourceName": "후라이드  Fried Chicken  无骨炸鸡腿 Má đùi rút xương",
       "names": {
         "ko": "후라이드 치킨",
-        "vi": "Gà rán không xương",
+        "vi": "Gà chiên không xương",
         "zh": "无骨炸鸡腿",
         "en": "Boneless Fried Chicken"
       },
@@ -1367,8 +1367,8 @@
       "sourceName": "스리라차 어니언  Sriracha Onion Chicken洋葱奶酱炸鸡 Gà sốt kem hành",
       "names": {
         "ko": "스리라차 어니언 치킨",
-        "vi": "Gà sốt kem hành tây Sriracha",
-        "zh": "是拉差洋葱奶油炸鸡",
+        "vi": "Gà sốt kem hành Sriracha",
+        "zh": "斯里拉差洋葱奶油炸鸡",
         "en": "Sriracha Onion Chicken"
       },
       "price": 399600,
@@ -5227,6 +5227,6 @@
     "cacheHits": 288,
     "translated": 11,
     "pendingCount": 0,
-    "updatedAt": "2026-09-15T18:19:25.645Z"
+    "updatedAt": "2026-09-15T21:27:20.035Z"
   }
 }
