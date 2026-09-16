@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-09-16 12:00:19",
-    "finished_at": "2026-09-16 12:00:28",
+    "started_at": "2026-09-16 14:28:27",
+    "finished_at": "2026-09-16 14:28:36",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -18,7 +18,7 @@
       "sourceName": "하이볼|RượuHighball|高球酒|Highball",
       "names": {
         "ko": "하이볼",
-        "vi": "Rượu Highball",
+        "vi": "Highball",
         "zh": "高球酒",
         "en": "Highball"
       },
@@ -176,7 +176,7 @@
         "ko": "주류",
         "vi": "Đồ uống có cồn",
         "zh": "酒类",
-        "en": "Alcohol"
+        "en": "Alcoholic Drinks"
       },
       "visible": true,
       "sortOrder": 13
@@ -432,7 +432,7 @@
       "names": {
         "ko": "돈까스 플레이트 (안 매운맛)",
         "vi": "Đĩa tonkatsu (không cay)",
-        "zh": "炸猪排拼盘(不辣)",
+        "zh": "炸猪排拼盘（不辣）",
         "en": "Tonkatsu Plate (Non-spicy)"
       },
       "price": 313200,
@@ -1123,14 +1123,14 @@
       ],
       "sortOrder": 35,
       "cukcukCode": "(KX14)",
-      "categorySortOrder": 1,
       "optionRules": {
         "cukcuk-detail:2813d1e7-250b-49ae-9f76-e5b40f451492:0": {
           "required": true,
           "minSelections": 1,
           "maxSelections": 1
         }
-      }
+      },
+      "categorySortOrder": 1
     },
     {
       "id": "c92bb30f-12ac-4c63-84cd-5040166c3833",
@@ -1219,14 +1219,14 @@
       ],
       "sortOrder": 39,
       "cukcukCode": "(KX02)",
-      "categorySortOrder": 0,
       "optionRules": {
         "cukcuk-detail:42257f0b-e1f2-4b69-b7ce-d59d43a69f87:0": {
           "required": true,
           "minSelections": 1,
           "maxSelections": 1
         }
-      }
+      },
+      "categorySortOrder": 0
     },
     {
       "id": "7f78a64e-bba9-43fb-8c37-5f8413cf4644",
@@ -1293,7 +1293,7 @@
         "ko": "후라이드 치킨",
         "vi": "Gà chiên không xương",
         "zh": "无骨炸鸡腿",
-        "en": "Fried Boneless Chicken"
+        "en": "Boneless Fried Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1313,7 +1313,7 @@
       "sourceName": "양념  Sweet & Spicy Chicken  韩式甜酱炸鸡 Gà sốt ngọt HQ",
       "names": {
         "ko": "양념 치킨",
-        "vi": "Gà sốt ngọt Hàn Quốc",
+        "vi": "Gà sốt ngọt kiểu Hàn",
         "zh": "韩式甜酱炸鸡",
         "en": "Sweet & Spicy Chicken"
       },
@@ -1335,7 +1335,7 @@
       "sourceName": "매운양념  Hot & Spicy Chicken韩式辣酱炸鸡  Gà sốt cay HQ",
       "names": {
         "ko": "매운 양념 치킨",
-        "vi": "Gà sốt cay Hàn Quốc",
+        "vi": "Gà sốt cay kiểu Hàn",
         "zh": "韩式辣酱炸鸡",
         "en": "Hot & Spicy Chicken"
       },
@@ -1402,7 +1402,7 @@
       "names": {
         "ko": "스리라차 어니언 치킨",
         "vi": "Gà sốt kem hành Sriracha",
-        "zh": "是拉差洋葱奶油炸鸡",
+        "zh": "斯里拉差洋葱奶油炸鸡",
         "en": "Sriracha Onion Chicken"
       },
       "price": 399600,
@@ -2325,7 +2325,7 @@
       "names": {
         "ko": "코카콜라 (390ml)",
         "vi": "Coca-Cola (390ml)",
-        "zh": "可口可乐(390ml)",
+        "zh": "可口可乐（390ml）",
         "en": "Coca-Cola (390ml)"
       },
       "price": 22000,
@@ -2365,7 +2365,7 @@
       "names": {
         "ko": "펩시 제로 (390ml)",
         "vi": "Pepsi Không Calo (390ml)",
-        "zh": "百事无糖(390ml)",
+        "zh": "百事无糖（390ml）",
         "en": "Pepsi Zero (390ml)"
       },
       "price": 33000,
@@ -2385,7 +2385,7 @@
       "names": {
         "ko": "나랑드 제로 (500ml)",
         "vi": "Narangd Zero (500ml)",
-        "zh": "Narangd 零糖(500ml)",
+        "zh": "Narangd 零糖（500ml）",
         "en": "Narangd Zero (500ml)"
       },
       "price": 55000,
@@ -2415,7 +2415,7 @@
       "names": {
         "ko": "펩시 제로 라임 (1.5L)",
         "vi": "Pepsi Không Calo Vị Chanh (1,5L)",
-        "zh": "百事无糖青柠味(1.5L)",
+        "zh": "百事无糖青柠味（1.5L）",
         "en": "Pepsi Zero Lime (1.5L)"
       },
       "price": 77000,
@@ -2557,7 +2557,7 @@
       "names": {
         "ko": "하노이 생맥주 KEG (1L)",
         "vi": "Bia Hơi Hà Nội KEG (1L)",
-        "zh": "河内鲜啤 KEG(1L)",
+        "zh": "河内鲜啤 KEG（1L）",
         "en": "Hanoi Draft Beer KEG (1L)"
       },
       "price": 110000,
@@ -4652,6 +4652,292 @@
       ]
     },
     {
+      "id": "cukcuk-detail:42257f0b-e1f2-4b69-b7ce-d59d43a69f87:0",
+      "sourceName": "매운 단계",
+      "names": {
+        "ko": "매운 단계",
+        "vi": "Cấp độ cay",
+        "zh": "辣度等级",
+        "en": "Spice Level"
+      },
+      "required": false,
+      "minSelections": 0,
+      "maxSelections": 3,
+      "revision": 1,
+      "values": [
+        {
+          "id": "3b59138e-b848-41aa-a45d-9fa1b915fbcf",
+          "sourceName": "1단계/(C1)Level 1/1级 – 微辣 /Cấp 1 – Cay nhẹ",
+          "names": {
+            "ko": "1단계 - 약간 매운맛",
+            "vi": "Cấp 1 - Cay nhẹ",
+            "zh": "1级 - 微辣",
+            "en": "Level 1 - Mild Spicy"
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 0
+        },
+        {
+          "id": "b4ff5c57-e25c-4275-a6a9-4a25ba70e497",
+          "sourceName": "2단계/Level 2 /2级 – 中辣 /Cấp 2 – Cay vừa\u0001",
+          "names": {
+            "ko": "2단계 - 중간 매운맛",
+            "vi": "Cấp 2 - Cay vừa",
+            "zh": "2级 - 中辣",
+            "en": "Level 2 - Medium Spicy"
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 1
+        },
+        {
+          "id": "90f5ee61-9405-4725-a244-24b23222ee4f",
+          "sourceName": "3단계/Level 3 /3级 – 特辣 /Cấp 3 – Siêu cay",
+          "names": {
+            "ko": "3단계 - 아주 매운맛",
+            "vi": "Cấp 3 - Siêu cay",
+            "zh": "3级 - 特辣",
+            "en": "Level 3 - Extra Spicy"
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 2
+        }
+      ],
+      "menuIds": [
+        "42257f0b-e1f2-4b69-b7ce-d59d43a69f87"
+      ]
+    },
+    {
+      "id": "cukcuk-detail:42257f0b-e1f2-4b69-b7ce-d59d43a69f87:1",
+      "sourceName": "짭코바 추가 옵션",
+      "names": {
+        "ko": "짭코바 추가 옵션",
+        "vi": "Tùy chọn thêm cho gà BBQ cay",
+        "zh": "辣味BBQ烤鸡加购选项",
+        "en": "Spicy BBQ Chicken Extras"
+      },
+      "required": false,
+      "minSelections": 0,
+      "maxSelections": 4,
+      "revision": 1,
+      "values": [
+        {
+          "id": "1e883121-c3ea-478a-8c5d-c114ae89dfa1",
+          "sourceName": "밥 Cơm",
+          "names": {
+            "ko": "밥",
+            "vi": "Cơm",
+            "zh": "米饭",
+            "en": "Rice"
+          },
+          "additionalPrice": 21600,
+          "visible": true,
+          "sortOrder": 0
+        },
+        {
+          "id": "c790a8cf-a7e7-4b67-9c7b-f09ce819bcf5",
+          "sourceName": "통마늘 추가 | Thêm tỏi nguyên tép",
+          "names": {
+            "ko": "통마늘 추가",
+            "vi": "Thêm tỏi nguyên tép",
+            "zh": "加整瓣大蒜",
+            "en": "Add Whole Garlic"
+          },
+          "receiptNames": {
+            "ko": "통마늘 추가",
+            "vi": "Thêm tỏi nguyên tép"
+          },
+          "additionalPrice": 32400,
+          "visible": true,
+          "sortOrder": 1
+        },
+        {
+          "id": "6edb778c-e1bf-4bbd-ab5f-338b0b8bd41a",
+          "sourceName": "모짜렐라 치즈 추가 | Thêm phô mai mozzarella",
+          "names": {
+            "ko": "모짜렐라 치즈 추가",
+            "vi": "Thêm phô mai mozzarella",
+            "zh": "加马苏里拉奶酪",
+            "en": "Add Mozzarella Cheese"
+          },
+          "receiptNames": {
+            "ko": "모짜렐라 치즈 추가",
+            "vi": "Thêm phô mai mozzarella"
+          },
+          "additionalPrice": 54000,
+          "visible": true,
+          "sortOrder": 2
+        },
+        {
+          "id": "4a2a7a67-d229-4d97-b89b-40d5136a9b61",
+          "sourceName": "짭코바 우동|bbq udon",
+          "names": {
+            "ko": "짭코바 우동",
+            "vi": "Udon Jjap Koba",
+            "zh": "Jjap Koba乌冬面",
+            "en": "Jjap Koba Udon"
+          },
+          "receiptNames": {
+            "ko": "짭코바 우동",
+            "vi": "bbq udon"
+          },
+          "additionalPrice": 64800,
+          "visible": true,
+          "sortOrder": 3
+        }
+      ],
+      "menuIds": [
+        "42257f0b-e1f2-4b69-b7ce-d59d43a69f87"
+      ]
+    },
+    {
+      "id": "cukcuk-detail:2813d1e7-250b-49ae-9f76-e5b40f451492:0",
+      "sourceName": "매운 단계",
+      "names": {
+        "ko": "매운 단계",
+        "vi": "Cấp độ cay",
+        "zh": "辣度等级",
+        "en": "Spice Level"
+      },
+      "required": false,
+      "minSelections": 0,
+      "maxSelections": 3,
+      "revision": 1,
+      "values": [
+        {
+          "id": "3b59138e-b848-41aa-a45d-9fa1b915fbcf",
+          "sourceName": "1단계/(C1)Level 1/1级 – 微辣 /Cấp 1 – Cay nhẹ",
+          "names": {
+            "ko": "1단계 - 약간 매운맛",
+            "vi": "Cấp 1 - Cay nhẹ",
+            "zh": "1级 - 微辣",
+            "en": "Level 1 - Mild Spicy"
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 0
+        },
+        {
+          "id": "b4ff5c57-e25c-4275-a6a9-4a25ba70e497",
+          "sourceName": "2단계/Level 2 /2级 – 中辣 /Cấp 2 – Cay vừa\u0001",
+          "names": {
+            "ko": "2단계 - 중간 매운맛",
+            "vi": "Cấp 2 - Cay vừa",
+            "zh": "2级 - 中辣",
+            "en": "Level 2 - Medium Spicy"
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 1
+        },
+        {
+          "id": "90f5ee61-9405-4725-a244-24b23222ee4f",
+          "sourceName": "3단계/Level 3 /3级 – 特辣 /Cấp 3 – Siêu cay",
+          "names": {
+            "ko": "3단계 - 아주 매운맛",
+            "vi": "Cấp 3 - Siêu cay",
+            "zh": "3级 - 特辣",
+            "en": "Level 3 - Extra Spicy"
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 2
+        }
+      ],
+      "menuIds": [
+        "2813d1e7-250b-49ae-9f76-e5b40f451492"
+      ]
+    },
+    {
+      "id": "cukcuk-detail:2813d1e7-250b-49ae-9f76-e5b40f451492:1",
+      "sourceName": "짭코바 반마리 추가 옵션",
+      "names": {
+        "ko": "짭코바 반마리 추가 옵션",
+        "vi": "Tùy chọn thêm cho nửa con gà BBQ cay",
+        "zh": "半只辣味BBQ烤鸡加购选项",
+        "en": "Half Spicy BBQ Chicken Extras"
+      },
+      "required": false,
+      "minSelections": 0,
+      "maxSelections": 4,
+      "revision": 1,
+      "values": [
+        {
+          "id": "eb14789e-3dfe-40b9-bc3c-f58e897128f1",
+          "sourceName": "Rosé Spicy BBQ|로제짭코바",
+          "names": {
+            "ko": "로제 짭코바",
+            "vi": "Jjap Koba sốt rosé cay",
+            "zh": "辣味玫瑰Jjap Koba",
+            "en": "Rosé Spicy Jjap Koba"
+          },
+          "receiptNames": {
+            "ko": "로제짭코바",
+            "vi": "Rosé Spicy BBQ"
+          },
+          "additionalPrice": 21600,
+          "visible": true,
+          "sortOrder": 0
+        },
+        {
+          "id": "c790a8cf-a7e7-4b67-9c7b-f09ce819bcf5",
+          "sourceName": "통마늘 추가 | Thêm tỏi nguyên tép",
+          "names": {
+            "ko": "통마늘 추가",
+            "vi": "Thêm tỏi nguyên tép",
+            "zh": "加整瓣大蒜",
+            "en": "Add Whole Garlic"
+          },
+          "receiptNames": {
+            "ko": "통마늘 추가",
+            "vi": "Thêm tỏi nguyên tép"
+          },
+          "additionalPrice": 32400,
+          "visible": true,
+          "sortOrder": 1
+        },
+        {
+          "id": "6edb778c-e1bf-4bbd-ab5f-338b0b8bd41a",
+          "sourceName": "모짜렐라 치즈 추가 | Thêm phô mai mozzarella",
+          "names": {
+            "ko": "모짜렐라 치즈 추가",
+            "vi": "Thêm phô mai mozzarella",
+            "zh": "加马苏里拉奶酪",
+            "en": "Add Mozzarella Cheese"
+          },
+          "receiptNames": {
+            "ko": "모짜렐라 치즈 추가",
+            "vi": "Thêm phô mai mozzarella"
+          },
+          "additionalPrice": 54000,
+          "visible": true,
+          "sortOrder": 2
+        },
+        {
+          "id": "4a2a7a67-d229-4d97-b89b-40d5136a9b61",
+          "sourceName": "짭코바 우동|bbq udon",
+          "names": {
+            "ko": "짭코바 우동",
+            "vi": "Udon Jjap Koba",
+            "zh": "Jjap Koba乌冬面",
+            "en": "Jjap Koba Udon"
+          },
+          "receiptNames": {
+            "ko": "짭코바 우동",
+            "vi": "bbq udon"
+          },
+          "additionalPrice": 64800,
+          "visible": true,
+          "sortOrder": 3
+        }
+      ],
+      "menuIds": [
+        "2813d1e7-250b-49ae-9f76-e5b40f451492"
+      ]
+    },
+    {
       "id": "cukcuk-detail:57b1fe70-fe33-4654-9d58-575f277749be:0",
       "sourceName": "사포로 생맥주 용량 선택",
       "names": {
@@ -5234,292 +5520,6 @@
       "menuIds": [
         "08b4aba2-4116-4148-b2a9-763c5d72d543"
       ]
-    },
-    {
-      "id": "cukcuk-detail:42257f0b-e1f2-4b69-b7ce-d59d43a69f87:0",
-      "sourceName": "매운 단계",
-      "names": {
-        "ko": "매운 단계",
-        "vi": "Cấp độ cay",
-        "zh": "辣度等级",
-        "en": "Spice Level"
-      },
-      "required": false,
-      "minSelections": 0,
-      "maxSelections": 3,
-      "revision": 1,
-      "values": [
-        {
-          "id": "3b59138e-b848-41aa-a45d-9fa1b915fbcf",
-          "sourceName": "1단계/(C1)Level 1/1级 – 微辣 /Cấp 1 – Cay nhẹ",
-          "names": {
-            "ko": "1단계 - 약간 매운맛",
-            "vi": "Cấp 1 - Cay nhẹ",
-            "zh": "1级 - 微辣",
-            "en": "Level 1 - Mild Spicy"
-          },
-          "additionalPrice": 0,
-          "visible": true,
-          "sortOrder": 0
-        },
-        {
-          "id": "b4ff5c57-e25c-4275-a6a9-4a25ba70e497",
-          "sourceName": "2단계/Level 2 /2级 – 中辣 /Cấp 2 – Cay vừa\u0001",
-          "names": {
-            "ko": "2단계 - 중간 매운맛",
-            "vi": "Cấp 2 - Cay vừa",
-            "zh": "2级 - 中辣",
-            "en": "Level 2 - Medium Spicy"
-          },
-          "additionalPrice": 0,
-          "visible": true,
-          "sortOrder": 1
-        },
-        {
-          "id": "90f5ee61-9405-4725-a244-24b23222ee4f",
-          "sourceName": "3단계/Level 3 /3级 – 特辣 /Cấp 3 – Siêu cay",
-          "names": {
-            "ko": "3단계 - 아주 매운맛",
-            "vi": "Cấp 3 - Siêu cay",
-            "zh": "3级 - 特辣",
-            "en": "Level 3 - Extra Spicy"
-          },
-          "additionalPrice": 0,
-          "visible": true,
-          "sortOrder": 2
-        }
-      ],
-      "menuIds": [
-        "42257f0b-e1f2-4b69-b7ce-d59d43a69f87"
-      ]
-    },
-    {
-      "id": "cukcuk-detail:42257f0b-e1f2-4b69-b7ce-d59d43a69f87:1",
-      "sourceName": "짭코바 추가 옵션",
-      "names": {
-        "ko": "짭코바 추가 옵션",
-        "vi": "Tùy chọn thêm cho gà BBQ cay",
-        "zh": "辣味BBQ烤鸡加购选项",
-        "en": "Spicy BBQ Chicken Extras"
-      },
-      "required": false,
-      "minSelections": 0,
-      "maxSelections": 4,
-      "revision": 1,
-      "values": [
-        {
-          "id": "1e883121-c3ea-478a-8c5d-c114ae89dfa1",
-          "sourceName": "밥 Cơm",
-          "names": {
-            "ko": "밥",
-            "vi": "Cơm",
-            "zh": "米饭",
-            "en": "Rice"
-          },
-          "additionalPrice": 21600,
-          "visible": true,
-          "sortOrder": 0
-        },
-        {
-          "id": "c790a8cf-a7e7-4b67-9c7b-f09ce819bcf5",
-          "sourceName": "통마늘 추가 | Thêm tỏi nguyên tép",
-          "names": {
-            "ko": "통마늘 추가",
-            "vi": "Thêm tỏi nguyên tép",
-            "zh": "加整瓣大蒜",
-            "en": "Add Whole Garlic"
-          },
-          "receiptNames": {
-            "ko": "통마늘 추가",
-            "vi": "Thêm tỏi nguyên tép"
-          },
-          "additionalPrice": 32400,
-          "visible": true,
-          "sortOrder": 1
-        },
-        {
-          "id": "6edb778c-e1bf-4bbd-ab5f-338b0b8bd41a",
-          "sourceName": "모짜렐라 치즈 추가 | Thêm phô mai mozzarella",
-          "names": {
-            "ko": "모짜렐라 치즈 추가",
-            "vi": "Thêm phô mai mozzarella",
-            "zh": "加马苏里拉奶酪",
-            "en": "Add Mozzarella Cheese"
-          },
-          "receiptNames": {
-            "ko": "모짜렐라 치즈 추가",
-            "vi": "Thêm phô mai mozzarella"
-          },
-          "additionalPrice": 54000,
-          "visible": true,
-          "sortOrder": 2
-        },
-        {
-          "id": "4a2a7a67-d229-4d97-b89b-40d5136a9b61",
-          "sourceName": "짭코바 우동|bbq udon",
-          "names": {
-            "ko": "짭코바 우동",
-            "vi": "Udon Jjap Koba",
-            "zh": "Jjap Koba乌冬面",
-            "en": "Jjap Koba Udon"
-          },
-          "receiptNames": {
-            "ko": "짭코바 우동",
-            "vi": "bbq udon"
-          },
-          "additionalPrice": 64800,
-          "visible": true,
-          "sortOrder": 3
-        }
-      ],
-      "menuIds": [
-        "42257f0b-e1f2-4b69-b7ce-d59d43a69f87"
-      ]
-    },
-    {
-      "id": "cukcuk-detail:2813d1e7-250b-49ae-9f76-e5b40f451492:0",
-      "sourceName": "매운 단계",
-      "names": {
-        "ko": "매운 단계",
-        "vi": "Cấp độ cay",
-        "zh": "辣度等级",
-        "en": "Spice Level"
-      },
-      "required": false,
-      "minSelections": 0,
-      "maxSelections": 3,
-      "revision": 1,
-      "values": [
-        {
-          "id": "3b59138e-b848-41aa-a45d-9fa1b915fbcf",
-          "sourceName": "1단계/(C1)Level 1/1级 – 微辣 /Cấp 1 – Cay nhẹ",
-          "names": {
-            "ko": "1단계 - 약간 매운맛",
-            "vi": "Cấp 1 - Cay nhẹ",
-            "zh": "1级 - 微辣",
-            "en": "Level 1 - Mild Spicy"
-          },
-          "additionalPrice": 0,
-          "visible": true,
-          "sortOrder": 0
-        },
-        {
-          "id": "b4ff5c57-e25c-4275-a6a9-4a25ba70e497",
-          "sourceName": "2단계/Level 2 /2级 – 中辣 /Cấp 2 – Cay vừa\u0001",
-          "names": {
-            "ko": "2단계 - 중간 매운맛",
-            "vi": "Cấp 2 - Cay vừa",
-            "zh": "2级 - 中辣",
-            "en": "Level 2 - Medium Spicy"
-          },
-          "additionalPrice": 0,
-          "visible": true,
-          "sortOrder": 1
-        },
-        {
-          "id": "90f5ee61-9405-4725-a244-24b23222ee4f",
-          "sourceName": "3단계/Level 3 /3级 – 特辣 /Cấp 3 – Siêu cay",
-          "names": {
-            "ko": "3단계 - 아주 매운맛",
-            "vi": "Cấp 3 - Siêu cay",
-            "zh": "3级 - 特辣",
-            "en": "Level 3 - Extra Spicy"
-          },
-          "additionalPrice": 0,
-          "visible": true,
-          "sortOrder": 2
-        }
-      ],
-      "menuIds": [
-        "2813d1e7-250b-49ae-9f76-e5b40f451492"
-      ]
-    },
-    {
-      "id": "cukcuk-detail:2813d1e7-250b-49ae-9f76-e5b40f451492:1",
-      "sourceName": "짭코바 반마리 추가 옵션",
-      "names": {
-        "ko": "짭코바 반마리 추가 옵션",
-        "vi": "Tùy chọn thêm cho nửa con gà BBQ cay",
-        "zh": "半只辣味BBQ烤鸡加购选项",
-        "en": "Half Spicy BBQ Chicken Extras"
-      },
-      "required": false,
-      "minSelections": 0,
-      "maxSelections": 4,
-      "revision": 1,
-      "values": [
-        {
-          "id": "eb14789e-3dfe-40b9-bc3c-f58e897128f1",
-          "sourceName": "Rosé Spicy BBQ|로제짭코바",
-          "names": {
-            "ko": "로제 짭코바",
-            "vi": "Jjap Koba sốt rosé cay",
-            "zh": "辣味玫瑰Jjap Koba",
-            "en": "Rosé Spicy Jjap Koba"
-          },
-          "receiptNames": {
-            "ko": "로제짭코바",
-            "vi": "Rosé Spicy BBQ"
-          },
-          "additionalPrice": 21600,
-          "visible": true,
-          "sortOrder": 0
-        },
-        {
-          "id": "c790a8cf-a7e7-4b67-9c7b-f09ce819bcf5",
-          "sourceName": "통마늘 추가 | Thêm tỏi nguyên tép",
-          "names": {
-            "ko": "통마늘 추가",
-            "vi": "Thêm tỏi nguyên tép",
-            "zh": "加整瓣大蒜",
-            "en": "Add Whole Garlic"
-          },
-          "receiptNames": {
-            "ko": "통마늘 추가",
-            "vi": "Thêm tỏi nguyên tép"
-          },
-          "additionalPrice": 32400,
-          "visible": true,
-          "sortOrder": 1
-        },
-        {
-          "id": "6edb778c-e1bf-4bbd-ab5f-338b0b8bd41a",
-          "sourceName": "모짜렐라 치즈 추가 | Thêm phô mai mozzarella",
-          "names": {
-            "ko": "모짜렐라 치즈 추가",
-            "vi": "Thêm phô mai mozzarella",
-            "zh": "加马苏里拉奶酪",
-            "en": "Add Mozzarella Cheese"
-          },
-          "receiptNames": {
-            "ko": "모짜렐라 치즈 추가",
-            "vi": "Thêm phô mai mozzarella"
-          },
-          "additionalPrice": 54000,
-          "visible": true,
-          "sortOrder": 2
-        },
-        {
-          "id": "4a2a7a67-d229-4d97-b89b-40d5136a9b61",
-          "sourceName": "짭코바 우동|bbq udon",
-          "names": {
-            "ko": "짭코바 우동",
-            "vi": "Udon Jjap Koba",
-            "zh": "Jjap Koba乌冬面",
-            "en": "Jjap Koba Udon"
-          },
-          "receiptNames": {
-            "ko": "짭코바 우동",
-            "vi": "bbq udon"
-          },
-          "additionalPrice": 64800,
-          "visible": true,
-          "sortOrder": 3
-        }
-      ],
-      "menuIds": [
-        "2813d1e7-250b-49ae-9f76-e5b40f451492"
-      ]
     }
   ],
   "inventoryCandidateCount": 252,
@@ -5539,10 +5539,10 @@
     "provider": "openai",
     "model": "gpt-5.6-terra",
     "status": "ready",
-    "entityCount": 300,
-    "cacheHits": 289,
+    "entityCount": 318,
+    "cacheHits": 307,
     "translated": 11,
     "pendingCount": 0,
-    "updatedAt": "2026-09-16T12:00:46.835Z"
+    "updatedAt": "2026-09-16T14:28:54.423Z"
   }
 }
