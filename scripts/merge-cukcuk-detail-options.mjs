@@ -25,7 +25,7 @@ function detailId(detail) {
 }
 
 function additionId(addition) {
-  return addition?.Id ?? addition?.ID ?? addition?.id ?? addition?.AdditionID ?? addition?.AdditionId;
+  return addition?.Id ?? addition?.ID ?? addition?.id ?? addition?.AdditionID ?? addition?.AdditionId ?? addition?.InventoryItemAdditionID;
 }
 
 function localizedNames(value, label) {
@@ -58,6 +58,23 @@ function expectedPositiveInteger(value, label) {
   return value;
 }
 
+function configuredExpectedValueIds(value, count, code) {
+  if (value === undefined) return null;
+  if (!Array.isArray(value) || value.length !== count) {
+    throw new Error(`Detail option source ${code} expectedValueIds must contain ${count} category lists.`);
+  }
+  return value.map((ids, categoryIndex) => {
+    if (!Array.isArray(ids) || !ids.length) {
+      throw new Error(`Detail option source ${code} expectedValueIds[${categoryIndex}] must contain at least one id.`);
+    }
+    const normalized = ids.map(id => exactId(id, `Detail option source ${code} expectedValueIds[${categoryIndex}] id`));
+    if (new Set(normalized).size !== normalized.length) {
+      throw new Error(`Detail option source ${code} expectedValueIds[${categoryIndex}] contains duplicate ids.`);
+    }
+    return normalized;
+  });
+}
+
 function additionPrice(value, code, id) {
   if ((typeof value !== 'number' && typeof value !== 'string') || clean(value) === '') {
     throw new Error(`Detail option ${code} addition ${id} has an invalid price.`);
@@ -84,19 +101,25 @@ function valueNames(description) {
 }
 
 function activeCategories(detail, code) {
-  if (!Array.isArray(detail.AdditionCategories)) {
-    throw new Error(`CUKCUK detail for ${code} has no AdditionCategories array.`);
+  const sourceCategories = Array.isArray(detail.AdditionCategories)
+    ? detail.AdditionCategories
+    : detail.InventoryItemAdditionsCategory;
+  if (!Array.isArray(sourceCategories)) {
+    throw new Error(`CUKCUK detail for ${code} has no supported addition-category array.`);
   }
   const categories = [];
-  for (const [sourceIndex, category] of detail.AdditionCategories.entries()) {
+  for (const [sourceIndex, category] of sourceCategories.entries()) {
     if (!category || typeof category !== 'object' || Array.isArray(category)) {
       throw new Error(`CUKCUK detail for ${code} category ${sourceIndex} is invalid.`);
     }
-    if (category.InActive === true) continue;
-    if (!Array.isArray(category.Additions)) {
-      throw new Error(`CUKCUK detail for ${code} category ${sourceIndex} has no Additions array.`);
+    if (category.InActive === true || category.Inactive === true || category.IsInactive === true) continue;
+    const sourceAdditions = Array.isArray(category.Additions)
+      ? category.Additions
+      : category.InventoryItemAdditions;
+    if (!Array.isArray(sourceAdditions)) {
+      throw new Error(`CUKCUK detail for ${code} category ${sourceIndex} has no supported additions array.`);
     }
-    const additions = category.Additions.filter(addition => addition?.InActive !== true);
+    const additions = sourceAdditions.filter(addition => addition?.InActive !== true && addition?.Inactive !== true && addition?.IsInactive !== true);
     if (!additions.length) throw new Error(`CUKCUK detail for ${code} category ${sourceIndex} has no active additions.`);
     categories.push({ category, additions });
   }
@@ -117,7 +140,7 @@ function preparedValues(additions, code) {
       id,
       sourceName,
       ...valueNames(sourceName),
-      additionalPrice: additionPrice(addition.Price, code, id),
+      additionalPrice: additionPrice(addition.Price ?? addition.UnitPrice, code, id),
       visible: true,
       sortOrder
     };
@@ -162,6 +185,10 @@ export function mergeCukcukDetailOptions(publishedInput, configInput, detailInpu
     }
     const expectedCategoryCount = expectedPositiveInteger(sourceConfig.expectedCategoryCount, `Detail option source ${code} expectedCategoryCount`);
     const expectedValueCount = expectedPositiveInteger(sourceConfig.expectedValueCount, `Detail option source ${code} expectedValueCount`);
+    const expectedValueIds = configuredExpectedValueIds(sourceConfig.expectedValueIds, expectedCategoryCount, code);
+    if (expectedValueIds && expectedValueIds.flat().length !== expectedValueCount) {
+      throw new Error(`Detail option source ${code} expectedValueIds contains ${expectedValueIds.flat().length} ids but expectedValueCount is ${expectedValueCount}.`);
+    }
     const matchingMenus = published.menus.filter(menu => String(menu?.cukcukCode ?? '') === code);
     if (matchingMenus.length !== 1) {
       throw new Error(`CUKCUK product code ${code} resolved to ${matchingMenus.length} published menus; expected exactly 1.`);
@@ -182,6 +209,16 @@ export function mergeCukcukDetailOptions(publishedInput, configInput, detailInpu
     const totalValueCount = categories.reduce((sum, entry) => sum + entry.additions.length, 0);
     if (totalValueCount !== expectedValueCount) {
       throw new Error(`Detail option source ${code} expected ${expectedValueCount} active values but received ${totalValueCount}.`);
+    }
+    if (expectedValueIds) {
+      for (const [categoryIndex, { additions }] of categories.entries()) {
+        const actual = additions.map(addition => exactId(additionId(addition), `Detail option ${code} category ${categoryIndex} addition id`));
+        const expected = expectedValueIds[categoryIndex];
+        const actualSet = new Set(actual);
+        if (actual.length !== expected.length || expected.some(id => !actualSet.has(id))) {
+          throw new Error(`Detail option source ${code} category ${categoryIndex} active value ids do not match the configured set.`);
+        }
+      }
     }
     const names = configuredTemplateNames(sourceConfig.templateNames, expectedCategoryCount, code);
     const seenMenuValueIds = new Set();

@@ -168,3 +168,119 @@ test('detail option merge rejects duplicate or blank addition ids and invalid pr
     );
   }
 });
+
+test('shared CUKCUK groups are replaced with menu-specific Jjapkoba spice levels', () => {
+  const fullId = '42257f0b-e1f2-4b69-b7ce-d59d43a69f87';
+  const halfId = '2813d1e7-250b-49ae-9f76-e5b40f451492';
+  const spiceIds = [
+    '3b59138e-b848-41aa-a45d-9fa1b915fbcf',
+    'b4ff5c57-e25c-4275-a6a9-4a25ba70e497',
+    '90f5ee61-9405-4725-a244-24b23222ee4f'
+  ];
+  const published = {
+    menus: [
+      { id: fullId, cukcukCode: '(KX02)', optionTemplateIds: ['shared-spice', 'shared-extras'] },
+      { id: halfId, cukcukCode: '(KX14)', optionTemplateIds: ['shared-spice', 'shared-extras'] },
+      { id: 'dijinda', cukcukCode: 'DIJINDA', optionTemplateIds: ['shared-spice'] }
+    ],
+    optionTemplates: [
+      { id: 'shared-spice', menuIds: [fullId, halfId, 'dijinda'], values: spiceIds.slice(0, 2).map(id => ({ id })) },
+      { id: 'shared-extras', menuIds: [fullId, halfId], values: [{ id: 'legacy-extra' }] }
+    ]
+  };
+  const config = {
+    detailOptionSources: {
+      '(KX02)': {
+        expectedCategoryCount: 2,
+        expectedValueCount: 7,
+        expectedValueIds: [spiceIds, ['full-extra-1', 'full-extra-2', 'full-extra-3', 'full-extra-4']],
+        templateNames: [{ ko: '매운 단계' }, { ko: '짭코바 추가 옵션' }]
+      },
+      '(KX14)': {
+        expectedCategoryCount: 2,
+        expectedValueCount: 7,
+        expectedValueIds: [spiceIds, ['half-extra-1', 'half-extra-2', 'half-extra-3', 'half-extra-4']],
+        templateNames: [{ ko: '매운 단계' }, { ko: '짭코바 반마리 추가 옵션' }]
+      }
+    },
+    menuOptionOverrides: {
+      '(KX02)': { rules: { [`cukcuk-detail:${fullId}:0`]: { required: true, minSelections: 1, maxSelections: 1 } } },
+      '(KX14)': { rules: { [`cukcuk-detail:${halfId}:0`]: { required: true, minSelections: 1, maxSelections: 1 } } }
+    }
+  };
+  const spice = spiceIds.map((id, index) => ({
+    Id: id,
+    Description: `${index + 1}단계 | Cấp ${index + 1}`,
+    Price: 0,
+    InActive: false
+  }));
+  const detail = (id, prefix) => ({
+    Id: id,
+    AdditionCategories: [
+      { Additions: spice },
+      { Additions: Array.from({ length: 4 }, (_, index) => ({
+        Id: `${prefix}-extra-${index + 1}`,
+        Description: `${prefix} 추가 ${index + 1} | Thêm ${index + 1}`,
+        Price: index * 1000,
+        InActive: false
+      })) }
+    ]
+  });
+
+  const result = mergeCukcukDetailOptions(published, config, {
+    details: [detail(fullId, 'full'), detail(halfId, 'half')]
+  });
+  const full = result.menus.find(menu => menu.id === fullId);
+  const half = result.menus.find(menu => menu.id === halfId);
+  const fullSpiceId = `cukcuk-detail:${fullId}:0`;
+  const halfSpiceId = `cukcuk-detail:${halfId}:0`;
+
+  assert.deepEqual(full.optionTemplateIds, [fullSpiceId, `cukcuk-detail:${fullId}:1`]);
+  assert.deepEqual(half.optionTemplateIds, [halfSpiceId, `cukcuk-detail:${halfId}:1`]);
+  assert.deepEqual(full.optionRules[fullSpiceId], { required: true, minSelections: 1, maxSelections: 1 });
+  assert.deepEqual(half.optionRules[halfSpiceId], { required: true, minSelections: 1, maxSelections: 1 });
+  assert.deepEqual(result.optionTemplates.find(template => template.id === fullSpiceId).values.map(value => value.id), spiceIds);
+  assert.deepEqual(result.optionTemplates.find(template => template.id === halfSpiceId).values.map(value => value.id), spiceIds);
+  assert.deepEqual(result.optionTemplates.find(template => template.id === `cukcuk-detail:${fullId}:1`).values.map(value => value.id), [
+    'full-extra-1', 'full-extra-2', 'full-extra-3', 'full-extra-4'
+  ]);
+  assert.deepEqual(result.optionTemplates.find(template => template.id === `cukcuk-detail:${halfId}:1`).values.map(value => value.id), [
+    'half-extra-1', 'half-extra-2', 'half-extra-3', 'half-extra-4'
+  ]);
+  assert.deepEqual(result.optionTemplates.find(template => template.id === 'shared-spice').menuIds, ['dijinda']);
+  assert.equal(result.optionTemplates.some(template => template.id === 'shared-extras'), false);
+
+  const graphFull = detail(fullId, 'full');
+  const tableQrFull = {
+    InventoryItemID: fullId,
+    InventoryItemAdditionsCategory: graphFull.AdditionCategories.map(category => ({
+      InventoryItemAdditions: category.Additions.map(addition => ({
+        InventoryItemAdditionID: addition.Id,
+        Description: addition.Description,
+        UnitPrice: addition.Price,
+        Inactive: addition.InActive
+      }))
+    }))
+  };
+  const tableQrConfig = {
+    ...config,
+    detailOptionSources: { '(KX02)': config.detailOptionSources['(KX02)'] },
+    menuOptionOverrides: { '(KX02)': config.menuOptionOverrides['(KX02)'] }
+  };
+  const tableQrResult = mergeCukcukDetailOptions(published, tableQrConfig, { details: [tableQrFull] });
+  assert.deepEqual(
+    tableQrResult.optionTemplates.find(template => template.id === fullSpiceId).values.map(value => value.id),
+    spiceIds
+  );
+  assert.deepEqual(
+    tableQrResult.optionTemplates.find(template => template.id === `cukcuk-detail:${fullId}:1`).values.map(value => value.additionalPrice),
+    [0, 1000, 2000, 3000]
+  );
+
+  const swapped = { details: [detail(fullId, 'full'), detail(halfId, 'half')] };
+  swapped.details[0].AdditionCategories.reverse();
+  assert.throws(
+    () => mergeCukcukDetailOptions(published, config, swapped),
+    /category 0 active value ids do not match/i
+  );
+});

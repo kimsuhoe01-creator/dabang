@@ -3663,6 +3663,204 @@
         "en": "Dakgalbi Chicken Platter"
       },
       "updatedAt": "2026-09-16T03:02:37.193Z"
+    },
+    "option-group:cukcuk-detail:42257f0b-e1f2-4b69-b7ce-d59d43a69f87:0": {
+      "fingerprint": "80adafd4dfa4b9a85ed8d9862fa4c77960316454e748d79a8bf7f2698f07b63e",
+      "sourceName": "매운 단계",
+      "names": {
+        "ko": "매운 단계",
+        "vi": "Cấp độ cay",
+        "zh": "辣度等级",
+        "en": "Spice Level"
+      },
+      "updatedAt": "2026-09-16T14:19:22.134Z"
+    },
+    "option-value:cukcuk-detail:42257f0b-e1f2-4b69-b7ce-d59d43a69f87:0:3b59138e-b848-41aa-a45d-9fa1b915fbcf": {
+      "fingerprint": "e8f475739474e1e60d9b0f65fdd2d0a5f1a31acf64f0fb265ea6e35a68e2836d",
+      "sourceName": "1단계/(C1)Level 1/1级 – 微辣 /Cấp 1 – Cay nhẹ",
+      "names": {
+        "ko": "1단계 - 약간 매운맛",
+        "vi": "Cấp 1 - Cay nhẹ",
+        "zh": "1级 - 微辣",
+        "en": "Level 1 - Mild Spicy"
+      },
+      "updatedAt": "2026-09-16T14:19:22.134Z"
+    },
+    "option-value:cukcuk-detail:42257f0b-e1f2-4b69-b7ce-d59d43a69f87:0:b4ff5c57-e25c-4275-a6a9-4a25ba70e497": {
+      "fingerprint": "5be1579cfa6eeb60cfd434b447f79a12fc6d8880c2e0a467af55b23b8ffeeb2d",
+      "sourceName": "2단계/Level 2 /2级 – 中辣 /Cấp 2 – Cay vừa\u0001",
+      "names": {
+        "ko": "2단계 - 중간 매운맛",
+        "vi": "Cấp 2 - Cay vừa",
+        "zh": "2级 - 中辣",
+        "en": "Level 2 - Medium Spicy"
+      },
+      "updatedAt": "2026-09-16T14:19:22.134Z"
+    },
+    "option-value:cukcuk-detail:42257f0b-e1f2-4b69-b7ce-d59d43a69f87:0:90f5ee61-9405-4725-a244-24b23222ee4f": {
+      "fingerprint": "9d5aa4b423097af4c9f40c30075e49765c51c955acfbf1f963e88a046a66c893",
+      "sourceName": "3단계/Level 3 /3级 – 特辣 /Cấp 3 – Siêu cay",
+      "names": {
+        "ko": "3단계 - 아주 매운맛",
+        "vi": "Cấp 3 - Siêu cay",
+        "zh": "3级 - 特辣",
+        "en": "Level 3 - Extra Spicy"
+      },
+      "updatedAt": "2026-09-16T14:19:22.134Z"
+    },
+    "option-group:cukcuk-detail:42257f0b-e1f2-4b69-b7ce-d59d43a69f87:1": {
+      "fingerprint": "a2c8475a332b5b1239a76c580eae6302f970832531ef21983c2c65cc35bb5bcc",
+      "sourceName": "짭코바 추가 옵션",
+      "names": {
+        "ko": "짭코바 추가 옵션",
+        "vi": "Tùy chọn thêm cho gà BBQ cay",
+        "zh": "辣味BBQ烤鸡加购选项",
+        "en": "Spicy BBQ Chicken Extras"
+      },
+      "updatedAt": "2026-09-16T14:19:22.134Z"
+    },
+    "option-value:cukcuk-detail:42257f0b-e1f2-4b69-b7ce-d59d43a69f87:1:1e883121-c3ea-478a-8c5d-c114ae89dfa1": {
+      "fingerprint": "5caa5ee775d4b2323cc1121a551e577423673653f6c32e32f0e3491bb578e9ab",
+      "sourceName": "밥 Cơm",
+      "names": {
+        "ko": "밥",
+        "vi": "Cơm",
+        "zh": "米饭",
+        "en": "Rice"
+      },
+      "updatedAt": "2026-09-16T14:19:22.134Z"
+    },
+    "option-value:cukcuk-detail:42257f0b-e1f2-4b69-b7ce-d59d43a69f87:1:c790a8cf-a7e7-4b67-9c7b-f09ce819bcf5": {
+      "fingerprint": "28e2ce7e5ddd03ded2fbd421862fab0b8f6317c3fc15e152110313ea5e7b8a43",
+      "sourceName": "통마늘 추가 | Thêm tỏi nguyên tép",
+      "names": {
+        "ko": "통마늘 추가",
+        "vi": "Thêm tỏi nguyên tép",
+        "zh": "加整瓣大蒜",
+        "en": "Add Whole Garlic"
+      },
+      "updatedAt": "2026-09-16T14:19:22.134Z"
+    },
+    "option-value:cukcuk-detail:42257f0b-e1f2-4b69-b7ce-d59d43a69f87:1:6edb778c-e1bf-4bbd-ab5f-338b0b8bd41a": {
+      "fingerprint": "52b1c8e782a2aa698aac394832103b87995fae5c985962ec6bfc0e892e82d993",
+      "sourceName": "모짜렐라 치즈 추가 | Thêm phô mai mozzarella",
+      "names": {
+        "ko": "모짜렐라 치즈 추가",
+        "vi": "Thêm phô mai mozzarella",
+        "zh": "加马苏里拉奶酪",
+        "en": "Add Mozzarella Cheese"
+      },
+      "updatedAt": "2026-09-16T14:19:22.134Z"
+    },
+    "option-value:cukcuk-detail:42257f0b-e1f2-4b69-b7ce-d59d43a69f87:1:4a2a7a67-d229-4d97-b89b-40d5136a9b61": {
+      "fingerprint": "7bff065d7a579221afeea96135c8aad7a0aa8856c37d22f07009ae9d1e0ac8ba",
+      "sourceName": "짭코바 우동|bbq udon",
+      "names": {
+        "ko": "짭코바 우동",
+        "vi": "Udon Jjap Koba",
+        "zh": "Jjap Koba乌冬面",
+        "en": "Jjap Koba Udon"
+      },
+      "updatedAt": "2026-09-16T14:19:22.134Z"
+    },
+    "option-group:cukcuk-detail:2813d1e7-250b-49ae-9f76-e5b40f451492:0": {
+      "fingerprint": "80adafd4dfa4b9a85ed8d9862fa4c77960316454e748d79a8bf7f2698f07b63e",
+      "sourceName": "매운 단계",
+      "names": {
+        "ko": "매운 단계",
+        "vi": "Cấp độ cay",
+        "zh": "辣度等级",
+        "en": "Spice Level"
+      },
+      "updatedAt": "2026-09-16T14:19:22.134Z"
+    },
+    "option-value:cukcuk-detail:2813d1e7-250b-49ae-9f76-e5b40f451492:0:3b59138e-b848-41aa-a45d-9fa1b915fbcf": {
+      "fingerprint": "e8f475739474e1e60d9b0f65fdd2d0a5f1a31acf64f0fb265ea6e35a68e2836d",
+      "sourceName": "1단계/(C1)Level 1/1级 – 微辣 /Cấp 1 – Cay nhẹ",
+      "names": {
+        "ko": "1단계 - 약간 매운맛",
+        "vi": "Cấp 1 - Cay nhẹ",
+        "zh": "1级 - 微辣",
+        "en": "Level 1 - Mild Spicy"
+      },
+      "updatedAt": "2026-09-16T14:19:22.134Z"
+    },
+    "option-value:cukcuk-detail:2813d1e7-250b-49ae-9f76-e5b40f451492:0:b4ff5c57-e25c-4275-a6a9-4a25ba70e497": {
+      "fingerprint": "5be1579cfa6eeb60cfd434b447f79a12fc6d8880c2e0a467af55b23b8ffeeb2d",
+      "sourceName": "2단계/Level 2 /2级 – 中辣 /Cấp 2 – Cay vừa\u0001",
+      "names": {
+        "ko": "2단계 - 중간 매운맛",
+        "vi": "Cấp 2 - Cay vừa",
+        "zh": "2级 - 中辣",
+        "en": "Level 2 - Medium Spicy"
+      },
+      "updatedAt": "2026-09-16T14:19:22.134Z"
+    },
+    "option-value:cukcuk-detail:2813d1e7-250b-49ae-9f76-e5b40f451492:0:90f5ee61-9405-4725-a244-24b23222ee4f": {
+      "fingerprint": "9d5aa4b423097af4c9f40c30075e49765c51c955acfbf1f963e88a046a66c893",
+      "sourceName": "3단계/Level 3 /3级 – 特辣 /Cấp 3 – Siêu cay",
+      "names": {
+        "ko": "3단계 - 아주 매운맛",
+        "vi": "Cấp 3 - Siêu cay",
+        "zh": "3级 - 特辣",
+        "en": "Level 3 - Extra Spicy"
+      },
+      "updatedAt": "2026-09-16T14:19:22.134Z"
+    },
+    "option-group:cukcuk-detail:2813d1e7-250b-49ae-9f76-e5b40f451492:1": {
+      "fingerprint": "279d86991bd51f0f686d18eaf2e9949a4c01bad7911c04faf7ad3b3fa6f1439b",
+      "sourceName": "짭코바 반마리 추가 옵션",
+      "names": {
+        "ko": "짭코바 반마리 추가 옵션",
+        "vi": "Tùy chọn thêm cho nửa con gà BBQ cay",
+        "zh": "半只辣味BBQ烤鸡加购选项",
+        "en": "Half Spicy BBQ Chicken Extras"
+      },
+      "updatedAt": "2026-09-16T14:19:22.134Z"
+    },
+    "option-value:cukcuk-detail:2813d1e7-250b-49ae-9f76-e5b40f451492:1:eb14789e-3dfe-40b9-bc3c-f58e897128f1": {
+      "fingerprint": "ce8239ff36ff01b9cb2109fec1a80691c84e715eb8d50910e0885e61c4e462db",
+      "sourceName": "Rosé Spicy BBQ|로제짭코바",
+      "names": {
+        "ko": "로제 짭코바",
+        "vi": "Jjap Koba sốt rosé cay",
+        "zh": "辣味玫瑰Jjap Koba",
+        "en": "Rosé Spicy Jjap Koba"
+      },
+      "updatedAt": "2026-09-16T14:19:22.134Z"
+    },
+    "option-value:cukcuk-detail:2813d1e7-250b-49ae-9f76-e5b40f451492:1:c790a8cf-a7e7-4b67-9c7b-f09ce819bcf5": {
+      "fingerprint": "28e2ce7e5ddd03ded2fbd421862fab0b8f6317c3fc15e152110313ea5e7b8a43",
+      "sourceName": "통마늘 추가 | Thêm tỏi nguyên tép",
+      "names": {
+        "ko": "통마늘 추가",
+        "vi": "Thêm tỏi nguyên tép",
+        "zh": "加整瓣大蒜",
+        "en": "Add Whole Garlic"
+      },
+      "updatedAt": "2026-09-16T14:19:22.134Z"
+    },
+    "option-value:cukcuk-detail:2813d1e7-250b-49ae-9f76-e5b40f451492:1:6edb778c-e1bf-4bbd-ab5f-338b0b8bd41a": {
+      "fingerprint": "52b1c8e782a2aa698aac394832103b87995fae5c985962ec6bfc0e892e82d993",
+      "sourceName": "모짜렐라 치즈 추가 | Thêm phô mai mozzarella",
+      "names": {
+        "ko": "모짜렐라 치즈 추가",
+        "vi": "Thêm phô mai mozzarella",
+        "zh": "加马苏里拉奶酪",
+        "en": "Add Mozzarella Cheese"
+      },
+      "updatedAt": "2026-09-16T14:19:22.134Z"
+    },
+    "option-value:cukcuk-detail:2813d1e7-250b-49ae-9f76-e5b40f451492:1:4a2a7a67-d229-4d97-b89b-40d5136a9b61": {
+      "fingerprint": "7bff065d7a579221afeea96135c8aad7a0aa8856c37d22f07009ae9d1e0ac8ba",
+      "sourceName": "짭코바 우동|bbq udon",
+      "names": {
+        "ko": "짭코바 우동",
+        "vi": "Udon Jjap Koba",
+        "zh": "Jjap Koba乌冬面",
+        "en": "Jjap Koba Udon"
+      },
+      "updatedAt": "2026-09-16T14:19:22.134Z"
     }
   }
 }

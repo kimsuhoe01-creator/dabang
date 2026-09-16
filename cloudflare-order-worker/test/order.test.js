@@ -1,4 +1,5 @@
 import assert from "node:assert/strict";
+import fs from "node:fs";
 import test from "node:test";
 import { createCukCukOrder, createOrAppendCukCukOrder, validateAndBuildOrder } from "../src/order.js";
 
@@ -42,6 +43,29 @@ test("allows one to three Sapporo draft sizes", () => {
   assert.doesNotThrow(() => buildConstrainedOrder("sapporo-sizes", ["value-1"], 1, 3, {}, 3));
   assert.doesNotThrow(() => buildConstrainedOrder("sapporo-sizes", ["value-1", "value-2", "value-3"], 1, 3, {}, 3));
   assert.throws(() => buildConstrainedOrder("sapporo-sizes", [], 1, 3, {}, 3), /선택 개수/);
+});
+
+test("accepts Jjapkoba level 3 and requires exactly one spice level for full and half chicken", () => {
+  const catalog = JSON.parse(fs.readFileSync(new URL('../../data/cukcuk-menu.json', import.meta.url), 'utf8'));
+  const level3 = '90f5ee61-9405-4725-a244-24b23222ee4f';
+
+  for (const code of ['(KX02)', '(KX14)']) {
+    const menu = catalog.menus.find(item => item.cukcukCode === code);
+    const spiceTemplateId = menu.optionTemplateIds[0];
+    const payload = {
+      clientOrderId: `jjapkoba-${code === '(KX02)' ? 'full' : 'half'}`,
+      table: { id: 'table-1', name: 'A-1' },
+      items: [{ menuId: menu.id, quantity: 1, options: [{ templateId: spiceTemplateId, valueId: level3 }] }]
+    };
+
+    const order = validateAndBuildOrder(payload, catalog, 'branch-1');
+    assert.equal(order.OrderDetails[1].AdditionId, level3);
+    assert.match(order.OrderDetails[1].ItemName, /3|Siêu cay|아주 매운맛/);
+    assert.throws(
+      () => validateAndBuildOrder({ ...payload, items: [{ menuId: menu.id, quantity: 1, options: [] }] }, catalog, 'branch-1'),
+      /선택 개수/
+    );
+  }
 });
 
 test("allows one to ten fried-item choices", () => {

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": "cukcuk-tablet-content-2026-08-30-a02-quantity-v1",
+  "revision": "cukcuk-tablet-content-2026-09-16-jjapkoba-spice-v1",
   "capturedAt": "2026-08-30T06:34:32.171Z",
   "timezone": "Asia/Ho_Chi_Minh",
   "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
@@ -50,6 +50,22 @@
         "templateIds": [
           "85cead19-7d83-4c61-8199-b7fab35fb672",
           "b2fbfcca-55f5-4718-87d4-96627091764a"
+        ]
+      },
+      {
+        "code": "(KX02)",
+        "name": "짭코바",
+        "templateIds": [
+          "cukcuk-detail:42257f0b-e1f2-4b69-b7ce-d59d43a69f87:0",
+          "cukcuk-detail:42257f0b-e1f2-4b69-b7ce-d59d43a69f87:1"
+        ]
+      },
+      {
+        "code": "(KX14)",
+        "name": "짭코바 반마리",
+        "templateIds": [
+          "cukcuk-detail:2813d1e7-250b-49ae-9f76-e5b40f451492:0",
+          "cukcuk-detail:2813d1e7-250b-49ae-9f76-e5b40f451492:1"
         ]
       },
       {
@@ -157,6 +173,24 @@
           "b3a7e4ce-1840-4d17-9636-6e91cd32fd36",
           "fd21b308-6f37-443b-a50c-a35c5a604106",
           "a8da2a14-4ec6-40a9-926c-9b41755b2de5"
+        ]
+      },
+      {
+        "templateId": "cukcuk-detail:42257f0b-e1f2-4b69-b7ce-d59d43a69f87:0",
+        "name": "짭코바 매운 단계",
+        "valueIds": [
+          "3b59138e-b848-41aa-a45d-9fa1b915fbcf",
+          "b4ff5c57-e25c-4275-a6a9-4a25ba70e497",
+          "90f5ee61-9405-4725-a244-24b23222ee4f"
+        ]
+      },
+      {
+        "templateId": "cukcuk-detail:2813d1e7-250b-49ae-9f76-e5b40f451492:0",
+        "name": "짭코바 반마리 매운 단계",
+        "valueIds": [
+          "3b59138e-b848-41aa-a45d-9fa1b915fbcf",
+          "b4ff5c57-e25c-4275-a6a9-4a25ba70e497",
+          "90f5ee61-9405-4725-a244-24b23222ee4f"
         ]
       },
       {
@@ -1320,6 +1354,24 @@
         }
       }
     },
+    "(KX02)": {
+      "rules": {
+        "cukcuk-detail:42257f0b-e1f2-4b69-b7ce-d59d43a69f87:0": {
+          "required": true,
+          "minSelections": 1,
+          "maxSelections": 1
+        }
+      }
+    },
+    "(KX14)": {
+      "rules": {
+        "cukcuk-detail:2813d1e7-250b-49ae-9f76-e5b40f451492:0": {
+          "required": true,
+          "minSelections": 1,
+          "maxSelections": 1
+        }
+      }
+    },
     "(S05) Cánh gà + Tok": {
       "rules": {
         "2be54a6c-ab0d-40d7-a080-0c50e0d228dc": {
@@ -1665,6 +1717,72 @@
         "zh": "选择炸猪排拼盘",
         "en": "Choose Tonkatsu Plate"
       }
+    },
+    "(KX02)": {
+      "source": "table-qr",
+      "areaId": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
+      "expectedCategoryCount": 2,
+      "expectedValueCount": 7,
+      "expectedValueIds": [
+        [
+          "3b59138e-b848-41aa-a45d-9fa1b915fbcf",
+          "b4ff5c57-e25c-4275-a6a9-4a25ba70e497",
+          "90f5ee61-9405-4725-a244-24b23222ee4f"
+        ],
+        [
+          "1e883121-c3ea-478a-8c5d-c114ae89dfa1",
+          "c790a8cf-a7e7-4b67-9c7b-f09ce819bcf5",
+          "6edb778c-e1bf-4bbd-ab5f-338b0b8bd41a",
+          "4a2a7a67-d229-4d97-b89b-40d5136a9b61"
+        ]
+      ],
+      "templateNames": [
+        {
+          "ko": "매운 단계",
+          "vi": "Cấp độ cay",
+          "zh": "辣度等级",
+          "en": "Spice Level"
+        },
+        {
+          "ko": "짭코바 추가 옵션",
+          "vi": "Tùy chọn thêm cho gà BBQ cay",
+          "zh": "辣味BBQ烤鸡加购选项",
+          "en": "Spicy BBQ Chicken Extras"
+        }
+      ]
+    },
+    "(KX14)": {
+      "source": "table-qr",
+      "areaId": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
+      "expectedCategoryCount": 2,
+      "expectedValueCount": 7,
+      "expectedValueIds": [
+        [
+          "3b59138e-b848-41aa-a45d-9fa1b915fbcf",
+          "b4ff5c57-e25c-4275-a6a9-4a25ba70e497",
+          "90f5ee61-9405-4725-a244-24b23222ee4f"
+        ],
+        [
+          "eb14789e-3dfe-40b9-bc3c-f58e897128f1",
+          "c790a8cf-a7e7-4b67-9c7b-f09ce819bcf5",
+          "6edb778c-e1bf-4bbd-ab5f-338b0b8bd41a",
+          "4a2a7a67-d229-4d97-b89b-40d5136a9b61"
+        ]
+      ],
+      "templateNames": [
+        {
+          "ko": "매운 단계",
+          "vi": "Cấp độ cay",
+          "zh": "辣度等级",
+          "en": "Spice Level"
+        },
+        {
+          "ko": "짭코바 반마리 추가 옵션",
+          "vi": "Tùy chọn thêm cho nửa con gà BBQ cay",
+          "zh": "半只辣味BBQ烤鸡加购选项",
+          "en": "Half Spicy BBQ Chicken Extras"
+        }
+      ]
     },
     "(A02) Bia tuoi Sapporo": {
       "expectedCategoryCount": 1,

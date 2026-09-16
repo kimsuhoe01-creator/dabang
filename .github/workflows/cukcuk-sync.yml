@@ -9,6 +9,7 @@ on:
       - ".github/workflows/cukcuk-sync.yml"
       - "data/cukcuk-table-qr-layout.json"
       - "scripts/apply-table-qr-layout.mjs"
+      - "scripts/merge-cukcuk-detail-options.mjs"
       - "scripts/translate-menu-data.mjs"
   schedule:
     - cron: "*/5 * * * *"
@@ -195,10 +196,49 @@ jobs:
 
             const detailConfig = JSON.parse(fs.readFileSync('data/cukcuk-table-qr-layout.json', 'utf8')).detailOptionSources || {};
             const details = [];
-            for (const code of Object.keys(detailConfig)) {
+            let qrConfig = null;
+            for (const [code, source] of Object.entries(detailConfig)) {
               const matches = (published.menus || []).filter(menu => String(menu.cukcukCode || '').trim() === code);
               if (matches.length !== 1) throw new Error(`detail option source ${code} resolved to ${matches.length} menus`);
               const menuId = String(matches[0].id || matches[0].cukcukId || '');
+              if (source?.source === 'table-qr') {
+                if (!qrConfig) {
+                  const configResponse = await fetch(`https://${domain}.cukcuk.vn/order-online/Config/GetConfig`, {
+                    headers: { Accept: 'application/json', Authorization: crypto.randomUUID() }
+                  });
+                  const configResult = await configResponse.json().catch(() => null);
+                  qrConfig = configResult?.Data || configResult;
+                  if (!configResponse.ok || !qrConfig?.Token || !qrConfig?.CompanyCode) {
+                    throw new Error('CUKCUK table QR configuration unavailable');
+                  }
+                }
+                const areaId = String(source.areaId || '').trim();
+                if (!/^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab][0-9a-f]{3}-[0-9a-f]{12}$/i.test(areaId)) {
+                  throw new Error(`detail option source ${code} has an invalid table QR areaId`);
+                }
+                const detailUrl = new URL(`https://${domain}.cukcuk.vn${qrConfig.ApiUrl || '/cukapiv2/orderonline'}/api/InventoryItem/GetInventoryItemDetailByID`);
+                for (const [key, value] of Object.entries({
+                  inventoryItemID: menuId,
+                  bookingType: '1',
+                  qrID: '',
+                  branchID: branchId,
+                  parentBuffetID: '',
+                  areaID: areaId,
+                  companycode: qrConfig.CompanyCode
+                })) detailUrl.searchParams.set(key, value);
+                const detailResponse = await fetch(detailUrl, {
+                  headers: { Accept: 'application/json', 'Content-Type': 'application/json', AuthorizationKey: qrConfig.Token }
+                });
+                const detailResult = await detailResponse.json().catch(() => null);
+                if (!detailResponse.ok || !detailResult?.Success || !detailResult.Data) {
+                  throw new Error(`table QR inventory detail unavailable for ${code}`);
+                }
+                details.push(detailResult.Data);
+                continue;
+              }
+              if (source?.source && source.source !== 'graph') {
+                throw new Error(`detail option source ${code} has unsupported source ${source.source}`);
+              }
               const response = await fetch(`https://graphapi.cukcuk.vn/api/v1/inventoryitems/detail/${encodeURIComponent(menuId)}`, { headers });
               const result = await response.json().catch(() => null);
               if (!response.ok || !result?.Success || !result.Data) throw new Error(`inventory detail unavailable for ${code}`);

@@ -386,6 +386,65 @@ test('the checked-in CUKCUK table QR snapshot publishes the polished 14-category
   assert.equal(result.menus.some(menu => /burger|버거/i.test(`${menu.cukcukCode} ${menu.names?.ko || ''}`)), false);
 });
 
+test('the checked-in layout keeps three required Jjapkoba spice levels per menu after sync', () => {
+  const config = JSON.parse(fs.readFileSync(new URL('../../data/cukcuk-table-qr-layout.json', import.meta.url), 'utf8'));
+  const spiceValueIds = [
+    '3b59138e-b848-41aa-a45d-9fa1b915fbcf',
+    'b4ff5c57-e25c-4275-a6a9-4a25ba70e497',
+    '90f5ee61-9405-4725-a244-24b23222ee4f'
+  ];
+  const cases = [
+    {
+      code: '(KX02)',
+      id: '42257f0b-e1f2-4b69-b7ce-d59d43a69f87',
+      name: '짭코바',
+      extraValueIds: [
+        '1e883121-c3ea-478a-8c5d-c114ae89dfa1',
+        'c790a8cf-a7e7-4b67-9c7b-f09ce819bcf5',
+        '6edb778c-e1bf-4bbd-ab5f-338b0b8bd41a',
+        '4a2a7a67-d229-4d97-b89b-40d5136a9b61'
+      ]
+    },
+    {
+      code: '(KX14)',
+      id: '2813d1e7-250b-49ae-9f76-e5b40f451492',
+      name: '짭코바 반마리',
+      extraValueIds: [
+        'eb14789e-3dfe-40b9-bc3c-f58e897128f1',
+        'c790a8cf-a7e7-4b67-9c7b-f09ce819bcf5',
+        '6edb778c-e1bf-4bbd-ab5f-338b0b8bd41a',
+        '4a2a7a67-d229-4d97-b89b-40d5136a9b61'
+      ]
+    }
+  ];
+
+  for (const entry of cases) {
+    const spiceTemplateId = `cukcuk-detail:${entry.id}:0`;
+    const extrasTemplateId = `cukcuk-detail:${entry.id}:1`;
+    assert.deepEqual(config.detailOptionSources[entry.code], {
+      source: 'table-qr',
+      areaId: '99f7a22b-b478-4f06-b1b4-3694d87840ba',
+      expectedCategoryCount: 2,
+      expectedValueCount: 7,
+      expectedValueIds: [spiceValueIds, entry.extraValueIds],
+      templateNames: config.detailOptionSources[entry.code].templateNames
+    });
+    assert.deepEqual(config.menuOptionOverrides[entry.code].rules[spiceTemplateId], {
+      required: true,
+      minSelections: 1,
+      maxSelections: 1
+    });
+    assert.deepEqual(
+      config.optionOrdering.menus.find(menu => menu.code === entry.code),
+      { code: entry.code, name: entry.name, templateIds: [spiceTemplateId, extrasTemplateId] }
+    );
+    assert.deepEqual(
+      config.optionOrdering.templates.find(template => template.templateId === spiceTemplateId).valueIds,
+      spiceValueIds
+    );
+  }
+});
+
 test('the tablet disables the add-to-cart button until required option counts are valid', () => {
   const html = fs.readFileSync(new URL('../../tablet-preview.html', import.meta.url), 'utf8');
 
