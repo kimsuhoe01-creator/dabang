@@ -10,6 +10,7 @@
 - 안전 미리보기에서는 장바구니 연결까지만 검증하고 실제 CUKCUK/POS 주문은 보내지 않는다.
 - 기능 커밋: `a8e8140` (`Launch Dakgalbi tablet feature`), CUKCUK 동기화 커밋: `cfd203d`, UUID 이미지 연결 커밋: `bf4ba6e` (`Map Dakgalbi menu image`).
 - 안전 미리보기: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=bf4ba6e
+- 원본 사진 포스터 교체·재생 재시도 보강: `86908ef` (`Use original Dakgalbi photo fallback`). 최신 안전 미리보기: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=86908ef
 
 ## 2026-09-05 삿포로 1+1 행사 종료 전용 안내
 
