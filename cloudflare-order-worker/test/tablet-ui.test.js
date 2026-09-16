@@ -72,7 +72,10 @@ test('Dakgalbi opens the new-menu screen with a large looping video card connect
   assert.match(html, /const DAKGALBI_CODE='DKG'/);
   assert.match(html, /dakgalbi-dkg-hero\.mp4/);
   assert.match(html, /dakgalbi-dkg-poster\.jpg/);
+  assert.match(html, /20260916-original-photo/);
   assert.match(html, /<video autoplay muted loop playsinline preload="metadata"/);
+  assert.match(html, /function playFeaturedVideos\(\).*video\.play\(\)\.catch/s);
+  assert.match(html, /function chooseStartLanguage\(code\).*playFeaturedVideos\(\)/s);
   assert.match(html, /class="dakgalbi-hero"[\s\S]*onclick="selectMenu\('\$\{safeId\}',this\)"/);
   assert.match(html, /function visibleCategories\(\)[\s\S]*find\(isDakgalbiMenu\)/);
   assert.match(html, /const heroMenu=section\.closure\?null:section\.menus\.find\(isDakgalbiMenu\)/);
