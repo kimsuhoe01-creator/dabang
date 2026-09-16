@@ -143,7 +143,9 @@ export async function submitCukCukSelfOrder(env, order, _tableName, _existingOrd
         `${apiRoot}/api/InventoryItem/GetInventoryItemDetailByID?inventoryItemID=${encodeURIComponent(itemId)}&bookingType=1&qrID=&branchID=${encodeURIComponent(branchId)}&parentBuffetID=&areaID=${encodeURIComponent(areaId)}`,
         companyCode,
       ), headers, "QR 메뉴 상세 조회");
-      if (!item) throw new SelfOrderError("CUKCUK QR 메뉴 상세 정보를 찾지 못했습니다.", 409, "SELF_ORDER_ITEM_NOT_FOUND");
+      if (!item || typeof item !== "object" || cleanGuid(item.InventoryItemID).toLowerCase() !== itemId.toLowerCase()) {
+        throw new SelfOrderError("CUKCUK QR 메뉴에 등록되지 않은 상품입니다. 메뉴를 새로고침해 주세요.", 409, "SELF_ORDER_ITEM_NOT_FOUND");
+      }
       itemCache.set(itemId, item);
     }
     cartItems.push(buildCartItem(structuredClone(item), parent, additionsByParent.get(parent.Id) || []));
@@ -167,13 +169,24 @@ export async function submitCukCukSelfOrder(env, order, _tableName, _existingOrd
     `${apiRoot}/api/Order/self-order/update-cart?branchID=${encodeURIComponent(branchId)}&qrID=&areaID=${encodeURIComponent(areaId)}`,
     companyCode,
   ), headers, cart, "QR 장바구니 전송");
-  const confirmed = await postResult(fetcher, withCompany(
-    `${apiRoot}/api/Order/self-order/confirm-order?branchID=${encodeURIComponent(branchId)}&qrID=&areaID=${encodeURIComponent(areaId)}`,
-    companyCode,
-  ), headers, undefined, "QR 주문 확정");
+  let confirmed = null;
+  try {
+    confirmed = await postResult(fetcher, withCompany(
+      `${apiRoot}/api/Order/self-order/confirm-order?branchID=${encodeURIComponent(branchId)}&qrID=&areaID=${encodeURIComponent(areaId)}`,
+      companyCode,
+    ), headers, undefined, "QR 주문 확정");
+  } catch {
+    throw new SelfOrderError("CUKCUK 주문 확정 결과를 확인하지 못했습니다. 다시 보내지 말고 POS를 확인해 주세요.", 502, "SELF_ORDER_CONFIRMATION_FAILED");
+  }
+  const confirmedOrderId = [confirmed?.OrderId, confirmed?.Id, updated?.OrderId, updated?.Id, initial?.OrderId, initial?.Id]
+    .map(cleanGuid)
+    .find(Boolean);
+  if (!confirmedOrderId) {
+    throw new SelfOrderError("CUKCUK 주문 번호를 확인하지 못했습니다. 다시 보내지 말고 POS를 확인해 주세요.", 502, "SELF_ORDER_CONFIRMATION_MISSING");
+  }
 
   return {
-    Id: confirmed?.OrderId || confirmed?.Id || updated?.OrderId || updated?.Id || initial.OrderId || order.Id,
+    Id: confirmedOrderId.toLowerCase(),
     No: confirmed?.OrderNo || confirmed?.No || updated?.OrderNo || updated?.No || null,
     Status: confirmed?.ConfirmStatus ?? confirmed?.Status ?? updated?.ConfirmStatus ?? updated?.Status ?? null,
     action: "self-order-confirmed",
@@ -254,7 +267,7 @@ async function readResult(response, operation) {
     const status = [21, 22, 23].includes(Number(result.ErrorType)) ? 409 : 502;
     throw new SelfOrderError(result.ErrorMessage || `CUKCUK에서 ${operation}을 처리하지 못했습니다.`, status, `SELF_ORDER_${result.ErrorType ?? "ERROR"}`);
   }
-  return result.Data || {};
+  return result.Data ?? null;
 }
 
 function withCompany(url, companyCode) {

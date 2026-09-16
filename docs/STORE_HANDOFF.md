@@ -612,3 +612,12 @@ C:\Users\Admin\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin
 - `딥치즈 & 나초칩`을 태블릿에서 판매중으로 복구하고, 재생성 스크립트에도 `markAvailable`을 추가해 자동 동기화 뒤 다시 품절로 돌아가지 않게 했다. CUKCUK 원본은 변경하지 않았다.
 - 기능 커밋 `2efda10`, 자동 동기화 커밋 `a4d2f37`까지 GitHub Pages 반영 완료.
 - 검증: 전체 테스트 78개, 메뉴 이미지 감사 112개 통과. 공개 안전 미리보기에서 메뉴 카드 1개, `disabled: false`를 확인했으며 실제 POS 주문은 보내지 않았다.
+
+## 닭갈비 테이블 QR 주문 안전 보강 (2026-09-16)
+
+- `DKG`(`8c69d754-43fd-404a-a645-e4fe01b81a8b`)는 CUKCUK 일반 재고와 태블릿 레이아웃에는 있지만, 테이블 QR 상품 상세는 배달·A·B·Z·C 전 구역에서 `Success: true`와 빈 `Data`를 반환했다. 공개 고객 메뉴 85개에도 DKG가 없었다.
+- 주문 Worker는 빈 상품 상세를 빈 객체로 바꾸지 않는다. 상품 상세의 `InventoryItemID`가 없거나 요청 UUID와 다르면 `update-cart` 전에 409 `SELF_ORDER_ITEM_NOT_FOUND`로 중단한다.
+- `confirm-order`가 성공했더라도 CUKCUK 서버가 발급한 주문 UUID가 하나도 없으면 성공으로 보고하지 않는다. 확정 호출이 실패하면 앞선 장바구니 전송의 적용 여부를 알 수 없으므로 502 `SELF_ORDER_CONFIRMATION_FAILED`로 기록해 같은 주문의 자동 재전송을 막는다.
+- CUKCUK가 정상 확정 응답에서 빈 `Data`를 반환하는 경우는 허용하되, 확정·장바구니·최초 테이블 조회 중 하나에서 받은 유효한 서버 주문 UUID만 결과로 사용한다. 태블릿이 만든 클라이언트 주문 UUID는 성공 판정에 사용하지 않는다.
+- Worker 전체 테스트 106개와 `git diff --check`를 통과했고, 독립 코드 검토에서 추가 수정 사항이 없음을 확인했다. 실제 주문은 만들지 않았다.
+- CUKCUK 관리자에서 DKG를 `Bán hàng Online > Gọi món tại bàn > Thực đơn`에 추가한 뒤, 전 구역 QR 상세와 공개 고객 메뉴 동기화에서 같은 UUID가 반환되는지 확인해야 한다.

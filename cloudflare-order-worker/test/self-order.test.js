@@ -161,7 +161,7 @@ test("maps selected CUKCUK additions into the native cart item", async () => {
     assert.fail(`Unexpected URL: ${url}`);
   };
 
-  await submitCukCukSelfOrder(env, {
+  const result = await submitCukCukSelfOrder(env, {
     Id: "33333333-3333-4333-8333-333333333333",
     ListTableID: ["a7c94545-534d-400e-a21e-3e4ac824323c"],
     OrderDetails: [
@@ -175,7 +175,115 @@ test("maps selected CUKCUK additions into the native cart item", async () => {
   assert.equal(item.InventoryItemAdditionsCategory[0].InventoryItemAdditions[1].BuyQuantity, 1);
   assert.equal(item.InventoryItemAdditionsCategory[0].InventoryItemAdditions[1].Selected, true);
   assert.equal(item.UnitPriceAddtion, 110000);
+  assert.equal(result.Id, "11111111-1111-4111-8111-111111111111");
 });
+
+test("rejects a CUKCUK success response when QR menu detail data is missing", async () => {
+  let updateCalled = false;
+  const fetcher = async (input) => {
+    const url = String(input);
+    if (url.endsWith("/order-online/Config/GetConfig")) return response({ Success: true, Data: { Token: "token", CompanyCode: "dabang" } });
+    if (url.includes("GetOrderByTableID")) return response({ Success: true, Data: {
+      OrderId: "11111111-1111-4111-8111-111111111111",
+      TableRef: JSON.stringify({ AreaID: "99f7a22b-b478-4f06-b1b4-3694d87840ba" }),
+      ListInventoryItemTemp: [],
+    } });
+    if (url.includes("GetInventoryItemDetailByID")) return response({ Success: true });
+    if (url.includes("/update-cart")) updateCalled = true;
+    assert.fail(`Unexpected URL: ${url}`);
+  };
+
+  await assert.rejects(
+    submitCukCukSelfOrder(env, sampleOrder(), "A-1", null, fetcher),
+    error => error?.code === "SELF_ORDER_ITEM_NOT_FOUND" && error?.status === 409,
+  );
+  assert.equal(updateCalled, false);
+});
+
+test("rejects QR menu detail for a different inventory item", async () => {
+  let updateCalled = false;
+  const fetcher = async (input) => {
+    const url = String(input);
+    if (url.endsWith("/order-online/Config/GetConfig")) return response({ Success: true, Data: { Token: "token", CompanyCode: "dabang" } });
+    if (url.includes("GetOrderByTableID")) return response({ Success: true, Data: {
+      OrderId: "11111111-1111-4111-8111-111111111111",
+      TableRef: JSON.stringify({ AreaID: "99f7a22b-b478-4f06-b1b4-3694d87840ba" }),
+      ListInventoryItemTemp: [],
+    } });
+    if (url.includes("GetInventoryItemDetailByID")) return response({ Success: true, Data: {
+      InventoryItemID: "aaaaaaaa-aaaa-4aaa-8aaa-aaaaaaaaaaaa",
+      UnitPriceDelivery: 33000,
+    } });
+    if (url.includes("/update-cart")) updateCalled = true;
+    assert.fail(`Unexpected URL: ${url}`);
+  };
+
+  await assert.rejects(
+    submitCukCukSelfOrder(env, sampleOrder(), "A-1", null, fetcher),
+    error => error?.code === "SELF_ORDER_ITEM_NOT_FOUND" && error?.status === 409,
+  );
+  assert.equal(updateCalled, false);
+});
+
+test("does not report success without any server-issued CUKCUK order id", async () => {
+  const fetcher = async (input) => {
+    const url = String(input);
+    if (url.endsWith("/order-online/Config/GetConfig")) return response({ Success: true, Data: { Token: "token", CompanyCode: "dabang" } });
+    if (url.includes("GetOrderByTableID")) return response({ Success: true, Data: {
+      TableRef: JSON.stringify({ AreaID: "99f7a22b-b478-4f06-b1b4-3694d87840ba" }),
+      ListInventoryItemTemp: [],
+    } });
+    if (url.includes("GetInventoryItemDetailByID")) return response({ Success: true, Data: {
+      InventoryItemID: "e9e75a8d-cb9d-442b-8f57-08c06421f56f",
+      UnitPriceDelivery: 33000,
+    } });
+    if (url.includes("/update-cart")) return response({ Success: true });
+    if (url.includes("/confirm-order")) return response({ Success: true });
+    assert.fail(`Unexpected URL: ${url}`);
+  };
+
+  await assert.rejects(
+    submitCukCukSelfOrder(env, sampleOrder(), "A-1", null, fetcher),
+    error => error?.code === "SELF_ORDER_CONFIRMATION_MISSING" && error?.status === 502,
+  );
+});
+
+test("treats a confirm failure after cart update as an unknown outcome", async () => {
+  const fetcher = async (input) => {
+    const url = String(input);
+    if (url.endsWith("/order-online/Config/GetConfig")) return response({ Success: true, Data: { Token: "token", CompanyCode: "dabang" } });
+    if (url.includes("GetOrderByTableID")) return response({ Success: true, Data: {
+      OrderId: "11111111-1111-4111-8111-111111111111",
+      TableRef: JSON.stringify({ AreaID: "99f7a22b-b478-4f06-b1b4-3694d87840ba" }),
+      ListInventoryItemTemp: [],
+    } });
+    if (url.includes("GetInventoryItemDetailByID")) return response({ Success: true, Data: {
+      InventoryItemID: "e9e75a8d-cb9d-442b-8f57-08c06421f56f",
+      UnitPriceDelivery: 33000,
+    } });
+    if (url.includes("/update-cart")) return response({ Success: true, Data: { OrderId: "11111111-1111-4111-8111-111111111111" } });
+    if (url.includes("/confirm-order")) return response({ Success: false, ErrorType: 21, ErrorMessage: "conflict" });
+    assert.fail(`Unexpected URL: ${url}`);
+  };
+
+  await assert.rejects(
+    submitCukCukSelfOrder(env, sampleOrder(), "A-1", null, fetcher),
+    error => error?.code === "SELF_ORDER_CONFIRMATION_FAILED" && error?.status === 502,
+  );
+});
+
+function sampleOrder() {
+  return {
+    Id: "33333333-3333-4333-8333-333333333333",
+    ListTableID: ["a7c94545-534d-400e-a21e-3e4ac824323c"],
+    OrderDetails: [{
+      Id: "44444444-4444-4444-8444-444444444444",
+      ItemId: "e9e75a8d-cb9d-442b-8f57-08c06421f56f",
+      Quantity: 1,
+      Price: 33000,
+    }],
+  };
+}
 
 function response(body, status = 200) {
   return new Response(JSON.stringify(body), { status, headers: { "Content-Type": "application/json" } });
