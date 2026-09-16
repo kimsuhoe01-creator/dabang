@@ -620,4 +620,7 @@ C:\Users\Admin\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin
 - `confirm-order`가 성공했더라도 CUKCUK 서버가 발급한 주문 UUID가 하나도 없으면 성공으로 보고하지 않는다. 확정 호출이 실패하면 앞선 장바구니 전송의 적용 여부를 알 수 없으므로 502 `SELF_ORDER_CONFIRMATION_FAILED`로 기록해 같은 주문의 자동 재전송을 막는다.
 - CUKCUK가 정상 확정 응답에서 빈 `Data`를 반환하는 경우는 허용하되, 확정·장바구니·최초 테이블 조회 중 하나에서 받은 유효한 서버 주문 UUID만 결과로 사용한다. 태블릿이 만든 클라이언트 주문 UUID는 성공 판정에 사용하지 않는다.
 - Worker 전체 테스트 106개와 `git diff --check`를 통과했고, 독립 코드 검토에서 추가 수정 사항이 없음을 확인했다. 실제 주문은 만들지 않았다.
-- CUKCUK 관리자에서 DKG를 `Bán hàng Online > Gọi món tại bàn > Thực đơn`에 추가한 뒤, 전 구역 QR 상세와 공개 고객 메뉴 동기화에서 같은 UUID가 반환되는지 확인해야 한다.
+- CUKCUK 관리자 `Bán hàng Online > Gọi món tại bàn > Thực đơn`에 DKG를 추가했다. 관리자 목록에서 DKG가 정확히 1개, 378,000동, 판매 가능 상태로 조회된다.
+- 실제 테이블 QR 상세 API는 배달·A·B·Z·C 전 구역에서 DKG의 같은 UUID, 단가 378,000동, `IsOutOfStock: false`, `Inactive: false`를 반환한다. 따라서 주문 Worker가 `update-cart` 전에 수행하는 실시간 QR 상품 검증을 통과한다.
+- 공개 태블릿 JSON에도 DKG의 같은 UUID·코드·가격·판매 가능 상태가 반영돼 있다. `preview=1` 안전 미리보기에서 A-1 테이블, 닭갈비 한판 1개, 합계 378,000동의 장바구니와 완료 화면까지 확인했으며 실제 POS 주문은 보내지 않았다.
+- 별도 CUKCUK 고객용 웹메뉴 동기화는 여전히 85개이며 DKG를 포함하지 않는다. 이 값은 CUKCUK의 다른 온라인 판매 설정이고, 다방 태블릿 자동 동기화는 일반 재고의 DKG를 공개 JSON에 병합한 뒤 주문 시 테이블 QR 상세를 다시 확인하므로 이번 테이블 주문 연결의 차단 요소가 아니다.
