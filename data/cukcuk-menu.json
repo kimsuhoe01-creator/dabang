@@ -2,15 +2,15 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-09-16 01:35:28",
-    "finished_at": "2026-09-16 01:35:37",
+    "started_at": "2026-09-16 03:02:13",
+    "finished_at": "2026-09-16 03:02:22",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
-    "published_menu_count": 112
+    "published_menu_count": 113
   },
   "categoryCount": 14,
-  "menuCount": 112,
+  "menuCount": 113,
   "optionTemplateCount": 28,
   "categories": [
     {
@@ -344,6 +344,26 @@
       "categorySortOrder": 7
     },
     {
+      "id": "8c69d754-43fd-404a-a645-e4fe01b81a8b",
+      "cukcukId": "8c69d754-43fd-404a-a645-e4fe01b81a8b",
+      "cukcukCode": "DKG",
+      "categoryId": "f60b3e05-f21f-4905-9207-0e494ff2b464",
+      "categoryName": "신메뉴",
+      "sourceName": "닭갈비 한판 | Dakgalbi gà xào cay | 辣炒鸡拼盘 | Dakgalbi Chicken Platter",
+      "names": {
+        "ko": "닭갈비 한판",
+        "vi": "Gà xào cay Dakgalbi",
+        "zh": "辣炒鸡拼盘",
+        "en": "Dakgalbi Chicken Platter"
+      },
+      "price": 378000,
+      "available": true,
+      "optionGroups": 0,
+      "optionTemplateIds": [],
+      "sortOrder": 8,
+      "categorySortOrder": 0
+    },
+    {
       "id": "9af79e36-a7aa-4c21-8349-1e61555866e4",
       "cukcukId": "9af79e36-a7aa-4c21-8349-1e61555866e4",
       "cukcukCode": "ᄃᄃᄎ TTTD",
@@ -360,8 +380,8 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 8,
-      "categorySortOrder": 0,
+      "sortOrder": 9,
+      "categorySortOrder": 1,
       "subtitle": {
         "names": {
           "ko": "제한시간 안에 다 먹으면 무료!",
@@ -390,9 +410,9 @@
       "optionTemplateIds": [
         "a18f98eb-3772-4af6-a8cc-4dee966884bc"
       ],
-      "sortOrder": 9,
+      "sortOrder": 10,
       "cukcukCode": "ᄃᄃ TD 地",
-      "categorySortOrder": 1,
+      "categorySortOrder": 2,
       "subtitle": {
         "names": {
           "ko": "진짜 매우 맵습니다. 재미로 가볍게 도전하지 마세요.",
@@ -421,7 +441,7 @@
       "optionTemplateIds": [
         "cukcuk-detail:d301f64f-16fa-4c8f-86bb-62318205039a:0"
       ],
-      "sortOrder": 10,
+      "sortOrder": 11,
       "cukcukCode": "HCX",
       "optionRules": {
         "cukcuk-detail:d301f64f-16fa-4c8f-86bb-62318205039a:0": {
@@ -430,7 +450,7 @@
           "maxSelections": 1
         }
       },
-      "categorySortOrder": 2,
+      "categorySortOrder": 3,
       "subtitle": {
         "names": {
           "ko": "디진다 돈까스와 반반으로도 즐길 수 있어요.",
@@ -457,9 +477,9 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 11,
+      "sortOrder": 12,
       "cukcukCode": "ᄃ DC 达",
-      "categorySortOrder": 3
+      "categorySortOrder": 4
     },
     {
       "id": "3b52569c-47cc-4005-af74-87653bbbc4d9",
@@ -478,8 +498,8 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 12,
-      "categorySortOrder": 4,
+      "sortOrder": 13,
+      "categorySortOrder": 5,
       "subtitle": {
         "names": {
           "ko": "한국 훌*라 바비큐를 떠올리는 진한 숯불 맛.",
@@ -507,8 +527,8 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 13,
-      "categorySortOrder": 5,
+      "sortOrder": 14,
+      "categorySortOrder": 6,
       "subtitle": {
         "names": {
           "ko": "화덕에서 1시간 동안 훈연해 촉촉하고 훈제향이 깊은 통닭.",
@@ -537,9 +557,9 @@
       "optionTemplateIds": [
         "6274f44c-9256-418a-a59d-20e04e651fa1"
       ],
-      "sortOrder": 14,
+      "sortOrder": 15,
       "cukcukCode": "hot",
-      "categorySortOrder": 6,
+      "categorySortOrder": 7,
       "subtitle": {
         "names": {
           "ko": "생각보다 맵습니다. 주의하세요! B*C 치킨을 떠올리는 맛.",
@@ -568,9 +588,9 @@
       "optionTemplateIds": [
         "85cead19-7d83-4c61-8199-b7fab35fb672"
       ],
-      "sortOrder": 15,
+      "sortOrder": 16,
       "cukcukCode": "ᄉ GPBPM 雪 SCPC",
-      "categorySortOrder": 7,
+      "categorySortOrder": 8,
       "subtitle": {
         "names": {
           "ko": "네*치킨을 떠올리는 달콤짭짤한 스노윙 맛.",
@@ -598,8 +618,8 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 16,
-      "categorySortOrder": 8,
+      "sortOrder": 17,
+      "categorySortOrder": 9,
       "subtitle": {
         "names": {
           "ko": "푸*닭 마마치를 떠올리는 달콤고소한 맛.",
@@ -626,9 +646,9 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 17,
+      "sortOrder": 18,
       "cukcukCode": "ᄋ GCSCNKH 油",
-      "categorySortOrder": 9,
+      "categorySortOrder": 10,
       "subtitle": {
         "names": {
           "ko": "아직 많이 알려지진 않았지만, 이 집 사장의 1픽 메뉴.",
@@ -655,9 +675,9 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 18,
+      "sortOrder": 19,
       "cukcukCode": "ᄆGRXCF",
-      "categorySortOrder": 10,
+      "categorySortOrder": 11,
       "subtitle": {
         "names": {
           "ko": "직접 만든 소스와 진한 불향이 어우러진 숨은 별미.",
@@ -686,9 +706,9 @@
       "optionTemplateIds": [
         "80ff7a38-11c2-4942-a403-b5e3921ef3e2"
       ],
-      "sortOrder": 19,
+      "sortOrder": 20,
       "cukcukCode": "ᄎ CC KCC",
-      "categorySortOrder": 11,
+      "categorySortOrder": 12,
       "subtitle": {
         "names": {
           "ko": "실비김치가 들어갑니다. 정말 많이 매워요!",
@@ -716,8 +736,8 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 20,
-      "categorySortOrder": 12,
+      "sortOrder": 21,
+      "categorySortOrder": 13,
       "subtitle": {
         "names": {
           "ko": "불냉면 양념으로 만들었습니다. 정말 많이 매워요!",
@@ -746,9 +766,9 @@
       "optionTemplateIds": [
         "8491b574-2973-47f0-8d46-5c489fd9bba8"
       ],
-      "sortOrder": 21,
+      "sortOrder": 22,
       "cukcukCode": "ᄋ1 K1 冰1 IC1",
-      "categorySortOrder": 13
+      "categorySortOrder": 14
     },
     {
       "id": "0738f65b-7561-4467-8ba9-a814587a9b59",
@@ -768,9 +788,9 @@
       "optionTemplateIds": [
         "f7e12072-8edf-4485-b897-6a440704d521"
       ],
-      "sortOrder": 22,
+      "sortOrder": 23,
       "cukcukCode": "ᄋ5 K5 冰5 IC5",
-      "categorySortOrder": 14
+      "categorySortOrder": 15
     },
     {
       "id": "57ef6bb8-37f3-4296-b1c5-3e24412c2af9",
@@ -793,7 +813,7 @@
         "5197c337-535f-4e91-b7d1-26029a4b9222",
         "d7fcbd85-9fb6-40db-872a-8275dce401ed"
       ],
-      "sortOrder": 23,
+      "sortOrder": 24,
       "cukcukCode": "(S03) Gà k xương + Tok",
       "categorySortOrder": 0,
       "subtitle": {
@@ -826,7 +846,7 @@
         "5197c337-535f-4e91-b7d1-26029a4b9222",
         "d7fcbd85-9fb6-40db-872a-8275dce401ed"
       ],
-      "sortOrder": 24,
+      "sortOrder": 25,
       "cukcukCode": "(S04) Gà nguyên con + Tok",
       "categorySortOrder": 1,
       "subtitle": {
@@ -860,7 +880,7 @@
         "5197c337-535f-4e91-b7d1-26029a4b9222",
         "d7fcbd85-9fb6-40db-872a-8275dce401ed"
       ],
-      "sortOrder": 25,
+      "sortOrder": 26,
       "cukcukCode": "(S05) Cánh gà + Tok",
       "categorySortOrder": 2,
       "subtitle": {
@@ -896,7 +916,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 26,
+      "sortOrder": 27,
       "cukcukCode": "(S06) Gà k xương 5 vị",
       "categorySortOrder": 3,
       "subtitle": {
@@ -927,7 +947,7 @@
       "optionTemplateIds": [
         "cukcuk-detail:88d856ff-e35d-4c21-893b-3f60e2fa71fa:0"
       ],
-      "sortOrder": 27,
+      "sortOrder": 28,
       "cukcukCode": "(S08) Cánh gà 4 vị",
       "optionRules": {
         "cukcuk-detail:88d856ff-e35d-4c21-893b-3f60e2fa71fa:0": {
@@ -965,7 +985,7 @@
       "optionTemplateIds": [
         "3bd1519c-f24f-4aaf-9776-0579d374738f"
       ],
-      "sortOrder": 28,
+      "sortOrder": 29,
       "cukcukCode": "SCGHC",
       "categorySortOrder": 5
     },
@@ -985,7 +1005,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 29,
+      "sortOrder": 30,
       "cukcukCode": "ᄆCGRX",
       "categorySortOrder": 6
     },
@@ -1007,7 +1027,7 @@
       "optionTemplateIds": [
         "3bd1519c-f24f-4aaf-9776-0579d374738f"
       ],
-      "sortOrder": 30,
+      "sortOrder": 31,
       "cukcukCode": "ᄃᄐᄌᄉGNNCVCG CNS",
       "categorySortOrder": 7
     },
@@ -1031,7 +1051,7 @@
         "bd5ba827-b64d-4910-a24a-86fa7a8e29cd",
         "4fdd345d-483e-4f95-a0c4-73faf37ffd0c"
       ],
-      "sortOrder": 31,
+      "sortOrder": 32,
       "cukcukCode": "SPACE35",
       "categorySortOrder": 8
     },
@@ -1055,7 +1075,7 @@
         "bd5ba827-b64d-4910-a24a-86fa7a8e29cd",
         "4fdd345d-483e-4f95-a0c4-73faf37ffd0c"
       ],
-      "sortOrder": 32,
+      "sortOrder": 33,
       "cukcukCode": "SPACE36",
       "categorySortOrder": 9
     },
@@ -1078,7 +1098,7 @@
         "85cead19-7d83-4c61-8199-b7fab35fb672",
         "b2fbfcca-55f5-4718-87d4-96627091764a"
       ],
-      "sortOrder": 33,
+      "sortOrder": 34,
       "cukcukCode": "(KX13)",
       "categorySortOrder": 0
     },
@@ -1101,7 +1121,7 @@
         "a18f98eb-3772-4af6-a8cc-4dee966884bc",
         "80ff7a38-11c2-4942-a403-b5e3921ef3e2"
       ],
-      "sortOrder": 34,
+      "sortOrder": 35,
       "cukcukCode": "(KX14)",
       "categorySortOrder": 1
     },
@@ -1123,7 +1143,7 @@
       "optionTemplateIds": [
         "f035ccfc-db83-4ba0-ac18-bd38af8b0437"
       ],
-      "sortOrder": 35,
+      "sortOrder": 36,
       "cukcukCode": "Original Roast",
       "categorySortOrder": 2
     },
@@ -1145,7 +1165,7 @@
       "optionTemplateIds": [
         "f035ccfc-db83-4ba0-ac18-bd38af8b0437"
       ],
-      "sortOrder": 36,
+      "sortOrder": 37,
       "cukcukCode": "Crispy Spicy Roast",
       "categorySortOrder": 3
     },
@@ -1167,7 +1187,7 @@
       "optionTemplateIds": [
         "2be54a6c-ab0d-40d7-a080-0c50e0d228dc"
       ],
-      "sortOrder": 37,
+      "sortOrder": 38,
       "cukcukCode": "(W06) Nửa con gà",
       "categorySortOrder": 4
     },
@@ -1190,7 +1210,7 @@
         "a18f98eb-3772-4af6-a8cc-4dee966884bc",
         "80ff7a38-11c2-4942-a403-b5e3921ef3e2"
       ],
-      "sortOrder": 38,
+      "sortOrder": 39,
       "cukcukCode": "(KX02)",
       "categorySortOrder": 0
     },
@@ -1210,7 +1230,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 39,
+      "sortOrder": 40,
       "cukcukCode": "rose bbq",
       "categorySortOrder": 1
     },
@@ -1233,7 +1253,7 @@
         "85cead19-7d83-4c61-8199-b7fab35fb672",
         "b2fbfcca-55f5-4718-87d4-96627091764a"
       ],
-      "sortOrder": 40,
+      "sortOrder": 41,
       "cukcukCode": "(KX01)",
       "categorySortOrder": 2,
       "optionRules": {
@@ -1257,9 +1277,9 @@
       "sourceName": "후라이드  Fried Chicken  无骨炸鸡腿 Má đùi rút xương",
       "names": {
         "ko": "후라이드 치킨",
-        "vi": "Gà rán không xương",
+        "vi": "Gà chiên không xương",
         "zh": "无骨炸鸡腿",
-        "en": "Boneless Fried Chicken"
+        "en": "Fried Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1267,7 +1287,7 @@
       "optionTemplateIds": [
         "85cead19-7d83-4c61-8199-b7fab35fb672"
       ],
-      "sortOrder": 41,
+      "sortOrder": 42,
       "cukcukCode": "(KX04)",
       "categorySortOrder": 3
     },
@@ -1289,7 +1309,7 @@
       "optionTemplateIds": [
         "85cead19-7d83-4c61-8199-b7fab35fb672"
       ],
-      "sortOrder": 42,
+      "sortOrder": 43,
       "cukcukCode": "(KX05)",
       "categorySortOrder": 4
     },
@@ -1311,7 +1331,7 @@
       "optionTemplateIds": [
         "85cead19-7d83-4c61-8199-b7fab35fb672"
       ],
-      "sortOrder": 43,
+      "sortOrder": 44,
       "cukcukCode": "(KX06)",
       "categorySortOrder": 5
     },
@@ -1333,7 +1353,7 @@
       "optionTemplateIds": [
         "85cead19-7d83-4c61-8199-b7fab35fb672"
       ],
-      "sortOrder": 44,
+      "sortOrder": 45,
       "cukcukCode": "(KX08)",
       "categorySortOrder": 6
     },
@@ -1355,7 +1375,7 @@
       "optionTemplateIds": [
         "85cead19-7d83-4c61-8199-b7fab35fb672"
       ],
-      "sortOrder": 45,
+      "sortOrder": 46,
       "cukcukCode": "(KX10)",
       "categorySortOrder": 7
     },
@@ -1368,7 +1388,7 @@
       "names": {
         "ko": "스리라차 어니언 치킨",
         "vi": "Gà sốt kem hành Sriracha",
-        "zh": "是拉差洋葱奶油炸鸡",
+        "zh": "斯里拉查洋葱奶油炸鸡",
         "en": "Sriracha Onion Chicken"
       },
       "price": 399600,
@@ -1377,7 +1397,7 @@
       "optionTemplateIds": [
         "85cead19-7d83-4c61-8199-b7fab35fb672"
       ],
-      "sortOrder": 46,
+      "sortOrder": 47,
       "cukcukCode": "(KX07)",
       "categorySortOrder": 8
     },
@@ -1397,7 +1417,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 47,
+      "sortOrder": 48,
       "cukcukCode": "ᄉ GS 至 SC",
       "categorySortOrder": 9
     },
@@ -1417,7 +1437,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 48,
+      "sortOrder": 49,
       "cukcukCode": "(T01) Gà chiên nguyên con",
       "categorySortOrder": 0
     },
@@ -1439,7 +1459,7 @@
       "optionTemplateIds": [
         "cukcuk-detail:2ce328a0-8d0c-481e-883f-2e35684b900d:0"
       ],
-      "sortOrder": 49,
+      "sortOrder": 50,
       "cukcukCode": "(W01) Cánh gà vị đôi",
       "optionRules": {
         "cukcuk-detail:2ce328a0-8d0c-481e-883f-2e35684b900d:0": {
@@ -1466,7 +1486,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 50,
+      "sortOrder": 51,
       "cukcukCode": "(W02) Cánh chiên giòn",
       "categorySortOrder": 1
     },
@@ -1486,7 +1506,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 51,
+      "sortOrder": 52,
       "cukcukCode": "(W03) Cánh gà xì dầu",
       "categorySortOrder": 2
     },
@@ -1506,7 +1526,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 52,
+      "sortOrder": 53,
       "cukcukCode": "(W05) Cánh gà mật ong",
       "categorySortOrder": 3
     },
@@ -1526,7 +1546,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 53,
+      "sortOrder": 54,
       "cukcukCode": "(W04) Cánh gà cay",
       "categorySortOrder": 4
     },
@@ -1549,7 +1569,7 @@
         "21b53642-cba7-4ef9-b877-bab92f845c25",
         "d7fcbd85-9fb6-40db-872a-8275dce401ed"
       ],
-      "sortOrder": 54,
+      "sortOrder": 55,
       "cukcukCode": "(T06) Tokbokki cay nhẹ",
       "categorySortOrder": 0,
       "optionRules": {
@@ -1585,7 +1605,7 @@
         "5197c337-535f-4e91-b7d1-26029a4b9222",
         "d7fcbd85-9fb6-40db-872a-8275dce401ed"
       ],
-      "sortOrder": 55,
+      "sortOrder": 56,
       "cukcukCode": "(T09) Tok banh gao to",
       "categorySortOrder": 1
     },
@@ -1607,7 +1627,7 @@
       "optionTemplateIds": [
         "d7fcbd85-9fb6-40db-872a-8275dce401ed"
       ],
-      "sortOrder": 56,
+      "sortOrder": 57,
       "cukcukCode": "(T07) Tok kem cay(rose)",
       "categorySortOrder": 2
     },
@@ -1630,7 +1650,7 @@
         "21b53642-cba7-4ef9-b877-bab92f845c25",
         "d7fcbd85-9fb6-40db-872a-8275dce401ed"
       ],
-      "sortOrder": 57,
+      "sortOrder": 58,
       "cukcukCode": "(T08) Mì Tokbokki",
       "categorySortOrder": 3
     },
@@ -1653,7 +1673,7 @@
       "optionTemplateIds": [
         "cukcuk-detail:6a4fc8cd-4937-46f0-990c-536bdffb1de3:0"
       ],
-      "sortOrder": 58,
+      "sortOrder": 59,
       "optionRules": {
         "cukcuk-detail:6a4fc8cd-4937-46f0-990c-536bdffb1de3:0": {
           "required": true,
@@ -1679,7 +1699,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 59,
+      "sortOrder": 60,
       "cukcukCode": "ᄀ CTXD",
       "categorySortOrder": 5
     },
@@ -1699,7 +1719,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 60,
+      "sortOrder": 61,
       "cukcukCode": "(T16) Cơm nắm",
       "categorySortOrder": 6
     },
@@ -1719,7 +1739,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 61,
+      "sortOrder": 62,
       "cukcukCode": "ᄀ TH 蒸ZD SE",
       "categorySortOrder": 7
     },
@@ -1739,7 +1759,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 62,
+      "sortOrder": 63,
       "cukcukCode": "(T11) Ha cao chien cay",
       "categorySortOrder": 8
     },
@@ -1759,7 +1779,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 63,
+      "sortOrder": 64,
       "cukcukCode": "(T12) Mì trộn cay dai",
       "categorySortOrder": 9
     },
@@ -1779,7 +1799,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 64,
+      "sortOrder": 65,
       "cukcukCode": "(T13) Udon xiên chả cá",
       "categorySortOrder": 10
     },
@@ -1799,7 +1819,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 65,
+      "sortOrder": 66,
       "cukcukCode": "(T14) Udon kimchi cay",
       "categorySortOrder": 11
     },
@@ -1821,7 +1841,7 @@
       "optionTemplateIds": [
         "4a947b5f-0eb9-4c88-87b2-94debe05a41d"
       ],
-      "sortOrder": 66,
+      "sortOrder": 67,
       "cukcukCode": "SPACE111",
       "categorySortOrder": 0,
       "optionRules": {
@@ -1850,7 +1870,7 @@
       "optionTemplateIds": [
         "4a947b5f-0eb9-4c88-87b2-94debe05a41d"
       ],
-      "sortOrder": 67,
+      "sortOrder": 68,
       "cukcukCode": "SPACE112",
       "categorySortOrder": 1,
       "optionRules": {
@@ -1879,7 +1899,7 @@
       "optionTemplateIds": [
         "4a947b5f-0eb9-4c88-87b2-94debe05a41d"
       ],
-      "sortOrder": 68,
+      "sortOrder": 69,
       "cukcukCode": "SPACE113",
       "categorySortOrder": 2,
       "optionRules": {
@@ -1908,7 +1928,7 @@
       "optionTemplateIds": [
         "4a947b5f-0eb9-4c88-87b2-94debe05a41d"
       ],
-      "sortOrder": 69,
+      "sortOrder": 70,
       "cukcukCode": "SPACE114",
       "categorySortOrder": 3,
       "optionRules": {
@@ -1937,7 +1957,7 @@
       "optionTemplateIds": [
         "4a947b5f-0eb9-4c88-87b2-94debe05a41d"
       ],
-      "sortOrder": 70,
+      "sortOrder": 71,
       "cukcukCode": "SPACE115",
       "categorySortOrder": 4,
       "optionRules": {
@@ -1964,7 +1984,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 71,
+      "sortOrder": 72,
       "cukcukCode": "SPACE33",
       "categorySortOrder": 5
     },
@@ -1984,7 +2004,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 72,
+      "sortOrder": 73,
       "cukcukCode": "SPACE8",
       "categorySortOrder": 6
     },
@@ -2004,7 +2024,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 73,
+      "sortOrder": 74,
       "cukcukCode": "SPACE32",
       "categorySortOrder": 7
     },
@@ -2024,7 +2044,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 74,
+      "sortOrder": 75,
       "cukcukCode": "(M04) nacho cham phomai",
       "categorySortOrder": 0
     },
@@ -2044,7 +2064,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 75,
+      "sortOrder": 76,
       "cukcukCode": "BDH",
       "categorySortOrder": 1
     },
@@ -2065,7 +2085,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 76,
+      "sortOrder": 77,
       "categorySortOrder": 2
     },
     {
@@ -2087,7 +2107,7 @@
         "3bd1519c-f24f-4aaf-9776-0579d374738f",
         "25d39e7d-a94b-40fb-b610-1db368947c95"
       ],
-      "sortOrder": 77,
+      "sortOrder": 78,
       "cukcukCode": "(F01) Chan ga ham co nuoc",
       "categorySortOrder": 3
     },
@@ -2107,7 +2127,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 78,
+      "sortOrder": 79,
       "cukcukCode": "SMPW",
       "categorySortOrder": 4
     },
@@ -2129,7 +2149,7 @@
       "optionTemplateIds": [
         "2fb4a046-da1a-4e98-a7fa-40703f938de2"
       ],
-      "sortOrder": 79,
+      "sortOrder": 80,
       "cukcukCode": "ᄋ LCC 鱼 FCS",
       "categorySortOrder": 5
     },
@@ -2152,7 +2172,7 @@
       "optionTemplateIds": [
         "cukcuk-detail:08b4aba2-4116-4148-b2a9-763c5d72d543:0"
       ],
-      "sortOrder": 80,
+      "sortOrder": 81,
       "optionRules": {
         "cukcuk-detail:08b4aba2-4116-4148-b2a9-763c5d72d543:0": {
           "required": true,
@@ -2178,7 +2198,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 81,
+      "sortOrder": 82,
       "cukcukCode": "(F09) Do kho tong hop",
       "categorySortOrder": 0
     },
@@ -2198,7 +2218,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 82,
+      "sortOrder": 83,
       "cukcukCode": "(F06) Cá pollack non khô",
       "categorySortOrder": 1
     },
@@ -2218,7 +2238,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 83,
+      "sortOrder": 84,
       "cukcukCode": "(F08) Ca chi vang nuong",
       "categorySortOrder": 2
     },
@@ -2238,7 +2258,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 84,
+      "sortOrder": 85,
       "cukcukCode": "(F07) Mực bán khô tẩm vị",
       "categorySortOrder": 3
     },
@@ -2258,7 +2278,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 85,
+      "sortOrder": 86,
       "cukcukCode": "(F04) Cá chỉ vàng nướng",
       "categorySortOrder": 4
     },
@@ -2278,7 +2298,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 86,
+      "sortOrder": 87,
       "cukcukCode": "Mực",
       "categorySortOrder": 5
     },
@@ -2298,7 +2318,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 87,
+      "sortOrder": 88,
       "cukcukCode": "수량확인13",
       "categorySortOrder": 0
     },
@@ -2318,7 +2338,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 88,
+      "sortOrder": 89,
       "cukcukCode": "수량확인16",
       "categorySortOrder": 1
     },
@@ -2338,7 +2358,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 89,
+      "sortOrder": 90,
       "cukcukCode": "수량확인14",
       "categorySortOrder": 2
     },
@@ -2358,7 +2378,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 90,
+      "sortOrder": 91,
       "cukcukCode": "ᄂᄌ NCZ5",
       "categorySortOrder": 3,
       "subtitle": {
@@ -2388,7 +2408,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 91,
+      "sortOrder": 92,
       "categorySortOrder": 4
     },
     {
@@ -2407,7 +2427,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 92,
+      "sortOrder": 93,
       "cukcukCode": "Nước ép xoài",
       "categorySortOrder": 5
     },
@@ -2429,7 +2449,7 @@
       "optionTemplateIds": [
         "7524baa2-2174-4d16-988e-8904ce1192db"
       ],
-      "sortOrder": 93,
+      "sortOrder": 94,
       "cukcukCode": "CC",
       "categorySortOrder": 6
     },
@@ -2450,7 +2470,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 94,
+      "sortOrder": 95,
       "categorySortOrder": 0,
       "subtitle": {
         "names": {
@@ -2481,7 +2501,7 @@
       "optionTemplateIds": [
         "cukcuk-detail:57b1fe70-fe33-4654-9d58-575f277749be:0"
       ],
-      "sortOrder": 95,
+      "sortOrder": 96,
       "optionRules": {
         "cukcuk-detail:57b1fe70-fe33-4654-9d58-575f277749be:0": {
           "required": true,
@@ -2510,7 +2530,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 96,
+      "sortOrder": 97,
       "categorySortOrder": 2
     },
     {
@@ -2530,7 +2550,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 97,
+      "sortOrder": 98,
       "categorySortOrder": 3
     },
     {
@@ -2550,7 +2570,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 98,
+      "sortOrder": 99,
       "categorySortOrder": 4
     },
     {
@@ -2570,7 +2590,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 99,
+      "sortOrder": 100,
       "categorySortOrder": 5
     },
     {
@@ -2590,7 +2610,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 100,
+      "sortOrder": 101,
       "categorySortOrder": 6
     },
     {
@@ -2610,7 +2630,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 101,
+      "sortOrder": 102,
       "categorySortOrder": 7
     },
     {
@@ -2630,7 +2650,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 102,
+      "sortOrder": 103,
       "categorySortOrder": 8
     },
     {
@@ -2650,7 +2670,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 103,
+      "sortOrder": 104,
       "categorySortOrder": 9
     },
     {
@@ -2670,7 +2690,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 104,
+      "sortOrder": 105,
       "categorySortOrder": 10
     },
     {
@@ -2690,7 +2710,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 105,
+      "sortOrder": 106,
       "categorySortOrder": 11
     },
     {
@@ -2710,7 +2730,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 106,
+      "sortOrder": 107,
       "categorySortOrder": 12
     },
     {
@@ -2730,7 +2750,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 107,
+      "sortOrder": 108,
       "categorySortOrder": 13
     },
     {
@@ -2750,7 +2770,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 108,
+      "sortOrder": 109,
       "categorySortOrder": 14
     },
     {
@@ -2770,7 +2790,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 109,
+      "sortOrder": 110,
       "categorySortOrder": 15
     },
     {
@@ -2790,7 +2810,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 110,
+      "sortOrder": 111,
       "categorySortOrder": 16
     },
     {
@@ -2810,7 +2830,7 @@
       "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
-      "sortOrder": 111,
+      "sortOrder": 112,
       "categorySortOrder": 17
     }
   ],
@@ -5206,7 +5226,7 @@
       ]
     }
   ],
-  "inventoryCandidateCount": 251,
+  "inventoryCandidateCount": 252,
   "catalogRevision": "cukcuk-tablet-content-2026-08-30-a02-quantity-v1",
   "tableQrLayout": {
     "revision": "cukcuk-tablet-content-2026-08-30-a02-quantity-v1",
@@ -5223,10 +5243,10 @@
     "provider": "openai",
     "model": "gpt-5.6-terra",
     "status": "ready",
-    "entityCount": 299,
+    "entityCount": 300,
     "cacheHits": 288,
-    "translated": 11,
+    "translated": 12,
     "pendingCount": 0,
-    "updatedAt": "2026-09-16T01:35:55.399Z"
+    "updatedAt": "2026-09-16T03:02:37.194Z"
   }
 }
