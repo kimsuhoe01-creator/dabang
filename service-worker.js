@@ -8,7 +8,7 @@ const APP_SHELL = [
   './assets/option-order.js',
   './assets/voice-order.js?v=20260831-v12',
   './assets/voice-order.css?v=20260831-v12',
-  './assets/menu-images.js?v=20260831-pizza-fill-v11',
+  './assets/menu-images.js?v=20260916-dakgalbi-v12',
   './assets/featured/dakgalbi-dkg-hero.mp4',
   './assets/featured/dakgalbi-dkg-poster.jpg',
   './assets/brand/dabang-logo-transparent.png',
