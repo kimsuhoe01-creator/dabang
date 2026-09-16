@@ -203,7 +203,7 @@
     "withinGroup": "numeric-by-table-name"
   },
   "categoryCount": 14,
-  "menuCount": 112,
+  "menuCount": 113,
   "categories": [
     {
       "id": "cukcuk-qr-highball",
@@ -290,109 +290,116 @@
       "sortOrder": 1,
       "menus": [
         {
+          "code": "DKG",
+          "displayName": "닭갈비 한판 | Dakgalbi gà xào cay | 辣炒鸡拼盘 | Dakgalbi Chicken Platter",
+          "price": 378000,
+          "outOfStock": false,
+          "sortOrder": 0
+        },
+        {
           "code": "ᄃᄃᄎ TTTD",
           "displayName": "디진다 돈까스 챌린지 | Thử thách Tonkatsu DIZINDA",
           "price": 540000,
           "outOfStock": false,
-          "sortOrder": 0
+          "sortOrder": 1
         },
         {
           "code": "ᄃᄃ TD 地",
           "displayName": "디진다 돈까스 | Tonkatsu DJINDA | 地狱辣炸猪排",
           "price": 313200,
           "outOfStock": false,
-          "sortOrder": 1
+          "sortOrder": 2
         },
         {
           "code": "HCX",
           "displayName": "돈까스 플레이트 Pork Cutlet Plate 炸猪排拼盘 Đĩa Thịt Heo Chiên Xù",
           "price": 313200,
           "outOfStock": false,
-          "sortOrder": 2
+          "sortOrder": 3
         },
         {
           "code": "ᄃ DC 达",
           "displayName": "다방콤보 | DABANG COMBO | 达邦组合",
           "price": 421200,
           "outOfStock": false,
-          "sortOrder": 3
+          "sortOrder": 4
         },
         {
           "code": "ᄎ GNTC 炭 CSC",
           "displayName": "참숯불닭 | Gà nướng than cay | 炭火辣鸡 | Charcoal Spicy Chicken",
           "price": 367200,
           "outOfStock": false,
-          "sortOrder": 4
+          "sortOrder": 5
         },
         {
           "code": "(T02) Gà nướng củi",
           "displayName": "화덕통닭 | 烤炉柴鸡 | Gà nướng lò củi | Oven Whole Chicken",
           "price": 291600,
           "outOfStock": false,
-          "sortOrder": 5
+          "sortOrder": 6
         },
         {
           "code": "hot",
           "displayName": "핫후라이드ver3.0 | Gà rán cay | 辣味炸鸡 | Hot Fried Chicken",
           "price": 399600,
           "outOfStock": false,
-          "sortOrder": 6
+          "sortOrder": 7
         },
         {
           "code": "ᄉ GPBPM 雪 SCPC",
           "displayName": "스노윙치킨 / Gà phủ bột phô mai / 雪花芝士粉炸鸡 / Snowing Cheese Powder Chicken",
           "price": 399600,
           "outOfStock": false,
-          "sortOrder": 7
+          "sortOrder": 8
         },
         {
           "code": "ᄆGMGC",
           "displayName": "마니치 |Gà MANICHI|蒜香MANICHI炸鸡|MANICHI Garlic Chicken",
           "price": 399600,
           "outOfStock": false,
-          "sortOrder": 8
+          "sortOrder": 9
         },
         {
           "code": "ᄋ GCSCNKH 油",
           "displayName": "유린기 | Gà chiên sốt chua ngọt kiểu Hoa | 油淋鸡",
           "price": 205200,
           "outOfStock": false,
-          "sortOrder": 9
+          "sortOrder": 10
         },
         {
           "code": "ᄆGRXCF",
           "displayName": "무뼈닭발|Chân gà rút xương|无骨鸡爪|Boneless Chicken Feet",
           "price": 291600,
           "outOfStock": false,
-          "sortOrder": 10
+          "sortOrder": 11
         },
         {
           "code": "ᄎ CC KCC",
           "displayName": "치밥키트(밥+실비김치) | Combo cơm + kim chi cay(250g)",
           "price": 54000,
           "outOfStock": false,
-          "sortOrder": 11
+          "sortOrder": 12
         },
         {
           "code": "ᄇ MTCSC ESCN 超",
           "displayName": "불쫄면 | Mì trộn cay siêu cay | Extra Spicy Chewy Noodles | 超辣劲道拌面",
           "price": 97200,
           "outOfStock": false,
-          "sortOrder": 12
+          "sortOrder": 13
         },
         {
           "code": "ᄋ1 K1 冰1 IC1",
           "displayName": "아이스크림 110ml | Kem 110ml | 冰淇淋 110ml | Ice Cream 110ml",
           "price": 32400,
           "outOfStock": false,
-          "sortOrder": 13
+          "sortOrder": 14
         },
         {
           "code": "ᄋ5 K5 冰5 IC5",
           "displayName": "아이스크림 500ml | Kem 500ml | 冰淇淋 500ml | Ice Cream 500ml",
           "price": 129600,
           "outOfStock": false,
-          "sortOrder": 14
+          "sortOrder": 15
         }
       ]
     },

@@ -68,6 +68,17 @@ test('store tablet cards use a compact four-column layout without empty subtitle
   assert.doesNotMatch(cardMarkup, /menu-subtitle" aria-hidden="true"/);
 });
 
+test('Dakgalbi opens the new-menu screen with a large looping video card connected to cart selection', () => {
+  assert.match(html, /const DAKGALBI_CODE='DKG'/);
+  assert.match(html, /dakgalbi-dkg-hero\.mp4/);
+  assert.match(html, /dakgalbi-dkg-poster\.jpg/);
+  assert.match(html, /<video autoplay muted loop playsinline preload="metadata"/);
+  assert.match(html, /class="dakgalbi-hero"[\s\S]*onclick="selectMenu\('\$\{safeId\}',this\)"/);
+  assert.match(html, /function visibleCategories\(\)[\s\S]*find\(isDakgalbiMenu\)/);
+  assert.match(html, /const heroMenu=section\.closure\?null:section\.menus\.find\(isDakgalbiMenu\)/);
+  assert.match(html, /cukcukCode:item\.cukcukCode/);
+});
+
 test('preview orders are unmistakably marked as not sent to the POS', () => {
   assert.match(html, /id="previewModeBadge"[^>]*hidden>미리보기 · POS 전송 안 됨<\/div>/);
   assert.match(html, /const PREVIEW_MODE=PAGE_PARAMS\.get\('preview'\)==='1'/);
