@@ -8,6 +8,8 @@
 - 영상은 1280×720 H.264, 24fps, 6초, 무음, faststart, 약 1.86MB이며 설치형 태블릿 캐시는 `dabang-tablet-v46`이다.
 - 레이아웃은 14개 카테고리·113개 메뉴이며 `DKG`를 신메뉴 첫 항목으로 고정한다. 자동 동기화에서 실제 CUKCUK UUID `8c69d754-43fd-404a-a645-e4fe01b81a8b`, 판매중, 378,000동을 확인했고 이 UUID에 포스터 이미지를 연결했다. 전체 테스트 100개와 113개 메뉴 이미지 감사(누락·고아 0)를 통과했다.
 - 안전 미리보기에서는 장바구니 연결까지만 검증하고 실제 CUKCUK/POS 주문은 보내지 않는다.
+- 기능 커밋: `a8e8140` (`Launch Dakgalbi tablet feature`), CUKCUK 동기화 커밋: `cfd203d`, UUID 이미지 연결 커밋: `bf4ba6e` (`Map Dakgalbi menu image`).
+- 안전 미리보기: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=bf4ba6e
 
 ## 2026-09-05 삿포로 1+1 행사 종료 전용 안내
 
