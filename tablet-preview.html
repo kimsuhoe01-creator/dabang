@@ -273,6 +273,7 @@ Object.assign(words.en,{historyButton:'Table order history',historyTitle:'{table
 const STORE_NAMES={ko:'다방치킨',vi:'Gà Dabang',zh:'Dabang 炸鸡',en:'Dabang Chicken'};
 const OTHER_CATEGORY_NAMES={ko:'기타',vi:'Món khác',zh:'其他',en:'Other'};
 const ORDER_ENDPOINT='https://dabang-cukcuk-order-api.kimsuhoe01.workers.dev/api/cukcuk/order';
+const ORDER_STATUS_ENDPOINT=ORDER_ENDPOINT.replace(/\/api\/cukcuk\/order$/,'/api/cukcuk/order-status');
 const TABLE_ORDER_ENDPOINT=ORDER_ENDPOINT.replace(/\/api\/cukcuk\/order$/,'/api/cukcuk/table-order');
 const AVAILABILITY_ENDPOINT=ORDER_ENDPOINT.replace(/\/api\/cukcuk\/order$/,'/api/tablet/availability');
 const SPACE_PIZZA_DAY_OFF_DATE='2026-09-03';
@@ -726,6 +727,24 @@ function orderFailureMessage(error){
  }
  return words[lang].orderUncertain;
 }
+function waitForOrderCheck(delay){return new Promise(resolve=>setTimeout(resolve,delay))}
+async function reconcileOrderStatus(payload,maxWaitMs=30000){
+ const deadline=Date.now()+maxWaitMs;
+ while(Date.now()<deadline){
+  await waitForOrderCheck(1500);
+  const controller=new AbortController(),timeoutId=setTimeout(()=>controller.abort(),8000);
+  try{
+   const response=await fetch(ORDER_STATUS_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify({clientOrderId:payload.clientOrderId,tableId:payload.table.id}),signal:controller.signal});
+   const result=await response.json().catch(()=>({}));
+   if(response.ok&&result.ok!==false){
+    if(result.status==='completed'&&result.result)return result.result;
+    if(result.status==='unknown')return null;
+   }
+  }catch{}
+  finally{clearTimeout(timeoutId)}
+ }
+ return null;
+}
 async function submitOrder(){
  if(orderSending||orderVerificationRequired)return;
  if(!cartItems.length){showToast(words[lang].orderEmpty);return}
@@ -738,14 +757,18 @@ async function submitOrder(){
   let receipt={orderId:payload.clientOrderId};
   if(PREVIEW_MODE){await new Promise(resolve=>setTimeout(resolve,550));receipt.preview=true}
   else{
-   const controller=new AbortController();timeoutId=setTimeout(()=>controller.abort(),20000);
+   const controller=new AbortController();timeoutId=setTimeout(()=>controller.abort(),45000);
    const response=await fetch(ORDER_ENDPOINT,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(payload),signal:controller.signal});
    const result=await response.json().catch(()=>({}));
    if(!response.ok||result.ok===false)throw submissionError(response,result);
    receipt=result;
   }
-  pendingOrderPayload=null;showOrderSuccess(payload,receipt,PREVIEW_MODE);
+ pendingOrderPayload=null;showOrderSuccess(payload,receipt,PREVIEW_MODE);
  }catch(error){
+  if(!PREVIEW_MODE&&payload&&error?.definite!==true){
+   const reconciled=await reconcileOrderStatus(payload);
+   if(reconciled){pendingOrderPayload=null;showOrderSuccess(payload,reconciled,false);return}
+  }
   orderVerificationRequired=error?.definite!==true;
   const message=orderFailureMessage(error);showToast(message);setOrderNotice(message,orderVerificationRequired?'uncertain':'error');
  }finally{if(timeoutId)clearTimeout(timeoutId);setOrderSending(false)}

@@ -75,6 +75,41 @@ test("clears a definitely rejected submission so the same request may be retried
   assert.equal(retry.Id, "cukcuk-order-2");
 });
 
+test("reports a completed submission so a timed-out tablet can recover without resending", async () => {
+  const storage = memoryStorage();
+  const clientOrderId = "9d606b0b-1f44-4b69-9d55-7a7d7e365489";
+  await storage.put(`submission:${clientOrderId}`, {
+    status: "completed",
+    startedAt: "2026-09-16T09:20:00.000Z",
+    completedAt: "2026-09-16T09:21:02.000Z",
+    result: { Id: "cukcuk-order-1", No: "1.1", Status: 1, action: "self-order-confirmed" },
+  });
+  const coordinator = new TableOrderCoordinator({ storage }, {});
+  const response = await coordinator.fetch(new Request("https://table-order.internal/submission-status", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ clientOrderId }),
+  }));
+  const result = await response.json();
+
+  assert.equal(response.status, 200);
+  assert.equal(result.status, "completed");
+  assert.equal(result.result.No, "1.1");
+});
+
+test("reports a missing submission without creating or resending an order", async () => {
+  const storage = memoryStorage();
+  const coordinator = new TableOrderCoordinator({ storage }, {});
+  const response = await coordinator.fetch(new Request("https://table-order.internal/submission-status", {
+    method: "POST",
+    headers: { "Content-Type": "application/json" },
+    body: JSON.stringify({ clientOrderId: "8fd9bdfa-02f4-4ea4-8a42-9899776815cd" }),
+  }));
+
+  assert.deepEqual(await response.json(), { ok: true, status: "not_found" });
+  assert.equal(storage.values.size, 0);
+});
+
 test("serializes concurrent availability writes so neither menu hold is lost", async () => {
   const storage = memoryStorage();
   const originalGet = storage.get;

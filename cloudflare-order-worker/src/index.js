@@ -62,6 +62,34 @@ export default {
       }
     }
 
+    if (url.pathname === "/api/cukcuk/order-status" && request.method === "POST") {
+      if (!ALLOWED_ORIGINS.has(request.headers.get("Origin") || "")) {
+        return cors(request, json({ ok: false, code: "ORIGIN_NOT_ALLOWED", message: "허용되지 않은 주문 확인 요청입니다." }, 403));
+      }
+      try {
+        const payload = await request.json();
+        const tableId = cleanRequestGuid(payload?.tableId);
+        const clientOrderId = cleanRequestGuid(payload?.clientOrderId);
+        if (!tableId || !clientOrderId) {
+          throw new ServiceError("주문 확인 정보가 올바르지 않습니다.", 400, "ORDER_STATUS_INVALID");
+        }
+        const coordinator = env.TABLE_ORDERS.getByName(tableId);
+        const coordinatorResponse = await coordinator.fetch("https://table-order.internal/submission-status", {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ clientOrderId }),
+        });
+        return cors(request, new Response(coordinatorResponse.body, coordinatorResponse));
+      } catch (error) {
+        const status = Number.isInteger(error?.status) ? error.status : 502;
+        return cors(request, json({
+          ok: false,
+          code: typeof error?.code === "string" ? error.code : "ORDER_STATUS_ERROR",
+          message: error instanceof Error ? error.message : "주문 처리 상태를 확인하지 못했습니다.",
+        }, status));
+      }
+    }
+
     if (url.pathname !== "/api/cukcuk/order" || request.method !== "POST") {
       return cors(request, json({ ok: false, message: "API 경로를 찾지 못했습니다." }, 404));
     }
@@ -157,6 +185,10 @@ export class TableOrderCoordinator {
       this.queue = task.catch(() => undefined);
       return task;
     }
+    if (url.pathname === "/submission-status" && request.method === "POST") {
+      const payload = await request.json();
+      return this.submissionStatus(payload);
+    }
     if (request.method !== "POST") return json({ ok: false, message: "Method not allowed" }, 405);
     const payload = await request.json();
     const task = this.queue.then(() => this.submit(payload));
@@ -199,6 +231,20 @@ export class TableOrderCoordinator {
         message: error instanceof Error ? error.message : "주문 처리 중 오류가 발생했습니다.",
       }, status);
     }
+  }
+
+  async submissionStatus({ clientOrderId }) {
+    const id = cleanRequestGuid(clientOrderId);
+    if (!id) return json({ ok: false, code: "ORDER_STATUS_INVALID", message: "주문 번호가 올바르지 않습니다." }, 400);
+    const submission = await this.ctx.storage.get(`submission:${id}`);
+    if (!submission) return json({ ok: true, status: "not_found" });
+    return json({
+      ok: true,
+      status: submission.status,
+      result: submission.status === "completed" ? submission.result || null : null,
+      startedAt: submission.startedAt || null,
+      completedAt: submission.completedAt || null,
+    });
   }
 }
 
@@ -250,6 +296,11 @@ export class ServiceError extends Error {
     this.status = status;
     this.code = code;
   }
+}
+
+function cleanRequestGuid(value) {
+  const text = typeof value === "string" ? value.trim() : "";
+  return /^[0-9a-f]{8}-[0-9a-f]{4}-[1-5][0-9a-f]{3}-[89ab0-9][0-9a-f]{3}-[0-9a-f]{12}$/i.test(text) ? text : "";
 }
 
 function json(value, status = 200) {

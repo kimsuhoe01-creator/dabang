@@ -134,7 +134,8 @@ test('live submission has bounded waiting, actionable errors, and a stable retry
   assert.match(submitSource, /transport:\(new URL\(location\.href\)\.searchParams\.get\('transport'\)==='graph'\?'graph':'cukcuk-self-order'\)/);
   assert.match(submitSource, /headers:\{'Content-Type':'application\/json'\}/);
   assert.match(submitSource, /new AbortController\(\)/);
-  assert.match(submitSource, /setTimeout\(\(\)=>controller\.abort\(\),20000\)/);
+  assert.match(submitSource, /setTimeout\(\(\)=>controller\.abort\(\),45000\)/);
+  assert.match(submitSource, /reconcileOrderStatus\(payload\)/);
   assert.match(submitSource, /result\.message/);
   assert.match(submitSource, /ORDER_IN_PROGRESS','ORDER_OUTCOME_UNKNOWN/);
   assert.match(submitSource, /orderVerificationRequired=error\?\.definite!==true/);
