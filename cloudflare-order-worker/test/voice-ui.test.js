@@ -59,10 +59,10 @@ test("voice capture keeps one conversational WebRTC session until the order is c
 });
 
 test("voice assets are versioned in the offline tablet shell", () => {
-  assert.match(worker, /dabang-tablet-v48/);
+  assert.match(worker, /dabang-tablet-v49/);
   assert.match(worker, /voice-order\.js\?v=20260831-v12/);
   assert.match(worker, /voice-order\.css\?v=20260831-v12/);
-  assert.match(worker, /assets\/featured\/dakgalbi-dkg-hero\.mp4/);
+  assert.doesNotMatch(worker, /assets\/featured\/dakgalbi-dkg-hero\.mp4/);
   assert.match(worker, /assets\/featured\/dakgalbi-dkg-poster\.jpg/);
 });
 
