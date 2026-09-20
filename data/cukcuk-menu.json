@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-09-20 00:21:55",
-    "finished_at": "2026-09-20 00:22:07",
+    "started_at": "2026-09-20 05:01:58",
+    "finished_at": "2026-09-20 05:02:08",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -5522,7 +5522,7 @@
       ]
     }
   ],
-  "inventoryCandidateCount": 252,
+  "inventoryCandidateCount": 253,
   "catalogRevision": "cukcuk-tablet-content-2026-09-16-jjapkoba-spice-v1",
   "tableQrLayout": {
     "revision": "cukcuk-tablet-content-2026-09-16-jjapkoba-spice-v1",
@@ -5533,7 +5533,7 @@
     "optionOrderingPolicy": "free-first-stable",
     "orderedMenuCount": 12,
     "orderedTemplateCount": 10,
-    "excludedCandidateCount": 139
+    "excludedCandidateCount": 140
   },
   "translation": {
     "provider": "openai",
@@ -5543,6 +5543,6 @@
     "cacheHits": 307,
     "translated": 11,
     "pendingCount": 0,
-    "updatedAt": "2026-09-20T00:22:23.042Z"
+    "updatedAt": "2026-09-20T05:02:24.510Z"
   }
 }
