@@ -351,7 +351,8 @@ test('the checked-in CUKCUK table QR snapshot publishes the polished 14-category
   assert.equal(result.menus.find(menu => menu.cukcukCode === '(KX05)').names.ko, '양념 치킨');
   assert.deepEqual(result.menus.find(menu => menu.cukcukCode === 'BDH').names, { ko: '수박', vi: 'Dưa hấu', zh: '西瓜', en: 'Watermelon' });
   assert.deepEqual(result.menus.filter(menu => menu.available === false).map(menu => menu.cukcukCode).sort(), [
-    'CC'
+    'CC',
+    'SAPPORO11640ML三宝乐11640毫升'
   ].sort());
   const expectedRules = {
     HCX: { required: true, minSelections: 1, maxSelections: 1 },
@@ -373,7 +374,7 @@ test('the checked-in CUKCUK table QR snapshot publishes the polished 14-category
     assert.deepEqual(menu.optionTemplateIds, [halfPizzaTemplateId], `${code} should expose the shared pizza-choice group`);
     assert.deepEqual(menu.optionRules[halfPizzaTemplateId], { required: true, minSelections: 2, maxSelections: 2 });
   }
-  assert.deepEqual(result.menus.find(menu => menu.cukcukCode === '(A01) Sapporo 1t1 640ml').subtitle, {
+  assert.deepEqual(result.menus.find(menu => menu.cukcukCode === 'SAPPORO11640ML三宝乐11640毫升').subtitle, {
     names: {
       ko: '해피아워 이벤트 · 매일 19:00까지 1+1',
       vi: 'Happy Hour · Mua 1 tặng 1 đến 19:00 mỗi ngày',

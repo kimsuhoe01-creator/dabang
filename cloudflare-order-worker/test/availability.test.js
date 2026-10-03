@@ -2,7 +2,8 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import { applyAvailabilityToMenuData, buildAvailabilitySnapshot, readAvailabilityStorage, writeAvailabilityStorage, writeVisibilityStorage } from "../src/availability.js";
 
-const SAPPORO_ONE_PLUS_ONE_ID = "52c29562-ac31-42c7-9f24-956d348de02a";
+const SAPPORO_ONE_PLUS_ONE_ID = "db070dd6-bb0e-4e00-bfe4-5e99cd796884";
+const LEGACY_SAPPORO_ONE_PLUS_ONE_ID = "52c29562-ac31-42c7-9f24-956d348de02a";
 const PIZZA_ID = "c0f16b37-ff76-4d8e-a5a8-3ead5fd7b0a5";
 const CHICKEN_PIZZA_SET_ID = "e1cf1187-b643-4b90-9f6f-9a7458eaf037";
 
@@ -28,6 +29,7 @@ test("Sapporo 1+1 closes at 19:00 Asia/Ho_Chi_Minh", () => {
   assert.equal(before.scheduledUnavailableMenuIds.includes(SAPPORO_ONE_PLUS_ONE_ID), false);
   assert.deepEqual(before.unavailableNotices, {});
   assert.equal(after.scheduledUnavailableMenuIds.includes(SAPPORO_ONE_PLUS_ONE_ID), true);
+  assert.equal(after.scheduledUnavailableMenuIds.includes(LEGACY_SAPPORO_ONE_PLUS_ONE_ID), true);
   assert.equal(after.unavailableNotices[SAPPORO_ONE_PLUS_ONE_ID].title.ko, "오늘의 1+1 행사 종료");
   assert.equal(after.unavailableNotices[SAPPORO_ONE_PLUS_ONE_ID].message.ko, "매일 19:00까지 이용하실 수 있어요. 내일 다시 만나요!");
   assert.match(after.unavailableNotices[SAPPORO_ONE_PLUS_ONE_ID].message.vi, /19:00/);

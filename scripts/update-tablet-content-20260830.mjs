@@ -83,7 +83,7 @@ const names = {
 const subtitle = (ko, vi, zh, en, tone = 'default') => ({ names: { ko, vi, zh, en }, tone });
 const subtitles = {
   ...(layout.menuSubtitleOverrides || {}),
-  '(A01) Sapporo 1t1 640ml': subtitle(
+  'SAPPORO11640ML三宝乐11640毫升': subtitle(
     '해피아워 이벤트 · 매일 19:00까지 1+1',
     'Happy Hour · Mua 1 tặng 1 đến 19:00 mỗi ngày',
     '欢乐时光活动 · 每天19:00前买一送一',
@@ -369,7 +369,7 @@ markAvailable('안주 |Món nhắm', 'ᄉ TT 加 AET');
 markAvailable('안주 |Món nhắm', '(M04) nacho cham phomai');
 
 reorder('주류 |Đồ uống có cồn', [
-  '(A01) Sapporo 1t1 640ml',
+  'SAPPORO11640ML三宝乐11640毫升',
   '(A02) Bia tuoi Sapporo',
   '(A03) Bia den tuoi Sap',
   'ᄒᄉ1 BTHN1 河1 HDB1',

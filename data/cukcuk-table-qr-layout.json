@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": "cukcuk-tablet-content-2026-09-16-jjapkoba-spice-v1",
+  "revision": "cukcuk-tablet-content-2026-10-03-sapporo-relink-v1",
   "capturedAt": "2026-08-30T06:34:32.171Z",
   "timezone": "Asia/Ho_Chi_Minh",
   "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
@@ -1112,10 +1112,10 @@
       "sortOrder": 13,
       "menus": [
         {
-          "code": "(A01) Sapporo 1t1 640ml",
-          "displayName": "사포로 1+1 (640cc) Sapporo 1+1 (640ml) 三宝乐1+1（640毫升 Sapporo 1 tặng 1 (640ml)",
+          "code": "SAPPORO11640ML三宝乐11640毫升",
+          "displayName": "Sapporo1+1（640ml）三宝乐1+1（640毫升)",
           "price": 165000,
-          "outOfStock": false,
+          "outOfStock": true,
           "sortOrder": 0
         },
         {
@@ -1241,6 +1241,12 @@
     }
   ],
   "menuNameOverrides": {
+    "SAPPORO11640ML三宝乐11640毫升": {
+      "ko": "사포로 1+1 (640cc)",
+      "vi": "Sapporo 1 tặng 1 (640ml)",
+      "zh": "三宝乐1+1（640毫升）",
+      "en": "Sapporo Buy 1 Get 1 (640ml)"
+    },
     "(KX04)": {
       "ko": "후라이드 치킨"
     },
@@ -1697,7 +1703,7 @@
       },
       "tone": "default"
     },
-    "(A01) Sapporo 1t1 640ml": {
+    "SAPPORO11640ML三宝乐11640毫升": {
       "names": {
         "ko": "해피아워 이벤트 · 매일 19:00까지 1+1",
         "vi": "Happy Hour · Mua 1 tặng 1 đến 19:00 mỗi ngày",

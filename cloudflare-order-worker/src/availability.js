@@ -1,4 +1,7 @@
-const SAPPORO_ONE_PLUS_ONE_ID = "52c29562-ac31-42c7-9f24-956d348de02a";
+const SAPPORO_ONE_PLUS_ONE_IDS = [
+  "db070dd6-bb0e-4e00-bfe4-5e99cd796884",
+  "52c29562-ac31-42c7-9f24-956d348de02a",
+];
 const SAPPORO_EVENT_ENDED_NOTICE = {
   title: {
     ko: "오늘의 1+1 행사 종료",
@@ -121,7 +124,7 @@ export function buildAvailabilitySnapshot(manualStateOrIds = [], now = new Date(
   const manual = state.manualUnavailableMenuIds;
   const manualHidden = state.manualHiddenMenuIds;
   const schedule = scheduleAt(now);
-  const scheduled = schedule.closed ? [SAPPORO_ONE_PLUS_ONE_ID] : [];
+  const scheduled = schedule.closed ? SAPPORO_ONE_PLUS_ONE_IDS : [];
   const categoryClosures = storeDateAt(now) === SPACE_PIZZA_DAY_OFF_DATE ? [{
     key: `space-pizza-day-off-${SPACE_PIZZA_DAY_OFF_DATE}`,
     categoryName: SPACE_PIZZA_CATEGORY,
@@ -155,7 +158,9 @@ export function buildAvailabilitySnapshot(manualStateOrIds = [], now = new Date(
     closureUnavailableMenuIds: closureUnavailable,
     unavailableMenuIds: [...new Set([...manual, ...scheduled, ...closureUnavailable])],
     hiddenMenuIds: [...new Set([...manualHidden, ...closureHidden])],
-    unavailableNotices: schedule.closed ? { [SAPPORO_ONE_PLUS_ONE_ID]: SAPPORO_EVENT_ENDED_NOTICE } : {},
+    unavailableNotices: schedule.closed
+      ? Object.fromEntries(SAPPORO_ONE_PLUS_ONE_IDS.map(id => [id, SAPPORO_EVENT_ENDED_NOTICE]))
+      : {},
     categoryClosures,
     nextScheduleChangeInMs: Math.min(schedule.nextChangeInMs, millisecondsUntilNextStoreDay(now), manualExpiryChangeInMs),
   };
