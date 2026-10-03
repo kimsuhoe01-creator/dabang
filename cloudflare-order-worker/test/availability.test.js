@@ -27,7 +27,7 @@ test("Sapporo 1+1 closes at 19:00 Asia/Ho_Chi_Minh", () => {
   const before = buildAvailabilitySnapshot([], new Date("2026-09-03T11:59:59.000Z"));
   const after = buildAvailabilitySnapshot([], new Date("2026-09-03T12:00:00.000Z"));
   assert.equal(before.scheduledUnavailableMenuIds.includes(SAPPORO_ONE_PLUS_ONE_ID), false);
-  assert.deepEqual(before.unavailableNotices, {});
+  assert.equal(before.unavailableNotices[SAPPORO_ONE_PLUS_ONE_ID].title.ko, "테이블 주문 연결 준비 중");
   assert.equal(after.scheduledUnavailableMenuIds.includes(SAPPORO_ONE_PLUS_ONE_ID), true);
   assert.equal(after.scheduledUnavailableMenuIds.includes(LEGACY_SAPPORO_ONE_PLUS_ONE_ID), true);
   assert.equal(after.unavailableNotices[SAPPORO_ONE_PLUS_ONE_ID].title.ko, "오늘의 1+1 행사 종료");
