@@ -2,20 +2,6 @@ const SAPPORO_ONE_PLUS_ONE_IDS = [
   "db070dd6-bb0e-4e00-bfe4-5e99cd796884",
   "52c29562-ac31-42c7-9f24-956d348de02a",
 ];
-const SAPPORO_QR_PENDING_NOTICE = {
-  title: {
-    ko: "테이블 주문 연결 준비 중",
-    vi: "Đang chuẩn bị kết nối đặt món tại bàn",
-    zh: "正在连接桌边点餐",
-    en: "Table ordering setup in progress",
-  },
-  message: {
-    ko: "사포로 1+1은 잠시 주문할 수 없습니다. 연결이 완료되면 다시 이용하실 수 있어요.",
-    vi: "Sapporo mua 1 tặng 1 tạm thời chưa thể đặt. Vui lòng thử lại sau khi hoàn tất kết nối.",
-    zh: "三宝乐买一送一暂时无法点单，连接完成后即可使用。",
-    en: "Sapporo Buy 1 Get 1 is temporarily unavailable while table ordering is connected.",
-  },
-};
 const SAPPORO_EVENT_ENDED_NOTICE = {
   title: {
     ko: "오늘의 1+1 행사 종료",
@@ -174,7 +160,7 @@ export function buildAvailabilitySnapshot(manualStateOrIds = [], now = new Date(
     hiddenMenuIds: [...new Set([...manualHidden, ...closureHidden])],
     unavailableNotices: schedule.closed
       ? Object.fromEntries(SAPPORO_ONE_PLUS_ONE_IDS.map(id => [id, SAPPORO_EVENT_ENDED_NOTICE]))
-      : { [SAPPORO_ONE_PLUS_ONE_IDS[0]]: SAPPORO_QR_PENDING_NOTICE },
+      : {},
     categoryClosures,
     nextScheduleChangeInMs: Math.min(schedule.nextChangeInMs, millisecondsUntilNextStoreDay(now), manualExpiryChangeInMs),
   };

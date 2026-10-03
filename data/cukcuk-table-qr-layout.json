@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": "cukcuk-tablet-content-2026-10-03-sapporo-relink-v1",
+  "revision": "cukcuk-tablet-content-2026-10-04-sapporo-qr-enabled-v1",
   "capturedAt": "2026-08-30T06:34:32.171Z",
   "timezone": "Asia/Ho_Chi_Minh",
   "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
@@ -1115,7 +1115,7 @@
           "code": "SAPPORO11640ML三宝乐11640毫升",
           "displayName": "Sapporo1+1（640ml）三宝乐1+1（640毫升)",
           "price": 165000,
-          "outOfStock": true,
+          "outOfStock": false,
           "sortOrder": 0
         },
         {

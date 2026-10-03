@@ -2481,7 +2481,7 @@
         "en": "Sapporo Buy 1 Get 1 (640ml)"
       },
       "price": 165000,
-      "available": false,
+      "available": true,
       "optionGroups": 0,
       "optionTemplateIds": [],
       "sortOrder": 95,
@@ -5523,9 +5523,9 @@
     }
   ],
   "inventoryCandidateCount": 253,
-  "catalogRevision": "cukcuk-tablet-content-2026-10-03-sapporo-relink-v1",
+  "catalogRevision": "cukcuk-tablet-content-2026-10-04-sapporo-qr-enabled-v1",
   "tableQrLayout": {
-    "revision": "cukcuk-tablet-content-2026-10-03-sapporo-relink-v1",
+    "revision": "cukcuk-tablet-content-2026-10-04-sapporo-qr-enabled-v1",
     "capturedAt": "2026-08-30T06:34:32.171Z",
     "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
     "includeUnlisted": false,
