@@ -5,7 +5,8 @@
 - CUKCUK 전용 Chrome에서 관리자 계정에 로그인하고 `Bán hàng Online > Gọi món tại bàn > Thực đơn > Chọn món`에서 새 삿포로 코드 `SAPPORO11640ML三宝乐11640毫升` 한 항목만 추가했다. 테이블 주문 메뉴는 186개에서 187개로 늘었고, 코드 검색 결과 한 항목·가격 165,000동을 확인했다.
 - 새 UUID `db070dd6-bb0e-4e00-bfe4-5e99cd796884`의 테이블 QR 상세 조회가 `Success: true`, `Data` 존재, `IsOutOfStock: false`로 바뀐 것을 확인했다. 실제 POS 주문은 하지 않았다.
 - 태블릿 레이아웃과 카탈로그의 임시 주문 차단을 해제하고 Worker의 `테이블 주문 연결 준비 중` 문구를 제거했다. 매일 19:00 행사 종료 예약과 종료 안내는 유지한다.
-- 로컬 검증: Worker/UI 테스트 109개 통과, 113개 메뉴 이미지 감사 누락·고아 0. 공개 배포와 안전 미리보기 결과는 배포 후 확인한다.
+- 로컬 검증: Worker/UI 테스트 109개 통과, 113개 메뉴 이미지 감사 누락·고아 0.
+- 배포 확인: 연결 활성화 `a435b5a`, 자동 동기화 결과 `a6ca7f8`. 첫 동기화는 GitHub 실행 환경의 `graphapi.cukcuk.vn` 연결 시간 초과로 실패했으나 재실행이 성공했고, Worker와 GitHub Pages 배포도 성공했다. 공개 카탈로그는 새 삿포로 1+1 `available: true`, 165,000동을 반환했다. `preview=1` 안전 미리보기에서 판매 카드가 활성화되고 장바구니에 담기는 것을 확인했다. 실제 POS 주문은 전송하지 않았다. 안전 미리보기: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1
 
 ## 2026-10-03 삿포로 1+1 재등록 메뉴 연결 준비 (당시 상태, 10월 4일 해결)
 
