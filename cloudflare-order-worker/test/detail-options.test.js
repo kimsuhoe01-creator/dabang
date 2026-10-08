@@ -110,6 +110,45 @@ test('detail options replace HCX and S08 attachments with deterministic template
   assert.deepEqual(mergeCukcukDetailOptions(result, config, details), result, 'repeating the merge is deterministic');
 });
 
+test('Dakgalbi table QR flavors keep exact CUKCUK IDs and four-language labels', () => {
+  const menuId = '8c69d754-43fd-404a-a645-e4fe01b81a8b';
+  const templateId = `cukcuk-detail:${menuId}:0`;
+  const soyId = 'f748f0ce-7069-42ad-91a8-03dd0fb0a1ba';
+  const spicyId = '4b0d83fa-479d-4bd4-8e2e-3943a6a677e0';
+  const config = {
+    detailOptionSources: {
+      DKG: {
+        expectedCategoryCount: 1,
+        expectedValueCount: 2,
+        expectedValueIds: [[soyId, spicyId]],
+        templateNames: { ko: '닭갈비 맛 선택', vi: 'Chọn vị gà xào', zh: '选择炒鸡口味', en: 'Choose Dakgalbi flavor' }
+      }
+    },
+    menuOptionOverrides: {
+      DKG: { rules: { [templateId]: { required: true, minSelections: 1, maxSelections: 1 } } }
+    }
+  };
+  const result = mergeCukcukDetailOptions({
+    menus: [{ id: menuId, cukcukCode: 'DKG', optionTemplateIds: [] }],
+    optionTemplates: []
+  }, config, { details: [{
+    InventoryItemID: menuId,
+    InventoryItemAdditionsCategory: [{ InventoryItemAdditions: [
+      { InventoryItemAdditionID: soyId, Description: '간장맛 | Vị xì dầu | 酱油味 | Soy Sauce', UnitPrice: 0 },
+      { InventoryItemAdditionID: spicyId, Description: '매운맛 | Vị cay | 辣味 | Spicy', UnitPrice: 0 }
+    ] }]
+  }] });
+  const menu = result.menus[0];
+  const template = result.optionTemplates[0];
+  assert.deepEqual(menu.optionTemplateIds, [templateId]);
+  assert.deepEqual(menu.optionRules[templateId], { required: true, minSelections: 1, maxSelections: 1 });
+  assert.deepEqual(template.values.map(value => value.id), [soyId, spicyId]);
+  assert.deepEqual(template.values.map(value => value.additionalPrice), [0, 0]);
+  assert.deepEqual(template.values[0].names, { ko: '간장맛', vi: 'Vị xì dầu', zh: '酱油味', en: 'Soy Sauce' });
+  assert.deepEqual(template.values[1].names, { ko: '매운맛', vi: 'Vị cay', zh: '辣味', en: 'Spicy' });
+  assert.deepEqual(template.values[0].receiptNames, { ko: '간장맛', vi: 'Vị xì dầu' });
+});
+
 test('detail option merge fails closed on expected category or value count drift', () => {
   const categoryMismatch = fixture();
   categoryMismatch.config.detailOptionSources.HCX.expectedCategoryCount = 2;

@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": "cukcuk-tablet-content-2026-10-04-sapporo-qr-enabled-v1",
+  "revision": "cukcuk-tablet-content-2026-10-08-dakgalbi-flavor-v1",
   "capturedAt": "2026-08-30T06:34:32.171Z",
   "timezone": "Asia/Ho_Chi_Minh",
   "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
@@ -1342,6 +1342,18 @@
     }
   },
   "menuOptionOverrides": {
+    "DKG": {
+      "templateIds": [
+        "cukcuk-detail:8c69d754-43fd-404a-a645-e4fe01b81a8b:0"
+      ],
+      "rules": {
+        "cukcuk-detail:8c69d754-43fd-404a-a645-e4fe01b81a8b:0": {
+          "required": true,
+          "minSelections": 1,
+          "maxSelections": 1
+        }
+      }
+    },
     "(KX01)": {
       "templateIds": [
         "85cead19-7d83-4c61-8199-b7fab35fb672",
@@ -1714,6 +1726,24 @@
     }
   },
   "detailOptionSources": {
+    "DKG": {
+      "source": "table-qr",
+      "areaId": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
+      "expectedCategoryCount": 1,
+      "expectedValueCount": 2,
+      "expectedValueIds": [
+        [
+          "f748f0ce-7069-42ad-91a8-03dd0fb0a1ba",
+          "4b0d83fa-479d-4bd4-8e2e-3943a6a677e0"
+        ]
+      ],
+      "templateNames": {
+        "ko": "닭갈비 맛 선택",
+        "vi": "Chọn vị gà xào",
+        "zh": "选择炒鸡口味",
+        "en": "Choose Dakgalbi flavor"
+      }
+    },
     "HCX": {
       "expectedCategoryCount": 1,
       "expectedValueCount": 2,

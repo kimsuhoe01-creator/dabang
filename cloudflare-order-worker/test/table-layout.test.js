@@ -354,6 +354,7 @@ test('the checked-in CUKCUK table QR snapshot publishes the polished 14-category
     'CC'
   ].sort());
   const expectedRules = {
+    DKG: { required: true, minSelections: 1, maxSelections: 1 },
     HCX: { required: true, minSelections: 1, maxSelections: 1 },
     '(A02) Bia tuoi Sapporo': { required: true, minSelections: 1, maxSelections: 3, selectionMode: 'quantity-per-value-lines', maxQuantityPerValue: 99 },
     '(T10) Do chien/mon chien': { required: true, minSelections: 1, maxSelections: 10 },
