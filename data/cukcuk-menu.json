@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-10-08 06:24:39",
-    "finished_at": "2026-10-08 06:24:49",
+    "started_at": "2026-10-08 09:50:58",
+    "finished_at": "2026-10-08 09:51:07",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -11,7 +11,7 @@
   },
   "categoryCount": 14,
   "menuCount": 113,
-  "optionTemplateCount": 32,
+  "optionTemplateCount": 33,
   "categories": [
     {
       "id": "cukcuk-qr-highball",
@@ -358,9 +358,18 @@
       },
       "price": 378000,
       "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
+      "optionGroups": 1,
+      "optionTemplateIds": [
+        "cukcuk-detail:8c69d754-43fd-404a-a645-e4fe01b81a8b:0"
+      ],
       "sortOrder": 8,
+      "optionRules": {
+        "cukcuk-detail:8c69d754-43fd-404a-a645-e4fe01b81a8b:0": {
+          "required": true,
+          "minSelections": 1,
+          "maxSelections": 1
+        }
+      },
       "categorySortOrder": 0
     },
     {
@@ -1291,9 +1300,9 @@
       "sourceName": "후라이드  Fried Chicken  无骨炸鸡腿 Má đùi rút xương",
       "names": {
         "ko": "후라이드 치킨",
-        "vi": "Gà chiên không xương",
+        "vi": "Gà rán không xương",
         "zh": "无骨炸鸡腿",
-        "en": "Boneless Fried Chicken"
+        "en": "Fried Boneless Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1313,7 +1322,7 @@
       "sourceName": "양념  Sweet & Spicy Chicken  韩式甜酱炸鸡 Gà sốt ngọt HQ",
       "names": {
         "ko": "양념 치킨",
-        "vi": "Gà sốt ngọt Hàn Quốc",
+        "vi": "Gà sốt ngọt kiểu Hàn",
         "zh": "韩式甜酱炸鸡",
         "en": "Sweet & Spicy Chicken"
       },
@@ -1335,7 +1344,7 @@
       "sourceName": "매운양념  Hot & Spicy Chicken韩式辣酱炸鸡  Gà sốt cay HQ",
       "names": {
         "ko": "매운 양념 치킨",
-        "vi": "Gà sốt cay Hàn Quốc",
+        "vi": "Gà sốt cay kiểu Hàn",
         "zh": "韩式辣酱炸鸡",
         "en": "Hot & Spicy Chicken"
       },
@@ -4599,6 +4608,59 @@
       ]
     },
     {
+      "id": "cukcuk-detail:8c69d754-43fd-404a-a645-e4fe01b81a8b:0",
+      "sourceName": "닭갈비 맛 선택",
+      "names": {
+        "ko": "닭갈비 맛 선택",
+        "vi": "Chọn vị gà xào Dakgalbi",
+        "zh": "选择炒鸡口味",
+        "en": "Choose Dakgalbi Flavor"
+      },
+      "required": false,
+      "minSelections": 0,
+      "maxSelections": 2,
+      "revision": 1,
+      "values": [
+        {
+          "id": "f748f0ce-7069-42ad-91a8-03dd0fb0a1ba",
+          "sourceName": "간장맛 | Vị xì dầu | 酱油味 | Soy Sauce",
+          "names": {
+            "ko": "간장맛",
+            "vi": "Vị xì dầu",
+            "zh": "酱油味",
+            "en": "Soy Sauce"
+          },
+          "receiptNames": {
+            "ko": "간장맛",
+            "vi": "Vị xì dầu"
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 0
+        },
+        {
+          "id": "4b0d83fa-479d-4bd4-8e2e-3943a6a677e0",
+          "sourceName": "매운맛 | Vị cay | 辣味 | Spicy",
+          "names": {
+            "ko": "매운맛",
+            "vi": "Vị cay",
+            "zh": "辣味",
+            "en": "Spicy"
+          },
+          "receiptNames": {
+            "ko": "매운맛",
+            "vi": "Vị cay"
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 1
+        }
+      ],
+      "menuIds": [
+        "8c69d754-43fd-404a-a645-e4fe01b81a8b"
+      ]
+    },
+    {
       "id": "cukcuk-detail:d301f64f-16fa-4c8f-86bb-62318205039a:0",
       "sourceName": "돈까스 플레이트 선택",
       "names": {
@@ -5096,6 +5158,10 @@
             "zh": "炸年糕",
             "en": "Fried Rice Cake"
           },
+          "receiptNames": {
+            "ko": "떡튀김",
+            "vi": "Bánh gạo chiên"
+          },
           "additionalPrice": 54000,
           "visible": true,
           "sortOrder": 6
@@ -5442,10 +5508,14 @@
           "id": "c8150ed7-3cdc-4693-9ea3-045fead5a6a9",
           "sourceName": "라면사리 | Thêm mì gói | 加泡面 | Add instant noodles",
           "names": {
-            "ko": "라면사리 추가",
+            "ko": "라면사리",
             "vi": "Thêm mì gói",
             "zh": "加泡面",
             "en": "Add Instant Noodles"
+          },
+          "receiptNames": {
+            "ko": "라면사리",
+            "vi": "Thêm mì gói"
           },
           "additionalPrice": 32400,
           "visible": true,
@@ -5455,10 +5525,14 @@
           "id": "8dd99f36-7c4a-4952-87b7-0d08943f406d",
           "sourceName": "쫄면사리 | Thêm mì trộn cay | 加韩式拌面 | Add spicy chewy noodles",
           "names": {
-            "ko": "쫄면사리 추가",
+            "ko": "쫄면사리",
             "vi": "Thêm mì trộn cay",
             "zh": "加韩式拌面",
             "en": "Add Spicy Chewy Noodles"
+          },
+          "receiptNames": {
+            "ko": "쫄면사리",
+            "vi": "Thêm mì trộn cay"
           },
           "additionalPrice": 43200,
           "visible": true,
@@ -5468,10 +5542,14 @@
           "id": "daef3402-17a1-4c2a-992b-4580e2334a5f",
           "sourceName": "수제비사리 | Thêm bánh bột xé | 加手擀面片 | Add hand-torn dough pieces",
           "names": {
-            "ko": "수제비사리 추가",
+            "ko": "수제비사리",
             "vi": "Thêm bánh bột xé",
             "zh": "加手擀面片",
             "en": "Add Hand-Torn Dough Pieces"
+          },
+          "receiptNames": {
+            "ko": "수제비사리",
+            "vi": "Thêm bánh bột xé"
           },
           "additionalPrice": 43200,
           "visible": true,
@@ -5486,6 +5564,10 @@
             "zh": "加乌冬面",
             "en": "Add Udon Noodles"
           },
+          "receiptNames": {
+            "ko": "우동사리 추가",
+            "vi": "Thêm mì udon"
+          },
           "additionalPrice": 54000,
           "visible": true,
           "sortOrder": 3
@@ -5494,10 +5576,14 @@
           "id": "c4c55e38-59f1-4564-9d7a-ef11a6ccaa75",
           "sourceName": "물만두사리 | Thêm há cảo nước | 加水饺 | Add boiled dumplings",
           "names": {
-            "ko": "물만두사리 추가",
+            "ko": "물만두사리",
             "vi": "Thêm há cảo nước",
             "zh": "加水饺",
             "en": "Add Boiled Dumplings"
+          },
+          "receiptNames": {
+            "ko": "물만두사리",
+            "vi": "Thêm há cảo nước"
           },
           "additionalPrice": 54000,
           "visible": true,
@@ -5523,9 +5609,9 @@
     }
   ],
   "inventoryCandidateCount": 253,
-  "catalogRevision": "cukcuk-tablet-content-2026-10-04-sapporo-qr-enabled-v1",
+  "catalogRevision": "cukcuk-tablet-content-2026-10-08-dakgalbi-flavor-v1",
   "tableQrLayout": {
-    "revision": "cukcuk-tablet-content-2026-10-04-sapporo-qr-enabled-v1",
+    "revision": "cukcuk-tablet-content-2026-10-08-dakgalbi-flavor-v1",
     "capturedAt": "2026-08-30T06:34:32.171Z",
     "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
     "includeUnlisted": false,
@@ -5539,10 +5625,10 @@
     "provider": "openai",
     "model": "gpt-5.6-terra",
     "status": "ready",
-    "entityCount": 318,
-    "cacheHits": 306,
-    "translated": 12,
+    "entityCount": 321,
+    "cacheHits": 300,
+    "translated": 21,
     "pendingCount": 0,
-    "updatedAt": "2026-10-08T06:25:07.071Z"
+    "updatedAt": "2026-10-08T09:51:29.377Z"
   }
 }
