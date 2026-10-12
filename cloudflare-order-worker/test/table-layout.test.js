@@ -357,7 +357,7 @@ test('the checked-in CUKCUK table QR snapshot publishes the polished 14-category
     DKG: { required: true, minSelections: 1, maxSelections: 1 },
     HCX: { required: true, minSelections: 1, maxSelections: 1 },
     '(A02) Bia tuoi Sapporo': { required: true, minSelections: 1, maxSelections: 3, selectionMode: 'quantity-per-value-lines', maxQuantityPerValue: 99 },
-    '(T10) Do chien/mon chien': { required: true, minSelections: 1, maxSelections: 10 },
+    '(T10) Do chien/mon chien': { required: true, minSelections: 1, maxSelections: 11 },
     '(S08) Cánh gà 4 vị': { required: true, minSelections: 4, maxSelections: 4 },
     '(W01) Cánh gà vị đôi': { required: true, minSelections: 2, maxSelections: 2 },
     'ᄉ TT 加 AET': { required: true, minSelections: 1, maxSelections: 5 }

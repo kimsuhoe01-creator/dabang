@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": "cukcuk-tablet-content-2026-10-08-dakgalbi-flavor-v1",
+  "revision": "cukcuk-tablet-content-2026-10-12-t10-hashbrown-v1",
   "capturedAt": "2026-08-30T06:34:32.171Z",
   "timezone": "Asia/Ho_Chi_Minh",
   "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
@@ -1451,7 +1451,7 @@
         "cukcuk-detail:6a4fc8cd-4937-46f0-990c-536bdffb1de3:0": {
           "required": true,
           "minSelections": 1,
-          "maxSelections": 10
+          "maxSelections": 11
         }
       }
     },
@@ -1831,8 +1831,25 @@
       }
     },
     "(T10) Do chien/mon chien": {
+      "source": "table-qr",
+      "areaId": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
       "expectedCategoryCount": 1,
-      "expectedValueCount": 10,
+      "expectedValueCount": 11,
+      "expectedValueIds": [
+        [
+          "39dae77b-62c7-40ef-bade-f1847af7c225",
+          "c540cf65-9a04-4651-b287-2bc00d4c4104",
+          "6bedc5aa-ac8d-4296-8ade-9dd5053b8071",
+          "1ad28566-fd09-407e-952e-0e990cdf18c0",
+          "8528b9b5-c656-4f57-88a5-572ee63848d2",
+          "bd11eb90-e054-4dd3-9d90-173a4bf2b332",
+          "2189a507-61fa-43bf-b887-18a98492a63d",
+          "4cf11355-7112-4e3a-9340-76a73a458f6a",
+          "87cd7e07-3d61-42b5-a1b1-fd6ed3da3444",
+          "787d3612-47a5-4046-925f-bfb564d41c52",
+          "e9f8055a-cd51-4222-9be6-8c7cf3280ca6"
+        ]
+      ],
       "templateNames": {
         "ko": "튀김 선택",
         "vi": "Chọn món chiên",

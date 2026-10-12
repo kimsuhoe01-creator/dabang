@@ -149,6 +149,53 @@ test('Dakgalbi table QR flavors keep exact CUKCUK IDs and four-language labels',
   assert.deepEqual(template.values[0].receiptNames, { ko: '간장맛', vi: 'Vị xì dầu' });
 });
 
+test('fried snacks table QR includes the hash brown addition at its CUKCUK price', () => {
+  const menuId = '6a4fc8cd-4937-46f0-990c-536bdffb1de3';
+  const code = '(T10) Do chien/mon chien';
+  const templateId = `cukcuk-detail:${menuId}:0`;
+  const hashBrownId = 'e9f8055a-cd51-4222-9be6-8c7cf3280ca6';
+  const oldValues = Array.from({ length: 10 }, (_, index) => ({
+    InventoryItemAdditionID: `old-fried-item-${index + 1}`,
+    Description: `기존 튀김 ${index + 1}`,
+    UnitPrice: 54000
+  }));
+  const hashBrown = {
+    InventoryItemAdditionID: hashBrownId,
+    Description: '해시브라운 4조각 | Bánh khoai tây chiên 4 miếng | 薯饼 4块 | Hash Browns (4 pcs)',
+    UnitPrice: 54000
+  };
+  const result = mergeCukcukDetailOptions({
+    menus: [{ id: menuId, cukcukCode: code, optionTemplateIds: [] }],
+    optionTemplates: []
+  }, {
+    detailOptionSources: {
+      [code]: {
+        expectedCategoryCount: 1,
+        expectedValueCount: 11,
+        expectedValueIds: [[...oldValues.map(value => value.InventoryItemAdditionID), hashBrownId]],
+        templateNames: { ko: '튀김 선택', vi: 'Chọn món chiên', zh: '选择炸物', en: 'Choose Fried Items' }
+      }
+    },
+    menuOptionOverrides: {
+      [code]: { rules: { [templateId]: { required: true, minSelections: 1, maxSelections: 11 } } }
+    }
+  }, { details: [{
+    InventoryItemID: menuId,
+    InventoryItemAdditionsCategory: [{ InventoryItemAdditions: [...oldValues, hashBrown] }]
+  }] });
+  const menu = result.menus[0];
+  const template = result.optionTemplates[0];
+  const value = template.values.find(item => item.id === hashBrownId);
+  assert.deepEqual(menu.optionTemplateIds, [templateId]);
+  assert.deepEqual(menu.optionRules[templateId], { required: true, minSelections: 1, maxSelections: 11 });
+  assert.equal(template.values.length, 11);
+  assert.equal(value.additionalPrice, 54000);
+  assert.deepEqual(value.names, {
+    ko: '해시브라운 4조각', vi: 'Bánh khoai tây chiên 4 miếng', zh: '薯饼 4块', en: 'Hash Browns (4 pcs)'
+  });
+  assert.deepEqual(value.receiptNames, { ko: '해시브라운 4조각', vi: 'Bánh khoai tây chiên 4 miếng' });
+});
+
 test('detail option merge fails closed on expected category or value count drift', () => {
   const categoryMismatch = fixture();
   categoryMismatch.config.detailOptionSources.HCX.expectedCategoryCount = 2;

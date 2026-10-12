@@ -68,11 +68,11 @@ test("accepts Jjapkoba level 3 and requires exactly one spice level for full and
   }
 });
 
-test("allows one to ten fried-item choices", () => {
-  const tenChoices = Array.from({ length: 10 }, (_, index) => `value-${index + 1}`);
-  assert.doesNotThrow(() => buildConstrainedOrder("fried-items", ["value-1"], 1, 10, {}, 10));
-  assert.doesNotThrow(() => buildConstrainedOrder("fried-items", tenChoices, 1, 10, {}, 10));
-  assert.throws(() => buildConstrainedOrder("fried-items", [], 1, 10, {}, 10), /선택 개수/);
+test("allows one to eleven fried-item choices", () => {
+  const elevenChoices = Array.from({ length: 11 }, (_, index) => `value-${index + 1}`);
+  assert.doesNotThrow(() => buildConstrainedOrder("fried-items", ["value-11"], 1, 11, {}, 11));
+  assert.doesNotThrow(() => buildConstrainedOrder("fried-items", elevenChoices, 1, 11, {}, 11));
+  assert.throws(() => buildConstrainedOrder("fried-items", [], 1, 11, {}, 11), /선택 개수/);
 });
 
 test("allows up to three toppings but rejects a fourth", () => {
