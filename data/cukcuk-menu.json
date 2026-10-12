@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-10-12 09:20:05",
-    "finished_at": "2026-10-12 09:20:16",
+    "started_at": "2026-10-12 10:25:10",
+    "finished_at": "2026-10-12 10:25:21",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -1300,7 +1300,7 @@
       "sourceName": "후라이드  Fried Chicken  无骨炸鸡腿 Má đùi rút xương",
       "names": {
         "ko": "후라이드 치킨",
-        "vi": "Gà rán",
+        "vi": "Gà chiên giòn",
         "zh": "无骨炸鸡腿",
         "en": "Fried Chicken"
       },
@@ -1701,7 +1701,7 @@
         "cukcuk-detail:6a4fc8cd-4937-46f0-990c-536bdffb1de3:0": {
           "required": true,
           "minSelections": 1,
-          "maxSelections": 10
+          "maxSelections": 11
         }
       },
       "categorySortOrder": 4
@@ -5068,47 +5068,25 @@
       },
       "required": false,
       "minSelections": 0,
-      "maxSelections": 10,
+      "maxSelections": 11,
       "revision": 1,
       "values": [
         {
-          "id": "1ad28566-fd09-407e-952e-0e990cdf18c0",
-          "sourceName": "모듬튀김/Assorted Tempura / 炸物拼盘 /Thập cẩm chiên",
+          "id": "39dae77b-62c7-40ef-bade-f1847af7c225",
+          "sourceName": "Khoai lang chiên | 고구마 튀김",
           "names": {
-            "ko": "모둠튀김",
-            "vi": "Thập cẩm chiên",
-            "zh": "炸物拼盘",
-            "en": "Assorted Tempura"
+            "ko": "고구마 튀김",
+            "vi": "Khoai lang chiên",
+            "zh": "炸红薯",
+            "en": "Fried Sweet Potato"
           },
-          "additionalPrice": 140400,
+          "receiptNames": {
+            "ko": "고구마 튀김",
+            "vi": "Khoai lang chiên"
+          },
+          "additionalPrice": 64800,
           "visible": true,
           "sortOrder": 0
-        },
-        {
-          "id": "bd11eb90-e054-4dd3-9d90-173a4bf2b332",
-          "sourceName": "미니 김말이/Mini Fried Seaweed Roll/ 炸紫菜卷/Kim chiên mini",
-          "names": {
-            "ko": "미니 김말이",
-            "vi": "Rong biển cuộn chiên mini",
-            "zh": "迷你炸紫菜卷",
-            "en": "Mini Fried Seaweed Rolls"
-          },
-          "additionalPrice": 108000,
-          "visible": true,
-          "sortOrder": 1
-        },
-        {
-          "id": "2189a507-61fa-43bf-b887-18a98492a63d",
-          "sourceName": "야채 튀김/(Vegetable Tempura /炸蔬菜 /Rau củ chiên",
-          "names": {
-            "ko": "야채튀김",
-            "vi": "Rau củ chiên",
-            "zh": "炸蔬菜",
-            "en": "Vegetable Tempura"
-          },
-          "additionalPrice": 86400,
-          "visible": true,
-          "sortOrder": 2
         },
         {
           "id": "c540cf65-9a04-4651-b287-2bc00d4c4104",
@@ -5120,6 +5098,36 @@
             "en": "Fried Chili Peppers (2 pcs)"
           },
           "additionalPrice": 43200,
+          "visible": true,
+          "sortOrder": 1
+        },
+        {
+          "id": "6bedc5aa-ac8d-4296-8ade-9dd5053b8071",
+          "sourceName": "떡튀김 | Bánh gạo chiên | 炸年糕 | Fried Rice Cake",
+          "names": {
+            "ko": "떡튀김",
+            "vi": "Bánh gạo chiên",
+            "zh": "炸年糕",
+            "en": "Fried Rice Cake"
+          },
+          "receiptNames": {
+            "ko": "떡튀김",
+            "vi": "Bánh gạo chiên"
+          },
+          "additionalPrice": 54000,
+          "visible": true,
+          "sortOrder": 2
+        },
+        {
+          "id": "1ad28566-fd09-407e-952e-0e990cdf18c0",
+          "sourceName": "모듬튀김/Assorted Tempura / 炸物拼盘 /Thập cẩm chiên",
+          "names": {
+            "ko": "모둠튀김",
+            "vi": "Thập cẩm chiên",
+            "zh": "炸物拼盘",
+            "en": "Assorted Tempura"
+          },
+          "additionalPrice": 140400,
           "visible": true,
           "sortOrder": 3
         },
@@ -5137,6 +5145,32 @@
           "sortOrder": 4
         },
         {
+          "id": "bd11eb90-e054-4dd3-9d90-173a4bf2b332",
+          "sourceName": "미니 김말이/Mini Fried Seaweed Roll/ 炸紫菜卷/Kim chiên mini",
+          "names": {
+            "ko": "미니 김말이",
+            "vi": "Rong biển cuộn chiên mini",
+            "zh": "迷你炸紫菜卷",
+            "en": "Mini Fried Seaweed Rolls"
+          },
+          "additionalPrice": 108000,
+          "visible": true,
+          "sortOrder": 5
+        },
+        {
+          "id": "2189a507-61fa-43bf-b887-18a98492a63d",
+          "sourceName": "야채 튀김/(Vegetable Tempura /炸蔬菜 /Rau củ chiên",
+          "names": {
+            "ko": "야채튀김",
+            "vi": "Rau củ chiên",
+            "zh": "炸蔬菜",
+            "en": "Vegetable Tempura"
+          },
+          "additionalPrice": 86400,
+          "visible": true,
+          "sortOrder": 6
+        },
+        {
           "id": "4cf11355-7112-4e3a-9340-76a73a458f6a",
           "sourceName": "어묵꼬치 튀김/Fried Fish Cake Skewer/ 炸鱼饼串 /Xiên chả cá chiên",
           "names": {
@@ -5147,54 +5181,7 @@
           },
           "additionalPrice": 86400,
           "visible": true,
-          "sortOrder": 5
-        },
-        {
-          "id": "6bedc5aa-ac8d-4296-8ade-9dd5053b8071",
-          "sourceName": "떡튀김 | Bánh gạo chiên | 炸年糕 | Fried Rice Cake",
-          "names": {
-            "ko": "떡튀김",
-            "vi": "Bánh gạo chiên",
-            "zh": "炸年糕",
-            "en": "Fried Rice Cake"
-          },
-          "receiptNames": {
-            "ko": "떡튀김",
-            "vi": "Bánh gạo chiên"
-          },
-          "additionalPrice": 54000,
-          "visible": true,
-          "sortOrder": 6
-        },
-        {
-          "id": "787d3612-47a5-4046-925f-bfb564d41c52",
-          "sourceName": "튀김 어묵/(Fried Fish Cake / 炸鱼饼 /Chả cá chiên",
-          "names": {
-            "ko": "튀긴 어묵",
-            "vi": "Chả cá chiên",
-            "zh": "炸鱼饼",
-            "en": "Fried Fish Cake"
-          },
-          "additionalPrice": 75600,
-          "visible": true,
           "sortOrder": 7
-        },
-        {
-          "id": "39dae77b-62c7-40ef-bade-f1847af7c225",
-          "sourceName": "Khoai lang chiên | 고구마 튀김",
-          "names": {
-            "ko": "고구마 튀김",
-            "vi": "Khoai lang chiên",
-            "zh": "炸红薯",
-            "en": "Fried Sweet Potato"
-          },
-          "receiptNames": {
-            "ko": "고구마 튀김",
-            "vi": "Khoai lang chiên"
-          },
-          "additionalPrice": 64800,
-          "visible": true,
-          "sortOrder": 8
         },
         {
           "id": "87cd7e07-3d61-42b5-a1b1-fd6ed3da3444",
@@ -5207,7 +5194,37 @@
           },
           "additionalPrice": 97200,
           "visible": true,
+          "sortOrder": 8
+        },
+        {
+          "id": "787d3612-47a5-4046-925f-bfb564d41c52",
+          "sourceName": "튀김 어묵/(Fried Fish Cake / 炸鱼饼 /Chả cá chiên",
+          "names": {
+            "ko": "튀긴 어묵",
+            "vi": "Chả cá chiên",
+            "zh": "炸鱼饼",
+            "en": "Fried Fish Cake"
+          },
+          "additionalPrice": 75600,
+          "visible": true,
           "sortOrder": 9
+        },
+        {
+          "id": "e9f8055a-cd51-4222-9be6-8c7cf3280ca6",
+          "sourceName": "해시브라운 4조각 | Bánh khoai tây chiên 4 miếng | 薯饼 4块 | Hash Browns (4 pcs)",
+          "names": {
+            "ko": "해시브라운 4조각",
+            "vi": "Bánh khoai tây chiên 4 miếng",
+            "zh": "薯饼 4块",
+            "en": "Hash Browns (4 pcs)"
+          },
+          "receiptNames": {
+            "ko": "해시브라운 4조각",
+            "vi": "Bánh khoai tây chiên 4 miếng"
+          },
+          "additionalPrice": 54000,
+          "visible": true,
+          "sortOrder": 10
         }
       ],
       "menuIds": [
@@ -5609,9 +5626,9 @@
     }
   ],
   "inventoryCandidateCount": 253,
-  "catalogRevision": "cukcuk-tablet-content-2026-10-08-dakgalbi-flavor-v1",
+  "catalogRevision": "cukcuk-tablet-content-2026-10-12-t10-hashbrown-v1",
   "tableQrLayout": {
-    "revision": "cukcuk-tablet-content-2026-10-08-dakgalbi-flavor-v1",
+    "revision": "cukcuk-tablet-content-2026-10-12-t10-hashbrown-v1",
     "capturedAt": "2026-08-30T06:34:32.171Z",
     "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
     "includeUnlisted": false,
@@ -5625,10 +5642,10 @@
     "provider": "openai",
     "model": "gpt-5.6-terra",
     "status": "ready",
-    "entityCount": 321,
+    "entityCount": 322,
     "cacheHits": 309,
-    "translated": 12,
+    "translated": 13,
     "pendingCount": 0,
-    "updatedAt": "2026-10-12T09:20:32.945Z"
+    "updatedAt": "2026-10-12T10:25:44.666Z"
   }
 }
