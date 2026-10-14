@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-10-14 13:02:56",
-    "finished_at": "2026-10-14 13:03:03",
+    "started_at": "2026-10-14 21:05:40",
+    "finished_at": "2026-10-14 21:05:48",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -1300,9 +1300,9 @@
       "sourceName": "후라이드  Fried Chicken  无骨炸鸡腿 Má đùi rút xương",
       "names": {
         "ko": "후라이드 치킨",
-        "vi": "Gà chiên không xương",
-        "zh": "无骨炸鸡腿",
-        "en": "Boneless Fried Chicken"
+        "vi": "",
+        "zh": "",
+        "en": ""
       },
       "price": 399600,
       "available": true,
@@ -1322,9 +1322,9 @@
       "sourceName": "양념  Sweet & Spicy Chicken  韩式甜酱炸鸡 Gà sốt ngọt HQ",
       "names": {
         "ko": "양념 치킨",
-        "vi": "Gà sốt ngọt kiểu Hàn",
-        "zh": "韩式甜酱炸鸡",
-        "en": "Sweet & Spicy Chicken"
+        "vi": "",
+        "zh": "",
+        "en": ""
       },
       "price": 399600,
       "available": true,
@@ -1344,9 +1344,9 @@
       "sourceName": "매운양념  Hot & Spicy Chicken韩式辣酱炸鸡  Gà sốt cay HQ",
       "names": {
         "ko": "매운 양념 치킨",
-        "vi": "Gà sốt cay kiểu Hàn",
-        "zh": "韩式辣酱炸鸡",
-        "en": "Hot & Spicy Chicken"
+        "vi": "",
+        "zh": "",
+        "en": ""
       },
       "price": 399600,
       "available": true,
@@ -1388,9 +1388,9 @@
       "sourceName": "고추마늘간장Garlic Soy Chicken/ 辣椒蒜酱鸡 /Gà sốt xì dầu tỏi ớt",
       "names": {
         "ko": "고추마늘간장 치킨",
-        "vi": "Gà sốt xì dầu tỏi ớt",
-        "zh": "辣椒蒜酱鸡",
-        "en": "Garlic Soy Chicken"
+        "vi": "",
+        "zh": "",
+        "en": ""
       },
       "price": 399600,
       "available": true,
@@ -1410,9 +1410,9 @@
       "sourceName": "스리라차 어니언  Sriracha Onion Chicken洋葱奶酱炸鸡 Gà sốt kem hành",
       "names": {
         "ko": "스리라차 어니언 치킨",
-        "vi": "Gà sốt kem hành Sriracha",
-        "zh": "是拉差洋葱奶油炸鸡",
-        "en": "Sriracha Onion Chicken"
+        "vi": "",
+        "zh": "",
+        "en": ""
       },
       "price": 399600,
       "available": true,
@@ -5641,11 +5641,11 @@
   "translation": {
     "provider": "openai",
     "model": "gpt-5.6-terra",
-    "status": "ready",
+    "status": "error",
     "entityCount": 322,
     "cacheHits": 310,
-    "translated": 12,
+    "translated": 0,
     "pendingCount": 0,
-    "updatedAt": "2026-10-14T13:03:20.022Z"
+    "updatedAt": "2026-10-14T21:05:59.255Z"
   }
 }
