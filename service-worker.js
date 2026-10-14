@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'dabang-tablet-v51';
+const CACHE_VERSION = 'dabang-tablet-v52';
 const SHELL_CACHE = `${CACHE_VERSION}-shell`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const APP_SHELL = [
@@ -10,6 +10,7 @@ const APP_SHELL = [
   './assets/voice-order.css?v=20260831-v12',
   './assets/menu-images.js?v=20261003-sapporo-relink-v15',
   './assets/featured/dakgalbi-dkg-poster.jpg?v=20260916-original-photo',
+  './assets/featured/zziran-wings.jpg?v=20261015-launch',
   './assets/brand/dabang-logo-transparent.png',
   './assets/pwa/icon-32.png',
   './assets/pwa/icon-180.png',
