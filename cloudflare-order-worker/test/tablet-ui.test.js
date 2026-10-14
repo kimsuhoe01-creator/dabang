@@ -77,7 +77,8 @@ test('Dakgalbi opens the new-menu screen with a large original-photo card connec
   assert.doesNotMatch(html, /function playFeaturedVideos\(/);
   assert.match(html, /class="dakgalbi-hero"[\s\S]*onclick="selectMenu\('\$\{safeId\}',this\)"/);
   assert.match(html, /function visibleCategories\(\)[\s\S]*find\(isDakgalbiMenu\)/);
-  assert.match(html, /const heroMenu=section\.closure\?null:section\.menus\.find\(isDakgalbiMenu\)/);
+  assert.match(html, /const heroMenu=section\.closure\?null:featuredHeroMenu\(section\.menus\)/);
+  assert.match(html, /function featuredHeroMenu\(menus\)\{return \(lang==='ko'\|\|lang==='zh'\?menus\.find\(isZziranMenu\):null\)\|\|menus\.find\(isDakgalbiMenu\)\}/);
   assert.match(html, /cukcukCode:item\.cukcukCode/);
 });
 
