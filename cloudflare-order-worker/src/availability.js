@@ -40,6 +40,7 @@ const KITCHEN_STAFF_SHORTAGE_MENU_IDS = [
   "407d574c-2027-45eb-8a73-12677fae78ee", // 마라 감자 웨지
   "b482b42a-a6bc-4b48-bfd0-c1acaa9089b2", // 주먹밥
   "d2dfd961-40ae-401b-8b3a-530963b32741", // 유린기
+  "19fcb4e2-19d3-42ec-aac8-13f6cdbb9c87", // 무뼈닭발 세트
 ];
 const KITCHEN_STAFF_SHORTAGE_START = Date.parse("2026-10-15T00:00:00+07:00");
 const KITCHEN_STAFF_SHORTAGE_END = Date.parse("2026-10-16T09:00:00+07:00");

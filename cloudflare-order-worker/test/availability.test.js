@@ -12,6 +12,7 @@ const KITCHEN_STAFF_SHORTAGE_MENU_IDS = [
   "407d574c-2027-45eb-8a73-12677fae78ee",
   "b482b42a-a6bc-4b48-bfd0-c1acaa9089b2",
   "d2dfd961-40ae-401b-8b3a-530963b32741",
+  "19fcb4e2-19d3-42ec-aac8-13f6cdbb9c87",
 ];
 
 test("Space Pizza and chicken-pizza sets are closed only on 2026-09-03 store time", () => {
@@ -44,7 +45,7 @@ test("Sapporo 1+1 closes at 19:00 Asia/Ho_Chi_Minh", () => {
   assert.match(after.unavailableNotices[SAPPORO_ONE_PLUS_ONE_ID].message.en, /19:00/);
 });
 
-test("five kitchen-staff shortage menus close today and reopen tomorrow morning", () => {
+test("six kitchen-staff shortage menus close today and reopen tomorrow morning", () => {
   const before = buildAvailabilitySnapshot([], new Date("2026-10-14T16:59:59.000Z"));
   const during = buildAvailabilitySnapshot([], new Date("2026-10-15T10:00:00.000Z"));
   const nextMorning = buildAvailabilitySnapshot([], new Date("2026-10-15T17:00:00.000Z"));
@@ -66,7 +67,7 @@ test("five kitchen-staff shortage menus close today and reopen tomorrow morning"
   assert.equal(nextMorning.nextScheduleChangeInMs, 9 * 60 * 60 * 1000);
 });
 
-test("tomorrow reopen clears only pre-existing manual holds on the five menus", () => {
+test("tomorrow reopen clears only pre-existing manual holds on the six menus", () => {
   const menuId = KITCHEN_STAFF_SHORTAGE_MENU_IDS[1];
   const staleManualHold = {
     manualEntries: [{
