@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": "cukcuk-tablet-content-2026-10-12-t10-hashbrown-v1",
+  "revision": "cukcuk-tablet-content-2026-10-15-w07-half-portion-v1",
   "capturedAt": "2026-08-30T06:34:32.171Z",
   "timezone": "Asia/Ho_Chi_Minh",
   "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
@@ -333,7 +333,7 @@
         },
         {
           "code": "(W07) Cánh gà cumin",
-          "displayName": "쯔란윙봉 | Cánh gà vị cumin | 孜然鸡翅 | Cumin Wings",
+          "displayName": "쯔란윙봉 반마리 | Nửa phần cánh gà vị cumin | 半份孜然鸡翅 | Half Portion Cumin Wings",
           "price": 216000,
           "outOfStock": false,
           "sortOrder": 1
@@ -1349,10 +1349,10 @@
       "en": "Hanoi Draft Beer KEG (1L)"
     },
     "(W07) Cánh gà cumin": {
-      "ko": "쯔란윙봉",
-      "vi": "Cánh gà vị cumin",
-      "zh": "孜然鸡翅",
-      "en": "Cumin Wings"
+      "ko": "쯔란윙봉 반마리",
+      "vi": "Nửa phần cánh gà vị cumin",
+      "zh": "半份孜然鸡翅",
+      "en": "Half Portion Cumin Wings"
     }
   },
   "menuOptionOverrides": {
