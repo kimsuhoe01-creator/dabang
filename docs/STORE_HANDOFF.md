@@ -678,3 +678,10 @@ C:\Users\Admin\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin
 - 공개 안전 미리보기: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=2021b66 . W07 반마리 추가 최대 1개와 합계 399,600동, W06 필수 1개, S05 윙봉·떡볶이·가래떡 필수 각 1개와 토핑 최대 3개, W01 필수 2개, S08 필수 4개를 화면에서 확인했다. 실제 POS 주문은 보내지 않았다.
 - 검증: Worker/UI 테스트 112개 통과(최종 테스트 수정 포함), 메뉴 이미지 감사 114개 통과(누락·고아 0), CUKCUK 동기화 및 Pages/Worker 배포 성공. 동기화는 CUKCUK API 시간 초과 후 4번째 실행에서 성공했다.
 - CUKCUK W07 사진 업로드는 일반 상품 편집과 테이블 QR 편집에서 `failed.`로 거절됐으나, 사용자가 2026-10-15에 **쿠쿠 사진 등록은 필요 없다고 확인**했다. 배달K와 태블릿 사진은 정상 등록·표시된다. 이 신메뉴 등록 작업의 남은 후속 조치는 없다.
+
+## 쯔란윙봉 태블릿 첫 배너 가로형 개편 (2026-10-15)
+
+- 세로 광고 전체가 배너 오른쪽에 작게 표시되던 화면을 1980×600 가로형 이미지로 교체했다. `scripts/build-zziran-hero.py`는 기존 사용자 광고 `assets/featured/zziran-wings.jpg`에서 음식 영역을 잘라 균일하게 확대하고 왼쪽 배경과 자연스럽게 잇는다. 음식 사진을 생성하거나 다시 그리지 않았다. 원본 광고와 UUID별 메뉴 사진은 그대로다.
+- `tablet-preview.html`의 한국어·중국어 쯔란 첫 배너에서 제목·설명·가격·담기 버튼을 사진 왼쪽에 재배치했다. 1100px 이하에는 글자 뒤 명암을 높이고 900px 이하에는 설명 길이와 크기를 맞췄다. 베트남어·영어 첫 닭갈비 배너와 주문 옵션은 변경하지 않았다. 기능 커밋 `4b3806e`.
+- 원본 광고 파일 해시가 기존 `03de213666742896be7d9cebde22a67b557ba1a8`과 동일함을 확인했다. 메뉴 이미지 감사 114개 통과(누락·고아 0), Worker/UI 테스트 112개 통과, 변경 파일 공백 검사 통과. 안전 미리보기에서 한국어 1920·1024·800px, 중국어 1920·1280px 화면의 배치와 216,000동 가격을 확인했고 브라우저 오류는 0건이었다. 실제 POS 주문은 보내지 않았다.
+- 배포 후 확인 링크: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=4b3806e .
