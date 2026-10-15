@@ -150,13 +150,14 @@
         "templateId": "2be54a6c-ab0d-40d7-a080-0c50e0d228dc",
         "name": "윙봉 치킨 선택",
         "valueIds": [
-          "096e9442-2079-4c5e-aaa5-c3ceb187bd72",
-          "08e23927-330b-4a0d-ae1d-0f9e7a8dcefb",
-          "4ff6ab3c-6c59-452c-808a-205a83ea6368",
-          "dbd02bf2-43c8-49f4-9f2f-69c030e4621f",
-          "9aec3e3c-57f7-441b-83ae-2aff79348608",
-          "a6c767fa-5abc-4e31-acb3-c840184971f1",
-          "f276a28f-4dd4-4ee3-93eb-9f0e94941689"
+          "e8e473c3-65df-4e9d-abce-0c3e480ce3e5",
+          "95da43b6-1573-4310-b70c-38090b1f2ef7",
+          "06cf5bed-c480-43a9-b157-44b4d59cf23e",
+          "74f59857-2d4f-4b98-84e1-79c75aa26a9c",
+          "21eca709-2298-47d6-be92-bb03e5461c41",
+          "22731f9b-95ae-4fc2-9dc2-bbd3ced496b7",
+          "18be4708-e8af-476b-a8f0-d575157450f0",
+          "2276ad40-3dfc-4679-a7af-df881c350153"
         ]
       },
       {
@@ -1405,9 +1406,42 @@
     },
     "(S05) Cánh gà + Tok": {
       "rules": {
-        "2be54a6c-ab0d-40d7-a080-0c50e0d228dc": {
+        "cukcuk-detail:27ab97f7-0ddf-495a-b475-4533e945da85:0": {
           "required": true,
           "minSelections": 1,
+          "maxSelections": 1
+        },
+        "cukcuk-detail:27ab97f7-0ddf-495a-b475-4533e945da85:1": {
+          "required": true,
+          "minSelections": 1,
+          "maxSelections": 1
+        },
+        "cukcuk-detail:27ab97f7-0ddf-495a-b475-4533e945da85:2": {
+          "required": true,
+          "minSelections": 1,
+          "maxSelections": 1
+        },
+        "cukcuk-detail:27ab97f7-0ddf-495a-b475-4533e945da85:3": {
+          "required": false,
+          "minSelections": 0,
+          "maxSelections": 3
+        }
+      }
+    },
+    "(W06) Nửa con gà": {
+      "rules": {
+        "cukcuk-detail:b2bf24a7-1018-4953-86ce-baacae6fe06c:0": {
+          "required": true,
+          "minSelections": 1,
+          "maxSelections": 1
+        }
+      }
+    },
+    "(W07) Cánh gà cumin": {
+      "rules": {
+        "cukcuk-detail:9108cbc8-8db9-4412-b17f-061f0f0f2ab8:0": {
+          "required": false,
+          "minSelections": 0,
           "maxSelections": 1
         }
       }
@@ -1466,6 +1500,50 @@
           "minSelections": 1,
           "maxSelections": 11
         }
+      }
+    },
+    "(S05) Cánh gà + Tok": {
+      "source": "table-qr",
+      "areaId": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
+      "expectedCategoryCount": 4,
+      "expectedValueCount": 20,
+      "templateNames": [
+        {
+          "ko": "윙봉 맛 선택",
+          "vi": "Chọn vị cánh gà",
+          "zh": "选择鸡翅口味",
+          "en": "Choose Wing Flavor"
+        },
+        {
+          "ko": "떡볶이 선택",
+          "vi": "Chọn tokbokki",
+          "zh": "选择辣炒年糕",
+          "en": "Choose Tteokbokki"
+        },
+        {
+          "ko": "가래떡 선택",
+          "vi": "Chọn bánh gạo lớn",
+          "zh": "选择大条年糕",
+          "en": "Choose Rice Cakes"
+        },
+        {
+          "ko": "토핑 추가",
+          "vi": "Thêm topping",
+          "zh": "加购配料",
+          "en": "Add Toppings"
+        }
+      ]
+    },
+    "(W06) Nửa con gà": {
+      "source": "table-qr",
+      "areaId": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
+      "expectedCategoryCount": 1,
+      "expectedValueCount": 8,
+      "templateNames": {
+        "ko": "윙봉 반마리 맛 선택",
+        "vi": "Chọn vị nửa phần cánh gà",
+        "zh": "选择半份鸡翅口味",
+        "en": "Choose Half Wing Flavor"
       }
     },
     "(S08) Cánh gà 4 vị": {
