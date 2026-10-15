@@ -1502,50 +1502,6 @@
         }
       }
     },
-    "(S05) Cánh gà + Tok": {
-      "source": "table-qr",
-      "areaId": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
-      "expectedCategoryCount": 4,
-      "expectedValueCount": 20,
-      "templateNames": [
-        {
-          "ko": "윙봉 맛 선택",
-          "vi": "Chọn vị cánh gà",
-          "zh": "选择鸡翅口味",
-          "en": "Choose Wing Flavor"
-        },
-        {
-          "ko": "떡볶이 선택",
-          "vi": "Chọn tokbokki",
-          "zh": "选择辣炒年糕",
-          "en": "Choose Tteokbokki"
-        },
-        {
-          "ko": "가래떡 선택",
-          "vi": "Chọn bánh gạo lớn",
-          "zh": "选择大条年糕",
-          "en": "Choose Rice Cakes"
-        },
-        {
-          "ko": "토핑 추가",
-          "vi": "Thêm topping",
-          "zh": "加购配料",
-          "en": "Add Toppings"
-        }
-      ]
-    },
-    "(W06) Nửa con gà": {
-      "source": "table-qr",
-      "areaId": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
-      "expectedCategoryCount": 1,
-      "expectedValueCount": 8,
-      "templateNames": {
-        "ko": "윙봉 반마리 맛 선택",
-        "vi": "Chọn vị nửa phần cánh gà",
-        "zh": "选择半份鸡翅口味",
-        "en": "Choose Half Wing Flavor"
-      }
-    },
     "(S08) Cánh gà 4 vị": {
       "templateIds": [
         "cukcuk-detail:88d856ff-e35d-4c21-893b-3f60e2fa71fa:0"
@@ -1946,6 +1902,50 @@
         "vi": "Chọn món chiên",
         "zh": "选择炸物",
         "en": "Choose Fried Items"
+      }
+    },
+    "(S05) Cánh gà + Tok": {
+      "source": "table-qr",
+      "areaId": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
+      "expectedCategoryCount": 4,
+      "expectedValueCount": 20,
+      "templateNames": [
+        {
+          "ko": "윙봉 맛 선택",
+          "vi": "Chọn vị cánh gà",
+          "zh": "选择鸡翅口味",
+          "en": "Choose Wing Flavor"
+        },
+        {
+          "ko": "떡볶이 선택",
+          "vi": "Chọn tokbokki",
+          "zh": "选择辣炒年糕",
+          "en": "Choose Tteokbokki"
+        },
+        {
+          "ko": "가래떡 선택",
+          "vi": "Chọn bánh gạo lớn",
+          "zh": "选择大条年糕",
+          "en": "Choose Rice Cakes"
+        },
+        {
+          "ko": "토핑 추가",
+          "vi": "Thêm topping",
+          "zh": "加购配料",
+          "en": "Add Toppings"
+        }
+      ]
+    },
+    "(W06) Nửa con gà": {
+      "source": "table-qr",
+      "areaId": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
+      "expectedCategoryCount": 1,
+      "expectedValueCount": 8,
+      "templateNames": {
+        "ko": "윙봉 반마리 맛 선택",
+        "vi": "Chọn vị nửa phần cánh gà",
+        "zh": "选择半份鸡翅口味",
+        "en": "Choose Half Wing Flavor"
       }
     },
     "(S08) Cánh gà 4 vị": {
