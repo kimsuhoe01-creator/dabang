@@ -34,6 +34,29 @@ const CHICKEN_PIZZA_SET_IDS = [
   "e1cf1187-b643-4b90-9f6f-9a7458eaf037",
   "1ffd639e-dd8f-4185-9ab9-4b187835b21c",
 ];
+const KITCHEN_STAFF_SHORTAGE_MENU_IDS = [
+  "1644c776-3499-42d0-a911-ab8152608195", // 수박
+  "df258d2e-d7f9-4752-a4a0-f43578ecb965", // 폴드 치킨 퀘사디아
+  "407d574c-2027-45eb-8a73-12677fae78ee", // 마라 감자 웨지
+  "b482b42a-a6bc-4b48-bfd0-c1acaa9089b2", // 주먹밥
+  "d2dfd961-40ae-401b-8b3a-530963b32741", // 유린기
+];
+const KITCHEN_STAFF_SHORTAGE_START = Date.parse("2026-10-15T00:00:00+07:00");
+const KITCHEN_STAFF_SHORTAGE_END = Date.parse("2026-10-16T09:00:00+07:00");
+const KITCHEN_STAFF_SHORTAGE_NOTICE = {
+  title: {
+    ko: "주방에 직원이 없어서 오늘 하루만 품절입니다",
+    vi: "Hôm nay tạm ngưng bán do bếp thiếu nhân viên",
+    zh: "因厨房人手不足，今日暂停售卖",
+    en: "Unavailable today due to limited kitchen staff",
+  },
+  message: {
+    ko: "내일 아침 다시 판매합니다.",
+    vi: "Món sẽ được bán lại vào sáng mai.",
+    zh: "明天早上恢复供应。",
+    en: "Available again tomorrow morning.",
+  },
+};
 const AVAILABILITY_OBJECT_NAME = "__dabang_menu_availability__";
 const INTERNAL_URL = "https://availability.internal/state";
 const MAX_AUDIT_EVENTS = 100;
@@ -124,7 +147,11 @@ export function buildAvailabilitySnapshot(manualStateOrIds = [], now = new Date(
   const manual = state.manualUnavailableMenuIds;
   const manualHidden = state.manualHiddenMenuIds;
   const schedule = scheduleAt(now);
-  const scheduled = schedule.closed ? SAPPORO_ONE_PLUS_ONE_IDS : [];
+  const kitchenStaffShortage = kitchenStaffShortageAt(now);
+  const scheduled = [
+    ...(schedule.closed ? SAPPORO_ONE_PLUS_ONE_IDS : []),
+    ...(kitchenStaffShortage.active ? KITCHEN_STAFF_SHORTAGE_MENU_IDS : []),
+  ];
   const categoryClosures = storeDateAt(now) === SPACE_PIZZA_DAY_OFF_DATE ? [{
     key: `space-pizza-day-off-${SPACE_PIZZA_DAY_OFF_DATE}`,
     categoryName: SPACE_PIZZA_CATEGORY,
@@ -158,11 +185,21 @@ export function buildAvailabilitySnapshot(manualStateOrIds = [], now = new Date(
     closureUnavailableMenuIds: closureUnavailable,
     unavailableMenuIds: [...new Set([...manual, ...scheduled, ...closureUnavailable])],
     hiddenMenuIds: [...new Set([...manualHidden, ...closureHidden])],
-    unavailableNotices: schedule.closed
-      ? Object.fromEntries(SAPPORO_ONE_PLUS_ONE_IDS.map(id => [id, SAPPORO_EVENT_ENDED_NOTICE]))
-      : {},
+    unavailableNotices: {
+      ...(schedule.closed
+        ? Object.fromEntries(SAPPORO_ONE_PLUS_ONE_IDS.map(id => [id, SAPPORO_EVENT_ENDED_NOTICE]))
+        : {}),
+      ...(kitchenStaffShortage.active
+        ? Object.fromEntries(KITCHEN_STAFF_SHORTAGE_MENU_IDS.map(id => [id, KITCHEN_STAFF_SHORTAGE_NOTICE]))
+        : {}),
+    },
     categoryClosures,
-    nextScheduleChangeInMs: Math.min(schedule.nextChangeInMs, millisecondsUntilNextStoreDay(now), manualExpiryChangeInMs),
+    nextScheduleChangeInMs: Math.min(
+      schedule.nextChangeInMs,
+      millisecondsUntilNextStoreDay(now),
+      manualExpiryChangeInMs,
+      kitchenStaffShortage.nextChangeInMs,
+    ),
   };
 }
 
@@ -293,6 +330,17 @@ function scheduleAt(now) {
   return milliseconds >= cutoff
     ? { closed: true, nextChangeInMs: Math.max(1000, day - milliseconds) }
     : { closed: false, nextChangeInMs: Math.max(1000, cutoff - milliseconds) };
+}
+
+function kitchenStaffShortageAt(now) {
+  const time = now.getTime();
+  if (time < KITCHEN_STAFF_SHORTAGE_START) {
+    return { active: false, nextChangeInMs: Math.max(1000, KITCHEN_STAFF_SHORTAGE_START - time) };
+  }
+  if (time < KITCHEN_STAFF_SHORTAGE_END) {
+    return { active: true, nextChangeInMs: Math.max(1000, KITCHEN_STAFF_SHORTAGE_END - time) };
+  }
+  return { active: false, nextChangeInMs: Number.POSITIVE_INFINITY };
 }
 
 function storeDateAt(now) {
