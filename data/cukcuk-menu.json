@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-10-15 10:35:03",
-    "finished_at": "2026-10-15 10:35:15",
+    "started_at": "2026-10-15 16:20:53",
+    "finished_at": "2026-10-15 16:21:04",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -1351,9 +1351,9 @@
       "sourceName": "후라이드  Fried Chicken  无骨炸鸡腿 Má đùi rút xương",
       "names": {
         "ko": "후라이드 치킨",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "vi": "Gà má đùi rút xương chiên giòn",
+        "zh": "无骨炸鸡腿",
+        "en": "Boneless Fried Chicken Thigh"
       },
       "price": 399600,
       "available": true,
@@ -1373,9 +1373,9 @@
       "sourceName": "양념  Sweet & Spicy Chicken  韩式甜酱炸鸡 Gà sốt ngọt HQ",
       "names": {
         "ko": "양념 치킨",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "vi": "Gà sốt ngọt kiểu Hàn",
+        "zh": "韩式甜酱炸鸡",
+        "en": "Sweet & Spicy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1395,9 +1395,9 @@
       "sourceName": "매운양념  Hot & Spicy Chicken韩式辣酱炸鸡  Gà sốt cay HQ",
       "names": {
         "ko": "매운 양념 치킨",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "vi": "Gà sốt cay kiểu Hàn",
+        "zh": "韩式辣酱炸鸡",
+        "en": "Hot & Spicy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1439,9 +1439,9 @@
       "sourceName": "고추마늘간장Garlic Soy Chicken/ 辣椒蒜酱鸡 /Gà sốt xì dầu tỏi ớt",
       "names": {
         "ko": "고추마늘간장 치킨",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "vi": "Gà sốt xì dầu tỏi ớt",
+        "zh": "辣椒蒜酱油炸鸡",
+        "en": "Garlic Soy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1461,9 +1461,9 @@
       "sourceName": "스리라차 어니언  Sriracha Onion Chicken洋葱奶酱炸鸡 Gà sốt kem hành",
       "names": {
         "ko": "스리라차 어니언 치킨",
-        "vi": "",
-        "zh": "",
-        "en": ""
+        "vi": "Gà sốt kem hành Sriracha",
+        "zh": "是拉差洋葱奶油炸鸡",
+        "en": "Sriracha Onion Chicken"
       },
       "price": 399600,
       "available": true,
@@ -5194,10 +5194,10 @@
           "id": "08e23927-330b-4a0d-ae1d-0f9e7a8dcefb",
           "sourceName": "핫후라이드 윙봉/Hot Fried Wings/辣味炸鸡翅/Cánh gà chiên cay",
           "names": {
-            "ko": "핫후라이드 윙봉/Hot Fried Wings/辣味炸鸡翅/Cánh gà chiên cay",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "핫후라이드 윙봉",
+            "vi": "Cánh gà chiên cay",
+            "zh": "辣味炸鸡翅",
+            "en": "Hot Fried Wings"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -5207,10 +5207,10 @@
           "id": "4ff6ab3c-6c59-452c-808a-205a83ea6368",
           "sourceName": "간장 윙봉/Soy Sauce Wings /酱油鸡翅 /Cánh gà xì dầu.",
           "names": {
-            "ko": "간장 윙봉/Soy Sauce Wings /酱油鸡翅 /Cánh gà xì dầu.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "간장 윙봉",
+            "vi": "Cánh gà sốt xì dầu",
+            "zh": "酱油鸡翅",
+            "en": "Soy Sauce Wings"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -5220,10 +5220,10 @@
           "id": "9aec3e3c-57f7-441b-83ae-2aff79348608",
           "sourceName": "허니 윙봉/Honey Wings/(W05) 蜜汁鸡翅 /Cánh gà mật ong.",
           "names": {
-            "ko": "허니 윙봉/Honey Wings/(W05) 蜜汁鸡翅 /Cánh gà mật ong.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "허니 윙봉",
+            "vi": "Cánh gà mật ong",
+            "zh": "蜜汁鸡翅",
+            "en": "Honey Wings"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -5233,10 +5233,10 @@
           "id": "dbd02bf2-43c8-49f4-9f2f-69c030e4621f",
           "sourceName": "매운간장윙봉 | Cánh gà sốt xì dầu cay | 辣酱油鸡翅中 | Spicy Soy Sauce Chicken Wings",
           "names": {
-            "ko": "매운간장윙봉",
+            "ko": "매운 간장 윙봉",
             "vi": "Cánh gà sốt xì dầu cay",
-            "zh": "辣酱油鸡翅中",
-            "en": "Spicy Soy Sauce Chicken Wings"
+            "zh": "辣酱油鸡翅",
+            "en": "Spicy Soy Sauce Wings"
           },
           "receiptNames": {
             "ko": "매운간장윙봉",
@@ -5250,10 +5250,10 @@
           "id": "f276a28f-4dd4-4ee3-93eb-9f0e94941689",
           "sourceName": "스노윙치킨 / Gà phủ bột phô mai / 雪花芝士粉炸鸡 / Snowing Chicken",
           "names": {
-            "ko": "스노윙치킨 / Gà phủ bột phô mai / 雪花芝士粉炸鸡 / Snowing Chicken",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "스노윙 윙봉",
+            "vi": "Cánh gà phủ bột phô mai",
+            "zh": "雪花芝士粉鸡翅",
+            "en": "Snow Cheese Wings"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -5263,7 +5263,7 @@
           "id": "21eca709-2298-47d6-be92-bb03e5461c41",
           "sourceName": "쯔란윙봉 | Cánh gà vị cumin | 孜然鸡翅 | Cumin Wings",
           "names": {
-            "ko": "쯔란윙봉",
+            "ko": "쯔란 윙봉",
             "vi": "Cánh gà vị cumin",
             "zh": "孜然鸡翅",
             "en": "Cumin Wings"
@@ -5280,9 +5280,9 @@
           "id": "096e9442-2079-4c5e-aaa5-c3ceb187bd72",
           "sourceName": "후라이드윙봉 | Cánh gà chiên giòn | 炸鸡翅中 | Fried Chicken Wings",
           "names": {
-            "ko": "후라이드윙봉",
+            "ko": "후라이드 윙봉",
             "vi": "Cánh gà chiên giòn",
-            "zh": "炸鸡翅中",
+            "zh": "炸鸡翅",
             "en": "Fried Chicken Wings"
           },
           "receiptNames": {
@@ -5297,10 +5297,10 @@
           "id": "a6c767fa-5abc-4e31-acb3-c840184971f1",
           "sourceName": "레드 윙봉/Spicy Red Wings / 辣鸡翅 / Cánh gà cay.",
           "names": {
-            "ko": "레드 윙봉/Spicy Red Wings / 辣鸡翅 / Cánh gà cay.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "레드 윙봉",
+            "vi": "Cánh gà cay",
+            "zh": "辣味鸡翅",
+            "en": "Spicy Red Wings"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -5329,10 +5329,10 @@
           "id": "7500e3bf-03c9-486c-b995-60375ac1b40e",
           "sourceName": "매운떡볶이/Spicy Tteokbokki /辣味辣炒年糕 /Tokbokki vị cay",
           "names": {
-            "ko": "매운떡볶이/Spicy Tteokbokki /辣味辣炒年糕 /Tokbokki vị cay",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "매운 떡볶이",
+            "vi": "Tokbokki vị cay",
+            "zh": "辣味辣炒年糕",
+            "en": "Spicy Tteokbokki"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -5342,10 +5342,10 @@
           "id": "4ebaf633-328d-4d41-af17-da9d3db10800",
           "sourceName": "달달떡볶이/Sweet Tteokbokki /甜味辣炒年糕 /Tokbokki vị ngọt",
           "names": {
-            "ko": "달달떡볶이/Sweet Tteokbokki /甜味辣炒年糕 /Tokbokki vị ngọt",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "달달 떡볶이",
+            "vi": "Tokbokki vị ngọt",
+            "zh": "甜味辣炒年糕",
+            "en": "Sweet Tteokbokki"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -5355,10 +5355,10 @@
           "id": "9216a4e8-c9cc-4edd-a798-2d43ea86cfc9",
           "sourceName": "라볶이(매운)/Spicy Rabokki /辣味辣炒年糕拉面 /Mì Tokbokki vị cay",
           "names": {
-            "ko": "라볶이(매운)/Spicy Rabokki /辣味辣炒年糕拉面 /Mì Tokbokki vị cay",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "매운 라볶이",
+            "vi": "Mì Tokbokki vị cay",
+            "zh": "辣味拉볶이",
+            "en": "Spicy Rabokki"
           },
           "additionalPrice": 32400,
           "visible": true,
@@ -5368,10 +5368,10 @@
           "id": "0000a2d5-0343-4560-b3c6-3c2cd356c326",
           "sourceName": "가래떡 떡볶이(매운)./Spicy Garaetteok Tteokbokki/辣味粗年糕炒年糕 /Tokbokki bánh gạo to vị cay",
           "names": {
-            "ko": "가래떡 떡볶이(매운)./Spicy Garaetteok Tteokbokki/辣味粗年糕炒年糕 /Tokbokki bánh gạo to vị cay",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "매운 가래떡 떡볶이",
+            "vi": "Tokbokki bánh gạo to vị cay",
+            "zh": "辣味粗年糕炒年糕",
+            "en": "Spicy Garaetteok Tteokbokki"
           },
           "additionalPrice": 32400,
           "visible": true,
@@ -5381,10 +5381,10 @@
           "id": "8a128245-102f-426d-8aed-47bf5684da06",
           "sourceName": "로제Rosé Tteokbokki /奶油辣酱年糕(Rosé酱/Tokbokki sốt kem cay (sốt Rosé)",
           "names": {
-            "ko": "로제Rosé Tteokbokki /奶油辣酱年糕(Rosé酱/Tokbokki sốt kem cay (sốt Rosé)",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "로제 떡볶이",
+            "vi": "Tokbokki sốt kem cay Rosé",
+            "zh": "奶油辣酱年糕",
+            "en": "Rosé Tteokbokki"
           },
           "additionalPrice": 32400,
           "visible": true,
@@ -5394,10 +5394,10 @@
           "id": "7f58814c-27d6-4462-92ee-5524ac83139f",
           "sourceName": "라볶이(달달)/Sweet Rabokki /甜味辣炒年糕拉面 /Mì Tokbokki vị ngọt",
           "names": {
-            "ko": "라볶이(달달)/Sweet Rabokki /甜味辣炒年糕拉面 /Mì Tokbokki vị ngọt",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "달콤한 라볶이",
+            "vi": "Mì Tokbokki vị ngọt",
+            "zh": "甜味拉볶이",
+            "en": "Sweet Rabokki"
           },
           "additionalPrice": 32400,
           "visible": true,
@@ -5407,10 +5407,10 @@
           "id": "2c0c5c37-3b68-45ca-a389-85263b98b4a1",
           "sourceName": "가래떡 떡볶이(달달) /Sweet Garaetteok Tteokbokki /甜味粗年糕炒年糕 /(T09KC)Tokbokki bánh gạo to vị ngọt",
           "names": {
-            "ko": "가래떡 떡볶이(달달) /Sweet Garaetteok Tteokbokki /甜味粗年糕炒年糕 /(T09KC)Tokbokki bánh gạo to vị ngọt",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "달콤한 가래떡 떡볶이",
+            "vi": "Tokbokki bánh gạo to vị ngọt",
+            "zh": "甜味粗年糕炒年糕",
+            "en": "Sweet Garaetteok Tteokbokki"
           },
           "additionalPrice": 32400,
           "visible": true,
@@ -5427,8 +5427,8 @@
       "names": {
         "ko": "가래떡 선택",
         "vi": "Chọn bánh gạo lớn",
-        "zh": "选择大条年糕",
-        "en": "Choose Rice Cakes"
+        "zh": "选择粗年糕",
+        "en": "Choose Garaetteok"
       },
       "required": false,
       "minSelections": 0,
@@ -5439,10 +5439,10 @@
           "id": "46629e10-3368-48e5-b1b0-2322b55c73cc",
           "sourceName": "안잘라 | Không cắt",
           "names": {
-            "ko": "안잘라",
+            "ko": "안 자름",
             "vi": "Không cắt",
-            "zh": "",
-            "en": ""
+            "zh": "不切",
+            "en": "Uncut"
           },
           "receiptNames": {
             "ko": "안잘라",
@@ -5456,10 +5456,10 @@
           "id": "dcbfb96c-d5bc-460d-9abc-7c07205d9828",
           "sourceName": "잘라 | Cắt",
           "names": {
-            "ko": "잘라",
+            "ko": "자름",
             "vi": "Cắt",
-            "zh": "",
-            "en": ""
+            "zh": "切开",
+            "en": "Cut"
           },
           "receiptNames": {
             "ko": "잘라",
@@ -5480,7 +5480,7 @@
       "names": {
         "ko": "토핑 추가",
         "vi": "Thêm topping",
-        "zh": "加购配料",
+        "zh": "加配料",
         "en": "Add Toppings"
       },
       "required": false,
@@ -5492,10 +5492,10 @@
           "id": "ea48c49b-bc23-4c78-a36c-253268eeca3c",
           "sourceName": "삶은계란1개 추가 | Thêm (1) trứng luộc",
           "names": {
-            "ko": "삶은계란1개 추가",
-            "vi": "Thêm (1) trứng luộc",
-            "zh": "",
-            "en": ""
+            "ko": "삶은 계란 1개 추가",
+            "vi": "Thêm 1 trứng luộc",
+            "zh": "加1个水煮蛋",
+            "en": "Add 1 Boiled Egg"
           },
           "receiptNames": {
             "ko": "삶은계란1개 추가",
@@ -5510,9 +5510,9 @@
           "sourceName": "2 Cheddar | 체다치즈 2장",
           "names": {
             "ko": "체다치즈 2장",
-            "vi": "2 Cheddar",
-            "zh": "",
-            "en": ""
+            "vi": "2 lát phô mai Cheddar",
+            "zh": "2片切达奶酪",
+            "en": "2 Cheddar Slices"
           },
           "receiptNames": {
             "ko": "체다치즈 2장",
@@ -5529,7 +5529,7 @@
             "ko": "모짜렐라 치즈",
             "vi": "Phô mai Mozzarella",
             "zh": "马苏里拉奶酪",
-            "en": "Mozzarella cheese"
+            "en": "Mozzarella Cheese"
           },
           "receiptNames": {
             "ko": "모짜렐라 치즈",
@@ -5551,7 +5551,7 @@
         "ko": "윙봉 반마리 맛 선택",
         "vi": "Chọn vị nửa phần cánh gà",
         "zh": "选择半份鸡翅口味",
-        "en": "Choose Half Wing Flavor"
+        "en": "Choose Half Wings Flavor"
       },
       "required": false,
       "minSelections": 0,
@@ -5562,10 +5562,10 @@
           "id": "08e23927-330b-4a0d-ae1d-0f9e7a8dcefb",
           "sourceName": "핫후라이드 윙봉/Hot Fried Wings/辣味炸鸡翅/Cánh gà chiên cay",
           "names": {
-            "ko": "핫후라이드 윙봉/Hot Fried Wings/辣味炸鸡翅/Cánh gà chiên cay",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "핫후라이드 윙봉",
+            "vi": "Cánh gà chiên cay",
+            "zh": "辣味炸鸡翅",
+            "en": "Hot Fried Wings"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -5575,10 +5575,10 @@
           "id": "4ff6ab3c-6c59-452c-808a-205a83ea6368",
           "sourceName": "간장 윙봉/Soy Sauce Wings /酱油鸡翅 /Cánh gà xì dầu.",
           "names": {
-            "ko": "간장 윙봉/Soy Sauce Wings /酱油鸡翅 /Cánh gà xì dầu.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "간장 윙봉",
+            "vi": "Cánh gà xì dầu",
+            "zh": "酱油鸡翅",
+            "en": "Soy Sauce Wings"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -5588,10 +5588,10 @@
           "id": "9aec3e3c-57f7-441b-83ae-2aff79348608",
           "sourceName": "허니 윙봉/Honey Wings/(W05) 蜜汁鸡翅 /Cánh gà mật ong.",
           "names": {
-            "ko": "허니 윙봉/Honey Wings/(W05) 蜜汁鸡翅 /Cánh gà mật ong.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "허니 윙봉",
+            "vi": "Cánh gà mật ong",
+            "zh": "蜜汁鸡翅",
+            "en": "Honey Wings"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -5601,10 +5601,10 @@
           "id": "dbd02bf2-43c8-49f4-9f2f-69c030e4621f",
           "sourceName": "매운간장윙봉 | Cánh gà sốt xì dầu cay | 辣酱油鸡翅中 | Spicy Soy Sauce Chicken Wings",
           "names": {
-            "ko": "매운간장윙봉",
+            "ko": "매운 간장 윙봉",
             "vi": "Cánh gà sốt xì dầu cay",
-            "zh": "辣酱油鸡翅中",
-            "en": "Spicy Soy Sauce Chicken Wings"
+            "zh": "辣酱油鸡翅",
+            "en": "Spicy Soy Sauce Wings"
           },
           "receiptNames": {
             "ko": "매운간장윙봉",
@@ -5618,10 +5618,10 @@
           "id": "f276a28f-4dd4-4ee3-93eb-9f0e94941689",
           "sourceName": "스노윙치킨 / Gà phủ bột phô mai / 雪花芝士粉炸鸡 / Snowing Chicken",
           "names": {
-            "ko": "스노윙치킨 / Gà phủ bột phô mai / 雪花芝士粉炸鸡 / Snowing Chicken",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "스노윙 치킨",
+            "vi": "Gà phủ bột phô mai",
+            "zh": "雪花芝士粉鸡翅",
+            "en": "Snowing Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -5631,7 +5631,7 @@
           "id": "21eca709-2298-47d6-be92-bb03e5461c41",
           "sourceName": "쯔란윙봉 | Cánh gà vị cumin | 孜然鸡翅 | Cumin Wings",
           "names": {
-            "ko": "쯔란윙봉",
+            "ko": "쯔란 윙봉",
             "vi": "Cánh gà vị cumin",
             "zh": "孜然鸡翅",
             "en": "Cumin Wings"
@@ -5648,9 +5648,9 @@
           "id": "096e9442-2079-4c5e-aaa5-c3ceb187bd72",
           "sourceName": "후라이드윙봉 | Cánh gà chiên giòn | 炸鸡翅中 | Fried Chicken Wings",
           "names": {
-            "ko": "후라이드윙봉",
+            "ko": "후라이드 윙봉",
             "vi": "Cánh gà chiên giòn",
-            "zh": "炸鸡翅中",
+            "zh": "炸鸡翅",
             "en": "Fried Chicken Wings"
           },
           "receiptNames": {
@@ -5665,10 +5665,10 @@
           "id": "a6c767fa-5abc-4e31-acb3-c840184971f1",
           "sourceName": "레드 윙봉/Spicy Red Wings / 辣鸡翅 / Cánh gà cay.",
           "names": {
-            "ko": "레드 윙봉/Spicy Red Wings / 辣鸡翅 / Cánh gà cay.",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "레드 윙봉",
+            "vi": "Cánh gà cay",
+            "zh": "辣味鸡翅",
+            "en": "Spicy Red Wings"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -5765,7 +5765,7 @@
           "id": "21eca709-2298-47d6-be92-bb03e5461c41",
           "sourceName": "쯔란윙봉 | Cánh gà vị cumin | 孜然鸡翅 | Cumin Wings",
           "names": {
-            "ko": "쯔란윙봉",
+            "ko": "쯔란 윙봉",
             "vi": "Cánh gà vị cumin",
             "zh": "孜然鸡翅",
             "en": "Cumin Wings"
@@ -5920,7 +5920,7 @@
           "id": "21eca709-2298-47d6-be92-bb03e5461c41",
           "sourceName": "쯔란윙봉 | Cánh gà vị cumin | 孜然鸡翅 | Cumin Wings",
           "names": {
-            "ko": "쯔란윙봉",
+            "ko": "쯔란 윙봉",
             "vi": "Cánh gà vị cumin",
             "zh": "孜然鸡翅",
             "en": "Cumin Wings"
@@ -6124,7 +6124,7 @@
           "id": "fdbe31af-3c50-438b-ab70-36a3bfa17a1a",
           "sourceName": "핫후라이드윙봉 반마리 추가 | Thêm nửa phần cánh gà chiên cay | 加半份辣炸鸡翅 | Add Half Hot Fried Wings",
           "names": {
-            "ko": "핫후라이드윙봉 반마리 추가",
+            "ko": "핫후라이드 윙봉 반마리 추가",
             "vi": "Thêm nửa phần cánh gà chiên cay",
             "zh": "加半份辣炸鸡翅",
             "en": "Add Half Hot Fried Wings"
@@ -6141,7 +6141,7 @@
           "id": "66dd9a80-f6f5-499d-a3fa-6b337d8630ff",
           "sourceName": "허니윙봉 반마리 추가 | Thêm nửa phần cánh gà mật ong | 加半份蜜汁鸡翅 | Add Half Honey Wings",
           "names": {
-            "ko": "허니윙봉 반마리 추가",
+            "ko": "허니 윙봉 반마리 추가",
             "vi": "Thêm nửa phần cánh gà mật ong",
             "zh": "加半份蜜汁鸡翅",
             "en": "Add Half Honey Wings"
@@ -6161,7 +6161,7 @@
             "ko": "스노윙 반마리 추가",
             "vi": "Thêm nửa phần cánh gà phô mai",
             "zh": "加半份雪花芝士鸡翅",
-            "en": "Add Half Snowing Wings"
+            "en": "Add Half Snow Cheese Wings"
           },
           "receiptNames": {
             "ko": "스노윙 반마리 추가",
@@ -6175,10 +6175,10 @@
           "id": "148701a2-5d1d-4917-87b4-85de6098c2ed",
           "sourceName": "간장윙봉 반마리 추가 | Thêm nửa phần cánh gà xì dầu | 加半份酱油鸡翅 | Add Half Soy Wings",
           "names": {
-            "ko": "간장윙봉 반마리 추가",
+            "ko": "간장 윙봉 반마리 추가",
             "vi": "Thêm nửa phần cánh gà xì dầu",
             "zh": "加半份酱油鸡翅",
-            "en": "Add Half Soy Wings"
+            "en": "Add Half Soy Sauce Wings"
           },
           "receiptNames": {
             "ko": "간장윙봉 반마리 추가",
@@ -6192,7 +6192,7 @@
           "id": "8db95a2c-76e4-461a-bf06-a53f90405c88",
           "sourceName": "레드윙봉 반마리 추가 | Thêm nửa phần cánh gà cay | 加半份辣鸡翅 | Add Half Red Wings",
           "names": {
-            "ko": "레드윙봉 반마리 추가",
+            "ko": "레드 윙봉 반마리 추가",
             "vi": "Thêm nửa phần cánh gà cay",
             "zh": "加半份辣鸡翅",
             "en": "Add Half Red Wings"
@@ -6209,7 +6209,7 @@
           "id": "c6a889c5-53b0-460d-a4d3-c1ad3209ae55",
           "sourceName": "쯔란윙봉 반마리 추가 | Thêm nửa phần cánh gà cumin | 加半份孜然鸡翅 | Add Half Cumin Wings",
           "names": {
-            "ko": "쯔란윙봉 반마리 추가",
+            "ko": "쯔란 윙봉 반마리 추가",
             "vi": "Thêm nửa phần cánh gà cumin",
             "zh": "加半份孜然鸡翅",
             "en": "Add Half Cumin Wings"
@@ -6226,7 +6226,7 @@
           "id": "3a9bef59-9981-4a76-854c-d79b75f97c10",
           "sourceName": "크리스피윙봉 반마리 추가 | Thêm nửa phần cánh gà giòn | 加半份香脆鸡翅 | Add Half Crispy Wings",
           "names": {
-            "ko": "크리스피윙봉 반마리 추가",
+            "ko": "크리스피 윙봉 반마리 추가",
             "vi": "Thêm nửa phần cánh gà giòn",
             "zh": "加半份香脆鸡翅",
             "en": "Add Half Crispy Wings"
@@ -6261,11 +6261,11 @@
   "translation": {
     "provider": "openai",
     "model": "gpt-5.6-terra",
-    "status": "error",
+    "status": "ready",
     "entityCount": 358,
-    "cacheHits": 302,
-    "translated": 0,
-    "pendingCount": 43,
-    "updatedAt": "2026-10-15T10:35:27.618Z"
+    "cacheHits": 303,
+    "translated": 55,
+    "pendingCount": 0,
+    "updatedAt": "2026-10-15T16:21:49.656Z"
   }
 }
