@@ -289,5 +289,16 @@ jobs:
             exit 0
           fi
           git commit -m "Update CUKCUK published data"
-          git push
+          # Other deployments may update main while CUKCUK data is being fetched.
+          # Keep those commits and retry the publication from the latest main.
+          for attempt in 1 2 3 4 5; do
+            git fetch origin main
+            git rebase origin/main
+            if git push origin HEAD:main; then
+              exit 0
+            fi
+            sleep "$attempt"
+          done
+          echo "Failed to publish CUKCUK data after 5 attempts."
+          exit 1
 
