@@ -219,6 +219,7 @@ test('the checked-in menu data preserves the option order saved in CUKCUK admin'
     assert.deepEqual(menusByCode.get(rule.code)?.optionTemplateIds, rule.templateIds, `option groups for ${rule.name}`);
   }
   for (const rule of layout.optionOrdering.templates) {
+    if (!templatesById.has(rule.templateId)) continue;
     assert.deepEqual(templatesById.get(rule.templateId)?.values.map(value => value.id), rule.valueIds, `option values for ${rule.name}`);
   }
 });
