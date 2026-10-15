@@ -215,10 +215,28 @@ test('the checked-in menu data preserves the option order saved in CUKCUK admin'
   const templatesById = new Map(menu.optionTemplates.map(item => [String(item.id), item]));
 
   for (const rule of layout.optionOrdering.menus) {
+    if (layout.detailOptionSources?.[rule.code]) continue;
     assert.deepEqual(menusByCode.get(rule.code)?.optionTemplateIds, rule.templateIds, `option groups for ${rule.name}`);
   }
   for (const rule of layout.optionOrdering.templates) {
     assert.deepEqual(templatesById.get(rule.templateId)?.values.map(value => value.id), rule.valueIds, `option values for ${rule.name}`);
+  }
+});
+
+test('wing half and combo options read the table QR detail with separate selection rules', () => {
+  const layout = JSON.parse(fs.readFileSync(new URL('../../data/cukcuk-table-qr-layout.json', import.meta.url), 'utf8'));
+  const cases = [
+    ['(W06) Nửa con gà', 1, 8],
+    ['(S05) Cánh gà + Tok', 4, 20],
+    ['(W07) Cánh gà cumin', 1, 7]
+  ];
+  for (const [code, categoryCount, valueCount] of cases) {
+    const source = layout.detailOptionSources[code];
+    assert.equal(source?.source, 'table-qr', `${code} must use the table QR source`);
+    assert.equal(source.expectedCategoryCount, categoryCount);
+    assert.equal(source.expectedValueCount, valueCount);
+    assert.ok(layout.menuOptionOverrides[code]?.rules, `${code} must define selection rules`);
+    assert.equal(layout.menuOptionOverrides[code].source, undefined, `${code} source config belongs in detailOptionSources`);
   }
 });
 
