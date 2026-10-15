@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-10-15 00:11:00",
-    "finished_at": "2026-10-15 00:11:06",
+    "started_at": "2026-10-15 00:19:36",
+    "finished_at": "2026-10-15 00:19:43",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -392,6 +392,13 @@
         "cukcuk-detail:9108cbc8-8db9-4412-b17f-061f0f0f2ab8:0"
       ],
       "sortOrder": 9,
+      "optionRules": {
+        "cukcuk-detail:9108cbc8-8db9-4412-b17f-061f0f0f2ab8:0": {
+          "required": false,
+          "minSelections": 0,
+          "maxSelections": 1
+        }
+      },
       "categorySortOrder": 1
     },
     {
@@ -922,13 +929,6 @@
           "en": "Wings with your choice of sauce and tteokbokki. Serves 2–3."
         },
         "tone": "default"
-      },
-      "optionRules": {
-        "2be54a6c-ab0d-40d7-a080-0c50e0d228dc": {
-          "required": true,
-          "minSelections": 1,
-          "maxSelections": 1
-        }
       }
     },
     {
@@ -5849,9 +5849,9 @@
     "model": "gpt-5.6-terra",
     "status": "error",
     "entityCount": 334,
-    "cacheHits": 303,
+    "cacheHits": 304,
     "translated": 0,
     "pendingCount": 18,
-    "updatedAt": "2026-10-15T00:11:16.924Z"
+    "updatedAt": "2026-10-15T00:19:55.077Z"
   }
 }
