@@ -6,6 +6,13 @@ const SAPPORO_ONE_PLUS_ONE_ID = "db070dd6-bb0e-4e00-bfe4-5e99cd796884";
 const LEGACY_SAPPORO_ONE_PLUS_ONE_ID = "52c29562-ac31-42c7-9f24-956d348de02a";
 const PIZZA_ID = "c0f16b37-ff76-4d8e-a5a8-3ead5fd7b0a5";
 const CHICKEN_PIZZA_SET_ID = "e1cf1187-b643-4b90-9f6f-9a7458eaf037";
+const KITCHEN_STAFF_SHORTAGE_MENU_IDS = [
+  "1644c776-3499-42d0-a911-ab8152608195",
+  "df258d2e-d7f9-4752-a4a0-f43578ecb965",
+  "407d574c-2027-45eb-8a73-12677fae78ee",
+  "b482b42a-a6bc-4b48-bfd0-c1acaa9089b2",
+  "d2dfd961-40ae-401b-8b3a-530963b32741",
+];
 
 test("Space Pizza and chicken-pizza sets are closed only on 2026-09-03 store time", () => {
   const duringClosure = buildAvailabilitySnapshot([], new Date("2026-09-03T05:00:00.000Z"));
@@ -35,6 +42,28 @@ test("Sapporo 1+1 closes at 19:00 Asia/Ho_Chi_Minh", () => {
   assert.match(after.unavailableNotices[SAPPORO_ONE_PLUS_ONE_ID].message.vi, /19:00/);
   assert.match(after.unavailableNotices[SAPPORO_ONE_PLUS_ONE_ID].message.zh, /19:00/);
   assert.match(after.unavailableNotices[SAPPORO_ONE_PLUS_ONE_ID].message.en, /19:00/);
+});
+
+test("five kitchen-staff shortage menus close today and reopen tomorrow morning", () => {
+  const before = buildAvailabilitySnapshot([], new Date("2026-10-14T16:59:59.000Z"));
+  const during = buildAvailabilitySnapshot([], new Date("2026-10-15T10:00:00.000Z"));
+  const nextMorning = buildAvailabilitySnapshot([], new Date("2026-10-15T17:00:00.000Z"));
+  const after = buildAvailabilitySnapshot([], new Date("2026-10-16T02:00:00.000Z"));
+
+  for (const menuId of KITCHEN_STAFF_SHORTAGE_MENU_IDS) {
+    assert.equal(before.unavailableMenuIds.includes(menuId), false);
+    assert.equal(during.scheduledUnavailableMenuIds.includes(menuId), true);
+    assert.equal(during.unavailableMenuIds.includes(menuId), true);
+    assert.equal(during.unavailableNotices[menuId].title.ko, "주방에 직원이 없어서 오늘 하루만 품절입니다");
+    assert.equal(during.unavailableNotices[menuId].message.ko, "내일 아침 다시 판매합니다.");
+    assert.match(during.unavailableNotices[menuId].title.vi, /bếp thiếu nhân viên/);
+    assert.match(during.unavailableNotices[menuId].message.zh, /明天早上/);
+    assert.match(during.unavailableNotices[menuId].message.en, /tomorrow morning/i);
+    assert.equal(after.unavailableMenuIds.includes(menuId), false);
+    assert.equal(after.unavailableNotices[menuId], undefined);
+  }
+
+  assert.equal(nextMorning.nextScheduleChangeInMs, 9 * 60 * 60 * 1000);
 });
 
 test("availability snapshot disables matching catalog items before order and voice validation", () => {
