@@ -1872,7 +1872,7 @@
     },
     "(S08) Cánh gà 4 vị": {
       "expectedCategoryCount": 1,
-      "expectedValueCount": 7,
+      "expectedValueCount": 8,
       "templateNames": {
         "ko": "윙봉 맛 4개 선택",
         "vi": "Chọn 4 vị cánh gà",
@@ -1882,7 +1882,7 @@
     },
     "(W01) Cánh gà vị đôi": {
       "expectedCategoryCount": 1,
-      "expectedValueCount": 7,
+      "expectedValueCount": 8,
       "templateNames": {
         "ko": "윙봉 맛 2개 선택",
         "vi": "Chọn 2 vị cánh gà",
