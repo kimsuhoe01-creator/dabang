@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-10-15 00:19:36",
-    "finished_at": "2026-10-15 00:19:43",
+    "started_at": "2026-10-15 00:24:46",
+    "finished_at": "2026-10-15 00:24:55",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -11,7 +11,7 @@
   },
   "categoryCount": 14,
   "menuCount": 114,
-  "optionTemplateCount": 34,
+  "optionTemplateCount": 38,
   "categories": [
     {
       "id": "cukcuk-qr-highball",
@@ -913,13 +913,35 @@
       "available": true,
       "optionGroups": 4,
       "optionTemplateIds": [
-        "2be54a6c-ab0d-40d7-a080-0c50e0d228dc",
-        "4c90727b-0406-4177-a8c6-42394fa69f56",
-        "5197c337-535f-4e91-b7d1-26029a4b9222",
-        "d7fcbd85-9fb6-40db-872a-8275dce401ed"
+        "cukcuk-detail:27ab97f7-0ddf-495a-b475-4533e945da85:0",
+        "cukcuk-detail:27ab97f7-0ddf-495a-b475-4533e945da85:1",
+        "cukcuk-detail:27ab97f7-0ddf-495a-b475-4533e945da85:2",
+        "cukcuk-detail:27ab97f7-0ddf-495a-b475-4533e945da85:3"
       ],
       "sortOrder": 27,
       "cukcukCode": "(S05) Cánh gà + Tok",
+      "optionRules": {
+        "cukcuk-detail:27ab97f7-0ddf-495a-b475-4533e945da85:0": {
+          "required": true,
+          "minSelections": 1,
+          "maxSelections": 1
+        },
+        "cukcuk-detail:27ab97f7-0ddf-495a-b475-4533e945da85:1": {
+          "required": true,
+          "minSelections": 1,
+          "maxSelections": 1
+        },
+        "cukcuk-detail:27ab97f7-0ddf-495a-b475-4533e945da85:2": {
+          "required": true,
+          "minSelections": 1,
+          "maxSelections": 1
+        },
+        "cukcuk-detail:27ab97f7-0ddf-495a-b475-4533e945da85:3": {
+          "required": false,
+          "minSelections": 0,
+          "maxSelections": 3
+        }
+      },
       "categorySortOrder": 2,
       "subtitle": {
         "names": {
@@ -1223,10 +1245,17 @@
       "available": true,
       "optionGroups": 1,
       "optionTemplateIds": [
-        "2be54a6c-ab0d-40d7-a080-0c50e0d228dc"
+        "cukcuk-detail:b2bf24a7-1018-4953-86ce-baacae6fe06c:0"
       ],
       "sortOrder": 39,
       "cukcukCode": "(W06) Nửa con gà",
+      "optionRules": {
+        "cukcuk-detail:b2bf24a7-1018-4953-86ce-baacae6fe06c:0": {
+          "required": true,
+          "minSelections": 1,
+          "maxSelections": 1
+        }
+      },
       "categorySortOrder": 4
     },
     {
@@ -2963,7 +2992,6 @@
       "menuIds": [
         "57ef6bb8-37f3-4296-b1c5-3e24412c2af9",
         "930eadf4-1572-4fda-83c2-428092e0eb24",
-        "27ab97f7-0ddf-495a-b475-4533e945da85",
         "69b57fd4-2b15-4c79-80da-e7f3eba63b67"
       ]
     },
@@ -3111,8 +3139,7 @@
       ],
       "menuIds": [
         "57ef6bb8-37f3-4296-b1c5-3e24412c2af9",
-        "930eadf4-1572-4fda-83c2-428092e0eb24",
-        "27ab97f7-0ddf-495a-b475-4533e945da85"
+        "930eadf4-1572-4fda-83c2-428092e0eb24"
       ]
     },
     {
@@ -3168,7 +3195,6 @@
       "menuIds": [
         "57ef6bb8-37f3-4296-b1c5-3e24412c2af9",
         "930eadf4-1572-4fda-83c2-428092e0eb24",
-        "27ab97f7-0ddf-495a-b475-4533e945da85",
         "cf78e938-ff9f-441f-a3a3-c7375f393dfa",
         "69b57fd4-2b15-4c79-80da-e7f3eba63b67",
         "bcaaa810-6f02-41dc-ae7d-d1bcf7e1acad",
@@ -3604,121 +3630,6 @@
       ],
       "menuIds": [
         "2e30dd59-0f0e-471f-af86-5dff225f1c5e"
-      ]
-    },
-    {
-      "id": "2be54a6c-ab0d-40d7-a080-0c50e0d228dc",
-      "names": {
-        "ko": "윙봉 치킨 선택",
-        "vi": "Chọn gà cánh và đùi",
-        "zh": "选择鸡翅和鸡腿",
-        "en": "Choose Wings & Drumsticks"
-      },
-      "required": false,
-      "minSelections": 0,
-      "maxSelections": 1,
-      "revision": 1,
-      "values": [
-        {
-          "id": "e8e473c3-65df-4e9d-abce-0c3e480ce3e5",
-          "names": {
-            "ko": "매운간장 윙봉 선택",
-            "vi": "CHỌN CÁNH GÀ SỐT XÌ DẦU CAY",
-            "zh": "",
-            "en": ""
-          },
-          "additionalPrice": 0,
-          "visible": true,
-          "sortOrder": 0
-        },
-        {
-          "id": "95da43b6-1573-4310-b70c-38090b1f2ef7",
-          "names": {
-            "ko": "핫후라이드 윙봉 선택",
-            "vi": "CHỌN CÁNH GÀ CHIÊN CAY",
-            "zh": "",
-            "en": ""
-          },
-          "additionalPrice": 0,
-          "visible": true,
-          "sortOrder": 1
-        },
-        {
-          "id": "06cf5bed-c480-43a9-b157-44b4d59cf23e",
-          "names": {
-            "ko": "스노윙 윙봉 선택",
-            "vi": "CHỌN CÁNH GÀ PHỦ BỘT PHÔ MAI",
-            "zh": "",
-            "en": ""
-          },
-          "additionalPrice": 0,
-          "visible": true,
-          "sortOrder": 2
-        },
-        {
-          "id": "74f59857-2d4f-4b98-84e1-79c75aa26a9c",
-          "names": {
-            "ko": "레드 윙봉 선택",
-            "vi": "CHỌN CÁNH GÀ SỐT CAY ĐỎ",
-            "zh": "",
-            "en": ""
-          },
-          "additionalPrice": 0,
-          "visible": true,
-          "sortOrder": 3
-        },
-        {
-          "id": "21eca709-2298-47d6-be92-bb03e5461c41",
-          "names": {
-            "ko": "쯔란윙봉",
-            "vi": "Cánh gà vị cumin",
-            "zh": "孜然鸡翅",
-            "en": "Cumin Wings"
-          },
-          "additionalPrice": 0,
-          "visible": true,
-          "sortOrder": 4
-        },
-        {
-          "id": "22731f9b-95ae-4fc2-9dc2-bbd3ced496b7",
-          "names": {
-            "ko": "허니 윙봉 선택",
-            "vi": "CHỌN CÁNH GÀ MẬT ONG",
-            "zh": "",
-            "en": ""
-          },
-          "additionalPrice": 0,
-          "visible": true,
-          "sortOrder": 5
-        },
-        {
-          "id": "18be4708-e8af-476b-a8f0-d575157450f0",
-          "names": {
-            "ko": "후라이드 윙봉 선택",
-            "vi": "CHỌN CÁNH GÀ CHIÊN GIÒN",
-            "zh": "",
-            "en": ""
-          },
-          "additionalPrice": 0,
-          "visible": true,
-          "sortOrder": 6
-        },
-        {
-          "id": "2276ad40-3dfc-4679-a7af-df881c350153",
-          "names": {
-            "ko": "간장 윙봉 선택",
-            "vi": "CHỌN CÁNH GÀ SỐT XÌ DẦU",
-            "zh": "",
-            "en": ""
-          },
-          "additionalPrice": 0,
-          "visible": true,
-          "sortOrder": 7
-        }
-      ],
-      "menuIds": [
-        "27ab97f7-0ddf-495a-b475-4533e945da85",
-        "b2bf24a7-1018-4953-86ce-baacae6fe06c"
       ]
     },
     {
@@ -5266,6 +5177,509 @@
       ]
     },
     {
+      "id": "cukcuk-detail:27ab97f7-0ddf-495a-b475-4533e945da85:0",
+      "sourceName": "윙봉 맛 선택",
+      "names": {
+        "ko": "윙봉 맛 선택",
+        "vi": "Chọn vị cánh gà",
+        "zh": "选择鸡翅口味",
+        "en": "Choose Wing Flavor"
+      },
+      "required": false,
+      "minSelections": 0,
+      "maxSelections": 8,
+      "revision": 1,
+      "values": [
+        {
+          "id": "08e23927-330b-4a0d-ae1d-0f9e7a8dcefb",
+          "sourceName": "핫후라이드 윙봉/Hot Fried Wings/辣味炸鸡翅/Cánh gà chiên cay",
+          "names": {
+            "ko": "핫후라이드 윙봉/Hot Fried Wings/辣味炸鸡翅/Cánh gà chiên cay",
+            "vi": "",
+            "zh": "",
+            "en": ""
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 0
+        },
+        {
+          "id": "4ff6ab3c-6c59-452c-808a-205a83ea6368",
+          "sourceName": "간장 윙봉/Soy Sauce Wings /酱油鸡翅 /Cánh gà xì dầu.",
+          "names": {
+            "ko": "간장 윙봉/Soy Sauce Wings /酱油鸡翅 /Cánh gà xì dầu.",
+            "vi": "",
+            "zh": "",
+            "en": ""
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 1
+        },
+        {
+          "id": "9aec3e3c-57f7-441b-83ae-2aff79348608",
+          "sourceName": "허니 윙봉/Honey Wings/(W05) 蜜汁鸡翅 /Cánh gà mật ong.",
+          "names": {
+            "ko": "허니 윙봉/Honey Wings/(W05) 蜜汁鸡翅 /Cánh gà mật ong.",
+            "vi": "",
+            "zh": "",
+            "en": ""
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 2
+        },
+        {
+          "id": "dbd02bf2-43c8-49f4-9f2f-69c030e4621f",
+          "sourceName": "매운간장윙봉 | Cánh gà sốt xì dầu cay | 辣酱油鸡翅中 | Spicy Soy Sauce Chicken Wings",
+          "names": {
+            "ko": "매운간장윙봉",
+            "vi": "Cánh gà sốt xì dầu cay",
+            "zh": "辣酱油鸡翅中",
+            "en": "Spicy Soy Sauce Chicken Wings"
+          },
+          "receiptNames": {
+            "ko": "매운간장윙봉",
+            "vi": "Cánh gà sốt xì dầu cay"
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 3
+        },
+        {
+          "id": "f276a28f-4dd4-4ee3-93eb-9f0e94941689",
+          "sourceName": "스노윙치킨 / Gà phủ bột phô mai / 雪花芝士粉炸鸡 / Snowing Chicken",
+          "names": {
+            "ko": "스노윙치킨 / Gà phủ bột phô mai / 雪花芝士粉炸鸡 / Snowing Chicken",
+            "vi": "",
+            "zh": "",
+            "en": ""
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 4
+        },
+        {
+          "id": "21eca709-2298-47d6-be92-bb03e5461c41",
+          "sourceName": "쯔란윙봉 | Cánh gà vị cumin | 孜然鸡翅 | Cumin Wings",
+          "names": {
+            "ko": "쯔란윙봉",
+            "vi": "Cánh gà vị cumin",
+            "zh": "孜然鸡翅",
+            "en": "Cumin Wings"
+          },
+          "receiptNames": {
+            "ko": "쯔란윙봉",
+            "vi": "Cánh gà vị cumin"
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 5
+        },
+        {
+          "id": "096e9442-2079-4c5e-aaa5-c3ceb187bd72",
+          "sourceName": "후라이드윙봉 | Cánh gà chiên giòn | 炸鸡翅中 | Fried Chicken Wings",
+          "names": {
+            "ko": "후라이드윙봉",
+            "vi": "Cánh gà chiên giòn",
+            "zh": "炸鸡翅中",
+            "en": "Fried Chicken Wings"
+          },
+          "receiptNames": {
+            "ko": "후라이드윙봉",
+            "vi": "Cánh gà chiên giòn"
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 6
+        },
+        {
+          "id": "a6c767fa-5abc-4e31-acb3-c840184971f1",
+          "sourceName": "레드 윙봉/Spicy Red Wings / 辣鸡翅 / Cánh gà cay.",
+          "names": {
+            "ko": "레드 윙봉/Spicy Red Wings / 辣鸡翅 / Cánh gà cay.",
+            "vi": "",
+            "zh": "",
+            "en": ""
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 7
+        }
+      ],
+      "menuIds": [
+        "27ab97f7-0ddf-495a-b475-4533e945da85"
+      ]
+    },
+    {
+      "id": "cukcuk-detail:27ab97f7-0ddf-495a-b475-4533e945da85:1",
+      "sourceName": "떡볶이 선택",
+      "names": {
+        "ko": "떡볶이 선택",
+        "vi": "Chọn tokbokki",
+        "zh": "选择辣炒年糕",
+        "en": "Choose Tteokbokki"
+      },
+      "required": false,
+      "minSelections": 0,
+      "maxSelections": 7,
+      "revision": 1,
+      "values": [
+        {
+          "id": "7500e3bf-03c9-486c-b995-60375ac1b40e",
+          "sourceName": "매운떡볶이/Spicy Tteokbokki /辣味辣炒年糕 /Tokbokki vị cay",
+          "names": {
+            "ko": "매운떡볶이/Spicy Tteokbokki /辣味辣炒年糕 /Tokbokki vị cay",
+            "vi": "",
+            "zh": "",
+            "en": ""
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 0
+        },
+        {
+          "id": "4ebaf633-328d-4d41-af17-da9d3db10800",
+          "sourceName": "달달떡볶이/Sweet Tteokbokki /甜味辣炒年糕 /Tokbokki vị ngọt",
+          "names": {
+            "ko": "달달떡볶이/Sweet Tteokbokki /甜味辣炒年糕 /Tokbokki vị ngọt",
+            "vi": "",
+            "zh": "",
+            "en": ""
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 1
+        },
+        {
+          "id": "9216a4e8-c9cc-4edd-a798-2d43ea86cfc9",
+          "sourceName": "라볶이(매운)/Spicy Rabokki /辣味辣炒年糕拉面 /Mì Tokbokki vị cay",
+          "names": {
+            "ko": "라볶이(매운)/Spicy Rabokki /辣味辣炒年糕拉面 /Mì Tokbokki vị cay",
+            "vi": "",
+            "zh": "",
+            "en": ""
+          },
+          "additionalPrice": 32400,
+          "visible": true,
+          "sortOrder": 2
+        },
+        {
+          "id": "0000a2d5-0343-4560-b3c6-3c2cd356c326",
+          "sourceName": "가래떡 떡볶이(매운)./Spicy Garaetteok Tteokbokki/辣味粗年糕炒年糕 /Tokbokki bánh gạo to vị cay",
+          "names": {
+            "ko": "가래떡 떡볶이(매운)./Spicy Garaetteok Tteokbokki/辣味粗年糕炒年糕 /Tokbokki bánh gạo to vị cay",
+            "vi": "",
+            "zh": "",
+            "en": ""
+          },
+          "additionalPrice": 32400,
+          "visible": true,
+          "sortOrder": 3
+        },
+        {
+          "id": "8a128245-102f-426d-8aed-47bf5684da06",
+          "sourceName": "로제Rosé Tteokbokki /奶油辣酱年糕(Rosé酱/Tokbokki sốt kem cay (sốt Rosé)",
+          "names": {
+            "ko": "로제Rosé Tteokbokki /奶油辣酱年糕(Rosé酱/Tokbokki sốt kem cay (sốt Rosé)",
+            "vi": "",
+            "zh": "",
+            "en": ""
+          },
+          "additionalPrice": 32400,
+          "visible": true,
+          "sortOrder": 4
+        },
+        {
+          "id": "7f58814c-27d6-4462-92ee-5524ac83139f",
+          "sourceName": "라볶이(달달)/Sweet Rabokki /甜味辣炒年糕拉面 /Mì Tokbokki vị ngọt",
+          "names": {
+            "ko": "라볶이(달달)/Sweet Rabokki /甜味辣炒年糕拉面 /Mì Tokbokki vị ngọt",
+            "vi": "",
+            "zh": "",
+            "en": ""
+          },
+          "additionalPrice": 32400,
+          "visible": true,
+          "sortOrder": 5
+        },
+        {
+          "id": "2c0c5c37-3b68-45ca-a389-85263b98b4a1",
+          "sourceName": "가래떡 떡볶이(달달) /Sweet Garaetteok Tteokbokki /甜味粗年糕炒年糕 /(T09KC)Tokbokki bánh gạo to vị ngọt",
+          "names": {
+            "ko": "가래떡 떡볶이(달달) /Sweet Garaetteok Tteokbokki /甜味粗年糕炒年糕 /(T09KC)Tokbokki bánh gạo to vị ngọt",
+            "vi": "",
+            "zh": "",
+            "en": ""
+          },
+          "additionalPrice": 32400,
+          "visible": true,
+          "sortOrder": 6
+        }
+      ],
+      "menuIds": [
+        "27ab97f7-0ddf-495a-b475-4533e945da85"
+      ]
+    },
+    {
+      "id": "cukcuk-detail:27ab97f7-0ddf-495a-b475-4533e945da85:2",
+      "sourceName": "가래떡 선택",
+      "names": {
+        "ko": "가래떡 선택",
+        "vi": "Chọn bánh gạo lớn",
+        "zh": "选择大条年糕",
+        "en": "Choose Rice Cakes"
+      },
+      "required": false,
+      "minSelections": 0,
+      "maxSelections": 2,
+      "revision": 1,
+      "values": [
+        {
+          "id": "46629e10-3368-48e5-b1b0-2322b55c73cc",
+          "sourceName": "안잘라 | Không cắt",
+          "names": {
+            "ko": "안잘라",
+            "vi": "Không cắt",
+            "zh": "",
+            "en": ""
+          },
+          "receiptNames": {
+            "ko": "안잘라",
+            "vi": "Không cắt"
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 0
+        },
+        {
+          "id": "dcbfb96c-d5bc-460d-9abc-7c07205d9828",
+          "sourceName": "잘라 | Cắt",
+          "names": {
+            "ko": "잘라",
+            "vi": "Cắt",
+            "zh": "",
+            "en": ""
+          },
+          "receiptNames": {
+            "ko": "잘라",
+            "vi": "Cắt"
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 1
+        }
+      ],
+      "menuIds": [
+        "27ab97f7-0ddf-495a-b475-4533e945da85"
+      ]
+    },
+    {
+      "id": "cukcuk-detail:27ab97f7-0ddf-495a-b475-4533e945da85:3",
+      "sourceName": "토핑 추가",
+      "names": {
+        "ko": "토핑 추가",
+        "vi": "Thêm topping",
+        "zh": "加购配料",
+        "en": "Add Toppings"
+      },
+      "required": false,
+      "minSelections": 0,
+      "maxSelections": 3,
+      "revision": 1,
+      "values": [
+        {
+          "id": "ea48c49b-bc23-4c78-a36c-253268eeca3c",
+          "sourceName": "삶은계란1개 추가 | Thêm (1) trứng luộc",
+          "names": {
+            "ko": "삶은계란1개 추가",
+            "vi": "Thêm (1) trứng luộc",
+            "zh": "",
+            "en": ""
+          },
+          "receiptNames": {
+            "ko": "삶은계란1개 추가",
+            "vi": "Thêm (1) trứng luộc"
+          },
+          "additionalPrice": 10800,
+          "visible": true,
+          "sortOrder": 0
+        },
+        {
+          "id": "f93598c2-af74-45a7-9475-47d5fbec03f4",
+          "sourceName": "2 Cheddar | 체다치즈 2장",
+          "names": {
+            "ko": "체다치즈 2장",
+            "vi": "2 Cheddar",
+            "zh": "",
+            "en": ""
+          },
+          "receiptNames": {
+            "ko": "체다치즈 2장",
+            "vi": "2 Cheddar"
+          },
+          "additionalPrice": 32400,
+          "visible": true,
+          "sortOrder": 1
+        },
+        {
+          "id": "c9892d57-fe28-488e-8f58-9cfb0ddf046f",
+          "sourceName": "모짜렐라 치즈 | Phô mai Mozzarella | 马苏里拉奶酪 | Mozzarella cheese",
+          "names": {
+            "ko": "모짜렐라 치즈",
+            "vi": "Phô mai Mozzarella",
+            "zh": "马苏里拉奶酪",
+            "en": "Mozzarella cheese"
+          },
+          "receiptNames": {
+            "ko": "모짜렐라 치즈",
+            "vi": "Phô mai Mozzarella"
+          },
+          "additionalPrice": 54000,
+          "visible": true,
+          "sortOrder": 2
+        }
+      ],
+      "menuIds": [
+        "27ab97f7-0ddf-495a-b475-4533e945da85"
+      ]
+    },
+    {
+      "id": "cukcuk-detail:b2bf24a7-1018-4953-86ce-baacae6fe06c:0",
+      "sourceName": "윙봉 반마리 맛 선택",
+      "names": {
+        "ko": "윙봉 반마리 맛 선택",
+        "vi": "Chọn vị nửa phần cánh gà",
+        "zh": "选择半份鸡翅口味",
+        "en": "Choose Half Wing Flavor"
+      },
+      "required": false,
+      "minSelections": 0,
+      "maxSelections": 8,
+      "revision": 1,
+      "values": [
+        {
+          "id": "08e23927-330b-4a0d-ae1d-0f9e7a8dcefb",
+          "sourceName": "핫후라이드 윙봉/Hot Fried Wings/辣味炸鸡翅/Cánh gà chiên cay",
+          "names": {
+            "ko": "핫후라이드 윙봉/Hot Fried Wings/辣味炸鸡翅/Cánh gà chiên cay",
+            "vi": "",
+            "zh": "",
+            "en": ""
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 0
+        },
+        {
+          "id": "4ff6ab3c-6c59-452c-808a-205a83ea6368",
+          "sourceName": "간장 윙봉/Soy Sauce Wings /酱油鸡翅 /Cánh gà xì dầu.",
+          "names": {
+            "ko": "간장 윙봉/Soy Sauce Wings /酱油鸡翅 /Cánh gà xì dầu.",
+            "vi": "",
+            "zh": "",
+            "en": ""
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 1
+        },
+        {
+          "id": "9aec3e3c-57f7-441b-83ae-2aff79348608",
+          "sourceName": "허니 윙봉/Honey Wings/(W05) 蜜汁鸡翅 /Cánh gà mật ong.",
+          "names": {
+            "ko": "허니 윙봉/Honey Wings/(W05) 蜜汁鸡翅 /Cánh gà mật ong.",
+            "vi": "",
+            "zh": "",
+            "en": ""
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 2
+        },
+        {
+          "id": "dbd02bf2-43c8-49f4-9f2f-69c030e4621f",
+          "sourceName": "매운간장윙봉 | Cánh gà sốt xì dầu cay | 辣酱油鸡翅中 | Spicy Soy Sauce Chicken Wings",
+          "names": {
+            "ko": "매운간장윙봉",
+            "vi": "Cánh gà sốt xì dầu cay",
+            "zh": "辣酱油鸡翅中",
+            "en": "Spicy Soy Sauce Chicken Wings"
+          },
+          "receiptNames": {
+            "ko": "매운간장윙봉",
+            "vi": "Cánh gà sốt xì dầu cay"
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 3
+        },
+        {
+          "id": "f276a28f-4dd4-4ee3-93eb-9f0e94941689",
+          "sourceName": "스노윙치킨 / Gà phủ bột phô mai / 雪花芝士粉炸鸡 / Snowing Chicken",
+          "names": {
+            "ko": "스노윙치킨 / Gà phủ bột phô mai / 雪花芝士粉炸鸡 / Snowing Chicken",
+            "vi": "",
+            "zh": "",
+            "en": ""
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 4
+        },
+        {
+          "id": "21eca709-2298-47d6-be92-bb03e5461c41",
+          "sourceName": "쯔란윙봉 | Cánh gà vị cumin | 孜然鸡翅 | Cumin Wings",
+          "names": {
+            "ko": "쯔란윙봉",
+            "vi": "Cánh gà vị cumin",
+            "zh": "孜然鸡翅",
+            "en": "Cumin Wings"
+          },
+          "receiptNames": {
+            "ko": "쯔란윙봉",
+            "vi": "Cánh gà vị cumin"
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 5
+        },
+        {
+          "id": "096e9442-2079-4c5e-aaa5-c3ceb187bd72",
+          "sourceName": "후라이드윙봉 | Cánh gà chiên giòn | 炸鸡翅中 | Fried Chicken Wings",
+          "names": {
+            "ko": "후라이드윙봉",
+            "vi": "Cánh gà chiên giòn",
+            "zh": "炸鸡翅中",
+            "en": "Fried Chicken Wings"
+          },
+          "receiptNames": {
+            "ko": "후라이드윙봉",
+            "vi": "Cánh gà chiên giòn"
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 6
+        },
+        {
+          "id": "a6c767fa-5abc-4e31-acb3-c840184971f1",
+          "sourceName": "레드 윙봉/Spicy Red Wings / 辣鸡翅 / Cánh gà cay.",
+          "names": {
+            "ko": "레드 윙봉/Spicy Red Wings / 辣鸡翅 / Cánh gà cay.",
+            "vi": "",
+            "zh": "",
+            "en": ""
+          },
+          "additionalPrice": 0,
+          "visible": true,
+          "sortOrder": 7
+        }
+      ],
+      "menuIds": [
+        "b2bf24a7-1018-4953-86ce-baacae6fe06c"
+      ]
+    },
+    {
       "id": "cukcuk-detail:88d856ff-e35d-4c21-893b-3f60e2fa71fa:0",
       "sourceName": "윙봉 맛 4개 선택",
       "names": {
@@ -5848,10 +6262,10 @@
     "provider": "openai",
     "model": "gpt-5.6-terra",
     "status": "error",
-    "entityCount": 334,
-    "cacheHits": 304,
+    "entityCount": 358,
+    "cacheHits": 303,
     "translated": 0,
-    "pendingCount": 18,
-    "updatedAt": "2026-10-15T00:19:55.077Z"
+    "pendingCount": 43,
+    "updatedAt": "2026-10-15T00:25:14.723Z"
   }
 }
