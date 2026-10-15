@@ -380,10 +380,10 @@
       "categoryName": "신메뉴",
       "sourceName": "쯔란윙봉 | Cánh gà vị cumin | 孜然鸡翅 | Cumin Wings",
       "names": {
-        "ko": "쯔란윙봉",
-        "vi": "Cánh gà vị cumin",
-        "zh": "孜然鸡翅",
-        "en": "Cumin Wings"
+        "ko": "쯔란윙봉 반마리",
+        "vi": "Nửa phần cánh gà vị cumin",
+        "zh": "半份孜然鸡翅",
+        "en": "Half Portion Cumin Wings"
       },
       "price": 216000,
       "available": true,
@@ -6246,9 +6246,9 @@
     }
   ],
   "inventoryCandidateCount": 254,
-  "catalogRevision": "cukcuk-tablet-content-2026-10-12-t10-hashbrown-v1",
+  "catalogRevision": "cukcuk-tablet-content-2026-10-15-w07-half-portion-v1",
   "tableQrLayout": {
-    "revision": "cukcuk-tablet-content-2026-10-12-t10-hashbrown-v1",
+    "revision": "cukcuk-tablet-content-2026-10-15-w07-half-portion-v1",
     "capturedAt": "2026-08-30T06:34:32.171Z",
     "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
     "includeUnlisted": false,
