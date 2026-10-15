@@ -43,6 +43,10 @@ const KITCHEN_STAFF_SHORTAGE_MENU_IDS = [
 ];
 const KITCHEN_STAFF_SHORTAGE_START = Date.parse("2026-10-15T00:00:00+07:00");
 const KITCHEN_STAFF_SHORTAGE_END = Date.parse("2026-10-16T09:00:00+07:00");
+// Holds that already existed when this one-off request was recorded must not
+// keep any of the five menus unavailable after the promised reopen time.
+// A later manager hold remains authoritative because its changedAt is newer.
+const KITCHEN_STAFF_SHORTAGE_EXISTING_HOLD_CUTOFF = Date.parse("2026-10-15T10:24:00.000Z");
 const KITCHEN_STAFF_SHORTAGE_NOTICE = {
   title: {
     ko: "주방에 직원이 없어서 오늘 하루만 품절입니다",
@@ -394,7 +398,15 @@ function normalizeState(value, now = new Date()) {
     const expiryText = typeof raw?.expiresAt === "string" ? raw.expiresAt.trim() : "";
     const expiryMs = expiryText ? Date.parse(expiryText) : Number.NaN;
     const legacyHeld = raw?.held === undefined ? true : raw.held === true;
-    const held = legacyHeld && !(Number.isFinite(expiryMs) && expiryMs <= now.getTime());
+    const changedAt = normalizeIso(raw?.changedAt);
+    const changedAtMs = changedAt ? Date.parse(changedAt) : Number.NaN;
+    const restoreExistingKitchenHold = now.getTime() >= KITCHEN_STAFF_SHORTAGE_END
+      && KITCHEN_STAFF_SHORTAGE_MENU_IDS.includes(menuId)
+      && legacyHeld
+      && (!Number.isFinite(changedAtMs) || changedAtMs <= KITCHEN_STAFF_SHORTAGE_EXISTING_HOLD_CUTOFF);
+    const held = legacyHeld
+      && !restoreExistingKitchenHold
+      && !(Number.isFinite(expiryMs) && expiryMs <= now.getTime());
     const hidden = raw?.hidden === true;
     if (!held && !hidden) continue;
     entries.set(menuId, {
@@ -405,7 +417,7 @@ function normalizeState(value, now = new Date()) {
       expiresAt: held && expiryText && Number.isFinite(expiryMs) ? new Date(expiryMs).toISOString() : null,
       reason: cleanLimitedText(raw?.reason, 200),
       actor: cleanLimitedText(raw?.actor, 80) || "unknown",
-      changedAt: normalizeIso(raw?.changedAt),
+      changedAt,
     });
   }
   const auditLog = (Array.isArray(value?.auditLog) ? value.auditLog : []).slice(-MAX_AUDIT_EVENTS).map(event => ({

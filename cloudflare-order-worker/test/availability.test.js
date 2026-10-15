@@ -66,6 +66,36 @@ test("five kitchen-staff shortage menus close today and reopen tomorrow morning"
   assert.equal(nextMorning.nextScheduleChangeInMs, 9 * 60 * 60 * 1000);
 });
 
+test("tomorrow reopen clears only pre-existing manual holds on the five menus", () => {
+  const menuId = KITCHEN_STAFF_SHORTAGE_MENU_IDS[1];
+  const staleManualHold = {
+    manualEntries: [{
+      menuId,
+      held: true,
+      hidden: false,
+      changedAt: "2026-10-15T10:00:00.000Z",
+    }],
+  };
+  const laterManagerHold = {
+    manualEntries: [{
+      menuId,
+      held: true,
+      hidden: false,
+      changedAt: "2026-10-15T11:00:00.000Z",
+    }],
+  };
+
+  const during = buildAvailabilitySnapshot(staleManualHold, new Date("2026-10-15T10:30:00.000Z"));
+  const reopened = buildAvailabilitySnapshot(staleManualHold, new Date("2026-10-16T02:00:00.000Z"));
+  const stillHeld = buildAvailabilitySnapshot(laterManagerHold, new Date("2026-10-16T02:00:00.000Z"));
+
+  assert.ok(during.manualUnavailableMenuIds.includes(menuId));
+  assert.equal(reopened.manualUnavailableMenuIds.includes(menuId), false);
+  assert.equal(reopened.unavailableMenuIds.includes(menuId), false);
+  assert.ok(stillHeld.manualUnavailableMenuIds.includes(menuId));
+  assert.ok(stillHeld.unavailableMenuIds.includes(menuId));
+});
+
 test("availability snapshot disables matching catalog items before order and voice validation", () => {
   const snapshot = buildAvailabilitySnapshot([], new Date("2026-09-03T05:00:00.000Z"));
   const result = applyAvailabilityToMenuData({ menus: [
