@@ -1,4 +1,6 @@
 const EMPTY_GUID = "00000000-0000-0000-0000-000000000000";
+const ZZIRAN_HALF_ID = "9108cbc8-8db9-4412-b17f-061f0f0f2ab8";
+const ZZIRAN_HALF_KITCHEN_NOTE = "NỬA PHẦN 10 MIẾNG / 반마리 10조각";
 
 export async function fetchCukCukTableOrder(env, tableIdValue, fetcher = fetch) {
   const domain = safeDomain(env.CUKCUK_DOMAIN);
@@ -195,13 +197,19 @@ export async function submitCukCukSelfOrder(env, order, _tableName, _existingOrd
 
 function buildCartItem(item, parent, additions) {
   const quantity = Number(parent.Quantity);
+  if (cleanGuid(item.InventoryItemID).toLowerCase() === ZZIRAN_HALF_ID) {
+    // A QR order and its POS record have shown different W07 names after a rename.
+    // Send the validated name and an explicit portion cue in the kitchen note.
+    item.InventoryItemName = cleanLabel(parent.ItemName, 240) || item.InventoryItemName;
+    item.Note = ZZIRAN_HALF_KITCHEN_NOTE;
+  }
   item.CartItemID = cleanGuid(parent.Id) || crypto.randomUUID();
   item.OrderOnlineDetailID = item.OrderOnlineDetailID || EMPTY_GUID;
   item.BuyQuantity = quantity;
   item.ChangeQuantity = 0;
   item.OrderStatus = 0;
   item.UpdateType = 0;
-  item.Note = "";
+  if (typeof item.Note !== "string") item.Note = "";
 
   const selected = new Set(additions.map(addition => cleanGuid(addition.AdditionId)).filter(Boolean));
   const matched = new Set();

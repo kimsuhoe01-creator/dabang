@@ -135,6 +135,55 @@ test("submits a table cart through the native CUKCUK self-order sequence", async
   assert.equal(result.action, "self-order-confirmed");
 });
 
+test("sends the current half-portion name and kitchen note when CUKCUK returns an old cumin wings name", async () => {
+  const itemId = "9108cbc8-8db9-4412-b17f-061f0f0f2ab8";
+  const currentName = "쯔란윙봉 반마리 | Nửa phần cánh gà vị cumin | 半份孜然鸡翅 | Half Portion Cumin Wings";
+  let sentItem = null;
+  const fetcher = async (input, init = {}) => {
+    const url = String(input);
+    if (url.endsWith("/order-online/Config/GetConfig")) {
+      return response({ Success: true, Data: { Token: "public-session-token", CompanyCode: "dabang" } });
+    }
+    if (url.includes("GetOrderByTableID")) {
+      return response({ Success: true, Data: {
+        OrderId: "11111111-1111-4111-8111-111111111111",
+        TableRef: JSON.stringify([{ AreaID: "99f7a22b-b478-4f06-b1b4-3694d87840ba" }]),
+        ListInventoryItemTemp: [],
+      } });
+    }
+    if (url.includes("GetInventoryItemDetailByID")) {
+      return response({ Success: true, Data: {
+        InventoryItemID: itemId,
+        InventoryItemName: "쯔란윙봉 | Cánh gà vị cumin | 孜然鸡翅 | Cumin Wings",
+        UnitPriceDelivery: 216000,
+      } });
+    }
+    if (url.includes("/update-cart")) {
+      sentItem = JSON.parse(init.body).ListInventoryItemTemp[0].ListInventoryItem[0];
+      return response({ Success: true, Data: { OrderId: "11111111-1111-4111-8111-111111111111" } });
+    }
+    if (url.includes("/confirm-order")) {
+      return response({ Success: true, Data: { OrderId: "11111111-1111-4111-8111-111111111111" } });
+    }
+    assert.fail(`Unexpected URL: ${url}`);
+  };
+
+  await submitCukCukSelfOrder(env, {
+    ListTableID: ["a7c94545-534d-400e-a21e-3e4ac824323c"],
+    OrderDetails: [{
+      Id: "44444444-4444-4444-8444-444444444444",
+      ItemId: itemId,
+      ItemName: currentName,
+      Quantity: 1,
+      Price: 216000,
+    }],
+  }, "A-1", null, fetcher);
+
+  assert.equal(sentItem.InventoryItemName, currentName);
+  assert.equal(sentItem.Note, "NỬA PHẦN 10 MIẾNG / 반마리 10조각");
+  assert.equal(sentItem.UnitPriceAddtion, 216000);
+});
+
 test("maps selected CUKCUK additions into the native cart item", async () => {
   let updateBody = null;
   const fetcher = async (input, init = {}) => {
