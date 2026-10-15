@@ -677,4 +677,4 @@ C:\Users\Admin\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin
 - 태블릿 `main`의 PR #1~#4와 자동 CUKCUK 동기화 커밋 `2021b66`까지 반영했다. 신메뉴 최상단 사진 카드가 한국어·중국어에서는 쯔란윙봉, 베트남어·영어에서는 기존 닭갈비를 보여준다. W07의 사진은 `assets/featured/zziran-wings.jpg` 및 UUID별 메뉴 사진에 연결했다. W06/S05/W01/S08은 CUKCUK 실제 테이블 QR Addition ID를 읽어 메뉴별 선택 규칙을 유지한다.
 - 공개 안전 미리보기: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=2021b66 . W07 반마리 추가 최대 1개와 합계 399,600동, W06 필수 1개, S05 윙봉·떡볶이·가래떡 필수 각 1개와 토핑 최대 3개, W01 필수 2개, S08 필수 4개를 화면에서 확인했다. 실제 POS 주문은 보내지 않았다.
 - 검증: Worker/UI 테스트 112개 통과(최종 테스트 수정 포함), 메뉴 이미지 감사 114개 통과(누락·고아 0), CUKCUK 동기화 및 Pages/Worker 배포 성공. 동기화는 CUKCUK API 시간 초과 후 4번째 실행에서 성공했다.
-- **CUKCUK 메뉴 사진은 미완료**: 일반 상품 편집과 테이블 QR 편집 양쪽에서 사용자 사진 업로드가 `failed.`로 거절됐다. 배달K와 태블릿 사진은 정상 등록·표시된다. Chrome ChatGPT 확장의 `Allow access to file URLs` 설정을 사용자가 확인한 뒤 CUKCUK W07 양쪽 편집 화면에서 같은 사진을 다시 업로드하고 저장해야 한다. 원인이 확장 설정인지 CUKCUK 업로드 서버인지 아직 구분되지 않았다.
+- CUKCUK W07 사진 업로드는 일반 상품 편집과 테이블 QR 편집에서 `failed.`로 거절됐으나, 사용자가 2026-10-15에 **쿠쿠 사진 등록은 필요 없다고 확인**했다. 배달K와 태블릿 사진은 정상 등록·표시된다. 이 신메뉴 등록 작업의 남은 후속 조치는 없다.
