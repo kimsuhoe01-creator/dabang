@@ -68,14 +68,19 @@ test('store tablet cards use a compact four-column layout without empty subtitle
   assert.doesNotMatch(cardMarkup, /menu-subtitle" aria-hidden="true"/);
 });
 
-test('Dakgalbi opens the new-menu screen with a large original-photo card connected to cart selection', () => {
+test('Dakgalbi opens the new-menu screen with a locale-specific large photo card connected to cart selection', () => {
   assert.match(html, /const DAKGALBI_CODE='DKG'/);
   assert.match(html, /dakgalbi-dkg-poster\.jpg/);
   assert.match(html, /20260916-original-photo/);
-  assert.match(html, /<img src="\$\{DAKGALBI_POSTER\}" alt="" aria-hidden="true">/);
+  assert.match(html, /const DAKGALBI_VI_HERO='assets\/featured\/dakgalbi-tiktok-vietnam-hero\.jpg\?v=20261016-tiktok-photo-v1'/);
+  assert.match(html, /vietnameseHero=lang==='vi'/);
+  assert.match(html, /heroImage=vietnameseHero\?DAKGALBI_VI_HERO:DAKGALBI_POSTER/);
+  assert.match(html, /class="dakgalbi-hero\$\{heroClass\}"/);
+  const vietnameseHeroPath = path.join(projectRoot, 'assets', 'featured', 'dakgalbi-tiktok-vietnam-hero.jpg');
+  assert.ok(fs.statSync(vietnameseHeroPath).size > 100_000);
   assert.doesNotMatch(html, /dakgalbi-dkg-hero\.mp4|<video autoplay muted loop playsinline/);
   assert.doesNotMatch(html, /function playFeaturedVideos\(/);
-  assert.match(html, /class="dakgalbi-hero"[\s\S]*onclick="selectMenu\('\$\{safeId\}',this\)"/);
+  assert.match(html, /class="dakgalbi-hero\$\{heroClass\}"[\s\S]*onclick="selectMenu\('\$\{safeId\}',this\)"/);
   assert.match(html, /function visibleCategories\(\)[\s\S]*find\(isDakgalbiMenu\)/);
   assert.match(html, /const heroMenu=section\.closure\?null:featuredHeroMenu\(section\.menus\)/);
   assert.match(html, /function featuredHeroMenu\(menus\)\{return \(lang==='ko'\|\|lang==='zh'\?menus\.find\(isZziranMenu\):null\)\|\|menus\.find\(isDakgalbiMenu\)\}/);
