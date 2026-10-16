@@ -717,3 +717,5 @@ C:\Users\Admin\.cache\codex-runtimes\codex-primary-runtime\dependencies\node\bin
 - 베트남어(`vi`) 신메뉴 최상단 닭갈비 대형 카드만 새 배너를 사용한다. 영어는 기존 닭갈비 원본 포스터를 유지하고, 한국어·중국어의 쯔란윙봉 배너도 변경하지 않는다.
 - 베트남어 제목·설명·가격·담기 영역을 왼쪽 위의 어두운 빈 공간으로 옮겨 인물과 갈색·빨간 닭갈비를 가리지 않게 했다. 닭갈비 옵션·장바구니·CUKCUK 주문 전송 흐름은 변경하지 않았다.
 - 설치형 태블릿이 새 사진을 즉시 받도록 서비스 워커 캐시를 `dabang-tablet-v54`로 올리고 새 배너를 앱 셸에 추가했다.
+- Worker/UI 회귀 테스트 115개와 메뉴 이미지 감사(114개 메뉴, 누락 매핑·누락 파일·고아 파일 0)가 통과했다. 1920×911 공개 안전 미리보기에서 베트남어 `Món mới` 최상단에 인물과 두 닭갈비 팬이 크게 보이고 문구가 음식을 가리지 않는 것을 확인했으며 실제 POS 주문은 보내지 않았다.
+- 기능 커밋 `65f9312`를 `main`에 배포했다. [Pages 실행 #38901291276](https://github.com/kimsuhoe01-creator/dabang/actions/runs/38901291276)과 [주문 Worker 실행 #38901291804](https://github.com/kimsuhoe01-creator/dabang/actions/runs/38901291804)가 성공했다. 공개 안전 미리보기: https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=65f9312
