@@ -48,6 +48,10 @@ const KITCHEN_STAFF_SHORTAGE_END = Date.parse("2026-10-16T09:00:00+07:00");
 // keep any of the five menus unavailable after the promised reopen time.
 // A later manager hold remains authoritative because its changedAt is newer.
 const KITCHEN_STAFF_SHORTAGE_EXISTING_HOLD_CUTOFF = Date.parse("2026-10-15T10:24:00.000Z");
+const MANUAL_HOLD_RESUME_CUTOFFS = new Map([
+  // Explicitly reopened by the manager on 2026-10-16. A newer hold remains authoritative.
+  ["9af79e36-a7aa-4c21-8349-1e61555866e4", Date.parse("2026-10-16T12:46:56.046Z")],
+]);
 const KITCHEN_STAFF_SHORTAGE_NOTICE = {
   title: {
     ko: "주방에 직원이 없어서 오늘 하루만 품절입니다",
@@ -401,11 +405,16 @@ function normalizeState(value, now = new Date()) {
     const legacyHeld = raw?.held === undefined ? true : raw.held === true;
     const changedAt = normalizeIso(raw?.changedAt);
     const changedAtMs = changedAt ? Date.parse(changedAt) : Number.NaN;
+    const manualResumeCutoff = MANUAL_HOLD_RESUME_CUTOFFS.get(menuId);
+    const explicitlyResumedHold = legacyHeld
+      && Number.isFinite(manualResumeCutoff)
+      && (!Number.isFinite(changedAtMs) || changedAtMs <= manualResumeCutoff);
     const restoreExistingKitchenHold = now.getTime() >= KITCHEN_STAFF_SHORTAGE_END
       && KITCHEN_STAFF_SHORTAGE_MENU_IDS.includes(menuId)
       && legacyHeld
       && (!Number.isFinite(changedAtMs) || changedAtMs <= KITCHEN_STAFF_SHORTAGE_EXISTING_HOLD_CUTOFF);
     const held = legacyHeld
+      && !explicitlyResumedHold
       && !restoreExistingKitchenHold
       && !(Number.isFinite(expiryMs) && expiryMs <= now.getTime());
     const hidden = raw?.hidden === true;

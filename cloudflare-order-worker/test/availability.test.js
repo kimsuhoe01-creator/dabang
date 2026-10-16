@@ -6,6 +6,7 @@ const SAPPORO_ONE_PLUS_ONE_ID = "db070dd6-bb0e-4e00-bfe4-5e99cd796884";
 const LEGACY_SAPPORO_ONE_PLUS_ONE_ID = "52c29562-ac31-42c7-9f24-956d348de02a";
 const PIZZA_ID = "c0f16b37-ff76-4d8e-a5a8-3ead5fd7b0a5";
 const CHICKEN_PIZZA_SET_ID = "e1cf1187-b643-4b90-9f6f-9a7458eaf037";
+const DIZINDA_CHALLENGE_ID = "9af79e36-a7aa-4c21-8349-1e61555866e4";
 const KITCHEN_STAFF_SHORTAGE_MENU_IDS = [
   "1644c776-3499-42d0-a911-ab8152608195",
   "df258d2e-d7f9-4752-a4a0-f43578ecb965",
@@ -95,6 +96,33 @@ test("tomorrow reopen clears only pre-existing manual holds on the six menus", (
   assert.equal(reopened.unavailableMenuIds.includes(menuId), false);
   assert.ok(stillHeld.manualUnavailableMenuIds.includes(menuId));
   assert.ok(stillHeld.unavailableMenuIds.includes(menuId));
+});
+
+test("DIZINDA challenge explicit resume clears the existing hold but preserves later holds", () => {
+  const existingHold = {
+    manualEntries: [{
+      menuId: DIZINDA_CHALLENGE_ID,
+      held: true,
+      hidden: false,
+      changedAt: "2026-10-16T12:40:00.000Z",
+    }],
+  };
+  const laterManagerHold = {
+    manualEntries: [{
+      menuId: DIZINDA_CHALLENGE_ID,
+      held: true,
+      hidden: false,
+      changedAt: "2026-10-16T13:00:00.000Z",
+    }],
+  };
+
+  const reopened = buildAvailabilitySnapshot(existingHold, new Date("2026-10-16T12:50:00.000Z"));
+  const heldAgain = buildAvailabilitySnapshot(laterManagerHold, new Date("2026-10-16T13:01:00.000Z"));
+
+  assert.equal(reopened.manualUnavailableMenuIds.includes(DIZINDA_CHALLENGE_ID), false);
+  assert.equal(reopened.unavailableMenuIds.includes(DIZINDA_CHALLENGE_ID), false);
+  assert.ok(heldAgain.manualUnavailableMenuIds.includes(DIZINDA_CHALLENGE_ID));
+  assert.ok(heldAgain.unavailableMenuIds.includes(DIZINDA_CHALLENGE_ID));
 });
 
 test("availability snapshot disables matching catalog items before order and voice validation", () => {
