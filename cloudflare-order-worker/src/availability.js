@@ -18,7 +18,10 @@ const SAPPORO_EVENT_ENDED_NOTICE = {
 };
 const STORE_TIME_ZONE = "Asia/Ho_Chi_Minh";
 const DAILY_CUTOFF_MINUTES = 19 * 60;
-const SPACE_PIZZA_DAY_OFF_DATE = "2026-09-03";
+const SPACE_PIZZA_DAY_OFF_DATES = new Set([
+  "2026-09-03",
+  "2026-10-19",
+]);
 const SPACE_PIZZA_CATEGORY = "스페이스 피자";
 const SPACE_PIZZA_MENU_IDS = [
   "c0f16b37-ff76-4d8e-a5a8-3ead5fd7b0a5",
@@ -161,22 +164,23 @@ export function buildAvailabilitySnapshot(manualStateOrIds = [], now = new Date(
     ...(schedule.closed ? SAPPORO_ONE_PLUS_ONE_IDS : []),
     ...(kitchenStaffShortage.active ? KITCHEN_STAFF_SHORTAGE_MENU_IDS : []),
   ];
-  const categoryClosures = storeDateAt(now) === SPACE_PIZZA_DAY_OFF_DATE ? [{
-    key: `space-pizza-day-off-${SPACE_PIZZA_DAY_OFF_DATE}`,
+  const storeDate = storeDateAt(now);
+  const categoryClosures = SPACE_PIZZA_DAY_OFF_DATES.has(storeDate) ? [{
+    key: `space-pizza-day-off-${storeDate}`,
     categoryName: SPACE_PIZZA_CATEGORY,
     menuIds: [...SPACE_PIZZA_MENU_IDS, ...CHICKEN_PIZZA_SET_IDS],
     hiddenMenuIds: [...SPACE_PIZZA_MENU_IDS, ...CHICKEN_PIZZA_SET_IDS],
     title: {
-      ko: "스페이스 피자 금일 휴무",
+      ko: "스페이스피자 금일 휴무",
       vi: "Space Pizza hôm nay nghỉ",
       zh: "Space Pizza 今日休息",
       en: "Space Pizza is closed today",
     },
     message: {
-      ko: "오늘은 피자 메뉴를 주문하실 수 없습니다.",
-      vi: "Hôm nay không thể gọi các món pizza.",
-      zh: "今天暂时无法订购披萨类菜单。",
-      en: "Pizza items are unavailable to order today.",
+      ko: "오늘은 스페이스피자 휴무로 피자 메뉴를 주문하실 수 없습니다.",
+      vi: "Hôm nay Space Pizza nghỉ nên không thể gọi các món pizza.",
+      zh: "因 Space Pizza 今日休息，暂时无法订购披萨类菜单。",
+      en: "Space Pizza is closed today, so pizza items are unavailable to order.",
     },
   }] : [];
   const closureUnavailable = categoryClosures.flatMap(closure => closure.menuIds);

@@ -278,15 +278,16 @@ const ORDER_ENDPOINT='https://dabang-cukcuk-order-api.kimsuhoe01.workers.dev/api
 const ORDER_STATUS_ENDPOINT=ORDER_ENDPOINT.replace(/\/api\/cukcuk\/order$/,'/api/cukcuk/order-status');
 const TABLE_ORDER_ENDPOINT=ORDER_ENDPOINT.replace(/\/api\/cukcuk\/order$/,'/api/cukcuk/table-order');
 const AVAILABILITY_ENDPOINT=ORDER_ENDPOINT.replace(/\/api\/cukcuk\/order$/,'/api/tablet/availability');
-const SPACE_PIZZA_DAY_OFF_DATE='2026-09-03';
+const SPACE_PIZZA_DAY_OFF_DATES=['2026-09-03','2026-10-19'];
 const SPACE_PIZZA_DAY_OFF_IDS=['c0f16b37-ff76-4d8e-a5a8-3ead5fd7b0a5','d902dc7b-b6b7-402d-aa90-4edb1e5cfbc2','433a6207-b8cf-4333-aa33-f344d6bfeb31','a84fa28e-bac3-45c2-9e00-5138b660ecd7','646d2461-e692-4275-97a0-0ba277913e92','5e53f8d3-3b1e-4c08-82d0-136726552c5b','89116940-5e7e-4e1e-b808-a0a2fdb5798e','18c2eb1b-5a99-459e-98b2-8c630036442a','e1cf1187-b643-4b90-9f6f-9a7458eaf037','1ffd639e-dd8f-4185-9ab9-4b187835b21c'];
 let cartItems=[],optionDraft=null,cartLineSequence=0,categoryScrollFrame=0,dialogOpener=null,orderSending=false,catalogReady=PREVIEW_MODE,catalogLoadFailed=false,orderVerificationRequired=false,pendingOrderPayload=null,historyLoading=false,historyPayload=null,historyRequestId=0;
 let tabletAvailability=fallbackTabletAvailability(),availabilityRefreshTimer=0,availabilityLoaded=false;
 
 function storeDateToday(){return new Intl.DateTimeFormat('en-CA',{timeZone:'Asia/Ho_Chi_Minh',year:'numeric',month:'2-digit',day:'2-digit'}).format(new Date())}
 function fallbackTabletAvailability(){
- const active=storeDateToday()===SPACE_PIZZA_DAY_OFF_DATE;
- const categoryClosures=active?[{key:'space-pizza-day-off-'+SPACE_PIZZA_DAY_OFF_DATE,categoryName:'스페이스 피자',menuIds:SPACE_PIZZA_DAY_OFF_IDS,hiddenMenuIds:SPACE_PIZZA_DAY_OFF_IDS,title:{ko:'스페이스 피자 금일 휴무',vi:'Space Pizza hôm nay nghỉ',zh:'Space Pizza 今日休息',en:'Space Pizza is closed today'},message:{ko:'오늘은 피자 메뉴를 주문하실 수 없습니다.',vi:'Hôm nay không thể gọi các món pizza.',zh:'今天暂时无法订购披萨类菜单。',en:'Pizza items are unavailable to order today.'}}]:[];
+ const storeDate=storeDateToday();
+ const active=SPACE_PIZZA_DAY_OFF_DATES.includes(storeDate);
+ const categoryClosures=active?[{key:'space-pizza-day-off-'+storeDate,categoryName:'스페이스 피자',menuIds:SPACE_PIZZA_DAY_OFF_IDS,hiddenMenuIds:SPACE_PIZZA_DAY_OFF_IDS,title:{ko:'스페이스피자 금일 휴무',vi:'Space Pizza hôm nay nghỉ',zh:'Space Pizza 今日休息',en:'Space Pizza is closed today'},message:{ko:'오늘은 스페이스피자 휴무로 피자 메뉴를 주문하실 수 없습니다.',vi:'Hôm nay Space Pizza nghỉ nên không thể gọi các món pizza.',zh:'因 Space Pizza 今日休息，暂时无法订购披萨类菜单。',en:'Space Pizza is closed today, so pizza items are unavailable to order.'}}]:[];
  return{unavailableMenuIds:active?SPACE_PIZZA_DAY_OFF_IDS:[],hiddenMenuIds:[],unavailableNotices:{},categoryClosures};
 }
 function normalizedTabletAvailability(value){

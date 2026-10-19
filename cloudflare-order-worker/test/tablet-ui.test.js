@@ -191,11 +191,12 @@ test('Sapporo draft sizes use independent quantity counters and cart lines', () 
 });
 
 test('today-only Space Pizza closure replaces sold-out cards with one localized notice', () => {
-  assert.match(html, /const SPACE_PIZZA_DAY_OFF_DATE='2026-09-03'/);
-  assert.match(html, /스페이스 피자 금일 휴무/);
+  assert.match(html, /const SPACE_PIZZA_DAY_OFF_DATES=\['2026-09-03','2026-10-19'\]/);
+  assert.match(html, /스페이스피자 금일 휴무/);
+  assert.match(html, /오늘은 스페이스피자 휴무로 피자 메뉴를 주문하실 수 없습니다/);
   assert.match(html, /Space Pizza hôm nay nghỉ/);
-  assert.match(html, /今天暂时无法订购披萨类菜单/);
-  assert.match(html, /Pizza items are unavailable to order today/);
+  assert.match(html, /因 Space Pizza 今日休息，暂时无法订购披萨类菜单/);
+  assert.match(html, /Space Pizza is closed today, so pizza items are unavailable to order/);
   assert.match(html, /class="category-closure" role="status"/);
   assert.match(html, /const AVAILABILITY_ENDPOINT=ORDER_ENDPOINT\.replace/);
   assert.match(html, /setInterval\(refreshTabletAvailability,60\*1000\)/);

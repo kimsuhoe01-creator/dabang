@@ -16,16 +16,21 @@ const KITCHEN_STAFF_SHORTAGE_MENU_IDS = [
   "19fcb4e2-19d3-42ec-aac8-13f6cdbb9c87",
 ];
 
-test("Space Pizza and chicken-pizza sets are closed only on 2026-09-03 store time", () => {
-  const duringClosure = buildAvailabilitySnapshot([], new Date("2026-09-03T05:00:00.000Z"));
-  assert.equal(duringClosure.categoryClosures.length, 1);
-  assert.equal(duringClosure.categoryClosures[0].categoryName, "스페이스 피자");
-  assert.match(duringClosure.categoryClosures[0].title.ko, /금일 휴무/);
-  assert.ok(duringClosure.unavailableMenuIds.includes(PIZZA_ID));
-  assert.ok(duringClosure.unavailableMenuIds.includes(CHICKEN_PIZZA_SET_ID));
-  assert.ok(duringClosure.categoryClosures[0].hiddenMenuIds.includes(CHICKEN_PIZZA_SET_ID));
+test("Space Pizza and chicken-pizza sets close on configured store day-off dates", () => {
+  for (const duringClosure of [
+    buildAvailabilitySnapshot([], new Date("2026-09-03T05:00:00.000Z")),
+    buildAvailabilitySnapshot([], new Date("2026-10-19T05:00:00.000Z")),
+  ]) {
+    assert.equal(duringClosure.categoryClosures.length, 1);
+    assert.equal(duringClosure.categoryClosures[0].categoryName, "스페이스 피자");
+    assert.equal(duringClosure.categoryClosures[0].title.ko, "스페이스피자 금일 휴무");
+    assert.equal(duringClosure.categoryClosures[0].message.ko, "오늘은 스페이스피자 휴무로 피자 메뉴를 주문하실 수 없습니다.");
+    assert.ok(duringClosure.unavailableMenuIds.includes(PIZZA_ID));
+    assert.ok(duringClosure.unavailableMenuIds.includes(CHICKEN_PIZZA_SET_ID));
+    assert.ok(duringClosure.categoryClosures[0].hiddenMenuIds.includes(CHICKEN_PIZZA_SET_ID));
+  }
 
-  const afterClosure = buildAvailabilitySnapshot([], new Date("2026-09-03T17:00:01.000Z"));
+  const afterClosure = buildAvailabilitySnapshot([], new Date("2026-10-19T17:00:01.000Z"));
   assert.equal(afterClosure.categoryClosures.length, 0);
   assert.equal(afterClosure.closureUnavailableMenuIds.length, 0);
   assert.equal(afterClosure.unavailableMenuIds.includes(PIZZA_ID), false);
