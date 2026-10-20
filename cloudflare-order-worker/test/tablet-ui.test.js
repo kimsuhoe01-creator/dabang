@@ -213,6 +213,11 @@ test('today-only Space Pizza closure replaces sold-out cards with one localized 
   assert.match(selectionSource, /!menuIsAvailable\(menu\)/);
 });
 
+test('Pepsi Zero Lime 1.5L is sold out in the offline tablet fallback', () => {
+  assert.match(html, /const CURRENT_SOLD_OUT_MENU_IDS=\['45a0262c-d9f7-4b8b-a937-542d81c32e95'\]/);
+  assert.match(html, /unavailableMenuIds:\[\.\.\.CURRENT_SOLD_OUT_MENU_IDS,\.\.\.\(active\?SPACE_PIZZA_DAY_OFF_IDS:\[\]\)\]/);
+});
+
 test('Sapporo 1+1 shows an event-ended notice instead of generic sold-out copy after 19:00', () => {
   assert.match(html, /function menuUnavailableNotice\(menu\)/);
   const cardMarkup = sourceSlice('function menuCardMarkup(menu,index)', 'function menuSections');

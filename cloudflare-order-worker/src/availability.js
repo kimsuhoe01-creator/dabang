@@ -37,6 +37,9 @@ const CHICKEN_PIZZA_SET_IDS = [
   "e1cf1187-b643-4b90-9f6f-9a7458eaf037",
   "1ffd639e-dd8f-4185-9ab9-4b187835b21c",
 ];
+const CURRENT_SOLD_OUT_MENU_IDS = [
+  "45a0262c-d9f7-4b8b-a937-542d81c32e95", // 펩시 제로 라임 1.5L
+];
 const KITCHEN_STAFF_SHORTAGE_MENU_IDS = [
   "1644c776-3499-42d0-a911-ab8152608195", // 수박
   "df258d2e-d7f9-4752-a4a0-f43578ecb965", // 폴드 치킨 퀘사디아
@@ -161,6 +164,7 @@ export function buildAvailabilitySnapshot(manualStateOrIds = [], now = new Date(
   const schedule = scheduleAt(now);
   const kitchenStaffShortage = kitchenStaffShortageAt(now);
   const scheduled = [
+    ...CURRENT_SOLD_OUT_MENU_IDS,
     ...(schedule.closed ? SAPPORO_ONE_PLUS_ONE_IDS : []),
     ...(kitchenStaffShortage.active ? KITCHEN_STAFF_SHORTAGE_MENU_IDS : []),
   ];

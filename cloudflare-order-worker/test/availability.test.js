@@ -7,6 +7,8 @@ const LEGACY_SAPPORO_ONE_PLUS_ONE_ID = "52c29562-ac31-42c7-9f24-956d348de02a";
 const PIZZA_ID = "c0f16b37-ff76-4d8e-a5a8-3ead5fd7b0a5";
 const CHICKEN_PIZZA_SET_ID = "e1cf1187-b643-4b90-9f6f-9a7458eaf037";
 const DIZINDA_CHALLENGE_ID = "9af79e36-a7aa-4c21-8349-1e61555866e4";
+const PEPSI_ZERO_LIME_15L_ID = "45a0262c-d9f7-4b8b-a937-542d81c32e95";
+const PEPSI_ZERO_390ML_ID = "e9e75a8d-cb9d-442b-8f57-08c06421f56f";
 const KITCHEN_STAFF_SHORTAGE_MENU_IDS = [
   "1644c776-3499-42d0-a911-ab8152608195",
   "df258d2e-d7f9-4752-a4a0-f43578ecb965",
@@ -49,6 +51,14 @@ test("Sapporo 1+1 closes at 19:00 Asia/Ho_Chi_Minh", () => {
   assert.match(after.unavailableNotices[SAPPORO_ONE_PLUS_ONE_ID].message.vi, /19:00/);
   assert.match(after.unavailableNotices[SAPPORO_ONE_PLUS_ONE_ID].message.zh, /19:00/);
   assert.match(after.unavailableNotices[SAPPORO_ONE_PLUS_ONE_ID].message.en, /19:00/);
+});
+
+test("Pepsi Zero Lime 1.5L stays sold out while the smaller Pepsi Zero remains unaffected", () => {
+  const snapshot = buildAvailabilitySnapshot([], new Date("2026-10-20T05:00:00.000Z"));
+  assert.equal(snapshot.scheduledUnavailableMenuIds.includes(PEPSI_ZERO_LIME_15L_ID), true);
+  assert.equal(snapshot.unavailableMenuIds.includes(PEPSI_ZERO_LIME_15L_ID), true);
+  assert.equal(snapshot.unavailableMenuIds.includes(PEPSI_ZERO_390ML_ID), false);
+  assert.equal(snapshot.unavailableNotices[PEPSI_ZERO_LIME_15L_ID], undefined);
 });
 
 test("six kitchen-staff shortage menus close today and reopen tomorrow morning", () => {
