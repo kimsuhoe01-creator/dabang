@@ -151,8 +151,8 @@
         "MapObjectName": "D-2",
         "AreaID": "e69f4221-ddc6-4fc2-8cf6-defac8dd4c3c",
         "AreaName": "C-",
-        "IsAvailable": true,
-        "Status": 2
+        "IsAvailable": false,
+        "Status": 1
       },
       {
         "MapObjectID": "34159941-91e1-4d76-b063-9af719378525",
