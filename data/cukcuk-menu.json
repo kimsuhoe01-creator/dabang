@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-10-24 09:04:38",
-    "finished_at": "2026-10-24 09:04:47",
+    "started_at": "2026-10-24 13:15:02",
+    "finished_at": "2026-10-24 13:15:10",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -1373,8 +1373,8 @@
       "sourceName": "양념  Sweet & Spicy Chicken  韩式甜酱炸鸡 Gà sốt ngọt HQ",
       "names": {
         "ko": "양념 치킨",
-        "vi": "Gà sốt ngọt cay kiểu Hàn",
-        "zh": "韩式甜辣酱炸鸡",
+        "vi": "Gà sốt ngọt kiểu Hàn",
+        "zh": "韩式甜酱炸鸡",
         "en": "Sweet & Spicy Chicken"
       },
       "price": 399600,
@@ -6266,6 +6266,6 @@
     "cacheHits": 346,
     "translated": 12,
     "pendingCount": 0,
-    "updatedAt": "2026-10-24T09:07:15.898Z"
+    "updatedAt": "2026-10-24T13:15:31.388Z"
   }
 }
