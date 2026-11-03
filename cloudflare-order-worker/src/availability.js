@@ -39,6 +39,7 @@ const CHICKEN_PIZZA_SET_IDS = [
 ];
 const CURRENT_SOLD_OUT_MENU_IDS = [
   "45a0262c-d9f7-4b8b-a937-542d81c32e95", // 펩시 제로 라임 1.5L
+  "5e6c1f83-2f15-432a-b497-6d4747393196", // 선양 오크 소주
 ];
 const KITCHEN_STAFF_SHORTAGE_MENU_IDS = [
   "1644c776-3499-42d0-a911-ab8152608195", // 수박

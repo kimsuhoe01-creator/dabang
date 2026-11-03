@@ -214,7 +214,7 @@ test('today-only Space Pizza closure replaces sold-out cards with one localized 
 });
 
 test('Pepsi Zero Lime 1.5L is sold out in the offline tablet fallback', () => {
-  assert.match(html, /const CURRENT_SOLD_OUT_MENU_IDS=\['45a0262c-d9f7-4b8b-a937-542d81c32e95'\]/);
+  assert.match(html, /const CURRENT_SOLD_OUT_MENU_IDS=\['45a0262c-d9f7-4b8b-a937-542d81c32e95','5e6c1f83-2f15-432a-b497-6d4747393196'\]/);
   assert.match(html, /unavailableMenuIds:\[\.\.\.CURRENT_SOLD_OUT_MENU_IDS,\.\.\.\(active\?SPACE_PIZZA_DAY_OFF_IDS:\[\]\)\]/);
 });
 

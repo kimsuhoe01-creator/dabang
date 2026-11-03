@@ -9,6 +9,8 @@ const CHICKEN_PIZZA_SET_ID = "e1cf1187-b643-4b90-9f6f-9a7458eaf037";
 const DIZINDA_CHALLENGE_ID = "9af79e36-a7aa-4c21-8349-1e61555866e4";
 const PEPSI_ZERO_LIME_15L_ID = "45a0262c-d9f7-4b8b-a937-542d81c32e95";
 const PEPSI_ZERO_390ML_ID = "e9e75a8d-cb9d-442b-8f57-08c06421f56f";
+const SUNYANG_OAK_ID = "5e6c1f83-2f15-432a-b497-6d4747393196";
+const SUNYANG_ORIGINAL_ID = "2d93c37e-8f59-4f39-a06d-cbaa6dab47f6";
 const KITCHEN_STAFF_SHORTAGE_MENU_IDS = [
   "1644c776-3499-42d0-a911-ab8152608195",
   "df258d2e-d7f9-4752-a4a0-f43578ecb965",
@@ -59,6 +61,13 @@ test("Pepsi Zero Lime 1.5L stays sold out while the smaller Pepsi Zero remains u
   assert.equal(snapshot.unavailableMenuIds.includes(PEPSI_ZERO_LIME_15L_ID), true);
   assert.equal(snapshot.unavailableMenuIds.includes(PEPSI_ZERO_390ML_ID), false);
   assert.equal(snapshot.unavailableNotices[PEPSI_ZERO_LIME_15L_ID], undefined);
+});
+
+test("Sunyang Oak is sold out while the original Sunyang Soju remains available", () => {
+  const snapshot = buildAvailabilitySnapshot([], new Date("2026-11-03T05:00:00.000Z"));
+  assert.equal(snapshot.unavailableMenuIds.includes(SUNYANG_OAK_ID), true);
+  assert.equal(snapshot.unavailableMenuIds.includes(SUNYANG_ORIGINAL_ID), false);
+  assert.equal(snapshot.hiddenMenuIds.includes(SUNYANG_OAK_ID), false);
 });
 
 test("six kitchen-staff shortage menus close today and reopen tomorrow morning", () => {

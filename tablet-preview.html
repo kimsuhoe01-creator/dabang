@@ -280,7 +280,7 @@ const TABLE_ORDER_ENDPOINT=ORDER_ENDPOINT.replace(/\/api\/cukcuk\/order$/,'/api/
 const AVAILABILITY_ENDPOINT=ORDER_ENDPOINT.replace(/\/api\/cukcuk\/order$/,'/api/tablet/availability');
 const SPACE_PIZZA_DAY_OFF_DATES=['2026-09-03','2026-10-19'];
 const SPACE_PIZZA_DAY_OFF_IDS=['c0f16b37-ff76-4d8e-a5a8-3ead5fd7b0a5','d902dc7b-b6b7-402d-aa90-4edb1e5cfbc2','433a6207-b8cf-4333-aa33-f344d6bfeb31','a84fa28e-bac3-45c2-9e00-5138b660ecd7','646d2461-e692-4275-97a0-0ba277913e92','5e53f8d3-3b1e-4c08-82d0-136726552c5b','89116940-5e7e-4e1e-b808-a0a2fdb5798e','18c2eb1b-5a99-459e-98b2-8c630036442a','e1cf1187-b643-4b90-9f6f-9a7458eaf037','1ffd639e-dd8f-4185-9ab9-4b187835b21c'];
-const CURRENT_SOLD_OUT_MENU_IDS=['45a0262c-d9f7-4b8b-a937-542d81c32e95'];
+const CURRENT_SOLD_OUT_MENU_IDS=['45a0262c-d9f7-4b8b-a937-542d81c32e95','5e6c1f83-2f15-432a-b497-6d4747393196'];
 let cartItems=[],optionDraft=null,cartLineSequence=0,categoryScrollFrame=0,dialogOpener=null,orderSending=false,catalogReady=PREVIEW_MODE,catalogLoadFailed=false,orderVerificationRequired=false,pendingOrderPayload=null,historyLoading=false,historyPayload=null,historyRequestId=0;
 let tabletAvailability=fallbackTabletAvailability(),availabilityRefreshTimer=0,availabilityLoaded=false;
 
