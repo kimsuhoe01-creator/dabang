@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-11-08 01:23:03",
-    "finished_at": "2026-11-08 01:23:11",
+    "started_at": "2026-11-08 07:30:33",
+    "finished_at": "2026-11-08 07:30:41",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -1462,7 +1462,7 @@
       "names": {
         "ko": "스리라차 어니언 치킨",
         "vi": "Gà sốt kem hành Sriracha",
-        "zh": "是拉差洋葱奶油炸鸡",
+        "zh": "斯里拉差洋葱奶油炸鸡",
         "en": "Sriracha Onion Chicken"
       },
       "price": 399600,
@@ -6266,6 +6266,6 @@
     "cacheHits": 346,
     "translated": 12,
     "pendingCount": 0,
-    "updatedAt": "2026-11-08T01:23:27.926Z"
+    "updatedAt": "2026-11-08T07:30:58.108Z"
   }
 }
