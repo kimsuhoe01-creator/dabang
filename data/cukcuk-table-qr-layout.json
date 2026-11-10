@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": "cukcuk-tablet-content-2026-11-10-loaded-nachos-v1",
+  "revision": "cukcuk-tablet-content-2026-11-10-goguma-kimchi-v1",
   "capturedAt": "2026-11-10T11:42:49.251Z",
   "timezone": "Asia/Ho_Chi_Minh",
   "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
@@ -1799,6 +1799,19 @@
     }
   },
   "detailOptionSources": {
+    "GOGUMA500600": {
+      "source": "table-qr",
+      "areaId": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
+      "expectedCategoryCount": 1,
+      "expectedValueCount": 1,
+      "expectedValueIds": [["6a0d8ef5-c6e1-4593-9e58-9d100ae2ebc4"]],
+      "templateNames": {
+        "ko": "김치 추가",
+        "vi": "Thêm kimchi",
+        "zh": "加泡菜",
+        "en": "Add Kimchi"
+      }
+    },
     "DKG": {
       "source": "table-qr",
       "areaId": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
