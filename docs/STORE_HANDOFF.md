@@ -1,5 +1,13 @@
 # 매장 노트북 인계 — 다방 테이블오더
 
+## 2026-11-10 나초 태블릿 메뉴명 최종 변경
+
+- 태블릿의 나초 메뉴를 한국어 `치킨 나초`, 베트남어 `Nachos gà phô mai`, 중국어 `鸡肉芝士玉米片`, 영어 `Chicken Nachos`로 표시한다. 설명도 닭고기·치즈·소스를 명시하도록 맞췄다. 앞선 `치즈 나초 플래터`와 임시 베트남어 `Nachos gà`를 대체한다.
+- 실제 CUKCUK 품목 코드 `LOADEDNACHOS`, QR UUID `0d312c45-2769-4afa-8510-c3c941aab57d`, 가격 248,400동, 판매 상태와 주문 연결은 유지한다. 설치형 태블릿 캐시는 `dabang-tablet-v65`이다.
+- 이름 변경 [PR #28](https://github.com/kimsuhoe01-creator/dabang/pull/28) 병합 `979e3a5`, 베트남어 이름 보강 [PR #29](https://github.com/kimsuhoe01-creator/dabang/pull/29) 병합 `28464a8`, [CUKCUK 동기화 #42829668169](https://github.com/kimsuhoe01-creator/dabang/actions/runs/42829668169)의 게시 데이터 커밋 `514f935`가 적용됐다. [GitHub Pages #42829785542](https://github.com/kimsuhoe01-creator/dabang/actions/runs/42829785542)와 [주문 Worker #42829668413](https://github.com/kimsuhoe01-creator/dabang/actions/runs/42829668413)이 성공했다.
+- [공개 안전 미리보기](https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=514f935)에서 한국어·베트남어 이름, 설명, 사진 로딩(깨진 이미지 0개), 장바구니 1개·248,400동을 확인했다. 실제 POS 주문은 전송하지 않았다. 전체 테스트 109개, 베트남어 수정 후 관련 테스트 18개 통과; 메뉴 이미지 감사 116개(누락·고아 0), 변경 공백 검사 통과. 게시 카탈로그에서 QR UUID·가격·판매중을 재확인했다.
+- 매장 태블릿에서 새로고침 후 두 언어의 표시를 확인한다. 기존 브라우저의 개별 표시 설정이 남아 있으면 로컬 메뉴 설정을 점검한다.
+
 ## 2026-11-10 태블릿 메뉴 이름·카테고리 정리와 음성 주문 제거
 
 - 한국어 `로디드 나쵸`를 손님이 알아보기 쉬운 `치즈 나초 플래터`로 바꾸고, `바삭한 나초칩에 고기·치즈·소스를 푸짐하게 올렸어요.`라는 설명을 붙였다. 가격 248,400동과 실제 CUKCUK 주문 품목 UUID `0d312c45-2769-4afa-8510-c3c941aab57d`는 유지했다. 다른 언어의 메뉴명도 유지했다.
