@@ -374,10 +374,11 @@ test('the checked-in CUKCUK table QR snapshot publishes the 16-category, 116-men
     'ᄆGRXCF': '안주', 'ᄎ CC KCC': '다방분식', 'ᄇ MTCSC ESCN 超': '다방분식'
   })) assert.equal(result.menus.find(menu => menu.cukcukCode === code).categoryName, categoryName);
   for (const [code, name] of Object.entries({
-    LOADEDNACHOS: '치즈 나초 플래터', '(KX13)': '반마리 치킨 (뼈/순살)',
+    LOADEDNACHOS: '치킨 나초', '(KX13)': '반마리 치킨 (뼈/순살)',
     'Original Roast': '오리지널 로스트 반 마리',
     'Crispy Spicy Roast': '고추바사삭 로스트 반 마리', 'ᄉ SSO 鲜': '선양 오크'
   })) assert.equal(result.menus.find(menu => menu.cukcukCode === code).names.ko, name);
+  assert.equal(result.menus.find(menu => menu.cukcukCode === 'LOADEDNACHOS').names.vi, 'Nachos gà');
   assert.equal(result.menus.find(menu => menu.cukcukCode === 'GOGUMA500600').price, 54000);
   assert.equal(result.menus.find(menu => menu.cukcukCode === 'LOADEDNACHOS').price, 248400);
   assert.equal(result.menus.find(menu => menu.cukcukCode === 'DKG').price, 378000);

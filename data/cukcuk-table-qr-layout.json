@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": "cukcuk-tablet-content-2026-11-10-menu-cleanup-v1",
+  "revision": "cukcuk-tablet-content-2026-11-10-chicken-nachos-v1",
   "capturedAt": "2026-11-10T11:42:49.251Z",
   "timezone": "Asia/Ho_Chi_Minh",
   "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
@@ -347,7 +347,7 @@
         },
         {
           "code": "LOADEDNACHOS",
-          "displayName": "치즈 나초 플래터 | Nachos phủ topping",
+          "displayName": "치킨 나초 | Nachos gà",
           "price": 248400,
           "outOfStock": false,
           "sortOrder": 3
@@ -1405,10 +1405,10 @@
       "en": "Roasted Sweet Potato 500–600g"
     },
     "LOADEDNACHOS": {
-      "ko": "치즈 나초 플래터",
-      "vi": "Nachos phủ topping",
-      "zh": "满满配料的玉米片",
-      "en": "Loaded Nachos"
+      "ko": "치킨 나초",
+      "vi": "Nachos gà",
+      "zh": "鸡肉芝士玉米片",
+      "en": "Chicken Nachos"
     },
     "(KX13)": {
       "ko": "반마리 치킨 (뼈/순살)"
@@ -1841,10 +1841,10 @@
     },
     "LOADEDNACHOS": {
       "names": {
-        "ko": "바삭한 나초칩에 고기·치즈·소스를 푸짐하게 올렸어요.",
-        "vi": "Nachos giòn phủ thịt, phô mai và sốt.",
-        "zh": "香脆玉米片铺满肉、芝士和酱汁。",
-        "en": "Crispy nachos topped generously with meat, cheese and sauce."
+        "ko": "바삭한 나초칩에 치킨·치즈·소스를 푸짐하게 올렸어요.",
+        "vi": "Nachos giòn phủ thịt gà, phô mai và sốt.",
+        "zh": "香脆玉米片铺满鸡肉、芝士和酱汁。",
+        "en": "Crispy nachos topped generously with chicken, cheese and sauce."
       },
       "tone": "default"
     }
