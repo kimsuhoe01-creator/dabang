@@ -455,10 +455,10 @@
       "categoryName": "신메뉴",
       "sourceName": "로디드 나쵸 | Nachos phủ topping",
       "names": {
-        "ko": "치즈 나초 플래터",
-        "vi": "Nachos phủ topping",
-        "zh": "满满配料的玉米片",
-        "en": "Loaded Nachos"
+        "ko": "치킨 나초",
+        "vi": "Nachos gà",
+        "zh": "鸡肉芝士玉米片",
+        "en": "Chicken Nachos"
       },
       "price": 248400,
       "available": true,
@@ -468,10 +468,10 @@
       "categorySortOrder": 3,
       "subtitle": {
         "names": {
-          "ko": "바삭한 나초칩에 고기·치즈·소스를 푸짐하게 올렸어요.",
-          "vi": "Nachos giòn phủ thịt, phô mai và sốt.",
-          "zh": "香脆玉米片铺满肉、芝士和酱汁。",
-          "en": "Crispy nachos topped generously with meat, cheese and sauce."
+          "ko": "바삭한 나초칩에 치킨·치즈·소스를 푸짐하게 올렸어요.",
+          "vi": "Nachos giòn phủ thịt gà, phô mai và sốt.",
+          "zh": "香脆玉米片铺满鸡肉、芝士和酱汁。",
+          "en": "Crispy nachos topped generously with chicken, cheese and sauce."
         },
         "tone": "default"
       }
@@ -6357,9 +6357,9 @@
     }
   ],
   "inventoryCandidateCount": 256,
-  "catalogRevision": "cukcuk-tablet-content-2026-11-10-menu-cleanup-v1",
+  "catalogRevision": "cukcuk-tablet-content-2026-11-10-chicken-nachos-v1",
   "tableQrLayout": {
-    "revision": "cukcuk-tablet-content-2026-11-10-menu-cleanup-v1",
+    "revision": "cukcuk-tablet-content-2026-11-10-chicken-nachos-v1",
     "capturedAt": "2026-11-10T11:42:49.251Z",
     "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
     "includeUnlisted": false,
