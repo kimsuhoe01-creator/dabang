@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": "cukcuk-tablet-content-2026-11-10-chicken-nachos-v1",
+  "revision": "cukcuk-tablet-content-2026-11-10-chicken-nachos-v2",
   "capturedAt": "2026-11-10T11:42:49.251Z",
   "timezone": "Asia/Ho_Chi_Minh",
   "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
@@ -347,7 +347,7 @@
         },
         {
           "code": "LOADEDNACHOS",
-          "displayName": "치킨 나초 | Nachos gà",
+          "displayName": "치킨 나초 | Nachos gà phô mai",
           "price": 248400,
           "outOfStock": false,
           "sortOrder": 3
@@ -1406,7 +1406,7 @@
     },
     "LOADEDNACHOS": {
       "ko": "치킨 나초",
-      "vi": "Nachos gà",
+      "vi": "Nachos gà phô mai",
       "zh": "鸡肉芝士玉米片",
       "en": "Chicken Nachos"
     },

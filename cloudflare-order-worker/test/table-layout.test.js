@@ -378,7 +378,7 @@ test('the checked-in CUKCUK table QR snapshot publishes the 16-category, 116-men
     'Original Roast': '오리지널 로스트 반 마리',
     'Crispy Spicy Roast': '고추바사삭 로스트 반 마리', 'ᄉ SSO 鲜': '선양 오크'
   })) assert.equal(result.menus.find(menu => menu.cukcukCode === code).names.ko, name);
-  assert.equal(result.menus.find(menu => menu.cukcukCode === 'LOADEDNACHOS').names.vi, 'Nachos gà');
+  assert.equal(result.menus.find(menu => menu.cukcukCode === 'LOADEDNACHOS').names.vi, 'Nachos gà phô mai');
   assert.equal(result.menus.find(menu => menu.cukcukCode === 'GOGUMA500600').price, 54000);
   assert.equal(result.menus.find(menu => menu.cukcukCode === 'LOADEDNACHOS').price, 248400);
   assert.equal(result.menus.find(menu => menu.cukcukCode === 'DKG').price, 378000);
