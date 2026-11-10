@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-11-10 12:33:52",
-    "finished_at": "2026-11-10 12:34:02",
+    "started_at": "2026-11-10 13:38:54",
+    "finished_at": "2026-11-10 13:39:02",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -18,7 +18,7 @@
       "sourceName": "하이볼|RượuHighball|高球酒|Highball",
       "names": {
         "ko": "하이볼",
-        "vi": "Rượu Highball",
+        "vi": "Highball",
         "zh": "高球酒",
         "en": "Highball"
       },
@@ -200,7 +200,7 @@
         "ko": "주류",
         "vi": "Đồ uống có cồn",
         "zh": "酒类",
-        "en": "Alcohol"
+        "en": "Alcoholic Drinks"
       },
       "visible": true,
       "sortOrder": 15
@@ -806,9 +806,9 @@
       "sourceName": "반마리치킨|Half Chicken |半只鸡|Nửa con gà (뼈 순살)",
       "names": {
         "ko": "반마리 치킨 (뼈/순살)",
-        "vi": "Nửa con gà (có xương hoặc không xương)",
-        "zh": "半只炸鸡",
-        "en": "Half Chicken"
+        "vi": "Nửa con gà (có xương/không xương)",
+        "zh": "半只鸡（有骨/无骨）",
+        "en": "Half Chicken (Bone-in/Boneless)"
       },
       "price": 216000,
       "available": true,
@@ -859,9 +859,9 @@
       "sourceName": "½ 오리지널 로스트 | Gà quay truyền thống½ | 原味烤鸡 | Original Roast",
       "names": {
         "ko": "오리지널 로스트 반 마리",
-        "vi": "½ Gà quay truyền thống",
-        "zh": "½ 原味烤鸡",
-        "en": "½ Original Roast"
+        "vi": "Nửa con gà quay truyền thống",
+        "zh": "半只原味烤鸡",
+        "en": "Half Original Roast Chicken"
       },
       "price": 183600,
       "available": true,
@@ -881,9 +881,9 @@
       "sourceName": "½ 고추바삭 로스트|Gà quay giòn cay½|香辣脆皮烤鸡|Crispy Spicy Roast",
       "names": {
         "ko": "고추바사삭 로스트 반 마리",
-        "vi": "½ Gà quay giòn cay",
+        "vi": "Nửa con gà quay giòn cay",
         "zh": "半只香辣脆皮烤鸡",
-        "en": "½ Crispy Spicy Roast Chicken"
+        "en": "Half Crispy Spicy Roast Chicken"
       },
       "price": 237600,
       "available": true,
@@ -1017,9 +1017,9 @@
       "sourceName": "후라이드  Fried Chicken  无骨炸鸡腿 Má đùi rút xương",
       "names": {
         "ko": "후라이드 치킨",
-        "vi": "Gà rán không xương",
-        "zh": "无骨炸鸡腿",
-        "en": "Fried Boneless Chicken"
+        "vi": "Gà chiên giòn",
+        "zh": "炸鸡",
+        "en": "Fried Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1039,8 +1039,8 @@
       "sourceName": "양념  Sweet & Spicy Chicken  韩式甜酱炸鸡 Gà sốt ngọt HQ",
       "names": {
         "ko": "양념 치킨",
-        "vi": "Gà sốt ngọt Hàn Quốc",
-        "zh": "韩式甜酱炸鸡",
+        "vi": "Gà sốt ngọt cay Hàn Quốc",
+        "zh": "韩式甜辣炸鸡",
         "en": "Sweet & Spicy Chicken"
       },
       "price": 399600,
@@ -1107,7 +1107,7 @@
         "ko": "고추마늘간장 치킨",
         "vi": "Gà sốt xì dầu tỏi ớt",
         "zh": "辣椒蒜香酱油鸡",
-        "en": "Chili Garlic Soy Chicken"
+        "en": "Garlic Soy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1841,7 +1841,7 @@
       "names": {
         "ko": "돈까스 플레이트 (안 매운맛)",
         "vi": "Đĩa tonkatsu (không cay)",
-        "zh": "炸猪排拼盘(不辣)",
+        "zh": "炸猪排拼盘（不辣）",
         "en": "Tonkatsu Plate (Non-spicy)"
       },
       "price": 313200,
@@ -2416,7 +2416,7 @@
       "names": {
         "ko": "코카콜라 (390ml)",
         "vi": "Coca-Cola (390ml)",
-        "zh": "可口可乐(390ml)",
+        "zh": "可口可乐（390ml）",
         "en": "Coca-Cola (390ml)"
       },
       "price": 22000,
@@ -2456,7 +2456,7 @@
       "names": {
         "ko": "펩시 제로 (390ml)",
         "vi": "Pepsi Không Calo (390ml)",
-        "zh": "百事无糖(390ml)",
+        "zh": "百事无糖（390ml）",
         "en": "Pepsi Zero (390ml)"
       },
       "price": 33000,
@@ -2476,7 +2476,7 @@
       "names": {
         "ko": "나랑드 제로 (500ml)",
         "vi": "Narangd Zero (500ml)",
-        "zh": "Narangd 零糖(500ml)",
+        "zh": "Narangd 零糖（500ml）",
         "en": "Narangd Zero (500ml)"
       },
       "price": 55000,
@@ -2506,7 +2506,7 @@
       "names": {
         "ko": "펩시 제로 라임 (1.5L)",
         "vi": "Pepsi Không Calo Vị Chanh (1,5L)",
-        "zh": "百事无糖青柠味(1.5L)",
+        "zh": "百事无糖青柠味（1.5L）",
         "en": "Pepsi Zero Lime (1.5L)"
       },
       "price": 77000,
@@ -2612,7 +2612,7 @@
       "names": {
         "ko": "사포로 1+1 (640cc)",
         "vi": "Sapporo 1 tặng 1 (640ml)",
-        "zh": "三宝乐1+1(640毫升)",
+        "zh": "三宝乐1+1（640毫升）",
         "en": "Sapporo Buy 1 Get 1 (640ml)"
       },
       "price": 165000,
@@ -2692,7 +2692,7 @@
       "names": {
         "ko": "하노이 생맥주 KEG (1L)",
         "vi": "Bia Hơi Hà Nội KEG (1L)",
-        "zh": "河内鲜啤 KEG(1L)",
+        "zh": "河内鲜啤 KEG（1L）",
         "en": "Hanoi Draft Beer KEG (1L)"
       },
       "price": 110000,
@@ -6373,10 +6373,10 @@
     "provider": "openai",
     "model": "gpt-5.6-terra",
     "status": "ready",
-    "entityCount": 362,
-    "cacheHits": 348,
-    "translated": 14,
+    "entityCount": 364,
+    "cacheHits": 345,
+    "translated": 19,
     "pendingCount": 0,
-    "updatedAt": "2026-11-10T12:34:20.765Z"
+    "updatedAt": "2026-11-10T13:39:22.137Z"
   }
 }
