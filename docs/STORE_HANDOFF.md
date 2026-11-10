@@ -5,7 +5,8 @@
 - 배달K 매장 14562의 `🍠호구마!!500~600g` 상품 4567061을 50,000동에서 54,000동으로 수정하고 저장 후 다시 열어 확인했다. 쿠쿠의 8% 세율을 기준으로 50,000 × 1.08 = 54,000동이다.
 - CUKCUK 일반 메뉴와 테이블 QR 메뉴에 `GOGUMA500600`을 `군고구마 500~600g | Khoai lang nướng 500-600g`, 54,000동, 8%, 신메뉴 카테고리로 등록했다. 실제 UUID는 `2ae7f6ee-1868-4a20-887f-57a762681b09`이다. QR 상세 API에서 `Success: true`, 54,000동, `IsOutOfStock: false`를 확인했다. 실제 POS 주문은 전송하지 않았다.
 - 제공된 MBC 호박고구마 사진을 UUID 이미지로 연결하고, 태블릿 신메뉴 상단에 `호박고구마!!!` 카드와 4개 언어 문구·54,000동 주문 버튼을 표시했다. 새 상품이 쿠쿠 QR에는 보이나 Graph/API 동기화에 늦게 도착하는 경우에도 QR 목록에서 실제 ID를 찾아 게시하도록 자동 동기화를 보완했다. 설치형 캐시는 `dabang-tablet-v59`다.
-- 기능 커밋 `0a8890a`. [태블릿 안전 미리보기](https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=0a8890a)에서 배포 후 확인한다. 로컬 안전 미리보기에서 한국어·베트남어·중국어·영어 카드와 54,000동 장바구니를 확인했다. Worker/UI 테스트 121개, 메뉴 이미지 감사 115개(누락·고아 0), 변경 공백 검사, QR 카테고리 18개 대조가 통과했다.
+- 기능 커밋 `0a8890a` ([PR #16](https://github.com/kimsuhoe01-creator/dabang/pull/16)). QR 메뉴 코드의 연속 공백 차이 때문에 첫 자동 동기화가 실패해 `59030b5` ([PR #17](https://github.com/kimsuhoe01-creator/dabang/pull/17))에서 비교를 보완했다. 이어진 [CUKCUK 자동 동기화 #42806250666](https://github.com/kimsuhoe01-creator/dabang/actions/runs/42806250666)이 성공하고 게시 데이터 커밋 `ddd5b8b`에 군고구마 UUID·54,000동·판매 가능이 유지됐다.
+- [GitHub Pages 배포 #42806338345](https://github.com/kimsuhoe01-creator/dabang/actions/runs/42806338345)와 [주문 Worker 배포 #42805798776](https://github.com/kimsuhoe01-creator/dabang/actions/runs/42805798776)가 성공했다. [공개 태블릿 안전 미리보기](https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=ddd5b8b)에서 13개 노출 카테고리, 사진 로딩, 54,000동 장바구니, 브라우저 오류 0개를 확인했다. 로컬 안전 미리보기의 한국어·베트남어·중국어·영어 카드, Worker/UI 테스트 121개, 메뉴 이미지 감사 115개(누락·고아 0), 변경 공백 검사, QR 신메뉴 18개·세트 10개 대조가 통과했다. 주문 Worker `/health`도 `ok: true`다.
 - 현장에서는 첫 실제 주문 1건의 태블릿 가격과 CUKCUK POS 반영을 확인한다.
 
 ## 2026-11-10 한신포차 세트 월요일 30% 행사
