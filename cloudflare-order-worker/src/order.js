@@ -1,6 +1,7 @@
 const API_ROOT = "https://graphapi.cukcuk.vn";
+import { MONDAY_POCHA_MENU_ID, mondayPochaDisplayPrice } from "./monday-promo.js";
 
-export function validateAndBuildOrder(payload, menuData, branchId) {
+export function validateAndBuildOrder(payload, menuData, branchId, now = new Date()) {
   if (!payload || typeof payload !== "object") throw invalid("주문 정보가 올바르지 않습니다.");
   const requestedId = cleanId(payload.clientOrderId);
   if (!requestedId) throw new OrderError("주문 번호가 올바르지 않습니다. 화면을 새로고침하고 다시 주문해 주세요.", 400, "CLIENT_ORDER_ID_REQUIRED");
@@ -25,6 +26,10 @@ export function validateAndBuildOrder(payload, menuData, branchId) {
     const menu = menus.get(menuId);
     if (!menu || !Number.isInteger(quantity) || quantity < 1 || quantity > 99) {
       throw invalid("현재 판매 중인 메뉴와 수량을 확인해 주세요.");
+    }
+    if (menuId === MONDAY_POCHA_MENU_ID && line.basePrice !== undefined && line.basePrice !== null
+      && Number(line.basePrice) !== mondayPochaDisplayPrice(menu, now)) {
+      throw new OrderError("월요일 행사 시간이 바뀌었습니다. 장바구니 가격을 확인한 뒤 다시 주문해 주세요.", 409, "PROMO_PRICE_CHANGED");
     }
 
     const parentId = crypto.randomUUID();
