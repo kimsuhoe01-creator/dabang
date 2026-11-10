@@ -149,6 +149,48 @@ test('Dakgalbi table QR flavors keep exact CUKCUK IDs and four-language labels',
   assert.deepEqual(template.values[0].receiptNames, { ko: '간장맛', vi: 'Vị xì dầu' });
 });
 
+test('roasted sweet potato keeps its optional kimchi add-on at the CUKCUK QR price', () => {
+  const menuId = '2ae7f6ee-1868-4a20-887f-57a762681b09';
+  const kimchiId = '6a0d8ef5-c6e1-4593-9e58-9d100ae2ebc4';
+  const result = mergeCukcukDetailOptions({
+    menus: [{ id: menuId, cukcukCode: 'GOGUMA500600', optionTemplateIds: [] }],
+    optionTemplates: []
+  }, {
+    detailOptionSources: {
+      GOGUMA500600: {
+        expectedCategoryCount: 1,
+        expectedValueCount: 1,
+        expectedValueIds: [[kimchiId]],
+        templateNames: { ko: '김치 추가', vi: 'Thêm kimchi', zh: '加泡菜', en: 'Add Kimchi' }
+      }
+    }
+  }, { details: [{
+    Id: menuId,
+    AdditionCategories: [{ Additions: [{
+      Id: kimchiId,
+      Description: '김치 추가 | Thêm kimchi | 加泡菜 | Add kimchi',
+      Price: 21600,
+      InActive: false
+    }] }]
+  }] });
+  const templateId = `cukcuk-detail:${menuId}:0`;
+  assert.deepEqual(result.menus[0].optionTemplateIds, [templateId]);
+  assert.equal(result.menus[0].optionGroups, 1);
+  assert.equal(result.menus[0].optionRules, undefined);
+  assert.equal(result.optionTemplates[0].required, false);
+  assert.equal(result.optionTemplates[0].minSelections, 0);
+  assert.equal(result.optionTemplates[0].maxSelections, 1);
+  assert.deepEqual(result.optionTemplates[0].values[0], {
+    id: kimchiId,
+    sourceName: '김치 추가 | Thêm kimchi | 加泡菜 | Add kimchi',
+    names: { ko: '김치 추가', vi: 'Thêm kimchi', zh: '加泡菜', en: 'Add kimchi' },
+    receiptNames: { ko: '김치 추가', vi: 'Thêm kimchi' },
+    additionalPrice: 21600,
+    visible: true,
+    sortOrder: 0
+  });
+});
+
 test('fried snacks table QR includes the hash brown addition at its CUKCUK price', () => {
   const menuId = '6a4fc8cd-4937-46f0-990c-536bdffb1de3';
   const code = '(T10) Do chien/mon chien';
