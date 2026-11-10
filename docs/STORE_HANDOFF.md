@@ -1,5 +1,20 @@
 # 매장 노트북 인계 — 다방 테이블오더
 
+## 2026-11-10 군고구마 김치 추가 옵션 3곳 연결
+
+- 사용자가 확정한 김치 추가 가격은 20,000동에 8% 부가세를 더한 **21,600동**이다. 기본 군고구마 가격 54,000동은 유지한다. 군고구마와 김치를 함께 고르면 **75,600동**이다.
+- CUKCUK 일반 메뉴 `GOGUMA500600` 및 테이블 QR 메뉴에 선택형 `김치 추가 | Thêm kimchi | 加泡菜 | Add kimchi` 옵션을 연결했다. 최대 1개, 추가금 21,600동이며 실제 CUKCUK 추가 옵션 ID는 `6a0d8ef5-c6e1-4593-9e58-9d100ae2ebc4`이다. 공식 QR 상세에서 해당 ID·가격·판매 가능을 확인했다.
+- 배달K 매장 14562의 상품 4567061에 `김치 추가` 옵션 그룹과 21,600동 선택지를 저장하고 다시 열어 확인했다. 배달K 관리자에서 상품은 `공개중`이지만 당시 판매 상태가 `준비중`으로 표시됐다. 이 상태는 이번 작업에서 바꾸지 않았다.
+- 태블릿의 CUKCUK QR 옵션 연결을 배포했다. [PR #24](https://github.com/kimsuhoe01-creator/dabang/pull/24)의 기능 커밋 `2ebd405`, 병합 커밋 `489bda0`, [자동 동기화 #42816801305](https://github.com/kimsuhoe01-creator/dabang/actions/runs/42816801305)의 게시 데이터 커밋 `eee5e9f`가 적용됐다. [GitHub Pages #42816901979](https://github.com/kimsuhoe01-creator/dabang/actions/runs/42816901979)와 [주문 Worker #42816801328](https://github.com/kimsuhoe01-creator/dabang/actions/runs/42816801328)이 성공했다.
+- [공개 안전 미리보기](https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=eee5e9f)에서 신메뉴 상단 고구마 카드를 누르면 김치 선택창이 열리고, 선택 시 총액 75,600동과 장바구니 1개·75,600동이 표시됨을 확인했다. 실제 POS 주문은 보내지 않았다. Worker/UI 테스트 122개 통과, 메뉴 이미지 감사 116개(누락·고아 0), 변경 공백 검사 통과.
+- 첫 실제 판매 시 태블릿에서 김치 추가를 선택한 주문이 CUKCUK POS와 주방 영수증에 `군고구마`와 `김치 추가`로 찍히는지 현장에서 확인한다. 배달K에서 판매를 시작하려면 상품의 `준비중` 상태도 매장 운영에 맞게 확인한다.
+
+## 2026-11-10 호박고구마 카드 오른쪽 귀여운 고구마 그림
+
+- 신메뉴 첫 카드 오른쪽 빈 공간에 작은 군고구마 그림을 넣었다. 투명 배경 WebP 그림은 `assets/featured/goguma-cute-sticker-v2.webp`이며 좁은 화면에서도 카드 문구와 가격을 가리지 않게 배치했다. 설치형 태블릿 캐시는 `dabang-tablet-v62`다.
+- [PR #23](https://github.com/kimsuhoe01-creator/dabang/pull/23) 기능 커밋 `7a24244`, 병합 커밋 `5d260a6`이 배포됐다. [GitHub Pages #42814551529](https://github.com/kimsuhoe01-creator/dabang/actions/runs/42814551529)와 [주문 Worker #42814552471](https://github.com/kimsuhoe01-creator/dabang/actions/runs/42814552471)이 성공했다.
+- [공개 안전 미리보기](https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=5d260a6)에서 그림과 54,000동 가격, 13개 카테고리, 깨진 이미지 0개 및 브라우저 오류 0개를 확인했다. 매장 태블릿에서는 새로고침 후 그림 위치를 눈으로 확인한다.
+
 ## 2026-11-10 호박고구마 카드 사진·문구 경계 개선
 
 - 신메뉴 상단 호박고구마 카드의 사진과 글 배경을 나누던 직선 경계를 없앴다. 사진 오른쪽을 따뜻한 붉은 배경으로 점차 흐리게 연결하고, 좁은 화면에서는 사진 아래쪽으로 같은 효과를 적용했다. 메뉴명·가격·주문 동작은 그대로 유지했다. 설치형 태블릿 캐시는 `dabang-tablet-v61`이다.
