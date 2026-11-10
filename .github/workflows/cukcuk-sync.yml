@@ -213,9 +213,10 @@ jobs:
             // The table QR catalog can publish a new product before Graph inventory paging does.
             // Resolve only products explicitly listed in the checked-in QR layout.
             const qrLayout = JSON.parse(fs.readFileSync('data/cukcuk-table-qr-layout.json', 'utf8'));
+            const qrCodeKey = value => String(value || '').normalize('NFKC').replace(/\s+/g, ' ').trim().toLocaleLowerCase('en-US');
             const missingQrCategories = qrLayout.categories.filter(category =>
               category.menus.some(menu => !(published.menus || []).some(item =>
-                String(item.cukcukCode || '').trim() === String(menu.code || '').trim()))
+                qrCodeKey(item.cukcukCode) === qrCodeKey(menu.code)))
             );
             if (missingQrCategories.length) {
               const configResponse = await fetchWithRetry(`https://${domain}.cukcuk.vn/order-online/Config/GetConfig`, {
@@ -227,7 +228,7 @@ jobs:
               const qrHeaders = { Accept: 'application/json', AuthorizationKey: config.Token };
               const qrRoot = `https://${domain}.cukcuk.vn${config.ApiUrl || '/cukapiv2/orderonline'}`;
               for (const category of missingQrCategories) {
-                const requested = new Set(category.menus.map(menu => String(menu.code || '').trim()).filter(Boolean));
+                const requested = new Map(category.menus.map(menu => [qrCodeKey(menu.code), String(menu.code || '').trim()]).filter(([key]) => key));
                 for (let page = 1; page <= 10 && requested.size; page++) {
                   const url = new URL(`${qrRoot}/api/InventoryItem/GetPageInventoryItemsByCategory`);
                   for (const [key, value] of Object.entries({
@@ -239,9 +240,10 @@ jobs:
                   const result = await response.json().catch(() => null);
                   if (!response.ok || !result?.Success || !Array.isArray(result.Data)) throw new Error(`CUKCUK table QR category ${category.id} unavailable`);
                   for (const item of result.Data) {
-                    const code = String(item.InventoryItemCode || '').trim();
-                    if (!requested.has(code)) continue;
-                    requested.delete(code);
+                    const key = qrCodeKey(item.InventoryItemCode);
+                    if (!requested.has(key)) continue;
+                    const code = requested.get(key);
+                    requested.delete(key);
                     const id = String(item.InventoryItemID || '');
                     const price = Number(item.UnitPriceDelivery ?? item.UnitPrice);
                     if (!id || !Number.isFinite(price) || price < 0) throw new Error(`CUKCUK table QR product ${code} invalid`);
@@ -260,7 +262,7 @@ jobs:
                   }
                   if (page * 100 >= Number(result.Total || 0)) break;
                 }
-                if (requested.size) throw new Error(`CUKCUK table QR products missing: ${[...requested].join(', ')}`);
+                if (requested.size) throw new Error(`CUKCUK table QR products missing: ${[...requested.values()].join(', ')}`);
               }
             }
             published.inventoryCandidateCount = published.menus.length;
