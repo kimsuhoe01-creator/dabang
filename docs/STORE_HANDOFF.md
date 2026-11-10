@@ -5,7 +5,8 @@
 - CUKCUK `Danh mục > Bếp/Bar > bếp`에서 사용 장치 `Máy in`, 출력 시점 `In sau khi gửi yêu cầu chế biến`을 확인했다. 조리 메뉴 153개 목록에 `군고구마 500~600g | Khoai lang nướng 500-600g`와 `로디드 나쵸 | Nachos phủ topping`이 모두 있다. 두 일반 메뉴의 `Chế biến tại`도 `bếp`으로 저장 후 재확인했다. 주문이 CUKCUK에서 조리 요청으로 전송되면 이 주방 프린터의 출력 대상이다. 실제 종이 출력은 현장 주문 전까지 미검증이다.
 - 이전에 제안한 세금 포함 248,400동을 사용자가 확정했다. CUKCUK에 코드 `LOADEDNACHOS`, 신메뉴, 단위 `Phần`, 판매가 248,400동, VAT 8%, 주방 `bếp`으로 새로 저장했다. 테이블 QR의 `Chọn món`에도 같은 상품을 추가하고 목록에서 가격 248,400동을 재확인했다. 공식 QR 메뉴 응답의 실제 UUID는 `0d312c45-2769-4afa-8510-c3c941aab57d`이고, 품절 아님을 확인했다.
 - 기존에 편집한 메뉴 사진을 UUID 이미지로 연결했다. 태블릿 신메뉴의 고구마 다음 위치에 4개 언어 표시명과 248,400동 주문 상품을 추가했다. 설치형 캐시는 `dabang-tablet-v60`이다.
-- 로컬 검사: Worker/UI 테스트 121개 통과, 메뉴 이미지 감사 116개(누락·고아 0), 변경 공백 검사 통과. 공개 배포 후 안전 미리보기와 Pages 실행 결과를 다시 기록한다.
+- 기능 커밋 `903b444`는 [PR #19](https://github.com/kimsuhoe01-creator/dabang/pull/19)로 병합됐다. [CUKCUK 자동 동기화 #42810165673](https://github.com/kimsuhoe01-creator/dabang/actions/runs/42810165673) 성공 후 게시 데이터 커밋 `4aa8f5d`에서도 나초 UUID·248,400동·판매 가능·4개 언어가 유지됐다. [GitHub Pages #42810258519](https://github.com/kimsuhoe01-creator/dabang/actions/runs/42810258519)와 [주문 Worker #42810165493](https://github.com/kimsuhoe01-creator/dabang/actions/runs/42810165493) 배포가 성공했다.
+- [공개 안전 미리보기](https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=4aa8f5d)에서 신메뉴 19개 중 나초 사진이 1254×1254 픽셀로 로드되고, 메뉴를 눌러 장바구니 248,400동으로 담기는 것을 확인했다. 13개 노출 카테고리의 제목과 메뉴가 표시되고 브라우저 경고·오류는 없었다. 로컬 검사: Worker/UI 테스트 121개 통과, 메뉴 이미지 감사 116개(누락·고아 0), 변경 공백 검사 통과.
 - 첫 실제 판매 주문에서 POS 접수 후 직원이 `Xác nhận`과 `Gửi bếp/bar`를 마쳤을 때 주방 영수증에 고구마·나초 이름과 수량이 찍히는지 확인한다. 실제 테스트 주문은 보내지 않았다.
 
 ## 2026-11-10 군고구마 신메뉴·배달K 가격·태블릿 QR 연동
