@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-11-10 13:38:54",
-    "finished_at": "2026-11-10 13:39:02",
+    "started_at": "2026-11-10 13:57:04",
+    "finished_at": "2026-11-10 13:57:15",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -1106,7 +1106,7 @@
       "names": {
         "ko": "고추마늘간장 치킨",
         "vi": "Gà sốt xì dầu tỏi ớt",
-        "zh": "辣椒蒜香酱油鸡",
+        "zh": "辣椒蒜蓉酱油鸡",
         "en": "Garlic Soy Chicken"
       },
       "price": 399600,
@@ -1128,7 +1128,7 @@
       "names": {
         "ko": "스리라차 어니언 치킨",
         "vi": "Gà sốt kem hành Sriracha",
-        "zh": "是拉差洋葱奶油炸鸡",
+        "zh": "是拉差洋葱奶油鸡",
         "en": "Sriracha Onion Chicken"
       },
       "price": 399600,
@@ -2811,7 +2811,7 @@
       "sourceName": "선양오크 | Sunyang Soju Oak | 鲜洋橡木烧酒",
       "names": {
         "ko": "선양 오크",
-        "vi": "Rượu soju Sunyang Oak",
+        "vi": "Soju Sunyang Oak",
         "zh": "鲜洋橡木烧酒",
         "en": "Sunyang Soju Oak"
       },
@@ -6374,9 +6374,9 @@
     "model": "gpt-5.6-terra",
     "status": "ready",
     "entityCount": 364,
-    "cacheHits": 345,
-    "translated": 19,
+    "cacheHits": 347,
+    "translated": 17,
     "pendingCount": 0,
-    "updatedAt": "2026-11-10T13:39:22.137Z"
+    "updatedAt": "2026-11-10T13:57:34.635Z"
   }
 }
