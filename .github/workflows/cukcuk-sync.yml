@@ -210,6 +210,59 @@ jobs:
               existing.set(id, candidate);
               appended++;
             }
+            // The table QR catalog can publish a new product before Graph inventory paging does.
+            // Resolve only products explicitly listed in the checked-in QR layout.
+            const qrLayout = JSON.parse(fs.readFileSync('data/cukcuk-table-qr-layout.json', 'utf8'));
+            const missingQrCategories = qrLayout.categories.filter(category =>
+              category.menus.some(menu => !(published.menus || []).some(item =>
+                String(item.cukcukCode || '').trim() === String(menu.code || '').trim()))
+            );
+            if (missingQrCategories.length) {
+              const configResponse = await fetchWithRetry(`https://${domain}.cukcuk.vn/order-online/Config/GetConfig`, {
+                headers: { Accept: 'application/json', Authorization: crypto.randomUUID() }
+              });
+              const configResult = await configResponse.json().catch(() => null);
+              const config = configResult?.Data || configResult;
+              if (!configResponse.ok || !config?.Token || !config?.CompanyCode) throw new Error('CUKCUK table QR configuration unavailable');
+              const qrHeaders = { Accept: 'application/json', AuthorizationKey: config.Token };
+              const qrRoot = `https://${domain}.cukcuk.vn${config.ApiUrl || '/cukapiv2/orderonline'}`;
+              for (const category of missingQrCategories) {
+                const requested = new Set(category.menus.map(menu => String(menu.code || '').trim()).filter(Boolean));
+                for (let page = 1; page <= 10 && requested.size; page++) {
+                  const url = new URL(`${qrRoot}/api/InventoryItem/GetPageInventoryItemsByCategory`);
+                  for (const [key, value] of Object.entries({
+                    companyCode: config.CompanyCode, pageIndex: page, limit: 100,
+                    branchID: branchId, categoryID: category.id, hashTagID: '',
+                    keySearch: '', bookingType: 1, openSaleDishIds: ''
+                  })) url.searchParams.set(key, String(value));
+                  const response = await fetchWithRetry(url, { headers: qrHeaders });
+                  const result = await response.json().catch(() => null);
+                  if (!response.ok || !result?.Success || !Array.isArray(result.Data)) throw new Error(`CUKCUK table QR category ${category.id} unavailable`);
+                  for (const item of result.Data) {
+                    const code = String(item.InventoryItemCode || '').trim();
+                    if (!requested.has(code)) continue;
+                    requested.delete(code);
+                    const id = String(item.InventoryItemID || '');
+                    const price = Number(item.UnitPriceDelivery ?? item.UnitPrice);
+                    if (!id || !Number.isFinite(price) || price < 0) throw new Error(`CUKCUK table QR product ${code} invalid`);
+                    if (existing.has(id)) continue;
+                    const candidate = {
+                      id, cukcukId: id, cukcukCode: code, categoryId: String(category.id),
+                      categoryName: String(category.names?.ko || category.sourceName || ''),
+                      sourceName: String(item.InventoryItemName || code),
+                      names: { ko: String(item.InventoryItemName || code), vi: '', zh: '', en: '' },
+                      price, available: item.IsOutOfStock !== true && item.Inactive !== true,
+                      optionGroups: 0, optionTemplateIds: [], sortOrder: published.menus.length
+                    };
+                    published.menus.push(candidate);
+                    existing.set(id, candidate);
+                    appended++;
+                  }
+                  if (page * 100 >= Number(result.Total || 0)) break;
+                }
+                if (requested.size) throw new Error(`CUKCUK table QR products missing: ${[...requested].join(', ')}`);
+              }
+            }
             published.inventoryCandidateCount = published.menus.length;
 
             const detailConfig = JSON.parse(fs.readFileSync('data/cukcuk-table-qr-layout.json', 'utf8')).detailOptionSources || {};

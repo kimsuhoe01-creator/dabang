@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'dabang-tablet-v58';
+const CACHE_VERSION = 'dabang-tablet-v59';
 const SHELL_CACHE = `${CACHE_VERSION}-shell`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const APP_SHELL = [
@@ -8,7 +8,7 @@ const APP_SHELL = [
   './assets/option-order.js',
   './assets/voice-order.js?v=20260831-v12',
   './assets/voice-order.css?v=20260831-v12',
-  './assets/menu-images.js?v=20261015-zziran-v16',
+  './assets/menu-images.js?v=20261110-goguma-v17',
   './assets/featured/dakgalbi-dkg-poster.jpg?v=20260916-original-photo',
   './assets/featured/dakgalbi-tiktok-vietnam-hero.jpg?v=20261016-tiktok-photo-v1',
   './assets/featured/zziran-wings.jpg?v=20261015-launch',
@@ -16,7 +16,8 @@ const APP_SHELL = [
   './assets/featured/monday-pocha-rate-vi.png?v=20261110',
   './assets/featured/monday-pocha-rate-zh.png?v=20261110',
   './assets/featured/monday-pocha-rate-en.png?v=20261110',
-  './assets/menu/9108cbc8-8db9-4412-b17f-061f0f0f2ab8.jpg?v=20261015-zziran-v16',
+  './assets/menu/9108cbc8-8db9-4412-b17f-061f0f0f2ab8.jpg?v=20261110-goguma-v17',
+  './assets/menu/2ae7f6ee-1868-4a20-887f-57a762681b09.png?v=20261110-goguma-v17',
   './assets/brand/dabang-logo-transparent.png',
   './assets/pwa/icon-32.png',
   './assets/pwa/icon-180.png',
