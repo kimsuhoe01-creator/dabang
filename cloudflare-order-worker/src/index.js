@@ -3,7 +3,6 @@ import { fetchCukCukTableOrder, submitCukCukSelfOrder } from "./self-order.js";
 import { fetchCukCukPosTableOrder } from "./table-order.js";
 import { expandMenuImage } from "./image-edit.js";
 import { handleStoreApi } from "./gpt-api.js";
-import { handleVoiceOrderApi } from "./voice-order.js";
 import { applyAvailabilityToMenuData, getAvailabilitySnapshot, handleAvailabilityApi, readAvailabilityStorage, writeAvailabilityStorage, writeVisibilityStorage } from "./availability.js";
 
 const ALLOWED_ORIGINS = new Set([
@@ -18,8 +17,6 @@ export default {
     if (storeResponse) return cors(request, storeResponse);
     const availabilityResponse = await handleAvailabilityApi(request, env, ALLOWED_ORIGINS);
     if (availabilityResponse) return cors(request, availabilityResponse);
-    const voiceResponse = await handleVoiceOrderApi(request, env, ALLOWED_ORIGINS);
-    if (voiceResponse) return cors(request, voiceResponse);
 
     if (url.pathname === "/health" && request.method === "GET") {
       return cors(request, json({ ok: true, service: "dabang-cukcuk-order-api" }));

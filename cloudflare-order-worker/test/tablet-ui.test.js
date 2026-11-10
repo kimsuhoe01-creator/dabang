@@ -97,7 +97,7 @@ test('preview orders are unmistakably marked as not sent to the POS', () => {
 
   const cartSource = sourceSlice('function renderCartItems()', 'function changeCartQuantity');
   assert.match(cartSource, /PREVIEW_MODE\?words\[lang\]\.previewSend:words\[lang\]\.sendOrder/);
-  assert.match(cartSource, /PREVIEW_MODE\?words\[lang\]\.previewNote:\(voiceCopy\?\.note\|\|words\[lang\]\.orderNote\)/);
+  assert.match(cartSource, /PREVIEW_MODE\?words\[lang\]\.previewNote:words\[lang\]\.orderNote/);
 
   const submitSource = sourceSlice('async function submitOrder()', 'function showOrderSuccess');
   assert.match(submitSource, /if\(PREVIEW_MODE\).*else\{.*const response=await fetch\(ORDER_ENDPOINT/s);

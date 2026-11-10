@@ -149,7 +149,7 @@ test("DIZINDA challenge explicit resume clears the existing hold but preserves l
   assert.ok(heldAgain.unavailableMenuIds.includes(DIZINDA_CHALLENGE_ID));
 });
 
-test("availability snapshot disables matching catalog items before order and voice validation", () => {
+test("availability snapshot disables matching catalog items before order validation", () => {
   const snapshot = buildAvailabilitySnapshot([], new Date("2026-09-03T05:00:00.000Z"));
   const result = applyAvailabilityToMenuData({ menus: [
     { id: PIZZA_ID, available: true },
