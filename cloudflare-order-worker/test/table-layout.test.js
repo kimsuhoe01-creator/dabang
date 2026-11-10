@@ -324,7 +324,7 @@ test('table QR layout rejects invalid prices and inconsistent declared sort orde
   assert.throws(() => applyTableQrLayout({ categories: [], menus: [], optionTemplates: [] }, invalidSort), /sortOrder must be 0/i);
 });
 
-test('the checked-in CUKCUK table QR snapshot publishes the 14-category, 116-menu layout', () => {
+test('the checked-in CUKCUK table QR snapshot publishes the 16-category, 116-menu layout', () => {
   const config = JSON.parse(fs.readFileSync(new URL('../../data/cukcuk-table-qr-layout.json', import.meta.url), 'utf8'));
   const rules = config.categories.flatMap(category => category.menus);
   const menus = rules.map((rule, index) => ({
@@ -357,14 +357,27 @@ test('the checked-in CUKCUK table QR snapshot publishes the 14-category, 116-men
 
   const result = applyTableQrLayout({ categories: [], menus, optionTemplates }, config);
 
-  assert.equal(result.categoryCount, 14);
+  assert.equal(result.categoryCount, 16);
   assert.equal(result.menuCount, 116);
   assert.equal(result.tableQrLayout.excludedCandidateCount, 1);
-  assert.deepEqual(result.categories.map(category => category.names.ko), ['하이볼', '신메뉴', '요일별 할인', '세트', '반마리 치킨', '다방치킨', '통닭', '날개치킨', '다방분식', '스페이스 피자', '안주', '건어물', '음료', '주류']);
+  assert.deepEqual(result.categories.map(category => category.names.ko), ['하이볼', '신메뉴', '요일별 할인', '세트', '반마리 치킨', '다방치킨', '통닭', '날개치킨', '다방분식', '돈까스', '스페이스 피자', '안주', '건어물', '음료', '디저트', '주류']);
   const menusByCategory = new Map(result.categories.map(category => [category.names.ko, result.menus.filter(menu => menu.categoryId === category.id)]));
   assert.deepEqual(menusByCategory.get('반마리 치킨').map(menu => menu.cukcukCode), ['(KX13)', '(KX14)', 'Original Roast', 'Crispy Spicy Roast', '(W06) Nửa con gà']);
   assert.deepEqual(menusByCategory.get('건어물').map(menu => menu.cukcukCode), ['(F09) Do kho tong hop', '(F06) Cá pollack non khô', '(F08) Ca chi vang nuong', '(F07) Mực bán khô tẩm vị', '(F04) Cá chỉ vàng nướng', 'Mực']);
-  assert.deepEqual(menusByCategory.get('신메뉴').slice(0, 5).map(menu => menu.cukcukCode), ['DKG', '(W07) Cánh gà cumin', 'GOGUMA500600', 'LOADEDNACHOS', 'ᄃᄃᄎ TTTD']);
+  assert.deepEqual(menusByCategory.get('신메뉴').map(menu => menu.cukcukCode), ['DKG', '(W07) Cánh gà cumin', 'GOGUMA500600', 'LOADEDNACHOS']);
+  assert.deepEqual(menusByCategory.get('돈까스').map(menu => menu.cukcukCode), ['ᄃᄃᄎ TTTD', 'ᄃᄃ TD 地', 'HCX']);
+  assert.deepEqual(menusByCategory.get('디저트').map(menu => menu.cukcukCode), ['ᄋ1 K1 冰1 IC1', 'ᄋ5 K5 冰5 IC5']);
+  for (const [code, categoryName] of Object.entries({
+    'ᄃ DC 达': '세트', 'ᄎ GNTC 炭 CSC': '다방치킨', hot: '다방치킨',
+    'ᄉ GPBPM 雪 SCPC': '다방치킨', 'ᄆGMGC': '다방치킨',
+    '(T02) Gà nướng củi': '통닭', 'ᄋ GCSCNKH 油': '안주',
+    'ᄆGRXCF': '안주', 'ᄎ CC KCC': '다방분식', 'ᄇ MTCSC ESCN 超': '다방분식'
+  })) assert.equal(result.menus.find(menu => menu.cukcukCode === code).categoryName, categoryName);
+  for (const [code, name] of Object.entries({
+    LOADEDNACHOS: '치즈 나초 플래터', '(KX13)': '반마리 치킨 (뼈/순살)',
+    'Original Roast': '오리지널 로스트 반 마리',
+    'Crispy Spicy Roast': '고추바사삭 로스트 반 마리', 'ᄉ SSO 鲜': '선양 오크'
+  })) assert.equal(result.menus.find(menu => menu.cukcukCode === code).names.ko, name);
   assert.equal(result.menus.find(menu => menu.cukcukCode === 'GOGUMA500600').price, 54000);
   assert.equal(result.menus.find(menu => menu.cukcukCode === 'LOADEDNACHOS').price, 248400);
   assert.equal(result.menus.find(menu => menu.cukcukCode === 'DKG').price, 378000);

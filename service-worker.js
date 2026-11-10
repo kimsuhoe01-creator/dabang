@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'dabang-tablet-v62';
+const CACHE_VERSION = 'dabang-tablet-v63';
 const SHELL_CACHE = `${CACHE_VERSION}-shell`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const APP_SHELL = [
@@ -6,8 +6,6 @@ const APP_SHELL = [
   './manifest.webmanifest',
   './assets/table-layout.js',
   './assets/option-order.js',
-  './assets/voice-order.js?v=20260831-v12',
-  './assets/voice-order.css?v=20260831-v12',
   './assets/menu-images.js?v=20261110-nachos-v18',
   './assets/featured/dakgalbi-dkg-poster.jpg?v=20260916-original-photo',
   './assets/featured/dakgalbi-tiktok-vietnam-hero.jpg?v=20261016-tiktok-photo-v1',

@@ -11,7 +11,6 @@
 <link rel="manifest" href="manifest.webmanifest">
 <link rel="icon" type="image/png" sizes="32x32" href="assets/pwa/icon-32.png">
 <link rel="apple-touch-icon" sizes="180x180" href="assets/pwa/icon-180.png">
-<link rel="stylesheet" href="assets/voice-order.css?v=20260831-v12">
 <title>DABANG Chicken Tablet Menu</title>
 <style>
 *{box-sizing:border-box}html,body{margin:0;min-height:100%;font-family:Inter,"Noto Sans KR","Noto Sans SC","Microsoft YaHei","PingFang SC","Segoe UI",sans-serif;color:#1d1b18;background:#f3eee5}button{font:inherit;cursor:pointer}:root{--red:#ff3344;--yellow:#ffdf00;--black:#111;--cream:#f3eee5;--white:#fff}
@@ -106,9 +105,8 @@ html[lang="zh"] body,html[lang="zh"] button,html[lang="zh"] input{font-family:"M
 <div class="app" id="tabletApp" inert aria-hidden="true">
  <header class="header">
   <div class="header-left"><button class="reset-flow" type="button" onclick="restartForNextGuest()"><span class="reset-icon" aria-hidden="true">↶</span><span class="reset-label" id="resetText">Chọn lại bàn</span></button><div class="store-name"><span class="table-caption" id="tableCaption">Bàn hiện tại</span><strong id="tableName">-</strong></div><span class="order-ready" id="orderReady">Sẵn sàng đặt món</span><div class="langs" id="langs" aria-label="Language"></div></div>
-  <div class="right"><p class="voice-inline-guide" id="voiceGuide" role="status" aria-live="polite">직원에게 말하듯 메뉴판을 보면서 편하게 말씀해 주세요.</p><div class="voice-inline-status" id="voiceInlineStatus" hidden><span class="voice-inline-spinner" aria-hidden="true"></span><strong id="voiceInlineStatusText">주문을 정리하고 있습니다…</strong><time id="voiceTimer">00:00</time></div><button class="voice-order-button" id="voiceOrderButton" type="button" onclick="openVoiceOrder(this)"><span class="voice-order-icon" aria-hidden="true">●</span><span id="voiceButtonText">음성 주문</span></button><button class="voice-finish-button" id="voiceFinishButton" type="button" onclick="finishVoiceListening()" hidden><span aria-hidden="true">✓</span><span id="voiceFinishText">음성 주문 보내기</span></button><button class="table-order-history-button" id="tableOrderHistoryButton" type="button" aria-label="테이블 주문 내역" title="테이블 주문 내역" onclick="showTableOrderHistory(this)"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3h12v18l-2.1-1.35L14 21l-2-1.35L10 21l-1.9-1.35L6 21V3Z" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8h6M9 12h6M9 16h4" stroke-width="1.8" stroke-linecap="round"/></svg></button><button class="cart" type="button" onclick="showCartSummary(this)"><b id="cartCount" aria-live="polite">0</b><span class="cart-copy"><span id="cartText">장바구니</span><small id="cartSummary">0개</small></span></button></div>
+  <div class="right"><button class="table-order-history-button" id="tableOrderHistoryButton" type="button" aria-label="테이블 주문 내역" title="테이블 주문 내역" onclick="showTableOrderHistory(this)"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M6 3h12v18l-2.1-1.35L14 21l-2-1.35L10 21l-1.9-1.35L6 21V3Z" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 8h6M9 12h6M9 16h4" stroke-width="1.8" stroke-linecap="round"/></svg></button><button class="cart" type="button" onclick="showCartSummary(this)"><b id="cartCount" aria-live="polite">0</b><span class="cart-copy"><span id="cartText">장바구니</span><small id="cartSummary">0개</small></span></button></div>
  </header>
- <div class="voice-preview-bar" id="voiceMockBar" hidden><label for="voiceMockTranscript" id="voiceMockLabel">미리보기용 음성 주문</label><input id="voiceMockTranscript" type="text" aria-label="미리보기 음성 문장"><button type="button" id="voiceMockSend" onclick="finishVoiceListening()">음성 주문 보내기</button></div>
  <div class="menu-shell">
   <aside class="category-rail"><div class="rail-heading"><img class="rail-logo" src="assets/brand/dabang-logo-transparent.png" alt="DABANG Chicken"><strong id="railStoreName">다방치킨</strong><small>MENU</small></div><nav class="cats" id="cats" aria-label="Menu categories"></nav></aside>
   <main class="content" id="menuContent">
@@ -152,10 +150,10 @@ const FALLBACK={
  lang:'ko',
  featuredVisible:false,
  catalogRevision:'',
- categories:[{name:'다방치킨',visible:true},{name:'날개치킨',visible:true},{name:'다방분식',visible:true},{name:'스페이스 피자',visible:true},{name:'통닭',visible:true},{name:'신메뉴',visible:true}],
+ categories:[{name:'다방치킨',visible:true},{name:'날개치킨',visible:true},{name:'다방분식',visible:true},{name:'스페이스 피자',visible:true},{name:'통닭',visible:true}],
  menus:[
  {id:'fried',cat:'다방치킨',price:399600,available:true,n:{ko:'후라이드 치킨',vi:'Gà rán nguyên vị',zh:'原味炸鸡',en:'Original Fried Chicken'}},
- {id:'hot',cat:'신메뉴',price:399600,available:true,n:{ko:'핫후라이드 ver 3.0',vi:'Gà rán cay',zh:'辣味炸鸡',en:'Hot Fried Chicken'}},
+ {id:'hot',cat:'다방치킨',price:399600,available:true,n:{ko:'핫후라이드 ver 3.0',vi:'Gà rán cay',zh:'辣味炸鸡',en:'Hot Fried Chicken'}},
  {id:'wings',cat:'날개치킨',price:216000,available:true,n:{ko:'윙봉반',vi:'Nửa phần cánh gà chiên',zh:'半份炸鸡翅',en:'Half Fried Chicken Wings'}},
  {id:'oven',cat:'통닭',price:291600,available:true,n:{ko:'화덕통닭',vi:'Gà nướng lò củi',zh:'烤炉柴鸡',en:'Oven Whole Chicken'}},
  {id:'tteok',cat:'다방분식',price:129600,available:true,n:{ko:'다방 떡볶이',vi:'Tokbokki kiểu Dabang',zh:'达邦辣炒年糕',en:'Dabang Tteokbokki'}},
@@ -508,7 +506,7 @@ function render({preserveScroll=true}={}){
  if(document.getElementById('historyModal').classList.contains('open'))renderTableOrderHistory();
  requestAnimationFrame(()=>{content.scrollTop=previousScroll;syncCategoryFromScroll()});
 }
-function setLang(value){if(!SUPPORTED_LANGS.has(value))return;lang=value;state.lang=value;render();if(typeof updateVoiceLanguage==='function')updateVoiceLanguage()}
+function setLang(value){if(!SUPPORTED_LANGS.has(value))return;lang=value;state.lang=value;render()}
 function setCat(value){
  const content=document.getElementById('menuContent'),target=[...document.querySelectorAll('.menu-category-section')].find(section=>section.dataset.category===value);
  if(!target)return;
@@ -737,18 +735,16 @@ function cartLineOptions(line){
 }
 function renderCartItems(){
  const container=document.getElementById('cartItems');
- const voiceCopy=window.voiceCartReviewActive&&typeof getVoiceCartReviewCopy==='function'?getVoiceCartReviewCopy():null;
- document.getElementById('cartModalKicker').textContent=voiceCopy?'VOICE ORDER':'CART';
- document.getElementById('cartModalTitle').textContent=voiceCopy?.title||words[lang].cart;
- document.getElementById('cartModalCaption').textContent=voiceCopy?.caption||words[lang].cartCaption;
+ document.getElementById('cartModalKicker').textContent='CART';
+ document.getElementById('cartModalTitle').textContent=words[lang].cart;
+ document.getElementById('cartModalCaption').textContent=words[lang].cartCaption;
  document.getElementById('cartTotalLabel').textContent=words[lang].total;
  document.getElementById('cartModalTotal').textContent=money(cartTotal);
- document.getElementById('continueOrder').textContent=voiceCopy?.retry||words[lang].continueOrder;
+ document.getElementById('continueOrder').textContent=words[lang].continueOrder;
  document.getElementById('clearCartButton').textContent=words[lang].clearCart;
- let sendLabel=PREVIEW_MODE?words[lang].previewSend:words[lang].sendOrder;
- if(!PREVIEW_MODE&&voiceCopy)sendLabel=voiceCopy.send;
+ const sendLabel=PREVIEW_MODE?words[lang].previewSend:words[lang].sendOrder;
  document.getElementById('sendOrderText').textContent=orderSending?words[lang].sending:orderVerificationRequired?words[lang].orderCheck:sendLabel;
- setOrderNotice(orderVerificationRequired?words[lang].orderUncertain:(PREVIEW_MODE?words[lang].previewNote:(voiceCopy?.note||words[lang].orderNote)),orderVerificationRequired?'uncertain':'');
+ setOrderNotice(orderVerificationRequired?words[lang].orderUncertain:(PREVIEW_MODE?words[lang].previewNote:words[lang].orderNote),orderVerificationRequired?'uncertain':'');
  document.getElementById('sendOrder').disabled=!cartItems.length||orderSending||orderVerificationRequired||(!PREVIEW_MODE&&!catalogReady);
  document.getElementById('clearCartButton').disabled=!cartItems.length||orderSending;
  if(!cartItems.length){container.innerHTML=`<div class="cart-empty">${escapeHtml(words[lang].cartEmpty)}</div>`;return}
@@ -770,17 +766,17 @@ function changeCartQuantity(lineId,delta,action){
  requestAnimationFrame(()=>{const next=document.querySelector(`#cartItems [data-line-id="${lineId}"][data-action="${action}"]`)||document.querySelector('#cartModal .dialog-close');next?.focus()});
 }
 function removeCartLine(lineId){
- if(orderSending)return;cartItems=cartItems.filter(item=>item.lineId!==lineId);if(!cartItems.length)window.voiceCartReviewActive=false;recalculateCart();requestAnimationFrame(()=>document.querySelector('#cartItems .remove-cart-line,#cartModal .dialog-close')?.focus());
+ if(orderSending)return;cartItems=cartItems.filter(item=>item.lineId!==lineId);recalculateCart();requestAnimationFrame(()=>document.querySelector('#cartItems .remove-cart-line,#cartModal .dialog-close')?.focus());
 }
 function clearCartItems(){
- if(orderSending||!cartItems.length)return;if(!window.confirm(words[lang].clearCartConfirm))return;cartItems=[];window.voiceCartReviewActive=false;recalculateCart();requestAnimationFrame(()=>document.getElementById('continueOrder')?.focus());
+ if(orderSending||!cartItems.length)return;if(!window.confirm(words[lang].clearCartConfirm))return;cartItems=[];recalculateCart();requestAnimationFrame(()=>document.getElementById('continueOrder')?.focus());
 }
 function showCartSummary(opener){
  renderCartItems();
  activateDialogLayer(document.getElementById('cartModal'),opener);
 }
 function closeCart(){if(orderSending)return;deactivateDialogLayer(document.getElementById('cartModal'))}
-function handleCartSecondary(){if(window.voiceCartReviewActive&&typeof restartVoiceOrderFromCart==='function'){restartVoiceOrderFromCart();return}closeCart()}
+function handleCartSecondary(){closeCart()}
 
 function orderPayload(){
  if(pendingOrderPayload)return pendingOrderPayload;
@@ -792,8 +788,7 @@ function setOrderSending(value){
  orderSending=value;
  const button=document.getElementById('sendOrder'),label=document.getElementById('sendOrderText'),icon=button.querySelector('.send-order-icon,.send-spinner');
  button.disabled=value||!cartItems.length||orderVerificationRequired||(!PREVIEW_MODE&&!catalogReady);
- const voiceCopy=window.voiceCartReviewActive&&typeof getVoiceCartReviewCopy==='function'?getVoiceCartReviewCopy():null;
- label.textContent=value?words[lang].sending:orderVerificationRequired?words[lang].orderCheck:(PREVIEW_MODE?words[lang].previewSend:(voiceCopy?.send||words[lang].sendOrder));
+ label.textContent=value?words[lang].sending:orderVerificationRequired?words[lang].orderCheck:(PREVIEW_MODE?words[lang].previewSend:words[lang].sendOrder);
  document.querySelectorAll('#cartModal .qty-control button,#cartModal .remove-cart-line,#cartModal #continueOrder,#cartModal #clearCartButton,#cartModal .dialog-close').forEach(control=>{control.disabled=value});
  if(icon)icon.outerHTML=value?'<span class="send-spinner" aria-hidden="true"></span>':`<span class="send-order-icon" aria-hidden="true">${orderVerificationRequired?'!':'✓'}</span>`;
 }
@@ -857,7 +852,7 @@ async function submitOrder(){
   const message=orderFailureMessage(error);showToast(message);setOrderNotice(message,orderVerificationRequired?'uncertain':'error');
  }finally{if(timeoutId)clearTimeout(timeoutId);setOrderSending(false)}
 }
-function showOrderSuccess(payload,receipt,preview){window.voiceCartReviewActive=false;deactivateDialogLayer(document.getElementById('cartModal'),false);document.getElementById('successTitle').textContent=preview?words[lang].previewTitle:words[lang].orderSuccess;document.getElementById('successMessage').textContent=preview?words[lang].previewOrder:words[lang].orderSuccessMessage;document.getElementById('successTableLabel').textContent=words[lang].table;document.getElementById('successTable').textContent=selectedTable?.name||'-';document.getElementById('successTotalLabel').textContent=words[lang].orderTotal;document.getElementById('successTotal').textContent=money(payload.total);document.getElementById('successDone').textContent=words[lang].done;activateDialogLayer(document.getElementById('successModal'),document.querySelector('.cart'))}
+function showOrderSuccess(payload,receipt,preview){deactivateDialogLayer(document.getElementById('cartModal'),false);document.getElementById('successTitle').textContent=preview?words[lang].previewTitle:words[lang].orderSuccess;document.getElementById('successMessage').textContent=preview?words[lang].previewOrder:words[lang].orderSuccessMessage;document.getElementById('successTableLabel').textContent=words[lang].table;document.getElementById('successTable').textContent=selectedTable?.name||'-';document.getElementById('successTotalLabel').textContent=words[lang].orderTotal;document.getElementById('successTotal').textContent=money(payload.total);document.getElementById('successDone').textContent=words[lang].done;activateDialogLayer(document.getElementById('successModal'),document.querySelector('.cart'))}
 function finishOrder(){deactivateDialogLayer(document.getElementById('successModal'),false);cartItems=[];recalculateCart();restartForNextGuest(true)}
 
 async function loadPublishedMenu(){
@@ -905,16 +900,15 @@ function restartForNextGuest(force=false){
  const start=document.getElementById('startFlow');
  if(!force&&start.classList.contains('hidden')&&!window.confirm(STAFF_COPY.resetConfirm))return;
  cartItems=[];cart=0;cartTotal=0;optionDraft=null;selectedTable=null;active='';dialogOpener=null;orderVerificationRequired=false;pendingOrderPayload=null;historyPayload=null;historyLoading=false;historyRequestId++;
- if(typeof closeVoiceOrder==='function')closeVoiceOrder(true);
  deactivateDialogLayer(document.getElementById('optionModal'),false);deactivateDialogLayer(document.getElementById('cartModal'),false);deactivateDialogLayer(document.getElementById('historyModal'),false);deactivateDialogLayer(document.getElementById('successModal'),false);sessionStorage.removeItem('dabangSelectedTable');document.getElementById('tableName').textContent='-';
  const app=document.getElementById('tabletApp');app.setAttribute('inert','');app.setAttribute('aria-hidden','true');start.classList.remove('hidden');start.removeAttribute('aria-hidden');showTableStep();render({preserveScroll:false});document.getElementById('menuContent').scrollTop=0;
  if(typeof appUpdatePending!=='undefined'&&appUpdatePending)setTimeout(applyAppUpdate,0);
 }
-document.addEventListener('keydown',event=>{if(event.key==='Tab'){trapDialogFocus(event);return}if(event.key!=='Escape')return;if(document.getElementById('optionModal').classList.contains('open'))closeOptionModal();else if(document.getElementById('cartModal').classList.contains('open'))closeCart();else if(document.getElementById('historyModal').classList.contains('open'))closeTableOrderHistory();else if(typeof closeVoiceOrder==='function')closeVoiceOrder()});
+document.addEventListener('keydown',event=>{if(event.key==='Tab'){trapDialogFocus(event);return}if(event.key!=='Escape')return;if(document.getElementById('optionModal').classList.contains('open'))closeOptionModal();else if(document.getElementById('cartModal').classList.contains('open'))closeCart();else if(document.getElementById('historyModal').classList.contains('open'))closeTableOrderHistory()});
 
 let deferredInstallPrompt=null,pwaRegistration=null,pwaReloading=false,appUpdatePending=false,appDocumentVersion='';
 const hadServiceWorkerController={value:Boolean(navigator.serviceWorker?.controller)};
-function pwaCanReloadNow(){return !orderSending&&!cartItems.length&&!document.querySelector('.dialog-layer.open')&&!['connecting','listening','processing','responding','clarify'].includes(window.voiceOrderPhase)}
+function pwaCanReloadNow(){return !orderSending&&!cartItems.length&&!document.querySelector('.dialog-layer.open')}
 function showAppUpdate(){document.getElementById('appUpdateBar').hidden=false}
 function queueAppRefresh(){
  appUpdatePending=true;
@@ -976,6 +970,5 @@ loadPublishedMenu().then(refreshTabletAvailability);
 startAvailabilityRefresh();
 loadCukcukTables();
 </script>
-<script src="assets/voice-order.js?v=20260831-v12"></script>
 </body>
 </html>
