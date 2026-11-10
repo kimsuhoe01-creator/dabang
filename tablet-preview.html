@@ -63,6 +63,15 @@ html[lang="zh"] body,html[lang="zh"] button,html[lang="zh"] input{font-family:"M
  .category-closure{grid-column:1/-1;min-height:290px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:44px 34px;border:1px solid #e6c9cc;border-radius:22px;background:radial-gradient(circle at 82% 18%,#ffd91a38 0 72px,transparent 74px),linear-gradient(135deg,#fff 0%,#fff8f5 52%,#f8e3e5 100%);box-shadow:0 8px 28px rgba(95,25,31,.08);text-align:center}.category-closure-mark{display:inline-flex;align-items:center;min-height:30px;padding:0 13px;border-radius:999px;background:#171717;color:#ffd91a;font-size:10px;font-weight:900;letter-spacing:2px}.category-closure h2{margin:19px 0 10px;color:#b91826;font-size:34px;line-height:1.2;letter-spacing:-1px}.category-closure p{max-width:620px;margin:0;color:#4e4944;font-size:18px;font-weight:700;line-height:1.55}.category-closure-note{margin-top:18px;color:#8a8179;font-size:12px;font-weight:700}
  .dialog-head p{line-height:1.45;white-space:pre-line}
  .visual.crop-tight .menu-photo{transform:scale(1.28);transform-origin:center 62%}
+ .monday-promo-banner{display:block;width:100%;padding:0;border:0;border-radius:18px;overflow:hidden;background:#171717;box-shadow:0 12px 32px #60111633;text-align:left}
+ .monday-promo-banner img{display:block;width:100%;height:auto;aspect-ratio:8/3;object-fit:contain}
+ .monday-promo-banner:focus-visible{outline:4px solid var(--ui-yellow);outline-offset:4px}
+ .monday-promo-caption{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px;background:#21191a;color:#fff;font-size:14px;font-weight:850}
+ .monday-promo-caption strong{color:var(--ui-yellow);font-size:16px}
+ .monday-promo-section{margin-bottom:26px}
+ .promo-price{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
+ .promo-price del{color:#918a82;font-size:12px;font-weight:700}
+ .promo-price strong{color:var(--ui-red)}
  @media(min-width:1180px) and (max-height:900px){
   .content{padding:12px 16px 20px}
   .section-head{margin-bottom:10px}
@@ -313,6 +322,7 @@ async function refreshTabletAvailability(){
  const hiddenIds=new Set(tabletAvailability.hiddenMenuIds);const before=cartItems.length;cartItems=cartItems.filter(item=>!hiddenIds.has(String(item.menuId)));
  if(optionDraft&&hiddenIds.has(String(optionDraft.menu?.id))){closeOptionModal();optionDraft=null}
  if(cartItems.length!==before){recalculateCart();showToast(words[lang].hiddenRemoved)}
+ if(syncMondayPromoCart()){recalculateCart();showToast(MONDAY_POCHA_COPY[lang].changed)}
  if(state?.menus?.length)render();
 }
 function startAvailabilityRefresh(){clearInterval(availabilityRefreshTimer);availabilityRefreshTimer=setInterval(refreshTabletAvailability,60*1000);document.addEventListener('visibilitychange',()=>{if(document.visibilityState==='visible')refreshTabletAvailability()})}
@@ -367,6 +377,25 @@ function menuOptionGroups(menu){
  return (menu?.optionTemplateIds||[]).map(id=>{const group=byId.get(String(id)),rule=menu?.optionRules?.[String(id)]||{};return group?{...group,...rule,id:String(group.id)}:null}).filter(group=>group&&visibleOptionValues(group).length);
 }
 const DAKGALBI_CODE='DKG';
+const MONDAY_POCHA_ID='899a8524-b720-4828-b7fc-1f2472ce962a';
+const MONDAY_POCHA_REGULAR_PRICE=540000;
+const MONDAY_POCHA_PRICE=378000;
+const MONDAY_POCHA_START='2026-11-16';
+const MONDAY_POCHA_COPY={
+ ko:{section:'월요일 30% 할인',action:'한신포차 세트 주문하기',changed:'행사 시간이 바뀌어 장바구니 가격을 다시 계산했습니다.'},
+ vi:{section:'Thứ Hai giảm 30%',action:'Đặt combo Hanshin Pocha',changed:'Giá trong giỏ đã được cập nhật theo giờ khuyến mại.'},
+ zh:{section:'周一 7 折优惠',action:'点选鸡爪鸡套餐',changed:'购物车价格已按优惠时间更新。'},
+ en:{section:'Monday 30% off',action:'Order Hanshin Pocha Set',changed:'Cart prices were updated for the promotion hours.'}
+};
+const MONDAY_POCHA_POSTERS={ko:'assets/featured/monday-pocha-rate-ko.png?v=20261110',vi:'assets/featured/monday-pocha-rate-vi.png?v=20261110',zh:'assets/featured/monday-pocha-rate-zh.png?v=20261110',en:'assets/featured/monday-pocha-rate-en.png?v=20261110'};
+function mondayPochaActiveAt(now=new Date()){
+ const parts=Object.fromEntries(new Intl.DateTimeFormat('en-US',{timeZone:'Asia/Ho_Chi_Minh',year:'numeric',month:'2-digit',day:'2-digit',weekday:'short',hour:'2-digit',minute:'2-digit',hourCycle:'h23'}).formatToParts(now).map(part=>[part.type,part.value]));
+ const day=`${parts.year}-${parts.month}-${parts.day}`,minutes=Number(parts.hour)*60+Number(parts.minute);
+ return day>=MONDAY_POCHA_START&&parts.weekday==='Mon'&&minutes>=16*60&&minutes<23*60;
+}
+function mondayPochaApplies(menu,now=new Date()){return String(menu?.id)===MONDAY_POCHA_ID&&Number(menu?.price)===MONDAY_POCHA_REGULAR_PRICE&&mondayPochaActiveAt(now)}
+function displayMenuPrice(menu,now=new Date()){return mondayPochaApplies(menu,now)?MONDAY_POCHA_PRICE:Number(menu?.price)||0}
+function mondayPochaMenu(){return state.menus.find(menu=>mondayPochaApplies(menu)&&menuIsAvailable(menu)&&!menuIsHidden(menu)&&!hiddenByCategoryClosure(menu))||null}
 const DAKGALBI_POSTER='assets/featured/dakgalbi-dkg-poster.jpg?v=20260916-original-photo';
 const DAKGALBI_VI_HERO='assets/featured/dakgalbi-tiktok-vietnam-hero.jpg?v=20261016-tiktok-photo-v1';
 const ZZIRAN_CODE='(W07) Cánh gà cumin';
@@ -398,24 +427,28 @@ function dakgalbiHeroMarkup(menu){
  return `<button type="button" class="dakgalbi-hero${heroClass}" aria-label="${escapeHtml(actionLabel)}" onclick="selectMenu('${safeId}',this)" ${available?'':'disabled'}><img src="${heroImage}" alt="" aria-hidden="true">${available?'':`<span class="sold"><span><b>${escapeHtml(soldTitle)}</b><small>${escapeHtml(soldDetail)}</small></span></span>`}<span class="dakgalbi-hero-copy"><span class="dakgalbi-hero-kicker">${escapeHtml(copy.kicker)}</span><h2>${escapeHtml(name)}</h2><p>${escapeHtml(copy.description)}</p><span class="dakgalbi-hero-foot"><strong class="dakgalbi-hero-price">${money(menu.price)}</strong><span class="dakgalbi-hero-add">＋ ${escapeHtml(words[lang].add)}</span></span></span></button>`;
 }
 function menuCardMarkup(menu,index){
-  const image=displayMenuImage(menu.id),name=menu.n?.[lang]||menu.n?.ko||menu.sourceName||'',safeName=escapeHtml(name),safeId=safeJsString(menu.id),loading=index<6?'eager':'lazy',hasOptions=menuOptionGroups(menu).length>0;
+  const image=displayMenuImage(menu.id),name=menu.n?.[lang]||menu.n?.ko||menu.sourceName||'',safeName=escapeHtml(name),safeId=safeJsString(menu.id),loading=index<6?'eager':'lazy',hasOptions=menuOptionGroups(menu).length>0,shownPrice=displayMenuPrice(menu);
   const available=menuIsAvailable(menu);
  const subtitle=localizedNames(menu.subtitles),subtitleMarkup=subtitle?`<span class="menu-subtitle ${['warning','danger'].includes(menu.subtitleTone)?'warning':''}">${escapeHtml(subtitle)}</span>`:'';
  const unavailableNotice=menuUnavailableNotice(menu),soldTitle=localizedNames(unavailableNotice?.title)||words[lang].sold,soldDetail=localizedNames(unavailableNotice?.message)||localizedNames(menu.statusMessages)||words[lang].soldDetail;
  const photo=image?`<img class="photo-back" src="${image}" alt="" aria-hidden="true" loading="${loading}" decoding="async"><img class="menu-photo" src="${image}" alt="${safeName}" loading="${loading}" decoding="async" onload="fitMenuPhoto(this)" onerror="handleImageError(this)">`:placeholderMarkup();
  const optionChip=hasOptions?`<span class="option-chip">${escapeHtml(words[lang].optionShort)}</span>`:'';
- const actionLabel=(hasOptions?words[lang].options:words[lang].add)+' '+name+', '+money(menu.price);
-  return `<button type="button" class="card" aria-label="${escapeHtml(actionLabel)}" title="${safeName}" onclick="selectMenu('${safeId}',this)" ${available?'':'disabled'}>${available?'':`<span class="sold"><span><b>${escapeHtml(soldTitle)}</b><small>${escapeHtml(soldDetail)}</small></span></span>`}<span class="visual" data-menu-id="${escapeHtml(menu.id)}">${photo}${optionChip}</span><span class="info"><span class="name">${safeName}</span>${subtitleMarkup}<span class="foot"><strong class="price">${money(menu.price)}</strong><span class="add" aria-hidden="true"><span>＋</span>${escapeHtml(words[lang].add)}</span></span></span></button>`;
+ const actionLabel=(hasOptions?words[lang].options:words[lang].add)+' '+name+', '+money(shownPrice);
+ const priceMarkup=mondayPochaApplies(menu)?`<span class="promo-price"><del>${money(menu.price)}</del><strong class="price">${money(shownPrice)}</strong></span>`:`<strong class="price">${money(shownPrice)}</strong>`;
+  return `<button type="button" class="card" aria-label="${escapeHtml(actionLabel)}" title="${safeName}" onclick="selectMenu('${safeId}',this)" ${available?'':'disabled'}>${available?'':`<span class="sold"><span><b>${escapeHtml(soldTitle)}</b><small>${escapeHtml(soldDetail)}</small></span></span>`}<span class="visual" data-menu-id="${escapeHtml(menu.id)}">${photo}${optionChip}</span><span class="info"><span class="name">${safeName}</span>${subtitleMarkup}<span class="foot">${priceMarkup}<span class="add" aria-hidden="true"><span>＋</span>${escapeHtml(words[lang].add)}</span></span></span></button>`;
 }
 function menuSections(){
   const sections=visibleCategories().map(category=>{const closure=activeCategoryClosure(category.name);return{key:category.name,label:categoryLabel(category),closure,menus:state.menus.filter(menu=>menu.cat===category.name&&!hiddenByCategoryClosure(menu)&&!menuIsHidden(menu))}});
-  if(!state.featuredVisible)return sections;
-  return [{key:'featured',label:words[lang].section,closure:null,menus:state.menus.filter(menu=>menu.recommended&&!hiddenByCategoryClosure(menu)&&!menuIsHidden(menu))}].concat(sections);
+  const promo=mondayPochaMenu(),prefix=promo?[{key:'monday-promo',label:MONDAY_POCHA_COPY[lang].section,closure:null,menus:[promo],promo:true}]:[];
+  if(!state.featuredVisible)return prefix.concat(sections);
+  return prefix.concat([{key:'featured',label:words[lang].section,closure:null,menus:state.menus.filter(menu=>menu.recommended&&!hiddenByCategoryClosure(menu)&&!menuIsHidden(menu))}],sections);
 }
+function mondayPromoMarkup(menu){const copy=MONDAY_POCHA_COPY[lang],safeId=safeJsString(menu.id),label=`${copy.section} · ${copy.action} · ${money(MONDAY_POCHA_PRICE)}`;return `<section class="menu-category-section monday-promo-section" data-category="monday-promo"><button type="button" class="monday-promo-banner" aria-label="${escapeHtml(label)}" onclick="selectMenu('${safeId}',this)"><img src="${MONDAY_POCHA_POSTERS[lang]}" alt="${escapeHtml(copy.section)} · ${escapeHtml(menu.n?.[lang]||menu.n?.ko||'')} · ${money(MONDAY_POCHA_PRICE)}"><span class="monday-promo-caption"><span>${escapeHtml(copy.section)}</span><strong>${escapeHtml(copy.action)} ＋</strong></span></button></section>`}
 function renderCats(){
  const visible=visibleCategories();
+  const promo=mondayPochaMenu()?`<button type="button" data-category="monday-promo" class="cat ${active==='monday-promo'?'active':''}" aria-current="${active==='monday-promo'}" onclick="setCat('monday-promo')">${escapeHtml(MONDAY_POCHA_COPY[lang].section)}</button>`:'';
  const featured=state.featuredVisible?`<button type="button" data-category="${escapeHtml('featured')}" class="cat ${active==='featured'?'active':''}" aria-current="${active==='featured'}" onclick="setCat('featured')">${escapeHtml(words[lang].featured)}</button>`:'';
- document.getElementById('cats').innerHTML=featured+visible.map((category,index)=>`<button type="button" data-category="${escapeHtml(category.name)}" class="cat ${active===category.name?'active':''}" aria-current="${active===category.name}" onclick="setVisibleCat(${index})">${escapeHtml(categoryLabel(category))}</button>`).join('');
+ document.getElementById('cats').innerHTML=promo+featured+visible.map((category,index)=>`<button type="button" data-category="${escapeHtml(category.name)}" class="cat ${active===category.name?'active':''}" aria-current="${active===category.name}" onclick="setVisibleCat(${index})">${escapeHtml(categoryLabel(category))}</button>`).join('');
 }
 function updateCategoryNav(next){
  active=next;
@@ -440,6 +473,7 @@ function render({preserveScroll=true}={}){
  const content=document.getElementById('menuContent'),previousScroll=preserveScroll?content.scrollTop:0;
  let cardIndex=0;
  document.getElementById('menuSections').innerHTML=sections.map(section=>{
+   if(section.promo)return mondayPromoMarkup(section.menus[0]);
    const heroMenu=section.closure?null:featuredHeroMenu(section.menus),gridMenus=heroMenu?section.menus.filter(menu=>menu!==heroMenu):section.menus;
    const hero=heroMenu?(isZziranMenu(heroMenu)?zziranHeroMarkup(heroMenu):dakgalbiHeroMarkup(heroMenu)):'';
    const cards=section.closure?categoryClosureMarkup(section.closure):gridMenus.length?gridMenus.map(menu=>menuCardMarkup(menu,cardIndex++)).join(''):`<div class="empty">${escapeHtml(words[lang].empty)}</div>`;
@@ -496,7 +530,7 @@ function openOptionModal(menu,groups,opener){
  optionDraft={menu,groups:preparedGroups,selections:preparedGroups.map(()=>[]),quantities:preparedGroups.map(group=>group._values.map(()=>0))};
  document.getElementById('optionKicker').textContent=words[lang].options;
  document.getElementById('optionMenuName').textContent=menu.n?.[lang]||menu.n?.ko||menu.sourceName||'';
- document.getElementById('optionBasePrice').textContent=[localizedNames(menu.subtitles),words[lang].basePrice+' · '+money(menu.price)].filter(Boolean).join('\n');
+ document.getElementById('optionBasePrice').textContent=[localizedNames(menu.subtitles),words[lang].basePrice+' · '+money(displayMenuPrice(menu))].filter(Boolean).join('\n');
  document.getElementById('optionCancel').textContent=words[lang].cancel;
  document.getElementById('optionConfirm').textContent=words[lang].addToCart;
  document.getElementById('optionTotalLabel').textContent=words[lang].total;
@@ -549,7 +583,7 @@ function updateOptionSummary(){
  if(!optionDraft)return;
  const rows=selectedOptionRows(),hasQuantityMode=optionDraft.groups.some(quantitySelectionMode);
  const extra=rows.reduce((sum,row)=>sum+row.additionalPrice*(row.quantityMode?row.quantity:1),0);
- const base=hasQuantityMode?rows.reduce((sum,row)=>sum+(Number(optionDraft.menu.price)||0)*row.quantity,0):(Number(optionDraft.menu.price)||0);
+ const base=hasQuantityMode?rows.reduce((sum,row)=>sum+displayMenuPrice(optionDraft.menu)*row.quantity,0):displayMenuPrice(optionDraft.menu);
  document.getElementById('optionExtraPrice').textContent=words[lang].extra+' · '+(extra?'+'+money(extra):money(0));
  document.getElementById('optionTotalPrice').textContent=money(base+extra);
  optionDraft.groups.forEach((group,index)=>{
@@ -599,10 +633,18 @@ function animateMenuToCart(menuId){
 function addConfiguredItem(menu,selections,quantity=1,notify=true,animate=true){
  const addQuantity=Math.max(1,Math.min(99,Math.floor(Number(quantity)||1))),extra=selections.reduce((sum,row)=>sum+row.additionalPrice,0),key=cartKey(menu,selections),existing=cartItems.find(line=>line.key===key);
  if(existing)existing.quantity=Math.min(99,existing.quantity+addQuantity);
- else cartItems.push({lineId:++cartLineSequence,key,menuId:String(menu.id),basePrice:Number(menu.price)||0,unitPrice:(Number(menu.price)||0)+extra,selections:selections.map(row=>({...row})),quantity:addQuantity});
+ else cartItems.push({lineId:++cartLineSequence,key,menuId:String(menu.id),basePrice:displayMenuPrice(menu),unitPrice:displayMenuPrice(menu)+extra,selections:selections.map(row=>({...row})),quantity:addQuantity});
+ syncMondayPromoCart();
  recalculateCart();
  if(animate)animateMenuToCart(menu.id);
  if(notify)showToast((menu.n?.[lang]||menu.n?.ko||menu.sourceName||'')+words[lang].added);
+}
+function syncMondayPromoCart(){
+ const menu=state?.menus?.find(item=>String(item.id)===MONDAY_POCHA_ID);if(!menu)return false;
+ const basePrice=displayMenuPrice(menu);let changed=false;
+ for(const line of cartItems){if(line.menuId!==MONDAY_POCHA_ID||line.basePrice===basePrice)continue;line.basePrice=basePrice;line.unitPrice=basePrice+line.selections.reduce((sum,row)=>sum+(Number(row.additionalPrice)||0),0);changed=true}
+ if(optionDraft?.menu?.id===MONDAY_POCHA_ID){document.getElementById('optionBasePrice').textContent=[localizedNames(menu.subtitles),words[lang].basePrice+' · '+money(basePrice)].filter(Boolean).join('\n');updateOptionSummary()}
+ return changed;
 }
 function recalculateCart(){
  if(!orderSending)pendingOrderPayload=null;
@@ -767,6 +809,7 @@ async function submitOrder(){
  if(orderSending||orderVerificationRequired)return;
  if(!cartItems.length){showToast(words[lang].orderEmpty);return}
  if(!selectedTable){showToast(startCopy[lang]?.title||startCopy.ko.title);return}
+ if(syncMondayPromoCart()){recalculateCart();render();showToast(MONDAY_POCHA_COPY[lang].changed);return}
  if(!PREVIEW_MODE&&!catalogReady){const message=catalogLoadFailed?words[lang].menuLoadFailed:words[lang].menuLoading;showToast(message);setOrderNotice(message,'error');return}
  orderVerificationRequired=false;setOrderNotice(PREVIEW_MODE?words[lang].previewNote:words[lang].orderNote);setOrderSending(true);
  let payload=null,timeoutId=null;
