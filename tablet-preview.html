@@ -69,6 +69,11 @@ html[lang="zh"] body,html[lang="zh"] button,html[lang="zh"] input{font-family:"M
  .monday-promo-caption{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:12px 18px;background:#21191a;color:#fff;font-size:14px;font-weight:850}
  .monday-promo-caption strong{color:var(--ui-yellow);font-size:16px}
  .monday-promo-section{margin-bottom:26px}
+ .goguma-spotlight{position:relative;display:grid;grid-template-columns:minmax(255px,34%) 1fr;min-height:194px;width:100%;margin:0 0 22px;padding:0;border:0;border-radius:20px;overflow:hidden;background:#8c311d;color:#fff;text-align:left;box-shadow:0 10px 28px #7c2a1f33;isolation:isolate}
+ .goguma-spotlight:hover{filter:brightness(1.04)}.goguma-spotlight:focus-visible{outline:4px solid var(--ui-yellow);outline-offset:4px}.goguma-spotlight>img{width:100%;height:100%;min-height:194px;object-fit:cover;object-position:center 35%}
+ .goguma-spotlight-copy{display:flex;flex-direction:column;align-items:flex-start;justify-content:center;gap:7px;padding:20px 28px;background:radial-gradient(circle at 92% 18%,#ffb02b55 0 70px,transparent 72px),linear-gradient(115deg,#932b1f,#ca4d23)}
+ .goguma-spotlight-kicker{display:inline-block;padding:5px 10px;border-radius:999px;background:#ffe26c;color:#4c1b13;font-size:11px;font-weight:950;letter-spacing:1px}.goguma-spotlight h2{margin:0;color:#fff7d0;font-size:clamp(27px,3vw,41px);line-height:1.1;font-weight:950;letter-spacing:-1px}.goguma-spotlight p{margin:0;color:#fff2e5;font-size:15px;font-weight:750;line-height:1.35}.goguma-spotlight-foot{display:flex;align-items:center;gap:12px;margin-top:5px}.goguma-spotlight-foot strong{font-size:25px;font-weight:950}.goguma-spotlight-foot span{padding:8px 13px;border-radius:10px;background:#fff;color:#922d20;font-size:13px;font-weight:950}.goguma-spotlight .sold{inset:0;aspect-ratio:auto}
+ @media(max-width:1100px){.goguma-spotlight{grid-template-columns:31% 1fr;min-height:180px}.goguma-spotlight>img{min-height:180px}.goguma-spotlight-copy{padding:17px 21px}}
  .promo-price{display:flex;align-items:center;gap:7px;flex-wrap:wrap}
  .promo-price del{color:#918a82;font-size:12px;font-weight:700}
  .promo-price strong{color:var(--ui-red)}
@@ -135,7 +140,7 @@ html[lang="zh"] body,html[lang="zh"] button,html[lang="zh"] input{font-family:"M
 <div class="dialog-layer" id="successModal" aria-hidden="true">
  <section class="dialog-panel success-panel" role="dialog" aria-modal="true" aria-labelledby="successTitle"><div class="success-icon">✓</div><h2 id="successTitle">POS에 주문이 등록됐습니다</h2><p id="successMessage">직원이 CUKCUK에서 주문을 확인한 뒤 주방·바로 전송해야 영수증이 출력됩니다.</p><div class="order-receipt"><div class="receipt-box"><span id="successTableLabel">테이블</span><strong id="successTable">-</strong></div><div class="receipt-box"><span id="successTotalLabel">주문 금액</span><strong id="successTotal">0 ₫</strong></div></div><button class="success-done" id="successDone" type="button" onclick="finishOrder()">확인</button></section>
 </div>
-<script src="assets/menu-images.js?v=20261015-zziran-v16"></script>
+<script src="assets/menu-images.js?v=20261110-goguma-v17"></script>
 <script src="assets/table-layout.js"></script>
 <script src="assets/option-order.js"></script>
 <script>
@@ -399,6 +404,13 @@ function mondayPochaMenu(){return state.menus.find(menu=>mondayPochaApplies(menu
 const DAKGALBI_POSTER='assets/featured/dakgalbi-dkg-poster.jpg?v=20260916-original-photo';
 const DAKGALBI_VI_HERO='assets/featured/dakgalbi-tiktok-vietnam-hero.jpg?v=20261016-tiktok-photo-v1';
 const ZZIRAN_CODE='(W07) Cánh gà cumin';
+const GOGUMA_CODE='GOGUMA500600';
+const GOGUMA_SPOTLIGHT_COPY={
+ ko:{kicker:'NEW · 호구마',heading:'호박고구마!!!',description:'군고구마 500–600g · 따끈한 신메뉴'},
+ vi:{kicker:'MÓN MỚI',heading:'Khoai lang nướng',description:'500–600g · thơm bùi, ấm áp'},
+ zh:{kicker:'新品',heading:'烤红薯来啦！',description:'500–600克 · 香甜软糯'},
+ en:{kicker:'NEW',heading:'Roasted sweet potato!',description:'500–600g · warm and comforting'}
+};
 const ZZIRAN_BANNER='assets/featured/zziran-wings-banner.jpg?v=20261015-landscape-v2';
 const ZZIRAN_HERO_COPY={
  ko:{kicker:'NEW · 윙봉 반마리',description:'허니베이스에 쯔란·큐민을 더한 윙봉. 원하는 맛 반마리를 추가해 반반으로 즐겨보세요.'},
@@ -412,7 +424,14 @@ const DAKGALBI_HERO_COPY={
 };
 function isDakgalbiMenu(menu){return String(menu?.cukcukCode||'').trim()===DAKGALBI_CODE}
 function isZziranMenu(menu){return String(menu?.cukcukCode||'').trim()===ZZIRAN_CODE}
+function isGogumaMenu(menu){return String(menu?.cukcukCode||'').trim()===GOGUMA_CODE}
 function featuredHeroMenu(menus){return (lang==='ko'||lang==='zh'?menus.find(isZziranMenu):null)||menus.find(isDakgalbiMenu)}
+function gogumaSpotlightMarkup(menu){
+ const copy=GOGUMA_SPOTLIGHT_COPY[lang]||GOGUMA_SPOTLIGHT_COPY.ko,safeId=safeJsString(menu.id),available=menuIsAvailable(menu);
+ const name=menu.n?.[lang]||menu.n?.ko||menu.sourceName||'',image=displayMenuImage(menu.id);
+ const unavailableNotice=menuUnavailableNotice(menu),soldTitle=localizedNames(unavailableNotice?.title)||words[lang].sold,soldDetail=localizedNames(unavailableNotice?.message)||localizedNames(menu.statusMessages)||words[lang].soldDetail;
+ return `<button type="button" class="goguma-spotlight" aria-label="${escapeHtml(name+' · '+money(menu.price))}" onclick="selectMenu('${safeId}',this)" ${available?'':'disabled'}><img src="${image}" alt="" aria-hidden="true">${available?'':`<span class="sold"><span><b>${escapeHtml(soldTitle)}</b><small>${escapeHtml(soldDetail)}</small></span></span>`}<span class="goguma-spotlight-copy"><span class="goguma-spotlight-kicker">${escapeHtml(copy.kicker)}</span><h2>${escapeHtml(copy.heading)}</h2><p>${escapeHtml(copy.description)}</p><span class="goguma-spotlight-foot"><strong>${money(menu.price)}</strong><span>＋ ${escapeHtml(words[lang].add)}</span></span></span></button>`;
+}
 function zziranHeroMarkup(menu){
  const copy=ZZIRAN_HERO_COPY[lang]||ZZIRAN_HERO_COPY.ko,name=menu.n?.[lang]||menu.n?.ko||menu.sourceName||'',safeId=safeJsString(menu.id),available=menuIsAvailable(menu);
  const unavailableNotice=menuUnavailableNotice(menu),soldTitle=localizedNames(unavailableNotice?.title)||words[lang].sold,soldDetail=localizedNames(unavailableNotice?.message)||localizedNames(menu.statusMessages)||words[lang].soldDetail;
@@ -474,11 +493,13 @@ function render({preserveScroll=true}={}){
  let cardIndex=0;
  document.getElementById('menuSections').innerHTML=sections.map(section=>{
    if(section.promo)return mondayPromoMarkup(section.menus[0]);
-   const heroMenu=section.closure?null:featuredHeroMenu(section.menus),gridMenus=heroMenu?section.menus.filter(menu=>menu!==heroMenu):section.menus;
+   const gogumaMenu=section.key==='신메뉴'&&!section.closure?section.menus.find(isGogumaMenu):null;
+   const heroMenu=section.closure?null:featuredHeroMenu(section.menus),gridMenus=section.menus.filter(menu=>menu!==heroMenu&&menu!==gogumaMenu);
+   const spotlight=gogumaMenu?gogumaSpotlightMarkup(gogumaMenu):'';
    const hero=heroMenu?(isZziranMenu(heroMenu)?zziranHeroMarkup(heroMenu):dakgalbiHeroMarkup(heroMenu)):'';
    const cards=section.closure?categoryClosureMarkup(section.closure):gridMenus.length?gridMenus.map(menu=>menuCardMarkup(menu,cardIndex++)).join(''):`<div class="empty">${escapeHtml(words[lang].empty)}</div>`;
    const count=section.closure?closureStatusLabel():compactCount(section.menus.length,words[lang].menuSuffix);
-   return `<section class="menu-category-section" data-category="${escapeHtml(section.key)}"><div class="section-head"><div><span class="section-kicker">MENU</span><h1>${escapeHtml(section.label)}</h1></div><span class="count">${escapeHtml(count)}</span></div>${hero}<div class="grid">${cards}</div></section>`;
+   return `<section class="menu-category-section" data-category="${escapeHtml(section.key)}"><div class="section-head"><div><span class="section-kicker">MENU</span><h1>${escapeHtml(section.label)}</h1></div><span class="count">${escapeHtml(count)}</span></div>${spotlight}${hero}<div class="grid">${cards}</div></section>`;
  }).join('');
  updateCart();
  if(document.getElementById('cartModal').classList.contains('open'))renderCartItems();
