@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-11-10 09:28:06",
-    "finished_at": "2026-11-10 09:28:16",
+    "started_at": "2026-11-10 10:57:32",
+    "finished_at": "2026-11-10 10:57:42",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -1351,9 +1351,9 @@
       "sourceName": "후라이드  Fried Chicken  无骨炸鸡腿 Má đùi rút xương",
       "names": {
         "ko": "후라이드 치킨",
-        "vi": "Gà rán",
+        "vi": "Gà chiên giòn không xương",
         "zh": "无骨炸鸡腿",
-        "en": "Fried Boneless Chicken Thigh"
+        "en": "Boneless Fried Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1373,7 +1373,7 @@
       "sourceName": "양념  Sweet & Spicy Chicken  韩式甜酱炸鸡 Gà sốt ngọt HQ",
       "names": {
         "ko": "양념 치킨",
-        "vi": "Gà sốt ngọt kiểu Hàn",
+        "vi": "Gà sốt ngọt Hàn Quốc",
         "zh": "韩式甜酱炸鸡",
         "en": "Sweet & Spicy Chicken"
       },
@@ -1395,7 +1395,7 @@
       "sourceName": "매운양념  Hot & Spicy Chicken韩式辣酱炸鸡  Gà sốt cay HQ",
       "names": {
         "ko": "매운 양념 치킨",
-        "vi": "Gà sốt cay kiểu Hàn",
+        "vi": "Gà sốt cay Hàn Quốc",
         "zh": "韩式辣酱炸鸡",
         "en": "Hot & Spicy Chicken"
       },
@@ -6245,7 +6245,7 @@
       ]
     }
   ],
-  "inventoryCandidateCount": 254,
+  "inventoryCandidateCount": 255,
   "catalogRevision": "cukcuk-tablet-content-2026-10-15-w07-half-portion-v1",
   "tableQrLayout": {
     "revision": "cukcuk-tablet-content-2026-10-15-w07-half-portion-v1",
@@ -6256,7 +6256,7 @@
     "optionOrderingPolicy": "free-first-stable",
     "orderedMenuCount": 12,
     "orderedTemplateCount": 10,
-    "excludedCandidateCount": 140
+    "excludedCandidateCount": 141
   },
   "translation": {
     "provider": "openai",
@@ -6266,6 +6266,6 @@
     "cacheHits": 346,
     "translated": 12,
     "pendingCount": 0,
-    "updatedAt": "2026-11-10T09:28:31.245Z"
+    "updatedAt": "2026-11-10T10:58:01.124Z"
   }
 }
