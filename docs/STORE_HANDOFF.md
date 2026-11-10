@@ -1,5 +1,12 @@
 # 매장 노트북 인계 — 다방 테이블오더
 
+## 2026-11-10 호박고구마 카드 사진·문구 경계 개선
+
+- 신메뉴 상단 호박고구마 카드의 사진과 글 배경을 나누던 직선 경계를 없앴다. 사진 오른쪽을 따뜻한 붉은 배경으로 점차 흐리게 연결하고, 좁은 화면에서는 사진 아래쪽으로 같은 효과를 적용했다. 메뉴명·가격·주문 동작은 그대로 유지했다. 설치형 태블릿 캐시는 `dabang-tablet-v61`이다.
+- 변경 커밋 `0c12505`는 [PR #21](https://github.com/kimsuhoe01-creator/dabang/pull/21)로 병합됐고 병합 커밋은 `25746e0`이다. [GitHub Pages #42812782802](https://github.com/kimsuhoe01-creator/dabang/actions/runs/42812782802)와 [주문 Worker #42812783592](https://github.com/kimsuhoe01-creator/dabang/actions/runs/42812783592)가 성공했다.
+- [공개 안전 미리보기](https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=25746e0)에서 카드의 사진·한글 문구·54,000동 가격과 사진의 자연스러운 연결을 화면으로 확인했다. 노출 카테고리 13개, 고구마 사진 1280픽셀 로딩, 깨진 이미지 0개를 확인했다. 로컬 Worker/UI 테스트 121개 통과, 메뉴 이미지 감사 116개(누락·고아 0), 변경 공백 검사 통과. 실제 주문은 보내지 않았다.
+- 매장 태블릿에서 새로고침 후 신메뉴 첫 카드의 사진과 글이 자연스럽게 이어지는지만 현장 확인한다.
+
 ## 2026-11-10 군고구마·로디드 나쵸 주방 출력 대상과 나쵸 신메뉴
 
 - CUKCUK `Danh mục > Bếp/Bar > bếp`에서 사용 장치 `Máy in`, 출력 시점 `In sau khi gửi yêu cầu chế biến`을 확인했다. 조리 메뉴 153개 목록에 `군고구마 500~600g | Khoai lang nướng 500-600g`와 `로디드 나쵸 | Nachos phủ topping`이 모두 있다. 두 일반 메뉴의 `Chế biến tại`도 `bếp`으로 저장 후 재확인했다. 주문이 CUKCUK에서 조리 요청으로 전송되면 이 주방 프린터의 출력 대상이다. 실제 종이 출력은 현장 주문 전까지 미검증이다.
