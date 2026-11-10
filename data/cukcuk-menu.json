@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-11-10 11:17:38",
-    "finished_at": "2026-11-10 11:17:46",
+    "started_at": "2026-11-10 11:46:27",
+    "finished_at": "2026-11-10 11:46:36",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -1393,7 +1393,7 @@
         "ko": "후라이드 치킨",
         "vi": "Gà rán không xương",
         "zh": "无骨炸鸡腿",
-        "en": "Boneless Fried Chicken"
+        "en": "Fried Boneless Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1413,7 +1413,7 @@
       "sourceName": "양념  Sweet & Spicy Chicken  韩式甜酱炸鸡 Gà sốt ngọt HQ",
       "names": {
         "ko": "양념 치킨",
-        "vi": "Gà sốt ngọt Hàn Quốc",
+        "vi": "Gà sốt ngọt kiểu Hàn",
         "zh": "韩式甜酱炸鸡",
         "en": "Sweet & Spicy Chicken"
       },
@@ -1435,7 +1435,7 @@
       "sourceName": "매운양념  Hot & Spicy Chicken韩式辣酱炸鸡  Gà sốt cay HQ",
       "names": {
         "ko": "매운 양념 치킨",
-        "vi": "Gà sốt cay Hàn Quốc",
+        "vi": "Gà sốt cay kiểu Hàn",
         "zh": "韩式辣酱炸鸡",
         "en": "Hot & Spicy Chicken"
       },
@@ -1480,7 +1480,7 @@
       "names": {
         "ko": "고추마늘간장 치킨",
         "vi": "Gà sốt xì dầu tỏi ớt",
-        "zh": "辣椒蒜酱鸡",
+        "zh": "辣椒蒜蓉酱油鸡",
         "en": "Garlic Soy Chicken"
       },
       "price": 399600,
@@ -6285,11 +6285,11 @@
       ]
     }
   ],
-  "inventoryCandidateCount": 255,
-  "catalogRevision": "cukcuk-tablet-content-2026-11-10-goguma-v1",
+  "inventoryCandidateCount": 256,
+  "catalogRevision": "cukcuk-tablet-content-2026-11-10-loaded-nachos-v1",
   "tableQrLayout": {
-    "revision": "cukcuk-tablet-content-2026-11-10-goguma-v1",
-    "capturedAt": "2026-11-10T11:03:55.516Z",
+    "revision": "cukcuk-tablet-content-2026-11-10-loaded-nachos-v1",
+    "capturedAt": "2026-11-10T11:42:49.251Z",
     "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
     "includeUnlisted": false,
     "featuredVisible": false,
@@ -6302,10 +6302,10 @@
     "provider": "openai",
     "model": "gpt-5.6-terra",
     "status": "ready",
-    "entityCount": 359,
-    "cacheHits": 346,
+    "entityCount": 360,
+    "cacheHits": 347,
     "translated": 13,
     "pendingCount": 0,
-    "updatedAt": "2026-11-10T11:18:03.072Z"
+    "updatedAt": "2026-11-10T11:46:53.971Z"
   }
 }
