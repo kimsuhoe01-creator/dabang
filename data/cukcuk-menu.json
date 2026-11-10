@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-11-10 11:46:27",
-    "finished_at": "2026-11-10 11:46:36",
+    "started_at": "2026-11-10 12:33:52",
+    "finished_at": "2026-11-10 12:34:02",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -11,7 +11,7 @@
   },
   "categoryCount": 14,
   "menuCount": 116,
-  "optionTemplateCount": 38,
+  "optionTemplateCount": 39,
   "categories": [
     {
       "id": "cukcuk-qr-highball",
@@ -416,8 +416,10 @@
       },
       "price": 54000,
       "available": true,
-      "optionGroups": 0,
-      "optionTemplateIds": [],
+      "optionGroups": 1,
+      "optionTemplateIds": [
+        "cukcuk-detail:2ae7f6ee-1868-4a20-887f-57a762681b09:0"
+      ],
       "sortOrder": 10,
       "categorySortOrder": 2
     },
@@ -1413,7 +1415,7 @@
       "sourceName": "양념  Sweet & Spicy Chicken  韩式甜酱炸鸡 Gà sốt ngọt HQ",
       "names": {
         "ko": "양념 치킨",
-        "vi": "Gà sốt ngọt kiểu Hàn",
+        "vi": "Gà sốt ngọt Hàn Quốc",
         "zh": "韩式甜酱炸鸡",
         "en": "Sweet & Spicy Chicken"
       },
@@ -1435,7 +1437,7 @@
       "sourceName": "매운양념  Hot & Spicy Chicken韩式辣酱炸鸡  Gà sốt cay HQ",
       "names": {
         "ko": "매운 양념 치킨",
-        "vi": "Gà sốt cay kiểu Hàn",
+        "vi": "Gà sốt cay Hàn Quốc",
         "zh": "韩式辣酱炸鸡",
         "en": "Hot & Spicy Chicken"
       },
@@ -1480,8 +1482,8 @@
       "names": {
         "ko": "고추마늘간장 치킨",
         "vi": "Gà sốt xì dầu tỏi ớt",
-        "zh": "辣椒蒜蓉酱油鸡",
-        "en": "Garlic Soy Chicken"
+        "zh": "辣椒蒜香酱油鸡",
+        "en": "Chili Garlic Soy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -4593,6 +4595,42 @@
       ]
     },
     {
+      "id": "cukcuk-detail:2ae7f6ee-1868-4a20-887f-57a762681b09:0",
+      "sourceName": "김치 추가",
+      "names": {
+        "ko": "김치 추가",
+        "vi": "Thêm kimchi",
+        "zh": "加泡菜",
+        "en": "Add Kimchi"
+      },
+      "required": false,
+      "minSelections": 0,
+      "maxSelections": 1,
+      "revision": 1,
+      "values": [
+        {
+          "id": "6a0d8ef5-c6e1-4593-9e58-9d100ae2ebc4",
+          "sourceName": "김치 추가 | Thêm kimchi | 加泡菜 | Add kimchi",
+          "names": {
+            "ko": "김치 추가",
+            "vi": "Thêm kimchi",
+            "zh": "加泡菜",
+            "en": "Add Kimchi"
+          },
+          "receiptNames": {
+            "ko": "김치 추가",
+            "vi": "Thêm kimchi"
+          },
+          "additionalPrice": 21600,
+          "visible": true,
+          "sortOrder": 0
+        }
+      ],
+      "menuIds": [
+        "2ae7f6ee-1868-4a20-887f-57a762681b09"
+      ]
+    },
+    {
       "id": "cukcuk-detail:8c69d754-43fd-404a-a645-e4fe01b81a8b:0",
       "sourceName": "닭갈비 맛 선택",
       "names": {
@@ -6286,9 +6324,9 @@
     }
   ],
   "inventoryCandidateCount": 256,
-  "catalogRevision": "cukcuk-tablet-content-2026-11-10-loaded-nachos-v1",
+  "catalogRevision": "cukcuk-tablet-content-2026-11-10-goguma-kimchi-v1",
   "tableQrLayout": {
-    "revision": "cukcuk-tablet-content-2026-11-10-loaded-nachos-v1",
+    "revision": "cukcuk-tablet-content-2026-11-10-goguma-kimchi-v1",
     "capturedAt": "2026-11-10T11:42:49.251Z",
     "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
     "includeUnlisted": false,
@@ -6302,10 +6340,10 @@
     "provider": "openai",
     "model": "gpt-5.6-terra",
     "status": "ready",
-    "entityCount": 360,
-    "cacheHits": 347,
-    "translated": 13,
+    "entityCount": 362,
+    "cacheHits": 348,
+    "translated": 14,
     "pendingCount": 0,
-    "updatedAt": "2026-11-10T11:46:53.971Z"
+    "updatedAt": "2026-11-10T12:34:20.765Z"
   }
 }
