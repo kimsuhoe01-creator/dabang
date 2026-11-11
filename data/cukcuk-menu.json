@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-11-11 08:49:32",
-    "finished_at": "2026-11-11 08:49:40",
+    "started_at": "2026-11-11 16:39:11",
+    "finished_at": "2026-11-11 16:39:21",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -860,7 +860,7 @@
       "names": {
         "ko": "오리지널 로스트 반 마리",
         "vi": "Nửa con gà quay truyền thống",
-        "zh": "原味烤鸡半只",
+        "zh": "半只原味烤鸡",
         "en": "Half Original Roast Chicken"
       },
       "price": 183600,
@@ -882,7 +882,7 @@
       "names": {
         "ko": "고추바사삭 로스트 반 마리",
         "vi": "Nửa con gà quay giòn cay",
-        "zh": "香辣脆皮烤鸡半只",
+        "zh": "半只香辣脆皮烤鸡",
         "en": "Half Crispy Spicy Roast Chicken"
       },
       "price": 237600,
@@ -1018,7 +1018,7 @@
       "names": {
         "ko": "후라이드 치킨",
         "vi": "Gà chiên giòn",
-        "zh": "原味炸鸡",
+        "zh": "炸鸡",
         "en": "Fried Chicken"
       },
       "price": 399600,
@@ -1106,7 +1106,7 @@
       "names": {
         "ko": "고추마늘간장 치킨",
         "vi": "Gà sốt xì dầu tỏi ớt",
-        "zh": "辣椒蒜香酱油鸡",
+        "zh": "辣椒蒜蓉酱油鸡",
         "en": "Chili Garlic Soy Chicken"
       },
       "price": 399600,
@@ -6377,6 +6377,6 @@
     "cacheHits": 348,
     "translated": 16,
     "pendingCount": 0,
-    "updatedAt": "2026-11-11T08:49:59.025Z"
+    "updatedAt": "2026-11-11T16:39:40.466Z"
   }
 }
