@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-11-10 22:20:02",
-    "finished_at": "2026-11-10 22:20:11",
+    "started_at": "2026-11-11 01:58:37",
+    "finished_at": "2026-11-11 01:58:54",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -807,7 +807,7 @@
       "names": {
         "ko": "반마리 치킨 (뼈/순살)",
         "vi": "Nửa con gà (có xương/không xương)",
-        "zh": "半只炸鸡（有骨/无骨）",
+        "zh": "半只鸡（有骨/无骨）",
         "en": "Half Chicken (Bone-in/Boneless)"
       },
       "price": 216000,
@@ -1017,7 +1017,7 @@
       "sourceName": "후라이드  Fried Chicken  无骨炸鸡腿 Má đùi rút xương",
       "names": {
         "ko": "후라이드 치킨",
-        "vi": "Gà chiên giòn",
+        "vi": "Gà rán",
         "zh": "炸鸡",
         "en": "Fried Chicken"
       },
@@ -1039,7 +1039,7 @@
       "sourceName": "양념  Sweet & Spicy Chicken  韩式甜酱炸鸡 Gà sốt ngọt HQ",
       "names": {
         "ko": "양념 치킨",
-        "vi": "Gà sốt ngọt cay kiểu Hàn",
+        "vi": "Gà sốt ngọt cay Hàn Quốc",
         "zh": "韩式甜辣酱炸鸡",
         "en": "Sweet & Spicy Chicken"
       },
@@ -1061,7 +1061,7 @@
       "sourceName": "매운양념  Hot & Spicy Chicken韩式辣酱炸鸡  Gà sốt cay HQ",
       "names": {
         "ko": "매운 양념 치킨",
-        "vi": "Gà sốt cay kiểu Hàn",
+        "vi": "Gà sốt cay Hàn Quốc",
         "zh": "韩式辣酱炸鸡",
         "en": "Hot & Spicy Chicken"
       },
@@ -1106,8 +1106,8 @@
       "names": {
         "ko": "고추마늘간장 치킨",
         "vi": "Gà sốt xì dầu tỏi ớt",
-        "zh": "鸡肉配辣椒蒜香酱油",
-        "en": "Chili Garlic Soy Chicken"
+        "zh": "辣椒蒜香酱油鸡",
+        "en": "Garlic Soy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -2813,7 +2813,7 @@
         "ko": "선양 오크",
         "vi": "Soju Sunyang Oak",
         "zh": "鲜洋橡木烧酒",
-        "en": "Sunyang Oak Soju"
+        "en": "Sunyang Soju Oak"
       },
       "price": 174900,
       "available": true,
@@ -6377,6 +6377,6 @@
     "cacheHits": 348,
     "translated": 16,
     "pendingCount": 0,
-    "updatedAt": "2026-11-10T22:20:29.864Z"
+    "updatedAt": "2026-11-11T01:59:21.133Z"
   }
 }
