@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-11-13 00:16:30",
-    "finished_at": "2026-11-13 00:16:41",
+    "started_at": "2026-11-13 06:49:13",
+    "finished_at": "2026-11-13 06:49:26",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -807,7 +807,7 @@
       "names": {
         "ko": "반마리 치킨 (뼈/순살)",
         "vi": "Nửa con gà (có xương/không xương)",
-        "zh": "半只鸡（有骨/无骨）",
+        "zh": "半只炸鸡（有骨/无骨）",
         "en": "Half Chicken (Bone-in/Boneless)"
       },
       "price": 216000,
@@ -1019,7 +1019,7 @@
         "ko": "후라이드 치킨",
         "vi": "Gà chiên không xương",
         "zh": "无骨炸鸡腿",
-        "en": "Fried Boneless Chicken"
+        "en": "Boneless Fried Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1039,9 +1039,9 @@
       "sourceName": "양념  Sweet & Spicy Chicken  韩式甜酱炸鸡 Gà sốt ngọt HQ",
       "names": {
         "ko": "양념 치킨",
-        "vi": "Gà sốt ngọt kiểu Hàn",
-        "zh": "韩式甜酱炸鸡",
-        "en": "Sweet & Spicy Chicken"
+        "vi": "Gà sốt ngọt cay Hàn Quốc",
+        "zh": "韩式甜辣酱炸鸡",
+        "en": "Korean Sweet & Spicy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1061,9 +1061,9 @@
       "sourceName": "매운양념  Hot & Spicy Chicken韩式辣酱炸鸡  Gà sốt cay HQ",
       "names": {
         "ko": "매운 양념 치킨",
-        "vi": "Gà sốt cay kiểu Hàn",
+        "vi": "Gà sốt cay Hàn Quốc",
         "zh": "韩式辣酱炸鸡",
-        "en": "Hot & Spicy Chicken"
+        "en": "Korean Hot & Spicy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1106,8 +1106,8 @@
       "names": {
         "ko": "고추마늘간장 치킨",
         "vi": "Gà sốt xì dầu tỏi ớt",
-        "zh": "辣椒蒜酱鸡",
-        "en": "Garlic Soy Chicken"
+        "zh": "辣椒蒜香酱油鸡",
+        "en": "Chili Garlic Soy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1127,8 +1127,8 @@
       "sourceName": "스리라차 어니언  Sriracha Onion Chicken洋葱奶酱炸鸡 Gà sốt kem hành",
       "names": {
         "ko": "스리라차 어니언 치킨",
-        "vi": "Gà sốt kem hành Sriracha",
-        "zh": "是拉差洋葱奶油鸡",
+        "vi": "Gà sốt Sriracha hành tây",
+        "zh": "是拉差洋葱鸡",
         "en": "Sriracha Onion Chicken"
       },
       "price": 399600,
@@ -6377,6 +6377,6 @@
     "cacheHits": 348,
     "translated": 16,
     "pendingCount": 0,
-    "updatedAt": "2026-11-13T00:17:02.351Z"
+    "updatedAt": "2026-11-13T06:49:47.815Z"
   }
 }
