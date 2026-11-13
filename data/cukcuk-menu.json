@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-11-13 06:49:13",
-    "finished_at": "2026-11-13 06:49:26",
+    "started_at": "2026-11-13 14:56:16",
+    "finished_at": "2026-11-13 14:56:24",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -806,8 +806,8 @@
       "sourceName": "반마리치킨|Half Chicken |半只鸡|Nửa con gà (뼈 순살)",
       "names": {
         "ko": "반마리 치킨 (뼈/순살)",
-        "vi": "Nửa con gà (có xương/không xương)",
-        "zh": "半只炸鸡（有骨/无骨）",
+        "vi": "Nửa con gà (có xương/phi lê)",
+        "zh": "半只鸡（有骨/无骨）",
         "en": "Half Chicken (Bone-in/Boneless)"
       },
       "price": 216000,
@@ -1017,9 +1017,9 @@
       "sourceName": "후라이드  Fried Chicken  无骨炸鸡腿 Má đùi rút xương",
       "names": {
         "ko": "후라이드 치킨",
-        "vi": "Gà chiên không xương",
-        "zh": "无骨炸鸡腿",
-        "en": "Boneless Fried Chicken"
+        "vi": "Gà chiên giòn",
+        "zh": "炸鸡",
+        "en": "Fried Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1041,7 +1041,7 @@
         "ko": "양념 치킨",
         "vi": "Gà sốt ngọt cay Hàn Quốc",
         "zh": "韩式甜辣酱炸鸡",
-        "en": "Korean Sweet & Spicy Chicken"
+        "en": "Sweet & Spicy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1063,7 +1063,7 @@
         "ko": "매운 양념 치킨",
         "vi": "Gà sốt cay Hàn Quốc",
         "zh": "韩式辣酱炸鸡",
-        "en": "Korean Hot & Spicy Chicken"
+        "en": "Hot & Spicy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1127,8 +1127,8 @@
       "sourceName": "스리라차 어니언  Sriracha Onion Chicken洋葱奶酱炸鸡 Gà sốt kem hành",
       "names": {
         "ko": "스리라차 어니언 치킨",
-        "vi": "Gà sốt Sriracha hành tây",
-        "zh": "是拉差洋葱鸡",
+        "vi": "Gà sốt kem hành Sriracha",
+        "zh": "是拉差洋葱奶油炸鸡",
         "en": "Sriracha Onion Chicken"
       },
       "price": 399600,
@@ -2811,9 +2811,9 @@
       "sourceName": "선양오크 | Sunyang Soju Oak | 鲜洋橡木烧酒",
       "names": {
         "ko": "선양 오크",
-        "vi": "Soju Sunyang Oak",
+        "vi": "Rượu soju Sunyang Oak",
         "zh": "鲜洋橡木烧酒",
-        "en": "Sunyang Oak Soju"
+        "en": "Sunyang Soju Oak"
       },
       "price": 174900,
       "available": true,
@@ -6377,6 +6377,6 @@
     "cacheHits": 348,
     "translated": 16,
     "pendingCount": 0,
-    "updatedAt": "2026-11-13T06:49:47.815Z"
+    "updatedAt": "2026-11-13T14:56:47.288Z"
   }
 }
