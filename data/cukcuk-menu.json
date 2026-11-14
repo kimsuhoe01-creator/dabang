@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-11-14 07:40:24",
-    "finished_at": "2026-11-14 07:40:31",
+    "started_at": "2026-11-14 19:23:16",
+    "finished_at": "2026-11-14 19:23:24",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -806,7 +806,7 @@
       "sourceName": "반마리치킨|Half Chicken |半只鸡|Nửa con gà (뼈 순살)",
       "names": {
         "ko": "반마리 치킨 (뼈/순살)",
-        "vi": "Nửa con gà (có xương/không xương)",
+        "vi": "Nửa con gà (có xương/phi lê)",
         "zh": "半只鸡（有骨/无骨）",
         "en": "Half Chicken (Bone-in/Boneless)"
       },
@@ -1018,7 +1018,7 @@
       "names": {
         "ko": "후라이드 치킨",
         "vi": "Gà rán",
-        "zh": "炸鸡",
+        "zh": "原味炸鸡",
         "en": "Fried Chicken"
       },
       "price": 399600,
@@ -1107,7 +1107,7 @@
         "ko": "고추마늘간장 치킨",
         "vi": "Gà sốt xì dầu tỏi ớt",
         "zh": "辣椒蒜香酱油鸡",
-        "en": "Garlic Soy Chicken"
+        "en": "Garlic Soy Chili Chicken"
       },
       "price": 399600,
       "available": true,
@@ -6377,6 +6377,6 @@
     "cacheHits": 348,
     "translated": 16,
     "pendingCount": 0,
-    "updatedAt": "2026-11-14T07:40:52.812Z"
+    "updatedAt": "2026-11-14T19:23:42.568Z"
   }
 }
