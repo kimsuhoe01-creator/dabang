@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-11-13 21:05:20",
-    "finished_at": "2026-11-13 21:05:28",
+    "started_at": "2026-11-14 07:40:24",
+    "finished_at": "2026-11-14 07:40:31",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -807,7 +807,7 @@
       "names": {
         "ko": "반마리 치킨 (뼈/순살)",
         "vi": "Nửa con gà (có xương/không xương)",
-        "zh": "半只炸鸡（有骨/无骨）",
+        "zh": "半只鸡（有骨/无骨）",
         "en": "Half Chicken (Bone-in/Boneless)"
       },
       "price": 216000,
@@ -1107,7 +1107,7 @@
         "ko": "고추마늘간장 치킨",
         "vi": "Gà sốt xì dầu tỏi ớt",
         "zh": "辣椒蒜香酱油鸡",
-        "en": "Chili Garlic Soy Chicken"
+        "en": "Garlic Soy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -2813,7 +2813,7 @@
         "ko": "선양 오크",
         "vi": "Soju Sunyang Oak",
         "zh": "鲜洋橡木烧酒",
-        "en": "Sunyang Soju Oak"
+        "en": "Sunyang Oak Soju"
       },
       "price": 174900,
       "available": true,
@@ -6377,6 +6377,6 @@
     "cacheHits": 348,
     "translated": 16,
     "pendingCount": 0,
-    "updatedAt": "2026-11-13T21:05:51.454Z"
+    "updatedAt": "2026-11-14T07:40:52.812Z"
   }
 }
