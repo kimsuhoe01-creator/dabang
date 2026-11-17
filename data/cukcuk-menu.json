@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-11-17 08:38:44",
-    "finished_at": "2026-11-17 08:38:53",
+    "started_at": "2026-11-17 17:51:09",
+    "finished_at": "2026-11-17 17:51:18",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -806,7 +806,7 @@
       "sourceName": "반마리치킨|Half Chicken |半只鸡|Nửa con gà (뼈 순살)",
       "names": {
         "ko": "반마리 치킨 (뼈/순살)",
-        "vi": "Nửa con gà (có xương/phi lê)",
+        "vi": "Nửa con gà (có xương/không xương)",
         "zh": "半只鸡（带骨/无骨）",
         "en": "Half Chicken (Bone-in/Boneless)"
       },
@@ -860,7 +860,7 @@
       "names": {
         "ko": "오리지널 로스트 반 마리",
         "vi": "Nửa con gà quay truyền thống",
-        "zh": "半只原味烤鸡",
+        "zh": "原味烤鸡半只",
         "en": "Half Original Roast Chicken"
       },
       "price": 183600,
@@ -882,7 +882,7 @@
       "names": {
         "ko": "고추바사삭 로스트 반 마리",
         "vi": "Nửa con gà quay giòn cay",
-        "zh": "半只香辣脆皮烤鸡",
+        "zh": "香辣脆皮烤鸡半只",
         "en": "Half Crispy Spicy Roast Chicken"
       },
       "price": 237600,
@@ -1017,8 +1017,8 @@
       "sourceName": "후라이드  Fried Chicken  无骨炸鸡腿 Má đùi rút xương",
       "names": {
         "ko": "후라이드 치킨",
-        "vi": "Gà chiên giòn",
-        "zh": "炸鸡",
+        "vi": "Gà rán",
+        "zh": "无骨炸鸡腿",
         "en": "Fried Chicken"
       },
       "price": 399600,
@@ -1106,8 +1106,8 @@
       "names": {
         "ko": "고추마늘간장 치킨",
         "vi": "Gà sốt xì dầu tỏi ớt",
-        "zh": "辣椒蒜香酱油鸡",
-        "en": "Chili Garlic Soy Chicken"
+        "zh": "辣椒蒜酱鸡",
+        "en": "Garlic Soy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1128,7 +1128,7 @@
       "names": {
         "ko": "스리라차 어니언 치킨",
         "vi": "Gà sốt kem hành Sriracha",
-        "zh": "是拉差洋葱奶油鸡",
+        "zh": "是拉差洋葱奶油炸鸡",
         "en": "Sriracha Onion Chicken"
       },
       "price": 399600,
@@ -6377,6 +6377,6 @@
     "cacheHits": 348,
     "translated": 16,
     "pendingCount": 0,
-    "updatedAt": "2026-11-17T08:39:16.495Z"
+    "updatedAt": "2026-11-17T17:51:38.052Z"
   }
 }
