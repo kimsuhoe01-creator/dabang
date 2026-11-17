@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-11-17 00:55:26",
-    "finished_at": "2026-11-17 00:55:35",
+    "started_at": "2026-11-17 08:38:44",
+    "finished_at": "2026-11-17 08:38:53",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -806,8 +806,8 @@
       "sourceName": "반마리치킨|Half Chicken |半只鸡|Nửa con gà (뼈 순살)",
       "names": {
         "ko": "반마리 치킨 (뼈/순살)",
-        "vi": "Nửa con gà (có xương/không xương)",
-        "zh": "半只鸡（有骨/无骨）",
+        "vi": "Nửa con gà (có xương/phi lê)",
+        "zh": "半只鸡（带骨/无骨）",
         "en": "Half Chicken (Bone-in/Boneless)"
       },
       "price": 216000,
@@ -1017,7 +1017,7 @@
       "sourceName": "후라이드  Fried Chicken  无骨炸鸡腿 Má đùi rút xương",
       "names": {
         "ko": "후라이드 치킨",
-        "vi": "Gà rán",
+        "vi": "Gà chiên giòn",
         "zh": "炸鸡",
         "en": "Fried Chicken"
       },
@@ -1039,8 +1039,8 @@
       "sourceName": "양념  Sweet & Spicy Chicken  韩式甜酱炸鸡 Gà sốt ngọt HQ",
       "names": {
         "ko": "양념 치킨",
-        "vi": "Gà sốt ngọt cay kiểu Hàn",
-        "zh": "韩式甜辣酱炸鸡",
+        "vi": "Gà sốt ngọt kiểu Hàn",
+        "zh": "韩式甜酱炸鸡",
         "en": "Sweet & Spicy Chicken"
       },
       "price": 399600,
@@ -1107,7 +1107,7 @@
         "ko": "고추마늘간장 치킨",
         "vi": "Gà sốt xì dầu tỏi ớt",
         "zh": "辣椒蒜香酱油鸡",
-        "en": "Garlic Soy Chicken"
+        "en": "Chili Garlic Soy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1128,7 +1128,7 @@
       "names": {
         "ko": "스리라차 어니언 치킨",
         "vi": "Gà sốt kem hành Sriracha",
-        "zh": "是拉差洋葱奶油炸鸡",
+        "zh": "是拉差洋葱奶油鸡",
         "en": "Sriracha Onion Chicken"
       },
       "price": 399600,
@@ -2811,7 +2811,7 @@
       "sourceName": "선양오크 | Sunyang Soju Oak | 鲜洋橡木烧酒",
       "names": {
         "ko": "선양 오크",
-        "vi": "Rượu soju Sunyang Oak",
+        "vi": "Soju Sunyang Oak",
         "zh": "鲜洋橡木烧酒",
         "en": "Sunyang Soju Oak"
       },
@@ -6377,6 +6377,6 @@
     "cacheHits": 348,
     "translated": 16,
     "pendingCount": 0,
-    "updatedAt": "2026-11-17T00:55:56.066Z"
+    "updatedAt": "2026-11-17T08:39:16.495Z"
   }
 }
