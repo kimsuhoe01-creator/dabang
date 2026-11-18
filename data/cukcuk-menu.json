@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-11-18 00:00:18",
-    "finished_at": "2026-11-18 00:00:27",
+    "started_at": "2026-11-18 06:24:11",
+    "finished_at": "2026-11-18 06:24:19",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -806,8 +806,8 @@
       "sourceName": "반마리치킨|Half Chicken |半只鸡|Nửa con gà (뼈 순살)",
       "names": {
         "ko": "반마리 치킨 (뼈/순살)",
-        "vi": "Nửa con gà (có xương/rút xương)",
-        "zh": "半只炸鸡（有骨/无骨）",
+        "vi": "Nửa con gà (có xương/không xương)",
+        "zh": "半只鸡（有骨/无骨）",
         "en": "Half Chicken (Bone-in/Boneless)"
       },
       "price": 216000,
@@ -1017,8 +1017,8 @@
       "sourceName": "후라이드  Fried Chicken  无骨炸鸡腿 Má đùi rút xương",
       "names": {
         "ko": "후라이드 치킨",
-        "vi": "Gà chiên",
-        "zh": "原味炸鸡",
+        "vi": "Gà chiên giòn",
+        "zh": "炸鸡",
         "en": "Fried Chicken"
       },
       "price": 399600,
@@ -1107,7 +1107,7 @@
         "ko": "고추마늘간장 치킨",
         "vi": "Gà sốt xì dầu tỏi ớt",
         "zh": "辣椒蒜香酱油鸡",
-        "en": "Chili Garlic Soy Chicken"
+        "en": "Garlic Soy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -2813,7 +2813,7 @@
         "ko": "선양 오크",
         "vi": "Soju Sunyang Oak",
         "zh": "鲜洋橡木烧酒",
-        "en": "Sunyang Oak Soju"
+        "en": "Sunyang Soju Oak"
       },
       "price": 174900,
       "available": true,
@@ -6377,6 +6377,6 @@
     "cacheHits": 348,
     "translated": 16,
     "pendingCount": 0,
-    "updatedAt": "2026-11-18T00:00:48.171Z"
+    "updatedAt": "2026-11-18T06:24:37.807Z"
   }
 }
