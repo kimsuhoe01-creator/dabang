@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-11-21 04:03:38",
-    "finished_at": "2026-11-21 04:03:46",
+    "started_at": "2026-11-21 12:27:16",
+    "finished_at": "2026-11-21 12:27:24",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -1018,7 +1018,7 @@
       "names": {
         "ko": "후라이드 치킨",
         "vi": "Gà chiên giòn",
-        "zh": "炸鸡",
+        "zh": "无骨炸鸡腿",
         "en": "Fried Chicken"
       },
       "price": 399600,
@@ -6377,6 +6377,6 @@
     "cacheHits": 348,
     "translated": 16,
     "pendingCount": 0,
-    "updatedAt": "2026-11-21T04:04:14.024Z"
+    "updatedAt": "2026-11-21T12:27:41.523Z"
   }
 }
