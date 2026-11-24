@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-11-23 04:03:30",
-    "finished_at": "2026-11-23 04:03:39",
+    "started_at": "2026-11-24 01:44:31",
+    "finished_at": "2026-11-24 01:44:40",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -807,7 +807,7 @@
       "names": {
         "ko": "반마리 치킨 (뼈/순살)",
         "vi": "Nửa con gà (có xương/không xương)",
-        "zh": "半只鸡（有骨/无骨）",
+        "zh": "半只鸡（带骨/无骨）",
         "en": "Half Chicken (Bone-in/Boneless)"
       },
       "price": 216000,
@@ -1040,8 +1040,8 @@
       "names": {
         "ko": "양념 치킨",
         "vi": "Gà sốt ngọt cay Hàn Quốc",
-        "zh": "韩式甜辣酱炸鸡",
-        "en": "Korean Sweet & Spicy Chicken"
+        "zh": "韩式甜辣炸鸡",
+        "en": "Sweet & Spicy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1063,7 +1063,7 @@
         "ko": "매운 양념 치킨",
         "vi": "Gà sốt cay Hàn Quốc",
         "zh": "韩式辣酱炸鸡",
-        "en": "Korean Hot & Spicy Chicken"
+        "en": "Hot & Spicy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1107,7 +1107,7 @@
         "ko": "고추마늘간장 치킨",
         "vi": "Gà sốt xì dầu tỏi ớt",
         "zh": "辣椒蒜香酱油鸡",
-        "en": "Chili Garlic Soy Chicken"
+        "en": "Garlic Soy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1128,7 +1128,7 @@
       "names": {
         "ko": "스리라차 어니언 치킨",
         "vi": "Gà sốt kem hành Sriracha",
-        "zh": "是拉差洋葱奶油炸鸡",
+        "zh": "是拉差洋葱奶油鸡",
         "en": "Sriracha Onion Chicken"
       },
       "price": 399600,
@@ -6377,6 +6377,6 @@
     "cacheHits": 348,
     "translated": 16,
     "pendingCount": 0,
-    "updatedAt": "2026-11-23T04:03:57.372Z"
+    "updatedAt": "2026-11-24T01:45:00.351Z"
   }
 }
