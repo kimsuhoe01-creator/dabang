@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-11-24 01:44:31",
-    "finished_at": "2026-11-24 01:44:40",
+    "started_at": "2026-11-24 11:37:41",
+    "finished_at": "2026-11-24 11:37:49",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -1017,8 +1017,8 @@
       "sourceName": "후라이드  Fried Chicken  无骨炸鸡腿 Má đùi rút xương",
       "names": {
         "ko": "후라이드 치킨",
-        "vi": "Gà chiên",
-        "zh": "炸鸡",
+        "vi": "Gà chiên giòn",
+        "zh": "无骨炸鸡腿肉",
         "en": "Fried Chicken"
       },
       "price": 399600,
@@ -1040,7 +1040,7 @@
       "names": {
         "ko": "양념 치킨",
         "vi": "Gà sốt ngọt cay Hàn Quốc",
-        "zh": "韩式甜辣炸鸡",
+        "zh": "韩式甜辣酱炸鸡",
         "en": "Sweet & Spicy Chicken"
       },
       "price": 399600,
@@ -1107,7 +1107,7 @@
         "ko": "고추마늘간장 치킨",
         "vi": "Gà sốt xì dầu tỏi ớt",
         "zh": "辣椒蒜香酱油鸡",
-        "en": "Garlic Soy Chicken"
+        "en": "Chili Garlic Soy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1128,7 +1128,7 @@
       "names": {
         "ko": "스리라차 어니언 치킨",
         "vi": "Gà sốt kem hành Sriracha",
-        "zh": "是拉差洋葱奶油鸡",
+        "zh": "是拉差洋葱奶油炸鸡",
         "en": "Sriracha Onion Chicken"
       },
       "price": 399600,
@@ -6377,6 +6377,6 @@
     "cacheHits": 348,
     "translated": 16,
     "pendingCount": 0,
-    "updatedAt": "2026-11-24T01:45:00.351Z"
+    "updatedAt": "2026-11-24T11:38:23.221Z"
   }
 }
