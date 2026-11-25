@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-11-24 21:29:15",
-    "finished_at": "2026-11-24 21:29:22",
+    "started_at": "2026-11-25 04:27:52",
+    "finished_at": "2026-11-25 04:28:02",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -806,7 +806,7 @@
       "sourceName": "반마리치킨|Half Chicken |半只鸡|Nửa con gà (뼈 순살)",
       "names": {
         "ko": "반마리 치킨 (뼈/순살)",
-        "vi": "Nửa con gà (có xương/không xương)",
+        "vi": "Nửa con gà (có xương/phi lê)",
         "zh": "半只炸鸡（带骨/无骨）",
         "en": "Half Chicken (Bone-in/Boneless)"
       },
@@ -6377,6 +6377,6 @@
     "cacheHits": 348,
     "translated": 16,
     "pendingCount": 0,
-    "updatedAt": "2026-11-24T21:29:39.698Z"
+    "updatedAt": "2026-11-25T04:28:23.191Z"
   }
 }
