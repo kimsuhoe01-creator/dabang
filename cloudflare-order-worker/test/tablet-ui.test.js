@@ -42,7 +42,7 @@ test('staff setup controls stay Vietnamese while the customer language prompt st
   assert.match(tableLoader, /staffAreaName\(group\.name\)/);
   assert.doesNotMatch(tableLoader, /startCopy\.ko|개 테이블|자동 동기화를 먼저 실행/);
 
-  assert.match(html, /function staffAreaName\(name\)\{return name==='배달'\?'Giao hàng':name==='기타'\?'Khác':name\}/);
+  assert.match(html, /function staffAreaName\(name\)\{return name==='포장'\?'Mang về':name==='배달'\?'Giao hàng':name==='기타'\?'Khác':name\}/);
 
   const renderSource = sourceSlice('function render({preserveScroll=true}={})', 'function setLang');
   assert.match(renderSource, /resetText'\)\.textContent=STAFF_COPY\.reset/);

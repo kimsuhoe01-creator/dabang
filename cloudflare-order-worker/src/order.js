@@ -70,6 +70,10 @@ export function validateAndBuildOrder(payload, menuData, branchId, now = new Dat
     if (!menu || !Number.isInteger(quantity) || quantity < 1 || quantity > 99) {
       throw invalid("현재 판매 중인 메뉴와 수량을 확인해 주세요.");
     }
+    if (/^take(?:away)?\s*[-_ ]?0*\d+$/i.test(tableName)
+      && ["COMBOFAMILY599", "COMBOCOUPLE289"].includes(String(menu.cukcukCode || ""))) {
+      throw invalid("포장 테이블에서는 이 연말 콤보를 주문할 수 없습니다.");
+    }
     if (menuId === MONDAY_POCHA_MENU_ID && line.basePrice !== undefined && line.basePrice !== null
       && Number(line.basePrice) !== mondayPochaDisplayPrice(menu, now)) {
       throw new OrderError("월요일 행사 시간이 바뀌었습니다. 장바구니 가격을 확인한 뒤 다시 주문해 주세요.", 409, "PROMO_PRICE_CHANGED");

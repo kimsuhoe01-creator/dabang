@@ -266,17 +266,18 @@ function normalizeTables(payload){const source=payload?.Data?.ListTable||payload
 function groupTablesForDisplay(tables){
  const currentLayoutVersion=3,useSaved=Number(storedState?.tableLayoutVersion)>=currentLayoutVersion&&storedState?.tableLayoutEdited===true&&Array.isArray(storedState?.tableLayout),saved=useSaved?storedState.tableLayout:[],byId=new Map(tables.map(t=>[t.id,t])),used=new Set(),groups=[];
  if(!useSaved)return DABANG_TABLE_LAYOUT.buildDefaultGroups(tables);
- for(const area of saved){const rows=(area.tableIds||[]).map(id=>byId.get(String(id))).filter(Boolean);rows.forEach(t=>used.add(t.id));if(rows.length)groups.push({name:area.name||'기타',tables:rows})}
+ for(const area of saved){const rows=(area.tableIds||[]).map(id=>byId.get(String(id))).filter(t=>t&&!DABANG_TABLE_LAYOUT.isFulfillmentTable(t));rows.forEach(t=>used.add(t.id));if(rows.length)groups.push({name:area.name||'기타',tables:rows})}
  const remaining=tables.filter(t=>!used.has(t.id));
  for(const additions of DABANG_TABLE_LAYOUT.buildDefaultGroups(remaining)){const group=groups.find(item=>DABANG_TABLE_LAYOUT.normalizeAreaName(item.name)===additions.name);if(group)group.tables.push(...additions.tables);else groups.push(additions)}
  groups.forEach(group=>group.tables.sort(DABANG_TABLE_LAYOUT.compareTables));
  return groups;
 }
-function staffAreaName(name){return name==='배달'?'Giao hàng':name==='기타'?'Khác':name}
+function staffAreaName(name){return name==='포장'?'Mang về':name==='배달'?'Giao hàng':name==='기타'?'Khác':name}
 async function loadCukcukTables(){const copy=startCopy.vi,box=document.getElementById('tableList');box.innerHTML=`<div class="table-status"><div class="spinner"></div>${copy.loading}</div>`;let tables=[];try{tables=normalizeTables(await fetchTabletJson('data/cukcuk-tables.json'))}catch(e){}if(!tables.length){box.innerHTML=`<div class="table-status">${copy.error}<br><small>Vui lòng chạy đồng bộ CUKCUK trước.</small><br><button class="retry-button" onclick="loadCukcukTables()">${copy.retry}</button></div>`;return}const groups=groupTablesForDisplay(tables);availableTables=groups.flatMap(group=>group.tables);let tableIndex=0;box.innerHTML=groups.map(group=>{const areaName=staffAreaName(group.name);return`<section class="table-area-group"><div class="table-area-head"><h3>${escapeHtml(areaName)}</h3><span>${group.tables.length} bàn</span></div><div class="table-area-grid">${group.tables.map(t=>{const index=tableIndex++;return`<button class="table-card" onclick="selectTable(${index})"><b>${escapeHtml(t.name)}</b><span>${escapeHtml(areaName)}</span></button>`}).join('')}</div></section>`}).join('')}
 async function fetchTabletJson(path){const suffix=path+'?v='+Date.now(),urls=[suffix,'https://kimsuhoe01-creator.github.io/dabang/'+suffix];for(const url of [...new Set(urls)]){try{const response=await fetch(url,{cache:'no-store'});if(response.ok)return await response.json()}catch{}}throw new Error('published data unavailable')}
 function escapeHtml(value){return String(value).replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
 function selectTable(index){selectedTable=availableTables[index];if(!selectedTable)return;sessionStorage.setItem('dabangSelectedTable',JSON.stringify(selectedTable));document.getElementById('tableName').textContent=selectedTable.name;showLanguageStep()}
+function menuAllowedForTable(menu){return !DABANG_TABLE_LAYOUT.isTakeawayTable(selectedTable)||!['COMBOFAMILY599','COMBOCOUPLE289'].includes(String(menu?.cukcukCode||''))}
 // Tablet menu flow v2: continuous categories, CUKCUK options, and a real cart.
 Object.assign(words.ko,{cart:'장바구니',added:' 장바구니에 담았어요.',cartEmpty:'장바구니가 비어 있습니다.',resetConfirm:'현재 장바구니를 비우고 테이블 선택 화면으로 돌아갈까요?',options:'옵션 선택',optionShort:'옵션',optional:'선택',required:'필수',free:'추가금 없음',total:'총 금액',basePrice:'기본 가격',extra:'옵션 추가',cancel:'취소',addToCart:'장바구니 담기',maxSelect:'최대 {n}개 선택',exactSelect:'{n}개 선택',rangeSelect:'{min}~{max}개 선택',selectedCount:'{selected}/{max}개 선택',requiredAlert:'필수 옵션의 최소 수량을 선택해 주세요.',optionUnavailable:'옵션 정보를 불러오는 중입니다. 잠시 후 다시 선택해 주세요.',cartCaption:'선택한 메뉴와 옵션을 확인하세요.',close:'닫기',decrease:'수량 줄이기',increase:'수량 늘리기'});
 Object.assign(words.vi,{options:'Chọn tùy chọn',optionShort:'Tùy chọn',optional:'Tùy chọn',required:'Bắt buộc',free:'Không phụ thu',total:'Tổng cộng',basePrice:'Giá cơ bản',extra:'Phụ thu',cancel:'Hủy',addToCart:'Thêm vào giỏ',maxSelect:'Chọn tối đa {n}',exactSelect:'Chọn {n}',rangeSelect:'Chọn {min}–{max}',selectedCount:'Đã chọn {selected}/{max}',requiredAlert:'Vui lòng chọn đủ số lượng bắt buộc.',optionUnavailable:'Đang tải thông tin tùy chọn. Vui lòng thử lại sau.',cartCaption:'Kiểm tra món và tùy chọn đã chọn.',close:'Đóng',decrease:'Giảm số lượng',increase:'Tăng số lượng'});
@@ -476,7 +477,7 @@ function menuCardMarkup(menu,index){
 }
 function yearEndMenus(){
  if(!window.DABANG_YEAR_END?.activeAt())return[];
- return window.DABANG_YEAR_END.codes.map(code=>state.menus.find(menu=>String(menu.cukcukCode)===code)).filter(menu=>menu&&!menuIsHidden(menu)&&!hiddenByCategoryClosure(menu));
+ return window.DABANG_YEAR_END.codes.map(code=>state.menus.find(menu=>String(menu.cukcukCode)===code)).filter(menu=>menu&&menuAllowedForTable(menu)&&!menuIsHidden(menu)&&!hiddenByCategoryClosure(menu));
 }
 function yearEndComboMarkup(menu){
  const copy=window.DABANG_YEAR_END.copy[lang],name=menu.n?.[lang]||menu.n?.ko||menu.sourceName||'',subtitle=localizedNames(menu.subtitles),price=displayMenuPrice(menu),original=comboOriginalPrice(menu),rate=original?Math.round((1-price/original)*100):0,image=displayMenuImage(menu.id),available=menuIsAvailable(menu),safeId=safeJsString(menu.id);
@@ -488,11 +489,11 @@ function yearEndSectionMarkup(menus){
 }
 function menuSections(){
   const seasonal=yearEndMenus(),seasonalIds=new Set(seasonal.map(menu=>String(menu.id)));
-  const sections=visibleCategories().map(category=>{const closure=activeCategoryClosure(category.name);return{key:category.name,label:categoryLabel(category),closure,menus:state.menus.filter(menu=>menu.cat===category.name&&!seasonalIds.has(String(menu.id))&&!hiddenByCategoryClosure(menu)&&!menuIsHidden(menu))}});
+  const sections=visibleCategories().map(category=>{const closure=activeCategoryClosure(category.name);return{key:category.name,label:categoryLabel(category),closure,menus:state.menus.filter(menu=>menu.cat===category.name&&menuAllowedForTable(menu)&&!seasonalIds.has(String(menu.id))&&!hiddenByCategoryClosure(menu)&&!menuIsHidden(menu))}});
   const promo=mondayPochaMenu(),prefix=promo?[{key:'monday-promo',label:MONDAY_POCHA_COPY[lang].section,closure:null,menus:[promo],promo:true}]:[];
   if(seasonal.length)prefix.unshift({key:'year-end',label:window.DABANG_YEAR_END.copy[lang].nav,closure:null,menus:seasonal,yearEnd:true});
   if(!state.featuredVisible)return prefix.concat(sections);
-  return prefix.concat([{key:'featured',label:words[lang].section,closure:null,menus:state.menus.filter(menu=>menu.recommended&&!hiddenByCategoryClosure(menu)&&!menuIsHidden(menu))}],sections);
+  return prefix.concat([{key:'featured',label:words[lang].section,closure:null,menus:state.menus.filter(menu=>menu.recommended&&menuAllowedForTable(menu)&&!hiddenByCategoryClosure(menu)&&!menuIsHidden(menu))}],sections);
 }
 function mondayPromoMarkup(menu){const copy=MONDAY_POCHA_COPY[lang],safeId=safeJsString(menu.id),label=`${copy.section} · ${copy.action} · ${money(MONDAY_POCHA_PRICE)}`;return `<section class="menu-category-section monday-promo-section" data-category="monday-promo"><button type="button" class="monday-promo-banner" aria-label="${escapeHtml(label)}" onclick="selectMenu('${safeId}',this)"><img src="${MONDAY_POCHA_POSTERS[lang]}" alt="${escapeHtml(copy.section)} · ${escapeHtml(menu.n?.[lang]||menu.n?.ko||'')} · ${money(MONDAY_POCHA_PRICE)}"><span class="monday-promo-caption"><span>${escapeHtml(copy.section)}</span><strong>${escapeHtml(copy.action)} ＋</strong></span></button></section>`}
 function renderCats(){
@@ -673,7 +674,7 @@ function confirmOptions(){
 function selectMenu(id,opener){
  if(!PREVIEW_MODE&&!catalogReady){showToast(catalogLoadFailed?words[lang].menuLoadFailed:words[lang].menuLoading);return}
  const menu=state.menus.find(item=>String(item.id)===String(id));
- if(!menu||menuIsHidden(menu)||!menuIsAvailable(menu))return;
+ if(!menu||!menuAllowedForTable(menu)||menuIsHidden(menu)||!menuIsAvailable(menu))return;
  const groups=menuOptionGroups(menu);
  if(!groups.length&&(Number(menu.optionGroups)>0||Number(menu.price)===0)){showToast(words[lang].optionUnavailable);return}
  if(groups.length)openOptionModal(menu,groups,opener);else addConfiguredItem(menu,[]);

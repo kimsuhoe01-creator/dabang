@@ -19,6 +19,29 @@ test("validates menu prices and links options to their parent menu", () => {
   assert.deepEqual(order.ListTableID, ["table-1"]);
 });
 
+test("takeaway tables cannot submit either dine-in year-end combo", () => {
+  const catalog = {
+    synced: true,
+    menus: [
+      { id: 'family', cukcukCode: 'COMBOFAMILY599', price: 599000, optionTemplateIds: [] },
+      { id: 'couple', cukcukCode: 'COMBOCOUPLE289', price: 289000, optionTemplateIds: [] },
+      { id: 'other', cukcukCode: 'OTHER', price: 10000, optionTemplateIds: [] }
+    ],
+    optionTemplates: []
+  };
+  const payload = (name, menuId) => ({
+    clientOrderId: `takeout-${name}-${menuId}`,
+    table: { id: 'take-table-id', name },
+    items: [{ menuId, quantity: 1, options: [] }]
+  });
+  for (const name of ['take01', 'take05']) {
+    for (const id of ['family', 'couple']) {
+      assert.throws(() => validateAndBuildOrder(payload(name, id), catalog, 'branch-1'), /포장 테이블/);
+    }
+    assert.doesNotThrow(() => validateAndBuildOrder(payload(name, 'other'), catalog, 'branch-1'));
+  }
+});
+
 test("enforces an exact two-choice rule for half-and-half menus", () => {
   assert.doesNotThrow(() => buildConstrainedOrder("exact-2", ["value-1", "value-2"], 2, 2));
   assert.throws(() => buildConstrainedOrder("exact-2", ["value-1"], 2, 2), /선택 개수/);
