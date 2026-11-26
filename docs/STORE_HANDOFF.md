@@ -5,6 +5,7 @@
 - 태블릿 한국어 표시를 `패밀리 콤보`로 바꿨다. CUKCUK 원본 품목 코드는 `COMBOFAMILY599`로 그대로이며 가격·주문 옵션도 유지한다. 현장 브라우저에 옛 로컬 이름 편집값이 남아 있어도 한국어 표시는 새 이름을 우선한다.
 - 베트남 현지 시간 2026-11-26부터 12월 31일까지 네 언어 모두 `연말 할인` 행사 구역을 전체 메뉴 맨 앞에 보인다. 패밀리와 커플 콤보는 해당 구역에 한 번만 표시하고 일반 세트 목록에서는 중복하지 않는다. 2027-01-01부터 행사 화면과 크리스마스 테마는 자동으로 꺼지며 두 품목은 일반 세트 카테고리에 남는다. CUKCUK 판매가는 이 화면 일정과 별개다.
 - 화면 전체에 짙은 녹색·빨강·금색의 연말 테마를 적용하고, 두 포스터를 사용한 큰 행사 카드에 원가 취소선, 24%/19% 할인율과 판매가를 강조했다. 로컬 안전 미리보기에서 한국어·베트남어 첫 화면 및 패밀리 콤보 선택창을 확인했다. 테스트 115개, 이미지 감사 118개(누락·고아 0), 변경 공백 검사 통과. 설치형 태블릿 캐시 `dabang-tablet-v67`.
+- [PR #33](https://github.com/kimsuhoe01-creator/dabang/pull/33) 병합 커밋 `3561679`, [GitHub Pages](https://github.com/kimsuhoe01-creator/dabang/actions/runs/45829883130), [주문 Worker](https://github.com/kimsuhoe01-creator/dabang/actions/runs/45829884669), [CUKCUK 동기화](https://github.com/kimsuhoe01-creator/dabang/actions/runs/45829884616) 성공. 동기화 데이터 커밋 `c77961a`의 [후속 Pages 배포](https://github.com/kimsuhoe01-creator/dabang/actions/runs/45830036386)도 성공했다. [공개 시크릿 안전 미리보기](https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=3561679a)에서 한국어 첫 화면의 행사 순서·두 포스터·이름·할인가를 확인했다. 공개 데이터는 118개 메뉴, 패밀리/커플 599,000동/289,000동과 옵션 그룹 7/8개, 두 이미지 HTTP 200을 확인했다. 실제 POS 주문은 보내지 않았다.
 
 ## 2026-11-26 가족·커플 콤보 등록과 태블릿 주문 연결
 
