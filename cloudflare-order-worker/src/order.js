@@ -1,6 +1,49 @@
 const API_ROOT = "https://graphapi.cukcuk.vn";
 import { MONDAY_POCHA_MENU_ID, mondayPochaDisplayPrice } from "./monday-promo.js";
 
+const COMBO_TYPES = {
+  bone: "f688cfab-85e2-4a3c-84ea-48cd2b56fcf7",
+  boneless: "6e0215ac-2c13-4f72-9b1d-fd47691e0627",
+  wings: "a99769de-2e48-437e-814a-30c3dd3e3d59",
+  jjapkoba: "b948e319-8ef2-483c-92e9-768be31535ef",
+};
+const COMBO_NORMAL_FLAVORS = new Set("364f50ef-8710-41ac-9e4c-73209d7a4c89 9b8f3856-60ff-4d08-b111-9e87ea20e22e 641303df-1c29-4e1d-bc2b-de7ce53a43db 28ae400d-930a-48ca-89f5-3113b1e3036e a4540023-7b3c-496b-baab-b821705d6e68 5b311b20-6191-403f-8612-08cf8648b49d 2dfd957a-1061-4e7d-a1ca-5ec27dfc1da0 b3a7e4ce-1840-4d17-9636-6e91cd32fd36 a8da2a14-4ec6-40a9-926c-9b41755b2de5 fd21b308-6f37-443b-a50c-a35c5a604106".split(" "));
+const COMBO_WING_FLAVORS = new Set("e8e473c3-65df-4e9d-abce-0c3e480ce3e5 95da43b6-1573-4310-b70c-38090b1f2ef7 06cf5bed-c480-43a9-b157-44b4d59cf23e 74f59857-2d4f-4b98-84e1-79c75aa26a9c 21eca709-2298-47d6-be92-bb03e5461c41 22731f9b-95ae-4fc2-9dc2-bbd3ced496b7 18be4708-e8af-476b-a8f0-d575157450f0 2276ad40-3dfc-4679-a7af-df881c350153".split(" "));
+const COMBO_SOUP_SPICY = "92987c76-3de9-4491-98f9-508013c0fe9e";
+const COMBO_UDON = new Set(["d067d9f5-70b7-4a28-9b01-6914ed4f0b66", "36e1c914-9c90-4746-9c4a-cb01c6585cea"]);
+const COMBO_JJAPKOBA_SPICE = new Set(["3b59138e-b848-41aa-a45d-9fa1b915fbcf", "b4ff5c57-e25c-4275-a6a9-4a25ba70e497", "90f5ee61-9405-4725-a244-24b23222ee4f"]);
+
+function validateComboChoices(code, selectedOptions) {
+  if (code !== "COMBOFAMILY599" && code !== "COMBOCOUPLE289") return;
+  const ids = selectedOptions.map(option => String(option.valueId));
+  const allowedTypes = code === "COMBOFAMILY599"
+    ? [COMBO_TYPES.bone, COMBO_TYPES.boneless, COMBO_TYPES.wings]
+    : Object.values(COMBO_TYPES);
+  const typeIds = ids.filter(id => allowedTypes.includes(id));
+  if (typeIds.length !== 1) throw invalid("콤보 치킨 종류를 하나 선택해 주세요.");
+  const selectedType = typeIds[0];
+  const normalCount = ids.filter(id => COMBO_NORMAL_FLAVORS.has(id)).length;
+  const wingCount = ids.filter(id => COMBO_WING_FLAVORS.has(id)).length;
+  const flavorCount = code === "COMBOFAMILY599" ? 2 : 1;
+  if (selectedType === COMBO_TYPES.wings
+    ? wingCount !== flavorCount || normalCount !== 0
+    : selectedType === COMBO_TYPES.jjapkoba
+      ? normalCount !== 0 || wingCount !== 0
+      : normalCount !== flavorCount || wingCount !== 0) {
+    throw invalid("선택한 치킨 종류에 맞는 맛만 골라 주세요.");
+  }
+  const soupCount = ids.filter(id => id === COMBO_SOUP_SPICY).length;
+  const udonCount = ids.filter(id => COMBO_UDON.has(id)).length;
+  const spiceCount = ids.filter(id => COMBO_JJAPKOBA_SPICE.has(id)).length;
+  if (code === "COMBOFAMILY599" ? soupCount > 1 || udonCount !== 0 : udonCount !== 1 || soupCount !== 0)
+    throw invalid("콤보 국물 맛을 다시 선택해 주세요.");
+  if (selectedType === COMBO_TYPES.jjapkoba ? spiceCount !== 1 : spiceCount !== 0)
+    throw invalid("짭코바 매운 단계를 선택해 주세요.");
+  const allowed = new Set([...allowedTypes, ...COMBO_NORMAL_FLAVORS, ...COMBO_WING_FLAVORS,
+    ...(code === "COMBOFAMILY599" ? [COMBO_SOUP_SPICY] : [...COMBO_UDON, ...COMBO_JJAPKOBA_SPICE])]);
+  if (ids.some(id => !allowed.has(id))) throw invalid("콤보에 포함되지 않은 옵션이 있습니다.");
+}
+
 export function validateAndBuildOrder(payload, menuData, branchId, now = new Date()) {
   if (!payload || typeof payload !== "object") throw invalid("주문 정보가 올바르지 않습니다.");
   const requestedId = cleanId(payload.clientOrderId);
@@ -93,6 +136,7 @@ export function validateAndBuildOrder(payload, menuData, branchId, now = new Dat
         throw invalid("필수 옵션의 선택 개수를 확인해 주세요.");
       }
     }
+    validateComboChoices(String(menu.cukcukCode || ""), selectedOptions);
   }
 
   const date = typeof payload.orderedAt === "string" && Number.isFinite(Date.parse(payload.orderedAt))
