@@ -1,7 +1,7 @@
 {
   "version": 1,
-  "revision": "cukcuk-tablet-content-2026-11-10-chicken-nachos-v2",
-  "capturedAt": "2026-11-10T11:42:49.251Z",
+  "revision": "cukcuk-tablet-content-2026-11-26-family-couple-combos",
+  "capturedAt": "2026-11-26T11:54:19.866Z",
   "timezone": "Asia/Ho_Chi_Minh",
   "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
   "includeUnlisted": false,
@@ -238,7 +238,7 @@
     "withinGroup": "numeric-by-table-name"
   },
   "categoryCount": 16,
-  "menuCount": 116,
+  "menuCount": 118,
   "categories": [
     {
       "id": "cukcuk-qr-highball",
@@ -382,81 +382,95 @@
       "sortOrder": 3,
       "menus": [
         {
+          "code": "COMBOFAMILY599",
+          "displayName": "가족 콤보 | Combo gia đình | 家庭套餐 | Family Combo",
+          "price": 599000,
+          "outOfStock": false,
+          "sortOrder": 0
+        },
+        {
+          "code": "COMBOCOUPLE289",
+          "displayName": "커플 콤보 | Combo cặp đôi | 双人套餐 | Couple Combo",
+          "price": 289000,
+          "outOfStock": false,
+          "sortOrder": 1
+        },
+        {
           "code": "(S03) Gà k xương + Tok",
           "displayName": "치떡 SET | Chicken & Tteok Set | 无骨炸鸡 + 辣炒年糕 | Gà không xương + Tokbokki",
           "price": 324000,
           "outOfStock": false,
-          "sortOrder": 0
+          "sortOrder": 2
         },
         {
           "code": "(S04) Gà nguyên con + Tok",
           "displayName": "통떡 SET Whole Chicken & Tteok Set 整只炸鸡 + 辣炒年糕Gà nguyên con + Tokbokki",
           "price": 378000,
           "outOfStock": false,
-          "sortOrder": 1
+          "sortOrder": 3
         },
         {
           "code": "(S05) Cánh gà + Tok",
           "displayName": "윙떡 SET Wings & Tteok Set鸡翅 + 辣炒年糕 Cánh gà + Tokbokki",
           "price": 324000,
           "outOfStock": false,
-          "sortOrder": 2
+          "sortOrder": 4
         },
         {
           "code": "(S06) Gà k xương 5 vị",
           "displayName": "순살떠까 Boneless Chicken Tossed in Sauce 五味无骨炸鸡 Gà không xương 5 vị",
           "price": 421200,
           "outOfStock": false,
-          "sortOrder": 3
+          "sortOrder": 5
         },
         {
           "code": "(S08) Cánh gà 4 vị",
           "displayName": "윙봉떠까 Sauced Chicken Wings 四味鸡翅 Cánh gà 4 vị",
           "price": 421200,
           "outOfStock": false,
-          "sortOrder": 4
+          "sortOrder": 6
         },
         {
           "code": "SCGHC",
           "displayName": "국물닭발 세트| Set chân gà hầm cay | 辣汤鸡爪套餐",
           "price": 378000,
           "outOfStock": false,
-          "sortOrder": 5
+          "sortOrder": 7
         },
         {
           "code": "ᄆCGRX",
           "displayName": "무뼈닭발세트|Combo chân gà rút xương|无骨鸡爪套餐",
           "price": 378000,
           "outOfStock": false,
-          "sortOrder": 6
+          "sortOrder": 8
         },
         {
           "code": "ᄃᄐᄌᄉGNNCVCG CNS",
           "displayName": "한신포차세트 | nguyên con & chân gà | 鸡爪鸡套餐",
           "price": 540000,
           "outOfStock": false,
-          "sortOrder": 7
+          "sortOrder": 9
         },
         {
           "code": "SPACE35",
           "displayName": "치피 SET (M) Chicken Pizza Set (M)",
           "price": 518400,
           "outOfStock": false,
-          "sortOrder": 8
+          "sortOrder": 10
         },
         {
           "code": "SPACE36",
           "displayName": "치피 SET (L) | Chicken Pizza Set (L)",
           "price": 734400,
           "outOfStock": false,
-          "sortOrder": 9
+          "sortOrder": 11
         },
         {
           "code": "ᄃ DC 达",
           "displayName": "다방콤보 | DABANG COMBO | 达邦组合",
           "price": 421200,
           "outOfStock": false,
-          "sortOrder": 10
+          "sortOrder": 12
         }
       ]
     },
@@ -1421,6 +1435,18 @@
     },
     "ᄉ SSO 鲜": {
       "ko": "선양 오크"
+    },
+    "COMBOFAMILY599": {
+      "ko": "가족 콤보",
+      "vi": "Combo gia đình",
+      "zh": "家庭套餐",
+      "en": "Family Combo"
+    },
+    "COMBOCOUPLE289": {
+      "ko": "커플 콤보",
+      "vi": "Combo cặp đôi",
+      "zh": "双人套餐",
+      "en": "Couple Combo"
     }
   },
   "menuOptionOverrides": {
@@ -1847,6 +1873,24 @@
         "en": "Crispy nachos topped generously with chicken, cheese and sauce."
       },
       "tone": "default"
+    },
+    "COMBOFAMILY599": {
+      "names": {
+        "ko": "4인 · 반반치킨 + 어묵탕 + 주먹밥 + 콜라 4병",
+        "vi": "4 người · Gà 2 vị + lẩu chả cá + cơm nắm + 4 Coca",
+        "zh": "4人 · 双拼炸鸡＋鱼饼汤＋饭团＋4瓶可乐",
+        "en": "For 4 · Two-flavor chicken, fish cake soup, rice balls & 4 Cokes"
+      },
+      "tone": "default"
+    },
+    "COMBOCOUPLE289": {
+      "names": {
+        "ko": "2인 · 반마리치킨 + 어묵꼬치우동 + 콜라 2병",
+        "vi": "2 người · Nửa phần gà + udon xiên chả cá + 2 Coca",
+        "zh": "2人 · 半份炸鸡＋鱼饼串乌冬＋2瓶可乐",
+        "en": "For 2 · Half chicken, fish cake udon & 2 Cokes"
+      },
+      "tone": "default"
     }
   },
   "detailOptionSources": {
@@ -2083,6 +2127,112 @@
         "zh": "加半份鸡翅",
         "en": "Add Half Wings"
       }
+    },
+    "COMBOFAMILY599": {
+      "source": "table-qr",
+      "areaId": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
+      "expectedCategoryCount": 7,
+      "expectedValueCount": 22,
+      "templateNames": [
+        {
+          "ko": "치킨 종류",
+          "vi": "Loại gà",
+          "zh": "鸡肉种类",
+          "en": "Chicken type"
+        },
+        {
+          "ko": "어묵탕 맛",
+          "vi": "Vị lẩu chả cá",
+          "zh": "鱼饼汤口味",
+          "en": "Fish cake soup flavor"
+        },
+        {
+          "ko": "윙봉 맛",
+          "vi": "Vị cánh gà",
+          "zh": "鸡翅口味",
+          "en": "Wing flavor"
+        },
+        {
+          "ko": "치킨 맛",
+          "vi": "Vị gà",
+          "zh": "炸鸡口味",
+          "en": "Chicken flavor"
+        },
+        {
+          "ko": "치킨 맛",
+          "vi": "Vị gà",
+          "zh": "炸鸡口味",
+          "en": "Chicken flavor"
+        },
+        {
+          "ko": "치킨 맛",
+          "vi": "Vị gà",
+          "zh": "炸鸡口味",
+          "en": "Chicken flavor"
+        },
+        {
+          "ko": "치킨 종류",
+          "vi": "Loại gà",
+          "zh": "鸡肉种类",
+          "en": "Chicken type"
+        }
+      ]
+    },
+    "COMBOCOUPLE289": {
+      "source": "table-qr",
+      "areaId": "99f7a22b-b478-4f06-b1b4-3694d87840ba",
+      "expectedCategoryCount": 8,
+      "expectedValueCount": 27,
+      "templateNames": [
+        {
+          "ko": "짭코바 매운 단계",
+          "vi": "Cấp độ cay gà BBQ",
+          "zh": "辣味BBQ鸡辣度",
+          "en": "Spicy BBQ level"
+        },
+        {
+          "ko": "치킨 종류",
+          "vi": "Loại gà",
+          "zh": "鸡肉种类",
+          "en": "Chicken type"
+        },
+        {
+          "ko": "윙봉 맛",
+          "vi": "Vị cánh gà",
+          "zh": "鸡翅口味",
+          "en": "Wing flavor"
+        },
+        {
+          "ko": "치킨 맛",
+          "vi": "Vị gà",
+          "zh": "炸鸡口味",
+          "en": "Chicken flavor"
+        },
+        {
+          "ko": "치킨 맛",
+          "vi": "Vị gà",
+          "zh": "炸鸡口味",
+          "en": "Chicken flavor"
+        },
+        {
+          "ko": "치킨 맛",
+          "vi": "Vị gà",
+          "zh": "炸鸡口味",
+          "en": "Chicken flavor"
+        },
+        {
+          "ko": "우동 맛",
+          "vi": "Vị udon",
+          "zh": "乌冬口味",
+          "en": "Udon flavor"
+        },
+        {
+          "ko": "치킨 종류",
+          "vi": "Loại gà",
+          "zh": "鸡肉种类",
+          "en": "Chicken type"
+        }
+      ]
     }
   }
 }

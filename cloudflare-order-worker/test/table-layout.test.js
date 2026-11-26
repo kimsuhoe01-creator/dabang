@@ -324,7 +324,7 @@ test('table QR layout rejects invalid prices and inconsistent declared sort orde
   assert.throws(() => applyTableQrLayout({ categories: [], menus: [], optionTemplates: [] }, invalidSort), /sortOrder must be 0/i);
 });
 
-test('the checked-in CUKCUK table QR snapshot publishes the 16-category, 116-menu layout', () => {
+test('the checked-in CUKCUK table QR snapshot publishes the 16-category, 118-menu layout', () => {
   const config = JSON.parse(fs.readFileSync(new URL('../../data/cukcuk-table-qr-layout.json', import.meta.url), 'utf8'));
   const rules = config.categories.flatMap(category => category.menus);
   const menus = rules.map((rule, index) => ({
@@ -358,7 +358,7 @@ test('the checked-in CUKCUK table QR snapshot publishes the 16-category, 116-men
   const result = applyTableQrLayout({ categories: [], menus, optionTemplates }, config);
 
   assert.equal(result.categoryCount, 16);
-  assert.equal(result.menuCount, 116);
+  assert.equal(result.menuCount, 118);
   assert.equal(result.tableQrLayout.excludedCandidateCount, 1);
   assert.deepEqual(result.categories.map(category => category.names.ko), ['하이볼', '신메뉴', '요일별 할인', '세트', '반마리 치킨', '다방치킨', '통닭', '날개치킨', '다방분식', '돈까스', '스페이스 피자', '안주', '건어물', '음료', '디저트', '주류']);
   const menusByCategory = new Map(result.categories.map(category => [category.names.ko, result.menus.filter(menu => menu.categoryId === category.id)]));
