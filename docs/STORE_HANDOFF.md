@@ -1,5 +1,12 @@
 # 매장 노트북 인계 — 다방 테이블오더
 
+## 2026-11-26 포장 테이블 콤보 숨김과 테이블 정렬
+
+- 태블릿에서 `take01`~`take05`를 선택하면 패밀리 콤보와 커플 콤보가 연말 행사, 세트, 추천 목록에 표시되지 않고 직접 선택도 막힌다. 주문 Worker도 포장 테이블의 두 콤보 전송을 거절한다. 일반 테이블에서는 계속 판매한다. CUKCUK 원본 메뉴의 판매 상태는 변경하지 않았다.
+- 테이블 선택 화면에서 포장 `take01`~`take05`와 배달 `ship01`~`ship05`를 별도 구역으로 분리하고 번호순으로 정렬했다. 기존 브라우저에 저장된 테이블 배치에 두 종류가 섞여 있어도 분리된다. 설치형 태블릿 캐시 `dabang-tablet-v68`.
+- [PR #35](https://github.com/kimsuhoe01-creator/dabang/pull/35) 병합 `493c206`. [주문 Worker 배포](https://github.com/kimsuhoe01-creator/dabang/actions/runs/45841334472)와 [GitHub Pages 배포](https://github.com/kimsuhoe01-creator/dabang/actions/runs/45841333625) 성공. Worker/UI 테스트 116개, 이미지 감사 118개(누락·고아 0), 변경 공백 검사 통과.
+- [공개 안전 미리보기](https://kimsuhoe01-creator.github.io/dabang/tablet-preview.html?preview=1&deploy=493c206) 시크릿 브라우저에서 포장·배달 각 1~5번 순서, `take05` 콤보 0개, 일반 `A-1` 콤보 2개, 브라우저 오류 0개를 확인했다. 실제 POS 주문은 제출하지 않았다.
+
 ## 2026-11-26 연말 콤보 상단 행사 화면
 
 - 태블릿 한국어 표시를 `패밀리 콤보`로 바꿨다. CUKCUK 원본 품목 코드는 `COMBOFAMILY599`로 그대로이며 가격·주문 옵션도 유지한다. 현장 브라우저에 옛 로컬 이름 편집값이 남아 있어도 한국어 표시는 새 이름을 우선한다.
