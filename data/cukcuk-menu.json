@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-11-25 23:20:10",
-    "finished_at": "2026-11-25 23:20:17",
+    "started_at": "2026-11-26 12:21:00",
+    "finished_at": "2026-11-26 12:21:07",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -18,7 +18,7 @@
       "sourceName": "하이볼|RượuHighball|高球酒|Highball",
       "names": {
         "ko": "하이볼",
-        "vi": "Rượu Highball",
+        "vi": "Highball",
         "zh": "高球酒",
         "en": "Highball"
       },
@@ -200,7 +200,7 @@
         "ko": "주류",
         "vi": "Đồ uống có cồn",
         "zh": "酒类",
-        "en": "Alcohol"
+        "en": "Alcoholic Drinks"
       },
       "visible": true,
       "sortOrder": 15
@@ -881,8 +881,8 @@
       "sourceName": "반마리치킨|Half Chicken |半只鸡|Nửa con gà (뼈 순살)",
       "names": {
         "ko": "반마리 치킨 (뼈/순살)",
-        "vi": "Nửa con gà (có xương/rút xương)",
-        "zh": "半只鸡（有骨/无骨）",
+        "vi": "Nửa con gà (có xương/không xương)",
+        "zh": "半只炸鸡（有骨/无骨）",
         "en": "Half Chicken (Bone-in/Boneless)"
       },
       "price": 216000,
@@ -1092,8 +1092,8 @@
       "sourceName": "후라이드  Fried Chicken  无骨炸鸡腿 Má đùi rút xương",
       "names": {
         "ko": "후라이드 치킨",
-        "vi": "Gà chiên giòn",
-        "zh": "原味炸鸡",
+        "vi": "Gà rán",
+        "zh": "炸鸡",
         "en": "Fried Chicken"
       },
       "price": 399600,
@@ -1114,8 +1114,8 @@
       "sourceName": "양념  Sweet & Spicy Chicken  韩式甜酱炸鸡 Gà sốt ngọt HQ",
       "names": {
         "ko": "양념 치킨",
-        "vi": "Gà sốt ngọt cay Hàn Quốc",
-        "zh": "韩式甜辣炸鸡",
+        "vi": "Gà sốt ngọt kiểu Hàn",
+        "zh": "韩式甜酱炸鸡",
         "en": "Sweet & Spicy Chicken"
       },
       "price": 399600,
@@ -1136,7 +1136,7 @@
       "sourceName": "매운양념  Hot & Spicy Chicken韩式辣酱炸鸡  Gà sốt cay HQ",
       "names": {
         "ko": "매운 양념 치킨",
-        "vi": "Gà sốt cay Hàn Quốc",
+        "vi": "Gà sốt cay kiểu Hàn",
         "zh": "韩式辣酱炸鸡",
         "en": "Hot & Spicy Chicken"
       },
@@ -1181,7 +1181,7 @@
       "names": {
         "ko": "고추마늘간장 치킨",
         "vi": "Gà sốt xì dầu tỏi ớt",
-        "zh": "辣椒蒜香酱油鸡",
+        "zh": "辣椒蒜蓉酱油鸡",
         "en": "Chili Garlic Soy Chicken"
       },
       "price": 399600,
@@ -1202,8 +1202,8 @@
       "sourceName": "스리라차 어니언  Sriracha Onion Chicken洋葱奶酱炸鸡 Gà sốt kem hành",
       "names": {
         "ko": "스리라차 어니언 치킨",
-        "vi": "Gà sốt kem hành Sriracha",
-        "zh": "是拉差洋葱奶油炸鸡",
+        "vi": "Gà sốt Sriracha hành tây",
+        "zh": "是拉差洋葱炸鸡",
         "en": "Sriracha Onion Chicken"
       },
       "price": 399600,
@@ -1916,7 +1916,7 @@
       "names": {
         "ko": "돈까스 플레이트 (안 매운맛)",
         "vi": "Đĩa tonkatsu (không cay)",
-        "zh": "炸猪排拼盘(不辣)",
+        "zh": "炸猪排拼盘（不辣）",
         "en": "Tonkatsu Plate (Non-spicy)"
       },
       "price": 313200,
@@ -2491,7 +2491,7 @@
       "names": {
         "ko": "코카콜라 (390ml)",
         "vi": "Coca-Cola (390ml)",
-        "zh": "可口可乐(390ml)",
+        "zh": "可口可乐（390ml）",
         "en": "Coca-Cola (390ml)"
       },
       "price": 22000,
@@ -2531,7 +2531,7 @@
       "names": {
         "ko": "펩시 제로 (390ml)",
         "vi": "Pepsi Không Calo (390ml)",
-        "zh": "百事无糖(390ml)",
+        "zh": "百事无糖（390ml）",
         "en": "Pepsi Zero (390ml)"
       },
       "price": 33000,
@@ -2551,7 +2551,7 @@
       "names": {
         "ko": "나랑드 제로 (500ml)",
         "vi": "Narangd Zero (500ml)",
-        "zh": "Narangd 零糖(500ml)",
+        "zh": "Narangd 零糖（500ml）",
         "en": "Narangd Zero (500ml)"
       },
       "price": 55000,
@@ -2581,7 +2581,7 @@
       "names": {
         "ko": "펩시 제로 라임 (1.5L)",
         "vi": "Pepsi Không Calo Vị Chanh (1,5L)",
-        "zh": "百事无糖青柠味(1.5L)",
+        "zh": "百事无糖青柠味（1.5L）",
         "en": "Pepsi Zero Lime (1.5L)"
       },
       "price": 77000,
@@ -2687,7 +2687,7 @@
       "names": {
         "ko": "사포로 1+1 (640cc)",
         "vi": "Sapporo 1 tặng 1 (640ml)",
-        "zh": "三宝乐1+1(640毫升)",
+        "zh": "三宝乐1+1（640毫升）",
         "en": "Sapporo Buy 1 Get 1 (640ml)"
       },
       "price": 165000,
@@ -2767,7 +2767,7 @@
       "names": {
         "ko": "하노이 생맥주 KEG (1L)",
         "vi": "Bia Hơi Hà Nội KEG (1L)",
-        "zh": "河内鲜啤 KEG(1L)",
+        "zh": "河内鲜啤 KEG（1L）",
         "en": "Hanoi Draft Beer KEG (1L)"
       },
       "price": 110000,
@@ -6437,7 +6437,7 @@
         "ko": "치킨 종류",
         "vi": "Loại gà",
         "zh": "鸡肉种类",
-        "en": "Chicken type"
+        "en": "Chicken Type"
       },
       "required": false,
       "minSelections": 0,
@@ -6473,7 +6473,7 @@
         "ko": "어묵탕 맛",
         "vi": "Vị lẩu chả cá",
         "zh": "鱼饼汤口味",
-        "en": "Fish cake soup flavor"
+        "en": "Fish Cake Soup Flavor"
       },
       "required": false,
       "minSelections": 0,
@@ -6487,7 +6487,7 @@
             "ko": "얼큰어묵탕",
             "vi": "Lẩu chả cá cay",
             "zh": "辣鱼饼汤",
-            "en": "Spicy fish cake soup"
+            "en": "Spicy Fish Cake Soup"
           },
           "receiptNames": {
             "ko": "얼큰어묵탕",
@@ -6509,7 +6509,7 @@
         "ko": "윙봉 맛",
         "vi": "Vị cánh gà",
         "zh": "鸡翅口味",
-        "en": "Wing flavor"
+        "en": "Wing Flavor"
       },
       "required": false,
       "minSelections": 0,
@@ -6521,9 +6521,9 @@
           "sourceName": "매운간장 윙봉 선택 | CHỌN CÁNH GÀ SỐT XÌ DẦU CAY",
           "names": {
             "ko": "매운간장 윙봉 선택",
-            "vi": "CHỌN CÁNH GÀ SỐT XÌ DẦU CAY",
-            "zh": "",
-            "en": ""
+            "vi": "Chọn cánh gà sốt xì dầu cay",
+            "zh": "选择辣酱油鸡翅",
+            "en": "Choose Spicy Soy Wings"
           },
           "receiptNames": {
             "ko": "매운간장 윙봉 선택",
@@ -6538,9 +6538,9 @@
           "sourceName": "핫후라이드 윙봉 선택 | CHỌN CÁNH GÀ CHIÊN CAY",
           "names": {
             "ko": "핫후라이드 윙봉 선택",
-            "vi": "CHỌN CÁNH GÀ CHIÊN CAY",
-            "zh": "",
-            "en": ""
+            "vi": "Chọn cánh gà chiên cay",
+            "zh": "选择香辣炸翅根",
+            "en": "Choose Hot Fried Wings"
           },
           "receiptNames": {
             "ko": "핫후라이드 윙봉 선택",
@@ -6555,9 +6555,9 @@
           "sourceName": "스노윙 윙봉 선택 | CHỌN CÁNH GÀ PHỦ BỘT PHÔ MAI",
           "names": {
             "ko": "스노윙 윙봉 선택",
-            "vi": "CHỌN CÁNH GÀ PHỦ BỘT PHÔ MAI",
-            "zh": "",
-            "en": ""
+            "vi": "Chọn cánh gà phủ bột phô mai",
+            "zh": "选择雪花芝士翅根",
+            "en": "Choose Snowing Cheese Wings"
           },
           "receiptNames": {
             "ko": "스노윙 윙봉 선택",
@@ -6572,9 +6572,9 @@
           "sourceName": "레드 윙봉 선택 | CHỌN CÁNH GÀ SỐT CAY ĐỎ",
           "names": {
             "ko": "레드 윙봉 선택",
-            "vi": "CHỌN CÁNH GÀ SỐT CAY ĐỎ",
-            "zh": "",
-            "en": ""
+            "vi": "Chọn cánh gà sốt cay đỏ",
+            "zh": "选择红辣酱翅根",
+            "en": "Choose Red Spicy Wings"
           },
           "receiptNames": {
             "ko": "레드 윙봉 선택",
@@ -6588,8 +6588,8 @@
           "id": "21eca709-2298-47d6-be92-bb03e5461c41",
           "sourceName": "쯔란윙봉 | Cánh gà vị cumin | 孜然鸡翅 | Cumin Wings",
           "names": {
-            "ko": "쯔란윙봉",
-            "vi": "Cánh gà vị cumin",
+            "ko": "쯔란 윙봉",
+            "vi": "Cánh gà vị thì là Ai Cập",
             "zh": "孜然鸡翅",
             "en": "Cumin Wings"
           },
@@ -6606,9 +6606,9 @@
           "sourceName": "허니 윙봉 선택 | CHỌN CÁNH GÀ MẬT ONG",
           "names": {
             "ko": "허니 윙봉 선택",
-            "vi": "CHỌN CÁNH GÀ MẬT ONG",
-            "zh": "",
-            "en": ""
+            "vi": "Chọn cánh gà mật ong",
+            "zh": "选择蜂蜜翅根",
+            "en": "Choose Honey Wings"
           },
           "receiptNames": {
             "ko": "허니 윙봉 선택",
@@ -6623,9 +6623,9 @@
           "sourceName": "후라이드 윙봉 선택 | CHỌN CÁNH GÀ CHIÊN GIÒN",
           "names": {
             "ko": "후라이드 윙봉 선택",
-            "vi": "CHỌN CÁNH GÀ CHIÊN GIÒN",
-            "zh": "",
-            "en": ""
+            "vi": "Chọn cánh gà chiên giòn",
+            "zh": "选择原味炸翅根",
+            "en": "Choose Fried Wings"
           },
           "receiptNames": {
             "ko": "후라이드 윙봉 선택",
@@ -6640,9 +6640,9 @@
           "sourceName": "간장 윙봉 선택 | CHỌN CÁNH GÀ SỐT XÌ DẦU",
           "names": {
             "ko": "간장 윙봉 선택",
-            "vi": "CHỌN CÁNH GÀ SỐT XÌ DẦU",
-            "zh": "",
-            "en": ""
+            "vi": "Chọn cánh gà sốt xì dầu",
+            "zh": "选择酱油翅根",
+            "en": "Choose Soy Sauce Wings"
           },
           "receiptNames": {
             "ko": "간장 윙봉 선택",
@@ -6664,7 +6664,7 @@
         "ko": "치킨 맛",
         "vi": "Vị gà",
         "zh": "炸鸡口味",
-        "en": "Chicken flavor"
+        "en": "Chicken Flavor"
       },
       "required": false,
       "minSelections": 0,
@@ -6675,10 +6675,10 @@
           "id": "364f50ef-8710-41ac-9e4c-73209d7a4c89",
           "sourceName": "고추마늘간장./Garlic Soy Chicken/辣椒蒜酱鸡 /Gà sốt xì dầu tỏi ớt",
           "names": {
-            "ko": "고추마늘간장./Garlic Soy Chicken/辣椒蒜酱鸡 /Gà sốt xì dầu tỏi ớt",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "고추마늘간장 치킨",
+            "vi": "Gà sốt xì dầu tỏi ớt",
+            "zh": "辣椒蒜香酱油鸡",
+            "en": "Chili Garlic Soy Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -6688,10 +6688,10 @@
           "id": "9b8f3856-60ff-4d08-b111-9e87ea20e22e",
           "sourceName": "후라이드/Fried Chicken /无骨炸鸡腿 /không sốt",
           "names": {
-            "ko": "후라이드/Fried Chicken /无骨炸鸡腿 /không sốt",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "후라이드 치킨",
+            "vi": "Gà chiên giòn không sốt",
+            "zh": "无骨炸鸡",
+            "en": "Fried Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -6701,10 +6701,10 @@
           "id": "641303df-1c29-4e1d-bc2b-de7ce53a43db",
           "sourceName": "스리라차 어니언/ Sriracha Onion Chicken/ 洋葱奶酱炸鸡 /Gà sốt kem hành",
           "names": {
-            "ko": "스리라차 어니언/ Sriracha Onion Chicken/ 洋葱奶酱炸鸡 /Gà sốt kem hành",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "스리라차 어니언 치킨",
+            "vi": "Gà sốt kem hành Sriracha",
+            "zh": "是拉差洋葱奶油鸡",
+            "en": "Sriracha Onion Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -6722,7 +6722,7 @@
         "ko": "치킨 맛",
         "vi": "Vị gà",
         "zh": "炸鸡口味",
-        "en": "Chicken flavor"
+        "en": "Chicken Flavor"
       },
       "required": false,
       "minSelections": 0,
@@ -6750,10 +6750,10 @@
           "id": "a4540023-7b3c-496b-baab-b821705d6e68",
           "sourceName": "매운양념/Hot & Spicy Chicken/韩式辣酱炸鸡/Gà sốt cay HQ",
           "names": {
-            "ko": "매운양념/Hot & Spicy Chicken/韩式辣酱炸鸡/Gà sốt cay HQ",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "매운 양념치킨",
+            "vi": "Gà sốt cay Hàn Quốc",
+            "zh": "韩式辣酱炸鸡",
+            "en": "Hot & Spicy Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -6771,7 +6771,7 @@
         "ko": "치킨 맛",
         "vi": "Vị gà",
         "zh": "炸鸡口味",
-        "en": "Chicken flavor"
+        "en": "Chicken Flavor"
       },
       "required": false,
       "minSelections": 0,
@@ -6782,10 +6782,10 @@
           "id": "5b311b20-6191-403f-8612-08cf8648b49d",
           "sourceName": "양념/Sweet & Spicy Chicken / 韩式甜酱炸鸡 /Gà sốt ngọt HQ",
           "names": {
-            "ko": "양념/Sweet & Spicy Chicken / 韩式甜酱炸鸡 /Gà sốt ngọt HQ",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "양념치킨",
+            "vi": "Gà sốt ngọt cay Hàn Quốc",
+            "zh": "韩式甜辣酱炸鸡",
+            "en": "Sweet & Spicy Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -6795,10 +6795,10 @@
           "id": "2dfd957a-1061-4e7d-a1ca-5ec27dfc1da0",
           "sourceName": "파닭/Green Onion Chicken /葱香炸鸡(芥末酱)/Gà hành lá (sốt mù tạt)",
           "names": {
-            "ko": "파닭/Green Onion Chicken /葱香炸鸡(芥末酱)/Gà hành lá (sốt mù tạt)",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "파닭",
+            "vi": "Gà hành lá sốt mù tạt",
+            "zh": "葱香炸鸡（芥末酱）",
+            "en": "Green Onion Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -6825,10 +6825,10 @@
           "id": "a8da2a14-4ec6-40a9-926c-9b41755b2de5",
           "sourceName": "스노윙치킨 / Gà phủ bột phô mai / 雪花芝士粉炸鸡 / Snowing Cheese Powder Chicken",
           "names": {
-            "ko": "스노윙치킨 / Gà phủ bột phô mai / 雪花芝士粉炸鸡 / Snowing Cheese Powder Chicken",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "스노윙 치킨",
+            "vi": "Gà phủ bột phô mai",
+            "zh": "雪花芝士粉炸鸡",
+            "en": "Snowing Cheese Powder Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -6838,10 +6838,10 @@
           "id": "fd21b308-6f37-443b-a50c-a35c5a604106",
           "sourceName": "슈프림/Supreme Sauce Chicken /至尊酱鸡 /Gà sốt supreme",
           "names": {
-            "ko": "슈프림/Supreme Sauce Chicken /至尊酱鸡 /Gà sốt supreme",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "슈프림 치킨",
+            "vi": "Gà sốt Supreme",
+            "zh": "至尊酱炸鸡",
+            "en": "Supreme Sauce Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -6859,7 +6859,7 @@
         "ko": "치킨 종류",
         "vi": "Loại gà",
         "zh": "鸡肉种类",
-        "en": "Chicken type"
+        "en": "Chicken Type"
       },
       "required": false,
       "minSelections": 0,
@@ -6870,10 +6870,10 @@
           "id": "f688cfab-85e2-4a3c-84ea-48cd2b56fcf7",
           "sourceName": "*có xương | 뼈 치킨*",
           "names": {
-            "ko": "뼈 치킨*",
-            "vi": "*có xương",
-            "zh": "",
-            "en": ""
+            "ko": "뼈 치킨",
+            "vi": "Gà có xương",
+            "zh": "带骨鸡",
+            "en": "Bone-In Chicken"
           },
           "receiptNames": {
             "ko": "뼈 치킨*",
@@ -6887,10 +6887,10 @@
           "id": "6e0215ac-2c13-4f72-9b1d-fd47691e0627",
           "sourceName": "*không xương | 순살치킨*",
           "names": {
-            "ko": "순살치킨*",
-            "vi": "*không xương",
-            "zh": "",
-            "en": ""
+            "ko": "순살 치킨",
+            "vi": "Gà không xương",
+            "zh": "无骨鸡",
+            "en": "Boneless Chicken"
           },
           "receiptNames": {
             "ko": "순살치킨*",
@@ -6911,8 +6911,8 @@
       "names": {
         "ko": "짭코바 매운 단계",
         "vi": "Cấp độ cay gà BBQ",
-        "zh": "辣味BBQ鸡辣度",
-        "en": "Spicy BBQ level"
+        "zh": "咸味烤鸡辣度",
+        "en": "Jjap Koba Spice Level"
       },
       "required": false,
       "minSelections": 0,
@@ -6923,10 +6923,10 @@
           "id": "90f5ee61-9405-4725-a244-24b23222ee4f",
           "sourceName": "3단계/Level 3 /3级 – 特辣 /Cấp 3 – Siêu cay",
           "names": {
-            "ko": "3단계/Level 3 /3级 – 特辣 /Cấp 3 – Siêu cay",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "3단계 - 매우 매운맛",
+            "vi": "Cấp 3 - Siêu cay",
+            "zh": "3级 - 特辣",
+            "en": "Level 3 - Extra Spicy"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -6936,10 +6936,10 @@
           "id": "b4ff5c57-e25c-4275-a6a9-4a25ba70e497",
           "sourceName": "2단계/Level 2 /2级 – 中辣 /Cấp 2 – Cay vừa\u0001",
           "names": {
-            "ko": "2단계/Level 2 /2级 – 中辣 /Cấp 2 – Cay vừa\u0001",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "2단계 - 중간 매운맛",
+            "vi": "Cấp 2 - Cay vừa",
+            "zh": "2级 - 中辣",
+            "en": "Level 2 - Medium Spicy"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -6949,10 +6949,10 @@
           "id": "3b59138e-b848-41aa-a45d-9fa1b915fbcf",
           "sourceName": "1단계/(C1)Level 1/1级 – 微辣 /Cấp 1 – Cay nhẹ",
           "names": {
-            "ko": "1단계/(C1)Level 1/1级 – 微辣 /Cấp 1 – Cay nhẹ",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "1단계 - 약간 매운맛",
+            "vi": "Cấp 1 - Cay nhẹ",
+            "zh": "1级 - 微辣",
+            "en": "Level 1 - Mild Spicy"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -6970,7 +6970,7 @@
         "ko": "치킨 종류",
         "vi": "Loại gà",
         "zh": "鸡肉种类",
-        "en": "Chicken type"
+        "en": "Chicken Type"
       },
       "required": false,
       "minSelections": 0,
@@ -7023,7 +7023,7 @@
         "ko": "윙봉 맛",
         "vi": "Vị cánh gà",
         "zh": "鸡翅口味",
-        "en": "Wing flavor"
+        "en": "Wing Flavor"
       },
       "required": false,
       "minSelections": 0,
@@ -7034,10 +7034,10 @@
           "id": "e8e473c3-65df-4e9d-abce-0c3e480ce3e5",
           "sourceName": "매운간장 윙봉 선택 | CHỌN CÁNH GÀ SỐT XÌ DẦU CAY",
           "names": {
-            "ko": "매운간장 윙봉 선택",
-            "vi": "CHỌN CÁNH GÀ SỐT XÌ DẦU CAY",
-            "zh": "",
-            "en": ""
+            "ko": "매운 간장 윙봉",
+            "vi": "Cánh gà sốt xì dầu cay",
+            "zh": "辣酱油鸡翅",
+            "en": "Spicy Soy Sauce Wings"
           },
           "receiptNames": {
             "ko": "매운간장 윙봉 선택",
@@ -7051,10 +7051,10 @@
           "id": "95da43b6-1573-4310-b70c-38090b1f2ef7",
           "sourceName": "핫후라이드 윙봉 선택 | CHỌN CÁNH GÀ CHIÊN CAY",
           "names": {
-            "ko": "핫후라이드 윙봉 선택",
-            "vi": "CHỌN CÁNH GÀ CHIÊN CAY",
-            "zh": "",
-            "en": ""
+            "ko": "핫후라이드 윙봉",
+            "vi": "Cánh gà chiên cay",
+            "zh": "香辣炸鸡翅",
+            "en": "Hot Fried Wings"
           },
           "receiptNames": {
             "ko": "핫후라이드 윙봉 선택",
@@ -7068,10 +7068,10 @@
           "id": "06cf5bed-c480-43a9-b157-44b4d59cf23e",
           "sourceName": "스노윙 윙봉 선택 | CHỌN CÁNH GÀ PHỦ BỘT PHÔ MAI",
           "names": {
-            "ko": "스노윙 윙봉 선택",
-            "vi": "CHỌN CÁNH GÀ PHỦ BỘT PHÔ MAI",
-            "zh": "",
-            "en": ""
+            "ko": "스노윙 윙봉",
+            "vi": "Cánh gà phủ bột phô mai",
+            "zh": "芝士粉鸡翅",
+            "en": "Cheese Powder Wings"
           },
           "receiptNames": {
             "ko": "스노윙 윙봉 선택",
@@ -7085,10 +7085,10 @@
           "id": "74f59857-2d4f-4b98-84e1-79c75aa26a9c",
           "sourceName": "레드 윙봉 선택 | CHỌN CÁNH GÀ SỐT CAY ĐỎ",
           "names": {
-            "ko": "레드 윙봉 선택",
-            "vi": "CHỌN CÁNH GÀ SỐT CAY ĐỎ",
-            "zh": "",
-            "en": ""
+            "ko": "레드 윙봉",
+            "vi": "Cánh gà sốt cay đỏ",
+            "zh": "红辣酱鸡翅",
+            "en": "Red Spicy Wings"
           },
           "receiptNames": {
             "ko": "레드 윙봉 선택",
@@ -7102,8 +7102,8 @@
           "id": "21eca709-2298-47d6-be92-bb03e5461c41",
           "sourceName": "쯔란윙봉 | Cánh gà vị cumin | 孜然鸡翅 | Cumin Wings",
           "names": {
-            "ko": "쯔란윙봉",
-            "vi": "Cánh gà vị cumin",
+            "ko": "쯔란 윙봉",
+            "vi": "Cánh gà vị thì là Ai Cập",
             "zh": "孜然鸡翅",
             "en": "Cumin Wings"
           },
@@ -7119,10 +7119,10 @@
           "id": "22731f9b-95ae-4fc2-9dc2-bbd3ced496b7",
           "sourceName": "허니 윙봉 선택 | CHỌN CÁNH GÀ MẬT ONG",
           "names": {
-            "ko": "허니 윙봉 선택",
-            "vi": "CHỌN CÁNH GÀ MẬT ONG",
-            "zh": "",
-            "en": ""
+            "ko": "허니 윙봉",
+            "vi": "Cánh gà mật ong",
+            "zh": "蜂蜜鸡翅",
+            "en": "Honey Wings"
           },
           "receiptNames": {
             "ko": "허니 윙봉 선택",
@@ -7136,10 +7136,10 @@
           "id": "18be4708-e8af-476b-a8f0-d575157450f0",
           "sourceName": "후라이드 윙봉 선택 | CHỌN CÁNH GÀ CHIÊN GIÒN",
           "names": {
-            "ko": "후라이드 윙봉 선택",
-            "vi": "CHỌN CÁNH GÀ CHIÊN GIÒN",
-            "zh": "",
-            "en": ""
+            "ko": "후라이드 윙봉",
+            "vi": "Cánh gà chiên giòn",
+            "zh": "原味炸鸡翅",
+            "en": "Fried Wings"
           },
           "receiptNames": {
             "ko": "후라이드 윙봉 선택",
@@ -7153,10 +7153,10 @@
           "id": "2276ad40-3dfc-4679-a7af-df881c350153",
           "sourceName": "간장 윙봉 선택 | CHỌN CÁNH GÀ SỐT XÌ DẦU",
           "names": {
-            "ko": "간장 윙봉 선택",
-            "vi": "CHỌN CÁNH GÀ SỐT XÌ DẦU",
-            "zh": "",
-            "en": ""
+            "ko": "간장 윙봉",
+            "vi": "Cánh gà sốt xì dầu",
+            "zh": "酱油鸡翅",
+            "en": "Soy Sauce Wings"
           },
           "receiptNames": {
             "ko": "간장 윙봉 선택",
@@ -7178,7 +7178,7 @@
         "ko": "치킨 맛",
         "vi": "Vị gà",
         "zh": "炸鸡口味",
-        "en": "Chicken flavor"
+        "en": "Chicken Flavor"
       },
       "required": false,
       "minSelections": 0,
@@ -7189,10 +7189,10 @@
           "id": "364f50ef-8710-41ac-9e4c-73209d7a4c89",
           "sourceName": "고추마늘간장./Garlic Soy Chicken/辣椒蒜酱鸡 /Gà sốt xì dầu tỏi ớt",
           "names": {
-            "ko": "고추마늘간장./Garlic Soy Chicken/辣椒蒜酱鸡 /Gà sốt xì dầu tỏi ớt",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "고추마늘간장 치킨",
+            "vi": "Gà sốt xì dầu tỏi ớt",
+            "zh": "辣椒蒜酱油鸡",
+            "en": "Chili Garlic Soy Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -7202,10 +7202,10 @@
           "id": "9b8f3856-60ff-4d08-b111-9e87ea20e22e",
           "sourceName": "후라이드/Fried Chicken /无骨炸鸡腿 /không sốt",
           "names": {
-            "ko": "후라이드/Fried Chicken /无骨炸鸡腿 /không sốt",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "후라이드 치킨",
+            "vi": "Gà chiên không sốt",
+            "zh": "原味炸鸡",
+            "en": "Fried Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -7215,10 +7215,10 @@
           "id": "641303df-1c29-4e1d-bc2b-de7ce53a43db",
           "sourceName": "스리라차 어니언/ Sriracha Onion Chicken/ 洋葱奶酱炸鸡 /Gà sốt kem hành",
           "names": {
-            "ko": "스리라차 어니언/ Sriracha Onion Chicken/ 洋葱奶酱炸鸡 /Gà sốt kem hành",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "스리라차 어니언 치킨",
+            "vi": "Gà sốt kem hành Sriracha",
+            "zh": "是拉差洋葱奶油鸡",
+            "en": "Sriracha Onion Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -7236,7 +7236,7 @@
         "ko": "치킨 맛",
         "vi": "Vị gà",
         "zh": "炸鸡口味",
-        "en": "Chicken flavor"
+        "en": "Chicken Flavor"
       },
       "required": false,
       "minSelections": 0,
@@ -7247,7 +7247,7 @@
           "id": "28ae400d-930a-48ca-89f5-3113b1e3036e",
           "sourceName": "핫후라이드 | Gà rán cay | 辣味炸鸡 | Hot Fried Chicken",
           "names": {
-            "ko": "핫후라이드",
+            "ko": "핫후라이드 치킨",
             "vi": "Gà rán cay",
             "zh": "辣味炸鸡",
             "en": "Hot Fried Chicken"
@@ -7264,10 +7264,10 @@
           "id": "a4540023-7b3c-496b-baab-b821705d6e68",
           "sourceName": "매운양념/Hot & Spicy Chicken/韩式辣酱炸鸡/Gà sốt cay HQ",
           "names": {
-            "ko": "매운양념/Hot & Spicy Chicken/韩式辣酱炸鸡/Gà sốt cay HQ",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "매운양념 치킨",
+            "vi": "Gà sốt cay Hàn Quốc",
+            "zh": "韩式辣酱炸鸡",
+            "en": "Hot & Spicy Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -7285,7 +7285,7 @@
         "ko": "치킨 맛",
         "vi": "Vị gà",
         "zh": "炸鸡口味",
-        "en": "Chicken flavor"
+        "en": "Chicken Flavor"
       },
       "required": false,
       "minSelections": 0,
@@ -7296,10 +7296,10 @@
           "id": "5b311b20-6191-403f-8612-08cf8648b49d",
           "sourceName": "양념/Sweet & Spicy Chicken / 韩式甜酱炸鸡 /Gà sốt ngọt HQ",
           "names": {
-            "ko": "양념/Sweet & Spicy Chicken / 韩式甜酱炸鸡 /Gà sốt ngọt HQ",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "양념 치킨",
+            "vi": "Gà sốt ngọt Hàn Quốc",
+            "zh": "韩式甜酱炸鸡",
+            "en": "Sweet & Spicy Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -7309,10 +7309,10 @@
           "id": "2dfd957a-1061-4e7d-a1ca-5ec27dfc1da0",
           "sourceName": "파닭/Green Onion Chicken /葱香炸鸡(芥末酱)/Gà hành lá (sốt mù tạt)",
           "names": {
-            "ko": "파닭/Green Onion Chicken /葱香炸鸡(芥末酱)/Gà hành lá (sốt mù tạt)",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "파닭",
+            "vi": "Gà hành lá (sốt mù tạt)",
+            "zh": "葱香炸鸡（芥末酱）",
+            "en": "Green Onion Chicken (Mustard Sauce)"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -7339,10 +7339,10 @@
           "id": "a8da2a14-4ec6-40a9-926c-9b41755b2de5",
           "sourceName": "스노윙치킨 / Gà phủ bột phô mai / 雪花芝士粉炸鸡 / Snowing Cheese Powder Chicken",
           "names": {
-            "ko": "스노윙치킨 / Gà phủ bột phô mai / 雪花芝士粉炸鸡 / Snowing Cheese Powder Chicken",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "스노윙 치킨",
+            "vi": "Gà phủ bột phô mai",
+            "zh": "雪花芝士粉炸鸡",
+            "en": "Snowing Cheese Powder Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -7352,10 +7352,10 @@
           "id": "fd21b308-6f37-443b-a50c-a35c5a604106",
           "sourceName": "슈프림/Supreme Sauce Chicken /至尊酱鸡 /Gà sốt supreme",
           "names": {
-            "ko": "슈프림/Supreme Sauce Chicken /至尊酱鸡 /Gà sốt supreme",
-            "vi": "",
-            "zh": "",
-            "en": ""
+            "ko": "슈프림 치킨",
+            "vi": "Gà sốt Supreme",
+            "zh": "至尊酱炸鸡",
+            "en": "Supreme Sauce Chicken"
           },
           "additionalPrice": 0,
           "visible": true,
@@ -7372,8 +7372,8 @@
       "names": {
         "ko": "우동 맛",
         "vi": "Vị udon",
-        "zh": "乌冬口味",
-        "en": "Udon flavor"
+        "zh": "乌冬面口味",
+        "en": "Udon Flavor"
       },
       "required": false,
       "minSelections": 0,
@@ -7384,10 +7384,10 @@
           "id": "d067d9f5-70b7-4a28-9b01-6914ed4f0b66",
           "sourceName": "기본 어묵꼬치우동 | Udon xiên chả cá thường | 原味鱼饼乌冬面 | Regular Fish Cake Udon",
           "names": {
-            "ko": "기본 어묵꼬치우동",
+            "ko": "기본 어묵꼬치 우동",
             "vi": "Udon xiên chả cá thường",
-            "zh": "原味鱼饼乌冬面",
-            "en": "Regular Fish Cake Udon"
+            "zh": "原味鱼饼串乌冬面",
+            "en": "Regular Fish Cake Skewer Udon"
           },
           "receiptNames": {
             "ko": "기본 어묵꼬치우동",
@@ -7401,7 +7401,7 @@
           "id": "36e1c914-9c90-4746-9c4a-cb01c6585cea",
           "sourceName": "얼큰김치우동 | Udon kimchi cay | 泡菜辣乌冬面 | Spicy Kimchi Udon",
           "names": {
-            "ko": "얼큰김치우동",
+            "ko": "얼큰 김치 우동",
             "vi": "Udon kimchi cay",
             "zh": "泡菜辣乌冬面",
             "en": "Spicy Kimchi Udon"
@@ -7426,7 +7426,7 @@
         "ko": "치킨 종류",
         "vi": "Loại gà",
         "zh": "鸡肉种类",
-        "en": "Chicken type"
+        "en": "Chicken Type"
       },
       "required": false,
       "minSelections": 0,
@@ -7438,9 +7438,9 @@
           "sourceName": "*có xương | 뼈 치킨*",
           "names": {
             "ko": "뼈 치킨*",
-            "vi": "*có xương",
-            "zh": "",
-            "en": ""
+            "vi": "*Có xương",
+            "zh": "带骨炸鸡*",
+            "en": "Bone-In Chicken*"
           },
           "receiptNames": {
             "ko": "뼈 치킨*",
@@ -7454,10 +7454,10 @@
           "id": "6e0215ac-2c13-4f72-9b1d-fd47691e0627",
           "sourceName": "*không xương | 순살치킨*",
           "names": {
-            "ko": "순살치킨*",
-            "vi": "*không xương",
-            "zh": "",
-            "en": ""
+            "ko": "순살 치킨*",
+            "vi": "*Không xương",
+            "zh": "无骨炸鸡*",
+            "en": "Boneless Chicken*"
           },
           "receiptNames": {
             "ko": "순살치킨*",
@@ -7473,7 +7473,7 @@
       ]
     }
   ],
-  "inventoryCandidateCount": 256,
+  "inventoryCandidateCount": 258,
   "catalogRevision": "cukcuk-tablet-content-2026-11-26-family-couple-combos",
   "tableQrLayout": {
     "revision": "cukcuk-tablet-content-2026-11-26-family-couple-combos",
@@ -7484,16 +7484,16 @@
     "optionOrderingPolicy": "free-first-stable",
     "orderedMenuCount": 12,
     "orderedTemplateCount": 10,
-    "excludedCandidateCount": 138
+    "excludedCandidateCount": 140
   },
   "translation": {
     "provider": "openai",
     "model": "gpt-5.6-terra",
     "status": "ready",
-    "entityCount": 364,
+    "entityCount": 430,
     "cacheHits": 348,
-    "translated": 16,
+    "translated": 82,
     "pendingCount": 0,
-    "updatedAt": "2026-11-25T23:20:35.108Z"
+    "updatedAt": "2026-11-26T12:22:05.923Z"
   }
 }
