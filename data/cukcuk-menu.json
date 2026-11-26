@@ -2,8 +2,8 @@
   "ok": true,
   "synced": true,
   "lastSync": {
-    "started_at": "2026-11-26 12:21:00",
-    "finished_at": "2026-11-26 12:21:07",
+    "started_at": "2026-11-26 13:31:07",
+    "finished_at": "2026-11-26 13:31:27",
     "status": "success",
     "menu_count": 85,
     "summary": "DABANG CHICKEN에서 고객용 메뉴 85개를 가져왔습니다.",
@@ -1092,8 +1092,8 @@
       "sourceName": "후라이드  Fried Chicken  无骨炸鸡腿 Má đùi rút xương",
       "names": {
         "ko": "후라이드 치킨",
-        "vi": "Gà rán",
-        "zh": "炸鸡",
+        "vi": "Gà chiên giòn",
+        "zh": "无骨炸鸡腿",
         "en": "Fried Chicken"
       },
       "price": 399600,
@@ -1181,8 +1181,8 @@
       "names": {
         "ko": "고추마늘간장 치킨",
         "vi": "Gà sốt xì dầu tỏi ớt",
-        "zh": "辣椒蒜蓉酱油鸡",
-        "en": "Chili Garlic Soy Chicken"
+        "zh": "辣椒蒜香酱油鸡",
+        "en": "Garlic Soy Chicken"
       },
       "price": 399600,
       "available": true,
@@ -1202,8 +1202,8 @@
       "sourceName": "스리라차 어니언  Sriracha Onion Chicken洋葱奶酱炸鸡 Gà sốt kem hành",
       "names": {
         "ko": "스리라차 어니언 치킨",
-        "vi": "Gà sốt Sriracha hành tây",
-        "zh": "是拉差洋葱炸鸡",
+        "vi": "Gà sốt kem hành Sriracha",
+        "zh": "是拉差洋葱奶油炸鸡",
         "en": "Sriracha Onion Chicken"
       },
       "price": 399600,
@@ -7476,7 +7476,7 @@
   "inventoryCandidateCount": 258,
   "catalogRevision": "cukcuk-tablet-content-2026-11-26-year-end-combos",
   "tableQrLayout": {
-    "revision": "cukcuk-tablet-content-2026-11-26-family-couple-combos",
+    "revision": "cukcuk-tablet-content-2026-11-26-year-end-combos",
     "capturedAt": "2026-11-26T11:54:19.866Z",
     "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
     "includeUnlisted": false,
@@ -7491,9 +7491,9 @@
     "model": "gpt-5.6-terra",
     "status": "ready",
     "entityCount": 430,
-    "cacheHits": 348,
-    "translated": 82,
+    "cacheHits": 413,
+    "translated": 17,
     "pendingCount": 0,
-    "updatedAt": "2026-11-26T12:22:05.923Z"
+    "updatedAt": "2026-11-26T13:31:50.838Z"
   }
 }
