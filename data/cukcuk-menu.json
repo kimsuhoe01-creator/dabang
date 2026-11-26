@@ -484,7 +484,7 @@
       "categoryName": "세트",
       "sourceName": "가족 콤보 (반반치킨+어묵탕+주먹밥+콜라 4병) | Combo gia đình (gà 2 vị+lẩu chả cá+cơm nắm+4 Coca)",
       "names": {
-        "ko": "가족 콤보",
+        "ko": "패밀리 콤보",
         "vi": "Combo gia đình",
         "zh": "家庭套餐",
         "en": "Family Combo"
@@ -7474,7 +7474,7 @@
     }
   ],
   "inventoryCandidateCount": 258,
-  "catalogRevision": "cukcuk-tablet-content-2026-11-26-family-couple-combos",
+  "catalogRevision": "cukcuk-tablet-content-2026-11-26-year-end-combos",
   "tableQrLayout": {
     "revision": "cukcuk-tablet-content-2026-11-26-family-couple-combos",
     "capturedAt": "2026-11-26T11:54:19.866Z",

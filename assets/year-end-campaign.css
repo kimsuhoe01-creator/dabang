@@ -1,0 +1,65 @@
+html.year-end{--ui-red:#b92735;--ui-yellow:#efc66c;--ui-ink:#203b32;--ui-bg:#f7f5ee;--ui-line:#d9dfd3}
+html.year-end body,html.year-end .app{background:var(--ui-bg)}
+html.year-end .header{background:#173c30;color:#fff;border-bottom:2px solid #cfa956;box-shadow:0 5px 18px #153b302b}
+html.year-end .header .store-name{border-left-color:#648070;color:#fff}
+html.year-end .header .table-caption,html.year-end .header #orderReady{color:#e6e7d8}
+html.year-end .reset-flow{background:#285344;border-color:#739179;color:#fff}
+html.year-end .reset-flow:hover{border-color:#efc66c;color:#fff}
+html.year-end .langs{background:#2a5646}
+html.year-end .langs button{color:#e0e5d9}
+html.year-end .langs button.active{background:#f8eed4;color:#173c30}
+html.year-end .cart{background:#ab2635;box-shadow:0 5px 16px #571b2826}
+html.year-end .category-rail{background:radial-gradient(circle at 5% 4%,#366653 0,transparent 38%),#123329;border-right:2px solid #c7a35a}
+html.year-end .rail-heading{border-bottom-color:#6b8a6e}
+html.year-end .rail-heading small{color:#d8c78f}
+html.year-end .cat{color:#e6ebe1}
+html.year-end .cat:hover{background:#2b5545}
+html.year-end .cat.active{background:#b92735;color:#fff;box-shadow:inset 0 0 0 1px #e8c786}
+html.year-end .cat.active:after{background:#f6d880}
+html.year-end .cat.year-end-nav{margin:2px 0 7px;background:linear-gradient(105deg,#a82a36,#85222d);border:1px solid #e3bd75;color:#fff;font-weight:850;box-shadow:0 5px 12px #0003}
+html.year-end .cat.year-end-nav.active{background:linear-gradient(105deg,#d6474f,#a62732)}
+html.year-end .content{background:radial-gradient(circle at 97% 0,#e8efdf 0,transparent 32%),var(--ui-bg)}
+html.year-end .section-kicker{color:#9a2633}
+html.year-end .count{background:#fffdf6;border-color:#d6d4bf}
+html.year-end .card{border-color:#d7dece;box-shadow:0 5px 19px #284c3612}
+html.year-end .card:hover{box-shadow:0 11px 26px #284c3628}
+html.year-end .add{background:#1a4938;color:#fff}
+html.year-end .add:hover{background:#a82935}
+html.year-end .start-flow{background:radial-gradient(circle at 85% 18%,#b1363f 0,transparent 28%),radial-gradient(circle at 12% 90%,#47775a 0,transparent 30%),#102e25}
+html.year-end .start-panel{background:#faf7ef;box-shadow:0 30px 85px #06170fcc,inset 0 0 0 2px #e5cb84}
+html.year-end .start-brand{background:linear-gradient(160deg,#164333,#0b291f);border-right:3px solid #c9a85b}
+html.year-end .start-kicker{color:#a92935}
+html.year-end .language-card:hover,html.year-end .table-card:hover{border-color:#bc3540}
+html.year-end .dialog-panel{border:2px solid #d1b36e}
+html.year-end .dialog-head{background:#f8f5e9}
+html.year-end .dialog-kicker{color:#ae2a36}
+html.year-end .preview-mode-badge{background:#f5d983;color:#253d2d}
+.year-end-section{position:relative;margin-bottom:38px}
+.year-end-intro{position:relative;min-height:116px;margin-bottom:16px;padding:20px 28px;border:1px solid #d3b76d;border-radius:20px;background:radial-gradient(circle at 88% 36%,#36745a 0,transparent 28%),linear-gradient(105deg,#123c2d 0%,#174d3a 55%,#0e3025 100%);color:#fff;overflow:hidden;box-shadow:0 9px 24px #1f4b322a}
+.year-end-intro:after{content:'✦  ✧  ✦';position:absolute;right:38px;top:22px;color:#f5d991;font-size:48px;letter-spacing:13px;opacity:.92;pointer-events:none}
+.year-end-intro .year-end-kicker{display:block;margin-bottom:4px;color:#f2ce77;font-size:11px;font-weight:900;letter-spacing:2.3px}
+.year-end-intro h1{position:relative;z-index:1;margin:0;color:#fff8e6;font-size:clamp(23px,2.6vw,34px);line-height:1.2;letter-spacing:-.5px}
+.year-end-intro p{position:relative;z-index:1;margin:7px 0 0;color:#e5ebdc;font-size:14px;font-weight:650}
+.year-end-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}
+.year-end-card{position:relative;display:grid;grid-template-columns:minmax(0,1.13fr) minmax(0,.87fr);min-height:283px;padding:0;border:1px solid #cfb46b;border-radius:19px;overflow:hidden;background:linear-gradient(145deg,#8e202d,#571922 85%);color:#fff;text-align:left;box-shadow:0 8px 23px #5b152b30;transition:transform .15s ease,box-shadow .15s ease}
+.year-end-card:nth-child(2){background:linear-gradient(145deg,#173f34,#0b2e27 90%)}
+.year-end-card:hover{transform:translateY(-3px);box-shadow:0 14px 29px #3f332d36}
+.year-end-card:focus-visible{outline:4px solid #eacb79;outline-offset:3px}
+.year-end-card:disabled{cursor:not-allowed}
+.year-end-card-copy{position:relative;z-index:2;display:flex;flex-direction:column;align-items:flex-start;min-width:0;padding:19px 8px 19px 20px}
+.year-end-card-copy:before{content:'✦';position:absolute;right:9px;top:14px;color:#f9d987;font-size:22px}
+.year-end-tag{display:inline-flex;align-items:center;min-height:26px;padding:4px 9px;border-radius:999px;background:#f6d880;color:#50301b;font-size:10px;font-weight:900;letter-spacing:.2px}
+.year-end-card-name{display:block;margin-top:11px;color:#fff7df;font-size:clamp(19px,2vw,27px);font-weight:950;line-height:1.15;letter-spacing:-.7px;overflow-wrap:anywhere}
+.year-end-card-desc{display:block;margin-top:8px;color:#f1e5d7;font-size:12px;font-weight:650;line-height:1.35;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.year-end-save{display:inline-flex;align-items:center;gap:5px;margin-top:auto;padding:6px 9px;border-radius:7px;background:#f8e6bb;color:#7d1824;font-size:13px;font-weight:950}
+.year-end-prices{display:flex;flex-wrap:wrap;align-items:baseline;gap:5px 10px;margin-top:8px}
+.year-end-prices del{color:#efd7cb;font-size:13px;font-weight:700;text-decoration-thickness:2px}
+.year-end-prices strong{color:#ffe087;font-size:clamp(22px,2.25vw,29px);font-weight:950;white-space:nowrap}
+.year-end-action{display:inline-flex;align-items:center;gap:5px;margin-top:9px;color:#fff;font-size:12px;font-weight:800}
+.year-end-art{position:relative;min-width:0;min-height:283px;overflow:hidden;background:#251c1a}
+.year-end-art img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:center}
+.year-end-art:before{content:'';position:absolute;z-index:1;inset:0;background:linear-gradient(90deg,#681b26 0,transparent 23%);pointer-events:none}
+.year-end-card:nth-child(2) .year-end-art:before{background:linear-gradient(90deg,#12372e 0,transparent 23%)}
+.year-end-card-sold{position:absolute;z-index:4;inset:0;display:grid;place-items:center;padding:20px;background:#0a201acc;color:#fff;text-align:center;font-size:18px;font-weight:900}
+@media(max-width:960px){.year-end-intro:after{right:7px;opacity:.4}.year-end-grid{gap:10px}.year-end-card{grid-template-columns:minmax(0,1.15fr) minmax(0,.85fr);min-height:255px}.year-end-card-copy{padding:14px 5px 14px 13px}.year-end-art{min-height:255px}.year-end-card-name{font-size:19px}.year-end-card-desc{font-size:11px}.year-end-prices strong{font-size:21px}}
+@media(max-width:820px){.year-end-grid{grid-template-columns:1fr}.year-end-card,.year-end-art{min-height:218px}.year-end-intro{padding:17px 19px}}
