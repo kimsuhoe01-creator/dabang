@@ -3,7 +3,7 @@
   if (typeof module === 'object' && module.exports) module.exports = api;
   root.DABANG_TABLE_LAYOUT = api;
 })(typeof globalThis !== 'undefined' ? globalThis : this, function () {
-  const AREA_ORDER = ['A', 'B', 'C', 'D', 'Z', '배달', '기타'];
+  const AREA_ORDER = ['A', 'B', 'C', 'D', 'Z', '포장', '배달', '기타'];
   const collator = new Intl.Collator('ko', { numeric: true, sensitivity: 'base' });
 
   function text(value) {
@@ -16,7 +16,8 @@
     const letter = compact.match(/^([A-D])(?:-|구역|TABLES?)?$/i);
     if (letter) return letter[1].toUpperCase();
     if (/^(Z|PC)(?:-|구역|TABLES?)?$/i.test(compact)) return 'Z';
-    if (/배달|take|ship/i.test(compact)) return '배달';
+    if (/포장|take/i.test(compact)) return '포장';
+    if (/배달|ship/i.test(compact)) return '배달';
     return raw || '기타';
   }
 
@@ -25,8 +26,17 @@
     const letter = name.match(/^([A-D])\s*[-_ ]?\s*0*\d+/i);
     if (letter) return letter[1].toUpperCase();
     if (/^PC\s*0*\d+/i.test(name)) return 'Z';
-    if (/^(take|ship)\s*0*\d+/i.test(name)) return '배달';
+    if (isTakeawayTable(table)) return '포장';
+    if (/^ship\s*[-_ ]?0*\d+/i.test(name)) return '배달';
     return normalizeAreaName(table?.sourceArea ?? table?.area);
+  }
+
+  function isTakeawayTable(table) {
+    return /^take(?:away)?\s*[-_ ]?0*\d+$/i.test(text(table?.name));
+  }
+
+  function isFulfillmentTable(table) {
+    return isTakeawayTable(table) || /^ship\s*[-_ ]?0*\d+$/i.test(text(table?.name));
   }
 
   function areaRank(value) {
@@ -64,5 +74,5 @@
       .map(([name, rows]) => ({ name, tables: rows.slice().sort(compareTables) }));
   }
 
-  return { AREA_ORDER, normalizeAreaName, inferArea, compareAreaNames, compareTables, buildDefaultGroups };
+  return { AREA_ORDER, normalizeAreaName, inferArea, isTakeawayTable, isFulfillmentTable, compareAreaNames, compareTables, buildDefaultGroups };
 });

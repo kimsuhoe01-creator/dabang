@@ -108,6 +108,9 @@ test('default table groups use table-name prefixes and A, B, C priority', () => 
   const tables = [
     { id: 'b2', name: 'B-02', sourceArea: 'B-' },
     { id: 'take1', name: 'take01', sourceArea: '배달' },
+    { id: 'take2', name: 'take02', sourceArea: '배달' },
+    { id: 'ship2', name: 'ship02', sourceArea: '배달' },
+    { id: 'ship1', name: 'ship01', sourceArea: '배달' },
     { id: 'a5', name: 'A-5', sourceArea: 'A-' },
     { id: 'c3', name: 'C-3', sourceArea: 'A-' },
     { id: 'a1', name: 'A-1', sourceArea: 'A-' },
@@ -119,16 +122,21 @@ test('default table groups use table-name prefixes and A, B, C priority', () => 
 
   const groups = layout.buildDefaultGroups(tables);
 
-  assert.deepEqual(groups.map(group => group.name), ['A', 'B', 'C', 'D', 'Z', '배달']);
+  assert.deepEqual(groups.map(group => group.name), ['A', 'B', 'C', 'D', 'Z', '포장', '배달']);
   assert.deepEqual(groups[0].tables.map(table => table.name), ['A-1', 'A-5']);
   assert.deepEqual(groups[1].tables.map(table => table.name), ['B-01', 'B-02']);
   assert.deepEqual(groups[2].tables.map(table => table.name), ['C-1', 'C-3']);
+  assert.deepEqual(groups[5].tables.map(table => table.name), ['take01', 'take02']);
+  assert.deepEqual(groups[6].tables.map(table => table.name), ['ship01', 'ship02']);
 });
 
 test('source area is used only when a table name has no recognized prefix', () => {
   assert.equal(layout.inferArea({ name: 'C-3', sourceArea: 'A-' }), 'C');
   assert.equal(layout.inferArea({ name: 'PC4', sourceArea: 'Z' }), 'Z');
+  assert.equal(layout.inferArea({ name: 'take02', sourceArea: '배달' }), '포장');
   assert.equal(layout.inferArea({ name: 'ship02', sourceArea: '배달' }), '배달');
+  assert.equal(layout.isTakeawayTable({ name: 'take05' }), true);
+  assert.equal(layout.isTakeawayTable({ name: 'ship05' }), false);
   assert.equal(layout.inferArea({ name: '테라스', sourceArea: 'A-' }), 'A');
 });
 
