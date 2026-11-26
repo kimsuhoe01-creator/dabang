@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "revision": "cukcuk-tablet-content-2026-11-26-family-couple-combos",
+  "revision": "cukcuk-tablet-content-2026-11-26-year-end-combos",
   "capturedAt": "2026-11-26T11:54:19.866Z",
   "timezone": "Asia/Ho_Chi_Minh",
   "source": "CUKCUK 관리자 > Bán hàng Online > Gọi món tại bàn > Thực đơn",
@@ -383,7 +383,7 @@
       "menus": [
         {
           "code": "COMBOFAMILY599",
-          "displayName": "가족 콤보 | Combo gia đình | 家庭套餐 | Family Combo",
+          "displayName": "패밀리 콤보 | Combo gia đình | 家庭套餐 | Family Combo",
           "price": 599000,
           "outOfStock": false,
           "sortOrder": 0
@@ -1437,7 +1437,7 @@
       "ko": "선양 오크"
     },
     "COMBOFAMILY599": {
-      "ko": "가족 콤보",
+      "ko": "패밀리 콤보",
       "vi": "Combo gia đình",
       "zh": "家庭套餐",
       "en": "Family Combo"

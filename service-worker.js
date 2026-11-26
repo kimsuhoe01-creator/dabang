@@ -1,4 +1,4 @@
-const CACHE_VERSION = 'dabang-tablet-v66';
+const CACHE_VERSION = 'dabang-tablet-v67';
 const SHELL_CACHE = `${CACHE_VERSION}-shell`;
 const RUNTIME_CACHE = `${CACHE_VERSION}-runtime`;
 const APP_SHELL = [
@@ -7,6 +7,8 @@ const APP_SHELL = [
   './assets/table-layout.js',
   './assets/option-order.js',
   './assets/combo-options.js?v=20261126',
+  './assets/year-end-campaign.js?v=20261126',
+  './assets/year-end-campaign.css?v=20261126',
   './assets/menu-images.js?v=20261126-family-couple-combos',
   './assets/menu/185b4e50-fb4e-477e-8793-caf45dc7024c.png?asset=20261126-family-couple-combos',
   './assets/menu/147fbd38-5b27-409d-b2a1-9abee13015e3.png?asset=20261126-family-couple-combos',
